@@ -1,26 +1,35 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import 'tailwindcss';
+@font-face {
+  font-family: 'GeneralSans';
+  src: url('../../public/fonts/GeneralSans-Variable.ttf') format('truetype');
+  font-display: swap;
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'Bein Arabic';
+  src: url('../../public/fonts/bein-ar-black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-main: #f9ed0b;
+  --color-sec: #e3b9b3;
+  --color-bg: #2d2a26;
+  --color-bgb: #514c44;
+  --color-text: #d7d6d6;
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+* {
+  box-sizing: border-box;
+}
+html {
+  scrollbar-width: none;
+  font-family: 'GeneralSans', sans-serif;
+}
+:lang(ar),
+[lang='ar'] {
+  font-family: 'Bein Arabic', 'GeneralSans';
+}
+::selection {
+  background: var(--color-bgb);
+  color: var(--color-text);
 }

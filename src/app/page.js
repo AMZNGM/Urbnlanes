@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">Urbnlanes</div>
+  return <div className="relative w-screen min-h-screen flex justify-center items-center text-7xl">UrbnlaneswwwwWW</div>
 }
