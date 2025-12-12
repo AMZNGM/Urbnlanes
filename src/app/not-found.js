@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import { HomeIcon } from 'lucide-react'
 import MainBtn from '@/components/ui/buttons/MainBtn'
-import { CircularBuildingBG } from '@/data/media-data/media-imports'
+import bgImg from '../../public/images/CircularBuildingBG.webp'
 
 export default function NotFound() {
   return (
     <main className="relative w-screen h-screen overflow-hidden bg-bg text-text flex justify-center items-center py-24 px-4 z-50">
       <Image
-        src={CircularBuildingBG}
+        src={bgImg}
         alt="404"
         fill
         placeholder="blur"
