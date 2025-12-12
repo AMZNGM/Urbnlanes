@@ -12,11 +12,10 @@
   font-display: swap;
 }
 @theme {
-  --color-main: #f9ed0b;
-  --color-sec: #e3b9b3;
-  --color-bg: #2d2a26;
-  --color-bgb: #514c44;
-  --color-text: #f9f7f2;
+  --color-main: #ebc03f;
+  --color-bg: #1d1f22;
+  --color-text: #f4f4f4;
+  --font-arab: 'Bein Arabic';
 }
 * {
   box-sizing: border-box;

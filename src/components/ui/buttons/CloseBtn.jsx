@@ -1,5 +1,5 @@
 import { useLanguage } from '@/translations/LanguageContext'
-import ClickEffect from '@/components/ui/effects/ClickEffect.jsx'
+import ClickEffect from '@/components/ui/effects/RippleEffect.jsx'
 
 export default function CloseBtn({ onClick, className = '', size = 'md', type = 'main', ariaLabel = 'Close', ...props }) {
   const { selectedLanguage } = useLanguage()

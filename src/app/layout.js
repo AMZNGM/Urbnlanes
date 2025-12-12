@@ -1,5 +1,5 @@
 import './globals.css'
-// import AppWrapper from '@/components/app-components/AppWrapper'
+import AppWrapper from '@/components/app-components/AppWrapper'
 // import LoadingScreen from '@/components/app-components/LoadingScreen'
 
 export const metadata = {
@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`relative w-screen min-h-screen overflow-x-hidden! bg-bg text-text font-light uppercase scroll-smooth antialiased`}>
+      <body className={`relative w-screen min-h-screen overflow-x-hidden! bg-bg text-text uppercase scroll-smooth antialiased`}>
         {/* <LoadingScreen /> */}
         {/* <AppWrapper>{children}</AppWrapper> */}
         {children}
