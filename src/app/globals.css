@@ -15,6 +15,7 @@
   --color-main: #ebc03f;
   --color-bg: #1d1f22;
   --color-text: #f4f4f4;
+  --font-main: 'GeneralSans';
   --font-arab: 'Bein Arabic';
 }
 * {
@@ -27,8 +28,4 @@ html {
 :lang(ar),
 [lang='ar'] {
   font-family: 'Bein Arabic', 'GeneralSans';
-}
-::selection {
-  background: var(--color-bgb);
-  color: var(--color-text);
 }

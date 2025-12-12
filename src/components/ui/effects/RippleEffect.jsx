@@ -61,7 +61,7 @@ export default memo(function RippleEffect({ children, className = '', ...props }
   }, [])
 
   return (
-    <div ref={elementRef} className={`relative overflow-hidden ${className}`} {...props}>
+    <div ref={elementRef} className={`relative overflow-hidden w-fit mx-auto ${className}`} {...props}>
       {children}
     </div>
   )

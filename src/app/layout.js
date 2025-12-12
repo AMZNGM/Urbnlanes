@@ -11,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`relative w-screen min-h-screen overflow-x-hidden! bg-bg text-text uppercase scroll-smooth antialiased`}>
+      <body
+        className={`relative w-screen min-h-screen overflow-x-hidden! bg-bg text-text uppercase selection:bg-main/50 selection:text-text scroll-smooth antialiased`}
+      >
         {/* <LoadingScreen /> */}
         {/* <AppWrapper>{children}</AppWrapper> */}
         {children}
