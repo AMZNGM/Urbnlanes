@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { memo } from 'react'
 import RippleEffect from '@/components/ui/effects/RippleEffect'
+import TextRoll from '@/components/ui/text/TextRoll'
 
 export default memo(function MainBtn({
   children,
@@ -67,7 +68,7 @@ export default memo(function MainBtn({
   return (
     <RippleEffect>
       <button type="button" onClick={onClick} disabled={disabled} {...commonProps}>
-        {content}
+        <TextRoll>{content}</TextRoll>
       </button>
     </RippleEffect>
   )
