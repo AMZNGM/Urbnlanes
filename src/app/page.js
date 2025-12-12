@@ -1,4 +1,4 @@
-import CloseBtn from '@/components/ui/buttons/CloseBtn'
+import BackBtn from '@/components/ui/buttons/BackBtn'
 import Link from 'next/link'
 
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
     <div className="relative w-screen min-h-screen flex justify-center items-center text-7xl">
       UrbnlaneswwwwWW
       <Link href="/not-found">not-found</Link>
-      <CloseBtn />
+      <BackBtn />
     </div>
   )
 }
