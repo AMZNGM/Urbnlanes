@@ -9,7 +9,7 @@ export default function NavLogo() {
         src={logo}
         alt="Urbnlanes"
         priority={true}
-        className="h-10 max-md:h-8 w-auto object-contain transition-transform duration-300 ease-out hover:scale-103"
+        className="h-8 max-md:h-6 w-auto object-contain transition-transform duration-300 ease-out hover:scale-103"
       />
     </Link>
   )
