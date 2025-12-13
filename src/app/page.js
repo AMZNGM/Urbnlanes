@@ -1,6 +1,7 @@
 import BackBtn from '@/components/ui/buttons/BackBtn'
 import CloseBtn from '@/components/ui/buttons/CloseBtn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
+import MenuIcon from '@/components/ui/buttons/MenuIcon'
 import TextAnimation from '@/components/ui/text/TextAnimation'
 import TextRoll from '@/components/ui/text/TextRoll'
 
@@ -11,8 +12,7 @@ export default function Home() {
       <TextAnimation text={`Urbnlanes wwwwWW`} />
       <TextRoll>Hover me</TextRoll>
       <MainBtn>not-found</MainBtn>
-      <CloseBtn className="top-24" />
-      <BackBtn />
+      <MenuIcon />
     </div>
   )
 }
