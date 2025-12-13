@@ -2,18 +2,19 @@
   "navigation": [
     {
       "name": "Home",
-      "slug": "/",
-      "order": 1
+      "slug": "/"
     },
     {
       "name": "About",
-      "slug": "/about",
-      "order": 2
+      "children": [
+        {
+          "name": "About",
+          "slug": "/about"
+        }
+      ]
     },
     {
       "name": "Projects",
-      "slug": "/projects",
-      "order": 3,
       "children": [
         {
           "name": "Latest Launches",
@@ -57,28 +58,48 @@
     },
     {
       "name": "Media Center & News",
-      "slug": "/media-center-news",
-      "order": 4
+      "children": [
+        {
+          "name": "Media Center & News",
+          "slug": "/media-center-news"
+        }
+      ]
     },
     {
       "name": "Partners & Associates",
-      "slug": "/partners-associates",
-      "order": 5
+      "children": [
+        {
+          "name": "Partners & Associates",
+          "slug": "/partners-associates"
+        }
+      ]
     },
     {
       "name": "Construction Updates",
-      "slug": "/construction-updates",
-      "order": 6
+      "children": [
+        {
+          "name": "Construction Updates",
+          "slug": "/construction-updates"
+        }
+      ]
     },
     {
       "name": "Careers",
-      "slug": "/careers",
-      "order": 7
+      "children": [
+        {
+          "name": "Careers",
+          "slug": "/careers"
+        }
+      ]
     },
     {
       "name": "Contact Us",
-      "slug": "/contact-us",
-      "order": 8
+      "children": [
+        {
+          "name": "Contact Us",
+          "slug": "/contact-us"
+        }
+      ]
     }
   ]
 }

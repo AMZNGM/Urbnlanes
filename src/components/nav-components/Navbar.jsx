@@ -12,9 +12,9 @@ export default function Navbar() {
   return (
     <header className={`fixed top-0 border-b border-text/25 z-50`}>
       <main
-        className={`relative w-screen flex justify-between items-center overflow-hidden transition-all duration-700 gap-4 py-4 px-18 max-md:px-4 
+        className={`relative w-screen flex justify-between items-center transition-all duration-700 gap-4 py-4 px-18 max-md:px-4 
         ${isScrolled20vh ? 'bg-bg' : ''}
-        ${isScrolled100vh ? 'min-h-17' : 'min-h-34'}
+        ${isScrolled100vh ? 'h-17' : 'h-34'}
       `}
       >
         <div className="relative flex justify-between items-center gap-12">
