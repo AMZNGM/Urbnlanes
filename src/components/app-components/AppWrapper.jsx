@@ -9,16 +9,16 @@ import Navbar from '@/components/nav-components/Navbar'
 export default function AppWrapper({ children }) {
   return (
     <>
-      <ErrorBoundary>
-        <Banner />
-        <LocomotiveScrollSetup />
-        {/* <LoadingScreen /> */}
-        {/* <ScrollToTop /> */}
-        {/* <CustomCursor /> */}
-        <Navbar />
-        {children}
-        {/* <FooterWrapper /> */}
-      </ErrorBoundary>
+      {/* <ErrorBoundary> */}
+      <Banner />
+      <LocomotiveScrollSetup />
+      {/* <LoadingScreen /> */}
+      {/* <ScrollToTop /> */}
+      {/* <CustomCursor /> */}
+      <Navbar />
+      {children}
+      {/* <FooterWrapper /> */}
+      {/* </ErrorBoundary> */}
     </>
   )
 }
