@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-export default function MenuIcon({ className }) {
+export default function MenuBtn({ className }) {
   const [toggle, setToggle] = useState(false)
 
   return (

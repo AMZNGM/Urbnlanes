@@ -2,13 +2,13 @@
 
 import { useState } from 'react'
 
-export default function TextRoll({ children }) {
+export default function TextRoll({ children, className = '' }) {
   const [isHovering, setIsHovering] = useState(false)
   const letters = String(children).split('')
 
   return (
     <span
-      className="relative inline-block overflow-hidden"
+      className={`relative inline-block overflow-hidden ${className}`}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -21,7 +21,7 @@ export default function TextRoll({ children }) {
             style={{
               transform: isHovering && letter !== ' ' ? 'translateY(-100%)' : 'translateY(0%)',
               rotate: isHovering && letter !== ' ' ? '360deg' : '0deg',
-              transitionDelay: letter !== ' ' ? `${i * 30}ms` : '0ms',
+              transitionDelay: letter !== ' ' ? `${i * 15}ms` : '0ms',
               width: letter === ' ' ? '0.3em' : 'auto',
             }}
           >
@@ -39,7 +39,7 @@ export default function TextRoll({ children }) {
             style={{
               transform: isHovering && letter !== ' ' ? 'translateY(0%)' : 'translateY(100%)',
               rotate: isHovering && letter !== ' ' ? '0deg' : '360deg',
-              transitionDelay: letter !== ' ' ? `${i * 30}ms` : '0ms',
+              transitionDelay: letter !== ' ' ? `${i * 15}ms` : '0ms',
               width: letter === ' ' ? '0.3em' : 'auto',
             }}
           >

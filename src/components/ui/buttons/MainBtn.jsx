@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { memo } from 'react'
 import RippleEffect from '@/components/ui/effects/RippleEffect'
-import TextRoll from '@/components/ui/text/TextRoll'
 
 export default memo(function MainBtn({
   children,
@@ -44,8 +43,6 @@ export default memo(function MainBtn({
     .trim()
     .replace(/\s+/g, ' ')
 
-  const content = <>{children}</>
-
   const commonProps = {
     className: styles,
     disabled,
@@ -55,20 +52,20 @@ export default memo(function MainBtn({
   if (to)
     return (
       <Link href={to} {...commonProps}>
-        {content}
+        {children}
       </Link>
     )
   if (href)
     return (
       <a href={href} {...commonProps}>
-        {content}
+        {children}
       </a>
     )
 
   return (
     <RippleEffect>
       <button type="button" onClick={onClick} disabled={disabled} {...commonProps}>
-        <TextRoll>{content}</TextRoll>
+        {children}
       </button>
     </RippleEffect>
   )

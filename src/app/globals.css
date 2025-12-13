@@ -27,5 +27,5 @@ html {
 }
 :lang(ar),
 [lang='ar'] {
-  font-family: 'Bein Arabic', 'GeneralSans';
+  font-family: 'Bein Arabic';
 }
