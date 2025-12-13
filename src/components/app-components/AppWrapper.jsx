@@ -1,4 +1,4 @@
-import ErrorBoundary from '@/components/app-components/ErrorBoundary'
+// import ErrorBoundary from '@/components/app-components/ErrorBoundary'
 import Banner from '@/components/app-components/banner'
 import LocomotiveScrollSetup from '@/components/app-components/LocomotiveScrollSetup'
 import LoadingScreen from '@/components/app-components/LoadingScreen'
