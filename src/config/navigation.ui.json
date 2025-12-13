@@ -1,0 +1,84 @@
+{
+  "navigation": [
+    {
+      "name": "Home",
+      "slug": "/",
+      "order": 1
+    },
+    {
+      "name": "About",
+      "slug": "/about",
+      "order": 2
+    },
+    {
+      "name": "Projects",
+      "slug": "/projects",
+      "order": 3,
+      "children": [
+        {
+          "name": "Latest Launches",
+          "slug": "/projects/latest-launches",
+          "children": [
+            {
+              "name": "Story Branded Residences",
+              "slug": "/projects/story-branded-residences"
+            },
+            {
+              "name": "NOI",
+              "slug": "/projects/noi"
+            },
+            {
+              "name": "Midlane",
+              "slug": "/projects/midlane"
+            },
+            {
+              "name": "Yellow Lane",
+              "slug": "/projects/yellow-lane"
+            },
+            {
+              "name": "Yellow Residence",
+              "slug": "/projects/yellow-residence"
+            },
+            {
+              "name": "Eastlane",
+              "slug": "/projects/eastlane"
+            },
+            {
+              "name": "Levels Business Tower",
+              "slug": "/projects/levels-business-tower"
+            }
+          ]
+        },
+        {
+          "name": "Our Projects",
+          "slug": "/projects/our-projects"
+        }
+      ]
+    },
+    {
+      "name": "Media Center & News",
+      "slug": "/media-center-news",
+      "order": 4
+    },
+    {
+      "name": "Partners & Associates",
+      "slug": "/partners-associates",
+      "order": 5
+    },
+    {
+      "name": "Construction Updates",
+      "slug": "/construction-updates",
+      "order": 6
+    },
+    {
+      "name": "Careers",
+      "slug": "/careers",
+      "order": 7
+    },
+    {
+      "name": "Contact Us",
+      "slug": "/contact-us",
+      "order": 8
+    }
+  ]
+}

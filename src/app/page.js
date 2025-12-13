@@ -1,33 +1,8 @@
+import { metadataGenerators } from '@/lib/seo-helpers'
 import { Suspense } from 'react'
 import Hero from '@/components/Hero'
 
-export const metadata = {
-  title: 'Urbnlanes Developments | Building Masterpieces',
-  description:
-    'Urbnlanes is a real estate development company, that operates under the umbrella of “Emeel Abdalla Investments”. With projects all over the Middle East, it is a company built on diversity and numerous years of experience in the field of real estate development.',
-  keywords: ['Urbnlanes Developments', 'Urbnlanes', 'Building Masterpieces', 'Building', 'Cairo', 'Egypt', 'Developments'],
-  openGraph: {
-    title: 'Urbnlanes Developments | Building Masterpieces',
-    description:
-      'Urbnlanes is a real estate development company, that operates under the umbrella of “Emeel Abdalla Investments”. With projects all over the Middle East, it is a company built on diversity and numerous years of experience in the field of real estate development.',
-    type: 'website',
-    url: 'https://urbnlanes.com/',
-    images: [
-      {
-        url: '/public/images/FromTheSky.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Urbnlanes Developments',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Urbnlanes Developments | Building Masterpieces',
-    description: 'Urbnlanes is a real estate development company building masterpieces across the Middle East.',
-    images: ['/public/images/FromTheSky.webp'],
-  },
-}
+export const metadata = metadataGenerators.home()
 
 function LoadingSkeleton() {
   return (
