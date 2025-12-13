@@ -1,6 +1,5 @@
 import './globals.css'
 import AppWrapper from '@/components/app-components/AppWrapper'
-// import LoadingScreen from '@/components/app-components/LoadingScreen'
 
 export const metadata = {
   title: 'Urbnlanes Developments – Building Masterpieces',
@@ -14,9 +13,7 @@ export default function RootLayout({ children }) {
       <body
         className={`relative w-screen min-h-screen overflow-x-hidden! bg-bg text-text uppercase selection:bg-main/50 selection:text-text scroll-smooth antialiased`}
       >
-        {/* <LoadingScreen /> */}
-        {/* <AppWrapper>{children}</AppWrapper> */}
-        {children}
+        <AppWrapper>{children}</AppWrapper>
       </body>
     </html>
   )

@@ -12,7 +12,7 @@ Web app for Urbnlanes
 
 ## Tech Stack
 
-- Next.js - React - Gsap - Framer motion - Tailwind CSS - Lenis - Lucide Icons
+- Next.js - React - Gsap - Framer Motion - Tailwind CSS - Locomotive Scroll - Lucide Icons
 
 ## Getting Started
 
