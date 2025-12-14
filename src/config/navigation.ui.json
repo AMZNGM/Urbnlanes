@@ -17,6 +17,10 @@
       "name": "Projects",
       "children": [
         {
+          "name": "Our Projects",
+          "slug": "/projects/our-projects"
+        },
+        {
           "name": "Latest Launches",
           "slug": "/projects/latest-launches",
           "children": [
@@ -49,10 +53,6 @@
               "slug": "/projects/levels-business-tower"
             }
           ]
-        },
-        {
-          "name": "Our Projects",
-          "slug": "/projects/our-projects"
         }
       ]
     },

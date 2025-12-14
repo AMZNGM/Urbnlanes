@@ -1,50 +1,96 @@
 'use client'
 
-import { useState } from 'react'
+import { ChevronRight, Dot } from 'lucide-react'
 import Link from 'next/link'
+import { AnimatePresence, motion } from 'framer-motion'
 
-function DropdownItem({ child, closeParent }) {
-  if (child.children && child.children.length > 0) {
-    return (
-      <div className="relative group">
-        <button className="block px-4 py-2 hover:bg-main/50 transition-colors text-left w-full">{child.name}</button>
-        <div className="absolute top-full left-full bg-bg border border-text/25 shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-          {child.children.map((grandchild, index) => (
-            <DropdownItem key={index} child={grandchild} closeParent={closeParent} />
-          ))}
-        </div>
-      </div>
-    )
-  }
-
+export default function NavDropdown({ label, childrens, isActive, childOpen, setChildOpen }) {
   return (
-    <Link href={child.slug} className="block px-4 py-2 hover:bg-main/50 transition-colors" onClick={closeParent}>
-      {child.name}
-    </Link>
-  )
-}
+    <div aria-label="Dropdown" className="relative w-full h-full">
+      <button className="relative w-full h-full cursor-pointer">{label}</button>
 
-export default function NavDropdown({ label, items }) {
-  const [isOpen, setIsOpen] = useState(false)
+      <AnimatePresence>
+        {isActive && (
+          <motion.div
+            className="fixed left-0 right-0 bg-bg border-b border-text/25 shadow-lg"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+          >
+            <div className="max-w-7xl mx-auto space-y-8 py-8">
+              {childrens.map((child, index) => (
+                <div key={index} className="flex justify-between" onMouseEnter={() => setChildOpen(index)}>
+                  {child.children ? (
+                    <motion.h3
+                      className="group/name relative w-1/3 h-fit flex items-center text-lg font-semibold text-text/75 hover:text-text transition-colors cursor-pointer py-4"
+                      whileHover={{ x: 6 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    >
+                      <span className="text-xs text-text/75 group-hover/name:text-main transition-colors p-2">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen)
-  }
+                      {child.name}
 
-  const closeDropdown = () => {
-    setIsOpen(false)
-  }
+                      <motion.span
+                        className="ml-2"
+                        animate={{ rotate: childOpen === index ? 90 : 0 }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                      >
+                        <ChevronRight size={20} />
+                      </motion.span>
+                    </motion.h3>
+                  ) : (
+                    <motion.div whileHover={{ x: 6 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} className="w-1/3">
+                      <Link
+                        href={child.slug}
+                        className="group/name relative h-fit flex items-center text-lg font-semibold text-text/75 hover:text-text transition-colors cursor-pointer py-4"
+                      >
+                        <span className="text-xs text-text/75 group-hover/name:text-main transition-colors p-2">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        {child.name}
+                      </Link>
+                    </motion.div>
+                  )}
 
-  return (
-    <div className="relative w-full h-full">
-      <button onClick={toggleDropdown} className="relative w-full h-full flex justify-center items-center cursor-pointer text-nowrap">
-        {label}
-      </button>
-      {isOpen && (
-        <div className="absolute top-full left-0 bg-bg border border-text/25 shadow-lg z-50">
-          {items && items.map((child, index) => <DropdownItem key={index} child={child} closeParent={closeDropdown} />)}
-        </div>
-      )}
+                  <AnimatePresence mode="wait">
+                    {child.children && childOpen === index && (
+                      <motion.div
+                        key={index}
+                        className="w-2/3 flex flex-col gap-1"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        transition={{ duration: 0.25, ease: 'easeOut' }}
+                      >
+                        {child.children.map((grandchild, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 6 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                              duration: 0.2,
+                              delay: idx * 0.04,
+                              ease: 'easeOut',
+                            }}
+                          >
+                            <Link href={grandchild.slug} className="inline-flex py-4 text-text/75 hover:text-text transition-colors">
+                              <Dot />
+                              {grandchild.name}
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
