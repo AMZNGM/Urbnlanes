@@ -94,12 +94,7 @@
     },
     {
       "name": "Contact Us",
-      "children": [
-        {
-          "name": "Contact Us",
-          "slug": "/contact-us"
-        }
-      ]
+      "slug": "/contact-us"
     }
   ]
 }

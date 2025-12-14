@@ -36,8 +36,8 @@ export default function NavDropdown({ label, items }) {
   }
 
   return (
-    <div className="relative">
-      <button onClick={toggleDropdown} className="h-full flex justify-center items-center py-14">
+    <div className="relative w-full h-full">
+      <button onClick={toggleDropdown} className="relative w-full h-full flex justify-center items-center cursor-pointer text-nowrap">
         {label}
       </button>
       {isOpen && (
