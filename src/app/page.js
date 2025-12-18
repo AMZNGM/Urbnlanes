@@ -1,5 +1,5 @@
-import { metadataGenerators } from '@/lib/seo-helpers'
 import { Suspense } from 'react'
+import { metadataGenerators } from '@/lib/seo-helpers'
 import Hero from '@/components/Hero'
 
 export const metadata = metadataGenerators.home()

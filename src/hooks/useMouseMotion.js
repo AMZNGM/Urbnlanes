@@ -1,5 +1,5 @@
-import { useMotionValue, useSpring } from 'framer-motion'
 import { useEffect } from 'react'
+import { useMotionValue, useSpring } from 'framer-motion'
 
 export function useMouseMotion(ref, { springConfig } = {}) {
   const x = useMotionValue(0)

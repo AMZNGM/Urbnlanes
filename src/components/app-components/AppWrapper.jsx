@@ -1,3 +1,4 @@
+import { LanguageProvider } from '@/contexts/LanguageContext'
 // import ErrorBoundary from '@/components/app-components/ErrorBoundary'
 import Banner from '@/components/app-components/banner'
 import LocomotiveScrollSetup from '@/components/app-components/LocomotiveScrollSetup'
@@ -8,7 +9,7 @@ import Navbar from '@/components/nav-components/Navbar'
 
 export default function AppWrapper({ children }) {
   return (
-    <>
+    <LanguageProvider>
       {/* <ErrorBoundary> */}
       <Banner />
       <LocomotiveScrollSetup />
@@ -19,6 +20,6 @@ export default function AppWrapper({ children }) {
       {children}
       {/* <FooterWrapper /> */}
       {/* </ErrorBoundary> */}
-    </>
+    </LanguageProvider>
   )
 }

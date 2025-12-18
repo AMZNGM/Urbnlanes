@@ -1,3 +1,7 @@
+import { metadataGenerators } from '@/lib/seo-helpers'
+
+export const metadata = metadataGenerators.eastlane()
+
 export default function EastlanePage() {
   return (
     <div className="min-h-screen bg-gray-50">

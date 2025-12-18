@@ -1,8 +1,11 @@
 import Image from 'next/image'
+import { metadataGenerators } from '@/lib/seo-helpers'
 import { HomeIcon } from 'lucide-react'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import TextRoll from '@/components/ui/text/TextRoll'
 import bgImg from '../../public/images/CircularBuildingBG.webp'
+
+export const metadata = metadataGenerators.notFound()
 
 export default function NotFound() {
   return (

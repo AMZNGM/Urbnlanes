@@ -22,7 +22,6 @@
         },
         {
           "name": "Latest Launches",
-          "slug": "/projects/latest-launches",
           "children": [
             {
               "name": "Story Branded Residences",

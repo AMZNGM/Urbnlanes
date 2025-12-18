@@ -1,10 +1,16 @@
 'use client'
 
 import { useState } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function TextRoll({ children, className = '' }) {
+  const { selectedLanguage } = useLanguage()
   const [isHovering, setIsHovering] = useState(false)
   const letters = String(children).split('')
+
+  if (selectedLanguage === 'العربية') {
+    return <span className={className}>{children}</span>
+  }
 
   return (
     <span

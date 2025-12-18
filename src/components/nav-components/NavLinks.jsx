@@ -1,29 +1,18 @@
 'use client'
 
-import { useMemo, useState } from 'react'
-import { navigation } from '@/config/navigation.ui.json'
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import NavDropdown from '@/components/nav-components/NavDropdown'
 import Indicator from '@/components/ui/effects/Indicator'
 
-export default function NavLinks({ className = '' }) {
-  const links = useMemo(() => navigation.filter((link) => link.children?.length).sort((a, b) => a.order - b.order), [])
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeIndex, setActiveIndex] = useState(null)
-  const [childOpen, setChildOpen] = useState(null)
+export default function NavLinks({ navbarData, className = '' }) {
+  const { navigations, isMenuOpen, setIsMenuOpen, activeIndex, setActiveIndex, childOpen, setChildOpen, handleMouseLeave } = navbarData
 
   return (
     <nav
       aria-label="Primary navigation"
-      onMouseEnter={() => {
-        setIsMenuOpen(true)
-      }}
-      onMouseLeave={() => {
-        setIsMenuOpen(false)
-        setActiveIndex(null)
-        setChildOpen(null)
-      }}
+      onMouseEnter={() => setIsMenuOpen(true)}
+      onMouseLeave={handleMouseLeave}
       className={`relative w-full h-full ${className}`}
     >
       <motion.ul
@@ -39,7 +28,7 @@ export default function NavLinks({ className = '' }) {
           },
         }}
       >
-        {links.map((link, index) => (
+        {navigations.map((link, index) => (
           <motion.li
             key={index}
             onMouseEnter={() => {
@@ -48,7 +37,7 @@ export default function NavLinks({ className = '' }) {
             }}
             className="relative shrink-0 h-full"
             variants={{
-              hidden: { opacity: 0, y: -16 },
+              hidden: { opacity: 0, y: -32 },
               show: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.25, ease: 'easeOut' }}

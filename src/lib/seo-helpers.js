@@ -2,7 +2,7 @@ import { SEO } from '@/config/seo.config'
 
 /**
  * Creates a metadata generator function for a specific route
- * @param {string} route - The route path (e.g., '/about', '/projects/latest-launches')
+ * @param {string} route - The route path (e.g., '/about', '/projects/midlane')
  * @returns {Function} - A function that generates metadata for the given route
  */
 export function createMetadataGenerator(route) {
@@ -53,7 +53,6 @@ export function createMetadataGenerator(route) {
 export const metadataGenerators = {
   home: createMetadataGenerator('/'),
   about: createMetadataGenerator('/about'),
-  latestLaunches: createMetadataGenerator('/projects/latest-launches'),
   storyBrandedResidences: createMetadataGenerator('/projects/story-branded-residences'),
   noi: createMetadataGenerator('/projects/noi'),
   midlane: createMetadataGenerator('/projects/midlane'),
@@ -61,7 +60,7 @@ export const metadataGenerators = {
   yellowResidence: createMetadataGenerator('/projects/yellow-residence'),
   eastlane: createMetadataGenerator('/projects/eastlane'),
   levelsBusinessTower: createMetadataGenerator('/projects/levels-business-tower'),
-  ourProjects: createMetadataGenerator('/projects/our-projects'),
+  ourProjects: createMetadataGenerator('/our-projects'),
   mediaCenterNews: createMetadataGenerator('/media-center-news'),
   partnersAssociates: createMetadataGenerator('/partners-associates'),
   constructionUpdates: createMetadataGenerator('/construction-updates'),
@@ -70,4 +69,6 @@ export const metadataGenerators = {
   cookiePolicy: createMetadataGenerator('/cookie-policy'),
   privacyPolicy: createMetadataGenerator('/privacy-policy'),
   termsOfUse: createMetadataGenerator('/terms-of-use'),
+  getInTouch: createMetadataGenerator('/get-in-touch'),
+  notFound: createMetadataGenerator('/*'),
 }

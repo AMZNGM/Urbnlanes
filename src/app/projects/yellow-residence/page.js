@@ -1,3 +1,7 @@
+import { metadataGenerators } from '@/lib/seo-helpers'
+
+export const metadata = metadataGenerators.yellowResidence()
+
 export default function YellowResidencePage() {
   return (
     <div className="min-h-screen bg-gray-50">

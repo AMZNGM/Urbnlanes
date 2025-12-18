@@ -3,6 +3,7 @@
 import { ChevronRight, Dot } from 'lucide-react'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
+import RippleEffect from '../ui/effects/RippleEffect'
 
 export default function NavDropdown({ label, childrens, isActive, childOpen, setChildOpen }) {
   return (
@@ -42,17 +43,16 @@ export default function NavDropdown({ label, childrens, isActive, childOpen, set
                       </motion.span>
                     </motion.h3>
                   ) : (
-                    <motion.div whileHover={{ x: 6 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} className="w-1/3">
-                      <Link
-                        href={child.slug}
-                        className="group/name relative h-fit flex items-center text-lg font-semibold text-text/75 hover:text-text transition-colors cursor-pointer py-4"
-                      >
-                        <span className="text-xs text-text/75 group-hover/name:text-main transition-colors p-2">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                        {child.name}
-                      </Link>
-                    </motion.div>
+                    <RippleEffect className="group/name w-full hover:text-text transition-colors cursor-pointer">
+                      <motion.div whileHover={{ x: 6 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
+                        <Link href={child.slug} className="relative h-fit flex items-center text-lg font-semibold text-text/75 py-4">
+                          <span className="text-xs text-text/75 group-hover/name:text-main transition-colors p-2">
+                            {String(index + 1).padStart(2, '0')}
+                          </span>
+                          {child.name}
+                        </Link>
+                      </motion.div>
+                    </RippleEffect>
                   )}
 
                   <AnimatePresence mode="wait">
@@ -76,10 +76,12 @@ export default function NavDropdown({ label, childrens, isActive, childOpen, set
                               ease: 'easeOut',
                             }}
                           >
-                            <Link href={grandchild.slug} className="inline-flex py-4 text-text/75 hover:text-text transition-colors">
-                              <Dot />
-                              {grandchild.name}
-                            </Link>
+                            <RippleEffect className="w-full inline-flex py-4 text-text/75 hover:text-main transition-colors cursor-pointer">
+                              <Link href={grandchild.slug} className="w-full inline-flex">
+                                <Dot />
+                                {grandchild.name}
+                              </Link>
+                            </RippleEffect>
                           </motion.div>
                         ))}
                       </motion.div>

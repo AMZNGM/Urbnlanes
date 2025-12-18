@@ -65,7 +65,6 @@ export const metadata = createMetadataGenerator('/your-custom-route')()
 
 ### Project Pages
 
-- `metadataGenerators.latestLaunches` - for `/projects/latest-launches`
 - `metadataGenerators.storyBrandedResidences` - for `/projects/story-branded-residences`
 - `metadataGenerators.noi` - for `/projects/noi`
 - `metadataGenerators.midlane` - for `/projects/midlane`

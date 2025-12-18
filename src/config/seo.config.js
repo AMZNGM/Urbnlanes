@@ -35,13 +35,6 @@ export const SEO = {
     keywords: ['about', 'company', 'urbnlanes', 'real estate development', 'diversity', 'middle east'],
   },
 
-  '/projects/latest-launches': {
-    title: 'Urbnlanes Latest Launches - Discover your dream home',
-    description:
-      'Discover the latest launches by Urbnlanes, a real estate development company building masterpieces across the Middle East.',
-    keywords: ['urbnlanes', 'latest launches', 'real estate', 'urban living', 'middle east', 'real estate development', 'projects'],
-  },
-
   '/projects/story-branded-residences': {
     title: 'Story Branded Residences - A luxurious urban living experience',
     description:
@@ -128,5 +121,47 @@ export const SEO = {
     title: 'Urbnlanes Contact Us - Get in touch with us',
     description: 'Get in touch with us at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
     keywords: ['urbnlanes', 'contact', 'real estate', 'urban living', 'middle east', 'real estate development'],
+  },
+
+  '/cookie-policy': {
+    title: 'Urbnlanes Cookie Policy - Our policy on cookies',
+    description: 'Our policy on cookies at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
+    keywords: ['urbnlanes', 'cookie policy', 'real estate', 'urban living', 'middle east', 'real estate development'],
+  },
+
+  '/privacy-policy': {
+    title: 'Urbnlanes Privacy Policy - Our policy on privacy',
+    description: 'Our policy on privacy at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
+    keywords: ['privacy', 'policy', 'real estate', 'middle east'],
+  },
+
+  '/terms-of-use': {
+    title: 'Urbnlanes Terms of Use - Website terms and conditions',
+    description:
+      'The terms and conditions for using the Urbnlanes website, a real estate development company building masterpieces across the Middle East.',
+    keywords: ['terms', 'conditions', 'real estate', 'middle east'],
+  },
+
+  '/get-in-touch': {
+    title: 'Get in Touch with Urbnlanes - Connect with our team',
+    description:
+      'Reach out to Urbnlanes for inquiries, collaborations, or more information about our real estate projects and urban living experiences across the Middle East.',
+    keywords: [
+      'urbnlanes',
+      'get in touch',
+      'contact',
+      'inquiries',
+      'collaborations',
+      'real estate',
+      'urban living',
+      'middle east',
+      'real estate development',
+    ],
+  },
+
+  '*': {
+    title: 'Urbnlanes - Not found page',
+    description: 'Sorry, the page you are looking for does not exist. Please check the URL and try again.',
+    keywords: ['urbnlanes', 'not found', 'page not found', 'error'],
   },
 }

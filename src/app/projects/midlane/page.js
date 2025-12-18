@@ -1,3 +1,7 @@
+import { metadataGenerators } from '@/lib/seo-helpers'
+
+export const metadata = metadataGenerators.midlane()
+
 export default function MidlanePage() {
   return (
     <div className="min-h-screen bg-gray-50">
