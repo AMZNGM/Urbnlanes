@@ -33,24 +33,24 @@ export const useNavbar = (languageContext) => {
   const isClient = typeof window !== 'undefined'
 
   // 1. Scroll visibility: hide on scroll down, show on scroll up
-  useEffect(() => {
-    const unsubscribe = scrollY.on('change', (currentScrollY) => {
-      if (mobileMenuOpen) {
-        setIsVisible(true)
-        return
-      }
+  // useEffect(() => {
+  //   const unsubscribe = scrollY.on('change', (currentScrollY) => {
+  //     if (mobileMenuOpen) {
+  //       setIsVisible(true)
+  //       return
+  //     }
 
-      const threshold = 100
-      if (currentScrollY < 10) {
-        setIsVisible(true)
-      } else if (currentScrollY > threshold) {
-        setIsVisible(currentScrollY < lastScrollYRef.current)
-      }
+  //     const threshold = 100
+  //     if (currentScrollY < 10) {
+  //       setIsVisible(true)
+  //     } else if (currentScrollY > threshold) {
+  //       setIsVisible(currentScrollY < lastScrollYRef.current)
+  //     }
 
-      lastScrollYRef.current = currentScrollY
-    })
-    return () => unsubscribe()
-  }, [scrollY, mobileMenuOpen])
+  //     lastScrollYRef.current = currentScrollY
+  //   })
+  //   return () => unsubscribe()
+  // }, [scrollY, mobileMenuOpen])
 
   // 2. Auto-focus search input when search bar opens
   useEffect(() => {
