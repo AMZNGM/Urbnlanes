@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { gsap } from '@/utils/gsapConfig'
 import { TriangleAlert } from 'lucide-react'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 
@@ -27,24 +26,6 @@ export default class ErrorBoundary extends React.Component {
   componentDidUpdate() {
     if (!this.state.hasError) return
     if (typeof window === 'undefined') return
-
-    gsap.fromTo(this.containerRef.current, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out' })
-
-    gsap.fromTo(
-      this.iconRef.current,
-      { opacity: 0.7, scale: 0.9 },
-      {
-        opacity: 1,
-        scale: 1,
-        repeat: -1,
-        yoyo: true,
-        duration: 1,
-        ease: 'power1.inOut',
-        delay: 0.2,
-      }
-    )
-
-    gsap.fromTo(this.h1Ref.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out', delay: 0.3 })
   }
 
   render() {
