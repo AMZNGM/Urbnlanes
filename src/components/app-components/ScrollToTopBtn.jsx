@@ -12,7 +12,7 @@ export default function ScrollToTopBtn() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: 'spring', duration: 0.2, stiffness: 100 }}
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className="group w-10 h-10 fixed bottom-4 right-4 flex justify-center items-center rounded-full shadow-lg bg-bg text-main hover:text-bg hover:bg-main transition-colors duration-300 cursor-pointer z-50"
+      className="group w-10 h-10 fixed bottom-4 right-4 flex justify-center items-center rounded-full shadow-lg bg-bg text-main hover:text-bg hover:bg-main transition-colors duration-300 cursor-pointer z-40"
     >
       <ChevronUp size={20} />
 
