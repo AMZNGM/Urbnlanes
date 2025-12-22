@@ -1,14 +1,14 @@
 'use client'
 
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CookieContext } from '@/contexts/CookieContext'
+import MainBtn from '@/components/ui/buttons/MainBtn'
 
 export default function CookieBanner() {
   const { consent, acceptAll, acceptOnlyNecessary, initialized } = useContext(CookieContext)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    // show banner if not initialized or user hasn't explicitly chosen non-default
     if (!initialized) return
     const needsConsent = consent && !consent.analytics && !consent.marketing
     setVisible(needsConsent)
@@ -21,9 +21,9 @@ export default function CookieBanner() {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie consent banner"
-      className="fixed bottom-6 left-6 right-6 z-50 rounded-lg bg-white/95 p-4 shadow-lg text-sm text-black"
+      className="fixed bottom-6 left-6 right-6 max-w-7xl mx-auto rounded-lg bg-main/75 text-sm shadow-lg text-black p-4 z-50"
     >
-      <div className="flex items-start justify-between gap-4">
+      <div className="h-full flex max-md:flex-col justify-between gap-4">
         <div>
           <strong className="block">We use cookies</strong>
           <p className="mt-1">
@@ -32,26 +32,28 @@ export default function CookieBanner() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-2">
-          <button
-            className="rounded bg-main px-3 py-2 text-white"
+        <div className="h-full flex md:flex-col justify-center items-center gap-2">
+          <MainBtn
             onClick={() => {
               acceptAll()
               setVisible(false)
             }}
+            size="sm"
+            className="text-nowrap"
           >
             Accept all
-          </button>
+          </MainBtn>
 
-          <button
-            className="rounded border px-3 py-2"
+          <MainBtn
             onClick={() => {
               acceptOnlyNecessary()
               setVisible(false)
             }}
+            size="sm"
+            className="text-nowrap"
           >
             Only necessary
-          </button>
+          </MainBtn>
         </div>
       </div>
     </div>

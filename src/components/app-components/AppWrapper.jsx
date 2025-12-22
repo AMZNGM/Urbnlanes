@@ -22,7 +22,7 @@ export default function AppWrapper({ children }) {
           {/* <CustomCursor /> */}
           <Navbar />
           {children}
-          {/* <CookieBanner /> */}
+          <CookieBanner />
           {/* <CookieSidebar /> */}
           {/* <FooterWrapper /> */}
         </ErrorBoundary>
