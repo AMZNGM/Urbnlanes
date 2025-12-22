@@ -209,9 +209,12 @@ export default function CookieSidebar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: 'spring', duration: 0.2, stiffness: 100 }}
         onClick={toggle}
-        className="w-10 h-10 fixed bottom-4 left-4 flex justify-center items-center rounded-full shadow-lg bg-bg text-main hover:text-bg hover:bg-main transition-colors cursor-pointer z-50"
+        className="group w-10 h-10 fixed bottom-4 left-4 flex justify-center items-center rounded-full shadow-lg bg-bg text-main hover:text-bg hover:bg-main transition-colors duration-300 cursor-pointer z-50"
       >
         <Settings />
+        <span className="absolute bottom-2.5 left-12 bg-main text-bg text-sm rounded-full text-nowrap px-2 opacity-0 group-hover:opacity-75 translate-x-1 group-hover:translate-x-0 transition-all duration-300">
+          Cookies Settings
+        </span>
       </motion.button>
 
       {open && (
@@ -231,14 +234,14 @@ export default function CookieSidebar() {
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
-            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+            transition={{ type: 'spring', stiffness: 150, damping: 20, duration: 0.4, ease: 'easeInOut' }}
             onClick={(e) => e.stopPropagation()}
             className="absolute left-0 top-0 h-full max-w-md bg-bg shadow-2xl flex flex-col z-50"
           >
             <header className="flex justify-between items-center px-5 py-4 border-b border-text/10">
               <div className="flex items-center gap-2">
                 <Settings size={20} className="text-main" />
-                <h3 className="text-xl font-semibold">Privacy Preferences Center</h3>
+                <h3 className="text-xl max-md:text-base font-semibold">Privacy Preferences Center</h3>
               </div>
               <CloseBtn onClick={() => setOpen(false)} className="top-2!" />
             </header>
@@ -263,16 +266,18 @@ export default function CookieSidebar() {
             </div>
 
             <footer className="border-t border-text/10 p-4">
-              <div className="flex gap-2">
+              <div className="flex max-md:flex-col justify-center gap-2">
                 <MainBtn onClick={handleSave} size="sm" className="bg-main hover:bg-main/75 text-nowrap">
                   Save preferences
                 </MainBtn>
-                <MainBtn onClick={handleAcceptAll} size="sm" className="bg-main hover:bg-main/75 text-nowrap">
-                  Accept all
-                </MainBtn>
-                <MainBtn onClick={handleRejectAll} size="sm" className="bg-main hover:bg-main/75 text-nowrap">
-                  Reject all
-                </MainBtn>
+                <div className="flex gap-2">
+                  <MainBtn onClick={handleAcceptAll} size="sm" className="bg-main hover:bg-main/75 text-nowrap">
+                    Accept all
+                  </MainBtn>
+                  <MainBtn onClick={handleRejectAll} size="sm" className="bg-main hover:bg-main/75 text-nowrap">
+                    Reject all
+                  </MainBtn>
+                </div>
               </div>
             </footer>
           </motion.aside>
