@@ -1,6 +1,6 @@
 import { CookieProvider } from '@/contexts/CookieContext'
 import { LanguageProvider } from '@/contexts/LanguageContext'
-// import ErrorBoundary from '@/components/app-components/ErrorBoundary'
+import ErrorBoundary from '@/components/app-components/ErrorBoundary'
 import Banner from '@/components/app-components/banner'
 import LocomotiveScrollSetup from '@/components/app-components/LocomotiveScrollSetup'
 import LoadingScreen from '@/components/app-components/LoadingScreen'
@@ -14,18 +14,18 @@ export default function AppWrapper({ children }) {
   return (
     <CookieProvider>
       <LanguageProvider>
-        {/* <ErrorBoundary> */}
-        <Banner />
-        <LocomotiveScrollSetup />
-        {/* <LoadingScreen /> */}
-        {/* <ScrollToTop /> */}
-        {/* <CustomCursor /> */}
-        <Navbar />
-        {children}
-        {/* <CookieBanner /> */}
-        {/* <CookieSidebar /> */}
-        {/* <FooterWrapper /> */}
-        {/* </ErrorBoundary> */}
+        <ErrorBoundary>
+          <Banner />
+          <LocomotiveScrollSetup />
+          {/* <LoadingScreen /> */}
+          {/* <ScrollToTop /> */}
+          {/* <CustomCursor /> */}
+          <Navbar />
+          {children}
+          {/* <CookieBanner /> */}
+          {/* <CookieSidebar /> */}
+          {/* <FooterWrapper /> */}
+        </ErrorBoundary>
       </LanguageProvider>
     </CookieProvider>
   )
