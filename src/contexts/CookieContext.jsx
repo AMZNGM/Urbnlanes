@@ -24,7 +24,6 @@ export function CookieProvider({ children, onConsentChange } = {}) {
         setConsent((prev) => ({ ...prev, ...saved }))
       }
     } catch (e) {
-      // ignore parse errors
     } finally {
       setInitialized(true)
     }
@@ -39,7 +38,6 @@ export function CookieProvider({ children, onConsentChange } = {}) {
   )
 
   const setJSONConsent = (nextConsent) => {
-    // persist for 1 year, secure in production
     setJSONCookie(COOKIE_NAME, nextConsent, {
       expiresDays: 365,
       secure: typeof window !== 'undefined' && location.protocol === 'https:',
@@ -50,12 +48,6 @@ export function CookieProvider({ children, onConsentChange } = {}) {
 
   const acceptAll = useCallback(() => {
     const next = { necessary: true, analytics: true, marketing: true, preferences: true }
-    setConsent(next)
-    persistConsent(next)
-  }, [persistConsent])
-
-  const acceptOnlyNecessary = useCallback(() => {
-    const next = { ...DEFAULT_CONSENT }
     setConsent(next)
     persistConsent(next)
   }, [persistConsent])
@@ -71,10 +63,7 @@ export function CookieProvider({ children, onConsentChange } = {}) {
     [persistConsent]
   )
 
-  const value = useMemo(
-    () => ({ consent, setCategory, acceptAll, acceptOnlyNecessary, initialized }),
-    [consent, setCategory, acceptAll, acceptOnlyNecessary, initialized]
-  )
+  const value = useMemo(() => ({ consent, setCategory, acceptAll, initialized }), [consent, setCategory, acceptAll, initialized])
 
   return <CookieContext.Provider value={value}>{children}</CookieContext.Provider>
 }

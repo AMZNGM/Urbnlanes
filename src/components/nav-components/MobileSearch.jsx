@@ -18,7 +18,7 @@ export default function MobileSearch({ navbarData }) {
   return (
     <>
       <div className="relative w-full h-34 max-sm:h-24 border-b border-text/15 flex justify-between items-center">
-        <div className="w-full h-full flex items-center cursor-pointer gap-6 ps-4 hover:bg-text/15 transition-colors">
+        <div className="w-full h-full flex items-center cursor-pointer gap-4 ps-6 hover:bg-text/15 transition-colors">
           <SearchIcon size={20} />
           <input
             type="text"
