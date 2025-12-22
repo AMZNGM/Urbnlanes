@@ -101,6 +101,12 @@ export default function CookieSidebar() {
     return () => document.removeEventListener('keydown', onKey)
   }, [open])
 
+  useEffect(() => {
+    const handleOpenSidebar = () => setOpen(true)
+    window.addEventListener('openCookieSidebar', handleOpenSidebar)
+    return () => window.removeEventListener('openCookieSidebar', handleOpenSidebar)
+  }, [])
+
   const toggle = () => setOpen((v) => !v)
 
   const handleSave = async () => {
@@ -108,6 +114,7 @@ export default function CookieSidebar() {
       setCategory('analytics', local.analytics)
       setCategory('marketing', local.marketing)
       setCategory('preferences', local.preferences)
+      setCategory('consentDate', new Date().toISOString())
       setOpen(false)
       buttonRef.current?.focus()
     } catch (error) {
