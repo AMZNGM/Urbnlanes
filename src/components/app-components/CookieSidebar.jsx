@@ -219,6 +219,7 @@ export default function CookieSidebar() {
 
       {open && (
         <motion.div
+          dir="ltr"
           key="cookie-sidebar-backdrop"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

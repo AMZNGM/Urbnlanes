@@ -2,10 +2,14 @@
 
 import { motion } from 'framer-motion'
 import { useMouseMotion } from '@/hooks/useMouseMotion'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 export default function CustomCursor() {
   const { x, y } = useMouseMotion({ current: null }, { springConfig: { stiffness: 150, damping: 20 } })
   const { x: x2, y: y2 } = useMouseMotion({ current: null }, { springConfig: { stiffness: 300, damping: 40 } })
+
+  const isMobile = useIsMobile()
+  if (isMobile) return
 
   return (
     <div className="flex justify-center items-center">
