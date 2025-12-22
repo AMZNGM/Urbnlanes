@@ -18,10 +18,10 @@ export default memo(function MainBtn({
   ...rest
 }) {
   const baseStyles =
-    'inline-flex items-center justify-center gap-2 font-medium uppercase border transition-colors duration-200 outline-none'
+    'inline-flex items-center justify-center gap-2 font-medium uppercase border rounded-full transition-colors duration-200 outline-none'
 
   const variants = {
-    main: 'bg-main text-white border-main hover:bg-main/90',
+    main: 'bg-main text-bg border-main hover:bg-main/75',
     outline: 'bg-transparent text-main border-main hover:bg-main hover:text-white',
     ghost: 'bg-transparent text-main border-transparent hover:bg-main/10',
   }

@@ -2,7 +2,6 @@ import Image from 'next/image'
 import { metadataGenerators } from '@/lib/seo-helpers'
 import { HomeIcon } from 'lucide-react'
 import MainBtn from '@/components/ui/buttons/MainBtn'
-import TextRoll from '@/components/ui/text/TextRoll'
 import bgImg from '../../public/images/CircularBuildingBG.webp'
 
 export const metadata = metadataGenerators.notFound()
@@ -25,7 +24,7 @@ export default function NotFound() {
           <h3 className="text-3xl font-medium text-main">It seems you have reached a page that does not exist.</h3>
           <p className="text-lg font-normal">Either the page is not available, or the address (URL) you have entered is incorrect.</p>
           <MainBtn to={'/'} variant="ghost">
-            <TextRoll>Go Back Home</TextRoll>
+            <span>Go Back Home</span>
             <HomeIcon className="size-5" />
           </MainBtn>
         </section>

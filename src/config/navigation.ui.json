@@ -1,54 +1,54 @@
 {
   "navigation": [
     {
-      "name": "Home",
+      "name": "nav.home",
       "slug": "/"
     },
     {
-      "name": "About",
+      "name": "nav.about",
       "children": [
         {
-          "name": "About",
+          "name": "nav.about",
           "slug": "/about"
         }
       ]
     },
     {
-      "name": "Projects",
+      "name": "nav.projects",
       "children": [
         {
-          "name": "Our Projects",
+          "name": "nav.ourProjects",
           "slug": "/projects/our-projects"
         },
         {
-          "name": "Latest Launches",
+          "name": "nav.latestLaunches",
           "children": [
             {
-              "name": "Story Branded Residences",
+              "name": "nav.storyBrandedResidences",
               "slug": "/projects/story-branded-residences"
             },
             {
-              "name": "NOI",
+              "name": "nav.noi",
               "slug": "/projects/noi"
             },
             {
-              "name": "Midlane",
+              "name": "nav.midlane",
               "slug": "/projects/midlane"
             },
             {
-              "name": "Yellow Lane",
+              "name": "nav.yellowLane",
               "slug": "/projects/yellow-lane"
             },
             {
-              "name": "Yellow Residence",
+              "name": "nav.yellowResidence",
               "slug": "/projects/yellow-residence"
             },
             {
-              "name": "Eastlane",
+              "name": "nav.eastlane",
               "slug": "/projects/eastlane"
             },
             {
-              "name": "Levels Business Tower",
+              "name": "nav.levelsBusinessTower",
               "slug": "/projects/levels-business-tower"
             }
           ]
@@ -56,43 +56,43 @@
       ]
     },
     {
-      "name": "Media Center & News",
+      "name": "nav.mediaCenterNews",
       "children": [
         {
-          "name": "Media Center & News",
+          "name": "nav.mediaCenterNews",
           "slug": "/media-center-news"
         }
       ]
     },
     {
-      "name": "Partners & Associates",
+      "name": "nav.partnersAssociates",
       "children": [
         {
-          "name": "Partners & Associates",
+          "name": "nav.partnersAssociates",
           "slug": "/partners-associates"
         }
       ]
     },
     {
-      "name": "Construction Updates",
+      "name": "nav.constructionUpdates",
       "children": [
         {
-          "name": "Construction Updates",
+          "name": "nav.constructionUpdates",
           "slug": "/construction-updates"
         }
       ]
     },
     {
-      "name": "Careers",
+      "name": "nav.careers",
       "children": [
         {
-          "name": "Careers",
+          "name": "nav.careers",
           "slug": "/careers"
         }
       ]
     },
     {
-      "name": "Contact Us",
+      "name": "nav.contact",
       "slug": "/contact-us"
     }
   ]

@@ -17,6 +17,7 @@ export default function Indicator({ children, className = '' }) {
         hover:after:opacity-100
         hover:after:scale-x-100
         after:transform-origin-left
+        after:z-50
         ${className}
       `}
     >

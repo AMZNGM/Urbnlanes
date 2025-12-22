@@ -1,26 +1,34 @@
 import { ChevronDown, GlobeIcon } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export default function MobileLanguageSelector({ navbarData }) {
   const { selectedLanguage, handleLanguageChange, languageSelectorOpen, setLanguageSelectorOpen, languages = [] } = navbarData
+  const [isClient, setIsClient] = useState(false)
+  const [displayLanguage, setDisplayLanguage] = useState('English')
+
+  useEffect(() => {
+    setIsClient(true)
+    setDisplayLanguage(selectedLanguage)
+  }, [selectedLanguage])
 
   if (!languages.length) return null
 
   return (
-    <div className="w-full absolute bottom-0 max-sm:bottom-16 left-0 bg-bg/20 border-t border-text/15 backdrop-blur-sm">
+    <div className="absolute bottom-0 w-full border-t border-text/15">
       <button
         type="button"
         onClick={() => setLanguageSelectorOpen(!languageSelectorOpen)}
-        className="w-full flex justify-between items-center hover:bg-text/5 cursor-pointer select-none duration-300 py-8 px-6"
+        className="w-full flex justify-between items-center hover:bg-text/5 cursor-pointer select-none uppercase transition-colors py-6 px-4"
       >
         <div className="w-full flex items-center gap-6 font-medium">
-          <GlobeIcon strokeWidth={1.8} className="size-5 text-text/60" />
-          {selectedLanguage}
+          <GlobeIcon size={20} className="size-5 text-text/60" />
+          {isClient ? displayLanguage : 'English'}
         </div>
-        <ChevronDown strokeWidth={1.5} className={`size-7 duration-300 transition-transform ${languageSelectorOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown size={20} className={`duration-300 ${languageSelectorOpen ? 'rotate-180' : ''}`} />
       </button>
 
       <div
-        className={`absolute bottom-full left-0 right-0 bg-bg/20 backdrop-blur-xl border border-text/10 rounded-sm shadow-2xl overflow-hidden mb-2 mx-4 transition-all duration-300 ${
+        className={`absolute bottom-full w-full border border-text/10 transition-all flex justify-center items-center my-2 ${
           languageSelectorOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
         }`}
       >
@@ -31,8 +39,8 @@ export default function MobileLanguageSelector({ navbarData }) {
               handleLanguageChange(language)
               setLanguageSelectorOpen(false)
             }}
-            className={`relative w-full text-left hover:bg-text/10 cursor-pointer duration-200 px-4 py-3 ${
-              selectedLanguage === language.name ? 'text-main bg-main/10' : 'text-text/70 hover:text-text'
+            className={`relative w-full text-left hover:bg-text/10 cursor-pointer transition-colors uppercase px-4 py-3 ${
+              isClient && selectedLanguage === language.name ? 'text-main bg-main/10' : 'text-text/70 hover:text-text'
             }`}
           >
             {language.name}

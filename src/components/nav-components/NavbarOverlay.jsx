@@ -1,21 +1,38 @@
-export default function NavbarOverlay({ activeMenuIndex, setActiveMenuIndex, mobileMenuOpen, setMobileMenuOpen }) {
+export default function NavbarOverlay({ navbarData }) {
+  const {
+    isMenuOpen,
+    setIsMenuOpen,
+    showSearch,
+    setShowSearch,
+    mobileMenuOpen,
+    setMobileMenuOpen,
+    languageSelectorOpen,
+    setLanguageSelectorOpen,
+  } = navbarData
+
   const handleClick = () => {
-    if (activeMenuIndex !== null) {
-      setActiveMenuIndex(null)
+    if (isMenuOpen) {
+      setIsMenuOpen(false)
     }
     if (mobileMenuOpen) {
       setMobileMenuOpen(false)
     }
+    if (showSearch) {
+      setShowSearch(false)
+    }
+    if (languageSelectorOpen) {
+      setLanguageSelectorOpen(false)
+    }
   }
 
-  const isVisible = activeMenuIndex !== null || mobileMenuOpen
+  const showOverlay = isMenuOpen || mobileMenuOpen || showSearch || languageSelectorOpen
 
   return (
     <div
       onClick={handleClick}
-      className={`fixed inset-0 top-full h-[200vh] bg-bg/75 backdrop-blur-sm duration-500 z-40 ${
-        isVisible ? 'opacity-80' : 'opacity-0 pointer-events-none'
-      }`}
+      className={`fixed inset-0 2xl:top-full w-screen h-screen bg-black/75 backdrop-blur-2xl duration-200 z-10
+        ${showOverlay ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+      `}
     />
   )
 }

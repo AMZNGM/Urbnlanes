@@ -1,6 +1,32 @@
 export const TRANSLATIONS = {
   en: {
-    // Common
+    nav: {
+      home: 'Home',
+      about: 'About',
+      projects: 'Projects',
+      contact: 'Contact Us',
+      getInTouch: 'Get In Touch',
+      menu: 'Menu',
+      search: 'Search',
+      mediaCenterNews: 'Media Center & News',
+      partnersAssociates: 'Partners & Associates',
+      constructionUpdates: 'Construction Updates',
+      careers: 'Careers',
+      ourProjects: 'Our Projects',
+      latestLaunches: 'Latest Launches',
+      storyBrandedResidences: 'Story Branded Residences',
+      noi: 'NOI',
+      midlane: 'Midlane',
+      yellowLane: 'Yellow Lane',
+      yellowResidence: 'Yellow Residence',
+      eastlane: 'Eastlane',
+      levelsBusinessTower: 'Levels Business Tower',
+    },
+    footer: {
+      copyright: 'All rights reserved',
+      followUs: 'Follow Us',
+    },
+
     common: {
       search: 'Search',
       close: 'Close',
@@ -12,30 +38,42 @@ export const TRANSLATIONS = {
       error: 'Error',
       success: 'Success',
     },
-    // Navigation
-    nav: {
-      home: 'Home',
-      about: 'About',
-      projects: 'Projects',
-      contact: 'Contact',
-      getInTouch: 'Get In Touch',
-      menu: 'Menu',
-      search: 'Search',
-    },
-    // Search
+
     search: {
       placeholder: 'Search...',
       noResults: 'No results found',
       searching: 'Searching...',
     },
-    // Footer
-    footer: {
-      copyright: 'All rights reserved',
-      followUs: 'Follow Us',
-    },
   },
+
   ar: {
-    // Common
+    nav: {
+      home: 'الرئيسية',
+      about: 'من نحن',
+      projects: 'المشاريع',
+      contact: 'اتصل بنا',
+      getInTouch: 'تواصل معنا',
+      menu: 'القائمة',
+      search: 'بحث',
+      mediaCenterNews: 'مركز الإعلام والأخبار',
+      partnersAssociates: 'الشركاء',
+      constructionUpdates: 'تحديثات البناء',
+      careers: 'الوظائف',
+      ourProjects: 'مشاريعنا',
+      latestLaunches: 'أحدث المشاريع',
+      storyBrandedResidences: 'Story Branded Residences',
+      noi: 'NOI',
+      midlane: 'Midlane',
+      yellowLane: 'Yellow Lane',
+      yellowResidence: 'Yellow Residence',
+      eastlane: 'Eastlane',
+      levelsBusinessTower: 'Levels Business Tower',
+    },
+    footer: {
+      copyright: 'جميع الحقوق محفوظة',
+      followUs: 'تابعنا',
+    },
+
     common: {
       search: 'بحث',
       close: 'إغلاق',
@@ -47,26 +85,11 @@ export const TRANSLATIONS = {
       error: 'خطأ',
       success: 'نجح',
     },
-    // Navigation
-    nav: {
-      home: 'الرئيسية',
-      about: 'من نحن',
-      projects: 'المشاريع',
-      contact: 'اتصل بنا',
-      getInTouch: 'تواصل معنا',
-      menu: 'القائمة',
-      search: 'بحث',
-    },
-    // Search
+
     search: {
       placeholder: 'بحث...',
       noResults: 'لا توجد نتائج',
       searching: 'جاري البحث...',
-    },
-    // Footer
-    footer: {
-      copyright: 'جميع الحقوق محفوظة',
-      followUs: 'تابعنا',
     },
   },
 }

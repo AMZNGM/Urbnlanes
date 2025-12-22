@@ -1,18 +1,15 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
-import { useScroll } from 'framer-motion'
 import { useScrollPosition } from '@/hooks/useScrollPosition'
 import { navigation } from '@/config/navigation.ui.json'
 
 export const useNavbar = (languageContext) => {
   const router = useRouter()
-  const { scrollY } = useScroll()
   const navigations = useMemo(() => navigation.filter((link) => link.children?.length).sort((a, b) => a.order - b.order), [])
 
   const isScrolled20vh = useScrollPosition(0.2)
   const isScrolled100vh = useScrollPosition(1)
   const [isVisible, setIsVisible] = useState(true)
-  const lastScrollYRef = useRef(0)
 
   const [searchQuery, setSearchQuery] = useState('')
   const [showSearch, setShowSearch] = useState(false)
@@ -28,29 +25,13 @@ export const useNavbar = (languageContext) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(null)
   const [childOpen, setChildOpen] = useState(null)
+  const [isClient, setIsClient] = useState(false)
 
   const { languages, selectedLanguage, handleLanguageChange } = languageContext || {}
-  const isClient = typeof window !== 'undefined'
 
-  // 1. Scroll visibility: hide on scroll down, show on scroll up
-  // useEffect(() => {
-  //   const unsubscribe = scrollY.on('change', (currentScrollY) => {
-  //     if (mobileMenuOpen) {
-  //       setIsVisible(true)
-  //       return
-  //     }
-
-  //     const threshold = 100
-  //     if (currentScrollY < 10) {
-  //       setIsVisible(true)
-  //     } else if (currentScrollY > threshold) {
-  //       setIsVisible(currentScrollY < lastScrollYRef.current)
-  //     }
-
-  //     lastScrollYRef.current = currentScrollY
-  //   })
-  //   return () => unsubscribe()
-  // }, [scrollY, mobileMenuOpen])
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   // 2. Auto-focus search input when search bar opens
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export default function MenuBtn({ navbarData, className }) {
+export default function MenuBtn({ navbarData, className = '' }) {
   const { mobileMenuOpen, setMobileMenuOpen, resetSidebar } = navbarData
 
   return (

@@ -1,38 +1,32 @@
+import { motion } from 'motion/react'
 import MobileSearch from '@/components/nav-components/MobileSearch'
 import MobileMenuLinks from '@/components/nav-components/MobileMenuLinks'
 import MobileDropdown from '@/components/nav-components/MobileDropdown'
 import MobileLanguageSelector from '@/components/nav-components/MobileLanguageselector'
 
 export default function SideNavnar({ className = '', navbarData }) {
-  const {
-    searchQuery,
-    setSearchQuery,
-    handleSearch,
-    isLoading,
-    setIsLoading,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-    resetSidebar,
-    selectedLanguage,
-    languageSelectorOpen,
-    setLanguageSelectorOpen,
-    handleLanguageChange,
-    languages,
-    visibleLabel,
-    setVisibleLabel,
-    navigations,
-  } = navbarData
+  const { mobileMenuOpen, visibleLabel } = navbarData
+
   return (
-    <aside
+    <motion.aside
       onClick={(e) => e.stopPropagation()}
-      className={`fixed top-0 right-0 w-full h-screen max-w-[calc(100%-3.5rem)] sm:max-w-md bg-bg/97 backdrop-blur-xl overflow-hidden duration-500 ease-in-out touch-none z-50 ${className} ${
-        mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}
+      initial={{ opacity: 0, x: '100%' }}
+      animate={{
+        opacity: mobileMenuOpen ? 1 : 0,
+        x: mobileMenuOpen
+          ? 0
+          : typeof window !== 'undefined' && window.getComputedStyle(document.documentElement).direction === 'rtl'
+          ? '-100%'
+          : '100%',
+      }}
+      exit={{ opacity: 0, x: '-100%' }}
+      transition={{ type: 'spring', stiffness: 200, damping: 20, duration: 0.4, ease: 'easeInOut' }}
+      className={`fixed top-0 bottom-0 rtl:left-0 ltr:right-0 w-full h-screen max-w-md bg-bg shadow-2xl z-50 ${className} `}
     >
       <MobileSearch navbarData={navbarData} />
       <MobileMenuLinks navbarData={navbarData} />
       <MobileDropdown key={visibleLabel ?? 'root'} navbarData={navbarData} />
       <MobileLanguageSelector navbarData={navbarData} />
-    </aside>
+    </motion.aside>
   )
 }

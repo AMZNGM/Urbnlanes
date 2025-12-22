@@ -12,13 +12,13 @@
   font-display: swap;
 }
 @theme {
-  --color-main: #d5495f;
+  --color-main: #8e8e8e;
   --color-bg: #1d1f22;
-  --color-text: #f4f4f4;
+  --color-text: #f0eee9;
 
-  /* --color-main: #8e8e8e;
-  --color-bg: #2d2a2d;
-  --color-text: #f0eee9; */
+  /* --color-main: #8e8e8e;*/
+  /* --color-bg: #2d2a2d; */
+  /* --color-text: #f4f4f4; */
 
   --font-main: 'GeneralSans';
   --font-arab: 'Bein Arabic';
