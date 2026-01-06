@@ -59,7 +59,7 @@ export default function TextAnimation({
       initial="hidden"
       variants={containerVariants}
       viewport={viewport}
-      className={`inline-block dark:text-white text-black uppercase ${classname}`}
+      className={`inline-block dark:text-white text-black ${classname}`}
     >
       {lineAnime ? (
         <motion.span className={`inline-block`} variants={modifiedVariants}>

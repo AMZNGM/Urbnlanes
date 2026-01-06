@@ -13,9 +13,9 @@ export default function NavLinks({ navbarData, className = '' }) {
       aria-label="Primary navigation"
       onMouseEnter={() => setIsMenuOpen(true)}
       onMouseLeave={handleMouseLeave}
-      className={`relative w-full h-full ms-8 ${className}`}
+      className={`relative h-full overflow-hidden ${className}`}
     >
-      <ul className="relative w-full h-full flex justify-center items-center">
+      <ul className="relative h-full flex justify-center items-center">
         {navigations.map((link, index) => (
           <li
             key={index}
@@ -23,9 +23,9 @@ export default function NavLinks({ navbarData, className = '' }) {
               setActiveIndex(index)
               setChildOpen(null)
             }}
-            className="relative shrink-0 h-full"
+            className="relative h-full shrink-0"
           >
-            <Indicator className="group relative h-full flex justify-center items-center max-2xl:text-sm gap-1 px-3">
+            <Indicator className="group relative h-full flex justify-center items-center gap-1 px-4 max-2xl:px-2">
               <NavDropdown
                 isActive={isMenuOpen && activeIndex === index}
                 childOpen={childOpen}

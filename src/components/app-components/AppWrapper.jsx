@@ -6,7 +6,7 @@ import LocomotiveScrollSetup from '@/components/app-components/LocomotiveScrollS
 // import LoadingScreen from '@/components/app-components/LoadingScreen'
 import ScrollToTop from '@/components/app-components/ScrollToTop'
 import Navbar from '@/components/nav-components/Navbar'
-import CustomCursor from '@/components/app-components/CustomCursor'
+import CustomCursor from '@/components/ui/cursors/CustomCursor'
 import CookieBanner from '@/components/app-components/CookieBanner'
 import CookieSidebar from '@/components/app-components/CookieSidebar'
 import ScrollToTopBtn from '@/components/app-components/ScrollToTopBtn'

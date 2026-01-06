@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import logo from '../../../public/images/Urbnlanes-Logo.webp'
+import logo from '../../../public/images/logos/urbnlanes-logo.webp'
 
 export default function NavLogo() {
   return (
-    <Link href="/" aria-label="Urbnlanes home" className="relative inline-flex items-center select-none outline-none">
+    <Link href="/" aria-label="Urbnlanes home" className="inline-flex relative items-center outline-none select-none">
       <Image
         src={logo}
         alt="Urbnlanes"
         priority
-        className="h-8 w-50 object-contain transition-transform duration-300 ease-out hover:scale-103"
+        className="w-fit h-8 object-contain hover:scale-103 transition-transform duration-300 ease-out"
       />
     </Link>
   )

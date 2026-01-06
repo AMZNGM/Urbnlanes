@@ -6,7 +6,7 @@ export default function GetInTouchBtn({ navbarData }) {
   const { isClient } = navbarData
 
   return (
-    <MainBtn to="/get-in-touch" size="sm" className="tracking-wider shrink-0 whitespace-nowrap bg-white">
+    <MainBtn to="/get-in-touch" size="sm" className="">
       {isClient ? t('nav.getInTouch') : 'Get In Touch'}
     </MainBtn>
   )

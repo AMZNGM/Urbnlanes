@@ -20,7 +20,7 @@ export default function CustomCursor() {
           translateX: '-50%',
           translateY: '-50%',
         }}
-        className="w-2 h-2 fixed top-0 left-0 rounded-full bg-main pointer-events-none z-9999"
+        className="top-0 left-0 z-9999 fixed w-2 h-2 bg-main rounded-full pointer-events-none"
       />
       <motion.div
         style={{
@@ -29,7 +29,7 @@ export default function CustomCursor() {
           translateX: '-50%',
           translateY: '-50%',
         }}
-        className="w-8 h-8 fixed top-0 left-0 rounded-full border border-main pointer-events-none z-9999"
+        className="top-0 left-0 z-9999 fixed w-8 h-8 border border-main rounded-full pointer-events-none"
       />
     </div>
   )

@@ -8,7 +8,7 @@ export default function SearchTrigger({ navbarData, className = '' }) {
   return (
     <>
       <button onClick={(e) => toggleSearchBar(e)} className={`relative h-full ${className}`}>
-        <RippleEffect className="relative h-full flex justify-center items-center cursor-pointer max-[1100px]:hidden p-6 z-0">
+        <RippleEffect className="max-[1100px]:hidden z-0 relative h-full flex justify-center items-center p-6 cursor-pointer">
           <SearchIcon strokeWidth={1.5} size={20} />
         </RippleEffect>
       </button>

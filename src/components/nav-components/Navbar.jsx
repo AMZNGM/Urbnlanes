@@ -1,5 +1,6 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import { motion } from 'motion/react'
 import { useNavbar } from '@/hooks/useNavbar'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -13,28 +14,31 @@ import SideNavnar from '@/components/nav-components/SideNavnar'
 import NavbarOverlay from '@/components/nav-components/NavbarOverlay'
 
 export default function Navbar() {
+  const pathname = usePathname()
   const languageContext = useLanguage()
   const navbarData = useNavbar(languageContext)
 
+  if (pathname === '/not-found') return null
+
   return (
-    <header className="fixed top-0 border-b border-text/25 z-50">
+    <header className="top-0 z-50 fixed border-text/25 border-b">
       <motion.div initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75 }}>
         <main
-          className={`relative w-screen h-34 max-sm:h-24 flex justify-between items-center gap-8 hover:bg-bg transition-colors px-18 max-2xl:px-4
-          ${navbarData.isScrolled20vh || navbarData.showSearch ? 'bg-bg/10 backdrop-blur-2xl' : ''}
+          className={`relative w-screen h-34 max-sm:h-24 flex justify-between items-center gap-8 hover:bg-bg transition-colors duration-300 px-18 max-md:px-4
+          ${navbarData.isScrolled20vh || navbarData.showSearch ? 'bg-bg/10 backdrop-blur-2xl' : 'bg-bg/50 backdrop-blur-2xl'}
         `}
         >
-          <div className="relative h-full flex justify-between items-center gap-8">
+          <div className="z-20 relative h-full flex justify-between items-center gap-8">
             <NavLogo />
-            <NavLinks navbarData={navbarData} className="max-2xl:hidden" />
+            <NavLinks navbarData={navbarData} className="max-xl:hidden" />
           </div>
 
-          <div className="h-full flex justify-center items-center gap-4">
-            <SearchTrigger navbarData={navbarData} className="max-2xl:hidden" />
-            <LanguageSelector navbarData={navbarData} className="max-2xl:hidden" />
+          <div className="h-full flex justify-center items-center gap-8">
+            <SearchTrigger navbarData={navbarData} className="max-xl:hidden" />
+            <LanguageSelector navbarData={navbarData} className="max-xl:hidden" />
             <GetInTouchBtn navbarData={navbarData} />
-            <MenuBtn navbarData={navbarData} className="2xl:hidden" />
-            <SideNavnar navbarData={navbarData} className="2xl:hidden" />
+            <MenuBtn navbarData={navbarData} className="xl:hidden" />
+            <SideNavnar navbarData={navbarData} className="xl:hidden" />
           </div>
 
           <NavbarOverlay navbarData={navbarData} />

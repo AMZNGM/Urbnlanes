@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`relative w-screen min-h-screen overflow-x-hidden! bg-bg text-text uppercase selection:bg-main/50 selection:text-text scroll-smooth antialiased`}
+        className={`relative w-full h-full bg-bg text-text font-main uppercase selection:bg-main/75 selection:text-text scroll-smooth antialiased md:subpixel-antialiased`}
       >
         <AppWrapper>{children}</AppWrapper>
       </body>

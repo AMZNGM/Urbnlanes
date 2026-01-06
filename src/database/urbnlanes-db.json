@@ -1,0 +1,555 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-23T03:54:00.000Z",
+    "company": {
+      "name": "Urbnlanes Developments",
+      "parentCompany": "Emeel Abdalla Investments",
+      "description": "A real estate development company with projects all over the Middle East, built on diversity and numerous years of experience in the field of real estate development.",
+      "tagline": "Beyond Masterpieces",
+      "hotline": "15061",
+      "taxreg": "177176"
+    }
+  },
+  "settings": {
+    "languages": ["en", "ar"],
+    "defaultLanguage": "en",
+    "currency": "AED",
+    "dateFormat": "DD/MM/YYYY",
+    "timezone": "Asia/Dubai"
+  },
+  "whoweare": {
+    "tagline": "Setting a new benchmark",
+    "description": "Urbnlanes Developments operates under the esteemed umbrella of Emeel Abdalla Investments, bringing decades of expertise to the Middle East's dynamic real estate landscape. Our diverse portfolio and unwavering commitment to quality have established us as a trusted name in premium property development.",
+    "statistics": {
+      "yearsOfExperience": "36+",
+      "projectsCompleted": "100+",
+      "towersDelivered": "20+",
+      "workforce": "3,600+",
+      "landmarkProjects": "60+"
+    },
+    "values": [
+      {
+        "title": "Exceptional Quality",
+        "description": "We believe that our high standards and commitment to quality are what set us apart from other real estate companies.",
+        "icon": "Star"
+      },
+      {
+        "title": "Adherence",
+        "description": "Our demonstrated history and vast expertise give us the edge in delivery dates. Our sister companies in Kuwait built an impeccable track record of meeting deadlines.",
+        "icon": "CheckCircle"
+      },
+      {
+        "title": "Reliability",
+        "description": "Urbnlanes has redefined the clients' experience in the market and changed notions, by dint of sheer diligence and devotion to excellence.",
+        "icon": "Shield"
+      },
+      {
+        "title": "Agility",
+        "description": "We are committed to delivering future value no matter the challenges in the status quo as we pivot and react in a fast and wise manner.",
+        "icon": "Zap"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "yellow-lane",
+      "name": "Yellow Lane",
+      "logo": "/images/logos/yellow-lane-logo.webp",
+      "tagline": "Lines That Define Your Lifestyle.",
+      "shortDesc": "In close proximity to both the old and new Suez Road. This prime location offers easy access to the city's major landmarks and attractions.",
+      "description": "Yellow Lane isn't just a place, it's a canvas where lines come alive, speaking to your soul and defining your lifestyle. Our spaces are meticulously designed to maintain a delicate balance between functionality and aesthetics.",
+      "brochure": "https://drive.google.com/file/d/1BiZ6kwlPJUnC-DFgsLWzae1omgVyPQSA/view",
+      "status": "completed",
+      "type": "residential",
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "partners": [
+        {
+          "name": "Delave Studio",
+          "logo": "/images/logos/delave-studio.webp",
+          "role": "Architecture & Design"
+        },
+        {
+          "name": "HC Consultants",
+          "logo": "/images/logos/hc-Consultants.webp",
+          "role": "Engineering Consultancy"
+        },
+        {
+          "name": "Tahseen",
+          "logo": "/images/logos/tahseen.webp",
+          "role": "Construction Management"
+        },
+        {
+          "name": "Oko Plan",
+          "logo": "/images/logos/oko-plan.webp",
+          "role": "Urban Planning"
+        }
+      ],
+      "featured": true,
+      "gallery": [
+        "/images/projects/yellow-lane/yl-gallery-1.webp",
+        "/images/projects/yellow-lane/yl-gallery-2.webp",
+        "/images/projects/yellow-lane/yl-gallery-3.webp",
+        "/images/projects/yellow-lane/yl-gallery-4.webp",
+        "/images/projects/yellow-lane/yl-gallery-5.webp",
+        "/images/projects/yellow-lane/yl-gallery-6.webp",
+        "/images/projects/yellow-lane/yl-gallery-7.webp",
+        "/images/projects/yellow-lane/yl-gallery-8.webp",
+        "/images/projects/yellow-lane/yl-gallery-9.webp",
+        "/images/projects/yellow-lane/yl-gallery-10.webp",
+        "/images/projects/yellow-lane/yl-banner.avif",
+        "/images/projects/yellow-lane/yl-hero.avif"
+      ]
+    },
+    {
+      "id": "yellow-residence",
+      "name": "Yellow Residence",
+      "logo": "/images/logos/yellow-residence-logo.webp",
+      "tagline": "Yellow isn't just a color, it's a vibe; a way of living for the daring & the bold",
+      "description": "Yellow is a residential compound designed to provide residents with a life of bliss and empower them to reach their higher selves. The architecture and interior design of Yellow are carefully crafted to create a sense of calm and tranquility, with a focus on natural materials and open spaces to allow the community to thrive through an unparalleled experience.",
+      "description2": "in close proximity to both the old and new Suez Road. This prime location offers easy access to the city’s major landmarks and attractions.",
+      "aboutCrownResidence": "Crown Residence, situated within the esteemed Yellow Residence compound, offers a luxurious\nserviced apartment experience in collaboration with Crowne Plaza IHG Hotels & Resorts. With\nmeticulously designed apartments, premium amenities, and seamless integration with hotel\nservices, Crown Residence sets a new standard for upscale urban living.\nGuests can expect exceptional facilities, personalized service, and a warm, welcoming\natmosphere, making it the ultimate destination for both leisure and business travelers.",
+      "aboutCrownPlaza": "Crown Plaza isn't just a color, it's a vibe; a way of living for the daring & the bold",
+      "brochure": "https://drive.google.com/drive/folders/1Pqmlx7ARbTPSQCEpknItlNkgbBPKMq3n",
+      "status": "completed",
+      "type": "residential",
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "partners": [
+        {
+          "name": "Oko Plan",
+          "logo": "/images/logos/oko-plan.webp",
+          "role": "Urban Planning"
+        },
+        {
+          "name": "HC Consultants",
+          "logo": "/images/logos/hC-Consultants.webp",
+          "role": "Engineering Consultancy"
+        },
+        {
+          "name": "Whitespace",
+          "logo": "/images/logos/whitespace-logo.webp",
+          "role": "Architecture & Design"
+        },
+        {
+          "name": "Delave Studio",
+          "logo": "/images/logos/delave-studio.webp",
+          "role": "Architecture & Design"
+        }
+      ],
+      "amenities": [
+        {
+          "id": "gym",
+          "name": "Gym",
+          "icon": "Dumbbell",
+          "description": "The gym at Yellow is a top-of-the-line facility that offers residents everything they need to maintain a healthy and active lifestyle. With its equipment, expert coaching, and variety of classes and services, it's the perfect place for residents to stay fit and achieve their fitness goals."
+        },
+        {
+          "id": "bike-lanes",
+          "name": "Bike Lanes",
+          "icon": "Bike",
+          "description": "A lane that winds through the compound's beautiful landscaping and green spaces and is designed to provide a dedicated space for cyclists to ride, separate from vehicular traffic and pedestrian walkways to ensure everyone's safety."
+        },
+        {
+          "id": "outdoor-theater",
+          "name": "Outdoor Theater",
+          "icon": "Film",
+          "description": "A unique and exciting feature that brings the community together for entertainment and socializing. The theatre is designed to be a comfortable and inviting space, with plenty of seating and a large screen for movies and other events."
+        },
+        {
+          "id": "parking",
+          "name": "Parking Slots",
+          "icon": "Car",
+          "description": "The designated parking slots at Yellow are designed to be easily accessible and secure, with ample space for residents to park their vehicles comfortably. Providing residents with safe and convenient parking options so they can enjoy peace of mind knowing that their vehicles are safe and protected."
+        },
+        {
+          "id": "kids-area",
+          "name": "For The Little Ones",
+          "icon": "Baby",
+          "description": "An area providing a safe and engaging environment for children to interact with each other and enjoy a range of activities. From playground equipment to games and toys, kids can have a blast while parents enjoy peace of mind, knowing that their children are in a secure and monitored space."
+        },
+        {
+          "id": "yellow-garden",
+          "name": "The Yellow Garden",
+          "icon": "Flower2",
+          "description": "Yellow is home to a vibrant and charming yellow garden that adds a pop of color to the community. This carefully curated garden features a variety of yellow flowers and plants that bloom throughout the year, creating a cheerful and welcoming atmosphere. A garden designed to radiate warmth and lift the spirits."
+        },
+        {
+          "id": "pet-area",
+          "name": "For Our Furry Friends",
+          "icon": "PawPrint",
+          "description": "The outdoor area for pets at Yellow is a dedicated space that is designed to be safe and comfortable for dogs and other pets. The area is fully fenced, with plenty of room for pets to run and play, and is equipped with waste disposal stations and other amenities to ensure that it remains clean and well-maintained."
+        },
+        {
+          "id": "sculptures",
+          "name": "Sculptures & Features",
+          "icon": "Sparkles",
+          "description": "Featuring stunning sculptures and water features that add a touch of elegance and sophistication to the community. With beautifully crafted pieces of art scattered throughout the grounds, residents can enjoy a unique outdoor experience. The water features provide a soothing ambiance with the sound of flowing water, creating a peaceful atmosphere."
+        },
+        {
+          "id": "yoga-area",
+          "name": "Yoga Area",
+          "icon": "Heart",
+          "description": "A serene area for the residents to practice mindfulness and relaxation. Providing a peaceful environment for individuals to connect with their bodies and minds through the practice of yoga in an area that will be the perfect place to find your inner calm and rejuvenate your spirit."
+        },
+        {
+          "id": "communal-spaces",
+          "name": "Communal Spaces",
+          "icon": "Users",
+          "description": "An outdoor communal area for residents that is a lush and well-maintained space, with plenty of seating and shade for residents to relax and enjoy the outdoors. The area features beautiful landscaping and greenery which make it the perfect place for residents to gather and socialize with friends and neighbors."
+        },
+        {
+          "id": "outdoor-pools",
+          "name": "Outdoor Pools",
+          "icon": "Waves",
+          "description": "Yellow's outdoor pool area is designed to create a sense of tranquility and relaxation, with lush landscaping, soothing water features, and a serene atmosphere that promotes wellness and well-being. The perfect place for residents and their kids to unwind and have fun."
+        }
+      ],
+      "featured": true,
+      "gallery": [
+        "/images/projects/yellow-residence/yr-gallery-1.avif",
+        "/images/projects/yellow-residence/yr-gallery-2.webp",
+        "/images/projects/yellow-residence/yr-gallery-3.webp",
+        "/images/projects/yellow-residence/yr-gallery-4.avif",
+        "/images/projects/yellow-residence/yr-gallery-5.webp",
+        "/images/projects/yellow-residence/yr-gallery-6.webp",
+        "/images/projects/yellow-residence/yr-gallery-7.avif",
+        "/images/projects/yellow-residence/yr-gallery-8.avif",
+        "/images/projects/yellow-residence/yr-gallery-9.webp",
+        "/images/projects/yellow-residence/yr-gallery-10.avif",
+        "/images/projects/yellow-residence/yr-gallery-11.webp",
+        "/images/projects/yellow-residence/yr-gallery-12.avif",
+        "/images/projects/yellow-residence/yr-gallery-13.avif",
+        "/images/projects/yellow-residence/yr-gallery-14.webp",
+        "/images/projects/yellow-residence/yr-gallery-15.webp",
+        "/images/projects/yellow-residence/yr-gallery-16.webp",
+        "/images/projects/yellow-residence/yr-gallery-17.avif",
+        "/images/projects/yellow-residence/yr-gallery-18.avif",
+        "/images/projects/yellow-residence/yr-cover.avif",
+        "/images/projects/yellow-residence/yr-hero.avif",
+        "/images/projects/yellow-residence/yr-map.avif"
+      ]
+    },
+    {
+      "id": "east-lane",
+      "name": "Eastlane",
+      "logo": "/images/logos/eastlane-logo.webp",
+      "tagline": "The EastLane building is one of the most iconic, prominent and bustling areas in New Cairo.",
+      "shortDesc": "An administrative and commercial space based in the heart of New Cairo.",
+      "description": "Raef Fahmi is an Egyptian architect and interior designer who has been working in the field for many years and has built a reputation known by everyone. Fahmi has worked on some of the most prominent and iconic projects in Egypt.",
+      "description2": "Enova is the regional leader in integrated energy and multi-technical services, delivering comprehensive services to its clients. It provides performance based Energy & Facilities Management solutions that help customers achieve their financial, operational, and environmental targets.",
+      "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2022/08/EastLane-by-urbnlanes.pdf",
+      "status": "completed",
+      "type": "residential",
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt",
+        "neighborhood": "Overlooking South 90 street, it is situated right in front of Concord Plaza and next to Deutsch House and Mahmoud El Far supermarket which makes it in the center of a vibrant and active area"
+      },
+      "partners": [
+        {
+          "name": "Raef fahmi architects",
+          "logo": "/images/logos/raef-logo.webp",
+          "role": "Architecture & Design"
+        }
+      ],
+      "featured": true,
+      "gallery": [
+        "/images/projects/east-lane/el-main-1.avif",
+        "/images/projects/east-lane/el-main-2.avif",
+        "/images/projects/east-lane/el-main-3.avif",
+        "/images/projects/east-lane/el-main-4.avif",
+        "/images/projects/east-lane/el-main-5.avif",
+        "/images/projects/east-lane/el-gallery-1.webp",
+        "/images/projects/east-lane/el-gallery-2.webp",
+        "/images/projects/east-lane/el-gallery-3.webp",
+        "/images/projects/east-lane/el-banner.avif",
+        "/images/projects/east-lane/el-map.webp"
+      ]
+    },
+    {
+      "id": "levels-business-tower",
+      "name": "Levels Business Tower",
+      "logo": "/images/logos/yellow-lane-logo.webp",
+      "tagline": "Proudly Partnered With E& As Our Communications Partner.",
+      "description": "The New Administrative Capital is set to become a new center of excellence for living in Egypt and beyond. It will feature a fully-integrated capital with world-class residential, commercial, medical, financial, and educational institutions. Moreover, an independent international airport, a modern train station that is connected to Egypt’s railway system and it will use the most advanced technology to provide the first central security system. It is expected to attract 40 million people upon completion.",
+      "brochure": "https://drive.google.com/file/d/1cs5X3QNJWgVudChvXUs7-s7VUnrYsaiV/view",
+      "status": "completed",
+      "type": "residential",
+      "location": {
+        "city": "The New Administrative Capital",
+        "country": "Egypt",
+        "neighborhood": "4 minutes away from the government district and Misr Mosque. 3 minutes away from Al Masa Hotel. The only land in the tourist towers that has a pedestrian bridge passing by Green River to Down Town. Levels is located at the first row of the Downtown towers, the new administrative capital, and on the northern axis of Bin Zayed and the Green River. with an open view of the Green River."
+      },
+      "partners": [
+        {
+          "name": "Etisalat",
+          "logo": "public/images/logos/e-and-logo.svg"
+        }
+      ],
+      "featured": true,
+      "gallery": [
+        "/images/projects/levels-tower/levels-main.webp",
+        "/images/projects/levels-tower/levels-map.avif",
+        "/images/projects/levels-tower/levels-e-and-1.avif",
+        "/images/projects/levels-tower/levels-e-and-2.avif",
+        "/images/projects/levels-tower/levels-e-and-3.avif",
+        "/images/projects/levels-tower/levels-e-and-4.avif",
+        "/images/projects/levels-tower/levels-e-and-5.avif",
+        "/images/projects/levels-tower/levels-e-and-6.avif",
+        "/images/projects/levels-tower/levels-e-and-7.avif",
+        "/images/projects/levels-tower/levels-e-and-8.avif",
+        "/images/projects/levels-tower/levels-e-and-9.avif",
+        "/images/projects/levels-tower/levels-e-and-10.avif",
+        "/images/projects/levels-tower/levels-gallery-1.webp",
+        "/images/projects/levels-tower/levels-gallery-2.avif",
+        "/images/projects/levels-tower/levels-gallery-3.avif",
+        "/images/projects/levels-tower/levels-gallery-4.jpg",
+        "/images/projects/levels-tower/levels-gallery-5.avif",
+        "/images/projects/levels-tower/levels-gallery-6.avif",
+        "/images/projects/levels-tower/levels-gallery-7.avif"
+      ]
+    },
+    {
+      "id": "mid-lane",
+      "name": "Midlane",
+      "logo": "/images/logos/midlane-logo.webp",
+      "tagline": "A Desire To Grow...",
+      "shortDesc": [
+        "With an expansive 24,000 SQM dedicated to administrative spaces for offices, clinics, and business purposes, Midlane is designed to meet diverse professional needs.",
+        "Step inside and be amazed by this state-of-the-art destination, which offers a wide variety of high-end stores, cafes, and restaurants. From fine dining spots to luxury fashion brands and electronics giants, Midlane has something for everyone."
+      ],
+      "description": [
+        "Strategically positioned in the heart of New Cairo’s vibrant district, Midlane boasts a prime location that places it at the epicenter of bustling activity, offering unparalleled accessibility and visibility for both businesses and customers.",
+        "Located directly on Northern Nintey Street and Mohamed Naguib Axis, with close proximity to key city hubs, Midlane is the new landmark in New Cairo.",
+        "Midlane, a magnificent architectural masterpiece, is built on 15,000 SQM of land with a total built-up area of 85,000 SQM. The development includes three basement floors, a ground floor, and five additional floors. Midlane offers a GLA of 20,000 SQM, featuring a unique blend of retail, entertainment, and dining experiences."
+      ],
+      "status": "completed",
+      "type": "residential",
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/mid-lane/ml-gallery-1.webp",
+        "/images/projects/mid-lane/ml-gallery-2.webp",
+        "/images/projects/mid-lane/ml-gallery-3.webp",
+        "/images/projects/mid-lane/ml-gallery-4.webp",
+        "/images/projects/mid-lane/ml-gallery-5.webp",
+        "/images/projects/mid-lane/ml-gallery-6.webp",
+        "/images/projects/mid-lane/ml-leader.avif",
+        "/images/projects/mid-lane/ml-map.webp"
+      ]
+    },
+    {
+      "id": "noi",
+      "name": "NOI",
+      "logo": "/images/logos/noi-white-logo.svg",
+      "tagline": "Refined by Time, Reserved for You.",
+      "shortDesc": "The First Exotic Community in Egypt. – Not in Extravagance, but in the Delicate Balance of Form and Functionality",
+      "description": "NOI is situated in the prime area of Golden Square in Fifth Settlement, New Cairo. This strategic location places it at the heart of New Cairo, surrounded by upscale residential communities and close to prominent commercial and recreational hubs. With easy access to major roads, NOI connects residents to essential services and destinations, making it an ideal spot in one of Cairo's most sought-after neighborhoods.",
+      "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
+      "status": "completed",
+      "type": "residential",
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/noi/noi-gallery-1.webp",
+        "/images/projects/noi/noi-gallery-2.webp",
+        "/images/projects/noi/noi-gallery-3.webp",
+        "/images/projects/noi/noi-gallery-4.webp",
+        "/images/projects/noi/noi-gallery-5.webp",
+        "/images/projects/noi/noi-gallery-6.webp",
+        "/images/projects/noi/noi-gallery-7.webp",
+        "/images/projects/noi/noi-gallery-8.webp",
+        "/images/projects/noi/noi-gallery-9.webp",
+        "/images/projects/noi/noi-gallery-10.webp",
+        "/images/projects/noi/noi-gallery-11.webp",
+        "/images/projects/noi/noi-gallery-12.webp",
+        "/images/projects/noi/noi-gallery-13.webp",
+        "/images/projects/noi/noi-gallery-14.webp",
+        "/images/projects/noi/noi-gallery-15.webp",
+        "/images/projects/noi/noi-gallery-16.webp",
+        "/images/projects/noi/noi-gallery-17.webp",
+        "/images/projects/noi/noi-gallery-18.webp",
+        "/images/projects/noi/noi-gallery-19.webp",
+        "/images/projects/noi/noi-gallery-20.webp",
+        "/images/projects/noi/noi-gallery-21.webp",
+        "/images/projects/noi/noi-gallery-22.webp",
+        "/images/projects/noi/noi-gallery-23.webp",
+        "/images/projects/noi/noi-gallery-24.webp",
+        "/images/projects/noi/noi-gallery-25.webp",
+        "/images/projects/noi/noi-gallery-26.webp",
+        "/images/projects/noi/noi-gallery-27.webp",
+        "/images/projects/noi/noi-gallery-28.webp",
+        "/images/projects/noi/noi-banner.avif",
+        "/images/projects/noi/noi-cover.avif",
+        "/images/projects/noi/noi-masterplan.webp",
+        "/images/projects/noi/noi-teaser-cover.webp"
+      ]
+    },
+    {
+      "id": "east-subah-al-ahmed-city",
+      "name": "East Subah Al-Ahmed City",
+      "status": "completed",
+      "type": "residential",
+      "overview": {
+        "value": "68,473,860 KWD",
+        "startdate": "2021",
+        "enddate": "2024"
+      },
+      "gallery": [
+        "/images/projects/mutlaa/mutlaa-gallery-1.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-2.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-3.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-4.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-5.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-6.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-7.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-8.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-9.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-10.webp"
+      ]
+    },
+    {
+      "id": "mutlaa-city",
+      "name": "Mutlaa City",
+      "status": "completed",
+      "type": "residential",
+      "overview": {
+        "value": "37,960,000 KWD",
+        "startdate": "2019",
+        "enddate": "2021"
+      },
+      "gallery": [
+        "/images/projects/mutlaa/mutlaa-gallery-1.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-2.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-3.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-4.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-5.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-6.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-7.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-8.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-9.webp",
+        "/images/projects/mutlaa/mutlaa-gallery-10.webp"
+      ]
+    },
+    {
+      "id": "west-abdullah-mubarak-city",
+      "name": "West Abdullah Mubarak City",
+      "status": "completed",
+      "type": "residential",
+      "overview": {
+        "value": "37,990,000 KWD",
+        "startdate": "2018",
+        "enddate": "2021"
+      },
+      "gallery": [
+        "/images/projects/abdullah-mubarak/am-gallery-1.webp",
+        "/images/projects/abdullah-mubarak/am-gallery-2.webp",
+        "/images/projects/abdullah-mubarak/am-gallery-3.webp",
+        "/images/projects/abdullah-mubarak/am-gallery-4.webp",
+        "/images/projects/abdullah-mubarak/am-gallery-5.webp",
+        "/images/projects/abdullah-mubarak/am-gallery-6.webp"
+      ]
+    }
+  ],
+  "team": [
+    {
+      "id": "team-001",
+      "name": "Ahmed Khalid",
+      "position": "CEO",
+      "bio": "Over 20 years of experience in real estate development across the Middle East region.",
+      "image": "/images/team/ahmed-khalid.jpg",
+      "email": "ahmed.khalid@urbnlanes.com"
+    },
+    {
+      "id": "team-002",
+      "name": "Sarah Al-Mansouri",
+      "position": "Head of Projects",
+      "bio": "Specialized in luxury residential developments with 15+ years of industry experience.",
+      "image": "/images/team/sarah-mansouri.jpg",
+      "email": "sarah.mansouri@urbnlanes.com"
+    },
+    {
+      "id": "team-003",
+      "name": "Mohammed Hassan",
+      "position": "Architectural Director",
+      "bio": "Award-winning architect with expertise in sustainable design and urban planning.",
+      "image": "/images/team/mohammed-hassan.jpg",
+      "email": "mohammed.hassan@urbnlanes.com"
+    }
+  ],
+  "news": [
+    {
+      "id": "news-001",
+      "title": "Urbnlanes Launches New Marina Bay Project in Abu Dhabi",
+      "excerpt": "Breaking ground on our latest mixed-use development featuring 180 residential units with waterfront views.",
+      "content": "Urbnlanes Developments is excited to announce the launch of Marina Bay Residences, a groundbreaking mixed-use development in Abu Dhabi's prestigious Marina District. The project will feature 180 residential units ranging from studios to 3-bedroom apartments, with completion expected by September 2025.",
+      "date": "2024-12-15",
+      "category": "project-launch",
+      "image": "/images/news/marina-bay-launch.jpg",
+      "featured": true
+    },
+    {
+      "id": "news-002",
+      "title": "Skyline Towers Dubai Wins Luxury Development Award",
+      "excerpt": "Our flagship project receives recognition for excellence in luxury residential development.",
+      "content": "Skyline Towers Dubai has been awarded the 'Best Luxury Residential Development' at the Middle East Property Awards 2024. The project was recognized for its innovative design, quality construction, and world-class amenities.",
+      "date": "2024-11-20",
+      "category": "awards",
+      "image": "/images/news/award-ceremony.jpg",
+      "featured": false
+    },
+    {
+      "id": "news-003",
+      "title": "Sustainable Design Initiative Announced",
+      "excerpt": "Urbnlanes commits to eco-friendly building practices across all future projects.",
+      "content": "In line with global sustainability goals, Urbnlanes Developments has announced a comprehensive green building initiative that will be implemented across all future projects, starting with the Desert Oasis Community in Riyadh.",
+      "date": "2024-10-30",
+      "category": "sustainability",
+      "image": "/images/news/sustainability-initiative.jpg",
+      "featured": false
+    }
+  ],
+  "contact": {
+    "headquarters": {
+      "address": "Emeel Abdalla Investments Tower, Dubai, UAE",
+      "phone": "+971-4-123-4567",
+      "email": "info@urbnlanes.com",
+      "coordinates": {
+        "lat": 25.2048,
+        "lng": 55.2708
+      }
+    },
+    "offices": [
+      {
+        "city": "Abu Dhabi",
+        "address": "Marina District, Abu Dhabi, UAE",
+        "phone": "+971-2-987-6543",
+        "email": "abudhabi@urbnlanes.com"
+      },
+      {
+        "city": "Riyadh",
+        "address": "North Riyadh, Saudi Arabia",
+        "phone": "+966-1-234-5678",
+        "email": "riyadh@urbnlanes.com"
+      }
+    ],
+    "socialMedia": {
+      "facebook": "https://www.facebook.com/urbnlanes",
+      "linkedin": "https://www.linkedin.com/company/urbnlanes/",
+      "youtube": "https://www.youtube.com/channel/UC7s4j3LwJ-9Zrt5B3ZN2FgQ",
+      "instagram": "https://www.instagram.com/urbnlanes"
+    }
+  }
+}

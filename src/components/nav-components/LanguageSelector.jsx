@@ -11,7 +11,7 @@ export default function LanguageSelector({ navbarData, className = '' }) {
   return (
     <div className={`relative h-full ${className}`}>
       <div onClick={() => setLanguageSelectorOpen(!languageSelectorOpen)} className="relative h-full">
-        <Indicator className="relative h-full flex justify-center items-center cursor-pointer gap-1 p-4">
+        <Indicator className="relative h-full flex justify-center items-center gap-1 p-4 cursor-pointer">
           <span className={'z-10'}>{isClient ? selectedLanguage : 'English'}</span>
           <ChevronDown strokeWidth={1.5} className={`size-4 ${languageSelectorOpen ? 'rotate-180' : ''} duration-300`} />
         </Indicator>
@@ -30,8 +30,8 @@ export default function LanguageSelector({ navbarData, className = '' }) {
               handleLanguageChange(language)
               setLanguageSelectorOpen(false)
             }}
-            className={`relative w-full text-left cursor-pointer duration-200 py-3 px-4 ${
-              isClient && selectedLanguage === language.name ? 'text-main bg-main/10 hover:bg-main/15' : 'hover:bg-text/10'
+            className={`relative w-full text-left hover:bg-text/5 cursor-pointer duration-300 py-3 px-4 ${
+              isClient && selectedLanguage === language.name ? 'bg-text/10' : 'text-text/70 hover:text-text'
             }`}
           >
             <span>{language.name}</span>

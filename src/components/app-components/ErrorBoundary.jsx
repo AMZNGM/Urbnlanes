@@ -32,20 +32,20 @@ export default class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <div className="overflow-hidden">
-          <div ref={this.containerRef} className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-bg">
+          <div ref={this.containerRef} className="min-h-screen flex flex-col justify-center items-center bg-bg text-center px-4">
             <div ref={this.iconRef} className="mb-6">
               <TriangleAlert size={160} className="text-main" />
             </div>
 
-            <h1 ref={this.h1Ref} className="text-4xl md:text-5xl font-bold mb-4 text-main">
+            <h1 ref={this.h1Ref} className="font-bold text-main text-4xl md:text-5xl mb-4">
               <span>Oops! Something went wrong</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl max-w-2xl text-text/50 leading-relaxed mb-8">
+            <p className="max-w-2xl text-text/50 text-base sm:text-lg md:text-xl leading-relaxed mb-8">
               We are sorry, but something unexpected happened. Please try refreshing the page.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex sm:flex-row flex-col gap-4">
               <MainBtn onClick={() => window.location.reload()} variant="outline" className="border-main text-main">
                 Refresh Page
               </MainBtn>
@@ -62,10 +62,10 @@ export default class ErrorBoundary extends React.Component {
             </div>
 
             {process.env.NODE_ENV === 'development' && this.state.error && (
-              <details className="mt-8 text-left max-w-2xl">
-                <summary className="cursor-pointer font-semibold mb-2 text-sec">Error Details (Development)</summary>
+              <details className="max-w-2xl text-left mt-8">
+                <summary className="font-semibold text-sec mb-2 cursor-pointer">Error Details (Development)</summary>
 
-                <div className="bg-bgLight p-4 rounded-lg text-sm overflow-auto">
+                <div className="overflow-auto bg-bgLight rounded-lg text-sm p-4">
                   <pre className="whitespace-pre-wrap">{String(this.state.error)}</pre>
                   <pre className="whitespace-pre-wrap mt-2">{this.state.errorInfo?.componentStack}</pre>
                 </div>
