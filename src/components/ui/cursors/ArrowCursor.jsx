@@ -4,7 +4,7 @@ import { motion, useSpring, useTransform } from 'motion/react'
 import { useRef } from 'react'
 import { useMouseMotion } from '@/hooks/useMouseMotion'
 import { useIsMobile } from '@/hooks/useIsMobile'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export default function ArrowCursor() {
   const ref = useRef(null)
@@ -42,7 +42,7 @@ export default function ArrowCursor() {
       }}
       className="z-9999 absolute inset-0 w-12 h-12 flex justify-center items-center bg-main rounded-full pointer-events-none"
     >
-      <ArrowLeft className="w-6 h-6 rotate-180" />
+      <ArrowRight size={20} />
     </motion.div>
   )
 }

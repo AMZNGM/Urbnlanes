@@ -158,8 +158,8 @@ export default function ProgressCarousel() {
               initial={{ x: '200%' }}
               animate={{ x: 0 }}
               exit={{ x: '200%' }}
-              transition={{ duration: 0.3, type: 'spring', stiffness: 80, ease: 'easeInOut' }}
-              className="max-w-md bg-black/70 backdrop-blur-sm rounded-l-lg p-6 select-none"
+              transition={{ duration: 0.5, type: 'spring', stiffness: 80, ease: 'easeInOut' }}
+              className="max-w-md bg-black/25 opacity-75 backdrop-blur-sm rounded-l-lg scale-80 p-6 select-none"
             >
               <p className="text-text/70 text-sm uppercase tracking-wider mb-2">Next Project</p>
               <h3 className="font-medium text-2xl">{slides[(currentIndex + 1) % slides.length]?.title || ''}</h3>
@@ -181,11 +181,11 @@ export default function ProgressCarousel() {
               initial={{ x: '-200%' }}
               animate={{ x: 0 }}
               exit={{ x: '-200%' }}
-              transition={{ duration: 0.3, type: 'spring', stiffness: 80, ease: 'easeInOut' }}
-              className="max-w-md bg-black/70 backdrop-blur-sm rounded-l-lg p-6 select-none"
+              transition={{ duration: 0.5, type: 'spring', stiffness: 80, ease: 'easeInOut' }}
+              className="max-w-md bg-black/25 opacity-75 backdrop-blur-sm rounded-l-lg scale-80 p-6 select-none"
             >
               <p className="text-text/70 text-sm uppercase tracking-wider mb-2">Previous Project</p>
-              <h3 className="font-medium text-2xl">{slides[(currentIndex + 1) % slides.length]?.title || ''}</h3>
+              <h3 className="font-medium text-2xl">{slides[(currentIndex - 1 + slides.length) % slides.length]?.title || ''}</h3>
             </motion.div>
           )}
         </AnimatePresence>
@@ -242,7 +242,7 @@ export default function ProgressCarousel() {
       </div>
 
       {/* Dots */}
-      <div className="md:hidden bottom-10 left-1/2 absolute space-x-2 -translate-x-1/2 transform">
+      <div className="md:hidden bottom-8 left-1/2 absolute space-x-2 -translate-x-1/2 transform">
         {slides.map((slide, index) => (
           <button
             key={slide.id}
