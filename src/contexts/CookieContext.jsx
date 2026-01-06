@@ -47,8 +47,8 @@ export function CookieProvider({ children, onConsentChange } = {}) {
   }
 
   const acceptAll = useCallback(() => {
-    const next = { necessary: true, analytics: true, marketing: true, preferences: true }
-    // setConsent(next)
+    const next = { necessary: true, analytics: true, marketing: true, preferences: true, consentDate: new Date().toISOString() }
+    setConsent(next)
     persistConsent(next)
   }, [persistConsent])
 
