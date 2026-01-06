@@ -1,7 +1,8 @@
 import { Suspense } from 'react'
 import { metadataGenerators } from '@/lib/seo-helpers'
 import LoadingSkeleton from '@/components/loading-components/LoadingSkeleton'
-import Hero from '@/components/Hero'
+import ProgressCarousel from '@/components/ProgressCarousel'
+import WhoWeAre from '@/components/WhoWeAre'
 
 export const metadata = metadataGenerators.home()
 
@@ -9,8 +10,10 @@ export default function Home() {
   return (
     <>
       <Suspense fallback={<LoadingSkeleton />}>
-        <Hero />
-        <div className="h-screen" />
+        <ProgressCarousel />
+        <WhoWeAre />
+
+        {/* <div className="top-0 right-0 bottom-0 left-0 absolute bg-[radial-gradient(125%_125%_at_50%_10%,rgba(255,255,255,0)_40%,rgba(102,51,238,1)_100%)]" />{' '} */}
       </Suspense>
     </>
   )

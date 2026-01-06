@@ -101,21 +101,17 @@ export default function ProgressCarousel() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length)
   }
 
-  const handleButtonClick = () => {
-    // You can add navigation to the project detail page here
-    if (slides.length > 0 && currentIndex >= 0 && currentIndex < slides.length) {
-      const projectId = slides[currentIndex]?.id
-      // Example: router.push(`/projects/${projectId}`);
-    }
-  }
-
   if (isLoading) {
-    return <LoadingSkeleton />
+    return (
+      <div className="h-screen">
+        <LoadingSkeleton />
+      </div>
+    )
   }
 
   if (!slides.length) {
     return (
-      <div className="relative w-full h-full overflow-hidden flex justify-center items-center bg-text text-bg">
+      <div className="relative w-full h-screen overflow-hidden flex justify-center items-center bg-text text-bg">
         <h1>No projects found</h1>
       </div>
     )
@@ -124,7 +120,7 @@ export default function ProgressCarousel() {
   const currentSlide = slides[currentIndex] || {}
 
   return (
-    <section className="relative w-full h-full overflow-hidden bg-bg text-text">
+    <section className="relative w-full h-screen overflow-hidden bg-bg text-text">
       <ArrowCursor />
 
       {/* bg image */}

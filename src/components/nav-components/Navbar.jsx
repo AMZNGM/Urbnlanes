@@ -24,8 +24,8 @@ export default function Navbar() {
     <header className="top-0 z-50 fixed border-text/25 border-b">
       <motion.div initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75 }}>
         <main
-          className={`relative w-screen h-34 max-sm:h-24 flex justify-between items-center gap-8 hover:bg-bg transition-colors duration-300 px-18 max-md:px-4
-          ${navbarData.isScrolled20vh || navbarData.showSearch ? 'bg-bg/10 backdrop-blur-2xl' : 'bg-bg/50 backdrop-blur-2xl'}
+          className={`relative w-screen h-34 max-sm:h-24 flex justify-between items-center gap-8 backdrop-blur-2xl hover:bg-bg transition-all duration-300 px-18 max-md:px-4
+          ${navbarData.isScrolled20vh ? 'bg-black/50' : 'bg-bg/50'}
         `}
         >
           <div className="z-20 relative h-full flex justify-between items-center gap-8">
