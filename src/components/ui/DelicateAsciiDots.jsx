@@ -2,13 +2,13 @@
 
 import { useEffect, useRef, useCallback } from 'react'
 
-const DelicateAsciiDots = ({
+export default function DelicateAsciiDots({
   backgroundColor = '#000000',
   textColor = '85, 85, 85',
   gridSize = 80,
-  removeWaveLine = true,
+  removeWaveLine = false,
   animationSpeed = 0.75,
-}) => {
+}) {
   const canvasRef = useRef(null)
   const containerRef = useRef(null)
   const mouseRef = useRef({ x: 0, y: 0, isDown: false })
@@ -236,4 +236,3 @@ const DelicateAsciiDots = ({
     </div>
   )
 }
-export default DelicateAsciiDots

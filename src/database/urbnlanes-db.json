@@ -31,23 +31,19 @@
     "values": [
       {
         "title": "Exceptional Quality",
-        "description": "We believe that our high standards and commitment to quality are what set us apart from other real estate companies.",
-        "icon": "Star"
+        "description": "We believe that our high standards and commitment to quality are what set us apart from other real estate companies."
       },
       {
         "title": "Adherence",
-        "description": "Our demonstrated history and vast expertise give us the edge in delivery dates. Our sister companies in Kuwait built an impeccable track record of meeting deadlines.",
-        "icon": "CheckCircle"
+        "description": "Our demonstrated history and vast expertise give us the edge in delivery dates. Our sister companies in Kuwait built an impeccable track record of meeting deadlines."
       },
       {
         "title": "Reliability",
-        "description": "Urbnlanes has redefined the clients' experience in the market and changed notions, by dint of sheer diligence and devotion to excellence.",
-        "icon": "Shield"
+        "description": "Urbnlanes has redefined the clients' experience in the market and changed notions, by dint of sheer diligence and devotion to excellence."
       },
       {
         "title": "Agility",
-        "description": "We are committed to delivering future value no matter the challenges in the status quo as we pivot and react in a fast and wise manner.",
-        "icon": "Zap"
+        "description": "We are committed to delivering future value no matter the challenges in the status quo as we pivot and react in a fast and wise manner."
       }
     ]
   },

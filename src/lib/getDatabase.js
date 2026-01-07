@@ -80,9 +80,9 @@ export function getProjectById(id) {
 //   return db.settings
 // }
 
-// export function getWhoweare() {
-//   return db.whoweare
-// }
+export function getWhoweare() {
+  return db.whoweare
+}
 
 // Search
 // export function searchProjects(query) {
