@@ -33,6 +33,7 @@ export default function NavLinks({ navbarData, className = '' }) {
                 label={isClient ? t(link.name) : link.name}
                 childrens={link.children}
               />
+
               <ChevronDown size={20} className="group-hover:rotate-180 transition-all duration-300" />
             </Indicator>
           </li>

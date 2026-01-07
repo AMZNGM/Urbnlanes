@@ -5,6 +5,7 @@ import { motion } from 'motion/react'
 import { getWhoweare } from '@/lib/getDatabase'
 import DelicateAsciiDots from '@/components/ui/DelicateAsciiDots'
 import MainBtn from '@/components/ui/buttons/MainBtn'
+import ArrowIcon from '@/components/ui/icons/ArrowIcon'
 
 export default function OurValues() {
   const whoweareData = getWhoweare()
@@ -23,8 +24,8 @@ export default function OurValues() {
   ]
 
   return (
-    <section className="relative w-full h-screen max-md:h-[170vh] overflow-hidden bg-bg text-text">
-      <DelicateAsciiDots />
+    <section className="relative w-full h-screen max-md:h-[170vh] overflow-hidden bg-black text-text">
+      {/* <DelicateAsciiDots /> */}
 
       <div className="h-full flex flex-col justify-center gap-8 px-18 max-md:px-4 py-12">
         {whoweareData.values?.slice(0, 3).map((value, index) => (
@@ -34,7 +35,7 @@ export default function OurValues() {
           >
             <div className="z-10 relative w-full h-full overflow-hidden rounded-2xl">
               <motion.div
-                initial={{ opacity: 0, filter: 'blur(10px)' }}
+                initial={{ opacity: 0.5, filter: 'blur(10px)' }}
                 whileInView={{ opacity: 1, filter: 'blur(0px)' }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
@@ -80,7 +81,10 @@ export default function OurValues() {
                 viewport={{ once: true }}
               >
                 {/* <MainBtn href={`/about/${value.title.toLowerCase()}`}>See More</MainBtn> */}
-                <MainBtn href={`/about`}>See More</MainBtn>
+                <MainBtn href={`/about`}>
+                  See More
+                  <ArrowIcon className="w-3 fill-bg -rotate-40" />
+                </MainBtn>
               </motion.div>
             </motion.div>
           </div>

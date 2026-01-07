@@ -120,7 +120,7 @@ export default function ProgressCarousel() {
   const currentSlide = slides[currentIndex] || {}
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-bg text-text">
+    <section className="relative w-full h-screen overflow-hidden bg-black text-text">
       <ArrowCursor />
 
       {/* bg image */}

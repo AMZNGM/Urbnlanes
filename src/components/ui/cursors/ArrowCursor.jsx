@@ -4,6 +4,7 @@ import { motion, useSpring, useTransform } from 'motion/react'
 import { useRef } from 'react'
 import { useMouseMotion } from '@/hooks/useMouseMotion'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import ArrowIcon from '@/components/ui/icons/ArrowIcon'
 
 export default function ArrowCursor() {
   const ref = useRef(null)
@@ -41,9 +42,7 @@ export default function ArrowCursor() {
       }}
       className="z-10000 absolute inset-0 w-12 h-12 flex justify-center items-center bg-main rounded-full pointer-events-none"
     >
-      <svg viewBox="0 0 1047 1107" fill="currunt" className="w-4 fill-text">
-        <path d="M8.25439 1093.07C297.254 911.235 701.854 440.769 8.25439 13.5685L1013.25 568.569L8.25439 1093.07Z" strokeWidth="30" />
-      </svg>
+      <ArrowIcon className="w-4 fill-text" />
     </motion.div>
   )
 }
