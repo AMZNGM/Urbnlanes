@@ -15,6 +15,7 @@ export default function SelectedProjects() {
     gallery: project.gallery,
     description: project.description || project.shortDesc || 'A remarkable project by Urbnlanes Developments.',
     location: project.location,
+    status: project.status,
     height: ['h-[40vh]', 'h-[52vh]', 'h-[45vh]', 'h-[38vh]', 'h-[50vh]', 'h-[42vh]'][index % 6],
   }))
 

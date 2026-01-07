@@ -83,7 +83,14 @@ export default function WhoWeAre() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="space-y-12 lg:col-span-5"
           >
-            <div className="relative overflow-hidden bg-linear-to-br from-[#141414] to-[#0A0A0A] border border-main/20 rounded-sm p-8">
+            <div className="relative overflow-hidden bg-black border border-main/20 rounded-sm p-8">
+              <motion.div
+                initial={{ x: 0 }}
+                animate={{ x: ['120%', '-120%'] }}
+                transition={{ duration: 10, repeat: Infinity }}
+                className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-main/20 to-transparent -rotate-130 scale-150"
+              />
+
               <div className="top-0 left-0 absolute w-20 h-20 border-main/35 border-t border-l rounded-tl-sm" />
               <div className="right-0 bottom-0 absolute w-20 h-20 border-main/35 border-r border-b rounded-br-sm" />
 
