@@ -32,17 +32,19 @@ export default function OurValues() {
             key={value.title}
             className={`h-1/3 flex max-md:flex-col justify-between items-center gap-8 ${index === 1 ? 'flex-row-reverse' : ''}`}
           >
-            <motion.div
-              initial={{ opacity: 0, filter: 'blur(10px)' }}
-              whileInView={{ opacity: 1, filter: 'blur(0px)' }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              data-scroll
-              data-scroll-speed="0.05"
-              className="z-10 relative w-full h-full"
-            >
-              <Image src={images[index]} alt={value.title} fill className="w-full h-full object-cover" />
-            </motion.div>
+            <div className="z-10 relative w-full h-full overflow-hidden rounded-2xl">
+              <motion.div
+                initial={{ opacity: 0, filter: 'blur(10px)' }}
+                whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                data-scroll
+                data-scroll-speed="0.05"
+                className="w-full h-full bg-bg rounded-2xl"
+              >
+                <Image src={images[index]} alt={value.title} fill className="w-full h-full object-cover rounded-2xl" />
+              </motion.div>
+            </div>
 
             <motion.div
               className="relative w-full h-full flex flex-col justify-between md:py-12"
