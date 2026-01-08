@@ -10,7 +10,7 @@ import CustomCursor from '@/components/ui/cursors/CustomCursor'
 import CookieBanner from '@/components/app-components/CookieBanner'
 import CookieSidebar from '@/components/app-components/CookieSidebar'
 import ScrollToTopBtn from '@/components/app-components/ScrollToTopBtn'
-// import FooterWrapper from '@/components/footer-components/FooterWrapper'
+import FooterWrapper from '@/components/footer-components/FooterWrapper'
 
 export default function AppWrapper({ children }) {
   return (
@@ -27,7 +27,7 @@ export default function AppWrapper({ children }) {
           <CookieBanner />
           <CookieSidebar />
           <ScrollToTopBtn />
-          {/* <FooterWrapper /> */}
+          <FooterWrapper />
         </ErrorBoundary>
       </LanguageProvider>
     </CookieProvider>

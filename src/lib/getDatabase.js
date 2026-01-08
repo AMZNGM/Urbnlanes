@@ -1,8 +1,8 @@
 import db from '@/database/urbnlanes-db.json'
 
-// export function getCompanyInfo() {
-//   return db.metadata.company
-// }
+export function getCompanyInfo() {
+  return db.metadata.company
+}
 
 export function getAllProjects() {
   return db.projects
@@ -137,6 +137,10 @@ export function getWhoweare() {
 
 export function getMetadata() {
   return db.metadata
+}
+
+export function getDatabase() {
+  return db
 }
 
 // export default db
