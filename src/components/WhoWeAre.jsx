@@ -155,6 +155,7 @@ export default function WhoWeAre() {
                 src="/images/projects/east-lane/el-main-3.avif"
                 alt="Signature luxury estate"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
                 style={{ objectPosition: 'center' }}
               />
@@ -231,6 +232,7 @@ export default function WhoWeAre() {
                       src={principle.image}
                       alt={principle.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
                     />
                     {/* Number overlay */}
@@ -285,7 +287,13 @@ export default function WhoWeAre() {
             {/* Award/Recognition image */}
             <div className="relative h-96 overflow-hidden order-2 md:order-1">
               <div className="z-10 absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 via-transparent to-[#0A0A0A]/50 mix-blend-overlay" />
-              <Image src="/images/projects/east-lane/el-main-3.avif" alt="Award winning property" fill className="object-cover" />
+              <Image
+                src="/images/projects/east-lane/el-main-3.avif"
+                alt="Award winning property"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
               {/* Decorative geometric overlay */}
               <svg className="top-8 left-8 z-20 absolute w-24 h-24 opacity-40" viewBox="0 0 100 100">
                 <polygon points="50,10 90,90 10,90" fill="none" stroke="#D4AF37" strokeWidth="1" />
@@ -366,6 +374,7 @@ export default function WhoWeAre() {
                 src="/images/projects/east-lane/el-main-3.avif"
                 alt="Our heritage"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover sepia group-hover:sepia-0 transition-all duration-700"
               />
               <div className="z-20 absolute inset-0 border border-[#D4AF37]/20 pointer-events-none" />
@@ -386,6 +395,7 @@ export default function WhoWeAre() {
                 src="/images/projects/east-lane/el-main-3.avif"
                 alt="Our vision"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover sepia group-hover:sepia-0 transition-all duration-700"
               />
               <div className="z-20 absolute inset-0 border border-[#D4AF37]/20 pointer-events-none" />

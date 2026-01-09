@@ -79,7 +79,7 @@ export default function FooterContent() {
 
           <div className="overflow-hidden">
             <div className="flex max-md:flex-col justify-between items-center gap-18">
-              <div className="w-full max-md:flex max-md:justify-between space-y-2 opacity-60 text-xs max-md:text-end">
+              <div className="w-full space-y-2 opacity-60 text-xs max-md:text-end">
                 <motion.p initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 0.75, delay: 0.3 }} className="m-0">
                   © {db.metadata.company.name || 'Emeel Abdalla Investments'} {new Date().getFullYear()}
                 </motion.p>
