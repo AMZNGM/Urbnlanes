@@ -47,6 +47,7 @@ export default function WhoWeAre() {
                   src="/images/projects/east-lane/el-main-3.avif"
                   alt="EastLane Project"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-center object-cover hover:scale-105 transition-transform duration-700"
                 />
 
@@ -125,6 +126,7 @@ export default function WhoWeAre() {
                     src="/images/projects/yellow-residence/yr-gallery-3.webp"
                     alt="EastLane Project"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-center object-cover scale-110 hover:scale-115 transition-transform duration-700"
                   />
                 </div>

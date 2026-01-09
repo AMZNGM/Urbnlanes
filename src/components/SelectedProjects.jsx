@@ -7,7 +7,7 @@ import MasonryGrid from '@/components/ui/MasonryGrid'
 import Modal from '@/components/ui/Modal'
 
 export default function SelectedProjects() {
-  const featuredProjects = getAllProjects().map((project, index) => ({
+  const SelectedProjects = getAllProjects().map((project, index) => ({
     id: project.id,
     title: project.name,
     category: project.category,
@@ -31,9 +31,9 @@ export default function SelectedProjects() {
 
   return (
     <div className="relative w-full h-full bg-black text-text px-18 max-md:px-4 py-8">
-      <Heading text="Featured Work" />
-      <MasonryGrid projects={featuredProjects} openModal={openModal} />
-      <Modal projects={featuredProjects} closeModal={closeModal} selectedProject={selectedProject} />
+      <Heading text="Selected projects" />
+      <MasonryGrid projects={SelectedProjects} openModal={openModal} />
+      <Modal projects={SelectedProjects} closeModal={closeModal} selectedProject={selectedProject} />
     </div>
   )
 }

@@ -38,9 +38,15 @@ export default function OurValues() {
                 viewport={{ once: true }}
                 data-scroll
                 data-scroll-speed="0.05"
-                className="w-full h-full bg-bg rounded-2xl"
+                className="relative w-full h-full bg-bg rounded-2xl"
               >
-                <Image src={images[index]} alt={value.title} fill className="w-full h-full object-cover rounded-2xl" />
+                <Image
+                  src={images[index]}
+                  alt={value.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
               </motion.div>
             </div>
 

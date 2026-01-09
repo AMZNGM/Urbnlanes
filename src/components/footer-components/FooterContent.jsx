@@ -32,7 +32,7 @@ export default function FooterContent() {
   }, [t, isClient])
 
   return (
-    <div className="relative w-full h-full overflow-hidden bg-black font-mono text-main px-18 max-md:px-4">
+    <div className="relative w-full h-full overflow-hidden bg-black font-mono text-main max-md:translate-y-56 px-18 max-md:px-4">
       <div className="w-full h-full flex max-md:flex-col md:justify-between items-center">
         <ShinyText tag="h4" className="text-[16vw] text-center leading-[12vw]">
           <p className="font-sec font-medium tracking-[1.2vw]">urbn</p>

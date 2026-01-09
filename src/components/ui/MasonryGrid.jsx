@@ -20,6 +20,7 @@ export default function MasonryGrid({ projects, openModal }) {
             src={project.image}
             alt={project.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
 
