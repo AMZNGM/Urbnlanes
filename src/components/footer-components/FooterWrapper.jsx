@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { Suspense } from 'react'
-import LoadingSkeleton from '@/components/loading-components/LoadingSkeleton'
+import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import Footer from '@/components/footer-components/Footer'
 
 export default function FooterWrapper() {
@@ -11,7 +11,7 @@ export default function FooterWrapper() {
   if (pathname === '/not-found') return null
 
   return (
-    <Suspense fallback={<LoadingSkeleton />}>
+    <Suspense fallback={<LoadingLogo />}>
       <Footer />
     </Suspense>
   )

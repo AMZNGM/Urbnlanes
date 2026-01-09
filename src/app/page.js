@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import { metadataGenerators } from '@/lib/seo-helpers'
-import LoadingSkeleton from '@/components/loading-components/LoadingSkeleton'
+import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import LoadingScreen from '@/components/loading-components/loadingScreen'
 import ProgressCarousel from '@/components/ProgressCarousel'
 import WhoWeAre from '@/components/WhoWeAre'
@@ -11,7 +11,7 @@ export const metadata = metadataGenerators.home()
 
 export default function Home() {
   return (
-    <Suspense fallback={<LoadingSkeleton />}>
+    <Suspense fallback={<LoadingLogo />}>
       <LoadingScreen />
       <ProgressCarousel />
       <WhoWeAre />

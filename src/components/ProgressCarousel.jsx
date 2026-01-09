@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { getProjectById } from '@/lib/getDatabase'
+import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import ArrowCursor from '@/components/ui/cursors/ArrowCursor'
 import MainBtn from '@/components/ui/buttons/MainBtn'
-import LoadingSkeleton from '@/components/loading-components/LoadingSkeleton'
 
 export default function ProgressCarousel() {
   const [isLoading, setIsLoading] = useState(true)
@@ -104,7 +104,7 @@ export default function ProgressCarousel() {
   if (isLoading) {
     return (
       <div className="h-screen">
-        <LoadingSkeleton />
+        <LoadingLogo />
       </div>
     )
   }
