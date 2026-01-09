@@ -41,51 +41,61 @@ export default function FooterContent() {
 
         <div className="relative w-full overflow-hidden">
           <div className="overflow-hidden">
-            <motion.div
-              initial={{ y: '100%' }}
-              whileInView={{ y: 0 }}
-              transition={{ duration: 0.75 }}
-              className="overflow-hidden flex justify-end"
-            >
+            <div className="overflow-hidden flex justify-end">
               <div className="flex flex-col justify-end gap-2 text-xs">
-                <span>{db.metadata.company.parentCompany || 'Emeel Abdalla Investments'}</span>
+                <motion.span initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 0.75, delay: 0.3 }}>
+                  {db.metadata.company.parentCompany || 'Emeel Abdalla Investments'}
+                </motion.span>
 
-                <span>taxreg: {db.metadata.company.taxreg || '177176'}</span>
+                <motion.span initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 0.75, delay: 0.4 }}>
+                  taxreg: {db.metadata.company.taxreg || '177176'}
+                </motion.span>
               </div>
 
               <div className="w-full space-y-4 text-end">
-                <nav className="space-y-2">
-                  {links.map((link, index) => (
-                    <Link key={index} href={link.href} className="block hover:text-text text-sm transition-colors duration-300">
+                {links.map((link, index) => (
+                  <motion.nav
+                    initial={{ x: '100%' }}
+                    whileInView={{ x: 0 }}
+                    transition={{ duration: 0.75, delay: index * 0.1 }}
+                    key={index}
+                    className="space-y-2"
+                  >
+                    <Link href={link.href} className="block hover:text-text text-sm transition-all duration-300">
                       {link.name}
                     </Link>
-                  ))}
-                </nav>
+                  </motion.nav>
+                ))}
               </div>
-            </motion.div>
+            </div>
           </div>
 
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1, delay: 0.1 }}
             className="w-full h-px bg-linear-to-r from-transparent via-main to-transparent my-8"
           />
 
           <div className="overflow-hidden">
-            <motion.div
-              initial={{ y: '-100%' }}
-              whileInView={{ y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex max-md:flex-col justify-between items-center gap-18"
-            >
-              <p className="w-full max-md:flex max-md:justify-between opacity-60 text-xs max-md:text-end">
-                © {db.metadata.company.name || 'Emeel Abdalla Investments'} {new Date().getFullYear()}
-                <span className="block text-xs md:mt-0">All rights reserved.</span>
-              </p>
+            <div className="flex max-md:flex-col justify-between items-center gap-18">
+              <div className="w-full max-md:flex max-md:justify-between space-y-2 opacity-60 text-xs max-md:text-end">
+                <motion.p initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 0.75, delay: 0.3 }} className="m-0">
+                  © {db.metadata.company.name || 'Emeel Abdalla Investments'} {new Date().getFullYear()}
+                </motion.p>
+
+                <motion.p
+                  initial={{ x: '-100%' }}
+                  whileInView={{ x: 0 }}
+                  transition={{ duration: 0.75, delay: 0.4 }}
+                  className="text-xs m-0 md:mt-0"
+                >
+                  All rights reserved.
+                </motion.p>
+              </div>
 
               <div className="flex justify-center items-center gap-4">
-                {Object.entries(db.contact.socialMedia).map(([platform, url]) => {
+                {Object.entries(db.contact.socialMedia).map(([platform, url], index) => {
                   const icons = {
                     facebook: Facebook,
                     linkedin: Linkedin,
@@ -97,20 +107,26 @@ export default function FooterContent() {
                   if (!Icon || !url) return null
 
                   return (
-                    <Link
+                    <motion.div
                       key={platform}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-main hover:text-text transition-colors duration-300"
-                      aria-label={platform.charAt(0).toUpperCase() + platform.slice(1)}
+                      initial={{ y: '-120%', opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.3 }}
                     >
-                      <Icon size={20} />
-                    </Link>
+                      <Link
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-main hover:text-text transition-colors duration-300"
+                        aria-label={platform.charAt(0).toUpperCase() + platform.slice(1)}
+                      >
+                        <Icon size={20} />
+                      </Link>
+                    </motion.div>
                   )
                 })}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

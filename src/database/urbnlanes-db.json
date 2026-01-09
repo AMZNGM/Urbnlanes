@@ -1,4 +1,11 @@
 {
+  "settings": {
+    "languages": ["en", "ar"],
+    "defaultLanguage": "en",
+    "currency": "AED",
+    "dateFormat": "DD/MM/YYYY",
+    "timezone": "Asia/Dubai"
+  },
   "metadata": {
     "version": "1.0.0",
     "lastUpdated": "2025-12-23T03:54:00.000Z",
@@ -11,16 +18,10 @@
       "taxreg": "177176"
     }
   },
-  "settings": {
-    "languages": ["en", "ar"],
-    "defaultLanguage": "en",
-    "currency": "AED",
-    "dateFormat": "DD/MM/YYYY",
-    "timezone": "Asia/Dubai"
-  },
   "whoweare": {
     "tagline": "Setting a new benchmark",
     "description": "Urbnlanes Developments operates under the esteemed umbrella of Emeel Abdalla Investments, bringing decades of expertise to the Middle East's dynamic real estate landscape. Our diverse portfolio and unwavering commitment to quality have established us as a trusted name in premium property development.",
+    "description2": "Urbnlanes is a real estate development company, that operates under the umbrella of “Emeel Abdalla Investments”. With projects all over the Middle East, it is a company built on diversity and numerous years of experience in the field of real estate development.",
     "statistics": {
       "yearsOfExperience": "36+",
       "projectsCompleted": "100+",

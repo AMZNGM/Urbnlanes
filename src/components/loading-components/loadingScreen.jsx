@@ -9,7 +9,7 @@ export default function loadingScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 4000)
+    }, 3000)
 
     return () => clearTimeout(timer)
   }, [])
@@ -22,7 +22,7 @@ export default function loadingScreen() {
           animate={{ y: 0 }}
           exit={{ y: '-100%' }}
           transition={{ duration: 0.75, ease: 'easeInOut' }}
-          className="z-10001 fixed inset-0 w-screen h-full overflow-hidden flex justify-center items-center bg-black pointer-events-none"
+          className="z-99999 fixed inset-0 w-screen h-full overflow-hidden flex justify-center items-center bg-black pointer-events-none"
         >
           <motion.svg viewBox="0 0 3559 627" className="w-1/3 max-md:w-1/2 h-full fill-none stroke-15 stroke-bg">
             <motion.path

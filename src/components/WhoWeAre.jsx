@@ -103,7 +103,7 @@ export default function WhoWeAre() {
                   { number: whoweareData.statistics.landmarkProjects, label: 'Landmark Projects' },
                   { number: whoweareData.statistics.workforce, label: 'Workforce' },
                 ].map((stat, index) => (
-                  <div key={index} className="border-main/30 border-l text-main hover:translate-x-2.5 duration-300 pl-6 cursor-default">
+                  <div key={index} className="border-main/30 border-l text-text hover:translate-x-2.5 duration-300 pl-6 cursor-default">
                     <span className="font-light max-md:font-medium text-[2vw] max-lg:text-[5vw]">{stat.number}</span>
                     <h6 className="font-extralight max-sm:font-medium text-[1vw] max-md:text-[3vw] max-lg:text-[1.7vw] tracking-wide">
                       {stat.label}

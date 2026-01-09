@@ -7,17 +7,19 @@ import MasonryGrid from '@/components/ui/MasonryGrid'
 import Modal from '@/components/ui/Modal'
 
 export default function SelectedProjects() {
-  const SelectedProjects = getAllProjects().map((project, index) => ({
-    id: project.id,
-    title: project.name,
-    category: project.category,
-    image: project.gallery[0],
-    gallery: project.gallery,
-    description: project.description || project.shortDesc || 'A remarkable project by Urbnlanes Developments.',
-    location: project.location,
-    status: project.status,
-    height: ['h-[40vh]', 'h-[52vh]', 'h-[45vh]', 'h-[38vh]', 'h-[50vh]', 'h-[42vh]'][index % 6],
-  }))
+  const SelectedProjects = getAllProjects()
+    .slice(0, 9)
+    .map((project, index) => ({
+      id: project.id,
+      title: project.name,
+      category: project.category,
+      image: project.gallery[0],
+      gallery: project.gallery,
+      description: project.description || project.shortDesc || 'A remarkable project by Urbnlanes Developments.',
+      location: project.location,
+      status: project.status,
+      height: ['h-[40vh]', 'h-[52vh]', 'h-[45vh]', 'h-[38vh]', 'h-[50vh]', 'h-[42vh]'][index % 6],
+    }))
 
   const [selectedProject, setSelectedProject] = useState(null)
 

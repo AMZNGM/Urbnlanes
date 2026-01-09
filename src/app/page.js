@@ -5,6 +5,7 @@ import LoadingScreen from '@/components/loading-components/loadingScreen'
 import ProgressCarousel from '@/components/ProgressCarousel'
 import WhoWeAre from '@/components/WhoWeAre'
 import OurValues from '@/components/OurValues'
+import TextScrollOpacity from '@/components/ui/TextScrollOpacity'
 import SelectedProjects from '@/components/SelectedProjects'
 
 export const metadata = metadataGenerators.home()
@@ -16,6 +17,7 @@ export default function Home() {
       <ProgressCarousel />
       <WhoWeAre />
       <OurValues />
+      <TextScrollOpacity />
       <SelectedProjects />
     </Suspense>
   )
