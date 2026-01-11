@@ -15,7 +15,7 @@ export default function OurValues() {
   ]
 
   return (
-    <section className="relative w-full h-dvh max-md:h-[160vh] overflow-hidden bg-black text-text">
+    <section className="relative w-full h-dvh max-md:h-[200vh] overflow-hidden bg-black text-text">
       <div className="h-full flex flex-col justify-center gap-8 px-18 max-md:px-4 py-32">
         {whoweareData.values?.slice(0, 3).map((value, index) => (
           <div
@@ -24,12 +24,12 @@ export default function OurValues() {
           >
             <div className="z-10 relative w-full h-full overflow-hidden rounded-2xl">
               <motion.div
+                data-scroll
+                data-scroll-speed="0.05"
                 initial={{ opacity: 0.5, filter: 'blur(10px)' }}
                 whileInView={{ opacity: 1, filter: 'blur(0px)' }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                data-scroll
-                data-scroll-speed="0.05"
                 className="relative w-full h-full bg-bg rounded-2xl"
               >
                 <Image
