@@ -135,60 +135,61 @@ export default function ProgressCarousel() {
         >
           {currentSlide.image && (
             <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${currentSlide.image})` }}>
-              <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
             </div>
           )}
         </motion.div>
       </AnimatePresence>
 
-      {/* Next slide hover area */}
-      <div
-        className="right-0 z-20 absolute inset-y-0 w-1/3 flex justify-end items-center pr-12 cursor-pointer"
-        onMouseEnter={() => setShowNextSlide(true)}
-        onMouseLeave={() => setShowNextSlide(false)}
-        onClick={goToNext}
-      >
-        <AnimatePresence>
-          {showNextSlide && (
-            <motion.div
-              initial={{ x: '200%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '200%' }}
-              transition={{ duration: 0.5, type: 'spring', stiffness: 80, ease: 'easeInOut' }}
-              className="max-w-md bg-black/25 opacity-75 backdrop-blur-sm rounded-l-lg scale-80 p-6 select-none"
-            >
-              <p className="text-text/70 text-sm uppercase tracking-wider mb-2">Next Project</p>
-              <h3 className="font-medium text-2xl">{slides[(currentIndex + 1) % slides.length]?.title || ''}</h3>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Previous slide hover area */}
-      <div
-        className="left-0 z-20 absolute inset-y-0 w-1/3 flex justify-start items-center pl-12 cursor-pointer"
-        onMouseEnter={() => setShowPrevSlide(true)}
-        onMouseLeave={() => setShowPrevSlide(false)}
-        onClick={goToPrev}
-      >
-        <AnimatePresence>
-          {showPrevSlide && (
-            <motion.div
-              initial={{ x: '-200%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '-200%' }}
-              transition={{ duration: 0.5, type: 'spring', stiffness: 80, ease: 'easeInOut' }}
-              className="max-w-md bg-black/25 opacity-75 backdrop-blur-sm rounded-l-lg scale-80 p-6 select-none"
-            >
-              <p className="text-text/70 text-sm uppercase tracking-wider mb-2">Previous Project</p>
-              <h3 className="font-medium text-2xl">{slides[(currentIndex - 1 + slides.length) % slides.length]?.title || ''}</h3>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
       {/* Content */}
       <div className="relative h-full flex flex-col justify-end gap-12 p-18 max-md:p-4">
+        {/* Next slide hover area */}
+        <div
+          className="right-0 z-20 absolute inset-y-0 w-1/3 flex justify-end items-center pr-12 cursor-pointer"
+          onMouseEnter={() => setShowNextSlide(true)}
+          onMouseLeave={() => setShowNextSlide(false)}
+          onClick={goToNext}
+        >
+          <AnimatePresence>
+            {showNextSlide && (
+              <motion.div
+                initial={{ x: '200%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '200%' }}
+                transition={{ duration: 0.5, type: 'spring', stiffness: 80, ease: 'easeInOut' }}
+                className="max-w-md bg-black/25 opacity-75 backdrop-blur-sm rounded-l-lg scale-80 p-6 select-none"
+              >
+                <p className="text-text/70 text-sm uppercase tracking-wider mb-2">Next Project</p>
+                <h3 className="font-medium text-2xl">{slides[(currentIndex + 1) % slides.length]?.title || ''}</h3>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Previous slide hover area */}
+        <div
+          className="left-0 z-20 absolute inset-y-0 w-1/3 flex justify-start items-center pl-12 cursor-pointer"
+          onMouseEnter={() => setShowPrevSlide(true)}
+          onMouseLeave={() => setShowPrevSlide(false)}
+          onClick={goToPrev}
+        >
+          <AnimatePresence>
+            {showPrevSlide && (
+              <motion.div
+                initial={{ x: '-200%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '-200%' }}
+                transition={{ duration: 0.5, type: 'spring', stiffness: 80, ease: 'easeInOut' }}
+                className="max-w-md bg-black/25 opacity-75 backdrop-blur-sm rounded-l-lg scale-80 p-6 select-none"
+              >
+                <p className="text-text/70 text-sm uppercase tracking-wider mb-2">Previous Project</p>
+                <h3 className="font-medium text-2xl">{slides[(currentIndex - 1 + slides.length) % slides.length]?.title || ''}</h3>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Text */}
         <AnimatePresence mode="wait">
           <motion.div
             key={`content-${currentIndex}`}
@@ -196,7 +197,7 @@ export default function ProgressCarousel() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
-            className="max-w-4xl space-y-6"
+            className="z-40 relative max-w-4xl space-y-6 backdrop-blur-xs rounded-2xl p-2"
           >
             <h1 className="font-sec font-light text-text text-5xl md:text-7xl lg:text-8xl tracking-tight">{slides[currentIndex].title}</h1>
 

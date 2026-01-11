@@ -31,3 +31,6 @@ html {
 [lang='ar'] {
   font-family: 'Bein Arabic';
 }
+.border {
+  border-color: #8e8e8e50;
+}

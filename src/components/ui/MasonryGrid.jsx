@@ -5,7 +5,7 @@ import { motion } from 'motion/react'
 
 export default function MasonryGrid({ projects, openModal }) {
   return (
-    <div className="gap-2 columns-1 md:columns-2 lg:columns-3">
+    <div className="gap-2 columns-1 md:columns-2 lg:columns-3 xl:columns-5">
       {projects.map((project, index) => (
         <motion.div
           key={project.id}

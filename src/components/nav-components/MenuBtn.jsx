@@ -8,6 +8,7 @@ export default function MenuBtn({ navbarData, className = '' }) {
       onClick={() => (mobileMenuOpen ? resetSidebar() : setMobileMenuOpen(true))}
       className={`relative h-full p-4 flex justify-center items-center cursor-pointer ${className}`}
       aria-expanded={mobileMenuOpen}
+      title="Toggle menu"
       aria-label="Toggle menu"
     >
       <motion.div

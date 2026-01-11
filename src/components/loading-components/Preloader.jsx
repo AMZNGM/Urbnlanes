@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 
-export default function loadingScreen() {
+export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {

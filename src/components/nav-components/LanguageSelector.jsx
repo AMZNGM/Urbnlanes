@@ -9,7 +9,7 @@ export default function LanguageSelector({ navbarData, className = '' }) {
   }
 
   return (
-    <div className={`relative h-full ${className}`}>
+    <div title="Language selector" className={`relative h-full ${className}`}>
       <div onClick={() => setLanguageSelectorOpen(!languageSelectorOpen)} className="relative h-full">
         <Indicator className="relative h-full flex justify-center items-center gap-1 p-4 cursor-pointer">
           <span className={'z-10'}>{isClient ? selectedLanguage : 'English'}</span>

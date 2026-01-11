@@ -4,7 +4,7 @@ import logo from '../../../public/images/logos/urbnlanes-logo.webp'
 
 export default function NavLogo() {
   return (
-    <Link href="/" aria-label="Urbnlanes home" className="inline-flex relative items-center outline-none select-none">
+    <Link href="/" aria-label="Urbnlanes home" title="Logo" className="inline-flex relative items-center outline-none select-none">
       <Image
         src={logo}
         alt="Urbnlanes"

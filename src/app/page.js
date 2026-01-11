@@ -1,23 +1,27 @@
 import { Suspense } from 'react'
 import { metadataGenerators } from '@/lib/seo-helpers'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
-import LoadingScreen from '@/components/loading-components/loadingScreen'
+import Preloader from '@/components/loading-components/Preloader'
 import ProgressCarousel from '@/components/ProgressCarousel'
 import WhoWeAre from '@/components/WhoWeAre'
 import OurValues from '@/components/OurValues'
-import TextScrollOpacity from '@/components/ui/TextScrollOpacity'
+import HoverListGallery from '@/components/ui/HoverListGallery'
 import SelectedProjects from '@/components/SelectedProjects'
+import AboutUs from '@/components/AboutUs'
+import DraggableBoxCarousel from '@/components/ui/DraggableBoxCarousel'
 
 export const metadata = metadataGenerators.home()
 
 export default function Home() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      {/* <LoadingScreen /> */}
+      {/* <Preloader /> */}
       <ProgressCarousel />
       {/* <WhoWeAre /> */}
+      {/* <AboutUs /> */}
       {/* <OurValues /> */}
-      {/* <TextScrollOpacity /> */}
+      {/* <HoverListGallery /> */}
+      {/* <DraggableBoxCarousel /> */}
       {/* <SelectedProjects /> */}
     </Suspense>
   )

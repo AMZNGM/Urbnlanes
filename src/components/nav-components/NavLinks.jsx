@@ -10,6 +10,8 @@ export default function NavLinks({ navbarData, className = '' }) {
 
   return (
     <nav
+      title="Main navigation"
+      role="navigation"
       aria-label="Primary navigation"
       onMouseEnter={() => setIsMenuOpen(true)}
       onMouseLeave={handleMouseLeave}
