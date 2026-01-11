@@ -13,12 +13,12 @@ export const metadata = metadataGenerators.home()
 export default function Home() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      <LoadingScreen />
+      {/* <LoadingScreen /> */}
       <ProgressCarousel />
-      <WhoWeAre />
-      <OurValues />
-      <TextScrollOpacity />
-      <SelectedProjects />
+      {/* <WhoWeAre /> */}
+      {/* <OurValues /> */}
+      {/* <TextScrollOpacity /> */}
+      {/* <SelectedProjects /> */}
     </Suspense>
   )
 }
