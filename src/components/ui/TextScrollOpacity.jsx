@@ -3,13 +3,15 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import db from '@/database/urbnlanes-db.json'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 export default function TextScrollOpacity() {
+  const isMobile = useIsMobile()
   const value = db.whoweare.description2
   const valueRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: valueRef,
-    offset: ['start 0.8', 'start 0.15'],
+    offset: isMobile ? ['start 0.9', 'start 0.35'] : ['start 0.8', 'start 0.15'],
   })
 
   const words = value.split(' ')
