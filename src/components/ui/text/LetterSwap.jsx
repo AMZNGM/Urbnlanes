@@ -4,6 +4,7 @@ import { useState, useCallback, useRef } from 'react'
 import { motion, stagger, useAnimate } from 'motion/react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useNavbar } from '@/hooks/useNavbar'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 export default function LetterSwap({
   text = '',
@@ -19,6 +20,7 @@ export default function LetterSwap({
   onClick,
   ...props
 }) {
+  const isMobile = useIsMobile()
   const { currentLanguage } = useTranslation()
   const { isClient } = useNavbar()
   const [scope, animate] = useAnimate()
@@ -84,7 +86,7 @@ export default function LetterSwap({
     )
   }, 100)
 
-  if (currentLanguage === 'ar' || !isClient) {
+  if (currentLanguage === 'ar' || !isClient || isMobile) {
     const Tag = as || 'span'
     return (
       <Tag className={className} onClick={onClick} {...props}>
