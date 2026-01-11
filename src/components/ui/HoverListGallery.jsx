@@ -15,7 +15,7 @@ export default function HoverListGallery() {
   const [activeIndex, setActiveIndex] = useState(null)
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black text-text uppercase p-4">
+    <section className="relative w-full h-dvh overflow-hidden bg-black text-text uppercase p-4">
       <div className="relative w-full h-full flex flex-col justify-end gap-4">
         <p className="text-sm">Trusted Us</p>
 

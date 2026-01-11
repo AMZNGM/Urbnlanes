@@ -5,7 +5,7 @@ export const metadata = metadataGenerators.notFound()
 
 export default function NotFound() {
   return (
-    <main className="relative w-full h-screen bg-bg text-text">
+    <main className="relative w-full h-dvh bg-bg text-text">
       <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(/images/projects/east-lane/el-banner.avif)` }}>
         <div className="absolute inset-0 bg-black/75 backdrop-blur-xs" />
 

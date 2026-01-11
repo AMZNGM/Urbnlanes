@@ -15,7 +15,7 @@ export default function OurValues() {
   ]
 
   return (
-    <section className="relative w-full h-screen max-md:h-[170vh] overflow-hidden bg-black text-text">
+    <section className="relative w-full h-dvh max-md:h-[160vh] overflow-hidden bg-black text-text">
       <div className="h-full flex flex-col justify-center gap-8 px-18 max-md:px-4 py-32">
         {whoweareData.values?.slice(0, 3).map((value, index) => (
           <div

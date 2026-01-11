@@ -32,7 +32,7 @@ export default class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <div className="overflow-hidden">
-          <div ref={this.containerRef} className="min-h-screen flex flex-col justify-center items-center bg-bg text-center px-4">
+          <div ref={this.containerRef} className="min-h-dvh flex flex-col justify-center items-center bg-bg text-center px-4">
             <div ref={this.iconRef} className="mb-6">
               <TriangleAlert size={160} className="text-main" />
             </div>

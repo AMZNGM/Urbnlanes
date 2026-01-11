@@ -30,7 +30,7 @@ export default function NavbarOverlay({ navbarData }) {
   return (
     <div
       onClick={handleClick}
-      className={`fixed inset-0 xl:top-full w-full h-screen bg-black/75 duration-300 z-10
+      className={`fixed inset-0 xl:top-full w-full h-dvh bg-black/75 duration-300 z-10
         ${showOverlay ? 'opacity-100' : 'opacity-0 pointer-events-none'}
       `}
     />

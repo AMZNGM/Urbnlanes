@@ -103,7 +103,7 @@ export default function ProgressCarousel() {
 
   if (isLoading) {
     return (
-      <div className="h-screen">
+      <div className="h-dvh">
         <LoadingLogo />
       </div>
     )
@@ -111,7 +111,7 @@ export default function ProgressCarousel() {
 
   if (!slides.length) {
     return (
-      <div className="relative w-full h-screen overflow-hidden flex justify-center items-center bg-text text-bg">
+      <div className="relative w-full h-dvh overflow-hidden flex justify-center items-center bg-text text-bg">
         <h1>No projects found</h1>
       </div>
     )
@@ -120,7 +120,7 @@ export default function ProgressCarousel() {
   const currentSlide = slides[currentIndex] || {}
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black text-text">
+    <section className="relative w-full h-dvh overflow-hidden bg-black text-text">
       <ArrowCursor />
 
       {/* bg image */}

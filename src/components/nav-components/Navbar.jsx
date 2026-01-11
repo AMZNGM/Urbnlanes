@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className="top-0 z-50 fixed">
       <motion.div initial={{ opacity: 0, y: -100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <main
-          className={`relative w-screen flex justify-between items-center gap-8 backdrop-blur-2xl hover:bg-bg transition-all duration-300 px-18 max-md:px-4 border-text/25 border-b
+          className={`relative w-dvw flex justify-between items-center gap-8 backdrop-blur-2xl hover:bg-bg transition-all duration-300 px-18 max-md:px-4 border-text/25 border-b
           ${navbarData.isScrolled20vh ? 'bg-black/50 h-24' : 'bg-bg/50 h-34 max-sm:h-24'}
         `}
         >
