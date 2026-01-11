@@ -132,7 +132,7 @@ export default function FooterContent() {
           </div>
         </div>
 
-        <div className="w-full flex flex-row-reverse max-md:flex-col justify-center items-center gap-8 mt-12">
+        <div className="w-full flex flex-row-reverse max-md:flex-col justify-center items-center gap-8 mt-12 mb-4">
           <div className="flex justify-end items-center gap-8 text-xs">
             {['Privacy Policy', 'Terms of Use', 'Cookie Policy'].map((link) => (
               <Link

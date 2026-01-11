@@ -9,7 +9,7 @@ export default function TextScrollOpacity() {
   const valueRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: valueRef,
-    offset: ['start 0.8', 'start 0.25'],
+    offset: ['start 0.8', 'start 0.15'],
   })
 
   const words = value.split(' ')
@@ -24,11 +24,11 @@ export default function TextScrollOpacity() {
 
   return (
     <section className="relative w-full h-full bg-black px-18 max-md:px-4 py-12">
-      <div className="w-full h-full flex justify-center items-center">
+      <div className="w-full h-full flex flex-col justify-center items-center gap-12">
         <p
           ref={valueRef}
           style={{ opacity: scrollYProgress }}
-          className="relative font-sec font-light text-[2.5vw] max-md:text-[5vw] text-center text-balance cursor-default"
+          className="relative font-sec font-light text-[2.5vw] max-md:text-[4.5vw] text-center text-balance cursor-default"
         >
           {characters.map((char, index) => {
             const start = index / characters.length
@@ -44,19 +44,11 @@ export default function TextScrollOpacity() {
           })}
         </p>
 
+        <div className="w-full h-px bg-linear-to-r from-transparent via-main to-transparent" />
+
         <div className="max-md:hidden z-20 absolute inset-0 border rounded-sm m-8 pointer-events-none" />
         <div className="max-md:hidden z-20 absolute inset-3 border rounded-sm m-8 pointer-events-none" />
       </div>
-
-      <motion.div
-        style={{
-          scaleX: useTransform(scrollYProgress, [0, 1], ['0%', '100%']),
-          height: useTransform(scrollYProgress, [0, 1], ['1 px', '1.5px']),
-          opacity: useTransform(scrollYProgress, [0, 0.5], [0, 1]),
-          background: 'linear-gradient(90deg, transparent, currentColor, transparent)',
-        }}
-        className="opacity-0"
-      />
     </section>
   )
 }

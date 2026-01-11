@@ -10,28 +10,28 @@ export default function NavDropdown({ label, childrens, isActive, childOpen, set
   const { t } = useTranslation()
 
   return (
-    <div aria-label="Dropdown" className="relative w-full h-full z-50">
+    <div aria-label="Dropdown" className="z-50 relative w-full h-full">
       <button className="relative w-full h-full cursor-pointer">{label}</button>
 
       <AnimatePresence>
         {isActive && (
           <motion.div
-            className="fixed left-0 right-0 bg-bg border-b border-text/25 shadow-lg"
+            className="right-0 left-0 fixed bg-bg shadow-lg border-text/25 border-b"
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
           >
-            <div className="max-w-7xl mx-auto space-y-8 py-8">
+            <div className="max-w-7xl space-y-8 mx-auto py-8">
               {childrens.map((child, index) => (
                 <div key={index} className="flex justify-between" onMouseEnter={() => setChildOpen(index)}>
                   {child.children ? (
                     <motion.h3
-                      className="group/name relative w-1/3 h-fit flex items-center text-lg font-semibold text-text/75 hover:text-text transition-colors cursor-pointer py-4"
+                      className="group/name relative w-1/3 h-fit flex items-center font-semibold text-text/75 hover:text-text text-lg transition-colors py-4 cursor-pointer"
                       whileHover={{ x: 6 }}
                       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     >
-                      <span className="text-xs text-text/75 group-hover/name:text-main transition-colors p-2">
+                      <span className="text-text/75 group-hover/name:text-main text-xs transition-colors p-2">
                         {String(index + 1).padStart(2, '0')}
                       </span>
 
@@ -46,14 +46,14 @@ export default function NavDropdown({ label, childrens, isActive, childOpen, set
                       </motion.span>
                     </motion.h3>
                   ) : (
-                    <Link href={child.slug} className="group/name relative w-full h-fit text-lg font-semibold text-text/75">
+                    <Link href={child.slug} className="group/name relative w-full h-fit font-semibold text-text/75 text-lg">
                       <RippleEffect className="w-full py-3">
                         <motion.div
                           whileHover={{ x: 6 }}
                           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                           className="flex items-center"
                         >
-                          <span className="text-xs text-text/75 group-hover/name:text-main transition-colors p-2">
+                          <span className="text-text/75 group-hover/name:text-main text-xs transition-colors p-2">
                             {String(index + 1).padStart(2, '0')}
                           </span>
                           {t(child.name)}
@@ -83,8 +83,8 @@ export default function NavDropdown({ label, childrens, isActive, childOpen, set
                               ease: 'easeOut',
                             }}
                           >
-                            <Link href={grandchild.slug} className="w-full inline-flex">
-                              <RippleEffect className="w-full inline-flex py-4 text-text/75 hover:text-main transition-colors cursor-pointer">
+                            <Link href={grandchild.slug} className="inline-flex w-full">
+                              <RippleEffect className="inline-flex w-full text-text/75 hover:text-main transition-colors py-4 cursor-pointer">
                                 <Dot />
                                 {t(grandchild.name)}
                               </RippleEffect>

@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { memo } from 'react'
 import RippleEffect from '@/components/ui/effects/RippleEffect'
+import LetterSwap from '@/components/ui/text/LetterSwap'
 
 export default memo(function MainBtn({
   children,
+  className = '',
 
   to,
   href,
@@ -14,7 +16,6 @@ export default memo(function MainBtn({
   fullWidth = false,
   disabled = false,
 
-  className = '',
   ...rest
 }) {
   const baseStyles =
@@ -23,7 +24,7 @@ export default memo(function MainBtn({
   const looks = {
     main: 'bg-text text-bg border-main hover:bg-main',
     outline: 'bg-transparent text-main border-main hover:bg-main hover:text-white',
-    ghost: 'bg-transparent text-main border-transparent hover:bg-main/10',
+    ghost: 'bg-transparent text-text border-transparent hover:bg-main/10',
   }
 
   const sizes = {
@@ -52,20 +53,20 @@ export default memo(function MainBtn({
   if (to)
     return (
       <Link href={to} {...commonProps}>
-        {children}
+        <LetterSwap text={children} />
       </Link>
     )
   if (href)
     return (
       <a href={href} {...commonProps}>
-        {children}
+        <LetterSwap text={children} />
       </a>
     )
 
   return (
     <RippleEffect className="flex rounded-2xl">
       <button type="button" onClick={onClick} disabled={disabled} {...commonProps}>
-        {children}
+        <LetterSwap text={children} />
       </button>
     </RippleEffect>
   )

@@ -46,7 +46,7 @@ export default class ErrorBoundary extends React.Component {
             </p>
 
             <div className="flex sm:flex-row flex-col gap-4">
-              <MainBtn onClick={() => window.location.reload()} variant="outline" className="border-main text-main">
+              <MainBtn onClick={() => window.location.reload()} look="outline">
                 Refresh Page
               </MainBtn>
 
@@ -54,8 +54,7 @@ export default class ErrorBoundary extends React.Component {
                 onClick={() => {
                   window.location.href = '/'
                 }}
-                variant="outline"
-                className="border-main text-main"
+                look="outline"
               >
                 Go Home
               </MainBtn>

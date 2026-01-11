@@ -99,91 +99,89 @@ export default function DraggableBoxCarousel() {
   }, [isDragging])
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden flex justify-center items-center bg-black text-text">
-      <div
-        onMouseDown={handleDragStart}
-        onTouchStart={handleDragStart}
+    <div
+      onMouseDown={handleDragStart}
+      onTouchStart={handleDragStart}
+      style={{
+        perspective: '1200px',
+        width: `${width}px`,
+        height: `${height}px`,
+      }}
+      className="relative select-none"
+    >
+      <motion.div
         style={{
-          perspective: '1200px',
-          width: `${width}px`,
-          height: `${height}px`,
+          transform: `translateZ(-${depth / 2}px)`,
+          rotateY: springRotateY,
+          rotateX: springRotateX,
         }}
-        className="relative select-none"
+        className="relative w-full h-full transform-3d cursor-grab active:cursor-grabbing"
       >
-        <motion.div
+        {/* Front Face */}
+        <div
           style={{
-            transform: `translateZ(-${depth / 2}px)`,
-            rotateY: springRotateY,
-            rotateX: springRotateX,
+            transform: `rotateY(0deg) translateZ(${depth / 2}px)`,
           }}
-          className="relative w-full h-full transform-3d cursor-grab active:cursor-grabbing"
+          className="absolute w-full h-full overflow-hidden shadow-2xl backface-hidden"
         >
-          {/* Front Face */}
-          <div
-            style={{
-              transform: `rotateY(0deg) translateZ(${depth / 2}px)`,
-            }}
-            className="absolute w-full h-full overflow-hidden shadow-2xl backface-hidden"
-          >
-            <img src={carouselItems[0].src} alt={carouselItems[0].alt} draggable={false} className="w-full h-full object-cover" />
-          </div>
+          <img src={carouselItems[0].src} alt={carouselItems[0].alt} draggable={false} className="w-full h-full object-cover" />
+        </div>
 
-          {/* Right Face */}
-          <div
-            className="absolute w-full h-full overflow-hidden shadow-2xl"
-            style={{
-              transform: `rotateY(90deg) translateZ(${depth / 2}px)`,
-              backfaceVisibility: 'hidden',
-            }}
-          >
-            <img src={carouselItems[1].src} alt={carouselItems[1].alt} draggable={false} className="w-full h-full object-cover" />
-          </div>
+        {/* Right Face */}
+        <div
+          className="absolute w-full h-full overflow-hidden shadow-2xl"
+          style={{
+            transform: `rotateY(90deg) translateZ(${depth / 2}px)`,
+            backfaceVisibility: 'hidden',
+          }}
+        >
+          <img src={carouselItems[1].src} alt={carouselItems[1].alt} draggable={false} className="w-full h-full object-cover" />
+        </div>
 
-          {/* Back Face */}
-          <div
-            className="absolute w-full h-full overflow-hidden shadow-2xl"
-            style={{
-              transform: `rotateY(180deg) translateZ(${depth / 2}px)`,
-              backfaceVisibility: 'hidden',
-            }}
-          >
-            <img src={carouselItems[2].src} alt={carouselItems[2].alt} draggable={false} className="w-full h-full object-cover" />
-          </div>
+        {/* Back Face */}
+        <div
+          className="absolute w-full h-full overflow-hidden shadow-2xl"
+          style={{
+            transform: `rotateY(180deg) translateZ(${depth / 2}px)`,
+            backfaceVisibility: 'hidden',
+          }}
+        >
+          <img src={carouselItems[2].src} alt={carouselItems[2].alt} draggable={false} className="w-full h-full object-cover" />
+        </div>
 
-          {/* Left Face */}
-          <div
-            className="absolute w-full h-full overflow-hidden shadow-2xl"
-            style={{
-              transform: `rotateY(-90deg) translateZ(${depth / 2}px)`,
-              backfaceVisibility: 'hidden',
-            }}
-          >
-            <img src={carouselItems[3].src} alt={carouselItems[3].alt} draggable={false} className="w-full h-full object-cover" />
-          </div>
+        {/* Left Face */}
+        <div
+          className="absolute w-full h-full overflow-hidden shadow-2xl"
+          style={{
+            transform: `rotateY(-90deg) translateZ(${depth / 2}px)`,
+            backfaceVisibility: 'hidden',
+          }}
+        >
+          <img src={carouselItems[3].src} alt={carouselItems[3].alt} draggable={false} className="w-full h-full object-cover" />
+        </div>
 
-          {/* Top Face */}
-          <div
-            className="absolute w-full h-full overflow-hidden shadow-2xl"
-            style={{
-              transform: `rotateX(90deg) translateZ(${depth / 2}px)`,
-              backfaceVisibility: 'hidden',
-            }}
-          >
-            <img src={carouselItems[4].src} alt={carouselItems[4].alt} draggable={false} className="w-full h-full object-cover" />
-          </div>
+        {/* Top Face */}
+        <div
+          className="absolute w-full h-full overflow-hidden shadow-2xl"
+          style={{
+            transform: `rotateX(90deg) translateZ(${depth / 2}px)`,
+            backfaceVisibility: 'hidden',
+          }}
+        >
+          <img src={carouselItems[4].src} alt={carouselItems[4].alt} draggable={false} className="w-full h-full object-cover" />
+        </div>
 
-          {/* Bottom Face */}
-          <div
-            className="absolute w-full h-full overflow-hidden shadow-2xl"
-            style={{
-              transform: `rotateX(-90deg) translateZ(${depth / 2}px)`,
-              backfaceVisibility: 'hidden',
-            }}
-          >
-            <img src={carouselItems[5].src} alt={carouselItems[5].alt} draggable={false} className="w-full h-full object-cover" />
-          </div>
-        </motion.div>
-      </div>
+        {/* Bottom Face */}
+        <div
+          className="absolute w-full h-full overflow-hidden shadow-2xl"
+          style={{
+            transform: `rotateX(-90deg) translateZ(${depth / 2}px)`,
+            backfaceVisibility: 'hidden',
+          }}
+        >
+          <img src={carouselItems[5].src} alt={carouselItems[5].alt} draggable={false} className="w-full h-full object-cover" />
+        </div>
+      </motion.div>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from 'motion/react'
 import { getWhoweare, getMetadata } from '@/lib/getDatabase'
 import Heading from '@/components/ui/Heading'
 import TextAnimation from './ui/text/TextAnimation'
+import LetterSwap from './ui/text/LetterSwap'
 
 export default function WhoWeAre() {
   const whoweareData = getWhoweare()
@@ -49,6 +50,9 @@ export default function WhoWeAre() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-center object-cover hover:scale-105 transition-transform duration-700"
                 />
+
+                {/* <div className="absolute inset-0 w-full h-full border rounded-sm" />
+                <div className="absolute inset-3 w-full h-full border rounded-sm" /> */}
               </motion.div>
 
               <motion.div
@@ -67,7 +71,7 @@ export default function WhoWeAre() {
             <div className="flex items-center gap-2 mt-4">
               <div className="w-6 h-px bg-main" />
               <a href="tel:+15061" className="text-main hover:text-text text-xs hover:text-sm italic transition-all duration-700">
-                <TextAnimation text={'hotline: ' + metadata.company.hotline} as="span" />
+                <LetterSwap text={'hotline: ' + metadata.company.hotline} as="span" />
               </a>
             </div>
           </motion.div>
@@ -88,8 +92,8 @@ export default function WhoWeAre() {
                 className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-main/20 to-transparent -rotate-130 scale-150"
               />
 
-              <div className="top-0 left-0 absolute w-20 h-20 border-t border-l rounded-tl-sm" />
-              <div className="right-0 bottom-0 absolute w-20 h-20 border-r border-b rounded-br-sm" />
+              <div className="top-0 left-0 absolute w-20 h-20 border-main/35 border-t border-l rounded-tl-sm" />
+              <div className="right-0 bottom-0 absolute w-20 h-20 border-main/35 border-r border-b rounded-br-sm" />
 
               <div className="relative space-y-8">
                 {[

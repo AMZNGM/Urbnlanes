@@ -5,10 +5,9 @@ import Preloader from '@/components/loading-components/Preloader'
 import ProgressCarousel from '@/components/ProgressCarousel'
 import WhoWeAre from '@/components/WhoWeAre'
 import OurValues from '@/components/OurValues'
-import HoverListGallery from '@/components/ui/HoverListGallery'
-import SelectedProjects from '@/components/SelectedProjects'
 import AboutUs from '@/components/AboutUs'
-import DraggableBoxCarousel from '@/components/ui/DraggableBoxCarousel'
+import Updates from '@/components/Updates'
+import SelectedProjects from '@/components/SelectedProjects'
 
 export const metadata = metadataGenerators.home()
 
@@ -17,11 +16,10 @@ export default function Home() {
     <Suspense fallback={<LoadingLogo />}>
       {/* <Preloader /> */}
       <ProgressCarousel />
-      {/* <WhoWeAre /> */}
-      {/* <AboutUs /> */}
-      {/* <OurValues /> */}
-      {/* <HoverListGallery /> */}
-      {/* <DraggableBoxCarousel /> */}
+      <WhoWeAre />
+      <AboutUs />
+      <OurValues />
+      {/* <Updates /> */}
       {/* <SelectedProjects /> */}
     </Suspense>
   )

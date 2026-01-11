@@ -1,5 +1,4 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
-import { HomeIcon } from 'lucide-react'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 
 export const metadata = metadataGenerators.notFound()
@@ -10,21 +9,20 @@ export default function NotFound() {
       <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(/images/projects/east-lane/el-banner.avif)` }}>
         <div className="absolute inset-0 bg-black/75 backdrop-blur-xs" />
 
-        <div className="relative w-full h-full flex flex-col justify-center items-center gap-18 text-center font-light z-10 py-18 px-4">
+        <div className="relative w-full h-full flex flex-col justify-center items-center gap-6 text-center font-light z-10 py-18 px-4">
           <section className="space-y-4">
             <h1 className="text-3xl">Our Apologies</h1>
             <h3 className="text-xl">It seems you have reached a page that does not exist.</h3>
             <p className="text-lg">Either the page is not available, or the address (URL) you have entered is incorrect.</p>
             <MainBtn to={'/'} look="ghost">
-              <span>Go Back Home</span>
-              <HomeIcon className="size-5" />
+              Go Back Home
             </MainBtn>
           </section>
 
-          <section className="space-y-4 font-arab">
-            <h2>نأسف</h2>
-            <h3 className="text-2xl">الصفحة المطلوبة غير موجودة</h3>
+          <section className="space-y-4 font-arab text-text/80">
             <p className="text-lg">قد يكون سبب المشكلة أن الصفحة غير متاحة، أو أن رابط الصفحة الذي أدخلته غير صحيح</p>
+            <h3 className="text-2xl">الصفحة المطلوبة غير موجودة</h3>
+            <h2>نأسف</h2>
           </section>
         </div>
       </div>
