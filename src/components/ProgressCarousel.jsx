@@ -17,7 +17,7 @@ export default function ProgressCarousel() {
   const [slides, setSlides] = useState([])
   const [showNextSlide, setShowNextSlide] = useState(false)
   const [showPrevSlide, setShowPrevSlide] = useState(false)
-  const [isVideoMode, setIsVideoMode] = useState(true)
+  const [isVideoMode, setIsVideoMode] = useState(false)
   const duration = 5000
 
   const projectConfigs = [
