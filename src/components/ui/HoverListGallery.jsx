@@ -40,7 +40,7 @@ export default function HoverListGallery() {
             onMouseLeave={() => setActiveIndex(null)}
             className="group relative cursor-pointer"
           >
-            <h3 className="relative text-2xl">{name}</h3>
+            <h3 className="relative text-main hover:text-text text-2xl">{name}</h3>
 
             <span className="bottom-0 left-0 absolute w-full h-0.5 bg-text scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left transition-transform duration-300" />
           </div>

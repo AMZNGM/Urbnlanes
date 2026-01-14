@@ -17,7 +17,7 @@ export default function Newsletter() {
 
   return (
     <section className="relative w-full overflow-hidden bg-black text-text px-4 py-24">
-      <div className="w-full h-px bg-linear-to-r from-transparent via-main to-transparent mb-12" />
+      <div className="w-full h-px bg-linear-to-r from-transparent via-main to-transparent mb-24" />
 
       <div className="items-end gap-12 grid lg:grid-cols-2">
         <motion.div
@@ -44,8 +44,12 @@ export default function Newsletter() {
           className="relative"
         >
           <form action={action} className="group relative">
+            <label htmlFor="newsletter-email" className="sr-only">
+              Email Address
+            </label>
             <input
               type="email"
+              id="newsletter-email"
               name="email"
               placeholder="Your email"
               required

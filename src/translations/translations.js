@@ -44,6 +44,15 @@ export const TRANSLATIONS = {
       moreAboutProject: 'More about {{name}} project',
       nextProject: 'Next Project',
       previousProject: 'Previous Project',
+      whoWeAre: 'Who We Are',
+      hotline: 'Hotline',
+      yearsOfExperience: 'Years of Experience',
+      projectsCompleted: 'Projects Completed',
+      towersDelivered: 'Towers Delivered',
+      landmarkProjects: 'Landmark Projects',
+      workforce: 'Workforce',
+      image: 'Image',
+      video: 'Video',
     },
 
     search: {
@@ -188,6 +197,15 @@ export const TRANSLATIONS = {
       moreAboutProject: 'المزيد عن مشروع {{name}}',
       nextProject: 'المشروع التالي',
       previousProject: 'المشروع السابق',
+      whoWeAre: 'من نحن',
+      hotline: 'الخط الساخن',
+      yearsOfExperience: 'سنوات الخبرة',
+      projectsCompleted: 'المشاريع المكتملة',
+      towersDelivered: 'الأبراج المسلمة',
+      landmarkProjects: 'المشاريع البارزة',
+      workforce: 'القوى العاملة',
+      image: 'صورة',
+      video: 'فيديو',
     },
 
     search: {

@@ -18,21 +18,18 @@ export default function Home() {
   return (
     <Suspense fallback={<LoadingLogo />}>
       {/* <Preloader /> */}
+
       <div className="sticky top-0">
         <ProgressCarousel />
       </div>
 
-      {/* <WhoWeAre /> */}
-      {/* <AboutUs /> */}
-      {/* <VideoSection /> */}
-      {/* <SelectedProjects /> */}
-      {/* <Updates /> */}
-      {/* <OurValues /> */}
-      {/* <Newsletter /> */}
-
-      {/* <div className="relative h-[150vh]">
-        <MaskImages />
-      </div> */}
+      <WhoWeAre />
+      {/* <AboutUs />
+      <VideoSection />
+      <SelectedProjects />
+      <Updates />
+      <OurValues />
+      <Newsletter /> */}
     </Suspense>
   )
 }

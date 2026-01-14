@@ -15,6 +15,7 @@ export default function SwitchBtn({ checked, onChange, className = '', id, ...pr
         className="top-0 left-0 z-10 absolute w-full h-full m-0 appearance-none cursor-pointer"
         checked={checked}
         onChange={(e) => onChange && onChange(e.target.checked)}
+        aria-label={props['aria-label'] || 'Toggle mode'}
         {...props}
       />
       <svg viewBox="0 0 292 142" className="w-full h-full overflow-visible">

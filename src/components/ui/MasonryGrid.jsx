@@ -36,8 +36,8 @@ export default function MasonryGrid({ projects, openModal }) {
   })
 
   // Shared Transform
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [150, -150])
-  const parallaxSubtle = useTransform(scrollYProgress, [0, 1], [80, -80])
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [250, -250])
+  const parallaxSubtle = useTransform(scrollYProgress, [0, 1], [120, -120])
 
   const columns = useMemo(() => {
     // Create arrays for each column

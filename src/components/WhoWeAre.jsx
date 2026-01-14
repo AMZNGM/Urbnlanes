@@ -7,8 +7,10 @@ import { getWhoweare, getMetadata } from '@/lib/getDatabase'
 import Heading from '@/components/ui/Heading'
 import TextAnimation from '@/components/ui/text/TextAnimation'
 import LetterSwap from '@/components/ui/text/LetterSwap'
+import { useTranslation } from '@/hooks/useTranslation'
 
 export default function WhoWeAre() {
+  const { t } = useTranslation()
   const whoweareData = getWhoweare()
   const metadata = getMetadata()
   const containerRef = useRef(null)
@@ -30,7 +32,7 @@ export default function WhoWeAre() {
   return (
     <section ref={containerRef} className="relative w-full h-full overflow-hidden bg-black text-text px-18 max-md:px-4 py-8">
       <motion.div style={{ opacity, scale }} className="relative space-y-18">
-        <Heading text="Who We Are" tagline={whoweareData.tagline} />
+        <Heading text={t('common.whoWeAre')} tagline={t('db.whoweare.tagline')} />
 
         <div className="gap-12 max-md:gap-16 grid lg:grid-cols-12">
           {/* Left column */}
@@ -67,16 +69,16 @@ export default function WhoWeAre() {
                 transition={{ duration: 0.8, delay: 1 }}
                 className="-right-18 max-md:right-0 -bottom-2 z-30 absolute backdrop-blur-2xl border rounded-sm px-8 py-4 rotate -6"
               >
-                <p className="text-main text-xs tracking-[0.3vw]">{metadata.company.tagline}</p>
+                <p className="text-main text-xs tracking-[0.3vw]">{t('db.metadata.company.tagline')}</p>
               </motion.div>
             </div>
 
-            <p className="text-[1vw] max-md:text-[4vw] max-lg:text-[2vw] normal-case text-balance"> {whoweareData.description} </p>
+            <p className="text-[1vw] max-md:text-[4vw] max-lg:text-[2vw] normal-case text-balance"> {t('db.whoweare.description')} </p>
 
             <div className="flex items-center gap-2 mt-4">
               <div className="w-6 h-px bg-main" />
               <a href="tel:+15061" className="text-main hover:text-text text-xs hover:text-sm italic transition-all duration-700">
-                <LetterSwap text={'hotline: ' + metadata.company.hotline} as="span" />
+                <LetterSwap text={`${t('common.hotline')} : ` + metadata.company.hotline} as="span" />
               </a>
             </div>
           </motion.div>
@@ -102,18 +104,18 @@ export default function WhoWeAre() {
 
               <div className="relative space-y-8">
                 {[
-                  { number: whoweareData.statistics.yearsOfExperience, label: 'Years of Experience' },
-                  { number: whoweareData.statistics.projectsCompleted, label: 'Projects Completed' },
-                  { number: whoweareData.statistics.towersDelivered, label: 'Towers Delivered' },
-                  { number: whoweareData.statistics.landmarkProjects, label: 'Landmark Projects' },
-                  { number: whoweareData.statistics.workforce, label: 'Workforce' },
+                  { number: whoweareData.statistics.yearsOfExperience, label: t('common.yearsOfExperience') },
+                  { number: whoweareData.statistics.projectsCompleted, label: t('common.projectsCompleted') },
+                  { number: whoweareData.statistics.towersDelivered, label: t('common.towersDelivered') },
+                  { number: whoweareData.statistics.landmarkProjects, label: t('common.landmarkProjects') },
+                  { number: whoweareData.statistics.workforce, label: t('common.workforce') },
                 ].map((stat, index) => (
                   <div key={index} className="border-main/30 border-l text-text hover:translate-x-2.5 duration-300 pl-6 cursor-default">
                     <TextAnimation text={stat.number} as="span" className="font-light max-md:font-medium text-[2vw] max-lg:text-[5vw]" />
 
                     <TextAnimation
                       text={stat.label}
-                      as="h6"
+                      as="h3"
                       className="font-extralight max-sm:font-medium text-[1vw] max-md:text-[3vw] max-lg:text-[1.7vw] tracking-wide"
                     />
                   </div>

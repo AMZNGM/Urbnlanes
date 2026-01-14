@@ -7,6 +7,10 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 py-8">
       <h1>About Urbnlanes</h1>
       <p>Learn more about Urbnlanes, a diversified real estate development company.</p>
+
+      {/* <div className="relative h-[150vh]">
+        <MaskImages />
+      </div> */}
     </div>
   )
 }
