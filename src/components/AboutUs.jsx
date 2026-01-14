@@ -4,7 +4,7 @@ export default function AboutUs() {
   const vid = '/videos/projects/yellow-residence/yr-sneak-peak.mp4'
 
   return (
-    <section className="relative w-full h-full overflow-hidden flex md:flex-row flex-col bg-black max-md:px-4">
+    <section className="relative w-full h-full flex md:flex-row flex-col bg-black max-md:px-4">
       <div className="relative w-full md:w-1/2 h-dvh max-md:h-[50vh]">
         <video
           src={vid}

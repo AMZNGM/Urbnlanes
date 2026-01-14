@@ -5,17 +5,25 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { getWhoweare, getMetadata } from '@/lib/getDatabase'
 import Heading from '@/components/ui/Heading'
-import TextAnimation from './ui/text/TextAnimation'
-import LetterSwap from './ui/text/LetterSwap'
+import TextAnimation from '@/components/ui/text/TextAnimation'
+import LetterSwap from '@/components/ui/text/LetterSwap'
 
 export default function WhoWeAre() {
   const whoweareData = getWhoweare()
   const metadata = getMetadata()
   const containerRef = useRef(null)
+  const imageRef = useRef(null)
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start end', 'end start'],
   })
+
+  const { scrollYProgress: imageScrollProgress } = useScroll({
+    target: imageRef,
+    offset: ['start 60%', 'end 20%'],
+  })
+
   const opacity = useTransform(scrollYProgress, [0, 0.15, 0.8], [0, 1, 1])
   const scale = useTransform(scrollYProgress, [0, 0.2], [0.95, 1])
 
@@ -50,9 +58,6 @@ export default function WhoWeAre() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-center object-cover hover:scale-105 transition-transform duration-700"
                 />
-
-                {/* <div className="absolute inset-0 w-full h-full border rounded-sm" />
-                <div className="absolute inset-3 w-full h-full border rounded-sm" /> */}
               </motion.div>
 
               <motion.div
@@ -123,7 +128,7 @@ export default function WhoWeAre() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="relative rounded-2xl p-4"
             >
-              <div data-scroll data-scroll-speed="0.05" className="z-30 relative h-[38vh] overflow-hidden rounded-2xl">
+              <div ref={imageRef} data-scroll data-scroll-speed="0.05" className="z-30 relative h-[38vh] overflow-hidden rounded-2xl">
                 <Image
                   src="/images/projects/yellow-residence/yr-gallery-3.webp"
                   alt="EastLane Project"
@@ -131,6 +136,22 @@ export default function WhoWeAre() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-center object-cover scale-110 hover:scale-115 transition-transform duration-700"
                 />
+
+                <motion.div
+                  style={{
+                    clipPath: useTransform(imageScrollProgress, (latest) => `inset(${latest * 100}% 0 0 0)`),
+                  }}
+                  className="z-10 absolute inset-0"
+                >
+                  <Image
+                    src="/images/projects/yellow-residence/yr-gallery-2.webp"
+                    alt="image  clipPath"
+                    loading="eager"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </motion.div>
               </div>
 
               <div className="top-0 left-0 z-30 absolute w-12 h-12 border-main/35 border-t-2 border-l-2 rounded-sm" />

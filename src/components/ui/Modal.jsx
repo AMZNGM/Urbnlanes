@@ -48,7 +48,7 @@ export default function Modal({ closeModal, selectedProject }) {
                     <span className="text-main text-xs text-center normal-case tracking-wide">{selectedProject.status}</span>
                   </div>
 
-                  <div className="text-center">
+                  <div className="max-md:text-center">
                     {/* <h4 className="text-main text-xs tracking-widest mb-2">Description</h4> */}
                     <p className="font-mono text-text/80 text-sm text-balance leading-relaxed">{selectedProject.description}</p>
                   </div>

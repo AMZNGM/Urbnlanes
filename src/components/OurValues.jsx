@@ -5,6 +5,7 @@ import { motion } from 'motion/react'
 import { getWhoweare } from '@/lib/getDatabase'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import ArrowIcon from '@/components/ui/icons/ArrowIcon'
+import Heading from '@/components/ui/Heading'
 
 export default function OurValues() {
   const whoweareData = getWhoweare()
@@ -16,7 +17,9 @@ export default function OurValues() {
 
   return (
     <section className="relative w-full h-dvh max-md:h-[200dvh] overflow-hidden bg-black text-text">
-      <div className="h-full flex flex-col justify-center gap-8 px-18 max-md:px-4 py-32 max-md:py-4">
+      <div className="h-full flex flex-col justify-center gap-8 px-4">
+        <Heading text="Our Values" />
+
         {whoweareData.values?.slice(0, 3).map((value, index) => (
           <div
             key={value.title}

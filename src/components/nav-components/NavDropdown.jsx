@@ -37,12 +37,8 @@ export default function NavDropdown({ label, childrens, isActive, childOpen, set
 
                       {t(child.name)}
 
-                      <motion.span
-                        className="ml-2"
-                        animate={{ rotate: childOpen === index ? 90 : 0 }}
-                        transition={{ duration: 0.3, ease: 'easeOut' }}
-                      >
-                        <ChevronRight size={20} />
+                      <motion.span animate={{ rotate: childOpen === index ? 90 : 0 }} transition={{ duration: 0.3, ease: 'easeOut' }}>
+                        <ChevronRight size={20} className="rtl:ms-2 ltr:ml-2" />
                       </motion.span>
                     </motion.h3>
                   ) : (

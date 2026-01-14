@@ -1,9 +1,15 @@
 import { SearchIcon } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import RippleEffect from '@/components/ui/effects/RippleEffect'
 import SearchBar from '@/components/nav-components/SearchBar'
 
 export default function SearchTrigger({ navbarData, className = '' }) {
   const { toggleSearchBar, searchInputRef } = navbarData
+  const [platform, setPlatform] = useState('Ctrl')
+
+  useEffect(() => {
+    setPlatform(typeof navigator !== 'undefined' && navigator.platform.toLowerCase().includes('mac') ? '⌘' : 'Ctrl')
+  }, [])
 
   return (
     <>
@@ -16,9 +22,7 @@ export default function SearchTrigger({ navbarData, className = '' }) {
           <div className="flex items-center gap-2 bg-bg shadow-xl rounded-lg text-xs whitespace-nowrap px-3 py-2">
             <span>Search</span>
             <div className="flex items-center gap-1">
-              <kbd className="bg-bg border border-main rounded font-mono text-xs px-2 py-1">
-                {typeof navigator !== 'undefined' && navigator.platform.toLowerCase().includes('mac') ? '⌘' : 'Ctrl'}
-              </kbd>
+              <kbd className="bg-bg border border-main rounded font-mono text-xs px-2 py-1">{platform}</kbd>
               <span className="text-gray-400">+</span>
               <kbd className="bg-bg border border-main rounded font-mono text-xs px-2 py-1">K</kbd>
             </div>

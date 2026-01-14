@@ -11,7 +11,7 @@ export default function LetterSwap({
   reverse = false,
   transition = {
     type: 'spring',
-    duration: 0.7,
+    duration: 0.5,
   },
   staggerDuration = 0.01,
   staggerFrom = 'center',

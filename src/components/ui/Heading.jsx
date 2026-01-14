@@ -3,16 +3,16 @@
 import { motion } from 'motion/react'
 import ShinyText from '@/components/ui/text/ShinyText'
 
-export default function Heading({ text = '', tagline = '' }) {
+export default function Heading({ text = '', tagline = '', withOutLine, className }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: 0.3 }}
-      className="font-sec my-12"
+      className={`font-sec my-12 ${className}`}
     >
-      <div className="w-full h-px bg-linear-to-r from-transparent via-main to-transparent mb-12" />
+      {!withOutLine && <div className="w-full h-px bg-linear-to-r from-transparent via-main to-transparent mb-12" />}
 
       <div className="w-[5vw] max-md:w-[10vw] h-0.5 bg-linear-to-r from-transparent via-main to-transparent mb-2" />
 

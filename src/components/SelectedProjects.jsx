@@ -32,7 +32,7 @@ export default function SelectedProjects() {
   }
 
   return (
-    <div className="relative w-full h-full bg-black text-text px-18 max-md:px-4 py-8">
+    <div className="relative w-full h-full bg-black text-text px-4 pt-8 pb-24">
       <Heading text="Selected projects" />
       <MasonryGrid projects={SelectedProjects} openModal={openModal} />
       <Modal projects={SelectedProjects} closeModal={closeModal} selectedProject={selectedProject} />
