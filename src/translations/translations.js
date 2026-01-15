@@ -152,6 +152,9 @@ export const TRANSLATIONS = {
         },
       },
     },
+    videoSection: {
+      marquee: 'One year - One vision - Purposeful progress -',
+    },
   },
 
   ar: {
@@ -303,6 +306,9 @@ export const TRANSLATIONS = {
           name: 'مدينة غرب عبد الله المبارك',
         },
       },
+    },
+    videoSection: {
+      marquee: 'عام واحد - رؤية واحدة - تقدم هادف -',
     },
   },
 }

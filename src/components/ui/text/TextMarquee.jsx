@@ -41,7 +41,7 @@ function ParallaxText({ children, baseVelocity = 100, className = '' }) {
   return (
     <div className="overflow-hidden flex flex-nowrap whitespace-nowrap">
       <motion.div className={`flex flex-nowrap tracking-widest ${className}`} style={{ x }}>
-        {Array.from({ length: 8 }).map((_, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
           <span key={i} className="block mr-1 shrink-0">
             {children}
           </span>
