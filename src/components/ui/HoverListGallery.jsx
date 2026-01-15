@@ -31,7 +31,7 @@ export default function HoverListGallery() {
   ]
 
   return (
-    <section className="relative w-full h-full overflow-hidden flex flex-col justify-end gap-4">
+    <section className="max-md:hidden relative w-full h-full overflow-hidden flex flex-col justify-end gap-4">
       <div className="relative h-full flex flex-col justify-center items-end gap-2 text-text p-4 mix-blend-difference">
         {ProjectsNames.map((name, index) => (
           <div

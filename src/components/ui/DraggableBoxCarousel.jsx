@@ -41,8 +41,8 @@ export default function DraggableBoxCarousel() {
   const springRotateX = useSpring(rotateX, { stiffness: 100, damping: 20 })
   const dragStart = useRef({ x: 0, y: 0, rotY: 0, rotX: 0 })
   const isMobile = useIsMobile()
-  const width = isMobile ? 240 : 300
-  const height = isMobile ? 180 : 300
+  const width = isMobile ? 250 : 300
+  const height = isMobile ? 250 : 300
   const depth = width
 
   const handleDragStart = (event) => {
