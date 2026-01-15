@@ -54,7 +54,8 @@ export default function WhoWeAre() {
                   src="/images/projects/east-lane/el-main-3.avif"
                   alt="EastLane Project"
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 60vw"
                   className="object-center object-cover hover:scale-105 transition-transform duration-700"
                 />
               </motion.div>
@@ -132,7 +133,7 @@ export default function WhoWeAre() {
                   src="/images/projects/yellow-residence/yr-gallery-3.webp"
                   alt="EastLane Project"
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 40vw, 35vw"
                   className="object-center object-cover scale-110 hover:scale-115 transition-transform duration-700"
                 />
 
@@ -145,9 +146,8 @@ export default function WhoWeAre() {
                   <Image
                     src="/images/projects/yellow-residence/yr-gallery-2.webp"
                     alt="image  clipPath"
-                    loading="eager"
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 40vw, 35vw"
                     className="object-cover"
                   />
                 </motion.div>

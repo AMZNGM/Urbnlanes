@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useRef, useState, useEffect } from 'react'
 import { motion, useMotionValue, useSpring, AnimatePresence } from 'motion/react'
 import { useIsMobile } from '@/hooks/useIsMobile'
@@ -159,7 +160,15 @@ export default function DraggableBoxCarousel() {
             }}
             className="absolute w-full h-full overflow-hidden shadow-2xl hover:brightness-110 transition-all duration-300 backface-hidden cursor-pointer"
           >
-            <img src={carouselItems[0].src} alt={carouselItems[0].alt} draggable={false} className="w-full h-full object-cover" />
+            <Image
+              src={carouselItems[0].src}
+              alt={carouselItems[0].alt || ''}
+              draggable={false}
+              fill
+              sizes="(max-width: 768px) 250px, 300px"
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
 
           {/* Right Face */}
@@ -171,7 +180,14 @@ export default function DraggableBoxCarousel() {
               backfaceVisibility: 'hidden',
             }}
           >
-            <img src={carouselItems[1].src} alt={carouselItems[1].alt} draggable={false} className="w-full h-full object-cover" />
+            <Image
+              src={carouselItems[1].src}
+              alt={carouselItems[1].alt || ''}
+              draggable={false}
+              fill
+              sizes="(max-width: 768px) 250px, 300px"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Back Face */}
@@ -183,7 +199,14 @@ export default function DraggableBoxCarousel() {
               backfaceVisibility: 'hidden',
             }}
           >
-            <img src={carouselItems[2].src} alt={carouselItems[2].alt} draggable={false} className="w-full h-full object-cover" />
+            <Image
+              src={carouselItems[2].src}
+              alt={carouselItems[2].alt || ''}
+              draggable={false}
+              fill
+              sizes="(max-width: 768px) 250px, 300px"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Left Face */}
@@ -195,7 +218,14 @@ export default function DraggableBoxCarousel() {
               backfaceVisibility: 'hidden',
             }}
           >
-            <img src={carouselItems[3].src} alt={carouselItems[3].alt} draggable={false} className="w-full h-full object-cover" />
+            <Image
+              src={carouselItems[3].src}
+              alt={carouselItems[3].alt || ''}
+              draggable={false}
+              fill
+              sizes="(max-width: 768px) 250px, 300px"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Top Face */}
@@ -207,7 +237,14 @@ export default function DraggableBoxCarousel() {
               backfaceVisibility: 'hidden',
             }}
           >
-            <img src={carouselItems[4].src} alt={carouselItems[4].alt} draggable={false} className="w-full h-full object-cover" />
+            <Image
+              src={carouselItems[4].src}
+              alt={carouselItems[4].alt || ''}
+              draggable={false}
+              fill
+              sizes="(max-width: 768px) 250px, 300px"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Bottom Face */}
@@ -219,7 +256,14 @@ export default function DraggableBoxCarousel() {
               backfaceVisibility: 'hidden',
             }}
           >
-            <img src={carouselItems[5].src} alt={carouselItems[5].alt} draggable={false} className="w-full h-full object-cover" />
+            <Image
+              src={carouselItems[5].src}
+              alt={carouselItems[5].alt || ''}
+              draggable={false}
+              fill
+              sizes="(max-width: 768px) 250px, 300px"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
       </div>
@@ -243,9 +287,11 @@ export default function DraggableBoxCarousel() {
               className="relative w-full max-w-[90vw] h-full max-h-[70vh] flex justify-center items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
+              <Image
                 src={carouselItems[selectedFace].src}
-                alt={carouselItems[selectedFace].alt}
+                alt={carouselItems[selectedFace].alt || ''}
+                fill
+                sizes="(max-width: 768px) 90vw, 70vw"
                 className="max-w-full max-h-full object-contain shadow-2xl rounded-lg"
               />
 

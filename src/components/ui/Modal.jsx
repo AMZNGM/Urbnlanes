@@ -61,12 +61,12 @@ export default function Modal({ closeModal, selectedProject }) {
 
               <div className="md:h-[80vh] overflow-y-auto space-y-4 rounded-xl">
                 {selectedProject.gallery.map((img, idx) => (
-                  <div key={idx} className="relative overflow-hidden rounded-xl">
+                  <div key={idx} className="relative h-[60vh] overflow-hidden rounded-xl">
                     <Image
                       src={img}
                       alt={`${selectedProject.title} - Image ${idx + 1}`}
-                      width={1200}
-                      height={100}
+                      fill
+                      sizes="(max-width: 768px) 95vw, 60vw"
                       className="object-cover"
                     />
                   </div>

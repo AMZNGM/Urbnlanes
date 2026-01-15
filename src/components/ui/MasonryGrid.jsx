@@ -81,7 +81,7 @@ export default function MasonryGrid({ projects, openModal }) {
             }`}
           >
             {col.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} openModal={openModal} />
+              <ProjectCard key={project.id} project={project} index={index} openModal={openModal} columnsCount={columnsCount} />
             ))}
           </motion.div>
         )
@@ -90,7 +90,7 @@ export default function MasonryGrid({ projects, openModal }) {
   )
 }
 
-function ProjectCard({ project, index, openModal }) {
+function ProjectCard({ project, index, openModal, columnsCount }) {
   const cardRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -117,7 +117,13 @@ function ProjectCard({ project, index, openModal }) {
           src={project.image}
           alt={project.title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes={
+            columnsCount === 5
+              ? '(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 20vw'
+              : columnsCount === 3
+              ? '(max-width: 768px) 100vw, 33vw'
+              : '100vw'
+          }
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
       </motion.div>
