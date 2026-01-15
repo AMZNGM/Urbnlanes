@@ -2,13 +2,13 @@
 
 import Image from 'next/image'
 import { motion } from 'motion/react'
-import { getWhoweare } from '@/lib/getDatabase'
+import db from '@/database/urbnlanes-db.json'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import ArrowIcon from '@/components/ui/icons/ArrowIcon'
 import Heading from '@/components/ui/Heading'
 
 export default function OurValues() {
-  const whoweareData = getWhoweare()
+  const whoweareData = db.whoweare
   const images = [
     '/images/projects/east-lane/el-gallery-1.webp',
     '/images/projects/yellow-residence/yr-gallery-1.avif',

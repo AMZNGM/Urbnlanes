@@ -2,11 +2,6 @@ import { useMemo } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { TRANSLATIONS } from '@/translations/translations'
 
-const LANGUAGE_MAP = {
-  English: 'en',
-  العربية: 'ar',
-}
-
 /**
  * Professional translation hook with namespace support and interpolation
  * @example
@@ -14,6 +9,12 @@ const LANGUAGE_MAP = {
  * t('nav.home') // Returns translated text
  * t('common.search', { count: 5 }) // With interpolation
  */
+
+const LANGUAGE_MAP = {
+  English: 'en',
+  العربية: 'ar',
+}
+
 export function useTranslation() {
   const languageContext = useLanguage()
 
@@ -29,12 +30,6 @@ export function useTranslation() {
   const langCode = LANGUAGE_MAP[selectedLanguage] || 'en'
   const translations = TRANSLATIONS[langCode] || TRANSLATIONS.en
 
-  /**
-   * Translation function with namespace support
-   * @param {string} key - Translation key (supports dot notation: 'nav.home')
-   * @param {object} params - Optional parameters for interpolation
-   * @returns {string} Translated text
-   */
   const t = useMemo(
     () =>
       (key, params = {}) => {

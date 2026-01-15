@@ -31,7 +31,7 @@ export default function Newsletter() {
             Get news & updates from Urbnlanes
           </ShinyText>
 
-          <p className="text-main text-sm">
+          <p className="text-sm">
             Sign up and be the first to know about the latest developments and exciting news on how we are shaping the future!
           </p>
         </motion.div>

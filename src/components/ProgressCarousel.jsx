@@ -118,7 +118,7 @@ export default function ProgressCarousel() {
       {/* Switch btn */}
       <div
         dir="ltr"
-        className="top-38 max-md:top-28 right-18 max-md:right-4 z-99999 absolute h-10 flex items-center gap-4 bg-black/50 backdrop-blur-lg border border-text/10 rounded-full px-4"
+        className="top-38 max-md:top-28 right-18 max-md:right-4 z-30 absolute h-10 flex items-center gap-4 bg-black/50 backdrop-blur-lg border border-text/10 rounded-full px-4"
       >
         <button
           onClick={() => setIsVideoMode(false)}
@@ -202,9 +202,9 @@ export default function ProgressCarousel() {
           <AnimatePresence>
             {showNextSlide && (
               <motion.div
-                initial={{ x: document.dir === 'ltr' ? '200%' : '400%' }}
-                animate={{ x: document.dir === 'ltr' ? 0 : '100%' }}
-                exit={{ x: document.dir === 'ltr' ? '200%' : '400%' }}
+                initial={{ x: document.dir === 'ltr' ? '200%' : '-200%' }}
+                animate={{ x: 0 }}
+                exit={{ x: document.dir === 'ltr' ? '200%' : '-200%' }}
                 transition={{
                   duration: prefersReducedMotion ? 0 : 0.5,
                   type: 'spring',
@@ -231,9 +231,9 @@ export default function ProgressCarousel() {
           <AnimatePresence>
             {showPrevSlide && (
               <motion.div
-                initial={{ x: document.dir === 'ltr' ? '-200%' : '-400%' }}
-                animate={{ x: document.dir === 'ltr' ? 0 : '-100%' }}
-                exit={{ x: document.dir === 'ltr' ? '-200%' : '-400%' }}
+                initial={{ x: document.dir === 'ltr' ? '-200%' : '200%' }}
+                animate={{ x: 0 }}
+                exit={{ x: document.dir === 'ltr' ? '-200%' : '200%' }}
                 transition={{
                   duration: prefersReducedMotion ? 0 : 0.5,
                   type: 'spring',
@@ -261,7 +261,7 @@ export default function ProgressCarousel() {
           >
             <h1 className="font-sec font-light text-text text-5xl md:text-7xl lg:text-8xl tracking-tight">{currentSlide.title}</h1>
 
-            <p className="max-w-2xl font-light text-text/90 text-xl">{currentSlide.description}</p>
+            <p className="max-w-2xl text-text/90 text-sm text-balance leading-relaxed">{currentSlide.description}</p>
 
             <MainBtn href={currentSlide.buttonHref} className="z-40 relative">
               {currentSlide.buttonText}

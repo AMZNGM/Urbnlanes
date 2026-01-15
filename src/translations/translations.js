@@ -74,6 +74,8 @@ export const TRANSLATIONS = {
         tagline: 'Setting a new benchmark',
         description:
           "Urbnlanes Developments operates under the esteemed umbrella of Emeel Abdalla Investments, bringing decades of expertise to the Middle East's dynamic real estate landscape. Our diverse portfolio and unwavering commitment to quality have established us as a trusted name in premium property development.",
+        description2:
+          'Urbnlanes is a real estate development company, that operates under the umbrella of “Emeel Abdalla Investments”. With projects all over the Middle East, it is a company built on diversity and numerous years of experience in the field of real estate development.',
         statistics: {
           yearsOfExperience: '36+',
           projectsCompleted: '100+',
@@ -227,6 +229,8 @@ export const TRANSLATIONS = {
         tagline: 'نضع معايير جديدة',
         description:
           'تعمل شركة اوربن لينز للتطوير العقاري تحت مظلة شركة إميل عبد الله للاستثمارات، مقدمة عقودًا من الخبرة إلى المشهد العقاري الديناميكي في الشرق الأوسط. محفظتنا المتنوعة والتزامنا الثابت بالجودة رسخ مكانتنا كاسم موثوق في مجال التطوير العقاري الفاخر.',
+        description2:
+          'اربن لينز هي شركة تطوير عقاري، تعمل تحت مظلة "إميل عبد الله للاستثمارات". مع مشاريع في جميع أنحاء الشرق الأوسط، هي شركة مبنية على التنوع وسنوات عديدة من الخبرة في مجال التطوير العقاري تعمل شركة اوربن لينز للتطوير العقاري تحت مظلة شركة إميل عبد الله للاستثمارات، مقدمة عقودًا من الخبرة إلى المشهد العقاري الديناميكي في الشرق الأوسط. محفظتنا المتنوعة والتزامنا الثابت بالجودة رسخ مكانتنا كاسم موثوق في مجال التطوير العقاري الفاخر.',
         statistics: {
           yearsOfExperience: '+36',
           projectsCompleted: '+100',

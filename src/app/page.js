@@ -17,19 +17,15 @@ export const metadata = metadataGenerators.home()
 export default function Home() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      {/* <Preloader /> */}
-
-      <div className="sticky top-0">
-        <ProgressCarousel />
-      </div>
-
+      <Preloader />
+      <ProgressCarousel />
       <WhoWeAre />
-      {/* <AboutUs />
+      <AboutUs />
       <VideoSection />
       <SelectedProjects />
       <Updates />
       <OurValues />
-      <Newsletter /> */}
+      <Newsletter />
     </Suspense>
   )
 }

@@ -3,16 +3,13 @@
 import Image from 'next/image'
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
-import { getWhoweare, getMetadata } from '@/lib/getDatabase'
+import { useTranslation } from '@/hooks/useTranslation'
+import db from '@/database/urbnlanes-db.json'
 import Heading from '@/components/ui/Heading'
 import TextAnimation from '@/components/ui/text/TextAnimation'
-import LetterSwap from '@/components/ui/text/LetterSwap'
-import { useTranslation } from '@/hooks/useTranslation'
 
 export default function WhoWeAre() {
   const { t } = useTranslation()
-  const whoweareData = getWhoweare()
-  const metadata = getMetadata()
   const containerRef = useRef(null)
   const imageRef = useRef(null)
 
@@ -78,7 +75,7 @@ export default function WhoWeAre() {
             <div className="flex items-center gap-2 mt-4">
               <div className="w-6 h-px bg-main" />
               <a href="tel:+15061" className="text-main hover:text-text text-xs hover:text-sm italic transition-all duration-700">
-                <LetterSwap text={`${t('common.hotline')} : ` + metadata.company.hotline} as="span" />
+                {`${t('common.hotline')} : ` + db.metadata.company.hotline}
               </a>
             </div>
           </motion.div>
@@ -104,11 +101,11 @@ export default function WhoWeAre() {
 
               <div className="relative space-y-8">
                 {[
-                  { number: whoweareData.statistics.yearsOfExperience, label: t('common.yearsOfExperience') },
-                  { number: whoweareData.statistics.projectsCompleted, label: t('common.projectsCompleted') },
-                  { number: whoweareData.statistics.towersDelivered, label: t('common.towersDelivered') },
-                  { number: whoweareData.statistics.landmarkProjects, label: t('common.landmarkProjects') },
-                  { number: whoweareData.statistics.workforce, label: t('common.workforce') },
+                  { number: db.whoweare.statistics.yearsOfExperience, label: t('common.yearsOfExperience') },
+                  { number: db.whoweare.statistics.projectsCompleted, label: t('common.projectsCompleted') },
+                  { number: db.whoweare.statistics.towersDelivered, label: t('common.towersDelivered') },
+                  { number: db.whoweare.statistics.landmarkProjects, label: t('common.landmarkProjects') },
+                  { number: db.whoweare.statistics.workforce, label: t('common.workforce') },
                 ].map((stat, index) => (
                   <div key={index} className="border-main/30 border-l text-text hover:translate-x-2.5 duration-300 pl-6 cursor-default">
                     <TextAnimation text={stat.number} as="span" className="font-light max-md:font-medium text-[2vw] max-lg:text-[5vw]" />

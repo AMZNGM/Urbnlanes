@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
+import { useScroll } from 'motion/react'
 import { useScrollPosition } from '@/hooks/useScrollPosition'
 import { navigation } from '@/config/navigation.ui.json'
 
@@ -10,6 +11,8 @@ export const useNavbar = (languageContext) => {
   const isScrolled20vh = useScrollPosition(0.2)
   const isScrolled100vh = useScrollPosition(1)
   const [isVisible, setIsVisible] = useState(true)
+  const { scrollY } = useScroll()
+  const prevScrollY = useRef(0)
 
   const [searchQuery, setSearchQuery] = useState('')
   const [showSearch, setShowSearch] = useState(false)
@@ -32,6 +35,25 @@ export const useNavbar = (languageContext) => {
   useEffect(() => {
     setIsClient(true)
   }, [])
+
+  // 1. Auto-focus hide navbar when scroll
+  useEffect(() => {
+    return scrollY.on('change', (latest) => {
+      const isScrolledPast100vh = latest > window.innerHeight
+      const diff = latest - prevScrollY.current
+
+      if (isScrolledPast100vh) {
+        if (diff > 10) {
+          setIsVisible(false)
+        } else if (diff < -10) {
+          setIsVisible(true)
+        }
+      } else {
+        setIsVisible(true)
+      }
+      prevScrollY.current = latest
+    })
+  }, [scrollY])
 
   // 2. Auto-focus search input when search bar opens
   useEffect(() => {

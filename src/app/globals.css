@@ -29,7 +29,7 @@ html {
 }
 :lang(ar),
 [lang='ar'] {
-  font-family: 'Bein Arabic';
+  font-family: 'Bein Arabic', 'GeneralSans';
 }
 .border {
   border-color: #8e8e8e50;

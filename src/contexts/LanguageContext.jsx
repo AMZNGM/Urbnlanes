@@ -22,11 +22,16 @@ const DEFAULT_LANGUAGE = LANGUAGES[0]
 
 export const LanguageProvider = ({ children }) => {
   // Initialize from localStorage or default
-  const [selectedLanguage, setSelectedLanguageState] = useState(() => {
-    if (typeof window === 'undefined') return DEFAULT_LANGUAGE.name
+  // Initialize from default to ensure server/client match
+  const [selectedLanguage, setSelectedLanguageState] = useState(DEFAULT_LANGUAGE.name)
+
+  // Sync with localStorage on mount
+  useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY)
-    return stored || DEFAULT_LANGUAGE.name
-  })
+    if (stored && stored !== DEFAULT_LANGUAGE.name) {
+      setSelectedLanguageState(stored)
+    }
+  }, [])
 
   // Persist to localStorage
   useEffect(() => {
