@@ -13,7 +13,7 @@ export default function TeamOfExperts() {
       <Heading text={t('db.whoweare.teamOfExperts.title')} />
 
       <div className="flex flex-col justify-center items-center gap-24 mt-18">
-        <div data-scroll data-scroll-speed="0.1" className="items-center gap-12 grid md:grid-cols-2">
+        <div className="items-center gap-12 grid md:grid-cols-2">
           <div className="relative h-96 overflow-hidden">
             <Image
               src="/images/leader.webp"
@@ -55,11 +55,7 @@ export default function TeamOfExperts() {
           </div>
         </div>
 
-        <blockquote
-          data-scroll
-          data-scroll-speed="0.12"
-          className="max-w-3xl font-sec text-main text-xl md:text-2xl text-center italic text-balance"
-        >
+        <blockquote className="max-w-3xl font-sec text-main text-xl md:text-2xl text-center italic text-balance">
           "{t('db.whoweare.values.3.description')}"
         </blockquote>
 

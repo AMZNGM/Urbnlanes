@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'motion/react'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 const containerVariants = {
   hidden: {},
@@ -68,6 +69,13 @@ export default function TextAnimation({
     ...viewport,
     once: animateOnce,
   }
+  const isMobile = useIsMobile()
+  if (isMobile)
+    return (
+      <div className={`${className}`}>
+        <span className={`inline-block`}>{text}</span>
+      </div>
+    )
 
   return (
     <MotionComponent
