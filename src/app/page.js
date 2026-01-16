@@ -11,6 +11,7 @@ const VideoSection = dynamic(() => import('@/components/VideoSection'))
 const SelectedProjects = dynamic(() => import('@/components/SelectedProjects'))
 const Updates = dynamic(() => import('@/components/Updates'))
 const OurValues = dynamic(() => import('@/components/OurValues'))
+const TeamOfExperts = dynamic(() => import('@/components/TeamOfExperts'))
 const Newsletter = dynamic(() => import('@/components/Newsletter'))
 
 export const generateMetadata = metadataGenerators.home()
@@ -26,6 +27,7 @@ export default function Home() {
       <SelectedProjects />
       <Updates />
       <OurValues />
+      <TeamOfExperts />
       <Newsletter />
     </Suspense>
   )
