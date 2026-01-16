@@ -25,7 +25,7 @@ export default function AboutUs() {
           loop
           muted
           playsInline
-          className="max-lg:hidden absolute inset-0 w-1/2 h-full object-cover -translate-y-66"
+          className="max-lg:hidden absolute inset-0 w-1/2 h-full object-cover -translate-y-56"
         />
       </div>
 

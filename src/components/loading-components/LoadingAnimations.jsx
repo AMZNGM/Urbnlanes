@@ -1,3 +1,5 @@
+'use client'
+
 export function LoadingLogo() {
   return (
     <div className="z-10001 fixed inset-0 w-dvw h-full overflow-hidden flex justify-center items-center bg-black pointer-events-none">
@@ -15,6 +17,33 @@ export function LoadingSkeleton() {
         <div className="w-32 h-8 bg-text/50 rounded-lg"></div>
         <div className="w-64 h-4 bg-text/40 rounded-lg"></div>
       </div>
+    </div>
+  )
+}
+
+export function LoadingOscillate() {
+  return (
+    <div className="z-20 absolute inset-0 flex flex-col justify-center items-center gap-2 bg-black">
+      <div className="relative w-10 h-10 flex justify-start items-center animate-spin" style={{ animationDuration: '2.7s' }}>
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={i}
+            className="top-0 left-0 absolute w-full h-full flex justify-start items-center"
+            style={{ transform: `rotate(${i * 45}deg)` }}
+          >
+            <div
+              className="w-2 h-2 bg-main rounded-full"
+              style={{
+                transform: 'translateX(calc(20px - 4px))',
+                animation: 'oscillate 0.9s ease-in-out infinite alternate',
+                animationDelay: `${i * -0.125 * 0.9}s`,
+              }}
+            />
+          </div>
+        ))}
+      </div>
+
+      <p className="font-sec text-main text-sm uppercase tracking-widest animate-pulse">Loading</p>
     </div>
   )
 }

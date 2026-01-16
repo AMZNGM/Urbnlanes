@@ -20,7 +20,7 @@ const PROJECT_CONFIGS = [
   {
     id: 'yellow-residence',
     galleryIndex: 1,
-    video: '/videos/projects/yellow-residence/yr-main.mp4',
+    video: '/videos/projects/yellow-residence/yr-main-1.mp4',
   },
 ]
 
@@ -31,6 +31,7 @@ export function useProgressCarousel() {
   const [showNextSlide, setShowNextSlide] = useState(false)
   const [showPrevSlide, setShowPrevSlide] = useState(false)
   const [isVideoMode, setIsVideoMode] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const duration = 5000
   const prefersReducedMotion = useReducedMotion()
   const videoRef = useRef(null)
@@ -75,6 +76,14 @@ export function useProgressCarousel() {
     }
   }
 
+  const handleMediaLoad = () => {
+    setIsLoading(false)
+  }
+
+  const handleAnimationStart = () => {
+    setIsLoading(true)
+  }
+
   useEffect(() => {
     const handleVisibility = () => {
       if (!videoRef.current || !isVideoMode || isMobile) return
@@ -105,6 +114,10 @@ export function useProgressCarousel() {
     setShowPrevSlide,
     isVideoMode,
     setIsVideoMode,
+    isLoading,
+    setIsLoading,
+    handleMediaLoad,
+    handleAnimationStart,
     slides,
     currentSlide,
     progressScale,

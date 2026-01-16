@@ -21,3 +21,13 @@ html {
 .border {
   border-color: #8e8e8e50;
 }
+@keyframes oscillate {
+  0% {
+    transform: translateX(calc(20px - 4px)) scale(0);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}

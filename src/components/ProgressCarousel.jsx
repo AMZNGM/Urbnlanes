@@ -17,6 +17,9 @@ export default function ProgressCarousel() {
     setShowPrevSlide,
     isVideoMode,
     setIsVideoMode,
+    isLoading,
+    handleMediaLoad,
+    handleAnimationStart,
     slides,
     currentSlide,
     progressScale,
@@ -56,6 +59,9 @@ export default function ProgressCarousel() {
         prefersReducedMotion={prefersReducedMotion}
         videoRef={videoRef}
         slidesCount={slides.length}
+        isLoading={isLoading}
+        handleMediaLoad={handleMediaLoad}
+        handleAnimationStart={handleAnimationStart}
       />
 
       <div className="z-20 relative h-full flex flex-col justify-end gap-12 p-18 max-md:p-4">
