@@ -8,19 +8,19 @@ import { getProjectById } from '@/lib/getDatabase'
 
 const PROJECT_CONFIGS = [
   {
+    id: 'yellow-lane',
+    galleryIndex: 0,
+    video: '/videos/projects/yellow-lane/yl-main-1.mp4',
+  },
+  {
     id: 'levels-business-tower',
-    galleryIndex: 12,
+    galleryIndex: 0,
     video: '/videos/projects/levels-tower/levels-e-and-1.mp4',
   },
   {
-    id: 'east-lane',
-    galleryIndex: 4,
-    video: '/videos/projects/east-lane/el-main-1.mp4',
-  },
-  {
-    id: 'yellow-lane',
-    galleryIndex: 6,
-    video: '/videos/projects/yellow-lane/yl-main-1.mp4',
+    id: 'yellow-residence',
+    galleryIndex: 1,
+    video: '/videos/projects/yellow-residence/yr-main.mp4',
   },
 ]
 

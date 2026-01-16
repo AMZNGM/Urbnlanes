@@ -31,8 +31,8 @@ export default function Navbar() {
         transition={{ duration: 0.5 }}
       >
         <main
-          className={`relative w-dvw flex justify-between items-center gap-8 backdrop-blur-2xl hover:bg-bg transition-all duration-300 px-18 max-md:px-4 border-text/25 border-b
-          ${navbarData.isScrolled20vh ? 'bg-black/50 h-24' : 'bg-bg/50 h-34 max-sm:h-24'}
+          className={`relative w-dvw flex justify-between items-center gap-8 hover:bg-bg transition-all duration-300 px-18 max-md:px-4 border-text/25 border-b
+          ${navbarData.isScrolled20vh ? 'bg-black/50 h-24 backdrop-blur-2xl' : 'h-34 max-sm:h-24'}
         `}
         >
           <div className="z-20 relative h-full flex justify-between items-center gap-8">

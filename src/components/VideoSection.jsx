@@ -3,15 +3,15 @@
 import { useTranslation } from '@/hooks/useTranslation'
 import TextMarquee from '@/components/ui/text/TextMarquee'
 
-export default function VideoSection() {
+export default function VideoSection({ src = '/videos/one-year-1.mp4', marquee = true }) {
   const { t } = useTranslation()
 
   return (
     <section dir="ltr" className="relative w-full h-dvh overflow-hidden flex flex-col justify-between">
-      <TextMarquee texts={[t('videoSection.marquee')]} className="z-10 relative bg-black" />
+      {marquee ? <TextMarquee texts={[t('videoSection.marquee')]} className="z-10 relative bg-black" /> : null}
 
       <video
-        src="/videos/one-year-1.mp4"
+        src={src}
         type="video/mp4"
         autoPlay
         muted
@@ -21,7 +21,7 @@ export default function VideoSection() {
         className="absolute inset-0 w-full h-full object-cover bg-bg"
       />
 
-      <TextMarquee texts={[t('videoSection.marquee')]} className="z-10 relative bg-black" />
+      {marquee ? <TextMarquee texts={[t('videoSection.marquee')]} className="z-10 relative bg-black" /> : null}
     </section>
   )
 }

@@ -123,7 +123,13 @@ export const TRANSLATIONS = {
         description:
           "Urbnlanes Developments operates under the esteemed umbrella of Emeel Abdalla Investments, bringing decades of expertise to the Middle East's dynamic real estate landscape. Our diverse portfolio and unwavering commitment to quality have established us as a trusted name in premium property development.",
         description2:
-          'Urbnlanes is a real estate development company, that operates under the umbrella of “Emeel Abdalla Investments”. With projects all over the Middle East, it is a company built on diversity and numerous years of experience in the field of real estate development.',
+          'Urbnlanes is a real estate development company, that operates under the umbrella of "Emeel Abdalla Investments". With projects all over the Middle East, it is a company built on diversity and numerous years of experience in the field of real estate development.',
+        teamOfExperts: {
+          title: 'Team of Experts',
+          subtitle: 'Devoted to the unrivaled',
+          description:
+            'Urbnlanes is a company that specializes in making the world a more beautiful place. We work hand in hand with our sister companies in Kuwait and Egypt to continue the legacy of Emeel Abdalla investments. Our standards and values are unified which helps us at Urbnlanes to accomplish more success stories. Our artistic teams are always dreaming of new and exciting projects to work on and we love nothing more than to share their creations with the world. We have been around for many years and have grown to be one of the most well-known companies in our industry. We always strive for excellence and are confident you will find our work to be top quality.',
+        },
         statistics: {
           yearsOfExperience: '36+',
           projectsCompleted: '100+',
@@ -378,6 +384,12 @@ export const TRANSLATIONS = {
           'تعمل شركة اوربن لينز للتطوير العقاري تحت مظلة شركة إميل عبد الله للاستثمارات، مقدمة عقودًا من الخبرة إلى المشهد العقاري الديناميكي في الشرق الأوسط. محفظتنا المتنوعة والتزامنا الثابت بالجودة رسخ مكانتنا كاسم موثوق في مجال التطوير العقاري الفاخر.',
         description2:
           'اربن لينز هي شركة تطوير عقاري، تعمل تحت مظلة "إميل عبد الله للاستثمارات". مع مشاريع في جميع أنحاء الشرق الأوسط، هي شركة مبنية على التنوع وسنوات عديدة من الخبرة في مجال التطوير العقاري تعمل شركة اوربن لينز للتطوير العقاري تحت مظلة شركة إميل عبد الله للاستثمارات، مقدمة عقودًا من الخبرة إلى المشهد العقاري الديناميكي في الشرق الأوسط. محفظتنا المتنوعة والتزامنا الثابت بالجودة رسخ مكانتنا كاسم موثوق في مجال التطوير العقاري الفاخر.',
+        teamOfExperts: {
+          title: 'فريق من الخبراء',
+          subtitle: 'مكرسون للتميز',
+          description:
+            'اوربن لينز هي شركة متخصصة في جعل العالم مكانًا أكثر جمالاً. نعمل جنبًا إلى جنب مع شركاتنا الشقيقة في الكويت ومصر لمواصلة إرث استثمارات إميل عبد الله. معاييرنا وقيمنا موحدة مما يساعدنا في اوربن لينز على تحقيق المزيد من قصص النجاح. فرقنا الفنية تحلم دائمًا بمشاريع جديدة ومثيرة للعمل عليها ولا نحب شيئًا أكثر من مشاركة إبداعاتهم مع العالم. لقد كنا موجودين لسنوات عديدة ونمونا لنصبح واحدة من أشهر الشركات في مجالنا. نسعى دائمًا للتميز ونحن واثقون من أنك ستجد عملنا ذو جودة عالية.',
+        },
         statistics: {
           yearsOfExperience: '+36',
           projectsCompleted: '+100',

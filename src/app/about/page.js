@@ -11,6 +11,7 @@ export default function AboutPage() {
       {/* <div className="relative h-[150vh]">
         <MaskImages />
       </div> */}
+      {/* <VideoSection src="/videos/map.mp4" marquee={false} /> */}
     </div>
   )
 }
