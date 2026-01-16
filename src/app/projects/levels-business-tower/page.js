@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.levelsBusinessTower()
+export const generateMetadata = metadataGenerators.levelsBusinessTower()
 
 export default function LevelsBusinessTowerPage() {
   return (

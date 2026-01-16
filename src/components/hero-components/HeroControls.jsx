@@ -24,7 +24,7 @@ export default function HeroControls({
         onMouseEnter={() => setShowNextSlide(true)}
         onMouseLeave={() => setShowNextSlide(false)}
         aria-label="Next project"
-        className="rtl:hidden max-md:hidden right-0 z-20 absolute inset-y-0 w-1/3 flex justify-end items-center focus:outline-none pr-12 cursor-pointer"
+        className="rtl:hidden top-0 right-0 bottom-1/2 z-20 absolute w-1/3 flex justify-end items-end focus:outline-none pr-12 cursor-pointer"
       >
         <AnimatePresence>
           {showNextSlide && (
@@ -38,7 +38,7 @@ export default function HeroControls({
                 stiffness: 80,
                 ease: 'easeInOut',
               }}
-              className="max-w-md bg-black/25 opacity-75 rounded-2xl scale-80 p-6 select-none"
+              className="max-md:hidden max-w-md bg-black/25 opacity-75 rounded-2xl scale-80 p-6 select-none"
             >
               <p className="text-text/70 text-sm uppercase tracking-wider mb-2">{t('common.nextProject')}</p>
               <h3 className="font-medium text-2xl">{slides[(currentIndex + 1) % slides.length]?.title || ''}</h3>
@@ -53,7 +53,7 @@ export default function HeroControls({
         onMouseEnter={() => setShowPrevSlide(true)}
         onMouseLeave={() => setShowPrevSlide(false)}
         aria-label="Previous project"
-        className="rtl:hidden max-md:hidden left-0 z-20 absolute inset-y-0 w-1/3 flex justify-start items-center focus:outline-none pl-12 cursor-pointer"
+        className="rtl:hidden top-0 bottom-1/2 left-0 z-20 absolute w-1/3 flex justify-start items-end focus:outline-none pl-12 cursor-pointer"
       >
         <AnimatePresence>
           {showPrevSlide && (
@@ -67,7 +67,7 @@ export default function HeroControls({
                 stiffness: 80,
                 ease: 'easeInOut',
               }}
-              className="max-w-md bg-black/25 opacity-75 rounded-2xl scale-80 p-6 select-none"
+              className="max-md:hidden max-w-md bg-black/25 opacity-75 rounded-2xl scale-80 p-6 select-none"
             >
               <p className="text-text/70 text-sm uppercase tracking-wider mb-2">{t('common.previousProject')}</p>
               <h3 className="font-medium text-2xl">{slides[(currentIndex - 1 + slides.length) % slides.length]?.title || ''}</h3>

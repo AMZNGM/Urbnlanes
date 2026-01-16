@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.yellowResidence()
+export const generateMetadata = metadataGenerators.yellowResidence()
 
 export default function YellowResidencePage() {
   return (

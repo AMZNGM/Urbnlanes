@@ -12,13 +12,15 @@ export default function HeroContent({ currentSlide, currentIndex, prefersReduced
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
-        className="z-40 relative max-w-4xl space-y-6 rounded-2xl p-2"
+        className="z-40 relative max-w-5xl"
       >
-        <h1 className="font-sec font-light text-text text-5xl md:text-7xl lg:text-8xl tracking-tight">{currentSlide.title}</h1>
+        <h1 className="font-sec font-light text-[4dvw] max-md:text-[9dvw] leading-relaxed md:leading-20 tracking-tight">
+          {currentSlide.title}
+        </h1>
 
-        <p className="max-w-2xl text-text/90 text-sm text-balance leading-relaxed">{currentSlide.description}</p>
+        <p className="max-w-2xl text-text/90 text-sm normal-case text-balance leading-relaxed">{currentSlide.description}</p>
 
-        <MainBtn href={currentSlide.buttonHref} className="z-40 relative">
+        <MainBtn href={currentSlide.buttonHref} className="z-40 relative mt-6">
           {currentSlide.buttonText}
         </MainBtn>
       </motion.div>

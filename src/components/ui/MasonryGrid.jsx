@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useRef, useMemo, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 function useColumns() {
   const [columns, setColumns] = useState(1)
@@ -35,15 +36,12 @@ export default function MasonryGrid({ projects, openModal }) {
     offset: ['start 80%', 'end start'],
   })
 
-  // Shared Transform
   const parallaxY = useTransform(scrollYProgress, [0, 1], [250, -250])
   const parallaxSubtle = useTransform(scrollYProgress, [0, 1], [120, -120])
 
   const columns = useMemo(() => {
-    // Create arrays for each column
     const cols = Array.from({ length: columnsCount }, () => [])
 
-    // Determine fill order for symmetrical balancing
     let fillOrder = []
     if (columnsCount === 5) fillOrder = [0, 4, 1, 3, 2] // Outer -> Inner -> Center
     else if (columnsCount === 3) fillOrder = [0, 2, 1] // Outer -> Center
@@ -90,14 +88,10 @@ export default function MasonryGrid({ projects, openModal }) {
   )
 }
 
-function ProjectCard({ project, index, openModal, columnsCount }) {
+function ProjectCard({ project, index, openModal }) {
+  const { t } = useTranslation()
   const cardRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ['start end', 'end start'],
-  })
-
-  // Internal parallax: Image moves slower than container (creating depth)
+  const { scrollYProgress } = useScroll({ target: cardRef, offset: ['start end', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['-15%', '15%'])
   const scale = useTransform(scrollYProgress, [0, 1], [1.15, 1.25])
 
@@ -109,31 +103,26 @@ function ProjectCard({ project, index, openModal, columnsCount }) {
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true }}
       transition={{ duration: 0.75, delay: index * 0.05 }}
-      style={{ y: 0 }} // Reset any inherited transforms logic if applied by parent
-      className={`${project.height} relative group cursor-pointer overflow-hidden rounded-xl w-full h-full min-h-75`}
+      style={{ y: 0 }}
+      className="group relative w-full h-full min-h-75 overflow-hidden rounded-xl cursor-pointer"
     >
       <motion.div style={{ y, scale }} className="absolute inset-0 w-full h-full">
         <Image
           src={project.image}
           alt={project.title}
           fill
-          sizes={
-            columnsCount === 5
-              ? '(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 20vw'
-              : columnsCount === 3
-              ? '(max-width: 768px) 100vw, 33vw'
-              : '100vw'
-          }
+          sizes="(max-width: 768px) 60vw, (max-width: 1280px) 80vw, 90vw"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
         />
       </motion.div>
 
       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-      <motion.div className="bottom-4 left-4 absolute overflow-hidden bg-black/25 md:opacity-0 group-hover:opacity-100 backdrop-blur-xl rounded-2xl transition-all md:translate-x-8 md:translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 duration-500 p-4">
+      <motion.div className="bottom-2 left-2 absolute overflow-hidden bg-black/25 md:opacity-0 group-hover:opacity-100 backdrop-blur-xl rounded-2xl transition-all md:translate-x-8 md:translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 duration-500 p-4">
         <h3 className="font-mono">{project.title || 'Project name'}</h3>
-        <span className="font-mono text-xs normal-case tracking-wide">
-          {project.location?.city || 'New Cairo'}, {project.location?.country || 'Egypt'}
+        <span className="max-w-sm font-mono text-xs normal-case tracking-wide">
+          {project.location?.city ? t(`locations.${project.location.city}`) : t('locations.New Cairo')},{' '}
+          {project.location?.country ? t(`locations.${project.location.country}`) : t('locations.Egypt')}
         </span>
       </motion.div>
     </motion.div>

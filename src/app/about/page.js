@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.about()
+export const generateMetadata = metadataGenerators.about()
 
 export default function AboutPage() {
   return (

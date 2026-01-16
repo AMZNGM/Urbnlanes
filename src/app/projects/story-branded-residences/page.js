@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.storyBrandedResidences()
+export const generateMetadata = metadataGenerators.storyBrandedResidences()
 
 export default function StoryBrandedResidences() {
   return (

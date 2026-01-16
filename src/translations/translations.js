@@ -24,10 +24,26 @@ export const TRANSLATIONS = {
       yellowResidence: 'Yellow Residence',
       eastlane: 'Eastlane',
       levelsBusinessTower: 'Levels Business Tower',
+      selectedProjectsTitle: 'Selected projects',
+    },
+    modal: {
+      brochure: 'brochure',
+      viewFullProject: 'View Full Project',
+      partners: 'Partners',
+      amenities: 'Amenities',
+      overview: 'Project Overview',
+      status: 'Status',
     },
     footer: {
       copyright: 'All rights reserved',
       followUs: 'Follow Us',
+      taxreg: 'Tax Reg: {{number}}',
+      privacyPolicy: 'Privacy Policy',
+      termsOfUse: 'Terms of Use',
+      cookiePolicy: 'Cookie Policy',
+      recaptcha: 'This site is protected by reCAPTCHA and the Google {{privacy}} and {{terms}} apply.',
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Service',
     },
 
     common: {
@@ -53,6 +69,37 @@ export const TRANSLATIONS = {
       workforce: 'Workforce',
       image: 'Image',
       video: 'Video',
+      ourValues: 'Our Values',
+      seeMore: 'See More',
+      completed: 'Completed',
+      underConstruction: 'Under Construction',
+      planned: 'Planned',
+    },
+    amenities: {
+      Gym: 'Gym',
+      'Bike Lanes': 'Bike Lanes',
+      'Outdoor Theater': 'Outdoor Theater',
+      'Parking Slots': 'Parking Slots',
+      'For The Little Ones': 'For The Little Ones',
+      'The Yellow Garden': 'The Yellow Garden',
+      'For Our Furry Friends': 'For Our Furry Friends',
+      'Sculptures & Features': 'Sculptures & Features',
+      'Yoga Area': 'Yoga Area',
+      'Communal Spaces': 'Communal Spaces',
+      'Outdoor Pools': 'Outdoor Pools',
+    },
+    locations: {
+      'New Cairo': 'New Cairo',
+      'The New Administrative Capital': 'The New Administrative Capital',
+      'Abu Dhabi': 'Abu Dhabi',
+      Riyadh: 'Riyadh',
+      Kuwait: 'Kuwait',
+      Egypt: 'Egypt',
+      UAE: 'UAE',
+      'Saudi Arabia': 'Saudi Arabia',
+      'East Subah Al-Ahmed City': 'East Subah Al-Ahmed City',
+      'Mutlaa City': 'Mutlaa City',
+      'West Abdullah Mubarak City': 'West Abdullah Mubarak City',
     },
 
     search: {
@@ -65,6 +112,7 @@ export const TRANSLATIONS = {
       metadata: {
         company: {
           name: 'Urbnlanes Developments',
+          parentCompany: 'Emeel Abdalla Investments',
           description:
             'A real estate development company with projects all over the Middle East, built on diversity and numerous years of experience in the field of real estate development.',
           tagline: 'Beyond Masterpieces',
@@ -110,48 +158,96 @@ export const TRANSLATIONS = {
         'yellow-lane': {
           name: 'Yellow Lane',
           tagline: 'Lines That Define Your Lifestyle.',
+          shortDesc:
+            "In close proximity to both the old and new Suez Road. This prime location offers easy access to the city's major landmarks and attractions.",
           description:
             "Yellow Lane isn't just a place, it's a canvas where lines come alive, speaking to your soul and defining your lifestyle. Our spaces are meticulously designed to maintain a delicate balance between functionality and aesthetics.",
         },
         'yellow-residence': {
           name: 'Yellow Residence',
           tagline: "Yellow isn't just a color, it's a vibe; a way of living for the daring & the bold",
+          shortDesc:
+            'in close proximity to both the old and new Suez Road. This prime location offers easy access to the city’s major landmarks and attractions.',
           description:
-            'Yellow is a residential compound designed to provide residents with a life of bliss and empower them to reach their higher selves. The architecture and interior design of Yellow are carefully crafted to create a sense of calm and tranquility.',
+            'Yellow is a residential compound designed to provide residents with a life of bliss and empower them to reach their higher selves. The architecture and interior design of Yellow are carefully crafted to create a sense of calm and tranquility, with a focus on natural materials and open spaces to allow the community to thrive through an unparalleled experience.',
+          description2:
+            'in close proximity to both the old and new Suez Road. This prime location offers easy access to the city’s major landmarks and attractions.',
         },
         'east-lane': {
           name: 'Eastlane',
           tagline: 'The EastLane building is one of the most iconic, prominent and bustling areas in New Cairo.',
-          description: 'An administrative and commercial space based in the heart of New Cairo.',
+          shortDesc: 'An administrative and commercial space based in the heart of New Cairo.',
+          description:
+            'Raef Fahmi is an Egyptian architect and interior designer who has been working in the field for many years and has built a reputation known by everyone. Fahmi has worked on some of the most prominent and iconic projects in Egypt.',
+          description2:
+            'Enova is the regional leader in integrated energy and multi-technical services, delivering comprehensive services to its clients. It provides performance based Energy & Facilities Management solutions that help customers achieve their financial, operational, and environmental targets.',
         },
         'levels-business-tower': {
           name: 'Levels Business Tower',
           tagline: 'Proudly Partnered With E& As Our Communications Partner.',
-          description: 'The New Administrative Capital is set to become a new center of excellence for living in Egypt and beyond.',
+          shortDesc: 'An iconic administrative and commercial business tower in the heart of the New Administrative Capital.',
+          description:
+            'The New Administrative Capital is set to become a new center of excellence for living in Egypt and beyond. It will feature a fully-integrated capital with world-class residential, commercial, medical, financial, and educational institutions. Moreover, an independent international airport, a modern train station that is connected to Egypt’s railway system and it will use the most advanced technology to provide the first central security system. It is expected to attract 40 million people upon completion.',
         },
         'mid-lane': {
           name: 'Midlane',
           tagline: 'A Desire To Grow...',
+          shortDesc:
+            'With an expansive 24,000 SQM dedicated to administrative spaces for offices, clinics, and business purposes, Midlane is designed to meet diverse professional needs. Step inside and be amazed by this state-of-the-art destination, which offers a wide variety of high-end stores, cafes, and restaurants.',
           description:
-            'With an expansive 24,000 SQM dedicated to administrative spaces for offices, clinics, and business purposes, Midlane is designed to meet diverse professional needs.',
+            'Strategically positioned in the heart of New Cairo’s vibrant district, Midlane boasts a prime location that places it at the epicenter of bustling activity, offering unparalleled accessibility and visibility for both businesses and customers. Midlane, a magnificent architectural masterpiece, is built on 15,000 SQM of land with a total built-up area of 85,000 SQM.',
         },
         noi: {
           name: 'NOI',
           tagline: 'Refined by Time, Reserved for You.',
+          shortDesc: 'The First Exotic Community in Egypt. – Not in Extravagance, but in the Delicate Balance of Form and Functionality',
           description:
-            'NOI is situated in the prime area of Golden Square in Fifth Settlement, New Cairo. This strategic location places it at the heart of New Cairo.',
+            'NOI is situated in the prime area of Golden Square in Fifth Settlement, New Cairo. This strategic location places it at the heart of New Cairo, surrounded by upscale residential communities and close to prominent commercial and recreational hubs.',
         },
         'east-subah-al-ahmed-city': {
           name: 'East Subah Al-Ahmed City',
+          description: 'A major residential project in Kuwait focusing on modern living and community integration.',
         },
         'mutlaa-city': {
           name: 'Mutlaa City',
+          description: 'A landmark development in Kuwait providing sustainable urban housing solutions.',
         },
         'west-abdullah-mubarak-city': {
           name: 'West Abdullah Mubarak City',
+          description: 'Expanding the horizons of residential excellence in Kuwait with thoughtfully planned neighborhoods.',
+        },
+        'abu-el-banat-tower': {
+          name: 'Abu El Banat Tower',
+        },
+        'dalal-complex': {
+          name: 'Dalal Complex',
+        },
+        'enjazat-tower': {
+          name: 'Enjazat Tower',
+        },
+        'misk-hotel': {
+          name: 'Misk Hotel',
+        },
+        'omniyat-gardens': {
+          name: 'Omniyat Gardens',
         },
       },
     },
+
+    newsletter: {
+      title: 'Get news & updates from Urbnlanes',
+      description: 'Sign up and be the first to know about the latest developments and exciting news on how we are shaping the future!',
+      emailPlaceholder: 'Your email',
+      subscribe: 'Subscribe',
+      emailLabel: 'Email Address',
+      messages: {
+        success: 'Thank you for subscribing!',
+        invalidEmail: 'Invalid email address.',
+        emailRequired: 'Email is required.',
+        error: 'Something went wrong. Please try again later.',
+      },
+    },
+
     videoSection: {
       marquee: 'One year - One vision - Purposeful progress -',
     },
@@ -182,10 +278,26 @@ export const TRANSLATIONS = {
       yellowResidence: 'يلو ريزيدنس',
       eastlane: 'إيست لين',
       levelsBusinessTower: 'ليفلز بيزنس تاور',
+      selectedProjectsTitle: 'مشاريع مختارة',
+    },
+    modal: {
+      brochure: 'الكتيب',
+      viewFullProject: 'عرض المشروع بالكامل',
+      partners: 'الشركاء',
+      amenities: 'المرافق',
+      overview: 'نظرة عامة على المشروع',
+      status: 'الحالة',
     },
     footer: {
       copyright: 'جميع الحقوق محفوظة',
       followUs: 'تابعنا',
+      taxreg: 'السجل الضريبي: {{number}}',
+      privacyPolicy: 'سياسة الخصوصية',
+      termsOfUse: 'شروط الاستخدام',
+      cookiePolicy: 'سياسة ملفات الارتباط',
+      recaptcha: 'هذا الموقع محمي بواسطة reCAPTCHA وتطبق سياسة {{privacy}} و{{terms}} الخاصة بجوجل.',
+      privacy: 'سياسة الخصوصية',
+      terms: 'شروط الخدمة',
     },
 
     common: {
@@ -193,7 +305,7 @@ export const TRANSLATIONS = {
       close: 'إغلاق',
       cancel: 'إلغاء',
       save: 'حفظ',
-      delete: 'حذف',
+      delete: 'تعديل',
       edit: 'تعديل',
       loading: 'جاري التحميل...',
       error: 'خطأ',
@@ -211,6 +323,37 @@ export const TRANSLATIONS = {
       workforce: 'القوى العاملة',
       image: 'صورة',
       video: 'فيديو',
+      ourValues: 'قيمنا',
+      seeMore: 'اقرأ المزيد',
+      completed: 'مكتمل',
+      underConstruction: 'تحت الإنشاء',
+      planned: 'مخطط له',
+    },
+    amenities: {
+      Gym: 'صالة ألعاب رياضية',
+      'Bike Lanes': 'مسارات الدراجات',
+      'Outdoor Theater': 'مسرح خارجي',
+      'Parking Slots': 'أماكن وقوف السيارات',
+      'For The Little Ones': 'منطقة للأطفال',
+      'The Yellow Garden': 'الحديقة الصفراء',
+      'For Our Furry Friends': 'منطقة الحيوانات الأليفة',
+      'Sculptures & Features': 'منحوتات ومعالم مائية',
+      'Yoga Area': 'منطقة اليوغا',
+      'Communal Spaces': 'مساحات مجتمعية',
+      'Outdoor Pools': 'حمامات سباحة خارجية',
+    },
+    locations: {
+      'New Cairo': 'القاهرة الجديدة',
+      'The New Administrative Capital': 'العاصمة الإدارية الجديدة',
+      'Abu Dhabi': 'أبو ظبي',
+      Riyadh: 'الرياض',
+      Kuwait: 'الكويت',
+      Egypt: 'مصر',
+      UAE: 'الإمارات العربية المتحدة',
+      'Saudi Arabia': 'المملكة العربية السعودية',
+      'East Subah Al-Ahmed City': 'مدينة شرق صباح الأحمد',
+      'Mutlaa City': 'مدينة المطلاع',
+      'West Abdullah Mubarak City': 'مدينة غرب عبد الله المبارك',
     },
 
     search: {
@@ -223,6 +366,7 @@ export const TRANSLATIONS = {
       metadata: {
         company: {
           name: 'اوربن لينز للتطوير العقاري',
+          parentCompany: 'إميل عبد الله للاستثمارات',
           description:
             'شركة تطوير عقاري ذات مشاريع في جميع أنحاء الشرق الأوسط، مبنية على التنوع وسنوا ت عديدة من الخبرة في مجال التطوير العقاري.',
           tagline: 'ما وراء الروائع',
@@ -265,48 +409,96 @@ export const TRANSLATIONS = {
         'yellow-lane': {
           name: 'يلو لين',
           tagline: 'خطوط تحدد نمط حياتك.',
+          shortDesc:
+            'على مقربة من طريق السويس القديم والجديد. يوفر هذا الموقع المتميز سهولة الوصول إلى المعالم السياحية الرئيسية في المدينة.',
           description:
             'يلو لين ليس مجرد مكان، إنه لوحة تنبض فيها الخطوط بالحياة، تخاطب روحك وتحدد نمط حياتك. مساحاتنا مصممة بدقة للحفاظ على توازن دقيق بين الوظيفة والجمال.',
         },
         'yellow-residence': {
           name: 'يلو ريزيدنس',
           tagline: 'الأصفر ليس مجرد لون، إنه شعور؛ أسلوب حياة للأرواح الجريئة.',
+          shortDesc:
+            'على مقربة من طريق السويس القديم والجديد. يوفر هذا الموقع المتميز سهولة الوصول إلى المعالم السياحية الرئيسية في المدينة.',
           description:
-            'يلو هو مجمع سكني مصمم ليوفر للسكان حياة من النعيم ويمكنهم من الوصول إلى أفضل ما لديهم. الهندسة المعمارية والتصميم الداخلي ليلو مصممة بعناية لخلق شعور بالهدوء والسكينة.',
+            'يلو هو مجمع سكني مصمم ليوفر للسكان حياة من النعيم ويمكنهم من الوصول إلى أفضل ما لديهم. تم تصميم العمارة والتصميم الداخلي لـ يلو بعناية لخلق شعور بالهدوء والسكينة، مع التركيز على المواد الطبيعية والمساحات المفتوحة للسماح للمجتمع بالازدهار من خلال تجربة لا ميل لها.',
+          description2:
+            'على مقربة من طريق السويس القديم والجديد. يوفر هذا الموقع المتميز سهولة الوصول إلى المعالم السياحية الرئيسية في المدينة.',
         },
         'east-lane': {
           name: 'إيست لين',
           tagline: 'مبنى إيست لين هو أحد أكثر المناطق تميزًا وبروزًا ونشاطًا في التجمع الخامس.',
-          description: 'مساحة إدارية وتجارية تقع في قلب التجمع الخامس.',
+          shortDesc: 'مساحة إدارية وتجارية تقع في قلب التجمع الخامس.',
+          description:
+            'رائف فهمي هو مهندس معماري ومصمم داخلي مصري يعمل في هذا المجال منذ سنوات عديدة وقد بنى سمعة معروفة للجميع. عمل فهمي في بعض من أبرز المشاريع وأكثرها شهرة في مصر.',
+          description2:
+            'إينوفا هي الشركة الرائدة إقليمياً في مجال الطاقة المتكاملة والخدمات الفنية المتعددة، حيث تقدم خدمات شاملة لعملائها. توفر حلول إدارة الطاقة والمرافق القائمة على الأداء والتي تساعد العملاء على تحقيق أهدافهم المالية والتشغيلية والبيئية.',
         },
         'levels-business-tower': {
           name: 'ليفلز بيزنس تاور',
           tagline: 'شراكة فخر مع E& كشريك اتصالات.',
-          description: 'من المقرر أن تصبح العاصمة الإدارية الجديدة مركزًا جديدًا للتميز للمعيشة في مصر وخارجها.',
+          shortDesc: 'برج إداري وتجاري أيقوني في قلب العاصمة الإدارية الجديدة.',
+          description:
+            'من المقرر أن تصبح العاصمة الإدارية الجديدة مركزاً جديداً للتميز للمعيشة في مصر وخارجها. وستضم عاصمة متكاملة تماماً مع مؤسسات سكنية وتجارية وطبية ومالية وتعليمية ذات مستوى عالمي. علاوة على ذلك، مطار دولي مستقل، ومحطة قطار حديثة متصلة بنظام السكك الحديدية في مصر وستستخدم أحدث التقنيات لتوفير أول نظام أمني مركزي. ومن المتوقع أن تجتذب 40 مليون شخص عند اكتمالها.',
         },
         'mid-lane': {
           name: 'ميدلين',
           tagline: 'رغبة في النمو...',
+          shortDesc:
+            'مع مساحة واسعة تبلغ 24,000 متر مربع مخصصة للمساحات الإدارية للمكاتب والعيادات والأغراض التجارية، تم تصميم ميدلين لتلبية الاحتياجات المهنية المتنوعة. ادخل إلى الداخل وستندهش من هذه الوجهة المتطورة، التي تقدم مجموعة واسعة من المتاجر والمقاهي والمطاعم الراقية.',
           description:
-            'بمساحة واسعة تبلغ 24,000 متر مربع مخصصة للمساحات الإدارية للمكاتب والعيادات والأغراض التجارية، تم تصميم ميدلين لتلبية الاحتياجات المهنية المتنوعة.',
+            'موقع استراتيجي في قلب منطقة التجمع الخامس الحيوية، يتميز ميدلين بموقع متميز يضعه في مركز النشاط الصاخب، مما يوفر وصولاً ورؤية لا مثيل لهما للشركات والعملاء على حد سواء. ميدلين، تحفة معمارية رائعة، مبني على مساحة 15,000 متر مربع من الأرض بمساحة مبنية إجمالية تبلغ 85,000 متر مربع.',
         },
         noi: {
           name: 'نوي',
           tagline: 'صقلها الزمن، وحجزت لك.',
+          shortDesc: 'أول مجتمع غريب في مصر. - ليس في الإسراف، ولكن في التوازن الدقيق بين الشكل والوظيفة.',
           description:
-            'يقع نوي في المنطقة الرئيسية بالمربع الذهبي في التجمع الخامس، القاهرة الجديدة. يضع هذا الموقع الاستراتيجي المشروع في قلب القاهرة الجديدة.',
+            'يقع نوي في المنطقة الرئيسية في المربع الذهبي بالتجمع الخامس، القاهرة الجديدة. يضعه هذا الموقع الاستراتيجي في قلب القاهرة الجديدة، محاطاً بمجتمعات سكنية راقية وبالقرب من المراكز التجارية والترفيهية البارزة.',
         },
         'east-subah-al-ahmed-city': {
           name: 'مدينة شرق صباح الأحمد',
+          description: 'مشروع سكني رئيسي في الكويت يركز على المعيشة الحديثة والتكامل المجتمعي.',
         },
         'mutlaa-city': {
           name: 'مدينة المطلاع',
+          description: 'مشروع رائد في الكويت يقدم حلولاً سكنية حضرية مستدامة.',
         },
         'west-abdullah-mubarak-city': {
           name: 'مدينة غرب عبد الله المبارك',
+          description: 'توسيع آفاق التميز السكني في الكويت مع أحياء مخططة بعناية.',
+        },
+        'abu-el-banat-tower': {
+          name: 'برج أبو البنات',
+        },
+        'dalal-complex': {
+          name: 'مجمع دلال',
+        },
+        'enjazat-tower': {
+          name: 'برج إنجازات',
+        },
+        'misk-hotel': {
+          name: 'فندق مسك',
+        },
+        'omniyat-gardens': {
+          name: 'أمنيات جاردنز',
         },
       },
     },
+
+    newsletter: {
+      title: 'احصل على آخر الأخبار والتحديثات من اوربن لينز',
+      description: 'سجل لتكون أول من يعلم بأحدث المشاريع والمستجدات التي نرسم بها ملامح المستقبل!',
+      emailPlaceholder: 'بريدك الإلكتروني',
+      subscribe: 'اشترك الآن',
+      emailLabel: 'البريد الإلكتروني',
+      messages: {
+        success: 'شكراً لاشتراكك!',
+        invalidEmail: 'عنوان بريد إلكتروني غير صالح.',
+        emailRequired: 'البريد الإلكتروني مطلوب.',
+        error: 'حدث خطأ ما. يرجى المحاولة مرة أخرى لاحقاً.',
+      },
+    },
+
     videoSection: {
       marquee: 'عام واحد - رؤية واحدة - تقدم هادف -',
     },

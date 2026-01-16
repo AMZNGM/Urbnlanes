@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.constructionUpdates()
+export const generateMetadata = metadataGenerators.constructionUpdates()
 
 export default function ConstructionUpdates() {
   return (

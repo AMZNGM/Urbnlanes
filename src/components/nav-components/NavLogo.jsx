@@ -8,8 +8,9 @@ export default function NavLogo() {
       <Image
         src={logo}
         alt="Urbnlanes"
+        sizes="(max-width: 768px) 150px, 180px"
         priority
-        className="w-fit h-8 object-contain hover:scale-103 transition-transform duration-300 ease-out"
+        className="w-auto h-8 object-contain hover:scale-103 transition-transform duration-300 ease-out"
       />
     </Link>
   )

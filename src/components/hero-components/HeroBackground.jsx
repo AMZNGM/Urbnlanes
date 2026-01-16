@@ -27,10 +27,11 @@ export default function HeroBackground({ currentSlide, currentIndex, isVideoMode
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="none"
               className="absolute inset-0 w-full h-full object-cover"
+              onCanPlayThrough={(e) => e.target.play()}
             />
-            <div className="z-10 absolute inset-0 bg-black/40" />
+            {/* <div className="z-10 absolute inset-0 bg-black/40" /> */}
             <div className="z-10 absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
           </div>
         ) : (
@@ -42,7 +43,7 @@ export default function HeroBackground({ currentSlide, currentIndex, isVideoMode
                 fill
                 priority={currentIndex === 0}
                 className="object-cover"
-                sizes="100vw"
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 80vw, 100vw"
               />
               <div className="z-10 absolute inset-0 bg-black/30" />
               <div className="z-10 absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />

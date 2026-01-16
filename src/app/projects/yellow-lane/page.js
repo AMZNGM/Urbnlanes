@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.yellowLane()
+export const generateMetadata = metadataGenerators.yellowLane()
 
 export default function YellowLane() {
   return (

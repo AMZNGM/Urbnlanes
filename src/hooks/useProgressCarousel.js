@@ -10,17 +10,17 @@ const PROJECT_CONFIGS = [
   {
     id: 'levels-business-tower',
     galleryIndex: 12,
-    video: '/videos/projects/levels-tower/levels-e-and.mp4',
+    video: '/videos/projects/levels-tower/levels-e-and-1.mp4',
   },
   {
     id: 'east-lane',
     galleryIndex: 4,
-    video: '/videos/projects/east-lane/el-main.mp4',
+    video: '/videos/projects/east-lane/el-main-1.mp4',
   },
   {
     id: 'yellow-lane',
     galleryIndex: 6,
-    video: '/videos/projects/yellow-lane/yl-main.mp4',
+    video: '/videos/projects/yellow-lane/yl-main-1.mp4',
   },
 ]
 
@@ -42,12 +42,12 @@ export function useProgressCarousel() {
 
       return {
         id: project.id,
-        title: t(`db.projects.${project.id}.name`) || project.name || project.title || 'Project',
-        description: t(`db.projects.${project.id}.description`) || project.shortDescription || project.tagline || project.description || '',
-        image: (project.gallery && project.gallery[config.galleryIndex]) || project.gallery?.[0] || project.coverImage || '',
+        title: t(`db.projects.${project.id}.name`) || 'Project',
+        description: t(`db.projects.${project.id}.shortDesc`) || t(`db.projects.${project.id}.description`) || '',
+        image: (project.gallery && project.gallery[config.galleryIndex]) || '',
         video: config.video || project.video || null,
         buttonText: t('common.moreAboutProject', {
-          name: t(`db.projects.${project.id}.name`) || project.name || project.title || 'Project',
+          name: t(`db.projects.${project.id}.name`) || 'Project',
         }),
         buttonHref: `/projects/${project.id}`,
         type: project.type,

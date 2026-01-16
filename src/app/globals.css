@@ -1,25 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 @import 'tailwindcss';
-@font-face {
-  font-family: 'GeneralSans';
-  src: url('../../public/fonts/GeneralSans-Variable.ttf') format('truetype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Bein Arabic';
-  src: url('../../public/fonts/bein-ar-black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
 @theme {
   --color-main: #8e8e8e;
   --color-bg: #2d2a26;
   --color-text: #f0eee9;
 
-  --font-main: 'GeneralSans';
-  --font-sec: 'Cinzel';
-  --font-arab: 'Bein Arabic';
+  --font-main: var(--font-main);
+  --font-sec: var(--font-sec);
+  --font-arab: var(--font-arab);
 }
 * {
   box-sizing: border-box;
@@ -29,7 +16,7 @@ html {
 }
 :lang(ar),
 [lang='ar'] {
-  font-family: 'Bein Arabic', 'GeneralSans';
+  font-family: var(--font-arab), var(--font-main);
 }
 .border {
   border-color: #8e8e8e50;

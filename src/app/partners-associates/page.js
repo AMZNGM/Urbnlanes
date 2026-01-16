@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.partnersAssociates()
+export const generateMetadata = metadataGenerators.partnersAssociates()
 
 export default function PartnersAssociates() {
   return (

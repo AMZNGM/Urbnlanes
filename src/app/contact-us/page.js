@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.contactUs()
+export const generateMetadata = metadataGenerators.contactUs()
 
 export default function ContactUs() {
   return (

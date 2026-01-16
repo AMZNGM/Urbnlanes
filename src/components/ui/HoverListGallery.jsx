@@ -2,52 +2,64 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
+import { useTranslation } from '@/hooks/useTranslation'
+import { Dot } from 'lucide-react'
 
 export default function HoverListGallery() {
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState(null)
   const ProjectsVids = [
-    '/videos/projects/abdullah-mubarak/am-main-2.mp4',
-    '/videos/projects/abu-el-banat-tower/banat-main-2.mp4',
-    '/videos/projects/dalal-complex/dalal-complex-main.mp4',
-    '/videos/projects/east-lane/el-main.mp4',
-    '/videos/projects/east-sabah/es-main.mp4',
-    '/videos/projects/enjazat-tower/enjazat-main.mp4',
-    '/videos/projects/misk-hotel/misk-main.mp4',
-    '/videos/projects/mutlaa/mutlaa-main.mp4',
-    '/videos/projects/omniyat-gardens/omniyat-main.mp4',
-    '/videos/projects/story-branded-residences/sbr-main.mp4',
+    '/videos/projects/abdullah-mubarak/am-main.mp4',
+    '/videos/projects/abu-el-banat-tower/banat-main.mp4',
+    '/videos/projects/dalal-complex/dalal-complex-main-1.mp4',
+    '/videos/projects/east-lane/el-main-1.mp4',
+    '/videos/projects/east-sabah/es-main-1.mp4',
+    '/videos/projects/enjazat-tower/enjazat-main-1.mp4',
+    '/videos/projects/misk-hotel/misk-main-1.mp4',
+    '/videos/projects/mutlaa/mutlaa-main-1.mp4',
+    '/videos/projects/omniyat-gardens/omniyat-main-1.mp4',
   ]
   const ProjectsNames = [
-    'Abdullah Mubarak',
-    'Abu El Banat Tower',
-    'Dalal Complex',
-    'East Lane',
-    'East Sabah',
-    'Enjazat Tower',
-    'Misk Hotel',
-    'Mutlaa',
-    'Omniyat Gardens',
-    'Story Branded Residences',
+    t('db.projects.west-abdullah-mubarak-city.name'),
+    t('db.projects.abu-el-banat-tower.name'),
+    t('db.projects.dalal-complex.name'),
+    t('db.projects.east-lane.name'),
+    t('db.projects.east-subah-al-ahmed-city.name'),
+    t('db.projects.enjazat-tower.name'),
+    t('db.projects.misk-hotel.name'),
+    t('db.projects.mutlaa-city.name'),
+    t('db.projects.omniyat-gardens.name'),
   ]
 
   return (
-    <section className="max-md:hidden relative w-full h-full overflow-hidden flex flex-col justify-end gap-4">
-      <div className="relative h-full flex flex-col justify-center items-end gap-2 text-text p-4 mix-blend-difference">
+    <section className="max-md:hidden relative w-full h-full overflow-hidden">
+      <div className="relative h-full flex flex-col justify-center items-end gap-3 p-4">
         {ProjectsNames.map((name, index) => (
-          <div
+          <motion.div
             key={name}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             onMouseEnter={() => setActiveIndex(index)}
             onMouseLeave={() => setActiveIndex(null)}
             className="group relative cursor-pointer"
           >
-            <h3 className="relative text-main hover:text-text text-2xl">{name}</h3>
+            <div className="relative flex items-center text-text group-hover:text-text text-2xl transition-colors animate-pulse duration-300 px-2">
+              {name}
+              <Dot />
+            </div>
 
-            <span className="bottom-0 left-0 absolute w-full h-0.5 bg-text scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left transition-transform duration-300" />
-          </div>
+            <span className="bottom-0 ltr:-left-1 rtl:left-2 absolute w-full h-8 bg-text rounded-xl scale-x-0 group-hover:scale-x-100 origin-left group-hover:origin-right transition-transform duration-300 mix-blend-difference" />
+          </motion.div>
         ))}
       </div>
 
-      <div className="z-30 absolute inset-0 flex justify-center items-center pointer-events-none">
+      <div className="z-30 absolute inset-0 pointer-events-none">
         <AnimatePresence mode="wait">
           {activeIndex !== null && (
             <motion.div
@@ -56,12 +68,21 @@ export default function HoverListGallery() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{
-                duration: 0.7,
+                duration: 0.75,
                 ease: [0.22, 1, 0.36, 1],
               }}
               className="w-full h-full overflow-hidden"
             >
-              <motion.video src={ProjectsVids[activeIndex]} autoPlay muted loop playsInline className="w-full h-full object-cover" />
+              <video
+                src={ProjectsVids[activeIndex]}
+                autoPlay
+                muted
+                loop
+                playsInline
+                type="video/mp4"
+                poster="/images/poster.png"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           )}
         </AnimatePresence>

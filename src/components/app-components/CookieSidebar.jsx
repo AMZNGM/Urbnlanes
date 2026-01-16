@@ -23,8 +23,8 @@ const CookieCategory = ({ title, description, icon: Icon, checked, onChange, dis
   const [showDetails, setShowDetails] = useState(false)
 
   return (
-    <li className="hover:bg-text/5 border border-text/10 rounded-lg duration-300 cursor-pointer p-4">
-      <div className="flex items-start justify-between">
+    <li className="hover:bg-text/5 border border-text/10 rounded-lg duration-300 p-4 cursor-pointer">
+      <div className="flex justify-between items-start">
         <div className="flex-1 mr-4">
           <div className="flex items-center gap-2">
             <Icon className="w-4 h-4 text-main" />
@@ -42,10 +42,10 @@ const CookieCategory = ({ title, description, icon: Icon, checked, onChange, dis
               </button>
             )}
           </div>
-          <p className="text-xs opacity-70 mt-1 lowercase">{description}</p>
+          <p className="opacity-70 text-xs lowercase mt-1">{description}</p>
 
           {showDetails && details && (
-            <div className="mt-3 p-3 bg-text/5 text-xs lowercase">
+            <div className="bg-text/5 text-xs lowercase mt-3 p-3">
               <p className="font-medium mb-2">Cookies used:</p>
               <ul className="space-y-1">
                 {details.cookies?.map((cookie, index) => (
@@ -56,7 +56,7 @@ const CookieCategory = ({ title, description, icon: Icon, checked, onChange, dis
                 ))}
               </ul>
               {details.retention && (
-                <p className="mt-2 opacity-70">
+                <p className="opacity-70 mt-2">
                   <strong>Retention:</strong> {details.retention}
                 </p>
               )}
@@ -66,7 +66,7 @@ const CookieCategory = ({ title, description, icon: Icon, checked, onChange, dis
 
         {disabled ? (
           <div className="flex items-center gap-2">
-            <span className="text-xs opacity-70">Always On</span>
+            <span className="opacity-70 text-xs">Always On</span>
             <input type="checkbox" checked disabled className="accent-current cursor-not-allowed" />
           </div>
         ) : (
@@ -209,10 +209,10 @@ export default function CookieSidebar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: 'spring', duration: 0.2, stiffness: 100 }}
         onClick={toggle}
-        className="group w-10 h-10 fixed bottom-4 left-4 flex justify-center items-center rounded-full shadow-lg bg-bg text-main hover:text-bg hover:bg-main transition-colors duration-300 cursor-pointer z-50"
+        className="group bottom-4 left-4 z-50 fixed w-10 h-10 flex justify-center items-center bg-bg hover:bg-main shadow-lg rounded-full text-main hover:text-bg transition-colors duration-300 cursor-pointer"
       >
         <Settings />
-        <span className="absolute bottom-2.5 left-12 bg-main text-bg text-sm rounded-full text-nowrap px-2 opacity-0 group-hover:opacity-75 translate-x-1 group-hover:translate-x-0 transition-all duration-300">
+        <span className="bottom-2.5 left-12 absolute bg-main opacity-0 group-hover:opacity-75 rounded-full text-bg text-sm text-nowrap transition-all translate-x-1 group-hover:translate-x-0 duration-300 px-2">
           Cookies Settings
         </span>
       </motion.button>
@@ -224,7 +224,7 @@ export default function CookieSidebar() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/75 backdrop-blur-sm z-50"
+          className="z-50 fixed inset-0 bg-black/75 backdrop-blur-sm"
           onClick={() => setOpen(false)}
         >
           <motion.aside
@@ -237,18 +237,18 @@ export default function CookieSidebar() {
             exit={{ x: '-100%' }}
             transition={{ type: 'spring', stiffness: 150, damping: 20, duration: 0.4, ease: 'easeInOut' }}
             onClick={(e) => e.stopPropagation()}
-            className="absolute left-0 top-0 h-full max-w-md bg-bg shadow-2xl flex flex-col z-50"
+            className="top-0 left-0 z-50 absolute max-w-md h-full flex flex-col bg-bg shadow-2xl"
           >
-            <header className="flex justify-between items-center px-5 py-4 border-b border-text/10">
+            <header className="flex justify-between items-center border-text/10 border-b px-5 py-4">
               <div className="flex items-center gap-2">
                 <Settings size={20} className="text-main" />
-                <h3 className="text-xl max-md:text-base font-semibold">Privacy Preferences Center</h3>
+                <h3 className="font-semibold max-md:text-base text-xl">Privacy Preferences Center</h3>
               </div>
               <CloseBtn onClick={() => setOpen(false)} className="top-2!" />
             </header>
 
-            <div className="px-5 py-4 space-y-4 overflow-y-auto flex-1">
-              <section className="text-xs bg-text/5 opacity-75 rounded-lg p-4">
+            <div className="overflow-y-auto flex-1 space-y-4 px-5 py-4">
+              <section className="bg-text/5 opacity-75 rounded-lg text-xs p-4">
                 <p>
                   When you use the Urbnlanes website, certain information may be stored or retrieved in your browser, mainly through
                   cookies. This data can relate to your device, settings, or general usage and helps the site work as intended. It usually
@@ -266,7 +266,7 @@ export default function CookieSidebar() {
               </section>
             </div>
 
-            <footer className="border-t border-text/10 p-4">
+            <footer className="border-text/10 border-t p-4">
               <div className="flex max-md:flex-col justify-center gap-2">
                 <MainBtn onClick={handleSave} size="sm" className="bg-main hover:bg-main/75 text-nowrap">
                   Save preferences

@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.noi()
+export const generateMetadata = metadataGenerators.noi()
 
 export default function NOIPage() {
   return (

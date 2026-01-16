@@ -66,22 +66,22 @@
       "partners": [
         {
           "name": "Delave Studio",
-          "logo": "/images/logos/delave-studio.webp",
+          "logo": "/images/logos/delave-studio-logo.webp",
           "role": "Architecture & Design"
         },
         {
           "name": "HC Consultants",
-          "logo": "/images/logos/hc-Consultants.webp",
+          "logo": "/images/logos/hc-Consultants-logo.webp",
           "role": "Engineering Consultancy"
         },
         {
           "name": "Tahseen",
-          "logo": "/images/logos/tahseen.webp",
+          "logo": "/images/logos/tahseen-logo.webp",
           "role": "Construction Management"
         },
         {
           "name": "Oko Plan",
-          "logo": "/images/logos/oko-plan.webp",
+          "logo": "/images/logos/oko-plan-logo.webp",
           "role": "Urban Planning"
         }
       ],
@@ -120,12 +120,12 @@
       "partners": [
         {
           "name": "Oko Plan",
-          "logo": "/images/logos/oko-plan.webp",
+          "logo": "/images/logos/oko-plan-logo.webp",
           "role": "Urban Planning"
         },
         {
           "name": "HC Consultants",
-          "logo": "/images/logos/hC-Consultants.webp",
+          "logo": "/images/logos/hC-Consultants-logo.webp",
           "role": "Engineering Consultancy"
         },
         {
@@ -135,7 +135,7 @@
         },
         {
           "name": "Delave Studio",
-          "logo": "/images/logos/delave-studio.webp",
+          "logo": "/images/logos/delave-studio-logo.webp",
           "role": "Architecture & Design"
         }
       ],
@@ -274,6 +274,7 @@
       "name": "Levels Business Tower",
       "logo": "/images/logos/yellow-lane-logo.webp",
       "tagline": "Proudly Partnered With E& As Our Communications Partner.",
+      "shortDesc": "An iconic administrative and commercial business tower in the heart of the New Administrative Capital.",
       "description": "The New Administrative Capital is set to become a new center of excellence for living in Egypt and beyond. It will feature a fully-integrated capital with world-class residential, commercial, medical, financial, and educational institutions. Moreover, an independent international airport, a modern train station that is connected to Egypt’s railway system and it will use the most advanced technology to provide the first central security system. It is expected to attract 40 million people upon completion.",
       "brochure": "https://drive.google.com/file/d/1cs5X3QNJWgVudChvXUs7-s7VUnrYsaiV/view",
       "status": "completed",
@@ -286,7 +287,7 @@
       "partners": [
         {
           "name": "Etisalat",
-          "logo": "public/images/logos/e-and-logo.svg"
+          "logo": "/images/logos/e-and-logo.svg"
         }
       ],
       "featured": true,
@@ -326,6 +327,7 @@
         "Located directly on Northern Nintey Street and Mohamed Naguib Axis, with close proximity to key city hubs, Midlane is the new landmark in New Cairo.",
         "Midlane, a magnificent architectural masterpiece, is built on 15,000 SQM of land with a total built-up area of 85,000 SQM. The development includes three basement floors, a ground floor, and five additional floors. Midlane offers a GLA of 20,000 SQM, featuring a unique blend of retail, entertainment, and dining experiences."
       ],
+      "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2022/08/EastLane-by-urbnlanes.pdf",
       "status": "completed",
       "category": "residential",
       "location": {
@@ -399,6 +401,7 @@
       "name": "East Subah Al-Ahmed City",
       "status": "completed",
       "category": "residential",
+      "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
       "overview": {
         "value": "68,473,860 KWD",
         "startdate": "2021",
@@ -422,6 +425,7 @@
       "name": "Mutlaa City",
       "status": "completed",
       "category": "residential",
+      "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
       "overview": {
         "value": "37,960,000 KWD",
         "startdate": "2019",
@@ -445,6 +449,7 @@
       "name": "West Abdullah Mubarak City",
       "status": "completed",
       "category": "residential",
+      "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
       "overview": {
         "value": "37,990,000 KWD",
         "startdate": "2018",

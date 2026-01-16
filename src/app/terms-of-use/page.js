@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.termsOfUse()
+export const generateMetadata = metadataGenerators.termsOfUse()
 
 export default function TermsOfUsePage() {
   return (

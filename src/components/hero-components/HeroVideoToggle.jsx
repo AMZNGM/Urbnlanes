@@ -13,7 +13,7 @@ export default function HeroVideoToggle({ isVideoMode, setIsVideoMode }) {
     >
       <button
         onClick={() => setIsVideoMode(false)}
-        className={`text-xs font-medium tracking-wider transition-colors cursor-pointer py-4 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 ${
+        className={`text-xs font-medium tracking-wider transition-colors cursor-pointer py-4 focus-visible:outline-2 focus-visible:outline-text focus-visible:outline-offset-4 ${
           !isVideoMode ? 'text-text' : 'text-main hover:text-text'
         }`}
       >
@@ -24,7 +24,7 @@ export default function HeroVideoToggle({ isVideoMode, setIsVideoMode }) {
 
       <button
         onClick={() => setIsVideoMode(true)}
-        className={`text-xs font-medium tracking-wider transition-colors cursor-pointer py-4 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 ${
+        className={`text-xs font-medium tracking-wider transition-colors cursor-pointer py-4 focus-visible:outline-2 focus-visible:outline-text focus-visible:outline-offset-4 ${
           isVideoMode ? 'text-text' : 'text-main hover:text-text'
         }`}
       >

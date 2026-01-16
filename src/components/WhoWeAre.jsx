@@ -12,19 +12,11 @@ export default function WhoWeAre() {
   const { t } = useTranslation()
   const containerRef = useRef(null)
   const imageRef = useRef(null)
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start'],
-  })
-
-  const { scrollYProgress: imageScrollProgress } = useScroll({
-    target: imageRef,
-    offset: ['start 60%', 'end 20%'],
-  })
-
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start end', 'end start'] })
+  const { scrollYProgress: imageScrollProgress } = useScroll({ target: imageRef, offset: ['start 60%', 'end 20%'] })
   const opacity = useTransform(scrollYProgress, [0, 0.15, 0.8], [0, 1, 1])
   const scale = useTransform(scrollYProgress, [0, 0.2], [0.95, 1])
+  const clipPath = useTransform(imageScrollProgress, (latest) => `inset(${latest * 100}% 0 0 0)`)
 
   return (
     <section ref={containerRef} className="relative w-full h-full overflow-hidden bg-black text-text px-18 max-md:px-4 py-8">
@@ -54,9 +46,8 @@ export default function WhoWeAre() {
                   src="/images/projects/east-lane/el-main-3.avif"
                   alt="EastLane Project"
                   fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 60vw"
-                  className="object-center object-cover hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 60vw, (max-width: 1024px) 70vw, 60vw"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
                 />
               </motion.div>
 
@@ -73,12 +64,13 @@ export default function WhoWeAre() {
 
             <p className="text-[1vw] max-md:text-[4vw] max-lg:text-[2vw] normal-case text-balance"> {t('db.whoweare.description')} </p>
 
-            <div className="flex items-center gap-2 mt-4">
+            <a
+              href="tel:+15061"
+              className="flex items-center gap-2 text-main hover:text-text text-xs hover:text-sm italic transition-all duration-700 mt-4"
+            >
               <div className="w-6 h-px bg-main" />
-              <a href="tel:+15061" className="text-main hover:text-text text-xs hover:text-sm italic transition-all duration-700">
-                {`${t('common.hotline')} : ` + db.metadata.company.hotline}
-              </a>
-            </div>
+              {`${t('common.hotline')} : ` + db.metadata.company.hotline}
+            </a>
           </motion.div>
 
           {/* Right column */}
@@ -128,26 +120,21 @@ export default function WhoWeAre() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="relative rounded-2xl p-4"
             >
-              <div ref={imageRef} data-scroll data-scroll-speed="0.05" className="z-30 relative h-[38vh] overflow-hidden rounded-2xl">
+              <div ref={imageRef} className="z-30 relative h-[38vh] overflow-hidden rounded-2xl">
                 <Image
                   src="/images/projects/yellow-residence/yr-gallery-3.webp"
                   alt="EastLane Project"
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 40vw, 35vw"
+                  sizes="(max-width: 768px) 60vw, (max-width: 1024px) 40vw, 35vw"
                   className="object-center object-cover scale-110 hover:scale-115 transition-transform duration-700"
                 />
 
-                <motion.div
-                  style={{
-                    clipPath: useTransform(imageScrollProgress, (latest) => `inset(${latest * 100}% 0 0 0)`),
-                  }}
-                  className="z-10 absolute inset-0"
-                >
+                <motion.div style={{ clipPath }} className="z-10 absolute inset-0">
                   <Image
                     src="/images/projects/yellow-residence/yr-gallery-2.webp"
-                    alt="image  clipPath"
+                    alt="image clipPath"
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 40vw, 35vw"
+                    sizes="(max-width: 768px) 60vw, (max-width: 1024px) 40vw, 35vw"
                     className="object-cover"
                   />
                 </motion.div>

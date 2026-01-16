@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.mediaCenterNews()
+export const generateMetadata = metadataGenerators.mediaCenterNews()
 
 export default function MediaCenterNews() {
   return (

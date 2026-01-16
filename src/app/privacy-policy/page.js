@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.privacyPolicy()
+export const generateMetadata = metadataGenerators.privacyPolicy()
 
 export default function PrivacyPolicyPage() {
   return (

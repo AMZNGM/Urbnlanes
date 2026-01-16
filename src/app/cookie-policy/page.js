@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.cookiePolicy()
+export const generateMetadata = metadataGenerators.cookiePolicy()
 
 export default function CookiePolicyPage() {
   return (

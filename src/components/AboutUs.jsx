@@ -8,6 +8,7 @@ export default function AboutUs() {
       <div className="relative w-full md:w-1/2 h-dvh max-md:h-[50vh]">
         <video
           src={vid}
+          type="video/mp4"
           autoPlay
           loop
           muted
@@ -19,6 +20,7 @@ export default function AboutUs() {
           data-scroll
           data-scroll-speed="0.3"
           src={vid}
+          type="video/mp4"
           autoPlay
           loop
           muted

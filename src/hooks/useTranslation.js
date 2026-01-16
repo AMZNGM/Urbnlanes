@@ -2,14 +2,6 @@ import { useMemo } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { TRANSLATIONS } from '@/translations/translations'
 
-/**
- * Professional translation hook with namespace support and interpolation
- * @example
- * const { t } = useTranslation()
- * t('nav.home') // Returns translated text
- * t('common.search', { count: 5 }) // With interpolation
- */
-
 const LANGUAGE_MAP = {
   English: 'en',
   العربية: 'ar',
@@ -48,9 +40,13 @@ export function useTranslation() {
           }
         }
 
-        // If value is not a string, return key
-        if (typeof value !== 'string') {
+        // Support for objects/arrays (useful for mapping translated lists)
+        if (typeof value !== 'string' && typeof value !== 'object') {
           return key
+        }
+
+        if (typeof value === 'object') {
+          return value
         }
 
         // Simple interpolation: replace {{key}} with params[key]

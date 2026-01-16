@@ -11,8 +11,9 @@ import db from '@/database/urbnlanes-db.json'
 import ShinyText from '@/components/ui/text/ShinyText'
 
 export default function FooterContent() {
-  const { t } = useTranslation()
+  const { t, currentLanguage } = useTranslation()
   const { isClient } = useNavbar()
+  const isAr = currentLanguage === 'ar'
 
   const links = useMemo(() => {
     return navigation
@@ -31,11 +32,22 @@ export default function FooterContent() {
       .slice(1)
   }, [t, isClient])
 
+  const recaptchaParts = useMemo(() => {
+    const text = t('footer.recaptcha', {
+      privacy: 'PRIVACY_PLACEHOLDER',
+      terms: 'TERMS_PLACEHOLDER',
+    })
+    return text.split(/(PRIVACY_PLACEHOLDER|TERMS_PLACEHOLDER)/)
+  }, [t])
+
   return (
-    <div dir="ltr" className="relative w-full h-full overflow-hidden bg-black font-mono text-main px-18 max-md:px-4 max-md:py-18">
+    <div
+      dir="ltr"
+      className="relative w-full h-full overflow-hidden bg-black font-mono text-main max-md:text-text px-18 max-md:px-4 max-md:py-18"
+    >
       <div className="w-full h-full flex flex-col justify-center items-center">
         <div className="w-full h-full flex max-md:flex-col md:justify-between items-center">
-          <ShinyText tag="h4" className="text-[16vw] text-center leading-[13vw]">
+          <ShinyText className="text-[16vw] text-center leading-[13vw]">
             <p className="font-sec! font-medium tracking-[1.2vw]">urbn</p>
             <p className="font-main! font-light">lanes</p>
           </ShinyText>
@@ -44,12 +56,22 @@ export default function FooterContent() {
             <div className="overflow-hidden">
               <div className="overflow-hidden flex justify-end">
                 <div className="flex flex-col justify-end gap-2 text-xs">
-                  <motion.span initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 0.75, delay: 0.3 }}>
-                    {db.metadata.company.parentCompany || 'Emeel Abdalla Investments'}
+                  <motion.span
+                    initial={{ x: '-100%' }}
+                    whileInView={{ x: 0 }}
+                    transition={{ duration: 0.75, delay: 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    {t('db.metadata.company.parentCompany')}
                   </motion.span>
 
-                  <motion.span initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 0.75, delay: 0.4 }}>
-                    taxreg: {db.metadata.company.taxreg || '177176'}
+                  <motion.span
+                    initial={{ x: '-100%' }}
+                    whileInView={{ x: 0 }}
+                    transition={{ duration: 0.75, delay: 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    {t('footer.taxreg', { number: db.metadata.company.taxreg || '177176' })}
                   </motion.span>
                 </div>
 
@@ -59,6 +81,7 @@ export default function FooterContent() {
                       initial={{ x: '100%' }}
                       whileInView={{ x: 0 }}
                       transition={{ duration: 0.75, delay: index * 0.1 }}
+                      viewport={{ once: true }}
                       key={index}
                       className="space-y-2"
                     >
@@ -80,18 +103,25 @@ export default function FooterContent() {
 
             <div className="overflow-hidden">
               <div className="flex max-md:flex-col justify-between items-center gap-18">
-                <div className="w-full space-y-2 opacity-60 text-xs max-md:text-end">
-                  <motion.p initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 0.75, delay: 0.3 }} className="m-0">
-                    © {db.metadata.company.name || 'Emeel Abdalla Investments'} {new Date().getFullYear()}
+                <div className="w-full space-y-2 md:opacity-60 text-xs max-md:text-end">
+                  <motion.p
+                    initial={{ x: '-100%' }}
+                    whileInView={{ x: 0 }}
+                    transition={{ duration: 0.75, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="m-0"
+                  >
+                    © {t('db.metadata.company.name')} {new Date().getFullYear()}
                   </motion.p>
 
                   <motion.p
                     initial={{ x: '-100%' }}
                     whileInView={{ x: 0 }}
                     transition={{ duration: 0.75, delay: 0.4 }}
+                    viewport={{ once: true }}
                     className="text-xs m-0 md:mt-0"
                   >
-                    All rights reserved.
+                    {t('footer.copyright')}
                   </motion.p>
                 </div>
 
@@ -113,12 +143,13 @@ export default function FooterContent() {
                         initial={{ y: '-120%', opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.5, delay: index * 0.3 }}
+                        viewport={{ once: true }}
                       >
                         <Link
                           href={url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-main hover:text-text transition-colors duration-300"
+                          className="md:text-main hover:text-text transition-colors duration-300"
                           aria-label={platform.charAt(0).toUpperCase() + platform.slice(1)}
                         >
                           <Icon size={20} />
@@ -132,41 +163,61 @@ export default function FooterContent() {
           </div>
         </div>
 
-        <div className="w-full flex flex-row-reverse max-md:flex-col justify-center items-center gap-8 mt-12 mb-4">
+        <motion.div
+          initial={{ y: 30 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.75, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="w-full flex flex-row-reverse max-md:flex-col justify-center items-center gap-8 mt-12 mb-4"
+        >
           <div className="flex justify-end items-center gap-8 text-xs">
-            {['Privacy Policy', 'Terms of Use', 'Cookie Policy'].map((link) => (
+            {[
+              { id: 'privacyPolicy', label: t('footer.privacyPolicy') },
+              { id: 'termsOfUse', label: t('footer.termsOfUse') },
+              { id: 'cookiePolicy', label: t('footer.cookiePolicy') },
+            ].map((link) => (
               <Link
-                key={link}
-                href={`/${link.replace(/\s+/g, '-').toLowerCase()}`}
-                className="text-main hover:text-text transition-colors duration-200"
+                key={link.id}
+                href={`/${link.label.replace(/\s+/g, '-').toLowerCase()}`}
+                className="md:text-main hover:text-text transition-colors duration-200"
               >
-                {link}
+                {link.label}
               </Link>
             ))}
           </div>
 
-          <p className="opacity-75 text-xs text-center">
-            This site is protected by reCAPTCHA and the Google{' '}
-            <Link
-              href="https://policies.google.com/privacy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-text underline transition-colors duration-200"
-            >
-              Privacy Policy
-            </Link>{' '}
-            and{' '}
-            <Link
-              href="https://policies.google.com/terms"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-text underline transition-colors duration-200"
-            >
-              Terms of Service
-            </Link>{' '}
-            apply.
+          <p className="md:opacity-75 text-xs text-center">
+            {recaptchaParts.map((part, i) => {
+              if (part === 'PRIVACY_PLACEHOLDER') {
+                return (
+                  <Link
+                    key={i}
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-text underline transition-colors duration-200"
+                  >
+                    {t('footer.privacy')}
+                  </Link>
+                )
+              }
+              if (part === 'TERMS_PLACEHOLDER') {
+                return (
+                  <Link
+                    key={i}
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-text underline transition-colors duration-200"
+                  >
+                    {t('footer.terms')}
+                  </Link>
+                )
+              }
+              return part
+            })}
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

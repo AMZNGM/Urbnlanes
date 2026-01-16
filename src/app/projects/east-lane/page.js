@@ -1,6 +1,6 @@
 import { metadataGenerators } from '@/lib/seo-helpers'
 
-export const metadata = metadataGenerators.eastlane()
+export const generateMetadata = metadataGenerators.eastlane()
 
 export default function EastlanePage() {
   return (

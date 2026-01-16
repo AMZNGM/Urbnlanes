@@ -16,6 +16,10 @@ export default memo(function MainBtn({
   fullWidth = false,
   disabled = false,
 
+  icon: Icon,
+  iconPosition = 'right',
+  iconClassName = '',
+
   ...rest
 }) {
   const baseStyles =
@@ -53,20 +57,27 @@ export default memo(function MainBtn({
   if (to)
     return (
       <Link href={to} {...commonProps}>
+        {Icon && iconPosition === 'left' && <Icon className={`w-3 fill-bg -rotate-40 ${iconClassName}`} />}
         <LetterSwap text={children} />
+        {Icon && iconPosition === 'right' && <Icon className={`w-3 fill-bg -rotate-40 ${iconClassName}`} />}
       </Link>
     )
+
   if (href)
     return (
       <a href={href} {...commonProps}>
+        {Icon && iconPosition === 'left' && <Icon className={`w-3 fill-bg -rotate-40 ${iconClassName}`} />}
         <LetterSwap text={children} />
+        {Icon && iconPosition === 'right' && <Icon className={`w-3 fill-bg -rotate-40 ${iconClassName}`} />}
       </a>
     )
 
   return (
     <RippleEffect className="flex rounded-2xl">
       <button type="button" onClick={onClick} disabled={disabled} {...commonProps}>
+        {Icon && iconPosition === 'left' && <Icon className={`w-3 fill-bg -rotate-40 ${iconClassName}`} />}
         <LetterSwap text={children} />
+        {Icon && iconPosition === 'right' && <Icon className={`w-3 fill-bg -rotate-40 ${iconClassName}`} />}
       </button>
     </RippleEffect>
   )
