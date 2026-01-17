@@ -1,11 +1,13 @@
-'use client'
-
-import { useParams } from 'next/navigation'
+// import { useParams } from 'next/navigation'
 // import SingleArticle from '@/components/SingleArticle'
 
-export default function ArticlePage() {
-  const params = useParams()
-  const articleId = parseInt(params.id, 10)
+import { metadataGenerators } from '@/lib/seo-helpers'
+export const generateMetadata = metadataGenerators.mediaCenterNews()
 
-  return <SingleArticle articleId={articleId} preloadedImage={null} />
+export default function ArticlePage() {
+  // const params = useParams()
+  // const articleId = parseInt(params.id, 10)
+
+  // return <SingleArticle articleId={articleId} preloadedImage={null} />
+  return <div>ngm</div>
 }

@@ -12,7 +12,7 @@ export default function OurValues() {
   const values = t('db.whoweare.values')
   const images = [
     '/images/projects/east-lane/el-gallery-1.webp',
-    '/images/projects/yellow-residence/yr-gallery-1.avif',
+    '/images/projects/yellow-residence/yr-gallery-9.webp',
     '/images/projects/yellow-lane/yl-gallery-3.webp',
   ]
 
