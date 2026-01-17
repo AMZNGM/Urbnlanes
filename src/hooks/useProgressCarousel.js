@@ -8,9 +8,9 @@ import { getProjectById } from '@/lib/getDatabase'
 
 const PROJECT_CONFIGS = [
   {
-    id: 'yellow-lane',
-    galleryIndex: 0,
-    video: '/videos/projects/yellow-lane/yl-main-1.mp4',
+    id: 'yellow-residence',
+    galleryIndex: 1,
+    video: '/videos/projects/yellow-residence/yr-main-2.mp4',
   },
   {
     id: 'levels-business-tower',
@@ -18,9 +18,9 @@ const PROJECT_CONFIGS = [
     video: '/videos/projects/levels-tower/levels-e-and-1.mp4',
   },
   {
-    id: 'yellow-residence',
-    galleryIndex: 1,
-    video: '/videos/projects/yellow-residence/yr-main-1.mp4',
+    id: 'yellow-lane',
+    galleryIndex: 0,
+    video: '/videos/projects/yellow-lane/yl-main-1.mp4',
   },
 ]
 

@@ -55,7 +55,7 @@ export default function TeamOfExperts() {
           </div>
         </div>
 
-        <blockquote className="max-w-3xl font-sec text-main text-xl md:text-2xl text-center italic text-balance">
+        <blockquote className="max-w-3xl font-sec md:text-main text-xl md:text-2xl text-center italic text-balance">
           "{t('db.whoweare.values.3.description')}"
         </blockquote>
 
