@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react'
 import { useTranslation } from '@/hooks/useTranslation'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 export default function BreathingText({
   children,
@@ -19,9 +20,10 @@ export default function BreathingText({
   ...props
 }) {
   const ElementTag = as
-
+  const isMobile = useIsMobile()
   const { currentLanguage } = useTranslation()
-  if (currentLanguage === 'ar') {
+
+  if (isMobile || currentLanguage === 'ar') {
     return (
       <ElementTag className={className} {...props}>
         {children}
