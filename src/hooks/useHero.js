@@ -24,7 +24,7 @@ const PROJECT_CONFIGS = [
   },
 ]
 
-export function useProgressCarousel() {
+export function useHero() {
   const { t } = useTranslation()
   const isMobile = useIsMobile()
   const [currentIndex, setCurrentIndex] = useState(0)

@@ -1,6 +1,6 @@
 'use client'
 
-import { useProgressCarousel } from '@/hooks/useProgressCarousel'
+import { useHero } from '@/hooks/useHero'
 import ArrowCursor from '@/components/ui/cursors/ArrowCursor'
 import HeroBackground from '@/components/hero-components/HeroBackground'
 import HeroVideoToggle from '@/components/hero-components/HeroVideoToggle'
@@ -8,7 +8,7 @@ import HeroControls from '@/components/hero-components/HeroControls'
 import HeroContent from '@/components/hero-components/HeroContent'
 import HeroIndicators from '@/components/hero-components/HeroIndicators'
 
-export default function ProgressCarousel() {
+export default function Hero() {
   const {
     currentIndex,
     showNextSlide,
@@ -30,7 +30,7 @@ export default function ProgressCarousel() {
     prefersReducedMotion,
     videoRef,
     t,
-  } = useProgressCarousel()
+  } = useHero()
 
   if (!slides.length) {
     return (

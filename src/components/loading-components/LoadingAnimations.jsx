@@ -43,7 +43,7 @@ export function LoadingOscillate() {
         ))}
       </div>
 
-      <p className="font-sec text-main text-sm uppercase tracking-widest animate-pulse">Loading</p>
+      {/* <p className="font-sec text-main text-sm uppercase tracking-widest animate-pulse">Loading</p> */}
     </div>
   )
 }
