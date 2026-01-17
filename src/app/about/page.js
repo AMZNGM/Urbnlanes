@@ -17,7 +17,7 @@ export default function AboutPage() {
     <Suspense fallback={<LoadingLogo />}>
       <SectionHero title="aboutUrbnlanes" image="/images/projects/yellow-residence/yr-gallery-11.webp" video="/videos/one-year-1.mp4" />
       <AboutUrbnlanes />
-      <TeamOfExperts />
+      {/* <TeamOfExperts /> */}
 
       {/* <VideoSection src="/videos/map.mp 4" marquee={false} /> */}
     </Suspense>
