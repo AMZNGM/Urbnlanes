@@ -135,6 +135,11 @@ export const TRANSLATIONS = {
           description:
             'Urbnlanes is a company that specializes in making the world a more beautiful place. We work hand in hand with our sister companies in Kuwait and Egypt to continue the legacy of Emeel Abdalla investments. Our standards and values are unified which helps us at Urbnlanes to accomplish more success stories. Our artistic teams are always dreaming of new and exciting projects to work on and we love nothing more than to share their creations with the world. We have been around for many years and have grown to be one of the most well-known companies in our industry. We always strive for excellence and are confident you will find our work to be top quality.',
         },
+        artToArchitecture: {
+          title: 'Art to architecture',
+          description:
+            'Architecture at Urbnlanes is treated as a meaningful contribution to the human experience, not simply the creation of buildings, but the shaping of places that inspire, uplift, and bring beauty to everyday life. Each project is envisioned as a unique masterpiece with its own identity and soul, designed to enhance its surroundings and create lasting emotional connections. These projects are not just structures; they are living expressions of artistry, storytelling, and purpose destined to become landmarks that people are drawn to, that communities grow around, and that future generations will admire.',
+        },
         statistics: {
           yearsOfExperience: '36+',
           projectsCompleted: '100+',
@@ -399,6 +404,11 @@ export const TRANSLATIONS = {
           subtitle: 'مكرسون للتميز',
           description:
             'اوربن لينز هي شركة متخصصة في جعل العالم مكانًا أكثر جمالاً. نعمل جنبًا إلى جنب مع شركاتنا الشقيقة في الكويت ومصر لمواصلة إرث استثمارات إميل عبد الله. معاييرنا وقيمنا موحدة مما يساعدنا في اوربن لينز على تحقيق المزيد من قصص النجاح. فرقنا الفنية تحلم دائمًا بمشاريع جديدة ومثيرة للعمل عليها ولا نحب شيئًا أكثر من مشاركة إبداعاتهم مع العالم. لقد كنا موجودين لسنوات عديدة ونمونا لنصبح واحدة من أشهر الشركات في مجالنا. نسعى دائمًا للتميز ونحن واثقون من أنك ستجد عملنا ذو جودة عالية.',
+        },
+        artToArchitecture: {
+          title: 'الفن إلى التخطيط العقاري',
+          description:
+            'التخطيط العقاري على أربن لينز معرفة كمساهمة مهمة في تجارب الإنسان، ليس فقط إنشاء مباني، بل تصميم أماكن يؤدي إلى إنتاج مكانات تلعب دورًا مهمًا في حياة الناس، تحفيز وترحب بالمجتمعات، وتكون مناطقًا مواجهة للألم والتعبير على أفكار وأفكار معقودة ومفاجئة. هذه المشاريع غير ملائمة لها فقط مباني، بل هي أداءات فنية ملموسة وتحدث عن مجالات فنية متعددة، مثل التصميم، الألوان، والمعالم المائية، والتي تجعل المشاريع تصبح محلات مثالية تحتمل أن تكون لها أثرًا ثاقبًا في المجتمعات وتكون مراكزًا تحتمل أن تكون معلمًا في تأثير التاريخ والتأثير على الجيل المستقبلي.',
         },
         statistics: {
           yearsOfExperience: '+36',

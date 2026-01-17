@@ -1,55 +1,19 @@
 import { SEO } from '@/config/seo.config'
 
-/**
- * Creates a metadata generator function for a specific route
- * @param {string} route - The route path (e.g., '/about', '/projects/midlane')
- * @returns {Function} - A function that generates metadata for the given route
- */
 export function createMetadataGenerator(route) {
   return function generateMetadata() {
     const seoData = SEO[route] || {}
 
-    return {
+    const metadata = {
       title: seoData.title || 'Urbnlanes Developments | Building Masterpieces',
       description: seoData.description || 'Urbnlanes is a real estate development company building masterpieces across the Middle East.',
-      openGraph: {
-        title: seoData.title || 'Urbnlanes Developments | Building Masterpieces',
-        description: seoData.description || 'Urbnlanes is a real estate development company building masterpieces across the Middle East.',
-        type: 'website',
-        url: `https://urbnlanes.com${route}`,
-        images: [
-          {
-            url: '/images/FromTheSky.webp',
-            width: 1200,
-            height: 630,
-            alt: seoData.title || 'Urbnlanes Developments',
-          },
-        ],
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title: seoData.title || 'Urbnlanes Developments | Building Masterpieces',
-        description: seoData.description || 'Urbnlanes is a real estate development company building masterpieces across the Middle East.',
-        images: ['/images/FromTheSky.webp'],
-      },
-      robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          'max-video-preview': -1,
-          'max-image-preview': 'large',
-          'max-snippet': -1,
-        },
-      },
+      keywords: seoData.keywords || [],
     }
+
+    return metadata
   }
 }
 
-/**
- * Pre-defined metadata generators for common routes
- */
 export const metadataGenerators = {
   home: createMetadataGenerator('/'),
   about: createMetadataGenerator('/about'),

@@ -15,9 +15,7 @@ const LatestNews = dynamic(() => import('@/components/LatestNews'))
 const TeamOfExperts = dynamic(() => import('@/components/TeamOfExperts'))
 const Newsletter = dynamic(() => import('@/components/Newsletter'))
 
-export const generateMetadata = () => {
-  return metadataGenerators.home()
-}
+export const generateMetadata = metadataGenerators.home
 
 export default function Home() {
   return (

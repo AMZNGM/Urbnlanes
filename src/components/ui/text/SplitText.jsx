@@ -17,7 +17,7 @@ export default memo(function SplitText(props) {
     animationTo = { opacity: 1, y: 0 },
     ease = [0.22, 1, 0.36, 1],
     replay = false,
-    viewport = { once: false, margin: '-50px' },
+    viewport = { once: true, margin: '-50px' },
     variants,
     ...restProps
   } = props
