@@ -74,7 +74,10 @@ export const TRANSLATIONS = {
       completed: 'Completed',
       underConstruction: 'Under Construction',
       planned: 'Planned',
+      latestNews: 'Latest News',
+      allNews: 'All News',
     },
+
     amenities: {
       Gym: 'Gym',
       'Bike Lanes': 'Bike Lanes',
@@ -334,7 +337,10 @@ export const TRANSLATIONS = {
       completed: 'مكتمل',
       underConstruction: 'تحت الإنشاء',
       planned: 'مخطط له',
+      latestNews: 'احدث الاخبار',
+      allNews: 'كل الاخبار',
     },
+
     amenities: {
       Gym: 'صالة ألعاب رياضية',
       'Bike Lanes': 'مسارات الدراجات',

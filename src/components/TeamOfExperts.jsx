@@ -70,7 +70,7 @@ export default function TeamOfExperts() {
             sizes="15vw"
             width={100}
             height={100}
-            className="object-contain"
+            className="size-auto object-contain"
           />
         </div>
       </div>

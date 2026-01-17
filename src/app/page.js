@@ -11,6 +11,7 @@ const VideoSection = dynamic(() => import('@/components/VideoSection'))
 const SelectedProjects = dynamic(() => import('@/components/SelectedProjects'))
 const Updates = dynamic(() => import('@/components/Updates'))
 const OurValues = dynamic(() => import('@/components/OurValues'))
+const LatestNews = dynamic(() => import('@/components/LatestNews'))
 const TeamOfExperts = dynamic(() => import('@/components/TeamOfExperts'))
 const Newsletter = dynamic(() => import('@/components/Newsletter'))
 
@@ -23,11 +24,12 @@ export default function Home() {
       <ProgressCarousel />
       <WhoWeAre />
       <AboutUs />
+      <TeamOfExperts />
       <VideoSection />
       <SelectedProjects />
       <Updates />
       <OurValues />
-      <TeamOfExperts />
+      <LatestNews />
       <Newsletter />
     </Suspense>
   )

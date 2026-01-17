@@ -2,8 +2,9 @@
 
 import { memo, useEffect, useRef } from 'react'
 
-export default memo(function RippleEffect({ children, className = '', ...props }) {
+export default memo(function RippleEffect({ children, className = '', tag = 'div', ...props }) {
   const elementRef = useRef(null)
+  let Tag = tag
 
   useEffect(() => {
     const element = elementRef.current
@@ -61,8 +62,8 @@ export default memo(function RippleEffect({ children, className = '', ...props }
   }, [])
 
   return (
-    <div ref={elementRef} className={`relative flex w-fit h-fit overflow-hidden ${className}`} {...props}>
+    <Tag ref={elementRef} className={`relative flex w-fit h-fit overflow-hidden ${className}`} {...props}>
       {children}
-    </div>
+    </Tag>
   )
 })
