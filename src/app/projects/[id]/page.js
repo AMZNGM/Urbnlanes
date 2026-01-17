@@ -4,7 +4,6 @@ import { metadataGenerators } from '@/lib/seo-helpers'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import dynamic from 'next/dynamic'
 
-import { metadataGenerators } from '@/lib/seo-helpers'
 export const generateMetadata = metadataGenerators.mediaCenterNews()
 
 const MaskImages = dynamic(() => import('@/components/MaskImages'))
