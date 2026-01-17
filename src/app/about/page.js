@@ -4,7 +4,7 @@ import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import dynamic from 'next/dynamic'
 
 import SectionHero from '@/components/hero-components/sectionHero'
-// const WhoWeAre = dynamic(() => import('@/components/WhoWeAre'))
+const VideoSection = dynamic(() => import('@/components/VideoSection'))
 
 export const generateMetadata = metadataGenerators.about()
 
@@ -16,6 +16,7 @@ export default function AboutPage() {
       {/* <div className="relative h-[150vh]">
         <MaskImages />
         </div> */}
+
       {/* <VideoSection src="/videos/map.mp4" marquee={false} /> */}
     </Suspense>
   )
