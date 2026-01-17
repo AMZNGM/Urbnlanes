@@ -77,6 +77,7 @@ export const TRANSLATIONS = {
       latestNews: 'Latest News',
       allNews: 'All News',
       aboutUrbnlanes: 'About Urbnlanes',
+      aboutUs: 'About Us',
     },
 
     amenities: {
@@ -341,6 +342,7 @@ export const TRANSLATIONS = {
       latestNews: 'احدث الاخبار',
       allNews: 'كل الاخبار',
       aboutUrbnlanes: 'عن ايربن لاينز',
+      aboutUs: 'من نحن',
     },
 
     amenities: {

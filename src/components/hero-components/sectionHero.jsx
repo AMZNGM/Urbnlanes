@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react'
 import { useHero } from '@/hooks/useHero'
 import { LoadingOscillate } from '@/components/loading-components/LoadingAnimations'
 import HeroVideoToggle from '@/components/hero-components/HeroVideoToggle'
+import BreathingText from '@/components/ui/text/BreathingText'
 
 export default function SectionHero({ title = '', image = '/images/poster.png', video = '/videos/one-year-1.mp4' }) {
   const { isVideoMode, setIsVideoMode, handleAnimationStart, isLoading, handleMediaLoad, isMobile, t } = useHero()
@@ -47,7 +48,9 @@ export default function SectionHero({ title = '', image = '/images/poster.png', 
         data-scroll-speed="0.2"
         className="z-10 relative w-full h-full flex justify-center items-end duration-300 p-4 max-md:py-32"
       >
-        <h2 className="w-full text-[10dvw] text-center text-nowrap">{t(`common.${title}`)}</h2>
+        <BreathingText as="h2" className="w-full text-[10dvw] text-center text-nowrap">
+          {t(`common.${title}`)}
+        </BreathingText>
       </div>
     </section>
   )
