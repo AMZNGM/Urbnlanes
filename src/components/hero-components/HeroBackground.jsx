@@ -59,8 +59,8 @@ export default function HeroBackground({
                 fill
                 priority={currentIndex === 0}
                 onLoad={handleMediaLoad}
-                className="object-cover"
                 sizes="(max-width: 768px) 90vw, (max-width: 1024px) 80vw, 100vw"
+                className="object-cover"
               />
               {/* <div className="z-10 absolute inset-0 bg-black/30" /> */}
               <div className="z-10 absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />

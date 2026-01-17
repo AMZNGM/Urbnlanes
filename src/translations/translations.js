@@ -169,6 +169,29 @@ export const TRANSLATIONS = {
               'We are committed to delivering future value no matter the challenges in the status quo as we pivot and react in a fast and wise manner.',
           },
         ],
+        coreValues: [
+          { title: 'Our Core Values' },
+          {
+            title: 'Exceptional Quality',
+            description:
+              'Quality is at the heart of everything we do Our commitment to excellence is what truly distinguishes us in the real estate industry. We go the extra mile to ensure every project is delivered with precision, care, and superior craftsmanship consistently exceeding our clients’ expectations and creating long-lasting value.',
+          },
+          {
+            title: 'Adherence',
+            description:
+              'Our strong track record and deep industry expertise enable us to meet and often exceed project timelines. Following the legacy of our sister companies in Kuwait, which are renowned for their dedication and early project delivery, Urbnlanes proudly continues this tradition of honoring promises through consistency, discipline, and unwavering commitment.',
+          },
+          {
+            title: 'Reliability',
+            description:
+              'Urbnlanes has reshaped the client experience by building trust through performance. With relentless dedication to delivering ahead of time and upholding exceptional quality, we’ve earned the confidence of our clients. The reputation of Emeel Abdalla Investments and its subsidiaries reflects this reliability rooted in proven results and long-standing client satisfaction.',
+          },
+          {
+            title: 'Agility',
+            description:
+              'We are future-focused and ready to adapt quickly to any challenge. Our agile approach allows us to respond smartly and efficiently to changing market dynamics. With a fully engaged team and clear strategic vision, Urbnlanes is built not just to keep up with the future but to lead it.',
+          },
+        ],
       },
       projects: {
         'yellow-lane': {
@@ -434,6 +457,31 @@ export const TRANSLATIONS = {
           {
             title: 'المرونة',
             description: 'نحن ملتزمون بتقديم قيمة مستقبلية مهما كانت التحديات في الوضع الراهن، حيث نتحرك ونتفاعل بطريقة سريعة وحكيمة.',
+          },
+        ],
+        coreValues: [
+          {
+            title: 'قيمنا الرئيسية',
+          },
+          {
+            title: 'جودة استثنائية',
+            description:
+              'الجودة في كل شيء نفعله، ونحن نتعامل مع العقارات بالجودة العالية والتزامنا بها هو ما يميزنا في مجال العقارات. نحن نسعى دائمًا لتقديم المشاريع بالجودة العالية والسرير والمعالجة العالية والتي تتجاوز أساسيات العملاء وتخلق قيمة طوال عمر المشاريع.',
+          },
+          {
+            title: 'الالتزام',
+            description:
+              'نحن نعزم بالالتزام بمواعيد التسليم ونحن نعمل بالتواصل دوريًا مع العملاء للتأكيد بأنهم سيحصلون على ما يشابه بالجودة العالية. نحن نستخدم تجربتنا في الكويت والتي تمتلك رؤية وتقدرات وتجربة في تقديم المشاريع على الوقت المناسب، كما نحن نستمر في تحقيق هذا الأهداف.',
+          },
+          {
+            title: 'الموثوقية',
+            description:
+              'كان من المهم أن نعيد تعريف العملاء في السوق ونغير المفاهيم، ونحن نفعل ذلك بفضل الاجتهاد الخالص والتفاني في التميز. نحن نعمل على تحقيق ذلك باستخدام نتائجنا الموثوق في الشركات الشقيقة التي تعمل في الكويت ونحن نعتقد بأنه هذا يعني أننا نحصل على الثقة التي تملكها العملاء في مجالاتنا.',
+          },
+          {
+            title: 'المرونة',
+            description:
+              'نحن نسعى دائمًا لتقديم قيمة مستقبلية مهما كانت التحديات في الوضع الراهن، ونحن نتحرك ونتفاعل بطريقة سريعة وحكيمة بالنسبة للتغيير والتعامل مع التغيير بالمجتمعات المحلية والعالمية.',
           },
         ],
       },
