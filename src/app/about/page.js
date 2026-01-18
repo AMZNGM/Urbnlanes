@@ -8,9 +8,9 @@ const TextPanel = dynamic(() => import('@/components/ui/TextPanel'))
 const OurCoreValues = dynamic(() => import('@/components/OurCoreValues'))
 const SisterCompanies = dynamic(() => import('@/components/SisterCompanies'))
 const HoldingCompany = dynamic(() => import('@/components/HoldingCompany'))
+const OurStory = dynamic(() => import('@/components/OurStory'))
 const Newsletter = dynamic(() => import('@/components/Newsletter'))
 const VideoSection = dynamic(() => import('@/components/VideoSection'))
-const TeamOfExperts = dynamic(() => import('@/components/TeamOfExperts'))
 
 export const generateMetadata = metadataGenerators.about
 
@@ -22,9 +22,10 @@ export default function AboutPage() {
       <OurCoreValues />
       <SisterCompanies />
       <HoldingCompany />
+      <OurStory />
       <div className="bg-text! py-4">
-        <TextPanel image="/images/map.webp" imageClassName="opacity-100 object-contain! max-w-[90dvw] mx-auto" />
-        <Newsletter withLine={false} className="bg-text text-black! max-w-[90dvw] mx-auto" />
+        <TextPanel image="/images/map.webp" imageClassName="opacity-100 object-contain! container" />
+        <Newsletter withLine={false} className="bg-text text-black! container" />
       </div>
       <TextPanel
         title="db.whoweare.artToArchitecture.title"
@@ -33,7 +34,6 @@ export default function AboutPage() {
         className="bg-black! text-text"
         paraClassName="opacity-100 text-xl"
       />
-      {/* <TeamOfExperts /> */}
       <VideoSection src="/videos/map.mp4" marquee={false} />
     </Suspense>
   )

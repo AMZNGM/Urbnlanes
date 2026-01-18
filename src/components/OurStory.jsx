@@ -1,109 +1,180 @@
 'use client'
 
 import Image from 'next/image'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Download, Building2, Award, Globe, TrendingUp } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useTranslation } from '@/hooks/useTranslation'
 import db from '@/database/urbnlanes-db.json'
 import SplitText from '@/components/ui/text/SplitText'
-import BreathingText from './ui/text/BreathingText'
 
 export default function OurStory() {
   const { t } = useTranslation()
-  const sisterCompanies = db.whoweare.sisterCompanies
-  const stats = db.whoweare.stats
-  const sectionRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
+  const containerRef = useRef(null)
+  const storySteps = db.whoweare.storySteps
+  const [activeStep, setActiveStep] = useState(0)
+  const { scrollXProgress } = useScroll({
+    container: containerRef,
+    axis: 'x',
+    offset: ['start start', 'end end'],
   })
-  const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8])
-  const imageOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0])
+  const scrollX = useTransform(scrollXProgress, [0, 1], ['0%', '100%'])
+
+  const handlePrev = () => {
+    if (activeStep > 0) {
+      let prevIndex = activeStep - 1
+      if (prevIndex >= 0) {
+        setActiveStep(prevIndex)
+        scrollToStep(prevIndex)
+      }
+    }
+  }
+
+  const handleNext = () => {
+    if (activeStep < storySteps.length - 1) {
+      let nextIndex = activeStep + 1
+      if (nextIndex < storySteps.length) {
+        setActiveStep(nextIndex)
+        scrollToStep(nextIndex)
+      }
+    }
+  }
+
+  const hasPrevValidStep = () => {
+    let prevIndex = activeStep - 1
+    return prevIndex >= 0
+  }
+
+  const hasNextValidStep = () => {
+    let nextIndex = activeStep + 1
+    return nextIndex < storySteps.length
+  }
+
+  const scrollToStep = (index) => {
+    const container = containerRef.current
+    if (container) {
+      const cardWidth = container.scrollWidth / storySteps.length
+      container.scrollTo({
+        left: cardWidth * index,
+        behavior: 'smooth',
+      })
+      setTimeout(() => setActiveStep(index), 300)
+    }
+  }
 
   return (
-    <div>
-      <motion.div
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        transition={{ duration: 1.5, delay: 0.5 }}
-        className="h-1 bg-linear-to-r from-transparent via-black/30 to-transparent mt-24"
+    <div className="relative w-dvw overflow-hidden bg-black text-text p-4 py-12">
+      <Image
+        src="/images/projects/east-sabah/es-gallery-7.avif"
+        alt="Background Image"
+        fill
+        sizes="100dvw"
+        className="absolute inset-0 object-cover opacity-40"
       />
-      <div className="z-10 relative max-w-7xl mx-auto px-4 container">
-        {/* Heritage Story */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="max-w-4xl mx-auto mb-32"
-        >
-          <div className="bg-black/5 backdrop-blur-xl border border-black/10 p-8 md:p-16">
-            <div className="space-y-6 font-light text-black/80 text-lg md:text-xl leading-relaxed">
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                For nearly three decades, our legacy has been built not just on buildings, but on the trust we've earned and the promises
-                we've honored.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-              >
-                This deep-seated commitment has seen us flourish, delivering over 100 projects that have helped shape skylines and create
-                vibrant spaces for life across the region.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6 }}
-              >
-                As we've grown to become one of the Middle East's leading real estate forces, we carry the torch of our founding principles.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.8 }}
-                className="text-black"
-              >
-                We honor the heritage that began in Kuwait and enthusiastically continue that journey of growth and contribution here in
-                Egypt.
-              </motion.p>
-            </div>
+
+      <div className="relative container">
+        <div className="flex justify-between items-center">
+          <SplitText splitBy="char" className="text-3xl tracking-wide">
+            {t('common.ourStory')}
+          </SplitText>
+
+          <div className="flex gap-4">
+            <button
+              onClick={handlePrev}
+              disabled={!hasPrevValidStep()}
+              className="bg-text/25 hover:bg-text/50 disabled:bg-text/10 backdrop-blur-md border rounded-full hover:scale-110 transition-all duration-300 p-2 cursor-pointer disabled:cursor-not-allowed"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={!hasNextValidStep()}
+              className="bg-text/25 hover:bg-text/50 disabled:bg-text/10 backdrop-blur-md border rounded-full hover:scale-110 transition-all duration-300 p-2 cursor-pointer disabled:cursor-not-allowed"
+            >
+              <ChevronRight size={20} />
+            </button>
           </div>
-        </motion.div>
-      </div>
-
-      {/* Floating glassy card */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="right-8 md:right-auto bottom-8 left-8 md:left-12 absolute md:max-w-2xl"
-      >
-        <div className="bg-black/5 backdrop-blur-xl border border-black/10 p-8 md:p-12">
-          <p className="font-light text-black/90 text-lg md:text-xl leading-relaxed">
-            Our story began in Kuwait in 1994, rooted in a singular, unwavering devotion to our vision and the communities we serve.
-          </p>
-
-          <motion.button
-            whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-3 border border-black/30 hover:border-black/50 text-black transition-colors duration-300 mt-8 px-6 py-3"
-          >
-            <Download className="size-5" />
-            <span className="text-sm uppercase tracking-wider">Download Brochure</span>
-          </motion.button>
         </div>
-      </motion.div>
+
+        <div className="relative h-px bg-main mt-18">
+          <motion.div
+            style={{
+              width: scrollX,
+            }}
+            className="absolute h-full bg-text"
+          />
+        </div>
+
+        {/* Cards */}
+        <div
+          ref={containerRef}
+          onScroll={(e) => {
+            const container = e.target
+            const scrollPosition = container.scrollLeft
+            const cardWidth = container.scrollWidth / storySteps.length
+            const newActiveStep = Math.round(scrollPosition / cardWidth)
+            setActiveStep(newActiveStep)
+          }}
+          style={{ scrollbarWidth: 'none' }}
+          className="overflow-x-scroll flex gap-18 max-md:gap-8"
+        >
+          {storySteps.map((step, index) => (
+            <motion.div
+              key={step.title || `empty-${index}`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              onClick={() => {
+                if (step.title) {
+                  setActiveStep(index)
+                  scrollToStep(index)
+                }
+              }}
+              className={`group relative min-w-sm ${step.title ? 'cursor-pointer' : ''}`}
+            >
+              {step.title ? (
+                <>
+                  <div
+                    className={`w-6 h-6 rotate-45 ms-2 -translate-y-4 backdrop-blur-2xl border transition-all duration-300 cursor-pointer group-hover:bg-text/20 ${index <= activeStep ? 'bg-text/20' : 'bg-black/25'}`}
+                  />
+
+                  <div className="font-light text-xl mb-2">{step.year}</div>
+
+                  <div
+                    className={`relative space-y-4 shadow-2xl backdrop-blur-2xl border rounded-2xl hover:bg-text/8 transition-all duration-300 p-8 ${index === activeStep ? 'bg-text/10 text-text' : 'bg-black/25 text-main'}`}
+                  >
+                    <h3 className="text-2xl">{step.title}</h3>
+
+                    <p className="opacity-90 text-sm text-balance leading-relaxed">{step.description}</p>
+
+                    <svg fill="none" viewBox="0 0 200 18" className="w-full h-full mt-12 pe-32">
+                      <motion.path
+                        d="M0 12H200M200 12L190 18M200 12L190 6"
+                        stroke="currentColor"
+                        strokeWidth="0.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        initial={{ pathLength: 0, pathOffset: 1 }}
+                        whileInView={{
+                          pathLength: 1,
+                          pathOffset: 0,
+                        }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 1.5,
+                          ease: 'easeInOut',
+                          delay: 0.2 + index * 0.1,
+                        }}
+                      />
+                    </svg>
+                  </div>
+                </>
+              ) : null}
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

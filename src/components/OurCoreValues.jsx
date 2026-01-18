@@ -12,7 +12,7 @@ export default function OurCoreValues() {
 
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-4 py-12">
-      <div className="max-md:w-full max-w-[90dvw] mx-auto">
+      <div className="max-md:w-full container">
         <SplitText as="h2" className="overflow-y-hidden text-5xl text-center mb-4">
           {coreValues?.[0]?.title}
         </SplitText>

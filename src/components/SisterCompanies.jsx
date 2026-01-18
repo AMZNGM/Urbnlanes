@@ -23,7 +23,7 @@ export default function SisterCompanies() {
 
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-4 py-12">
-      <div className="max-w-[90dvw] flex flex-col gap-22 mx-auto">
+      <div className="flex flex-col gap-22 container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export default function SisterCompanies() {
           transition={{ duration: 0.75 }}
           className="w-full h-full flex flex-col gap-4"
         >
-          <motion.h6
+          <motion.div
             initial={{ opacity: 0, letterSpacing: '0.5em' }}
             whileInView={{ opacity: 1, letterSpacing: '0.2em' }}
             viewport={{ once: true }}
@@ -39,9 +39,9 @@ export default function SisterCompanies() {
             className="text-bg text-sm tracking-[0.2em]"
           >
             {t('common.ourHeritage')}
-          </motion.h6>
+          </motion.div>
 
-          <SplitText as="h6" className="overflow-y-hidden text-5xl">
+          <SplitText as="div" className="overflow-y-hidden text-5xl">
             {t('common.dreams')}
           </SplitText>
 
@@ -98,7 +98,7 @@ export default function SisterCompanies() {
           transition={{ duration: 0.8 }}
           className="w-full h-full flex flex-col gap-4"
         >
-          <motion.h6
+          <motion.div
             initial={{ opacity: 0, letterSpacing: '0.5em' }}
             whileInView={{ opacity: 1, letterSpacing: '0.2em' }}
             viewport={{ once: true }}
@@ -106,9 +106,9 @@ export default function SisterCompanies() {
             className="text-bg text-sm tracking-[0.2em]"
           >
             {t('common.ourNetwork')}
-          </motion.h6>
+          </motion.div>
 
-          <SplitText as="h6" className="overflow-y-hidden text-5xl">
+          <SplitText as="div" className="overflow-y-hidden text-5xl">
             {t('common.ourSisterCompaniesIn')}
           </SplitText>
 
@@ -133,7 +133,7 @@ export default function SisterCompanies() {
                     />
                   </div>
 
-                  <h6 className="font-bold text-main text-center">{company.title}</h6>
+                  <div className="font-bold text-main text-center">{company.title}</div>
                 </div>
               </motion.div>
             ))}

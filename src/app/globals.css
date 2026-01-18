@@ -31,3 +31,7 @@ html {
     opacity: 1;
   }
 }
+.container {
+  max-width: 90dvw;
+  margin: 0 auto;
+}

@@ -52,6 +52,29 @@
       { "title": "White Pearl", "logo": "/images/logos/white-pearl-logo.webp" },
       { "title": "Urbnlanes", "logo": "/images/logos/urbnlanes-logo.webp" }
     ],
+    "storySteps": [
+      {
+        "title": "The Foundation",
+        "year": "1995",
+        "description": "For nearly three decades, our legacy has been built not just on buildings, but on the trust we've earned and the promises we've honored."
+      },
+      {
+        "title": "Growth & Expansion",
+        "year": "2000-2015",
+        "description": "This deep-seated commitment has seen us flourish, delivering over 100 projects that have helped shape skylines and create vibrant spaces for life across the region."
+      },
+      {
+        "title": "Regional Leadership",
+        "year": "2015-2020",
+        "description": "As we've grown to become one of the Middle East's leading real estate forces, we carry the torch of our founding principles."
+      },
+      {
+        "title": "Egyptian Journey",
+        "year": "2020-Present",
+        "description": "We honor the heritage that began in Kuwait and enthusiastically continue that journey of growth and contribution here in Egypt."
+      },
+      {}
+    ],
     "values": [
       {
         "title": "Exceptional Quality",

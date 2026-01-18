@@ -84,6 +84,7 @@ export const TRANSLATIONS = {
       dreams: 'Three Decades of Building Dreams',
       ourNetwork: 'Our Network',
       ourSisterCompaniesIn: 'Our Sister Companies in Kuwait and Egypt',
+      ourStory: 'Our Story',
     },
 
     amenities: {
@@ -389,6 +390,7 @@ export const TRANSLATIONS = {
       dreams: 'ثلاث عشر عاماً من الإنشاء',
       ourNetwork: 'شبكتنا',
       ourSisterCompaniesIn: 'الشركاء الأخوات في الكويت ومصر',
+      ourStory: 'قصتنا',
     },
 
     amenities: {
