@@ -34,7 +34,7 @@ export default function OurCoreValues() {
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                    className="w-16 h-16 flex justify-center items-center bg-main rounded-full text-text group-hover:scale-110 transition-transform mb-6"
+                    className="w-16 h-16 flex justify-center items-center bg-main rounded-full text-text mb-6"
                   >
                     <IconComponent size={32} />
                   </motion.div>

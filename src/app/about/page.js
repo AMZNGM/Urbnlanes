@@ -6,11 +6,11 @@ import dynamic from 'next/dynamic'
 import SectionHero from '@/components/hero-components/sectionHero'
 const TextPanel = dynamic(() => import('@/components/ui/TextPanel'))
 const OurCoreValues = dynamic(() => import('@/components/OurCoreValues'))
-const HoldingCompany = dynamic(() => import('@/components/HoldingCompany'))
 const SisterCompanies = dynamic(() => import('@/components/SisterCompanies'))
-const TeamOfExperts = dynamic(() => import('@/components/TeamOfExperts'))
-const VideoSection = dynamic(() => import('@/components/VideoSection'))
+const HoldingCompany = dynamic(() => import('@/components/HoldingCompany'))
 const Newsletter = dynamic(() => import('@/components/Newsletter'))
+const VideoSection = dynamic(() => import('@/components/VideoSection'))
+const TeamOfExperts = dynamic(() => import('@/components/TeamOfExperts'))
 
 export const generateMetadata = metadataGenerators.about
 
@@ -22,7 +22,10 @@ export default function AboutPage() {
       <OurCoreValues />
       <SisterCompanies />
       <HoldingCompany />
-      <Newsletter className="bg-text text-black!" />
+      <div className="bg-text! py-4">
+        <TextPanel image="/images/map.webp" imageClassName="opacity-100 object-contain! max-w-[90dvw] mx-auto" />
+        <Newsletter withLine={false} className="bg-text text-black! max-w-[90dvw] mx-auto" />
+      </div>
       <TextPanel
         title="db.whoweare.artToArchitecture.title"
         para="db.whoweare.artToArchitecture.description"

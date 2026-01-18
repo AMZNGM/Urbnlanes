@@ -13,13 +13,13 @@ const initialState = {
   errors: {},
 }
 
-export default function Newsletter({ className = '' }) {
+export default function Newsletter({ className = '', withLine = true }) {
   const { t } = useTranslation()
   const [state, action, isPending] = useActionState(subscribeToNewsletter, initialState)
 
   return (
-    <section className={`relative w-full overflow-hidden bg-black text-text px-4 py-24 ${className}`}>
-      <div className="w-full h-px bg-linear-to-r from-transparent via-current to-transparent mb-24" />
+    <section className={`relative w-full overflow-hidden bg-black text-text px-4 py-12 ${className}`}>
+      {withLine && <div className="w-full h-px bg-linear-to-r from-transparent via-current to-transparent mb-18" />}
 
       <div className="items-end gap-12 grid lg:grid-cols-2">
         <motion.div

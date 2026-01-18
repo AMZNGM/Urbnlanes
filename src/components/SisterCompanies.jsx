@@ -13,7 +13,7 @@ export default function SisterCompanies() {
   const sisterCompanies = db.whoweare.sisterCompanies
   const stats = t('db.whoweare.stats')
   const statsIcons = [TrendingUp, Globe, Building2, Award]
-  const [hoveredImage, setHoveredImage] = useState(2)
+  const [hoveredImage, setHoveredImage] = useState(0)
   const images = [
     '/images/projects/levels-tower/levels-gallery-6.avif',
     '/images/map.webp',
@@ -128,7 +128,7 @@ export default function SisterCompanies() {
                       alt={company.title}
                       width={200}
                       height={200}
-                      className="max-w-full max-h-full object-contain invert"
+                      className="w-auto max-w-full h-auto max-h-full object-contain invert"
                     />
                   </div>
 
