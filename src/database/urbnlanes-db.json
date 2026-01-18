@@ -39,10 +39,10 @@
       "landmarkProjects": "60+"
     },
     "stats": [
-      { "icon": "Building2", "value": "100+", "label": "Projects Delivered" },
-      { "icon": "Award", "value": "30", "label": "Years of Excellence" },
-      { "icon": "Globe", "value": "2", "label": "Countries" },
-      { "icon": "TrendingUp", "value": "1994", "label": "Established" }
+      { "title": "Established", "value": "1994" },
+      { "title": "Countries", "value": "2" },
+      { "title": "Projects Delivered", "value": "100+" },
+      { "title": "Years of Experience", "value": "30" }
     ],
     "sisterCompanies": [
       { "title": "First Group", "logo": "/images/logos/first-group-logo.avif" },

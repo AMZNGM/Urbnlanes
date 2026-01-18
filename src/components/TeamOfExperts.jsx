@@ -5,11 +5,11 @@ import { useTranslation } from '@/hooks/useTranslation'
 import Heading from '@/components/ui/Heading'
 import TextAnimation from '@/components/ui/text/TextAnimation'
 
-export default function TeamOfExperts() {
+export default function TeamOfExperts({ className }) {
   const { t } = useTranslation()
 
   return (
-    <section className="relative w-full h-full overflow-hidden bg-black text-text px-4 py-8">
+    <section className={`relative w-full h-full overflow-hidden bg-black text-text px-4 py-8 ${className}`}>
       <Heading text={t('db.whoweare.teamOfExperts.title')} />
 
       <div className="flex flex-col justify-center items-center gap-24 mt-18">

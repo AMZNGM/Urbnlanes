@@ -78,7 +78,12 @@ export const TRANSLATIONS = {
       allNews: 'All News',
       aboutUrbnlanes: 'About Urbnlanes',
       aboutUs: 'About Us',
-      holdingCompany: 'Holding Company',
+      holding: 'Holding',
+      company: 'Company',
+      ourHeritage: 'Our Heritage',
+      dreams: 'Three Decades of Building Dreams',
+      ourNetwork: 'Our Network',
+      ourSisterCompaniesIn: 'Our Sister Companies in Kuwait and Egypt',
     },
 
     amenities: {
@@ -148,6 +153,12 @@ export const TRANSLATIONS = {
           workforce: '3,600+',
           landmarkProjects: '60+',
         },
+        stats: [
+          { title: 'Established', value: '1994' },
+          { title: 'Countries', value: '2' },
+          { title: 'Projects Delivered', value: '100+' },
+          { title: 'Years of Experience', value: '30' },
+        ],
         values: [
           {
             title: 'Exceptional Quality',
@@ -372,7 +383,12 @@ export const TRANSLATIONS = {
       allNews: 'كل الاخبار',
       aboutUrbnlanes: 'عن ايربن لاينز',
       aboutUs: 'من نحن',
-      holdingCompany: 'الشركة الآم',
+      holding: 'الآم',
+      company: 'الشركة',
+      ourHeritage: 'روابطنا',
+      dreams: 'ثلاث عشر عاماً من الإنشاء',
+      ourNetwork: 'شبكتنا',
+      ourSisterCompaniesIn: 'الشركاء الأخوات في الكويت ومصر',
     },
 
     amenities: {
@@ -442,6 +458,12 @@ export const TRANSLATIONS = {
           workforce: '+3,600',
           landmarkProjects: '+60',
         },
+        stats: [
+          { title: 'تأسست', value: '1994' },
+          { title: 'الدول', value: '2' },
+          { title: 'المشاريع المسلّمة', value: '100+' },
+          { title: 'سنوات الخبرة', value: '30' },
+        ],
         values: [
           {
             title: 'جودة استثنائية',

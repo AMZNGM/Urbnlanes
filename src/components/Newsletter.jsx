@@ -13,13 +13,13 @@ const initialState = {
   errors: {},
 }
 
-export default function Newsletter() {
+export default function Newsletter({ className = '' }) {
   const { t } = useTranslation()
   const [state, action, isPending] = useActionState(subscribeToNewsletter, initialState)
 
   return (
-    <section className="relative w-full overflow-hidden bg-black text-text px-4 py-24">
-      <div className="w-full h-px bg-linear-to-r from-transparent via-main to-transparent mb-24" />
+    <section className={`relative w-full overflow-hidden bg-black text-text px-4 py-24 ${className}`}>
+      <div className="w-full h-px bg-linear-to-r from-transparent via-current to-transparent mb-24" />
 
       <div className="items-end gap-12 grid lg:grid-cols-2">
         <motion.div
@@ -29,7 +29,7 @@ export default function Newsletter() {
           transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
           className="overflow-hidden space-y-4"
         >
-          <ShinyText tag="h2" speed={15} className="font-sec text-3xl leading-[0.9] tracking-tight">
+          <ShinyText tag="h2" speed={15} className="font-sec text-current! text-3xl leading-[0.9] tracking-tight">
             {t('newsletter.title')}
           </ShinyText>
 
@@ -54,14 +54,14 @@ export default function Newsletter() {
               placeholder={t('newsletter.emailPlaceholder')}
               required
               disabled={isPending || state.success}
-              className="w-full bg-transparent disabled:opacity-50 border-text/30 focus:border-text border-b focus:outline-none font-light text-text text-2xl md:text-3xl transition-colors py-6 pr-16 rtl:pr-0 rtl:pl-16 disabled:cursor-not-allowed placeholder-text/40"
+              className="w-full bg-transparent disabled:opacity-50 border-current/30 focus:border-current border-b focus:outline-none font-light text-current text-2xl md:text-3xl transition-colors py-6 pr-16 rtl:pr-0 rtl:pl-16 disabled:cursor-not-allowed placeholder-current/40"
             />
 
             <button
               type="submit"
               disabled={isPending || state.success}
               aria-label={t('newsletter.subscribe')}
-              className="top-1/2 right-0 rtl:right-auto rtl:-left-6 absolute text-text/50 hover:text-text disabled:text-text/30 transition-colors -translate-y-1/2 duration-300 ps-8 rtl:ps-0 rtl:pe-8 cursor-pointer disabled:cursor-not-allowed"
+              className="top-1/2 right-0 rtl:right-auto rtl:-left-6 absolute text-current/50 hover:text-current disabled:text-current/30 transition-colors -translate-y-1/2 duration-300 ps-8 rtl:ps-0 rtl:pe-8 cursor-pointer disabled:cursor-not-allowed"
             >
               {isPending ? (
                 <Loader2 className="animate-spin" size={32} />

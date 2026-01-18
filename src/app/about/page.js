@@ -10,6 +10,7 @@ const HoldingCompany = dynamic(() => import('@/components/HoldingCompany'))
 const SisterCompanies = dynamic(() => import('@/components/SisterCompanies'))
 const TeamOfExperts = dynamic(() => import('@/components/TeamOfExperts'))
 const VideoSection = dynamic(() => import('@/components/VideoSection'))
+const Newsletter = dynamic(() => import('@/components/Newsletter'))
 
 export const generateMetadata = metadataGenerators.about
 
@@ -19,6 +20,9 @@ export default function AboutPage() {
       <SectionHero title="aboutUrbnlanes" image="/images/projects/yellow-residence/yr-gallery-11.webp" video="/videos/one-year-1.mp4" />
       <TextPanel title="common.aboutUs" para="db.whoweare.description2" />
       <OurCoreValues />
+      <SisterCompanies />
+      <HoldingCompany />
+      <Newsletter className="bg-text text-black!" />
       <TextPanel
         title="db.whoweare.artToArchitecture.title"
         para="db.whoweare.artToArchitecture.description"
@@ -26,11 +30,8 @@ export default function AboutPage() {
         className="bg-black! text-text"
         paraClassName="opacity-100 text-xl"
       />
-      <HoldingCompany />
-      <VideoSection src="/videos/map.mp4" marquee={false} />
-      {/* <SisterCompanies /> */}
-
       {/* <TeamOfExperts /> */}
+      <VideoSection src="/videos/map.mp4" marquee={false} />
     </Suspense>
   )
 }
