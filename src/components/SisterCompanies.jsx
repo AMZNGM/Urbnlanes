@@ -82,7 +82,8 @@ export default function SisterCompanies() {
                 key={images[hoveredImage]}
                 initial={{ y: '50%', opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.6, type: 'spring' }}
+                transition={{ duration: 2.6, type: 'spring' }}
+                className="relative"
               >
                 <Image src={images[hoveredImage]} alt="poster" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-contain" />
               </motion.div>
@@ -128,7 +129,7 @@ export default function SisterCompanies() {
                       alt={company.title}
                       width={200}
                       height={200}
-                      className="w-auto max-w-full h-auto max-h-full object-contain invert"
+                      className="w-60 max-w-full h-auto max-h-full object-contain invert"
                     />
                   </div>
 
