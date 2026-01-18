@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from '@/hooks/useTranslation'
 import { TrendingUp, Globe, Building2, Award } from 'lucide-react'
@@ -13,13 +12,6 @@ export default function SisterCompanies() {
   const sisterCompanies = db.whoweare.sisterCompanies
   const stats = t('db.whoweare.stats')
   const statsIcons = [TrendingUp, Globe, Building2, Award]
-  const [hoveredImage, setHoveredImage] = useState(0)
-  const images = [
-    '/images/projects/levels-tower/levels-gallery-6.avif',
-    '/images/map.webp',
-    '/images/projects/abdullah-mubarak/am-gallery-1.webp',
-    '/images/projects/east-sabah/es-gallery-4.webp',
-  ]
 
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-4 py-12">
@@ -36,12 +28,14 @@ export default function SisterCompanies() {
             whileInView={{ opacity: 1, letterSpacing: '0.2em' }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
+            data-scroll
+            data-scroll-speed="0.02"
             className="text-bg text-sm tracking-[0.2em]"
           >
             {t('common.ourHeritage')}
           </motion.div>
 
-          <SplitText as="div" className="overflow-y-hidden text-5xl">
+          <SplitText as="div" data-scroll data-scroll-speed="0.01" className="overflow-y-hidden text-5xl">
             {t('common.dreams')}
           </SplitText>
 
@@ -54,8 +48,6 @@ export default function SisterCompanies() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.3 }}
-                  onMouseEnter={() => setHoveredImage(index)}
-                  onMouseLeave={() => setHoveredImage(0)}
                   className="group"
                 >
                   <div className="flex justify-between items-center bg-black/5 hover:bg-black/10 border rounded-xl hover:scale-97 transition-all duration-300 p-4">
@@ -64,7 +56,12 @@ export default function SisterCompanies() {
                       <div className="text-sm tracking-wider">{stat.title}</div>
                     </div>
 
-                    <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ duration: 0.3, delay: index * 0.2 }}>
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: index * 0.2 }}
+                    >
                       <div className="w-16 h-16 flex justify-center items-center bg-main/50 rounded-full text-black/60 group-hover:text-black group-hover:scale-90 transition-all duration-300">
                         {(() => {
                           const IconComponent = statsIcons[index]
@@ -78,15 +75,15 @@ export default function SisterCompanies() {
             </div>
 
             <div className="max-lg:hidden relative w-1/3 overflow-hidden gap-4 grid grid-cols-1 bg-main/50 rounded-2xl">
-              <motion.div
-                key={images[hoveredImage]}
-                initial={{ y: '50%', opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2.6, type: 'spring' }}
-                className="relative"
-              >
-                <Image src={images[hoveredImage]} alt="poster" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-contain" />
-              </motion.div>
+              <div data-scroll data-scroll-speed="0.05">
+                <Image
+                  src="/images/projects/levels-tower/levels-gallery-6.avif"
+                  alt="poster"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover scale-120"
+                />
+              </div>
             </div>
           </div>
         </motion.div>
@@ -95,7 +92,7 @@ export default function SisterCompanies() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           className="w-full h-full flex flex-col gap-4"
         >
           <motion.div
@@ -103,12 +100,14 @@ export default function SisterCompanies() {
             whileInView={{ opacity: 1, letterSpacing: '0.2em' }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
+            data-scroll
+            data-scroll-speed="0.02"
             className="text-bg text-sm tracking-[0.2em]"
           >
             {t('common.ourNetwork')}
           </motion.div>
 
-          <SplitText as="div" className="overflow-y-hidden text-5xl">
+          <SplitText as="div" data-scroll data-scroll-speed="0.01" className="overflow-y-hidden text-5xl">
             {t('common.ourSisterCompaniesIn')}
           </SplitText>
 

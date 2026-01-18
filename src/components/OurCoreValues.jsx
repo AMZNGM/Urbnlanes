@@ -11,9 +11,9 @@ export default function OurCoreValues() {
   const coreValueIcons = [Star, Clock, Shield, Zap]
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text text-black px-4 py-12">
+    <section className="relative w-dvw bg-text text-black px-4 py-12">
       <div className="max-md:w-full container">
-        <SplitText as="h2" className="overflow-y-hidden text-5xl text-center mb-4">
+        <SplitText as="h2" data-scroll data-scroll-speed="0.01" className="overflow-y-hidden text-5xl text-center mb-4">
           {coreValues?.[0]?.title}
         </SplitText>
 
@@ -26,6 +26,7 @@ export default function OurCoreValues() {
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group relative pb-2"
               >
@@ -33,6 +34,7 @@ export default function OurCoreValues() {
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
                     className="w-16 h-16 flex justify-center items-center bg-main rounded-full text-text mb-6"
                   >

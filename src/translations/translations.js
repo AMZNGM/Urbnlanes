@@ -160,6 +160,33 @@ export const TRANSLATIONS = {
           { title: 'Projects Delivered', value: '100+' },
           { title: 'Years of Experience', value: '30' },
         ],
+        storySteps: [
+          {
+            title: 'The Foundation',
+            year: '1995',
+            description:
+              "For nearly three decades, our legacy has been built not just on buildings, but on the trust we've earned and the promises we've honored.",
+          },
+          {
+            title: 'Growth & Expansion',
+            year: '2000 - 2015',
+            description:
+              'This deep-seated commitment has seen us flourish, delivering over 100 projects that have helped shape skylines and create vibrant spaces for life across the region.',
+          },
+          {
+            title: 'Regional Leadership',
+            year: '2015 - 2020',
+            description:
+              "As we've grown to become one of the Middle East's leading real estate forces, we carry the torch of our founding principles.",
+          },
+          {
+            title: 'Egyptian Journey',
+            year: '2020 - Present',
+            description:
+              'We honor the heritage that began in Kuwait and enthusiastically continue that journey of growth and contribution here in Egypt.',
+          },
+          {},
+        ],
         values: [
           {
             title: 'Exceptional Quality',
@@ -465,6 +492,31 @@ export const TRANSLATIONS = {
           { title: 'الدول', value: '2' },
           { title: 'المشاريع المسلّمة', value: '100+' },
           { title: 'سنوات الخبرة', value: '30' },
+        ],
+        storySteps: [
+          {
+            title: 'المادخل',
+            year: '1995',
+            description: 'لقد كانت تاريخنا مبتدئة لا تنتهي فقط على المباني، بل تنتهي على الثقافة والعهد التي حققناها وتعتقدنا بها.',
+          },
+          {
+            title: 'التكويد والتنمية',
+            year: '2000 - 2015',
+            description:
+              'هذا التزام عميق يكون قد راهقنا في مواجهة المستقبل، وذلك بواسطة تقديم ما يصل إلى 100 مشروع تم تقديمه وتمكن من تنقيذ السماء وتكوين مجالات حياة متميزة في المنطقة.',
+          },
+          {
+            title: 'قيادة المنطقة',
+            year: '2015 - 2020',
+            description:
+              'كما أصبحنا واحدة من أشهر الشركات العقارية الأكثر شعبية في المنطقة، نحافظ على مصلح الأساسيات التي تم تقديمها في وقتنا.',
+          },
+          {
+            title: 'رحلة المصر',
+            year: '2020 - الحاضر',
+            description: 'نحترم السماء التي بدأت في كويت، ونستمر في رحلة النمو والمساهمة هنا في مصر.',
+          },
+          {},
         ],
         values: [
           {

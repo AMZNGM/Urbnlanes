@@ -5,13 +5,12 @@ import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useTranslation } from '@/hooks/useTranslation'
-import db from '@/database/urbnlanes-db.json'
 import SplitText from '@/components/ui/text/SplitText'
 
 export default function OurStory() {
   const { t } = useTranslation()
+  const storySteps = t('db.whoweare.storySteps')
   const containerRef = useRef(null)
-  const storySteps = db.whoweare.storySteps
   const [activeStep, setActiveStep] = useState(0)
   const { scrollXProgress } = useScroll({
     container: containerRef,
@@ -82,14 +81,14 @@ export default function OurStory() {
             <button
               onClick={handlePrev}
               disabled={!hasPrevValidStep()}
-              className="bg-text/25 hover:bg-text/50 disabled:bg-text/10 backdrop-blur-md border rounded-full hover:scale-110 transition-all duration-300 p-2 cursor-pointer disabled:cursor-not-allowed"
+              className="bg-text/25 hover:bg-text/50 disabled:bg-text/10 backdrop-blur-md border rounded-full rtl:rotate-180 hover:scale-110 transition-all duration-300 p-2 cursor-pointer disabled:cursor-not-allowed"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={handleNext}
               disabled={!hasNextValidStep()}
-              className="bg-text/25 hover:bg-text/50 disabled:bg-text/10 backdrop-blur-md border rounded-full hover:scale-110 transition-all duration-300 p-2 cursor-pointer disabled:cursor-not-allowed"
+              className="bg-text/25 hover:bg-text/50 disabled:bg-text/10 backdrop-blur-md border rounded-full rtl:rotate-180 hover:scale-110 transition-all duration-300 p-2 cursor-pointer disabled:cursor-not-allowed"
             >
               <ChevronRight size={20} />
             </button>
@@ -121,8 +120,8 @@ export default function OurStory() {
           {storySteps.map((step, index) => (
             <motion.div
               key={step.title || `empty-${index}`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0.5 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               onClick={() => {

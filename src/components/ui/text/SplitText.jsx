@@ -26,11 +26,7 @@ export default memo(function SplitText(props) {
 
   const { currentLanguage } = useTranslation()
   if (currentLanguage === 'ar') {
-    return (
-      <ElementTag className={className} {...props}>
-        {children}
-      </ElementTag>
-    )
+    return <ElementTag className={className}>{children}</ElementTag>
   }
 
   const elements = useMemo(() => {

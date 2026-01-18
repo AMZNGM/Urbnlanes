@@ -9,6 +9,7 @@ const OurCoreValues = dynamic(() => import('@/components/OurCoreValues'))
 const SisterCompanies = dynamic(() => import('@/components/SisterCompanies'))
 const HoldingCompany = dynamic(() => import('@/components/HoldingCompany'))
 const OurStory = dynamic(() => import('@/components/OurStory'))
+const BehindTheFigures = dynamic(() => import('@/components/BehindTheFigures'))
 const Newsletter = dynamic(() => import('@/components/Newsletter'))
 const VideoSection = dynamic(() => import('@/components/VideoSection'))
 
@@ -23,10 +24,7 @@ export default function AboutPage() {
       <SisterCompanies />
       <HoldingCompany />
       <OurStory />
-      <div className="bg-text! py-4">
-        <TextPanel image="/images/map.webp" imageClassName="opacity-100 object-contain! container" />
-        <Newsletter withLine={false} className="bg-text text-black! container" />
-      </div>
+      <BehindTheFigures />
       <TextPanel
         title="db.whoweare.artToArchitecture.title"
         para="db.whoweare.artToArchitecture.description"
@@ -34,7 +32,11 @@ export default function AboutPage() {
         className="bg-black! text-text"
         paraClassName="opacity-100 text-xl"
       />
-      <VideoSection src="/videos/map.mp4" marquee={false} />
+      <div className="bg-text! py-12 space-y-8">
+        <TextPanel image="/images/map.webp" imageClassName="opacity-100 object-contain!" />
+        <Newsletter withLine={false} className="bg-text text-black! container" />
+      </div>
+      {/* <VideoSection src="/videos/map.mp4" marquee={false} /> */}
     </Suspense>
   )
 }

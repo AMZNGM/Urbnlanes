@@ -8,7 +8,7 @@ export default function HoldingCompany() {
   const { t } = useTranslation()
 
   return (
-    <section className="rtl:hidden relative w-dvw overflow-hidden bg-text text-black">
+    <section className="rtl:hidden relative w-dvw overflow-hidden bg-text text-black max-md:pb-12">
       <div className="flex max-md:flex-col justify-center items-center container">
         <p className="md:hidden space-x-4 font-bold text-[8.5dvw] text-center text-nowrap">
           <span>{t('common.holding')}</span>
