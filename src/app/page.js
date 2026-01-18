@@ -21,7 +21,9 @@ export default function Home() {
   return (
     <Suspense fallback={<LoadingLogo />}>
       <Preloader />
-      <Hero />
+      <div className="sticky top-0">
+        <Hero />
+      </div>
       <WhoWeAre />
       <AboutUs />
       <TeamOfExperts />

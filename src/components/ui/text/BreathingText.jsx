@@ -6,7 +6,7 @@ import { useIsMobile } from '@/hooks/useIsMobile'
 
 export default function BreathingText({
   children,
-  as = 'span',
+  as = 'div',
   fromFontVariationSettings = "'wght' 100, 'slnt' 0",
   toFontVariationSettings = "'wght' 800, 'slnt' -10",
   transition = {
@@ -69,7 +69,7 @@ export default function BreathingText({
       data-text={children}
     >
       {letters.map((letter, i) => (
-        <motion.span
+        <motion.div
           key={i}
           className="inline-block whitespace-pre"
           aria-hidden="true"
@@ -79,9 +79,9 @@ export default function BreathingText({
           custom={getCustomIndex(i, letters.length)}
         >
           {letter}
-        </motion.span>
+        </motion.div>
       ))}
-      <span className="sr-only">{children}</span>
+      <div className="sr-only">{children}</div>
     </ElementTag>
   )
 }

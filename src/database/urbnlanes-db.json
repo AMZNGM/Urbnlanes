@@ -38,6 +38,20 @@
       "workforce": "3,600+",
       "landmarkProjects": "60+"
     },
+    "stats": [
+      { "icon": "Building2", "value": "100+", "label": "Projects Delivered" },
+      { "icon": "Award", "value": "30", "label": "Years of Excellence" },
+      { "icon": "Globe", "value": "2", "label": "Countries" },
+      { "icon": "TrendingUp", "value": "1994", "label": "Established" }
+    ],
+    "sisterCompanies": [
+      { "title": "First Group", "logo": "/images/logos/first-group-logo.avif" },
+      { "title": "First United Group", "logo": "/images/logos/first-united-group-logo.webp" },
+      { "title": "First United", "logo": "/images/logos/first-united-logo.avif" },
+      { "title": "Solo", "logo": "/images/logos/solo-logo.webp" },
+      { "title": "White Pearl", "logo": "/images/logos/white-pearl-logo.webp" },
+      { "title": "Urbnlanes", "logo": "/images/logos/urbnlanes-logo.webp" }
+    ],
     "values": [
       {
         "title": "Exceptional Quality",

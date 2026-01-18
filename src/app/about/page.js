@@ -6,6 +6,9 @@ import dynamic from 'next/dynamic'
 import SectionHero from '@/components/hero-components/sectionHero'
 const TextPanel = dynamic(() => import('@/components/ui/TextPanel'))
 const OurCoreValues = dynamic(() => import('@/components/OurCoreValues'))
+const HoldingCompany = dynamic(() => import('@/components/HoldingCompany'))
+const SisterCompanies = dynamic(() => import('@/components/SisterCompanies'))
+const TeamOfExperts = dynamic(() => import('@/components/TeamOfExperts'))
 const VideoSection = dynamic(() => import('@/components/VideoSection'))
 
 export const generateMetadata = metadataGenerators.about
@@ -23,10 +26,11 @@ export default function AboutPage() {
         className="bg-black! text-text"
         paraClassName="opacity-100 text-xl"
       />
+      <HoldingCompany />
+      <VideoSection src="/videos/map.mp4" marquee={false} />
+      {/* <SisterCompanies /> */}
 
-      {/* <HoldingCompany /> */}
-
-      {/* <VideoSection src="/videos/map.mp 4" marquee={false} /> */}
+      {/* <TeamOfExperts /> */}
     </Suspense>
   )
 }

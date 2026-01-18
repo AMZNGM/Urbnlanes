@@ -23,10 +23,10 @@ export default function SelectedProjects() {
       t_description !== `${translationKey}.description`
         ? t_description
         : t_description2 !== `${translationKey}.description2`
-        ? t_description2
-        : t_shortDesc !== `${translationKey}.shortDesc`
-        ? t_shortDesc
-        : fallbackDescription || 'A remarkable project by Urbnlanes Developments.'
+          ? t_description2
+          : t_shortDesc !== `${translationKey}.shortDesc`
+            ? t_shortDesc
+            : fallbackDescription || 'A remarkable project by Urbnlanes Developments.'
 
     return {
       ...project,

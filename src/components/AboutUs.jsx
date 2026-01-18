@@ -13,10 +13,10 @@ export default function AboutUs() {
           loop
           muted
           playsInline
-          className="hover:z-10 absolute inset-0 w-full h-full object-cover max-md:rounded-2xl"
+          className="hover:z-10 absolute inset-0 w-full h-full object-cover rounded-2xl"
         />
 
-        <video
+        {/* <video
           data-scroll
           data-scroll-speed="0.3"
           src={vid}
@@ -25,8 +25,8 @@ export default function AboutUs() {
           loop
           muted
           playsInline
-          className="max-lg:hidden absolute inset-0 w-1/2 h-full object-cover -translate-y-56"
-        />
+          className="max-lg:hidden absolute inset-0 w-1/2 h-full object-cover rounded-2xl -translate-y-56"
+        /> */}
       </div>
 
       <div className="relative w-1/2 max-md:w-full h-dvh max-md:h-full">

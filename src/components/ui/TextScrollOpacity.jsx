@@ -54,8 +54,8 @@ export default function TextScrollOpacity() {
 
         <div className="w-full h-px bg-linear-to-r from-transparent via-main to-transparent" />
 
-        <div className="max-md:hidden z-20 absolute inset-0 border rounded-sm m-8 pointer-events-none" />
-        <div className="max-md:hidden z-20 absolute inset-3 border rounded-sm m-8 pointer-events-none" />
+        <div className="max-md:hidden z-20 absolute inset-0 border rounded-sm mx-4 pointer-events-none" />
+        <div className="max-md:hidden z-20 absolute inset-3 border rounded-sm mx-4 pointer-events-none" />
       </div>
     </section>
   )
