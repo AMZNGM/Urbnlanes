@@ -111,7 +111,7 @@ export default function SisterCompanies() {
             {t('common.ourSisterCompaniesIn')}
           </SplitText>
 
-          <div className="gap-4 grid grid-cols-3 bg-main/25 rounded-2xl p-8">
+          <div className="gap-4 grid grid-cols-3 bg-main/25 rounded-2xl p-8 max-md:p-4">
             {sisterCompanies.map((company, index) => (
               <motion.div
                 key={company.title}
@@ -121,7 +121,7 @@ export default function SisterCompanies() {
                 transition={{ duration: 0.6, delay: index * 0.3 }}
                 className="group"
               >
-                <div className="bg-black/5 hover:bg-black/10 border border-black/10 rounded-xl hover:scale-97 transition-all duration-300 p-4">
+                <div className="overflow-hidden bg-black/5 hover:bg-black/10 border border-black/10 rounded-xl hover:scale-97 transition-all duration-300 px-1 py-2">
                   <div className="w-full h-32 flex justify-center items-center mb-4">
                     <Image
                       src={company.logo}

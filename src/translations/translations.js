@@ -187,6 +187,46 @@ export const TRANSLATIONS = {
           },
           {},
         ],
+        behindthefigures: [
+          {
+            title: 'Behind The Figures',
+            tagline: 'Urbnlanes in numbers',
+            description:
+              'The dedication, passion, and years of diligence are best reflected in the enduring impact of the legacy we share with our sister company, First Group. These figures speak to a profound investment in human potential and architectural excellence:',
+          },
+          {
+            number: 3,
+            prefix: '',
+            suffix: '',
+            label: 'Pioneering Decades',
+            description:
+              'Three decades of steadfast commitment, a journey marked by learning, growth, and consistently delivering on our promises to the people and places we serve.',
+          },
+          {
+            number: 100,
+            prefix: '+',
+            suffix: '',
+            label: 'Projects Developed',
+            description:
+              'A century of completed projects, each one a testament to our promise to enhance the urban fabric and create homes, workspaces, and gathering points for diverse communities.',
+          },
+          {
+            number: 20,
+            prefix: '+',
+            suffix: '',
+            label: 'Towers on Ground',
+            description:
+              'More than 20 striking towers that stand as beacons of innovation and architectural artistry, providing modern, inspiring spaces for people to live, work, and thrive.',
+          },
+          {
+            number: 38,
+            prefix: '+',
+            suffix: '',
+            label: 'Years of Dedication',
+            description:
+              'Over 38 years of accumulated knowledge, experience, and trust, ensuring every development is built on a foundation of integrity and long-term vision.',
+          },
+        ],
         values: [
           {
             title: 'Exceptional Quality',
@@ -517,6 +557,43 @@ export const TRANSLATIONS = {
             description: 'نحترم السماء التي بدأت في كويت، ونستمر في رحلة النمو والمساهمة هنا في مصر.',
           },
           {},
+        ],
+        behindthefigures: [
+          {
+            title: 'ما وراء الأرقام',
+            tageline: 'ايربن لاينز بالأرقام',
+            description:
+              'يعكس هذه الأرقاف المستمرة التي نقوم بها في مجال التخطيط العقاري، وما يتفاوض معه بالقدرة على التعليم، والنمو، والمساهمة في العهد الذي نحققه ونعتقده للمساهمين والمواقع التي نخدمها.',
+          },
+          {
+            number: 3,
+            prefix: '',
+            suffix: '',
+            label: 'العقول المبتدئة',
+            description: 'ثلاثة عقود متتزامنة بالتعليم، النمو، والتزامنا بالعهد الذي نحققه ونعتقده للمساهمين والمواقع التي نخدمها.',
+          },
+          {
+            number: 100,
+            prefix: '+',
+            suffix: '',
+            label: 'المشاريع المسلّمة',
+            description: 'قرن من المشاريع التي تم تقديمها وتمكن من تنقيذ السماء وتكوين مجالات حياة متميزة للمجتمعات المتنوعة.',
+          },
+          {
+            number: 20,
+            prefix: '+',
+            suffix: '',
+            label: 'البرجات على الأرض',
+            description:
+              'أكثر من 20 برجات تنشيطية تستثمر في الإبداع والهندسة المعمارية، وتقدم فرص مليئة للأشخاص لممارسة وتنمية وتوفير في المدن.',
+          },
+          {
+            number: 38,
+            prefix: '+',
+            suffix: '',
+            label: 'السنوات المتموتة',
+            description: 'أكثر من 38 سنوات من المعرفة، الخبرة، والثقة، يضمن أن كل مشروع يبني على أساس مبادرة واستراتيجية دائمة وترافقية.',
+          },
         ],
         values: [
           {

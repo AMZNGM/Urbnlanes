@@ -75,6 +75,36 @@
       },
       {}
     ],
+    "behindthefigures": [
+      {
+        "number": 3,
+        "prefix": "",
+        "suffix": "",
+        "label": "Pioneering Decades",
+        "description": "Three decades of steadfast commitment, a journey marked by learning, growth, and consistently delivering on our promises to the people and places we serve."
+      },
+      {
+        "number": 100,
+        "prefix": "+",
+        "suffix": "",
+        "label": "Projects Developed",
+        "description": "A century of completed projects, each one a testament to our promise to enhance the urban fabric and create homes, workspaces, and gathering points for diverse communities."
+      },
+      {
+        "number": 20,
+        "prefix": "+",
+        "suffix": "",
+        "label": "Towers on Ground",
+        "description": "More than 20 striking towers that stand as beacons of innovation and architectural artistry, providing modern, inspiring spaces for people to live, work, and thrive."
+      },
+      {
+        "number": 38,
+        "prefix": "+",
+        "suffix": "",
+        "label": "Years of Dedication",
+        "description": "Over 38 years of accumulated knowledge, experience, and trust, ensuring every development is built on a foundation of integrity and long-term vision."
+      }
+    ],
     "values": [
       {
         "title": "Exceptional Quality",
