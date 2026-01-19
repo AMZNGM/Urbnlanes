@@ -11,7 +11,6 @@ const HoldingCompany = dynamic(() => import('@/components/HoldingCompany'))
 const OurStory = dynamic(() => import('@/components/OurStory'))
 const BehindTheFigures = dynamic(() => import('@/components/BehindTheFigures'))
 const Newsletter = dynamic(() => import('@/components/Newsletter'))
-const VideoSection = dynamic(() => import('@/components/VideoSection'))
 
 export const generateMetadata = metadataGenerators.about
 
@@ -36,7 +35,6 @@ export default function AboutPage() {
         <TextPanel image="/images/map.webp" imageClassName="opacity-100 object-contain!" />
         <Newsletter withLine={false} className="bg-text text-black! container" />
       </div>
-      {/* <VideoSection src="/videos/map.mp4" marquee={false} /> */}
     </Suspense>
   )
 }
