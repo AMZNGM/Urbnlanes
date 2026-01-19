@@ -11,7 +11,7 @@ export default function NavDropdown({ label, childrens, isActive, childOpen, set
 
   return (
     <div aria-label="Dropdown" className="z-50 relative w-full h-full">
-      <button className="relative w-full h-full cursor-pointer">{label}</button>
+      <button className="relative w-full h-full text-sm uppercase cursor-pointer">{label}</button>
 
       <AnimatePresence>
         {isActive && (
@@ -27,7 +27,7 @@ export default function NavDropdown({ label, childrens, isActive, childOpen, set
                 <div key={index} className="flex justify-between" onMouseEnter={() => setChildOpen(index)}>
                   {child.children ? (
                     <motion.h3
-                      className="group/name relative w-1/3 h-fit flex items-center font-semibold text-text/75 hover:text-text text-lg transition-colors py-4 cursor-pointer"
+                      className="group/name relative w-1/3 h-fit flex items-center font-medium text-text/75 hover:text-text text-lg transition-colors py-4 cursor-pointer"
                       whileHover={{ x: 6 }}
                       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     >
@@ -37,12 +37,16 @@ export default function NavDropdown({ label, childrens, isActive, childOpen, set
 
                       {t(child.name)}
 
-                      <motion.span animate={{ rotate: childOpen === index ? 90 : 0 }} transition={{ duration: 0.3, ease: 'easeOut' }}>
-                        <ChevronRight size={20} className="rtl:ms-2 ltr:ml-2" />
-                      </motion.span>
+                      <ChevronRight
+                        size={20}
+                        className={`rtl:ms-2 ltr:ml-2 duration-300 ease-out ${childOpen === index ? 'rotate-90' : ''}`}
+                      />
                     </motion.h3>
                   ) : (
-                    <Link href={child.slug} className="group/name relative w-full h-fit font-semibold text-text/75 text-lg">
+                    <Link
+                      href={child.slug}
+                      className="group/name relative w-full h-fit font-medium text-text/75 hover:text-text text-lg transition-colors cursor-pointer"
+                    >
                       <RippleEffect className="w-full py-3">
                         <motion.div
                           whileHover={{ x: 6 }}

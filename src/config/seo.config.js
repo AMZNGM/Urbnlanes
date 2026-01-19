@@ -35,55 +35,6 @@ export const SEO = {
     keywords: ['about', 'company', 'urbnlanes', 'real estate development', 'diversity', 'middle east'],
   },
 
-  '/projects/story-branded-residences': {
-    title: 'Story Branded Residences - A luxurious urban living experience',
-    description:
-      'Experience luxurious urban living at Story Branded Residences, a project by Urbnlanes, a real estate development company building masterpieces across the Middle East.',
-    keywords: ['Story Branded Residences', 'urban', 'project', 'urbnlanes', 'luxurious', 'middle east'],
-  },
-
-  '/projects/noi': {
-    title: 'NOI Project - Revolutionizing urban living',
-    description:
-      'Experience innovative urban living at NOI, a project by Urbnlanes, a real estate development company building masterpieces across the Middle East.',
-    keywords: ['NOI', 'urban', 'project', 'urbnlanes', 'innovative', 'middle east'],
-  },
-
-  '/projects/midlane': {
-    title: 'Midlane Project - Discover urban living excellence',
-    description:
-      'Discover urban living excellence at Midlane, a project by Urbnlanes, a real estate development company building masterpieces across the Middle East.',
-    keywords: ['Midlane', 'urban', 'project', 'urbnlanes', 'excellence', 'middle east'],
-  },
-
-  '/projects/yellow-lane': {
-    title: 'Yellow Lane Project - Experience modern urban living',
-    description:
-      'Experience modern urban living at Yellow Lane, a project by Urbnlanes, a real estate development company building masterpieces across the Middle East.',
-    keywords: ['Yellow Lane', 'urban', 'project', 'urbnlanes', 'modern', 'middle east'],
-  },
-
-  '/projects/yellow-residence': {
-    title: 'Yellow Residence Project - Discover luxurious urban living',
-    description:
-      'Discover luxurious urban living at Yellow Residence, a project by Urbnlanes, a real estate development company building masterpieces across the Middle East.',
-    keywords: ['Yellow Residence', 'urban', 'project', 'urbnlanes', 'luxurious', 'middle east'],
-  },
-
-  '/projects/eastlane': {
-    title: 'Eastlane Project - Experience sophisticated urban living',
-    description:
-      'Experience sophisticated urban living at Eastlane, a project by Urbnlanes, a real estate development company building masterpieces across the Middle East.',
-    keywords: ['Eastlane', 'urban', 'project', 'urbnlanes', 'sophisticated', 'middle east'],
-  },
-
-  '/projects/levels-business-tower': {
-    title: 'Levels Business Tower Project - Experience luxurious commercial space',
-    description:
-      'Experience luxurious commercial space at Levels Business Tower, a project by Urbnlanes, a real estate development company building masterpieces across the Middle East.',
-    keywords: ['Levels Business Tower', 'urban', 'project', 'urbnlanes', 'luxurious', 'middle east'],
-  },
-
   '/our-projects': {
     title: 'Urbnlanes Projects - Discover our masterpieces',
     description: 'Discover our masterpieces at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
@@ -115,12 +66,6 @@ export const SEO = {
     description:
       'Join a diverse and experienced team at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
     keywords: ['urbnlanes', 'careers', 'real estate', 'urban living', 'middle east', 'real estate development'],
-  },
-
-  '/contact-us': {
-    title: 'Urbnlanes Contact Us - Get in touch with us',
-    description: 'Get in touch with us at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
-    keywords: ['urbnlanes', 'contact', 'real estate', 'urban living', 'middle east', 'real estate development'],
   },
 
   '/cookie-policy': {
@@ -164,4 +109,28 @@ export const SEO = {
     description: 'Sorry, the page you are looking for does not exist. Please check the URL and try again.',
     keywords: ['urbnlanes', 'not found', 'page not found', 'error'],
   },
+}
+
+export const generateProjectSEO = (project) => {
+  const keywords = [
+    project.name,
+    project.tagline,
+    'urbnlanes',
+    'project',
+    'real estate',
+    'urban living',
+    'middle east',
+    'real estate development',
+    ...(project.location?.city ? [project.location.city] : []),
+    ...(project.location?.country ? [project.location.country] : []),
+  ]
+
+  return {
+    title: `${project.name} - ${project.tagline}`,
+    description:
+      project.description ||
+      project.description2 ||
+      `Experience ${project.name} by Urbnlanes, a real estate development company building masterpieces across the Middle East.`,
+    keywords: keywords.filter(Boolean).join(', '),
+  }
 }

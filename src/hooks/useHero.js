@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import { useMotionValue, useTransform, animate, useReducedMotion } from 'motion/react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useIsMobile } from '@/hooks/useIsMobile'
-import { getProjectById } from '@/lib/getDatabase'
+import db from '@/database/urbnlanes-db.json'
 
 const PROJECT_CONFIGS = [
   {
@@ -38,7 +38,7 @@ export function useHero() {
 
   const slides = useMemo(() => {
     return PROJECT_CONFIGS.map((config) => {
-      const project = getProjectById(config.id)
+      const project = db.projects.find((project) => project.id === config.id)
       if (!project) return null
 
       return {

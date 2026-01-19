@@ -3,7 +3,6 @@
 export async function subscribeToNewsletter(prevState, formData) {
   const email = formData.get('email')
 
-  // 1. Basic Validation
   if (!email || typeof email !== 'string') {
     return {
       success: false,

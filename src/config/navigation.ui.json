@@ -24,32 +24,40 @@
           "name": "nav.latestLaunches",
           "children": [
             {
-              "name": "nav.storyBrandedResidences",
-              "slug": "/projects/story-branded-residences"
+              "name": "nav.yellowResidence",
+              "slug": "/projects/yellow-residence"
+            },
+            {
+              "name": "nav.eastlane",
+              "slug": "/projects/east-lane"
             },
             {
               "name": "nav.noi",
               "slug": "/projects/noi"
             },
             {
-              "name": "nav.midlane",
-              "slug": "/projects/midlane"
-            },
-            {
               "name": "nav.yellowLane",
               "slug": "/projects/yellow-lane"
             },
             {
-              "name": "nav.yellowResidence",
-              "slug": "/projects/yellow-residence"
-            },
-            {
-              "name": "nav.eastlane",
-              "slug": "/projects/eastlane"
-            },
-            {
               "name": "nav.levelsBusinessTower",
               "slug": "/projects/levels-business-tower"
+            },
+            {
+              "name": "nav.midlane",
+              "slug": "/projects/mid-lane"
+            },
+            {
+              "name": "nav.eastSubahAlAhmedCity",
+              "slug": "/projects/east-subah-al-ahmed-city"
+            },
+            {
+              "name": "nav.mutlaaCity",
+              "slug": "/projects/mutlaa-city"
+            },
+            {
+              "name": "nav.westAbdullahMubarakCity",
+              "slug": "/projects/west-abdullah-mubarak-city"
             }
           ]
         }
@@ -90,10 +98,6 @@
           "slug": "/careers"
         }
       ]
-    },
-    {
-      "name": "nav.contact",
-      "slug": "/contact-us"
     }
   ]
 }

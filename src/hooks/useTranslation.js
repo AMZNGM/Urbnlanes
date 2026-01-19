@@ -35,12 +35,11 @@ export function useTranslation() {
           if (value && typeof value === 'object' && k in value) {
             value = value[k]
           } else {
-            // Fallback to key if translation not found
             return key
           }
         }
 
-        // Support for objects/arrays (useful for mapping translated lists)
+        // Support for objects/arrays
         if (typeof value !== 'string' && typeof value !== 'object') {
           return key
         }

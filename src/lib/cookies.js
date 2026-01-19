@@ -1,8 +1,3 @@
-// Universal cookie helpers (client-safe, minimal dependency)
-/**
- * Parse cookie header or document.cookie string into an object
- * @param {string} str
- */
 export function parseCookies(str = '') {
   const cookies = {}
   const s = str || (typeof document !== 'undefined' ? document.cookie : '')
@@ -22,10 +17,6 @@ export function parseCookies(str = '') {
   return cookies
 }
 
-/**
- * Set a cookie (client-side). Note: httpOnly cannot be set from client.
- * options: { expiresDays, maxAge, path, domain, secure, sameSite }
- */
 export function setCookie(name, value, options = {}) {
   if (typeof document === 'undefined') return
   const { expiresDays, maxAge, path = '/', domain, secure, sameSite = 'Lax' } = options
@@ -39,7 +30,6 @@ export function setCookie(name, value, options = {}) {
   }
   if (domain) cookie += `; Domain=${domain}`
   if (path) cookie += `; Path=${path}`
-  // set secure by default in production-like environments
   if (secure === true || (secure !== false && location && location.protocol === 'https:')) cookie += `; Secure`
   if (sameSite) cookie += `; SameSite=${sameSite}`
 
@@ -52,11 +42,9 @@ export function getCookie(name) {
 }
 
 export function deleteCookie(name, options = {}) {
-  // set expiry in past
   setCookie(name, '', { ...options, expiresDays: -1 })
 }
 
-// Convenience: JSON cookie helpers
 export function setJSONCookie(name, obj, options = {}) {
   try {
     setCookie(name, JSON.stringify(obj), options)

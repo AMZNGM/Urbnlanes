@@ -21,11 +21,8 @@ const STORAGE_KEY = 'urbnlanes-language'
 const DEFAULT_LANGUAGE = LANGUAGES[0]
 
 export const LanguageProvider = ({ children }) => {
-  // Initialize from localStorage or default
-  // Initialize from default to ensure server/client match
   const [selectedLanguage, setSelectedLanguageState] = useState(DEFAULT_LANGUAGE.name)
 
-  // Sync with localStorage on mount
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored && stored !== DEFAULT_LANGUAGE.name) {
@@ -33,13 +30,10 @@ export const LanguageProvider = ({ children }) => {
     }
   }, [])
 
-  // Persist to localStorage
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_KEY, selectedLanguage)
-      // Update HTML lang attribute
       document.documentElement.lang = selectedLanguage === 'English' ? 'en' : 'ar'
-      // Update HTML dir attribute for RTL
       document.documentElement.dir = selectedLanguage === 'العربية' ? 'rtl' : 'ltr'
     }
   }, [selectedLanguage])
