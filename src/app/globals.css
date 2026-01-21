@@ -18,7 +18,12 @@ html {
 [lang='ar'] {
   font-family: var(--font-arab), var(--font-main);
 }
-.border {
+.container {
+  max-width: 90dvw;
+  margin: 0 auto;
+}
+.border,
+.border-l {
   border-color: #8e8e8e50;
 }
 @keyframes oscillate {
@@ -30,8 +35,4 @@ html {
     transform: translateX(0) scale(1);
     opacity: 1;
   }
-}
-.container {
-  max-width: 90dvw;
-  margin: 0 auto;
 }

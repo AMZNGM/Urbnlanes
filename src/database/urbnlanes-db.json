@@ -31,13 +31,13 @@
       "title": "Art to architecture",
       "description": "Architecture at Urbnlanes is treated as a meaningful contribution to the human experience, not simply the creation of buildings, but the shaping of places that inspire, uplift, and bring beauty to everyday life. Each project is envisioned as a unique masterpiece with its own identity and soul, designed to enhance its surroundings and create lasting emotional connections. These projects are not just structures; they are living expressions of artistry, storytelling, and purpose destined to become landmarks that people are drawn to, that communities grow around, and that future generations will admire."
     },
-    "statistics": {
-      "yearsOfExperience": "36+",
-      "projectsCompleted": "100+",
-      "towersDelivered": "20+",
-      "workforce": "3,600+",
-      "landmarkProjects": "60+"
-    },
+    "statistics": [
+      { "title": "yearsOfExperience", "value": "36+" },
+      { "title": "projectsCompleted", "value": "100+" },
+      { "title": "towersDelivered", "value": "20+" },
+      { "title": "workforce", "value": "3,600+" },
+      { "title": "landmarkProjects", "value": "60+" }
+    ],
     "stats": [
       { "title": "Established", "value": "1994" },
       { "title": "Countries", "value": "2" },
@@ -108,19 +108,23 @@
     "values": [
       {
         "title": "Exceptional Quality",
-        "description": "We believe that our high standards and commitment to quality are what set us apart from other real estate companies."
+        "description": "We believe that our high standards and commitment to quality are what set us apart from other real estate companies.",
+        "image": "/images/projects/east-lane/el-gallery-1.webp"
       },
       {
         "title": "Adherence",
-        "description": "Our demonstrated history and vast expertise give us the edge in delivery dates. Our sister companies in Kuwait built an impeccable track record of meeting deadlines."
+        "description": "Our demonstrated history and vast expertise give us the edge in delivery dates. Our sister companies in Kuwait built an impeccable track record of meeting deadlines.",
+        "image": "/images/projects/yellow-residence/yr-gallery-9.webp"
       },
       {
         "title": "Reliability",
-        "description": "Urbnlanes has redefined the clients' experience in the market and changed notions, by dint of sheer diligence and devotion to excellence."
+        "description": "Urbnlanes has redefined the clients' experience in the market and changed notions, by dint of sheer diligence and devotion to excellence.",
+        "image": "/images/projects/yellow-lane/yl-gallery-3.webp"
       },
       {
         "title": "Agility",
-        "description": "We are committed to delivering future value no matter the challenges in the status quo as we pivot and react in a fast and wise manner."
+        "description": "We are committed to delivering future value no matter the challenges in the status quo as we pivot and react in a fast and wise manner.",
+        "image": "/images/projects/east-lane/el-gallery-2.webp"
       }
     ],
     "coreValues": [
@@ -143,137 +147,6 @@
     ]
   },
   "projects": [
-    {
-      "id": "yellow-residence",
-      "name": "Yellow Residence",
-      "logo": "/images/logos/yellow-residence-logo.webp",
-      "tagline": "Yellow isn't just a color, it's a vibe; a way of living for the daring & the bold",
-      "description": "Yellow is a residential compound designed to provide residents with a life of bliss and empower them to reach their higher selves. The architecture and interior design of Yellow are carefully crafted to create a sense of calm and tranquility, with a focus on natural materials and open spaces to allow the community to thrive through an unparalleled experience.",
-      "description2": "in close proximity to both the old and new Suez Road. This prime location offers easy access to the city’s major landmarks and attractions.",
-      "aboutCrownResidence": "Crown Residence, situated within the esteemed Yellow Residence compound, offers a luxurious\nserviced apartment experience in collaboration with Crowne Plaza IHG Hotels & Resorts. With\nmeticulously designed apartments, premium amenities, and seamless integration with hotel\nservices, Crown Residence sets a new standard for upscale urban living.\nGuests can expect exceptional facilities, personalized service, and a warm, welcoming\natmosphere, making it the ultimate destination for both leisure and business travelers.",
-      "aboutCrownPlaza": "Crown Plaza isn't just a color, it's a vibe; a way of living for the daring & the bold",
-      "brochure": "https://drive.google.com/drive/folders/1Pqmlx7ARbTPSQCEpknItlNkgbBPKMq3n",
-      "status": "completed",
-      "category": "residential",
-      "location": {
-        "city": "New Cairo",
-        "country": "Egypt"
-      },
-      "partners": [
-        {
-          "name": "Oko Plan",
-          "logo": "/images/logos/oko-plan-logo.webp",
-          "role": "Urban Planning"
-        },
-        {
-          "name": "HC Consultants",
-          "logo": "/images/logos/hC-Consultants-logo.webp",
-          "role": "Engineering Consultancy"
-        },
-        {
-          "name": "Whitespace",
-          "logo": "/images/logos/whitespace-logo.webp",
-          "role": "Architecture & Design"
-        },
-        {
-          "name": "Delave Studio",
-          "logo": "/images/logos/delave-studio-logo.webp",
-          "role": "Architecture & Design"
-        }
-      ],
-      "amenities": [
-        {
-          "id": "gym",
-          "name": "Gym",
-          "icon": "Dumbbell",
-          "description": "The gym at Yellow is a top-of-the-line facility that offers residents everything they need to maintain a healthy and active lifestyle. With its equipment, expert coaching, and variety of classes and services, it's the perfect place for residents to stay fit and achieve their fitness goals."
-        },
-        {
-          "id": "bike-lanes",
-          "name": "Bike Lanes",
-          "icon": "Bike",
-          "description": "A lane that winds through the compound's beautiful landscaping and green spaces and is designed to provide a dedicated space for cyclists to ride, separate from vehicular traffic and pedestrian walkways to ensure everyone's safety."
-        },
-        {
-          "id": "outdoor-theater",
-          "name": "Outdoor Theater",
-          "icon": "Film",
-          "description": "A unique and exciting feature that brings the community together for entertainment and socializing. The theatre is designed to be a comfortable and inviting space, with plenty of seating and a large screen for movies and other events."
-        },
-        {
-          "id": "parking",
-          "name": "Parking Slots",
-          "icon": "Car",
-          "description": "The designated parking slots at Yellow are designed to be easily accessible and secure, with ample space for residents to park their vehicles comfortably. Providing residents with safe and convenient parking options so they can enjoy peace of mind knowing that their vehicles are safe and protected."
-        },
-        {
-          "id": "kids-area",
-          "name": "For The Little Ones",
-          "icon": "Baby",
-          "description": "An area providing a safe and engaging environment for children to interact with each other and enjoy a range of activities. From playground equipment to games and toys, kids can have a blast while parents enjoy peace of mind, knowing that their children are in a secure and monitored space."
-        },
-        {
-          "id": "yellow-garden",
-          "name": "The Yellow Garden",
-          "icon": "Flower2",
-          "description": "Yellow is home to a vibrant and charming yellow garden that adds a pop of color to the community. This carefully curated garden features a variety of yellow flowers and plants that bloom throughout the year, creating a cheerful and welcoming atmosphere. A garden designed to radiate warmth and lift the spirits."
-        },
-        {
-          "id": "pet-area",
-          "name": "For Our Furry Friends",
-          "icon": "PawPrint",
-          "description": "The outdoor area for pets at Yellow is a dedicated space that is designed to be safe and comfortable for dogs and other pets. The area is fully fenced, with plenty of room for pets to run and play, and is equipped with waste disposal stations and other amenities to ensure that it remains clean and well-maintained."
-        },
-        {
-          "id": "sculptures",
-          "name": "Sculptures & Features",
-          "icon": "Sparkles",
-          "description": "Featuring stunning sculptures and water features that add a touch of elegance and sophistication to the community. With beautifully crafted pieces of art scattered throughout the grounds, residents can enjoy a unique outdoor experience. The water features provide a soothing ambiance with the sound of flowing water, creating a peaceful atmosphere."
-        },
-        {
-          "id": "yoga-area",
-          "name": "Yoga Area",
-          "icon": "Heart",
-          "description": "A serene area for the residents to practice mindfulness and relaxation. Providing a peaceful environment for individuals to connect with their bodies and minds through the practice of yoga in an area that will be the perfect place to find your inner calm and rejuvenate your spirit."
-        },
-        {
-          "id": "communal-spaces",
-          "name": "Communal Spaces",
-          "icon": "Users",
-          "description": "An outdoor communal area for residents that is a lush and well-maintained space, with plenty of seating and shade for residents to relax and enjoy the outdoors. The area features beautiful landscaping and greenery which make it the perfect place for residents to gather and socialize with friends and neighbors."
-        },
-        {
-          "id": "outdoor-pools",
-          "name": "Outdoor Pools",
-          "icon": "Waves",
-          "description": "Yellow's outdoor pool area is designed to create a sense of tranquility and relaxation, with lush landscaping, soothing water features, and a serene atmosphere that promotes wellness and well-being. The perfect place for residents and their kids to unwind and have fun."
-        }
-      ],
-      "featured": true,
-      "gallery": [
-        "/images/projects/yellow-residence/yr-hero.avif",
-        "/images/projects/yellow-residence/yr-gallery-1.avif",
-        "/images/projects/yellow-residence/yr-gallery-2.webp",
-        "/images/projects/yellow-residence/yr-gallery-3.webp",
-        "/images/projects/yellow-residence/yr-gallery-4.avif",
-        "/images/projects/yellow-residence/yr-gallery-5.webp",
-        "/images/projects/yellow-residence/yr-gallery-6.webp",
-        "/images/projects/yellow-residence/yr-gallery-7.avif",
-        "/images/projects/yellow-residence/yr-gallery-8.avif",
-        "/images/projects/yellow-residence/yr-gallery-9.webp",
-        "/images/projects/yellow-residence/yr-gallery-10.avif",
-        "/images/projects/yellow-residence/yr-gallery-11.webp",
-        "/images/projects/yellow-residence/yr-gallery-12.avif",
-        "/images/projects/yellow-residence/yr-gallery-13.avif",
-        "/images/projects/yellow-residence/yr-gallery-14.webp",
-        "/images/projects/yellow-residence/yr-gallery-15.webp",
-        "/images/projects/yellow-residence/yr-gallery-16.webp",
-        "/images/projects/yellow-residence/yr-gallery-17.avif",
-        "/images/projects/yellow-residence/yr-gallery-18.avif",
-        "/images/projects/yellow-residence/yr-cover.avif",
-        "/images/projects/yellow-residence/yr-map.avif"
-      ]
-    },
     {
       "id": "east-lane",
       "name": "Eastlane",
@@ -455,6 +328,137 @@
         "/images/projects/levels-tower/levels-e-and-8.avif",
         "/images/projects/levels-tower/levels-e-and-9.avif",
         "/images/projects/levels-tower/levels-e-and-10.avif"
+      ]
+    },
+    {
+      "id": "yellow-residence",
+      "name": "Yellow Residence",
+      "logo": "/images/logos/yellow-residence-logo.webp",
+      "tagline": "Yellow isn't just a color, it's a vibe; a way of living for the daring & the bold",
+      "description": "Yellow is a residential compound designed to provide residents with a life of bliss and empower them to reach their higher selves. The architecture and interior design of Yellow are carefully crafted to create a sense of calm and tranquility, with a focus on natural materials and open spaces to allow the community to thrive through an unparalleled experience.",
+      "description2": "in close proximity to both the old and new Suez Road. This prime location offers easy access to the city’s major landmarks and attractions.",
+      "aboutCrownResidence": "Crown Residence, situated within the esteemed Yellow Residence compound, offers a luxurious\nserviced apartment experience in collaboration with Crowne Plaza IHG Hotels & Resorts. With\nmeticulously designed apartments, premium amenities, and seamless integration with hotel\nservices, Crown Residence sets a new standard for upscale urban living.\nGuests can expect exceptional facilities, personalized service, and a warm, welcoming\natmosphere, making it the ultimate destination for both leisure and business travelers.",
+      "aboutCrownPlaza": "Crown Plaza isn't just a color, it's a vibe; a way of living for the daring & the bold",
+      "brochure": "https://drive.google.com/drive/folders/1Pqmlx7ARbTPSQCEpknItlNkgbBPKMq3n",
+      "status": "completed",
+      "category": "residential",
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "partners": [
+        {
+          "name": "Oko Plan",
+          "logo": "/images/logos/oko-plan-logo.webp",
+          "role": "Urban Planning"
+        },
+        {
+          "name": "HC Consultants",
+          "logo": "/images/logos/hC-Consultants-logo.webp",
+          "role": "Engineering Consultancy"
+        },
+        {
+          "name": "Whitespace",
+          "logo": "/images/logos/whitespace-logo.webp",
+          "role": "Architecture & Design"
+        },
+        {
+          "name": "Delave Studio",
+          "logo": "/images/logos/delave-studio-logo.webp",
+          "role": "Architecture & Design"
+        }
+      ],
+      "amenities": [
+        {
+          "id": "gym",
+          "name": "Gym",
+          "icon": "Dumbbell",
+          "description": "The gym at Yellow is a top-of-the-line facility that offers residents everything they need to maintain a healthy and active lifestyle. With its equipment, expert coaching, and variety of classes and services, it's the perfect place for residents to stay fit and achieve their fitness goals."
+        },
+        {
+          "id": "bike-lanes",
+          "name": "Bike Lanes",
+          "icon": "Bike",
+          "description": "A lane that winds through the compound's beautiful landscaping and green spaces and is designed to provide a dedicated space for cyclists to ride, separate from vehicular traffic and pedestrian walkways to ensure everyone's safety."
+        },
+        {
+          "id": "outdoor-theater",
+          "name": "Outdoor Theater",
+          "icon": "Film",
+          "description": "A unique and exciting feature that brings the community together for entertainment and socializing. The theatre is designed to be a comfortable and inviting space, with plenty of seating and a large screen for movies and other events."
+        },
+        {
+          "id": "parking",
+          "name": "Parking Slots",
+          "icon": "Car",
+          "description": "The designated parking slots at Yellow are designed to be easily accessible and secure, with ample space for residents to park their vehicles comfortably. Providing residents with safe and convenient parking options so they can enjoy peace of mind knowing that their vehicles are safe and protected."
+        },
+        {
+          "id": "kids-area",
+          "name": "For The Little Ones",
+          "icon": "Baby",
+          "description": "An area providing a safe and engaging environment for children to interact with each other and enjoy a range of activities. From playground equipment to games and toys, kids can have a blast while parents enjoy peace of mind, knowing that their children are in a secure and monitored space."
+        },
+        {
+          "id": "yellow-garden",
+          "name": "The Yellow Garden",
+          "icon": "Flower2",
+          "description": "Yellow is home to a vibrant and charming yellow garden that adds a pop of color to the community. This carefully curated garden features a variety of yellow flowers and plants that bloom throughout the year, creating a cheerful and welcoming atmosphere. A garden designed to radiate warmth and lift the spirits."
+        },
+        {
+          "id": "pet-area",
+          "name": "For Our Furry Friends",
+          "icon": "PawPrint",
+          "description": "The outdoor area for pets at Yellow is a dedicated space that is designed to be safe and comfortable for dogs and other pets. The area is fully fenced, with plenty of room for pets to run and play, and is equipped with waste disposal stations and other amenities to ensure that it remains clean and well-maintained."
+        },
+        {
+          "id": "sculptures",
+          "name": "Sculptures & Features",
+          "icon": "Sparkles",
+          "description": "Featuring stunning sculptures and water features that add a touch of elegance and sophistication to the community. With beautifully crafted pieces of art scattered throughout the grounds, residents can enjoy a unique outdoor experience. The water features provide a soothing ambiance with the sound of flowing water, creating a peaceful atmosphere."
+        },
+        {
+          "id": "yoga-area",
+          "name": "Yoga Area",
+          "icon": "Heart",
+          "description": "A serene area for the residents to practice mindfulness and relaxation. Providing a peaceful environment for individuals to connect with their bodies and minds through the practice of yoga in an area that will be the perfect place to find your inner calm and rejuvenate your spirit."
+        },
+        {
+          "id": "communal-spaces",
+          "name": "Communal Spaces",
+          "icon": "Users",
+          "description": "An outdoor communal area for residents that is a lush and well-maintained space, with plenty of seating and shade for residents to relax and enjoy the outdoors. The area features beautiful landscaping and greenery which make it the perfect place for residents to gather and socialize with friends and neighbors."
+        },
+        {
+          "id": "outdoor-pools",
+          "name": "Outdoor Pools",
+          "icon": "Waves",
+          "description": "Yellow's outdoor pool area is designed to create a sense of tranquility and relaxation, with lush landscaping, soothing water features, and a serene atmosphere that promotes wellness and well-being. The perfect place for residents and their kids to unwind and have fun."
+        }
+      ],
+      "featured": true,
+      "gallery": [
+        "/images/projects/yellow-residence/yr-gallery-2.webp",
+        "/images/projects/yellow-residence/yr-gallery-1.avif",
+        "/images/projects/yellow-residence/yr-gallery-3.webp",
+        "/images/projects/yellow-residence/yr-gallery-4.avif",
+        "/images/projects/yellow-residence/yr-gallery-5.webp",
+        "/images/projects/yellow-residence/yr-gallery-6.webp",
+        "/images/projects/yellow-residence/yr-gallery-7.avif",
+        "/images/projects/yellow-residence/yr-gallery-8.avif",
+        "/images/projects/yellow-residence/yr-gallery-9.webp",
+        "/images/projects/yellow-residence/yr-gallery-10.avif",
+        "/images/projects/yellow-residence/yr-gallery-11.webp",
+        "/images/projects/yellow-residence/yr-gallery-12.avif",
+        "/images/projects/yellow-residence/yr-gallery-13.avif",
+        "/images/projects/yellow-residence/yr-gallery-14.webp",
+        "/images/projects/yellow-residence/yr-gallery-15.webp",
+        "/images/projects/yellow-residence/yr-gallery-16.webp",
+        "/images/projects/yellow-residence/yr-gallery-17.avif",
+        "/images/projects/yellow-residence/yr-gallery-18.avif",
+        "/images/projects/yellow-residence/yr-hero.avif",
+        "/images/projects/yellow-residence/yr-map.avif",
+        "/images/projects/yellow-residence/yr-cover.avif"
       ]
     },
     {
@@ -965,29 +969,52 @@
     ]
   },
   "team": [
+    { "title": "People of Urbnlanes", "tagline": "Meet the Board Members" },
     {
       "id": "team-001",
-      "name": "Ahmed Khalid",
-      "position": "CEO",
-      "bio": "Over 20 years of experience in real estate development across the Middle East region.",
-      "image": "/images/team/ahmed-khalid.jpg",
-      "email": "ahmed.khalid@urbnlanes.com"
+      "name": "Emeel Abdalla",
+      "position": "Chairman and Founder of Emeel Abdalla",
+      "bio": "Eng. Emeel Abdalla, Chairman of Emeel Abdalla Investments Holding, is a self-made visionary who has spent over three decades shaping real estate and construction across the Middle East. From humble beginnings, he built a regional powerhouse encompassing major subsidiaries, including First Group, a leader in modern engineering and construction in Kuwait, Saudi Arabia, and beyond, delivering over 100 projects, including towers, cities, and integrated housing. Driven by a philosophy that true building combines innovation, sustainability, and quality, he expanded into Egypt with Urbnlanes Developments, creating landmark projects such as NOI, Midlane, Levels Business Tower, Yellow Residence, Yellow Lane, and Eastlane Mall. An early adopter of digital technology and AI in construction, he champions efficiency, eco-friendly practices, and safety while maintaining the highest standards of design and execution. Under his leadership, the group has earned six ISO certifications and multiple regional and international awards, leaving a lasting impact on the urban landscape of the Middle East with the guiding mission: “Building the future… preserving the legacy.",
+      "image": "/images/team/emeel-abdalla.webp",
+      "Autobiography": "https://gate.ahram.org.eg/News/5337129.aspx"
     },
     {
       "id": "team-002",
-      "name": "Sarah Al-Mansouri",
-      "position": "Head of Projects",
-      "bio": "Specialized in luxury residential developments with 15+ years of industry experience.",
-      "image": "/images/team/sarah-mansouri.jpg",
-      "email": "sarah.mansouri@urbnlanes.com"
+      "name": "Mina Abdalla",
+      "position": "Board member of Urbnlanes Developments CEO of First Group Kuwait Board member of Emeel Abdalla Investments",
+      "bio": "Eng. Mina Emeel Abdalla, CEO of First Group in Kuwait and Saudi Arabia and Board Member of Urbnlanes, leads with vision, determination, and teamwork, shaping some of the most innovative and high-quality real estate projects in the Middle East. A civil engineering graduate from the American University in Cairo (2014), he quickly pioneered through leadership roles across the Emeel Abdalla Investment Group, managing major developments in Egypt, Kuwait, and Saudi Arabia. Over 11 years, he has overseen over 100 projects including towers, residential cities, and landmark infrastructure implementing advanced management systems, global standards, and sustainable practices. Under his leadership, many projects have earned ISO certifications and international awards.",
+      "image": "/images/team/mina.webp",
+      "Autobiography": "https://akhbarelyom.com/news/newdetails/4722472/1/"
     },
     {
       "id": "team-003",
-      "name": "Mohammed Hassan",
-      "position": "Architectural Director",
-      "bio": "Award-winning architect with expertise in sustainable design and urban planning.",
-      "image": "/images/team/mohammed-hassan.jpg",
-      "email": "mohammed.hassan@urbnlanes.com"
+      "name": "Fadi Abdalla",
+      "position": "Board Member of Emeel Abdalla Investments Board member of Urbnlanes CEO of First Group Kuwait.",
+      "bio": "Represents a new generation of real estate leaders leaving a strong imprint on Egypt’s property market. By leading six major projects in just three years with total investments of around EGP 46 billion, he has demonstrated exceptional vision and execution. A civil engineering graduate from the American University in Cairo, he oversees landmark developments in Kuwait and Egypt including Levels Business Tower, NOI Residence, and Eastlane Mall, setting new benchmarks for excellence, innovation, and sustainability.",
+      "image": "/images/team/fadi.webp",
+      "Autobiography": "https://gate.ahram.org.eg/News/5311978.aspx"
+    },
+    {
+      "id": "team-004",
+      "name": "Shadi Abdalla",
+      "position": "Chief Executive Officer - Urbnlanes Board Member – Emeel Abdalla Investments Board Member - First Group Kuwait",
+      "bio": "The creative force shaping the company’s footprint in Egypt and Kuwait, leading projects from design to delivery with global standards. A graduate of the American University in Cairo’s School of Architecture, Shady ensures every project balances innovation, architectural excellence, and quality while meeting market needs.",
+      "image": "/images/team/shadi.webp",
+      "Autobiography": "https://akhbarelyom.com/news/newdetails/4712334/1/"
+    },
+    {
+      "id": "team-005",
+      "name": "Nael Yacoub",
+      "position": "Board Member of First Group",
+      "bio": "We adopt a philosophy of continuous growth and remarkable achievements. We build teams that are passionate, empowered and of high-performance, regardless the challenges, we deliver.",
+      "image": "/images/team/nael.webp"
+    },
+    {
+      "id": "team-006",
+      "name": "Abdalla El Eissa",
+      "position": "Board Member of First Group",
+      "bio": "We adopt a philosophy of continuous growth and remarkable achievements. We build teams that are passionate, empowered and of high-performance, regardless the challenges, we deliver.",
+      "image": "/images/team/abdalla-el-eissa.webp"
     }
   ],
   "contact": {
