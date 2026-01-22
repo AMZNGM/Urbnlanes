@@ -25,13 +25,13 @@ export default function ProjectAmenities({ project }: { project: Project }) {
 
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
-      <AnimText as={'h2'} className="font-sec font-medium text-xs tracking-widest">
+      <AnimText as={'h2'} delay={0.9} className="font-sec font-medium text-xs tracking-widest">
         <TText tKey="modal.amenities" />
       </AnimText>
 
       <MotionLine />
 
-      <AnimText as={'p'} className="font-sec font-light rtl:text-xs">
+      <AnimText as={'p'} delay={0.9} className="font-sec font-light rtl:text-xs">
         <TText tKey="common.amenitiesDesc" />
       </AnimText>
 

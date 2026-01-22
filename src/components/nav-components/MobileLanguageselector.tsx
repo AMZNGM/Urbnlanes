@@ -40,7 +40,7 @@ export default function MobileLanguageSelector({ navbarData }: { navbarData: Nav
               handleLanguageChange(language)
               setLanguageSelectorOpen(false)
             }}
-            className={`relative w-full text-left hover:bg-text/5 cursor-pointer transition-colors uppercase px-4 py-3 ${
+            className={`relative w-full text-left hover:bg-text/5 cursor-pointer transition-colors uppercase px-4 py-3 font-arab ${
               isClient && selectedLanguage === language.name ? 'bg-text/10' : 'text-text/70 hover:text-text'
             }`}
           >

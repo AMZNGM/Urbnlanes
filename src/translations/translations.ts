@@ -81,6 +81,8 @@ export const TRANSLATIONS = {
       ourCoreValues: 'Our Core Values',
       collab: "Collaborating with the industry's best to deliver excellence.",
       amenitiesDesc: 'Experience an unparalleled lifestyle with our world-class facilities and services.',
+      location: 'Location',
+      locationDesc: 'Strategically positioned to offer the best of urban living.',
     },
 
     amenities: {
@@ -528,6 +530,8 @@ export const TRANSLATIONS = {
       ourCoreValues: 'قيمنا الرئيسية',
       collab: 'التعاون مع الأفضل في الصناعة لتحقيق التميز.',
       amenitiesDesc: 'اختبر أسلوب حياة لا مثيل له مع مرافقنا عالمية المستوى وخدماتنا المتميزة.',
+      location: 'الموقع',
+      locationDesc: 'موقع استراتيجي يوفر أفضل أسلوب حياة حضرية.',
     },
 
     amenities: {
