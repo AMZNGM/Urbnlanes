@@ -103,29 +103,6 @@ export function useHero(): HeroData {
     }
   }, [slides, isMobile])
 
-  // const preloadedAssets = useRef<Set<string>>(new Set())
-  // useEffect(() => {
-  //   if (typeof window === 'undefined') return
-
-  //   // Preload all slides images
-  //   slides.forEach((slide) => {
-  //     if (slide.image && !preloadedAssets.current.has(slide.image)) {
-  //       const img = new Image()
-  //       img.src = slide.image
-  //       preloadedAssets.current.add(slide.image)
-  //     }
-  //   })
-
-  //   // Preload first video metadata
-  //   const firstVideo = slides[0]?.video
-  //   if (!isMobile && firstVideo && !preloadedAssets.current.has(firstVideo)) {
-  //     const video = document.createElement('video')
-  //     video.src = firstVideo
-  //     video.preload = 'metadata'
-  //     preloadedAssets.current.add(firstVideo)
-  //   }
-  // }, [slides, isMobile])
-
   useEffect(() => {
     const handleVisibility = () => {
       if (!videoRef.current || !isVideoMode || isMobile) return

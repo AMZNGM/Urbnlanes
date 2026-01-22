@@ -22,12 +22,6 @@ export default function AnimText({
   const { t } = useTranslation()
   let text = ''
 
-  // if (isValidElement(children) && children.props.tKey) {
-  //   text = t(children.props.tKey)
-  // } else {
-  //   text = String(children)
-  // }
-
   if (isValidElement(children) && 'tKey' in (children.props as object)) {
     text = t((children.props as { tKey: string }).tKey)
   } else {
