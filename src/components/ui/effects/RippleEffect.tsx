@@ -29,7 +29,7 @@ export default memo(function RippleEffect({ children, className = '', as = 'div'
         height: ${size}px;
         left: ${x}px;
         top: ${y}px;
-        background: #8e8e8e;
+        background: #8e8e8e90;
         border-radius: 50%;
         transform: scale(0);
         animation: ripple 0.6s linear;

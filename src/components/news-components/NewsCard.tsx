@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import { memo } from 'react'
-import RippleEffect from '@/components/ui/effects/RippleEffect'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
+import RippleEffect from '@/components/ui/effects/RippleEffect'
 
 interface Article {
   id: string

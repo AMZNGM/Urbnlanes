@@ -1,10 +1,12 @@
-'use client'
-
-import Image from 'next/image'
 import Link from 'next/link'
 import { Project } from '@/types/project'
-import AnimIn from '@/components/ui/unstyled/AnimIn'
+import { MotionLine } from '@/components/ui/effects/Lines'
 import TText from '@/translations/TText'
+import AnimIn from '@/components/ui/unstyled/AnimIn'
+import AnimText from '@/components/ui/text/AnimText'
+import ImageIn from '@/components/ui/unstyled/ImageIn'
+import RippleEffect from '@/components/ui/effects/RippleEffect'
+import MainBtn from '@/components/ui/buttons/MainBtn'
 
 export default function SimilarProjects({ currentProject, allProjects }: { currentProject: Project; allProjects: Project[] }) {
   if (!currentProject || !allProjects?.length) return null
@@ -14,50 +16,58 @@ export default function SimilarProjects({ currentProject, allProjects }: { curre
   if (similarProjects.length === 0) return null
 
   return (
-    <section className="relative w-full bg-black py-24 pb-48">
-      <div className="container">
-        <AnimIn delay={0.2} className="space-y-4 mb-16">
-          <h2 className="font-sec text-main text-4xl uppercase tracking-widest">Similar Projects</h2>
-          <p className="font-light text-text/60 text-lg">Explore more of our architectural masterpieces.</p>
-        </AnimIn>
+    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
+      <AnimText as={'p'} delay={0.9} className="font-sec font-medium text-xs">
+        <TText tKey="common.similarProjectsDesc" />
+      </AnimText>
 
-        <div className="gap-8 grid md:grid-cols-2 lg:grid-cols-3">
-          {similarProjects.slice(0, 3).map((project, index) => (
-            <AnimIn key={project.id} delay={0.1 * index} className="group">
-              <Link href={`/projects/${project.id}`} className="block">
-                <div className="relative overflow-hidden bg-white/5 border border-white/10 hover:border-main/50 rounded-3xl transition-all group-hover:-translate-y-2 duration-500">
-                  <div className="relative aspect-video overflow-hidden">
-                    <Image
-                      src={project.gallery?.[0] || '/images/placeholder.webp'}
-                      alt={project.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-60" />
-                  </div>
-                  <div className="space-y-3 p-8">
-                    <p className="font-mono text-main text-xs uppercase tracking-widest">{project.category}</p>
-                    <h3 className="font-sec text-text group-hover:text-main text-2xl transition-colors"><TText tKey={`db.projects.${project.id}.name`} /></h3>
-                    <p className="font-light text-text/60 text-sm line-clamp-2 leading-relaxed"><TText tKey={`db.projects.${project.id}.tagline`} /></p>
-                  </div>
+      <MotionLine />
+
+      <AnimText as={'h2'} delay={0.9} className="font-sec font-medium text-4xl text-center rtl:leading-12 tracking-widest mt-8">
+        <TText tKey="common.similarProjects" />
+      </AnimText>
+
+      <div className="gap-4 grid md:grid-cols-2 lg:grid-cols-4 mt-12">
+        {similarProjects.slice(0, 4).map((project, index) => (
+          <AnimIn key={project.id} delay={0.1 * index} className="group">
+            <RippleEffect className="relative w-full h-full overflow-hidden flex flex-col rounded-2xl">
+              <Link
+                href={`/projects/${project.id}`}
+                className="h-full overflow-hidden bg-main/25 border rounded-2xl transition-all group-hover:-translate-y-2 duration-500"
+              >
+                <ImageIn
+                  src={project.gallery?.[0] || '/images/placeholder.webp'}
+                  alt={project.name}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="group-hover:scale-105 transition-transform duration-500"
+                  divClassName="relative overflow-hidden h-48!"
+                  hasIconOverlay
+                />
+
+                <div className="space-y-2 px-4 py-8">
+                  <p className="font-mono font-bold text-xs tracking-widest">
+                    <TText tKey={`common.${project.category}`} />
+                  </p>
+
+                  <h3 className="font-medium text-2xl">
+                    <TText tKey={`db.projects.${project.id}.name`} />
+                  </h3>
+
+                  <p className="opacity-75 text-sm normal-case line-clamp-2 leading-relaxed">
+                    <TText tKey={`db.projects.${project.id}.tagline`} />
+                  </p>
                 </div>
               </Link>
-            </AnimIn>
-          ))}
-        </div>
-
-        {similarProjects.length > 3 && (
-          <AnimIn delay={0.6} className="text-center mt-20">
-            <Link
-              href="/our-projects"
-              className="inline-flex items-center bg-white/5 hover:bg-main border border-white/20 rounded-full font-sec hover:text-black text-sm uppercase tracking-widest transition-all duration-500 px-10 py-4"
-            >
-              View All Projects
-            </Link>
+            </RippleEffect>
           </AnimIn>
-        )}
+        ))}
       </div>
+
+      {similarProjects.length > 4 && (
+        <AnimIn delay={0.6} className="text-center mt-18">
+          <MainBtn to="/our-projects" tKey="common.viewAllProjects" />
+        </AnimIn>
+      )}
     </section>
   )
 }
