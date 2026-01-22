@@ -80,6 +80,7 @@ export const TRANSLATIONS = {
       ourStory: 'Our Story',
       ourCoreValues: 'Our Core Values',
       collab: "Collaborating with the industry's best to deliver excellence.",
+      amenitiesDesc: 'Experience an unparalleled lifestyle with our world-class facilities and services.',
     },
 
     amenities: {
@@ -365,6 +366,64 @@ export const TRANSLATIONS = {
         'omniyat-gardens': {
           name: 'Omniyat Gardens',
         },
+
+        amenities: {
+          gym: {
+            name: 'GYM',
+            description:
+              "The gym at Yellow is a top-of-the-line facility that offers residents everything they need to maintain a healthy and active lifestyle. With its equipment, expert coaching, and variety of classes and services, it's the perfect place for residents to stay fit and achieve their fitness goals.",
+          },
+          'bike-lanes': {
+            name: 'Bike Lanes',
+            description:
+              "A lane that winds through the compound's beautiful landscaping and green spaces and is designed to provide a dedicated space for cyclists to ride, separate from vehicular traffic and pedestrian walkways to ensure everyone's safety.",
+          },
+          'outdoor-theater': {
+            name: 'Outdoor Theater',
+            description:
+              'A unique and exciting feature that brings the community together for entertainment and socializing. The theatre is designed to be a comfortable and inviting space, with plenty of seating and a large screen for movies and other events.',
+          },
+          parking: {
+            name: 'Parking Slots',
+            description:
+              'The designated parking slots at Yellow are designed to be easily accessible and secure, with ample space for residents to park their vehicles comfortably. Providing residents with safe and convenient parking options so they can enjoy peace of mind knowing that their vehicles are safe and protected.',
+          },
+          'kids-area': {
+            name: 'Kids Area',
+            description:
+              'An area providing a safe and engaging environment for children to interact with each other and enjoy a range of activities. From playground equipment to games and toys, kids can have a blast while parents enjoy peace of mind, knowing that their children are in a secure and monitored space.',
+          },
+          'yellow-garden': {
+            name: 'Yellow Garden',
+            description:
+              'Yellow is home to a vibrant and charming yellow garden that adds a pop of color to the community. This carefully curated garden features a variety of yellow flowers and plants that bloom throughout the year, creating a cheerful and welcoming atmosphere. A garden designed to radiate warmth and lift the spirits.',
+          },
+          'pet-area': {
+            name: 'Pet Area',
+            description:
+              'The outdoor area for pets at Yellow is a dedicated space that is designed to be safe and comfortable for dogs and other pets. The area is fully fenced, with plenty of room for pets to run and play, and is equipped with waste disposal stations and other amenities to ensure that it remains clean and well-maintained.',
+          },
+          sculptures: {
+            name: 'Sculptures',
+            description:
+              'Featuring stunning sculptures and water features that add a touch of elegance and sophistication to the community. With beautifully crafted pieces of art scattered throughout the grounds, residents can enjoy a unique outdoor experience. The water features provide a soothing ambiance with the sound of flowing water, creating a peaceful atmosphere.',
+          },
+          'yoga-area': {
+            name: 'Yoga Area',
+            description:
+              'A serene area for the residents to practice mindfulness and relaxation. Providing a peaceful environment for individuals to connect with their bodies and minds through the practice of yoga in an area that will be the perfect place to find your inner calm and rejuvenate your spirit.',
+          },
+          'communal-spaces': {
+            name: 'Communal Spaces',
+            description:
+              'An outdoor communal area for residents that is a lush and well-maintained space, with plenty of seating and shade for residents to relax and enjoy the outdoors. The area features beautiful landscaping and greenery which make it the perfect place for residents to gather and socialize with friends and neighbors.',
+          },
+          'outdoor-pools': {
+            name: 'Outdoor Pools',
+            description:
+              "Yellow's outdoor pool area is designed to create a sense of tranquility and relaxation, with lush landscaping, soothing water features, and a serene atmosphere that promotes wellness and well-being. The perfect place for residents and their kids to unwind and have fun.",
+          },
+        },
       },
     },
 
@@ -468,6 +527,7 @@ export const TRANSLATIONS = {
       ourStory: 'قصتنا',
       ourCoreValues: 'قيمنا الرئيسية',
       collab: 'التعاون مع الأفضل في الصناعة لتحقيق التميز.',
+      amenitiesDesc: 'اختبر أسلوب حياة لا مثيل له مع مرافقنا عالمية المستوى وخدماتنا المتميزة.',
     },
 
     amenities: {
@@ -744,6 +804,63 @@ export const TRANSLATIONS = {
         },
         'omniyat-gardens': {
           name: 'أمنيات جاردنز',
+        },
+        amenities: {
+          gym: {
+            name: 'صالة ألعاب رياضية',
+            description:
+              'صالة الألعاب الرياضية في يلو هي منشأة من الدرجة الأولى توفر للسكان كل ما يحتاجونه للحفاظ على نمط حياة صحي ونشط. مع معداتها وتدريبها من قبل خبراء، وتنوع الفئات والخدمات، إنها المكان المثالي للسكان للبقاء لائقين وتحقيق أهدافهم اللياقة البدنية.',
+          },
+          'bike-lanes': {
+            name: 'مسارات الدراجات',
+            description:
+              'مسار يتعرج عبر تنسيقات المجمع الجميلة والمساحات الخضراء وتم تصميمه لتوفير مساحة مخصصة لراكبي الدراجات للركوب، منفصلة عن حركة المرور والممرات للمشاة لضمان سلامة الجميع.',
+          },
+          'outdoor-theater': {
+            name: 'مسرح خارجي',
+            description:
+              'ميزة فريدة ومثيرة تجمع المجتمع معاً للترفيه والتواصل الاجتماعي. يتم تصميم المسرح ليكون مساحة مريحة ومرحبة، مع الكثير من الجلوس وشاشة كبيرة للأفلام والأحداث الأخرى.',
+          },
+          parking: {
+            name: 'أماكن وقوف السيارات',
+            description:
+              'تم تصميم أماكن وقوف السيارات المخصصة في يلو لتكون سهلة الوصول وآمنة، مع مساحة وفيرة للسكان لوقف مركباتهم بشكل مريح. توفير خيارات وقوف آمنة ومريحة للسكان حتى يتمكنوا من الاستمتاع براحة البال مع العلم بأن مركباتهم آمنة وحامية.',
+          },
+          'kids-area': {
+            name: 'منطقة للأطفال',
+            description:
+              'منطقة توفر بيئة آمنة وجذابة للأطفال للتفاعل مع بعضهم البعض والاستمتاع بمجموعة من الأنشطة. من معدات الملاعب إلى الألعاب والألعاب، يمكن للأطفال الاستمتاع بالمرح بينما يتمتع الآباء براحة البال مع العلم بأن أطفالهم في مساحة آمنة ومراقبة.',
+          },
+          'yellow-garden': {
+            name: 'الحديقة الصفراء',
+            description:
+              'يلو هو موطن لحديقة صفراء نابضة بالحياة وسحره تضيف لمسة من اللون إلى المجتمع. تضم هذه الحديقة المنسقة بعناية مجموعة متنوعة من الزهور والنباتات الصفراء التي تزهر طوال العام، مما يخلق أجواء مبهجة ومرحبة. حديقة مصممة للإشعاع بالدفء ورفع الروح.',
+          },
+          'pet-area': {
+            name: 'منطقة الحيوانات الأليفة',
+            description:
+              'المنطقة الخارجية للحيوانات الأليفة في يلو هي مساحة مخصصة مصممة لتكون آمنة ومريحة للكلاب والحيوانات الأليفة الأخرى. المنطقة مسيجة بالكامل، مع مساحة كبيرة للحيوانات الأليفة للركض واللعب، وتم تجهيزها بمحطات التخلص من النفايات والتسهيلات الأخرى لضمان بقاؤها نظيفة وصيانة جيدة.',
+          },
+          sculptures: {
+            name: 'منحوتات ومعالم مائية',
+            description:
+              'تعرض منحوتات مذهلة ومعالم مائية تضيف لمسة من الأناقة والتعقيد إلى المجتمع. مع القطع الفنية المصممة بعناية المتناثرة عبر الأرض، يمكن للسكان الاستمتاع بتجربة خارجية فريدة. توفر المعالم المائية أجواء هادئة مع صوت المياه المتدفقة، مما يخلق أجواء سلمية.',
+          },
+          'yoga-area': {
+            name: 'منطقة اليوغا',
+            description:
+              'منطقة هادئة للسكان لممارسة اليقظة الذهنية والاسترخاء. توفر بيئة سلمية للأفراد للتواصل مع أجسامهم وعقولهم من خلال ممارسة اليوغا في منطقة ستكون المكان المثالي للعثور على الهدوء الداخلي وتجديد روحك.',
+          },
+          'communal-spaces': {
+            name: 'مساحات مجتمعية',
+            description:
+              'منطقة خارجية مشتركة للسكان هي مساحة خضراء فاخرة وصيانة جيدة، مع الكثير من الجلوس والظل للسكان للاسترخاء والاستمتاع بالطقس في الخارج. تضم المنطقة تنسيقات جميلة والمساحات الخضراء التي تجعلها المكان المثالي للسكان للتجمع والتواصل الاجتماعي مع الأصدقاء والجيران.',
+          },
+          'outdoor-pools': {
+            name: 'حمامات سباحة خارجية',
+            description:
+              'منطقة المسبح الخارجي في يلو مصممة لخلق شعور بالسكينة والاسترخاء، مع تنسيقات فاخرة ومعالم مائية مهدئة وأجواء سلمية تعزز العافية والرفاهية. المكان المثالي للسكان وأطفالهم للاسترخاء والاستمتاع بالمرح.',
+          },
         },
       },
     },

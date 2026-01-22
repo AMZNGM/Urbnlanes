@@ -3,23 +3,24 @@ import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/text/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
+import { SoftLine } from '@/components/ui/effects/Lines'
 
 export default function ProjectPartners({ project }: { project: Project }) {
   if (!project || !project.partners?.length) return null
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24">
-      <div className="space-y-4 text-center mb-16">
-        <AnimText as={'h2'} className="font-sec text-black text-4xl uppercase tracking-widest">
-          <TText tKey="nav.partnersAssociates" />
-        </AnimText>
+    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24 max-md:py-12">
+      <AnimText as={'h2'} className="font-sec text-4xl text-center rtl:leading-16 tracking-widest">
+        <TText tKey="nav.partnersAssociates" />
+      </AnimText>
 
-        <AnimText as={'p'} className="font-light text-black/60 text-lg">
-          <TText tKey="common.collab" />
-        </AnimText>
-      </div>
+      <AnimText as={'p'} className="font-light text-lg text-center">
+        <TText tKey="common.collab" />
+      </AnimText>
 
-      <div className="gap-8 max-md:gap-4 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <SoftLine className="h-0.5!" />
+
+      <div className="gap-8 max-md:gap-4 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-16">
         {project.partners.map((partner: Partner, index: number) => (
           <AnimIn key={partner.name} delay={0.2 * index} className="flex flex-col items-center gap-2 bg-main/25 rounded-2xl p-8">
             <ImageIn src={partner.logo} alt={partner.name} className="object-contain!" divClassName="w-24 h-24! invert! mb-6" />

@@ -54,8 +54,8 @@ export default async function ProjectPage({ params }: Props) {
       <ProjectDetails project={project} />
       <ProjectGallery project={project} />
       <ProjectPartners project={project} />
-      {/* <ProjectAmenities project={project} />
-      <ProjectLocation project={project} />
+      <ProjectAmenities project={project} />
+      {/* <ProjectLocation project={project} />
       <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} /> */}
     </Suspense>
   )
