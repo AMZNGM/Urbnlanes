@@ -82,9 +82,9 @@ export const TRANSLATIONS = {
       collab: "Collaborating with the industry's best to deliver excellence.",
       amenitiesDesc: 'Experience an unparalleled lifestyle with our world-class facilities and services.',
       location: 'Location',
+      masterPlan: 'Master Plan',
       similarProjects: 'Similar Projects',
       similarProjectsDesc: 'Explore more of our architectural masterpieces',
-      viewAllProjects: 'View All Projects',
       viewAllProjects: 'View All Projects',
     },
 
@@ -533,6 +533,7 @@ export const TRANSLATIONS = {
       ourCoreValues: 'قيمنا الرئيسية',
       collab: 'التعاون مع الأفضل في الصناعة لتحقيق التميز.',
       amenitiesDesc: 'اختبر أسلوب حياة لا مثيل له مع مرافقنا عالمية المستوى وخدماتنا المتميزة.',
+      masterPlan: 'الخطة رئيسية',
       location: 'الموقع',
       locationDesc: 'موقع استراتيجي يوفر أفضل أسلوب حياة حضرية.',
       similarProjects: 'مشاريع مشابهة',

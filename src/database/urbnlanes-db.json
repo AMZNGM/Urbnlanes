@@ -272,6 +272,7 @@
       ],
       "featured": true,
       "gallery": [
+        "/images/projects/yellow-lane/yl-hero.avif",
         "/images/projects/yellow-lane/yl-gallery-1.webp",
         "/images/projects/yellow-lane/yl-gallery-2.webp",
         "/images/projects/yellow-lane/yl-gallery-3.webp",
@@ -282,8 +283,7 @@
         "/images/projects/yellow-lane/yl-gallery-8.webp",
         "/images/projects/yellow-lane/yl-gallery-9.webp",
         "/images/projects/yellow-lane/yl-gallery-10.webp",
-        "/images/projects/yellow-lane/yl-banner.avif",
-        "/images/projects/yellow-lane/yl-hero.avif"
+        "/images/projects/yellow-lane/yl-banner.avif"
       ]
     },
     {

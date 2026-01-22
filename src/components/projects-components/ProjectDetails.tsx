@@ -3,10 +3,12 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Project } from '@/types/project'
+import { Download } from 'lucide-react'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/text/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
+import MainBtn from '@/components/ui/buttons/MainBtn'
 
 export default function ProjectDetails({ project }: { project: Project }) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -36,6 +38,12 @@ export default function ProjectDetails({ project }: { project: Project }) {
           </AnimText>
 
           <div className="space-y-6 font-light text-bg text-lg normal-case leading-relaxed">
+            {project.shortDesc && (
+              <AnimText as={'p'} delay={0.3}>
+                <TText tKey={`db.projects.${project.id}.shortDesc`} />
+              </AnimText>
+            )}
+
             {project.description && (
               <AnimText as={'p'} delay={0.5}>
                 <TText tKey={`db.projects.${project.id}.description`} />
@@ -47,10 +55,17 @@ export default function ProjectDetails({ project }: { project: Project }) {
                 <TText tKey={`db.projects.${project.id}.description2`} />
               </AnimText>
             )}
+
+            {project.brochure && (
+              <AnimIn delay={0.6} className="w-fit flex items-center gap-2 border rounded-2xl mt-8 p-2">
+                <Download size={16} />
+                <MainBtn href={project.brochure} tKey="modal.brochure" className="inline-flex items-center gap-2" />
+              </AnimIn>
+            )}
           </div>
         </div>
 
-        <AnimIn className="relative h-120 max-lg:h-100 overflow-hidden col-span-2 max-lg:col-span-3 bg-main/25 rounded-2xl">
+        <AnimIn className="relative max-lg:h-100 min-h-120 overflow-hidden col-span-2 max-lg:col-span-3 bg-main/25 rounded-2xl">
           {project.gallery && project.gallery[0] && <ImageIn src={project.gallery[project.gallery.length - 1]} alt="image" />}
 
           {project.gallery &&

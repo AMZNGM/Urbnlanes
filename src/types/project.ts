@@ -14,8 +14,12 @@ export interface Partner {
 export interface Project {
   id: string
   name: string
-  description?: string
+  logo?: string
   tagline?: string
+  shortDesc?: string | string[]
+  description?: string
+  description2?: string
+  brochure?: string
   status?: string
   category?: string
   completion?: string
@@ -28,5 +32,11 @@ export interface Project {
   amenities?: Amenity[]
   partners?: Partner[]
   gallery?: string[]
+  featured?: boolean
+  overview?: {
+    value?: string
+    startdate?: string
+    enddate?: string
+  }
   [key: string]: any
 }

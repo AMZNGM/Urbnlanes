@@ -52,7 +52,7 @@ export default function ImageIn({
       />
       {hasOverlay && <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />}
       {hasIconOverlay && (
-        <div className="absolute inset-0 flex justify-center items-center gap-1 group-hover:bg-black/50 opacity-0 group-hover:opacity-100 text-sm normal-case transition-all duration-500">
+        <div className="absolute inset-0 flex justify-center items-center gap-1 group-hover:bg-black/50 opacity-0 group-hover:opacity-100 text-text text-sm normal-case transition-all duration-500">
           <MousePointerClick size={20} /> See more
         </div>
       )}

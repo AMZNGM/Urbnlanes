@@ -178,15 +178,11 @@ export default function FooterContent() {
         >
           <div className="flex justify-end items-center gap-8 text-xs">
             {[
-              { id: 'privacyPolicy', label: t('footer.privacyPolicy') },
-              { id: 'termsOfUse', label: t('footer.termsOfUse') },
-              { id: 'cookiePolicy', label: t('footer.cookiePolicy') },
+              { id: 'privacyPolicy', label: t('footer.privacyPolicy'), to: '/privacy-policy' },
+              { id: 'termsOfUse', label: t('footer.termsOfUse'), to: '/terms-of-use' },
+              { id: 'cookiePolicy', label: t('footer.cookiePolicy'), to: '/cookie-policy' },
             ].map((link) => (
-              <Link
-                key={link.id}
-                href={`/${link.label.replace(/\s+/g, '-').toLowerCase()}`}
-                className="md:text-main hover:text-text transition-colors duration-200"
-              >
+              <Link key={link.id} href={link.to} className="md:text-main hover:text-text transition-colors duration-200">
                 <LetterSwap text={link.label} />
               </Link>
             ))}

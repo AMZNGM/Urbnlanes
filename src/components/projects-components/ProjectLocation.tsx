@@ -13,35 +13,41 @@ export default function ProjectLocation({ project }: { project: Project }) {
         <TText tKey="common.location" />
       </AnimText>
 
-      <MotionLine />
+      <MotionLine delay={1} />
 
       <AnimText as={'p'} delay={0.9} className="font-sec font-light rtl:text-xs">
         <TText tKey="common.locationDesc" />
       </AnimText>
 
-      <AnimIn className="gap-4 grid grid-cols-2 bg-main/25 rounded-2xl mt-8 p-4">
-        <AnimIn delay={0.2} className="bg-main/25 rounded-2xl p-4">
+      <AnimIn className="space-y-4 grid grid-cols-2 bg-main/25 rounded-2xl mt-8 p-4">
+        <AnimIn delay={0.2} className="bg-main/25 rounded-2xl me-2 p-4">
           <p className="font-medium text-sm tracking-wider">
             <TText tKey="details.city" />
           </p>
-          <p className="font-light text-2xl">{project.location.city}</p>
+          <p className="font-light text-2xl">
+            <TText tKey={`locations.${project.location.city}`} />
+          </p>
           <MotionLine className="opacity-50" />
         </AnimIn>
 
-        <AnimIn delay={0.3} className="bg-main/25 rounded-2xl p-4">
+        <AnimIn delay={0.3} className="bg-main/25 rounded-2xl ms-2 p-4">
           <p className="font-medium text-sm tracking-wider">
             <TText tKey="details.country" />
           </p>
-          <p className="font-light text-2xl">{project.location.country}</p>
+          <p className="font-light text-2xl">
+            <TText tKey={`locations.${project.location.country}`} />
+          </p>
           <MotionLine delay={0.5} className="opacity-50" />
         </AnimIn>
 
         {project.location.neighborhood && (
-          <AnimIn delay={0.4} className="col-span-3 bg-main/25 rounded-2xl p-4">
-            <p className="font-medium text-sm tracking-wider">
+          <AnimIn delay={0.4} className="space-y-2 col-span-3 bg-main/25 rounded-2xl p-4">
+            <p className="font-medium text-sm text-center tracking-wider">
               <TText tKey="details.area" />
             </p>
-            <p className="font-light text-2xl">{project.location.neighborhood}</p>
+            <p className="max-w-2xl font-light text-center text-balance mx-auto">
+              <TText tKey={`locations.${project.location.neighborhood}`} />
+            </p>
             <MotionLine delay={0.9} className="opacity-50" />
           </AnimIn>
         )}

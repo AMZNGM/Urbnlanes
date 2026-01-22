@@ -29,7 +29,7 @@ export default function ProjectAmenities({ project }: { project: Project }) {
         <TText tKey="modal.amenities" />
       </AnimText>
 
-      <MotionLine />
+      <MotionLine delay={0.7} />
 
       <AnimText as={'p'} delay={0.9} className="font-sec font-light rtl:text-xs">
         <TText tKey="common.amenitiesDesc" />

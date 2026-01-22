@@ -14,6 +14,7 @@ const ProjectGallery = dynamic(() => import('@/components/projects-components/Pr
 const ProjectPartners = dynamic(() => import('@/components/projects-components/ProjectPartners'))
 const ProjectAmenities = dynamic(() => import('@/components/projects-components/ProjectAmenities'))
 const ProjectLocation = dynamic(() => import('@/components/projects-components/ProjectLocation'))
+const ProjectOverview = dynamic(() => import('@/components/projects-components/ProjectOverview'))
 const SimilarProjects = dynamic(() => import('@/components/projects-components/SimilarProjects'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
 const Newsletter = dynamic(() => import('@/components/Newsletter'))
@@ -58,9 +59,10 @@ export default async function ProjectPage({ params }: Props) {
       <ProjectPartners project={project} />
       <ProjectAmenities project={project} />
       <ProjectLocation project={project} />
+      {project.overview && <ProjectOverview project={project} />}
       <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} />
       <div className="space-y-8 bg-text">
-        <LatestNews className="bg-text text-black! px-18 max-md:px-4" withHeading={false} />
+        <LatestNews className="bg-text text-black! px-18 max-md:px-4 py-0!" withHeading={false} />
         <Newsletter withLine={false} className="bg-text text-black! px-18 max-md:px-4 pt-12 pb-24" />
       </div>
     </Suspense>
