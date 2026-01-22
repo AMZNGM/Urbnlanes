@@ -113,7 +113,7 @@ function ProjectCard({ project, index, openModal }: { project: any; index: numbe
         sizes="(max-width: 768px) 60vw, (max-width: 1280px) 80vw, 90vw"
         style={{ y, scale }}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        divClassName="absolute inset-0 w-full h-full"
+        divClassName="absolute inset-0 w-full max-md:h-100! h-full!"
         hasOverlay
       />
 

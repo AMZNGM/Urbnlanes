@@ -41,7 +41,7 @@ export default function HeroBackground({
         onAnimationStart={handleAnimationStart}
         className="absolute inset-0"
       >
-        {isLoading && <LoadingOscillate />}
+        {/* {isLoading && <LoadingOscillate />} */}
 
         {!isMobile && isVideoMode && currentSlide.video ? (
           <div className="relative w-full h-full">

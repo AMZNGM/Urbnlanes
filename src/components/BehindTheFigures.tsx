@@ -26,7 +26,7 @@ export default function BehindTheFigures() {
         <div className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-8">
           {db.whoweare.behindthefigures.map((figure, index) => (
             <AnimIn key={index} delay={0.2 * index} className="group relative">
-              <AnimIn className="relative bg-main/25 rounded-2xl p-4 max-md:p-2">
+              <AnimIn className="relative w-full h-full bg-main/25 rounded-2xl p-4 max-md:p-2">
                 <AnimIn delay={0.4 + 0.2 * index} className="font-extralight text-7xl md:text-8xl leading-none tracking-tighter mb-3">
                   <NumberTicker value={figure.number} duration={3500} />
                 </AnimIn>

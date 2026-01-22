@@ -10,9 +10,9 @@ export default function TeamOfExperts() {
     <section className="relative w-full h-full overflow-hidden bg-black text-text px-4 py-8">
       <Heading text={<TText tKey="db.whoweare.teamOfExperts.title" />} />
 
-      <div className="flex flex-col justify-center items-center gap-24 mt-18">
-        <div className="items-center gap-12 grid md:grid-cols-2">
-          <AnimIn className="relative h-96 overflow-hidden">
+      <div className="w-full flex flex-col justify-center items-center gap-24 mt-18">
+        <div className="w-full items-center gap-12 grid md:grid-cols-2">
+          <AnimIn className="relative w-full h-96 overflow-hidden">
             <ImageIn
               src="/images/team/emeel-abdalla.webp"
               alt="Award winning property"
@@ -30,9 +30,9 @@ export default function TeamOfExperts() {
               <TText tKey="db.whoweare.teamOfExperts.description" />
             </AnimText>
 
-            <div className="flex justify-between gap-8 text-main">
+            <div className="flex justify-between md:gap-8 text-main">
               {[0, 3, 4].map((index, i) => (
-                <div key={index} className="flex gap-8">
+                <div key={index} className="flex justify-between md:gap-8">
                   <div className="flex flex-col justify-between gap-1 text-center">
                     <AnimText className="font-sec">
                       <TText tKey={`db.whoweare.statistics.${index}.title`} />
@@ -42,7 +42,7 @@ export default function TeamOfExperts() {
                       <TText tKey={`db.whoweare.statistics.${index}.value`} />
                     </AnimText>
                   </div>
-                  {i < 2 && <div className="w-px h-full bg-main/30" />}
+                  {i < 2 && <div className="max-md:hidden w-px h-full bg-main/30" />}
                 </div>
               ))}
             </div>

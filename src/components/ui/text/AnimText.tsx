@@ -38,20 +38,20 @@ export default function AnimText({
   const words = text.split(' ')
 
   return (
-    <Tag className={`overflow-hidden ${className}`} {...props}>
+    <Tag className={`relative overflow-hidden ${className}`} {...props}>
       <motion.span
         variants={{ visible: { transition: { delayChildren: delay, staggerChildren: stagger } } }}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="space-x-1.5 ltr:leading-none"
+        className="relative space-x-1.5 ltr:leading-none"
       >
         {words.map((word, i) => (
-          <span key={i} className="inline-block overflow-hidden">
+          <span key={i} className="inline-block relative overflow-hidden">
             <motion.span
               variants={{ hidden: { opacity: 0, y: '100%' }, visible: { opacity: 1, y: '0%' } }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block"
+              className="inline-block relative"
             >
               {word}
             </motion.span>

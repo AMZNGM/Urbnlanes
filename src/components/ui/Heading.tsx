@@ -22,7 +22,7 @@ export default function Heading({
 
       <p className="text-[0.8vw] max-md:text-[2.9vw] tracking-[0.9vw] px-1">{tagline}</p>
 
-      <ShinyText as="h2" className="text-[5vw] max-md:text-[10vw] max-lg:text-[8vw] leading-[0.95] tracking-tight">
+      <ShinyText as="h2" className="text-[5vw] max-md:text-[10vw] max-lg:text-[8vw] ltr:leading-[0.95] rtl:leading-24 tracking-tight">
         {text}
       </ShinyText>
 
