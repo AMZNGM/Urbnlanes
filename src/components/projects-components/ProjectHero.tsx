@@ -2,50 +2,49 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useTranslation } from '@/translations/useTranslation'
 import { Project } from '@/types/project'
+import AnimIn from '@/components/ui/unstyled/AnimIn'
+import AnimText from '@/components/ui/text/AnimText'
 
 export default function ProjectHero({ project }: { project: Project }) {
-  const { t } = useTranslation()
-
   if (!project) return null
 
   return (
-    <section className="relative w-dvw h-[60dvh] overflow-hidden">
-      <Image
-        src={project.gallery?.[0] || '/images/placeholder.webp'}
-        alt={project.name}
-        fill
-        sizes="100dvw"
-        className="absolute inset-0 object-cover"
-        priority
-      />
+    <section className="relative w-full h-[80dvh] overflow-hidden bg-black">
+      {/* Background Image with Overlay */}
+      <div className="z-0 absolute inset-0">
+        <Image
+          src={project.gallery?.[0] || '/images/placeholder.webp'}
+          alt={project.name}
+          fill
+          sizes="100vw"
+          className="object-cover opacity-60"
+          priority
+        />
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-black" />
+      </div>
 
-      <div className="z-10 relative h-full flex justify-center items-center bg-black/60 backdrop-blur-md">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
-          className="max-w-4xl text-white text-center mx-auto px-4 py-12"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-extralight text-4xl md:text-6xl lg:text-7xl tracking-tight mb-4"
-          >
+      {/* Content */}
+      <div className="z-10 relative h-full flex flex-col justify-end pb-24 container">
+        <div className="max-w-4xl">
+          <AnimIn delay={0.2}>
+            {project.logo && (
+              <div className="relative w-48 h-24 mb-8">
+                <Image src={project.logo} alt={`${project.name} logo`} fill className="object-contain object-left" />
+              </div>
+            )}
+          </AnimIn>
+
+          <AnimText as="h1" className="font-sec text-text text-6xl md:text-8xl lg:text-9xl ltr:leading-[0.9] rtl:leading-tight mb-6">
             {project.name}
-          </motion.h1>
+          </AnimText>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-2xl font-light text-lg md:text-xl leading-relaxed"
-          >
-            {project.tagline}
-          </motion.p>
-        </motion.div>
+          {project.tagline && (
+            <AnimIn delay={0.4}>
+              <p className="max-w-2xl font-light text-text/80 text-xl md:text-2xl leading-relaxed">{project.tagline}</p>
+            </AnimIn>
+          )}
+        </div>
       </div>
     </section>
   )

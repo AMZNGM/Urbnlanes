@@ -1,63 +1,48 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useTranslation } from '@/translations/useTranslation'
 import { Project } from '@/types/project'
+import AnimIn from '@/components/ui/unstyled/AnimIn'
+import { SoftLine } from '@/components/ui/effects/Lines'
 
 export default function ProjectDetails({ project }: { project: Project }) {
-  const { t } = useTranslation()
-
   if (!project) return null
 
+  const details = [
+    { label: 'Status', value: project.status },
+    { label: 'City', value: project.location?.city },
+    { label: 'Country', value: project.location?.country },
+    { label: 'Category', value: project.category },
+    { label: 'Area', value: project.location?.neighborhood },
+  ].filter((d) => d.value)
+
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
-      className="w-full bg-black/80 backdrop-blur-md py-16"
-    >
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-8"
-        >
-          <h2 className="font-bold text-white text-3xl mb-4">{t('projects.details')}</h2>
+    <section className="w-full bg-black py-24">
+      <div className="container">
+        <div className="gap-20 grid lg:grid-cols-2">
+          {/* Main Description */}
+          <AnimIn delay={0.2} className="space-y-8">
+            <h2 className="font-sec text-main text-4xl uppercase tracking-widest">The Project</h2>
+            <div className="space-y-6 font-light text-text/80 text-lg leading-relaxed">
+              <p>{project.description || project.shortDesc}</p>
+              {project.description2 && <p>{project.description2}</p>}
+            </div>
+          </AnimIn>
 
-          <div className="gap-8 grid md:grid-cols-2 text-white/90">
-            {project.status && (
-              <div className="space-y-2">
-                <h3 className="font-semibold text-lg mb-2">{t('projects.status')}</h3>
-                <p className="text-white/80">{project.status}</p>
-              </div>
-            )}
-
-            {project.location && (
-              <div className="space-y-2">
-                <h3 className="font-semibold text-lg mb-2">{t('projects.location')}</h3>
-                <p className="text-white/80">
-                  {project.location.city}, {project.location.country}
-                </p>
-              </div>
-            )}
-
-            {project.completion && (
-              <div className="space-y-2">
-                <h3 className="font-semibold text-lg mb-2">{t('projects.completion')}</h3>
-                <p className="text-white/80">{project.completion}</p>
-              </div>
-            )}
-
-            {project.category && (
-              <div className="space-y-2">
-                <h3 className="font-semibold text-lg mb-2">{t('projects.category')}</h3>
-                <p className="text-white/80">{project.category}</p>
-              </div>
-            )}
-          </div>
-        </motion.div>
+          {/* Key Details Grid */}
+          <AnimIn delay={0.4} className="bg-main/5 border border-main/10 rounded-3xl p-10 lg:p-16">
+            <h3 className="font-sec text-text text-2xl mb-10">Quick Details</h3>
+            <div className="gap-x-12 gap-y-10 grid sm:grid-cols-2">
+              {details.map((detail, i) => (
+                <div key={i} className="group space-y-2">
+                  <p className="font-medium text-main/60 text-sm uppercase tracking-wider">{detail.label}</p>
+                  <p className="font-light text-text group-hover:text-main text-xl transition-colors duration-300">{detail.value}</p>
+                  <SoftLine className="opacity-20 group-hover:opacity-100 transition-opacity" />
+                </div>
+              ))}
+            </div>
+          </AnimIn>
+        </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

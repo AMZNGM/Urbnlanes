@@ -23,6 +23,7 @@ export interface Project {
     city: string
     country: string
     map: string
+    neighborhood?: string
   }
   amenities?: Amenity[]
   partners?: Partner[]

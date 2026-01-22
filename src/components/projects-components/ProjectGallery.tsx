@@ -1,14 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useTranslation } from '@/translations/useTranslation'
 import { Project } from '@/types/project'
+import AnimIn from '@/components/ui/unstyled/AnimIn'
 
 export default function ProjectGallery({ project }: { project: Project }) {
-  const { t } = useTranslation()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   if (!project || !project.gallery?.length) return null
@@ -22,51 +20,61 @@ export default function ProjectGallery({ project }: { project: Project }) {
   }
 
   return (
-    <section className="relative w-full bg-black py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
-          className="text-center mb-8"
-        >
-          <h2 className="font-bold text-white text-3xl mb-4">{t('projects.gallery')}</h2>
-        </motion.div>
+    <section className="relative w-full bg-black py-24 pb-40">
+      <div className="container">
+        <AnimIn delay={0.2} className="flex md:flex-row flex-col justify-between md:items-end gap-8 mb-16">
+          <div className="space-y-4">
+            <h2 className="font-sec text-main text-4xl uppercase tracking-widest">Gallery</h2>
+            <p className="font-light text-text/60 text-lg">Visualizing the masterpiece in every detail.</p>
+          </div>
 
-        <div className="relative">
-          <div className="flex justify-between items-center mb-4">
-            <button
-              onClick={prevImage}
-              disabled={currentImageIndex === 0}
-              className="bg-white/10 hover:bg-white/20 disabled:opacity-50 backdrop-blur-md rounded-full transition-all duration-300 p-3 disabled:cursor-not-allowed"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <div className="text-white/80 text-sm">
-              {currentImageIndex + 1} / {project.gallery.length}
+          <div className="flex items-center gap-6">
+            <div className="font-mono text-text/40 text-xl">
+              <span className="text-main">{String(currentImageIndex + 1).padStart(2, '0')}</span>
+              <span className="mx-2">/</span>
+              <span>{String(project.gallery.length).padStart(2, '0')}</span>
             </div>
+            <div className="flex gap-2">
+              <button
+                onClick={prevImage}
+                className="group bg-white/5 hover:bg-main/20 border border-white/10 rounded-full transition-all duration-500 p-4"
+              >
+                <ChevronLeft className="w-6 h-6 text-text group-hover:scale-110 transition-transform" />
+              </button>
+              <button
+                onClick={nextImage}
+                className="group bg-white/5 hover:bg-main/20 border border-white/10 rounded-full transition-all duration-500 p-4"
+              >
+                <ChevronRight className="w-6 h-6 text-text group-hover:scale-110 transition-transform" />
+              </button>
+            </div>
+          </div>
+        </AnimIn>
 
+        <AnimIn delay={0.4} className="relative w-full aspect-video overflow-hidden border border-white/5 rounded-[2rem]">
+          <Image
+            src={project.gallery[currentImageIndex]}
+            alt={`${project.name} - Image ${currentImageIndex + 1}`}
+            fill
+            sizes="100vw"
+            className="object-cover transition-opacity duration-700"
+            priority
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
+        </AnimIn>
+
+        {/* Thumbnails Strip */}
+        <AnimIn delay={0.6} className="overflow-x-auto flex gap-4 mt-8 pb-4 no-scrollbar">
+          {project.gallery.map((img, i) => (
             <button
-              onClick={nextImage}
-              disabled={currentImageIndex === project.gallery.length - 1}
-              className="bg-white/10 hover:bg-white/20 disabled:opacity-50 backdrop-blur-md rounded-full transition-all duration-300 p-3 disabled:cursor-not-allowed"
+              key={i}
+              onClick={() => setCurrentImageIndex(i)}
+              className={`relative shrink-0 w-32 aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
             >
-              <ChevronRight className="w-6 h-6" />
+              <Image src={img} alt="thumb" fill className="object-cover" />
             </button>
-          </div>
-
-          <div className="relative h-[60dvh] md:h-[70dvh] overflow-hidden rounded-2xl">
-            <Image
-              src={project.gallery[currentImageIndex]}
-              alt={`${project.name} - Image ${currentImageIndex + 1}`}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
-              className="w-full h-full object-cover"
-              priority
-            />
-          </div>
-        </div>
+          ))}
+        </AnimIn>
       </div>
     </section>
   )

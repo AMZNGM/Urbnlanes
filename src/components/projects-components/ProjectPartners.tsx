@@ -1,40 +1,33 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useTranslation } from '@/translations/useTranslation'
 import { Project, Partner } from '@/types/project'
+import AnimIn from '@/components/ui/unstyled/AnimIn'
 
 export default function ProjectPartners({ project }: { project: Project }) {
-  const { t } = useTranslation()
-
   if (!project || !project.partners?.length) return null
 
   return (
-    <section className="relative w-full bg-black/80 py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
-          className="text-center mb-8"
-        >
-          <h2 className="font-bold text-white text-3xl mb-4">{t('projects.partners')}</h2>
-        </motion.div>
+    <section className="relative w-full bg-black py-24 pb-48">
+      <div className="container">
+        <AnimIn delay={0.2} className="space-y-4 text-center mb-16">
+          <h2 className="font-sec text-main text-4xl uppercase tracking-widest">Our Partners</h2>
+          <p className="font-light text-text/60 text-lg">Collaborating with the industry's best to deliver excellence.</p>
+        </AnimIn>
 
-        <div className="gap-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="gap-8 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {project.partners.map((partner: Partner, index: number) => (
-            <motion.div
+            <AnimIn
               key={partner.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white/10 backdrop-blur-md rounded-xl text-center p-6"
+              delay={0.1 * index}
+              className="group flex flex-col items-center bg-white/5 hover:bg-main/5 border border-white/10 hover:border-main/30 rounded-3xl text-center transition-all duration-500 p-10"
             >
-              <Image src={partner.logo} alt={partner.name} width={80} height={80} className="mx-auto mb-4" />
-              <h3 className="font-semibold text-white mb-2">{partner.name}</h3>
-              <p className="text-white/80 text-sm">{partner.role}</p>
-            </motion.div>
+              <div className="relative w-24 h-24 grayscale group-hover:grayscale-0 transition-all duration-500 mb-6">
+                <Image src={partner.logo} alt={partner.name} fill className="object-contain" />
+              </div>
+              <h3 className="font-medium text-text group-hover:text-main text-xl transition-colors mb-2">{partner.name}</h3>
+              <p className="text-text/40 text-sm uppercase tracking-wider">{partner.role}</p>
+            </AnimIn>
           ))}
         </div>
       </div>

@@ -1,67 +1,60 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Project } from '@/types/project'
-import { useTranslation } from '@/translations/useTranslation'
+import AnimIn from '@/components/ui/unstyled/AnimIn'
 
 export default function SimilarProjects({ currentProject, allProjects }: { currentProject: Project; allProjects: Project[] }) {
-  const { t } = useTranslation()
-
   if (!currentProject || !allProjects?.length) return null
 
   const similarProjects = allProjects.filter((project) => project.id !== currentProject.id && project.category === currentProject.category)
 
-  return (
-    <section className="relative w-full bg-black/80 py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
-          className="text-center mb-8"
-        >
-          <h2 className="font-bold text-white text-3xl mb-4">{t('projects.similar')}</h2>
-        </motion.div>
+  if (similarProjects.length === 0) return null
 
-        <div className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
+  return (
+    <section className="relative w-full bg-black py-24 pb-48">
+      <div className="container">
+        <AnimIn delay={0.2} className="space-y-4 mb-16">
+          <h2 className="font-sec text-main text-4xl uppercase tracking-widest">Similar Projects</h2>
+          <p className="font-light text-text/60 text-lg">Explore more of our architectural masterpieces.</p>
+        </AnimIn>
+
+        <div className="gap-8 grid md:grid-cols-2 lg:grid-cols-3">
           {similarProjects.slice(0, 3).map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
-            >
+            <AnimIn key={project.id} delay={0.1 * index} className="group">
               <Link href={`/projects/${project.id}`} className="block">
-                <div className="relative overflow-hidden bg-white/10 backdrop-blur-md rounded-xl">
-                  <Image
-                    src={project.gallery?.[0] || '/images/placeholder.webp'}
-                    alt={project.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="p-6">
-                    <h3 className="font-semibold text-white mb-2">{project.name}</h3>
-                    <p className="text-white/80 text-sm line-clamp-2">{project.tagline}</p>
+                <div className="relative overflow-hidden bg-white/5 border border-white/10 hover:border-main/50 rounded-3xl transition-all group-hover:-translate-y-2 duration-500">
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image
+                      src={project.gallery?.[0] || '/images/placeholder.webp'}
+                      alt={project.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-60" />
+                  </div>
+                  <div className="space-y-3 p-8">
+                    <p className="font-mono text-main text-xs uppercase tracking-widest">{project.category}</p>
+                    <h3 className="font-sec text-text group-hover:text-main text-2xl transition-colors">{project.name}</h3>
+                    <p className="font-light text-text/60 text-sm line-clamp-2 leading-relaxed">{project.tagline}</p>
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </AnimIn>
           ))}
         </div>
 
         {similarProjects.length > 3 && (
-          <div className="text-center mt-8">
+          <AnimIn delay={0.6} className="text-center mt-20">
             <Link
-              href="/projects"
-              className="inline-flex items-center bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full transition-all duration-300 px-6 py-3"
+              href="/our-projects"
+              className="inline-flex items-center bg-white/5 hover:bg-main border border-white/20 rounded-full font-sec hover:text-black text-sm uppercase tracking-widest transition-all duration-500 px-10 py-4"
             >
-              <span className="font-medium text-white">{t('projects.viewAll')}</span>
+              View All Projects
             </Link>
-          </div>
+          </AnimIn>
         )}
       </div>
     </section>

@@ -17,13 +17,6 @@ export function createMetadataGenerator(route: string) {
 export const metadataGenerators = {
   home: createMetadataGenerator('/'),
   about: createMetadataGenerator('/about'),
-  storyBrandedResidences: createMetadataGenerator('/projects/story-branded-residences'),
-  noi: createMetadataGenerator('/projects/noi'),
-  midlane: createMetadataGenerator('/projects/midlane'),
-  yellowLane: createMetadataGenerator('/projects/yellow-lane'),
-  yellowResidence: createMetadataGenerator('/projects/yellow-residence'),
-  eastlane: createMetadataGenerator('/projects/eastlane'),
-  levelsBusinessTower: createMetadataGenerator('/projects/levels-business-tower'),
   ourProjects: createMetadataGenerator('/our-projects'),
   mediaCenterNews: createMetadataGenerator('/media-center-news'),
   partnersAssociates: createMetadataGenerator('/partners-associates'),
@@ -35,4 +28,10 @@ export const metadataGenerators = {
   termsOfUse: createMetadataGenerator('/terms-of-use'),
   getInTouch: createMetadataGenerator('/get-in-touch'),
   notFound: createMetadataGenerator('/*'),
+  project: (data: any) => ({
+    title: data.title,
+    description: data.description,
+    keywords: data.keywords,
+    alternates: data.alternates,
+  }),
 }

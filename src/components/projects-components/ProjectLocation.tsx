@@ -1,45 +1,69 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useTranslation } from '@/translations/useTranslation'
 import { Project } from '@/types/project'
+import AnimIn from '@/components/ui/unstyled/AnimIn'
+import { SoftLine } from '@/components/ui/effects/Lines'
 
 export default function ProjectLocation({ project }: { project: Project }) {
-  const { t } = useTranslation()
-
   if (!project || !project.location) return null
 
   return (
-    <section className="relative w-full bg-black/80 py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
-          className="text-center mb-8"
-        >
-          <h2 className="font-bold text-white text-3xl mb-4">{t('projects.location')}</h2>
-        </motion.div>
-
-        <div className="gap-8 grid md:grid-cols-2">
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-8">
-            <div className="relative w-full h-64 md:h-96 aspect-video overflow-hidden rounded-lg mb-6">
-              <Image
-                src={project.location.map}
-                alt={`${project.name} Location`}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
-                className="w-full h-full object-cover"
-                priority
-              />
-            </div>
-
+    <section className="relative w-full overflow-hidden bg-black py-24 pb-48">
+      <div className="container">
+        <div className="items-center gap-16 grid lg:grid-cols-12">
+          {/* Location Info */}
+          <AnimIn delay={0.2} className="space-y-10 lg:col-span-4">
             <div className="space-y-4">
-              <h3 className="font-semibold text-white text-xl mb-2">{project.location.city}</h3>
-              <p className="text-white/80">{project.location.country}</p>
+              <h2 className="font-sec text-main text-4xl uppercase tracking-widest">Location</h2>
+              <p className="font-light text-text/60 text-lg">Strategically positioned to offer the best of urban living.</p>
             </div>
-          </div>
+
+            <div className="space-y-8 bg-white/5 border border-white/10 rounded-3xl p-10">
+              <div className="space-y-2">
+                <p className="font-medium text-main/60 text-sm uppercase tracking-wider">City</p>
+                <p className="font-light text-text text-2xl">{project.location.city}</p>
+                <SoftLine className="opacity-20" />
+              </div>
+
+              <div className="space-y-2">
+                <p className="font-medium text-main/60 text-sm uppercase tracking-wider">Country</p>
+                <p className="font-light text-text text-2xl">{project.location.country}</p>
+                <SoftLine className="opacity-20" />
+              </div>
+
+              {project.location.neighborhood && (
+                <div className="space-y-2">
+                  <p className="font-medium text-main/60 text-sm uppercase tracking-wider">Area</p>
+                  <p className="font-light text-text text-2xl">{project.location.neighborhood}</p>
+                  <SoftLine className="opacity-20" />
+                </div>
+              )}
+            </div>
+          </AnimIn>
+
+          {/* Map Image */}
+          <AnimIn delay={0.4} className="group relative aspect-[16/10] overflow-hidden lg:col-span-8 border border-white/10 rounded-[3rem]">
+            <Image
+              src={project.location.map}
+              alt={`${project.name} Location`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 66vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-1000"
+              priority
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent pointer-events-none" />
+
+            {/* Map Pointer Decoration */}
+            <div className="top-1/2 left-1/2 absolute flex justify-center items-center -translate-x-1/2 -translate-y-1/2">
+              <div className="relative">
+                <div className="absolute inset-0 bg-main opacity-20 rounded-full animate-ping" />
+                <div className="relative w-8 h-8 flex justify-center items-center bg-main shadow-2xl border-4 border-black rounded-full">
+                  <div className="w-2 h-2 bg-white rounded-full" />
+                </div>
+              </div>
+            </div>
+          </AnimIn>
         </div>
       </div>
     </section>
