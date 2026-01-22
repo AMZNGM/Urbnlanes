@@ -43,27 +43,32 @@ export default function ProjectLocation({ project }: { project: Project }) {
           </AnimIn>
 
           {/* Map Image */}
-          <AnimIn delay={0.4} className="group relative aspect-[16/10] overflow-hidden lg:col-span-8 border border-white/10 rounded-[3rem]">
-            <Image
-              src={project.location.map}
-              alt={`${project.name} Location`}
-              fill
-              sizes="(max-width: 1024px) 100vw, 66vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-1000"
-              priority
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent pointer-events-none" />
+          {project.location.map && (
+            <AnimIn
+              delay={0.4}
+              className="group relative aspect-[16/10] overflow-hidden lg:col-span-8 border border-white/10 rounded-[3rem]"
+            >
+              <Image
+                src={project.location.map}
+                alt={`${project.name} Location`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 66vw"
+                className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                priority
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent pointer-events-none" />
 
-            {/* Map Pointer Decoration */}
-            <div className="top-1/2 left-1/2 absolute flex justify-center items-center -translate-x-1/2 -translate-y-1/2">
-              <div className="relative">
-                <div className="absolute inset-0 bg-main opacity-20 rounded-full animate-ping" />
-                <div className="relative w-8 h-8 flex justify-center items-center bg-main shadow-2xl border-4 border-black rounded-full">
-                  <div className="w-2 h-2 bg-white rounded-full" />
+              {/* Map Pointer Decoration */}
+              <div className="top-1/2 left-1/2 absolute flex justify-center items-center -translate-x-1/2 -translate-y-1/2">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-main opacity-20 rounded-full animate-ping" />
+                  <div className="relative w-8 h-8 flex justify-center items-center bg-main shadow-2xl border-4 border-black rounded-full">
+                    <div className="w-2 h-2 bg-white rounded-full" />
+                  </div>
                 </div>
               </div>
-            </div>
-          </AnimIn>
+            </AnimIn>
+          )}
         </div>
       </div>
     </section>

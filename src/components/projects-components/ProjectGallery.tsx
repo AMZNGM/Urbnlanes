@@ -1,13 +1,19 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Project } from '@/types/project'
+import { Lamp, ToggleLeft, ToggleRight } from 'lucide-react'
+import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
+import AnimText from '@/components/ui/text/AnimText'
+import ImageIn from '@/components/ui/unstyled/ImageIn'
+import MainBtn from '@/components/ui/buttons/MainBtn'
+import ArrowBtn from '@/components/ui/buttons/ArrowBtn'
 
 export default function ProjectGallery({ project }: { project: Project }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [fullGallery, setFullGallery] = useState(null as string[] | null)
+  const [darkMode, setDarkMode] = useState(null as string[] | null)
 
   if (!project || !project.gallery?.length) return null
 
@@ -20,62 +26,101 @@ export default function ProjectGallery({ project }: { project: Project }) {
   }
 
   return (
-    <section className="relative w-full bg-black py-24 pb-40">
-      <div className="container">
-        <AnimIn delay={0.2} className="flex md:flex-row flex-col justify-between md:items-end gap-8 mb-16">
-          <div className="space-y-4">
-            <h2 className="font-sec text-main text-4xl uppercase tracking-widest">Gallery</h2>
-            <p className="font-light text-text/60 text-lg">Visualizing the masterpiece in every detail.</p>
+    <section
+      className={`relative w-dvw overflow-hidden px-18 max-md:px-4 py-12 space-y-12 transition-colors duration-300 ${!darkMode ? 'bg-black text-text' : 'text-black bg-text'}`}
+    >
+      <AnimIn delay={1} className="group flex items-center gap-2">
+        <MainBtn onClick={() => setDarkMode(darkMode ? null : project.gallery || [])} size="lg">
+          <Lamp />
+        </MainBtn>
+
+        <div className="w-fit bg-text opacity-0 group-hover:opacity-100 rounded-2xl text-black text-sm -translate-x-full group-hover:translate-x-0 duration-300 px-4 py-4">
+          <TText tKey="gallery.lighting" />
+        </div>
+      </AnimIn>
+
+      <AnimIn className="flex max-md:flex-col justify-between items-end max-md:items-center gap-8 max-md:gap-12">
+        <div className="space-y-2 max-md:text-center">
+          <AnimText as={'h2'} delay={0.9} className="font-sec text-4xl">
+            <TText tKey="gallery.title" />
+          </AnimText>
+
+          <AnimText as={'p'} delay={1.2} className="opacity-75 font-light">
+            <TText tKey="gallery.description" />
+          </AnimText>
+        </div>
+
+        <div className="max-md:w-full flex max-md:justify-between items-center gap-6">
+          <div className="font-mono text-text/40 text-xl">
+            <span className="text-main">{String(currentImageIndex + 1).padStart(2, '0')}</span>
+            <span className="mx-2">/</span>
+            <span>{String(project.gallery.length).padStart(2, '0')}</span>
           </div>
 
-          <div className="flex items-center gap-6">
-            <div className="font-mono text-text/40 text-xl">
-              <span className="text-main">{String(currentImageIndex + 1).padStart(2, '0')}</span>
-              <span className="mx-2">/</span>
-              <span>{String(project.gallery.length).padStart(2, '0')}</span>
-            </div>
-            <div className="flex gap-2">
-              <button
-                onClick={prevImage}
-                className="group bg-white/5 hover:bg-main/20 border border-white/10 rounded-full transition-all duration-500 p-4"
-              >
-                <ChevronLeft className="w-6 h-6 text-text group-hover:scale-110 transition-transform" />
-              </button>
-              <button
-                onClick={nextImage}
-                className="group bg-white/5 hover:bg-main/20 border border-white/10 rounded-full transition-all duration-500 p-4"
-              >
-                <ChevronRight className="w-6 h-6 text-text group-hover:scale-110 transition-transform" />
-              </button>
-            </div>
+          <div className="flex rtl:flex-row-reverse gap-6">
+            <ArrowBtn onClick={prevImage} className="scale-125" />
+            <ArrowBtn onClick={nextImage} className="rotate-180 scale-125" />
           </div>
-        </AnimIn>
+        </div>
+      </AnimIn>
 
-        <AnimIn delay={0.4} className="relative w-full aspect-video overflow-hidden border border-white/5 rounded-[2rem]">
-          <Image
-            src={project.gallery[currentImageIndex]}
-            alt={`${project.name} - Image ${currentImageIndex + 1}`}
-            fill
-            sizes="100vw"
-            className="object-cover transition-opacity duration-700"
-            priority
+      <ImageIn
+        src={project.gallery[currentImageIndex]}
+        alt={`${project.name} - Image ${currentImageIndex + 1}`}
+        priority
+        sizes="100vw"
+        className="hover:scale-100!"
+        divClassName="aspect-video overflow-hidden rounded-2xl"
+      />
+
+      <AnimIn delay={0.6} style={{ scrollbarWidth: 'none' }} className="overflow-x-auto flex gap-4 p-4">
+        {project.gallery.map((img, i) => (
+          <ImageIn
+            src={img}
+            alt="thumb"
+            key={i}
+            onClick={() => setCurrentImageIndex(i)}
+            divClassName={`relative w-66 max-md:w-33 shrink-0 aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
           />
-          <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
-        </AnimIn>
+        ))}
+      </AnimIn>
 
-        {/* Thumbnails Strip */}
-        <AnimIn delay={0.6} className="overflow-x-auto flex gap-4 mt-8 pb-4 no-scrollbar">
+      <AnimIn delay={0.6} style={{ scrollbarWidth: 'none' }} className="gap-4 max-md:gap-2 grid grid-cols-8 max-md:grid-cols-4">
+        {project.gallery.map((img, i) => (
+          <ImageIn
+            src={img}
+            alt="thumb"
+            key={i}
+            onClick={() => setCurrentImageIndex(i)}
+            divClassName={`relative w-full aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
+          />
+        ))}
+      </AnimIn>
+
+      <div className="group w-full flex flex-row-reverse items-center gap-2">
+        <MainBtn onClick={() => setFullGallery(fullGallery ? null : project.gallery || [])} size="lg" className="z-10 relative">
+          {fullGallery ? <ToggleLeft /> : <ToggleRight />}
+        </MainBtn>
+
+        <div className="w-fit bg-text opacity-0 group-hover:opacity-100 rounded-2xl text-black text-sm translate-x-full group-hover:translate-x-0 duration-300 px-4 py-4">
+          <TText tKey="gallery.fullGallery" />
+        </div>
+      </div>
+
+      {fullGallery && (
+        <AnimIn style={{ scrollbarWidth: 'none' }} className="flex flex-col space-y-8 max-md:space-y-4">
           {project.gallery.map((img, i) => (
-            <button
+            <ImageIn
+              src={img}
+              alt="thumb"
               key={i}
               onClick={() => setCurrentImageIndex(i)}
-              className={`relative shrink-0 w-32 aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
-            >
-              <Image src={img} alt="thumb" fill className="object-cover" />
-            </button>
+              className="hover:scale-100!"
+              divClassName="relative w-full h-full aspect-video rounded-xl overflow-hidden"
+            />
           ))}
         </AnimIn>
-      </div>
+      )}
     </section>
   )
 }

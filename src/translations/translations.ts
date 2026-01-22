@@ -29,14 +29,7 @@ export const TRANSLATIONS = {
       levelsBusinessTower: 'Levels Business Tower',
       selectedProjectsTitle: 'Selected projects',
     },
-    modal: {
-      brochure: 'brochure',
-      viewFullProject: 'View Full Project',
-      partners: 'Partners',
-      amenities: 'Amenities',
-      overview: 'Project Overview',
-      status: 'Status',
-    },
+
     footer: {
       copyright: 'All rights reserved',
       followUs: 'Follow Us',
@@ -72,6 +65,8 @@ export const TRANSLATIONS = {
       completed: 'Completed',
       underConstruction: 'Under Construction',
       planned: 'Planned',
+      residential: 'Residential',
+      'Autobiographies & News': 'Autobiographies & News',
       latestNews: 'Latest News',
       allNews: 'All News',
       aboutUrbnlanes: 'About Urbnlanes',
@@ -112,11 +107,31 @@ export const TRANSLATIONS = {
       'Mutlaa City': 'Mutlaa City',
       'West Abdullah Mubarak City': 'West Abdullah Mubarak City',
     },
-
     search: {
       placeholder: 'Search...',
       noResults: 'No results found',
       searching: 'Searching...',
+    },
+    modal: {
+      brochure: 'brochure',
+      viewFullProject: 'View Full Project',
+      partners: 'Partners',
+      amenities: 'Amenities',
+      overview: 'Project Overview',
+      status: 'Status',
+    },
+    details: {
+      status: 'Status',
+      city: 'City',
+      country: 'Country',
+      category: 'Category',
+      area: 'Area',
+    },
+    gallery: {
+      title: 'Project Gallery',
+      description: 'Visualizing the masterpiece in every detail.',
+      fullGallery: 'full gallery',
+      lighting: 'Lighting',
     },
 
     db: {
@@ -401,14 +416,7 @@ export const TRANSLATIONS = {
       westAbdullahMubarakCity: 'مدينة عبد الله المبارك',
       selectedProjectsTitle: 'مشاريع مختارة',
     },
-    modal: {
-      brochure: 'الكتيب',
-      viewFullProject: 'عرض المشروع بالكامل',
-      partners: 'الشركاء',
-      amenities: 'المرافق',
-      overview: 'نظرة عامة على المشروع',
-      status: 'الحالة',
-    },
+
     footer: {
       copyright: 'جميع الحقوق محفوظة',
       followUs: 'تابعنا',
@@ -444,6 +452,8 @@ export const TRANSLATIONS = {
       completed: 'مكتمل',
       underConstruction: 'تحت الإنشاء',
       planned: 'مخطط له',
+      residential: 'سكني',
+      'Autobiographies & News': 'السيرة الذاتية والأخبار',
       latestNews: 'احدث الاخبار',
       allNews: 'كل الاخبار',
       aboutUrbnlanes: 'عن ايربن لاينز',
@@ -484,11 +494,31 @@ export const TRANSLATIONS = {
       'Mutlaa City': 'مدينة المطلاع',
       'West Abdullah Mubarak City': 'مدينة غرب عبد الله المبارك',
     },
-
     search: {
       placeholder: 'بحث...',
       noResults: 'لا توجد نتائج',
       searching: 'جاري البحث...',
+    },
+    modal: {
+      brochure: 'الكتيب',
+      viewFullProject: 'عرض المشروع بالكامل',
+      partners: 'الشركاء',
+      amenities: 'المرافق',
+      overview: 'نظرة عامة على المشروع',
+      status: 'الحالة',
+    },
+    details: {
+      status: 'الحالة',
+      city: 'المدينة',
+      country: 'الدولة',
+      category: 'الفئة',
+      area: 'المنطقة',
+    },
+    gallery: {
+      title: 'معرض المشاريع',
+      description: 'تصوير التحفة في كل تفاصيلها.',
+      fullGallery: 'كل الصور',
+      lighting: 'الإضاءة',
     },
 
     db: {

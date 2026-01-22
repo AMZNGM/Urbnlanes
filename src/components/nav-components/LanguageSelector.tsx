@@ -31,7 +31,7 @@ export default function LanguageSelector({ navbarData, className = '' }: { navba
               handleLanguageChange(language)
               setLanguageSelectorOpen(false)
             }}
-            className={`relative w-full text-left hover:bg-text/5 cursor-pointer duration-300 py-3 px-4 ${
+            className={`relative w-full text-left hover:bg-text/5 cursor-pointer duration-300 font-arab py-3 px-4 ${
               isClient && selectedLanguage === language.name ? 'bg-text/10' : 'text-text/70 hover:text-text'
             }`}
           >

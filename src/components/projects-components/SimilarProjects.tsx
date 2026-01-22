@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Project } from '@/types/project'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
+import TText from '@/translations/TText'
 
 export default function SimilarProjects({ currentProject, allProjects }: { currentProject: Project; allProjects: Project[] }) {
   if (!currentProject || !allProjects?.length) return null
@@ -37,8 +38,8 @@ export default function SimilarProjects({ currentProject, allProjects }: { curre
                   </div>
                   <div className="space-y-3 p-8">
                     <p className="font-mono text-main text-xs uppercase tracking-widest">{project.category}</p>
-                    <h3 className="font-sec text-text group-hover:text-main text-2xl transition-colors">{project.name}</h3>
-                    <p className="font-light text-text/60 text-sm line-clamp-2 leading-relaxed">{project.tagline}</p>
+                    <h3 className="font-sec text-text group-hover:text-main text-2xl transition-colors"><TText tKey={`db.projects.${project.id}.name`} /></h3>
+                    <p className="font-light text-text/60 text-sm line-clamp-2 leading-relaxed"><TText tKey={`db.projects.${project.id}.tagline`} /></p>
                   </div>
                 </div>
               </Link>

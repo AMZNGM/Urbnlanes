@@ -22,7 +22,7 @@ export default function SideNavnar({ className = '', navbarData }: { className?:
       }}
       exit={{ opacity: 0, x: '-100%' }}
       transition={{ type: 'spring', stiffness: 150, damping: 20, duration: 0.4, ease: 'easeInOut' }}
-      className={`fixed top-0 bottom-0 rtl:left-0 ltr:right-0 w-full h-dvh max-w-md bg-bg ltr:border-s rtl:border-r border-main/25 shadow-2xl z-50 ${className} `}
+      className={`fixed top-0 bottom-0 rtl:left-0 ltr:right-0 w-full h-dvh max-w-md bg-bg ltr:border-s rtl:border-r border-main/25 touch-none shadow-2xl z-50 ${className} `}
     >
       <MobileSearch navbarData={navbarData} />
       <MobileMenuLinks navbarData={navbarData} />

@@ -8,8 +8,9 @@ import dynamic from 'next/dynamic'
 import db from '@/database/urbnlanes-db.json'
 
 const ProjectHero = dynamic(() => import('@/components/projects-components/ProjectHero'))
-const ProjectGallery = dynamic(() => import('@/components/projects-components/ProjectGallery'))
+const ProjectBreadcrumb = dynamic(() => import('@/components/projects-components/ProjectBreadcrumb'))
 const ProjectDetails = dynamic(() => import('@/components/projects-components/ProjectDetails'))
+const ProjectGallery = dynamic(() => import('@/components/projects-components/ProjectGallery'))
 const ProjectPartners = dynamic(() => import('@/components/projects-components/ProjectPartners'))
 const ProjectAmenities = dynamic(() => import('@/components/projects-components/ProjectAmenities'))
 const ProjectLocation = dynamic(() => import('@/components/projects-components/ProjectLocation'))
@@ -49,12 +50,13 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <Suspense fallback={<LoadingLogo />}>
       <ProjectHero project={project} />
+      <ProjectBreadcrumb project={project} />
       <ProjectDetails project={project} />
       <ProjectGallery project={project} />
       <ProjectPartners project={project} />
-      <ProjectAmenities project={project} />
+      {/* <ProjectAmenities project={project} />
       <ProjectLocation project={project} />
-      <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} />
+      <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} /> */}
     </Suspense>
   )
 }

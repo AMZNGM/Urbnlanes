@@ -19,7 +19,7 @@ export default function HeroContent({
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
-        className="z-40 relative max-w-5xl space-y-4"
+        className="z-40 relative space-y-4 max-w-5xl"
       >
         <h1 className="font-sec max-md:text-5xl text-6xl leading-12 tracking-tight">{currentSlide.title}</h1>
 
@@ -27,7 +27,7 @@ export default function HeroContent({
           {currentSlide.description}
         </p>
 
-        <MainBtn href={currentSlide.buttonHref} className="z-40 relative max-md:w-full mt-6">
+        <MainBtn href={currentSlide.buttonHref} className="z-40 relative mt-6 max-md:w-full">
           {currentSlide.buttonText}
         </MainBtn>
       </motion.div>
