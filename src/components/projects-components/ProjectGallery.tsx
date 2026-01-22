@@ -30,7 +30,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
       className={`relative w-dvw overflow-hidden px-18 max-md:px-4 py-12 space-y-12 transition-colors duration-300 ${!darkMode ? 'bg-black text-text' : 'text-black bg-text'}`}
     >
       <AnimIn delay={1} className="group flex items-center gap-2">
-        <MainBtn onClick={() => setDarkMode(darkMode ? null : project.gallery || [])} size="lg">
+        <MainBtn onClick={() => setDarkMode(darkMode ? null : project.gallery || [])} size="lg" className="z-10 relative">
           <Lamp />
         </MainBtn>
 

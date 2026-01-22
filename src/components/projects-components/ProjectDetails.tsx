@@ -71,7 +71,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
 
         <AnimIn className="relative grid grid-cols-4 col-span-3 bg-main/25 rounded-2xl text-center">
           {details.map((detail, index) => (
-            <div key={index} className="relative p-4">
+            <div key={index} className="relative px-2 py-4">
               <AnimText delay={0.1 * index} className="font-medium text-xs tracking-wider">
                 <TText tKey={detail.labelKey} />
               </AnimText>

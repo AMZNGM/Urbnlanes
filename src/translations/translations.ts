@@ -79,6 +79,7 @@ export const TRANSLATIONS = {
       sisterCompanies: 'Our Sister Companies in Kuwait and Egypt',
       ourStory: 'Our Story',
       ourCoreValues: 'Our Core Values',
+      collab: "Collaborating with the industry's best to deliver excellence.",
     },
 
     amenities: {
@@ -466,6 +467,7 @@ export const TRANSLATIONS = {
       sisterCompanies: 'الشركاء الأخوات في الكويت ومصر',
       ourStory: 'قصتنا',
       ourCoreValues: 'قيمنا الرئيسية',
+      collab: 'التعاون مع الأفضل في الصناعة لتحقيق التميز.',
     },
 
     amenities: {
