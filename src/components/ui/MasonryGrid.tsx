@@ -57,7 +57,7 @@ export default function MasonryGrid({ projects, openModal }: { projects: any[]; 
   }, [projects, columnsCount])
 
   return (
-    <div ref={containerRef} className="flex md:flex-row flex-col gap-4 w-full">
+    <div ref={containerRef} className="w-full flex md:flex-row flex-col gap-4">
       {columns.map((col, colIndex) => {
         // Dynamic Parallax Logic
         let yTransform: any = 0
@@ -105,7 +105,7 @@ function ProjectCard({ project, index, openModal }: { project: any; index: numbe
       viewport={{ once: true }}
       transition={{ duration: 0.75, delay: index * 0.05 }}
       style={{ y: 0 }}
-      className="group relative rounded-xl w-full h-full min-h-75 overflow-hidden cursor-pointer"
+      className="group relative w-full h-full min-h-75 overflow-hidden rounded-xl cursor-pointer"
     >
       <ImageIn
         src={project.gallery?.[0] || ''}
@@ -117,9 +117,8 @@ function ProjectCard({ project, index, openModal }: { project: any; index: numbe
         hasOverlay
       />
 
-      <motion.div className="right-2 bottom-2 left-2 absolute bg-black/25 md:opacity-0 group-hover:opacity-100 backdrop-blur-xl p-4 rounded-2xl overflow-hidden transition-all md:translate-x-8 md:translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 duration-500">
+      <motion.div className="right-2 bottom-2 left-2 absolute overflow-hidden bg-black/25 md:opacity-0 group-hover:opacity-100 backdrop-blur-xl rounded-2xl transition-all md:translate-x-8 md:translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 duration-500 p-4">
         <h3 className="font-mono">
-          <TText tKey={`db.projects.${project.id}.name`} />
           <TText tKey={`db.projects.${project.id}.name`} />
         </h3>
         <span className="max-w-sm font-mono text-xs normal-case tracking-wide">
