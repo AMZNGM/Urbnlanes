@@ -62,6 +62,7 @@ export const TRANSLATIONS = {
       video: 'Video',
       ourValues: 'Our Values',
       seeMore: 'See More',
+      findOutMore: 'find out more',
       completed: 'Completed',
       underConstruction: 'Under Construction',
       planned: 'Planned',
@@ -76,6 +77,7 @@ export const TRANSLATIONS = {
       ourHeritage: 'Our Heritage',
       dreams: 'Three Decades of Building Dreams',
       ourNetwork: 'Our Network',
+      sisCompanies: 'Sister Companies',
       sisterCompanies: 'Our Sister Companies in Kuwait and Egypt',
       ourStory: 'Our Story',
       ourCoreValues: 'Our Core Values',
@@ -86,6 +88,16 @@ export const TRANSLATIONS = {
       similarProjects: 'Similar Projects',
       similarProjectsDesc: 'Explore more of our architectural masterpieces',
       viewAllProjects: 'View All Projects',
+      partnersTitle: 'Our Partnership Ecosystem',
+      partnersDesc: 'Building excellence through strategic partnerships and trusted associates',
+      partnersDesc2:
+        'At Urbnlanes, we believe in the power of collaboration. Our success is built on strong relationships with industry leaders, innovative partners, and trusted associates who share our vision for excellence in real estate development.',
+      allPartners: 'All Partners',
+      projectPartners: 'Project Partners',
+      partnersCTA: 'Join Our Partnership Network',
+      partnersCTADesc:
+        'We are always looking to collaborate with innovative companies and talented professionals who share our commitment to excellence and vision for the future of real estate.',
+      projectsDelivered: 'Projects Delivered',
     },
 
     amenities: {
@@ -514,6 +526,7 @@ export const TRANSLATIONS = {
       video: 'فيديو',
       ourValues: 'قيمنا',
       seeMore: 'اقرأ المزيد',
+      findOutMore: 'تعلم المزيد',
       completed: 'مكتمل',
       underConstruction: 'تحت الإنشاء',
       planned: 'مخطط له',
@@ -528,6 +541,7 @@ export const TRANSLATIONS = {
       ourHeritage: 'روابطنا',
       dreams: 'ثلاث عشر عاماً من الإنشاء',
       ourNetwork: 'شبكتنا',
+      sisCompanies: 'الشركاء الأخوات',
       sisterCompanies: 'الشركاء الأخوات في الكويت ومصر',
       ourStory: 'قصتنا',
       ourCoreValues: 'قيمنا الرئيسية',
@@ -539,8 +553,16 @@ export const TRANSLATIONS = {
       similarProjects: 'مشاريع مشابهة',
       similarProjectsDesc: 'اكتشف المزيد من تحفنا المعمارية',
       viewAllProjects: 'عرض جميع المشاريع',
+      partnersTitle: 'مجتمع العملاء المتعاون',
+      partnersDesc: 'تنمية النجاح من خلال العمل الاستراتيجي مع الشركاء الخطوطييين والناس الموثوقين.',
+      partnersDesc2:
+        'في ايربن لاينز، نؤمن بقوة التعاون. نحن نبني نجاحنا على قواعد آرائنا قوية مع الشركاء العليا والمتطلبين والموثوقين في تنمية العقارات.',
+      allPartners: 'جميع الشركاء',
+      projectPartners: 'شركاء المشروع',
+      partnersCTA: 'انضم إلى شبكتنا الشريك',
+      partnersCTADesc: 'نحن دائما نبحث عن التعاون مع الشركات المتحدثة والمهارات المتميزة التي تواصل مع رؤساتنا ورؤيتنا لمستقبل العقارات.',
+      projectsDelivered: 'المشاريع المكتملة',
     },
-
     amenities: {
       Gym: 'صالة ألعاب رياضية',
       'Bike Lanes': 'مسارات الدراجات',

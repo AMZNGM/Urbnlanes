@@ -4,7 +4,7 @@ import AnimText from '@/components/ui/text/AnimText'
 
 export default function TextPanel({ className = '', paraClassName = '', imageClassName = '', title = '', para = '', image = '' }) {
   return (
-    <section className={`relative w-dvw overflow-hidden bg-text text-black px-4 py-24 ${className}`}>
+    <section className={`relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24 ${className}`}>
       {image && (
         <Image
           src={image}
@@ -18,15 +18,15 @@ export default function TextPanel({ className = '', paraClassName = '', imageCla
       <div className="z-10 relative w-full max-w-5xl h-full flex flex-col justify-center items-center gap-4 text-center mx-auto">
         {title && (
           <div data-scroll data-scroll-speed="0.02">
-            <AnimText as="h3" className="overflow-y-hidden text-5xl rtl:leading-14">
+            <AnimText as="h2" className="font-sec text-4xl text-center rtl:leading-12 mb-12">
               <TText tKey={title} />
             </AnimText>
           </div>
         )}
 
         {para && (
-          <div data-scroll data-scroll-speed="0.05">
-            <AnimText as="p" stagger={0.01} className={`text-2xl normal-case opacity-60 ${paraClassName}`}>
+          <div data-scroll data-scroll-speed="0.05" className="max-w-4xl space-y-6 text-center mx-auto">
+            <AnimText as="p" className={`opacity-80 text-lg ${paraClassName}`}>
               <TText tKey={para} />
             </AnimText>
           </div>
