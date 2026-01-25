@@ -1,23 +1,27 @@
 import { Suspense } from 'react'
-import { metadataGenerators } from '@/lib/seo-helpers'
+import { metadataGenerators } from '@/seo/seo-helpers'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import dynamic from 'next/dynamic'
 
 import SectionHero from '@/components/hero-components/sectionHero'
-const TextPanel = dynamic(() => import('@/components/ui/TextPanel'))
-const OurCoreValues = dynamic(() => import('@/components/OurCoreValues'))
-const SisterCompanies = dynamic(() => import('@/components/SisterCompanies'))
-const HoldingCompany = dynamic(() => import('@/components/HoldingCompany'))
-const OurStory = dynamic(() => import('@/components/OurStory'))
-const BehindTheFigures = dynamic(() => import('@/components/BehindTheFigures'))
-const Newsletter = dynamic(() => import('@/components/Newsletter'))
+const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
+const OurCoreValues = dynamic(() => import('@/components/about-components/OurCoreValues'))
+const SisterCompanies = dynamic(() => import('@/components/home-components/SisterCompanies'))
+const HoldingCompany = dynamic(() => import('@/components/about-components/HoldingCompany'))
+const OurStory = dynamic(() => import('@/components/about-components/OurStory'))
+const BehindTheFigures = dynamic(() => import('@/components/about-components/BehindTheFigures'))
+const Newsletter = dynamic(() => import('@/components/shared/Newsletter'))
 
 export const generateMetadata = metadataGenerators.about
 
 export default function AboutPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      <SectionHero title="aboutUrbnlanes" image="/images/projects/yellow-residence/yr-gallery-11.webp" video="/videos/one-year-1.mp4" />
+      <SectionHero
+        title="common.aboutUrbnlanes"
+        image="/images/projects/yellow-residence/yr-gallery-11.webp"
+        video="/videos/one-year-1.mp4"
+      />
       <TextPanel title="common.aboutUs" para="db.whoweare.description2" />
       <OurCoreValues />
       <SisterCompanies />
@@ -31,10 +35,8 @@ export default function AboutPage() {
         className="bg-black! text-text"
         paraClassName="opacity-100 text-xl"
       />
-      <div className="space-y-8 bg-text! py-12">
-        <TextPanel image="/images/map.webp" imageClassName="opacity-100 object-contain!" />
-        <Newsletter withLine={false} className="bg-text text-black! pt-12" />
-      </div>
+      {/* <TextPanel image="/images/map.webp" ima geClassName="opacity-100 object-contain! my-24" /> */}
+      <Newsletter dark={false} />
     </Suspense>
   )
 }

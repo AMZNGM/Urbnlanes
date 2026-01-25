@@ -1,5 +1,5 @@
 import TText from '@/translations/TText'
-import AnimText from '@/components/ui/text/AnimText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 

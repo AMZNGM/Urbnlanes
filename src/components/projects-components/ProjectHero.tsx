@@ -1,6 +1,6 @@
 import { Project } from '@/types/project'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
-import AnimText from '@/components/ui/text/AnimText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '../ui/unstyled/ImageIn'
 import TText from '@/translations/TText'
 

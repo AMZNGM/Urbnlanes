@@ -1,26 +1,21 @@
 export default function ShinyText({
   children,
   as = 'div',
-  disabled = false,
-  speed = 8,
   className = '',
-  textColor = '#f0eee9',
+  dark = true,
 }: {
   children: React.ReactNode
   as?: React.ElementType
-  disabled?: boolean
-  speed?: number
   className?: string
-  textColor?: string
+  dark?: boolean
 }) {
-  const animationDuration = `${speed}s`
   const Tag = as
 
   return (
     <>
       <Tag
-        className={`inline-block bg-clip-text text-main/10 bg-linear-to-r bg-size-[200%_100%] ${disabled ? '' : 'animate-shine'} ${className}`}
-        style={{ animationDuration, backgroundImage: `linear-gradient(90deg, ${textColor}, ${textColor}20, ${textColor})` }}
+        className={`inline-block bg-clip-text bg-linear-to-r bg-size-[200%_100%] animate-shine ${dark ? 'text-current/10' : 'text-current'} ${className}`}
+        style={{ animationDuration: '8s', backgroundImage: `linear-gradient(90deg, #f0eee9, #f0eee920, #f0eee9` }}
       >
         {children}
       </Tag>

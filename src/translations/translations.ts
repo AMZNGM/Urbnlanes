@@ -88,6 +88,7 @@ export const TRANSLATIONS = {
       similarProjects: 'Similar Projects',
       similarProjectsDesc: 'Explore more of our architectural masterpieces',
       viewAllProjects: 'View All Projects',
+      allProjects: 'All Projects',
       partnersTitle: 'Our Partnership Ecosystem',
       partnersDesc: 'Building excellence through strategic partnerships and trusted associates',
       partnersDesc2:
@@ -98,6 +99,23 @@ export const TRANSLATIONS = {
       partnersCTADesc:
         'We are always looking to collaborate with innovative companies and talented professionals who share our commitment to excellence and vision for the future of real estate.',
       projectsDelivered: 'Projects Delivered',
+      projectsDesc: 'Explore our comprehensive portfolio of architectural masterpieces and innovative developments across the Middle East.',
+      filterProjects: 'Filter Projects',
+      projectCategory: 'Category',
+      projectStatus: 'Status',
+      projectCity: 'City',
+      resetFilters: 'Reset Filters',
+      projectStatistics: 'Project Statistics',
+      totalProjects: 'Total Projects',
+      filteredProjects: 'Filtered Projects',
+      categories: 'Categories',
+      cities: 'Cities',
+      noProjectsFoundCriteria: 'No projects found matching your criteria.',
+      featured: 'Featured',
+      viewProject: 'View Project',
+      listView: 'List View',
+      gridView: 'Grid View',
+      viewOnMap: 'View On Map',
     },
 
     amenities: {
@@ -151,6 +169,24 @@ export const TRANSLATIONS = {
       description: 'Visualizing the masterpiece in every detail.',
       fullGallery: 'full gallery',
       lighting: 'Lighting',
+    },
+
+    projects: {
+      overview: {
+        investmentValue: 'Investment Value',
+        startDate: 'Start Date',
+        endDate: 'Completion Date',
+        workingTime: 'Working Time',
+        buildingArea: 'Building Area',
+      },
+      videoGallery: {
+        title: 'Video Gallery',
+        video: 'Video',
+      },
+      constructionGallery: {
+        title: 'Construction Updates',
+        update: 'Update',
+      },
     },
 
     db: {
@@ -320,19 +356,19 @@ export const TRANSLATIONS = {
           tagline: "Yellow isn't just a color, it's a vibe; a way of living for the daring & the bold",
           shortDesc:
             'in close proximity to both the old and new Suez Road. This prime location offers easy access to the city’s major landmarks and attractions.',
-          description:
+          description: [
             'Yellow is a residential compound designed to provide residents with a life of bliss and empower them to reach their higher selves. The architecture and interior design of Yellow are carefully crafted to create a sense of calm and tranquility, with a focus on natural materials and open spaces to allow the community to thrive through an unparalleled experience.',
-          description2:
             'in close proximity to both the old and new Suez Road. This prime location offers easy access to the city’s major landmarks and attractions.',
+          ],
         },
         'east-lane': {
           name: 'Eastlane',
           tagline: 'The EastLane building is one of the most iconic, prominent and bustling areas in New Cairo.',
           shortDesc: 'An administrative and commercial space based in the heart of New Cairo.',
-          description:
+          description: [
             'Raef Fahmi is an Egyptian architect and interior designer who has been working in the field for many years and has built a reputation known by everyone. Fahmi has worked on some of the most prominent and iconic projects in Egypt.',
-          description2:
             'Enova is the regional leader in integrated energy and multi-technical services, delivering comprehensive services to its clients. It provides performance based Energy & Facilities Management solutions that help customers achieve their financial, operational, and environmental targets.',
+          ],
         },
         'levels-business-tower': {
           name: 'Levels Business Tower',
@@ -376,6 +412,104 @@ export const TRANSLATIONS = {
         },
         'enjazat-tower': {
           name: 'Enjazat Tower',
+          tagline: 'Residential and Administrative Tower',
+          shortDesc: 'Modern residential and administrative tower offering high-quality spaces',
+          description:
+            'Enjazat Tower is a residential and administrative project that offers high-quality office and residential spaces with modern architectural design.',
+        },
+        'story-branded-residences': {
+          name: 'Story Branded Residences',
+          tagline: 'Refined by time, reserved for you',
+          shortDesc: 'Whispers were never our nature. Once we say it, the world listens.',
+          description: [
+            'Whispers were never our nature. Once we say it, the world listens.',
+            'The first ecotic community in Egypt.',
+            'Not in extravagance, but in the delicate balance of form and functionality.',
+            'NOI is situated in the prime area of Golden Square in Fifth Settlement, New Cairo. This strategic location places it at the heart of New Cairo, surrounded by upscale residential communities and close to prominent commercial and recreational hubs.',
+          ],
+        },
+        'hussainiya-maarefy': {
+          name: 'Hussainiya Maarefy',
+          tagline: 'Commercial and Administrative Project',
+          shortDesc: 'Integrated commercial and administrative project',
+          description:
+            'Hussainiya Maarefy project is a commercial and administrative project that offers modern commercial and office spaces.',
+        },
+        'al-awaly-compound-in-fentaa': {
+          name: 'Al-Awaly Compound In Fentaa',
+          tagline: 'Premium Residential Compound',
+          shortDesc: 'Integrated residential compound',
+          description: 'Al-Awaly Compound in Fentaa is a residential project that offers a comfortable and modern living environment.',
+        },
+        'el-derly-care-unit': {
+          name: 'El-Derly Care Unit',
+          tagline: 'Healthcare Facility',
+          shortDesc: 'Integrated healthcare unit',
+          description: 'El-Derly Care Unit is a healthcare facility that provides comprehensive medical services.',
+        },
+        'cooling-storehouses': {
+          name: 'Cooling Storehouses',
+          tagline: 'Modern Storage Facility',
+          shortDesc: 'Advanced cooling storage facilities',
+          description: 'Cooling Storehouses is a modern storage facility equipped with the latest cooling systems.',
+        },
+        'al-yousefy-iron-factory': {
+          name: 'Al-Yousefy Iron Factory',
+          tagline: 'Modern Industrial Facility',
+          shortDesc: 'Advanced iron factory',
+          description: 'Al-Yousefy Iron Factory is a modern industrial facility specialized in iron manufacturing.',
+        },
+        'al-shuayba-concrete-factory': {
+          name: 'Al-Shuayba Concrete Factory',
+          tagline: 'Modern Concrete Facility',
+          shortDesc: 'Advanced concrete factory',
+          description: 'Al-Shuayba Concrete Factory is an industrial facility specialized in producing ready-mix concrete.',
+        },
+        'eL-jawhara-complex': {
+          name: 'EL Jawhara Complex',
+          tagline: 'Modern Commercial Complex',
+          shortDesc: 'Commercial and administrative complex',
+          description: 'EL Jawhara Complex is a commercial project that offers modern commercial and office spaces.',
+        },
+        'porto-al-salmyia': {
+          name: 'Porto Al-Salmyia',
+          tagline: 'Residential and Commercial Project',
+          shortDesc: 'Integrated project',
+          description: 'Porto Al-Salmyia is an integrated project that offers residential and commercial spaces.',
+        },
+        'al-metlaa': {
+          name: 'Al-Metlaa',
+          tagline: 'Urban Development Project',
+          shortDesc: 'Comprehensive development project',
+          description: 'Al-Metlaa is an urban development project aimed at creating an integrated environment.',
+        },
+        'al-rushdan-tower': {
+          name: 'Al-Rushdan Tower',
+          tagline: 'Residential and Commercial Tower',
+          shortDesc: 'Modern tower',
+          description:
+            'Al-Rushdan Tower is constructed from top-grade construction materials and global standards with exceptional facade and interiors and smartly designed amenities and features.',
+        },
+        'hessa-towers': {
+          name: 'Hessa Towers',
+          tagline: 'Residential and Commercial Towers',
+          shortDesc: 'Modern tower complex',
+          description:
+            "The Architectural Excellence is brought by the eminent Hessa-Towers. Our team's dedication in Kuwait made a masterpiece come to life even before the delivery date with two months.",
+        },
+        'al-shadadiya-university': {
+          name: 'Al-Shadadiya University',
+          tagline: 'Leading Educational Institution',
+          shortDesc: 'Modern university',
+          description:
+            "The unrivaled standards of Shadadiyah were First Group's top priority. They incorporated functionality and art in one place that was delivered far ahead of schedule.",
+        },
+        aum: {
+          name: 'American University of The Middle East (AUM)',
+          tagline: 'Distinguished Educational Institution',
+          shortDesc: 'Leading American university',
+          description:
+            'The eminent and significant American University of the Middle East project is a signature of our attentive and devoted team in Kuwait.',
         },
         'misk-hotel': {
           name: 'Misk Hotel',
@@ -553,6 +687,7 @@ export const TRANSLATIONS = {
       similarProjects: 'مشاريع مشابهة',
       similarProjectsDesc: 'اكتشف المزيد من تحفنا المعمارية',
       viewAllProjects: 'عرض جميع المشاريع',
+      allProjects: 'جميع المشاريع',
       partnersTitle: 'مجتمع العملاء المتعاون',
       partnersDesc: 'تنمية النجاح من خلال العمل الاستراتيجي مع الشركاء الخطوطييين والناس الموثوقين.',
       partnersDesc2:
@@ -562,6 +697,23 @@ export const TRANSLATIONS = {
       partnersCTA: 'انضم إلى شبكتنا الشريك',
       partnersCTADesc: 'نحن دائما نبحث عن التعاون مع الشركات المتحدثة والمهارات المتميزة التي تواصل مع رؤساتنا ورؤيتنا لمستقبل العقارات.',
       projectsDelivered: 'المشاريع المكتملة',
+      projectsDesc: 'استكشف محفظتنا الشاملة من التحف المعمارية والتطورات المبتكرة في جميع أنحاء الشرق الأوسط.',
+      filterProjects: 'تصفية المشاريع',
+      projectCategory: 'الفئة',
+      projectStatus: 'الحالة',
+      projectCity: 'المدينة',
+      resetFilters: 'إعادة تعيين الفلاتر',
+      projectStatistics: 'إحصائيات المشروع',
+      totalProjects: 'إجمالي المشاريع',
+      filteredProjects: 'المشاريع المفلترة',
+      categories: 'الفئات',
+      cities: 'المدن',
+      noProjectsFoundCriteria: 'لم يتم العثور على مشاريع تطابق معاييرك.',
+      featured: 'مميز',
+      viewProject: 'عرض المشروع',
+      listView: 'عرض القائمة',
+      gridView: 'عرض الشبكة',
+      viewOnMap: 'عرض على الخريطة',
     },
     amenities: {
       Gym: 'صالة ألعاب رياضية',
@@ -614,6 +766,24 @@ export const TRANSLATIONS = {
       description: 'تصوير التحفة في كل تفاصيلها.',
       fullGallery: 'كل الصور',
       lighting: 'الإضاءة',
+    },
+
+    projects: {
+      overview: {
+        investmentValue: 'قيمة الاستثمار',
+        startDate: 'تاريخ البدء',
+        endDate: 'تاريخ الإنجاز',
+        workingTime: 'مدة العمل',
+        buildingArea: 'مساحة البناء',
+      },
+      videoGallery: {
+        title: 'معرض الفيديو',
+        video: 'فيديو',
+      },
+      constructionGallery: {
+        title: 'تحديثات البناء',
+        update: 'تحديث',
+      },
     },
 
     db: {
@@ -775,19 +945,19 @@ export const TRANSLATIONS = {
           tagline: 'الأصفر ليس مجرد لون، إنه شعور؛ أسلوب حياة للأرواح الجريئة.',
           shortDesc:
             'على مقربة من طريق السويس القديم والجديد. يوفر هذا الموقع المتميز سهولة الوصول إلى المعالم السياحية الرئيسية في المدينة.',
-          description:
+          description: [
             'يلو هو مجمع سكني مصمم ليوفر للسكان حياة من النعيم ويمكنهم من الوصول إلى أفضل ما لديهم. تم تصميم العمارة والتصميم الداخلي لـ يلو بعناية لخلق شعور بالهدوء والسكينة، مع التركيز على المواد الطبيعية والمساحات المفتوحة للسماح للمجتمع بالازدهار من خلال تجربة لا ميل لها.',
-          description2:
             'على مقربة من طريق السويس القديم والجديد. يوفر هذا الموقع المتميز سهولة الوصول إلى المعالم السياحية الرئيسية في المدينة.',
+          ],
         },
         'east-lane': {
           name: 'إيست لين',
           tagline: 'مبنى إيست لين هو أحد أكثر المناطق تميزًا وبروزًا ونشاطًا في التجمع الخامس.',
           shortDesc: 'مساحة إدارية وتجارية تقع في قلب التجمع الخامس.',
-          description:
+          description: [
             'رائف فهمي هو مهندس معماري ومصمم داخلي مصري يعمل في هذا المجال منذ سنوات عديدة وقد بنى سمعة معروفة للجميع. عمل فهمي في بعض من أبرز المشاريع وأكثرها شهرة في مصر.',
-          description2:
             'إينوفا هي الشركة الرائدة إقليمياً في مجال الطاقة المتكاملة والخدمات الفنية المتعددة، حيث تقدم خدمات شاملة لعملائها. توفر حلول إدارة الطاقة والمرافق القائمة على الأداء والتي تساعد العملاء على تحقيق أهدافهم المالية والتشغيلية والبيئية.',
+          ],
         },
         'levels-business-tower': {
           name: 'ليفلز بيزنس تاور',
@@ -831,6 +1001,101 @@ export const TRANSLATIONS = {
         },
         'enjazat-tower': {
           name: 'برج إنجازات',
+          tagline: 'برج سكني وإداري',
+          shortDesc: 'برج سكني وإداري حديث يوفر مساحات عالية الجودة',
+          description: 'برج إنجازات هو مشروع سكني وإداري يوفر مساحات مكتبية وسكنية عالية الجودة مع تصميم معماري حديث.',
+        },
+        'story-branded-residences': {
+          name: 'ستوري براندد ريزيدنس',
+          tagline: 'متجدد بمرور الوقت، محجوز لك',
+          shortDesc: 'لم تهمس أبدًا بطبيعتنا. بمجرد أن نقولها، يسمع العالم.',
+          description: [
+            'لم تهمس أبدًا بطبيعتنا. بمجرد أن نقولها، يسمع العالم.',
+            'المجتمع البيئي الأول في مصر.',
+            'ليس في الرفاهية، بل في التوازن الدقيق بين الشكل والوظيفة.',
+            'نوي يقع في المنطقة المميزة من المربع الذهبي في التجمع الخامس، القاهرة الجديدة. هذا الموقع الاستراتيجي يضعه في قلب القاهرة الجديدة، محاطًا بمجتمعات سكنية راقية وقريب من المراكز التجارية والترفيهية البارزة.',
+          ],
+        },
+        'hussainiya-maarefy': {
+          name: 'الحسينية معرفي',
+          tagline: 'مشروع تجاري وإداري',
+          shortDesc: 'مشروع تجاري وإداري متكامل',
+          description: 'مشروع الحسينية معرفي هو مشروع تجاري وإداري يوفر مساحات تجارية ومكتبية حديثة.',
+        },
+        'al-awaly-compound-in-fentaa': {
+          name: 'مجمع الأوالي في فنتاء',
+          tagline: 'مجمع سكني راقٍ',
+          shortDesc: 'مجمع سكني متكامل',
+          description: 'مجمع الأوالي في فنتاء هو مشروع سكني يوفر بيئة معيشية مريحة وعصرية.',
+        },
+        'el-derly-care-unit': {
+          name: 'وحدة الرعاية الدري',
+          tagline: 'مرفق رعاية صحية',
+          shortDesc: 'وحدة رعاية صحية متكاملة',
+          description: 'وحدة الرعاية الدري هي مرفق رعاية صحية يوفر خدمات طبية شاملة.',
+        },
+        'cooling-storehouses': {
+          name: 'مستودعات التبريد',
+          tagline: 'منشأة تخزين حديثة',
+          shortDesc: 'مستودعات تبريد متطورة',
+          description: 'مستودعات التبريد هي منشأة تخزين حديثة مجهزة بأحدث أنظمة التبريد.',
+        },
+        'al-yousefy-iron-factory': {
+          name: 'مصنع اليوسفي للحديد',
+          tagline: 'منشأة صناعية حديثة',
+          shortDesc: 'مصنع حديد متطور',
+          description: 'مصنع اليوسفي للحديد هو منشأة صناعية حديثة متخصصة في صناعة الحديد.',
+        },
+        'al-shuayba-concrete-factory': {
+          name: 'مصنع الشعيبة للخرسانة',
+          tagline: 'منشأة خرسانة حديثة',
+          shortDesc: 'مصنع خرسانة متطور',
+          description: 'مصنع الشعيبة للخرسانة هو منشأة صناعية متخصصة في إنتاج الخرسانة الجاهزة.',
+        },
+        'eL-jawhara-complex': {
+          name: 'مجمع الجوهرة',
+          tagline: 'مجمع تجاري حديث',
+          shortDesc: 'مجمع تجاري وإداري',
+          description: 'مجمع الجوهرة هو مشروع تجاري يوفر مساحات تجارية ومكتبية حديثة.',
+        },
+        'porto-al-salmyia': {
+          name: 'بورتو السالمية',
+          tagline: 'مشروع سكني وتجاري',
+          shortDesc: 'مشروع متكامل',
+          description: 'مشروع بورتو السالمية هو مشروع متكامل يوفر مساحات سكنية وتجارية.',
+        },
+        'al-metlaa': {
+          name: 'المطلاع',
+          tagline: 'مشروع تطوير حضري',
+          shortDesc: 'مشروع تطوير شامل',
+          description: 'مشروع المطلاع هو مشروع تطوير حضري يهدف إلى خلق بيئة متكاملة.',
+        },
+        'al-rushdan-tower': {
+          name: 'برج الرشدان',
+          tagline: 'برج سكني وتجاري',
+          shortDesc: 'برج حديث',
+          description:
+            'برج الرشدان هو من مواد بناء من الدرجة الأولى ومعايير عالمية مع واجهة استثنائية وديكورات داخلية ومرافق وميزات مصممة بذكاء.',
+        },
+        'hessa-towers': {
+          name: 'أبراج هسة',
+          tagline: 'أبراج سكنية وتجارية',
+          shortDesc: 'مجمع أبراج حديث',
+          description:
+            'التميز المعماري يتمثل في أبراج هسة المتميزة. تفانى فريقنا في الكويت في جعل تحفة فنية تتحقق إلى الحياة قبل تاريخ التسليم بشهرين.',
+        },
+        'al-shadadiya-university': {
+          name: 'جامعة الشادية',
+          tagline: 'مؤسسة تعليمية رائدة',
+          shortDesc: 'جامعة حديثة',
+          description:
+            'كانت المعايير التي لا مثيل لها للشادية هي الأولوية القصوى لمجموعة First Group. لقد دمجوا الوظيفة والفن في مكان واحد تم تسليمه قبل الموعد المحدد.',
+        },
+        aum: {
+          name: 'الجامعة الأمريكية في الشرق الأوسط (AUM)',
+          tagline: 'مؤسسة تعليمية متميزة',
+          shortDesc: 'جامعة أمريكية رائدة',
+          description: 'مشروع الجامعة الأمريكية في الشرق الأوسط البارز والهام هو توقيع فريقنا المنتبه والمكرس في الكويت.',
         },
         'misk-hotel': {
           name: 'فندق مسك',

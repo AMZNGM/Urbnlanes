@@ -38,7 +38,7 @@ export default function ImageIn({
       whileInView={{ filter: 'blur(0px)' }}
       viewport={{ once: true }}
       transition={{ duration, delay: Number(delay) }}
-      className={`relative ${divClassName} h-full`}
+      className={`relative ${divClassName} h-full bg-black`}
     >
       <Image
         src={src}

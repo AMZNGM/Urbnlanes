@@ -1,4 +1,4 @@
-import { metadataGenerators } from '@/lib/seo-helpers'
+import { metadataGenerators } from '@/seo/seo-helpers'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 
 export const generateMetadata = metadataGenerators.notFound()

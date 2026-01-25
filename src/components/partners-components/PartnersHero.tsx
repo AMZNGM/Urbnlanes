@@ -1,5 +1,5 @@
 import TText from '@/translations/TText'
-import AnimText from '@/components/ui/text/AnimText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 
 export default function PartnersHero() {

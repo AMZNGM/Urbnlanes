@@ -3,7 +3,7 @@ import { Project } from '@/types/project'
 import { MotionLine } from '@/components/ui/effects/Lines'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
-import AnimText from '@/components/ui/text/AnimText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 import RippleEffect from '@/components/ui/effects/RippleEffect'
 import MainBtn from '@/components/ui/buttons/MainBtn'
@@ -81,7 +81,7 @@ export default function SimilarProjects({ currentProject, allProjects }: { curre
 
       {similarProjects.length > 4 && (
         <AnimIn delay={0.6} className="text-center my-18">
-          <MainBtn to="/our-projects" tKey="common.viewAllProjects" />
+          <MainBtn to="/projects" tKey="common.viewAllProjects" />
         </AnimIn>
       )}
 

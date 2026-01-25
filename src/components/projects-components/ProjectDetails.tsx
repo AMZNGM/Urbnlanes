@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { Project } from '@/types/project'
 import { Download } from 'lucide-react'
 import TText from '@/translations/TText'
-import AnimText from '@/components/ui/text/AnimText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
@@ -30,7 +30,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
   }, [details.length])
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24">
+    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24 max-md:py-12">
       <div className="gap-12 grid lg:grid-cols-3">
         <div className="space-y-8 col-span-1 max-lg:col-span-3">
           <AnimText delay={0.9} className="font-sec text-4xl uppercase rtl:leading-14 tracking-widest">
@@ -47,12 +47,6 @@ export default function ProjectDetails({ project }: { project: Project }) {
             {project.description && (
               <AnimText as={'p'} delay={0.5}>
                 <TText tKey={`db.projects.${project.id}.description`} />
-              </AnimText>
-            )}
-
-            {project.description2 && (
-              <AnimText as={'p'} delay={0.7}>
-                <TText tKey={`db.projects.${project.id}.description2`} />
               </AnimText>
             )}
 

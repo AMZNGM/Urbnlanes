@@ -48,7 +48,7 @@ export default memo(function NewsCard({ article }: NewsCardProps) {
             {article.title}
           </p>
 
-          <div className="flex justify-between items-center font-medium text-text/60 text-xs">
+          <div className="flex justify-between items-center font-medium text-current/60 text-xs">
             <div className="space-x-2">
               <span>{article.type}</span>
               <span>/</span>

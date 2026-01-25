@@ -18,10 +18,6 @@ html {
 [lang='ar'] {
   font-family: var(--font-arab), var(--font-main);
 }
-.container {
-  max-width: 90dvw;
-  margin: 0 auto;
-}
 .border,
 .border-l {
   border-color: #8e8e8e50;

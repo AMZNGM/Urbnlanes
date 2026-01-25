@@ -13,12 +13,14 @@ export default function NavDropdown({
   isActive,
   childOpen,
   setChildOpen,
+  onClose,
 }: {
   label: string
   childrens: NavigationItem[]
   isActive: boolean
   childOpen: number | null
   setChildOpen: (index: number | null) => void
+  onClose?: () => void
 }) {
   const { t } = useTranslation()
 
@@ -59,6 +61,9 @@ export default function NavDropdown({
                     <Link
                       href={child.slug || ''}
                       className="group/name relative w-full h-fit font-medium text-text/75 hover:text-text text-lg transition-colors cursor-pointer"
+                      onClick={() => {
+                        onClose?.()
+                      }}
                     >
                       <RippleEffect className="w-full py-3">
                         <motion.div
@@ -96,7 +101,13 @@ export default function NavDropdown({
                               ease: 'easeOut',
                             }}
                           >
-                            <Link href={grandchild.slug || ''} className="inline-flex w-full">
+                            <Link
+                              href={grandchild.slug || ''}
+                              className="inline-flex w-full"
+                              onClick={() => {
+                                onClose?.()
+                              }}
+                            >
                               <RippleEffect className="inline-flex w-full text-text/75 hover:text-main transition-colors py-4 cursor-pointer">
                                 <Dot />
                                 {t(grandchild.name || '')}

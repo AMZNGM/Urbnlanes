@@ -1,11 +1,44 @@
 import { Project } from '@/types/project'
-import { Calendar, TrendingUp } from 'lucide-react'
+import { Calendar, TrendingUp, Clock, Building2 } from 'lucide-react'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
-import AnimText from '@/components/ui/text/AnimText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 
 export default function ProjectOverview({ project }: { project: Project }) {
   if (!project.overview) return null
+
+  const overviewItems = [
+    {
+      value: project.overview.value,
+      icon: TrendingUp,
+      labelKey: 'projects.overview.investmentValue',
+      className: 'text-3xl',
+    },
+    {
+      value: project.overview.startdate,
+      icon: Calendar,
+      labelKey: 'projects.overview.startDate',
+      className: 'text-2xl',
+    },
+    {
+      value: project.overview.enddate,
+      icon: Calendar,
+      labelKey: 'projects.overview.endDate',
+      className: 'text-2xl',
+    },
+    {
+      value: project.overview.workingTime,
+      icon: Clock,
+      labelKey: 'projects.overview.workingTime',
+      className: 'text-2xl',
+    },
+    {
+      value: project.overview.buildingArea,
+      icon: Building2,
+      labelKey: 'projects.overview.buildingArea',
+      className: 'text-2xl',
+    },
+  ].filter((item) => item.value)
 
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
@@ -13,30 +46,19 @@ export default function ProjectOverview({ project }: { project: Project }) {
         <TText tKey="modal.overview" />
       </AnimText>
 
-      <AnimIn className="max-w-6xl gap-8 grid grid-cols-1 md:grid-cols-3 mx-auto">
-        {project.overview.value && (
-          <div className="bg-main/25 rounded-2xl text-center p-6">
-            <TrendingUp className="w-8 h-8 text-main mx-auto mb-4" />
-            <div className="font-medium text-3xl">{project.overview.value}</div>
-            <p className="opacity-75 text-sm mt-2">Investment Value</p>
-          </div>
-        )}
-
-        {project.overview.startdate && (
-          <div className="bg-main/25 rounded-2xl text-center p-6">
-            <Calendar className="w-8 h-8 text-main mx-auto mb-4" />
-            <div className="font-medium text-2xl">{project.overview.startdate}</div>
-            <p className="opacity-75 text-sm mt-2">Start Date</p>
-          </div>
-        )}
-
-        {project.overview.enddate && (
-          <div className="bg-main/25 rounded-2xl text-center p-6">
-            <Calendar className="w-8 h-8 text-main mx-auto mb-4" />
-            <div className="font-medium text-2xl">{project.overview.enddate}</div>
-            <p className="opacity-75 text-sm mt-2">Completion Date</p>
-          </div>
-        )}
+      <AnimIn className="max-w-6xl gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto">
+        {overviewItems.map((item, index) => {
+          const Icon = item.icon
+          return (
+            <div key={index} className="bg-main/25 rounded-2xl text-center p-6">
+              <Icon className="w-8 h-8 text-main mx-auto mb-4" />
+              <div className={`font-medium ${item.className}`}>{item.value}</div>
+              <p className="opacity-75 text-sm mt-2">
+                <TText tKey={item.labelKey} />
+              </p>
+            </div>
+          )
+        })}
       </AnimIn>
     </section>
   )

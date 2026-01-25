@@ -1,4 +1,4 @@
-import { metadataGenerators } from '@/lib/seo-helpers'
+import { metadataGenerators } from '@/seo/seo-helpers'
 
 export const generateMetadata = metadataGenerators.getInTouch()
 

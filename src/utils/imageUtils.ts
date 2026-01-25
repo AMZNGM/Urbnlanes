@@ -1,12 +1,12 @@
 export function generateBlurDataURL(width = 8, height = 8): string {
   const svg = `
-    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+    <svg width="${width}" height="${height}">
       <defs>
         <filter id="blur">
           <feGaussianBlur stdDeviation="2"/>
         </filter>
       </defs>
-      <rect width="100%" height="100%" fill="#e5e7eb" filter="url(#blur)"/>
+      <rect width="100%" height="100%" fill="#2d2a26" filter="url(#blur)"/>
     </svg>
   `
 

@@ -33,6 +33,7 @@ export default function NavLinks({ navbarData, className = '' }: { navbarData: N
                 isActive={isMenuOpen && activeIndex === index}
                 childOpen={childOpen}
                 setChildOpen={setChildOpen}
+                onClose={handleMouseLeave}
                 label={isClient ? t(link.name || '') : link.name}
                 childrens={link.children || []}
               />

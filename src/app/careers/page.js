@@ -1,10 +1,10 @@
-import { metadataGenerators } from '@/lib/seo-helpers'
+import { metadataGenerators } from '@/seo/seo-helpers'
 
 export const generateMetadata = metadataGenerators.careers()
 
 export default function Careers() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className=" mx-auto px-4 py-8">
       <h1>Careers</h1>
       <p>Join our team and build your career with Urbnlanes.</p>
     </div>

@@ -1,7 +1,7 @@
 // import { useParams } from 'next/navigation'
 // import SingleArticle from '@/components/SingleArticle'
 
-import { metadataGenerators } from '@/lib/seo-helpers'
+import { metadataGenerators } from '@/seo/seo-helpers'
 export const generateMetadata = metadataGenerators.mediaCenterNews()
 
 export default function ArticlePage() {

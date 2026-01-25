@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { Project } from '@/types/project'
 import { ChevronRight } from 'lucide-react'
-import TText from '@/translations/TText'
-import AnimText from '@/components/ui/text/AnimText'
 import { MotionLine } from '@/components/ui/effects/Lines'
+import TText from '@/translations/TText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 
 export default function ProjectBreadcrumb({ project }: { project: Project }) {
   return (
@@ -17,9 +17,9 @@ export default function ProjectBreadcrumb({ project }: { project: Project }) {
 
         <ChevronRight size={16} className="rtl:rotate-180" />
 
-        <Link href="/our-projects" className="hover:text-main transition-colors">
+        <Link href="/projects" className="hover:text-main transition-colors">
           <AnimText delay={0.4}>
-            <TText tKey="nav.projects" />
+            <TText tKey="common.allProjects" />
           </AnimText>
         </Link>
 

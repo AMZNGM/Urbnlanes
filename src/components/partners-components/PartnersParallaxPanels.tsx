@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { useScroll, useTransform } from 'motion/react'
 import db from '@/database/urbnlanes-db.json'
-import AnimText from '@/components/ui/text/AnimText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 

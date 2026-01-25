@@ -3,13 +3,7 @@
 import { useState } from 'react'
 import { motion, useSpring } from 'framer-motion'
 
-interface NumberTickerProps {
-  value: number
-  className?: string
-  duration?: number
-}
-
-export default function NumberTicker({ value, className = '', duration = 3500 }: NumberTickerProps) {
+export default function NumberTicker({ value, className = '', duration = 3500 }: { value: number; className?: string; duration?: number }) {
   const finalCount = value
   const [displaySubs, setDisplaySubs] = useState(0)
   const springSubCount = useSpring(0, {

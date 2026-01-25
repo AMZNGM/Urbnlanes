@@ -1,7 +1,7 @@
 import TText from '@/translations/TText'
 import db from '@/database/urbnlanes-db.json'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
-import Heading from '@/components/ui/Heading'
+import Heading from '@/components/shared/Heading'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import NewsCard from '@/components/news-components/NewsCard'
 

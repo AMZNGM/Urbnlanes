@@ -5,7 +5,7 @@ import { Suspense, useState } from 'react'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 
 const PartnersHero = dynamic(() => import('@/components/partners-components/PartnersHero'))
-const TextPanel = dynamic(() => import('@/components/ui/TextPanel'))
+const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
 const PartnersParallaxPanels = dynamic(() => import('@/components/partners-components/PartnersParallaxPanels'))
 const PartnersCategoryTabs = dynamic(() => import('@/components/partners-components/PartnersCategoryTabs'))
 const SisterCompanies = dynamic(() => import('@/components/partners-components/SisterCompanies'))

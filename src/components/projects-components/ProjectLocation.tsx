@@ -2,7 +2,7 @@ import { Project } from '@/types/project'
 import { MotionLine } from '@/components/ui/effects/Lines'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
-import AnimText from '@/components/ui/text/AnimText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 
 export default function ProjectLocation({ project }: { project: Project }) {
   if (!project || !project.location) return null

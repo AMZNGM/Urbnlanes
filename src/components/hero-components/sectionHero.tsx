@@ -4,15 +4,19 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'motion/react'
 import { useHero } from '@/hooks/useHero'
 import { LoadingOscillate } from '@/components/loading-components/LoadingAnimations'
+import TText from '@/translations/TText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import HeroVideoToggle from '@/components/hero-components/HeroVideoToggle'
 import BreathingText from '@/components/ui/text/BreathingText'
 
 export default function SectionHero({
   title = '',
+  para = '',
   image = '/images/poster.png',
   video = '/videos/one-year-1.mp4',
 }: {
   title?: string
+  para?: string
   image?: string
   video?: string
 }) {
@@ -64,13 +68,21 @@ export default function SectionHero({
       <div
         data-scroll
         data-scroll-speed="0.2"
-        className="z-10 relative w-full h-full flex justify-center items-end duration-300 p-4 max-md:py-32"
+        className="z-10 relative w-full h-full flex flex-col justify-end items-center duration-300 p-4 max-md:py-8"
       >
         <motion.div initial={{ y: '100%' }} animate={{ y: '0%' }} transition={{ duration: 0.9 }}>
-          <BreathingText as="div" repeatDelay={2} className="w-full text-[10dvw] text-center text-nowrap">
-            {t(`common.${title}`)}
+          <BreathingText as="div" repeatDelay={2} className="w-full text-[10dvw] text-center text-nowrap leading-none max-md:pb-12">
+            {t(`${title}`)}
           </BreathingText>
         </motion.div>
+
+        <AnimText
+          as={'p'}
+          delay={0.9}
+          className="max-w-5xl text-text/90 max-md:text-xs text-sm text-center normal-case text-balance leading-relaxed tracking-wider"
+        >
+          <TText tKey={para} />
+        </AnimText>
       </div>
     </section>
   )

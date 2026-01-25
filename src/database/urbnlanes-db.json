@@ -153,11 +153,13 @@
       "logo": "/images/logos/eastlane-logo.webp",
       "tagline": "The EastLane building is one of the most iconic, prominent and bustling areas in New Cairo.",
       "shortDesc": "An administrative and commercial space based in the heart of New Cairo.",
-      "description": "Raef Fahmi is an Egyptian architect and interior designer who has been working in the field for many years and has built a reputation known by everyone. Fahmi has worked on some of the most prominent and iconic projects in Egypt.",
-      "description2": "Enova is the regional leader in integrated energy and multi-technical services, delivering comprehensive services to its clients. It provides performance based Energy & Facilities Management solutions that help customers achieve their financial, operational, and environmental targets.",
+      "description": [
+        "Raef Fahmi is an Egyptian architect and interior designer who has been working in the field for many years and has built a reputation known by everyone. Fahmi has worked on some of the most prominent and iconic projects in Egypt.",
+        "Enova is the regional leader in integrated energy and multi-technical services, delivering comprehensive services to its clients. It provides performance based Energy & Facilities Management solutions that help customers achieve their financial, operational, and environmental targets."
+      ],
       "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2022/08/EastLane-by-urbnlanes.pdf",
       "status": "completed",
-      "category": "residential",
+      "category": ["Administrative", "Commercial", "Latest Launches"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt",
@@ -182,6 +184,24 @@
         "/images/projects/east-lane/el-main-5.avif",
         "/images/projects/east-lane/el-banner.avif",
         "/images/projects/east-lane/el-map.webp"
+      ],
+      "videoGallery": [
+        "/videos/projects/east-lane/el-main-1.mp4",
+        "https://www.youtube.com/watch?v=XX4tZ6Z2dZI",
+        "https://www.youtube.com/watch?v=9kXtP7IBLMI",
+        "https://www.youtube.com/watch?v=lajojJMp_EA",
+        "https://www.youtube.com/watch?v=3wtBS0c3BLY",
+        "https://www.youtube.com/watch?v=iCIEUpckkDs"
+      ],
+      "constructionGallery": [
+        "/videos/projects/east-lane/el-construction-update-1.mp4",
+        "/videos/projects/east-lane/el-construction-update-2.mp4",
+        "/videos/projects/east-lane/el-construction-update-3.mp4",
+        "/videos/projects/east-lane/el-construction-update-5.mp4",
+        "/videos/projects/east-lane/el-construction-update-6.mp4",
+        "/videos/projects/east-lane/el-construction-update-7.mp4",
+        "/videos/projects/east-lane/el-construction-update-8.mp4",
+        "/videos/projects/east-lane/el-construction-update-9.mp4"
       ]
     },
     {
@@ -190,10 +210,10 @@
       "logo": "/images/logos/noi-white-logo.svg",
       "tagline": "Refined by Time, Reserved for You.",
       "shortDesc": "The First Exotic Community in Egypt. – Not in Extravagance, but in the Delicate Balance of Form and Functionality",
-      "description": "NOI is situated in the prime area of Golden Square in Fifth Settlement, New Cairo. This strategic location places it at the heart of New Cairo, surrounded by upscale residential communities and close to prominent commercial and recreational hubs. With easy access to major roads, NOI connects residents to essential services and destinations, making it an ideal spot in one of Cairo's most sought-after neighborhoods.",
+      "description": "NOI is situated in the prime area of Golden Square in Fifth Settlement, New Cairo. This strategic location places it at the heart of New Cairo, surrounded by upscale Residential communities and close to prominent commercial and recreational hubs. With easy access to major roads, NOI connects residents to essential services and destinations, making it an ideal spot in one of Cairo's most sought-after neighborhoods.",
       "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
       "status": "completed",
-      "category": "residential",
+      "category": ["Residential", "Latest Launches"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt"
@@ -232,6 +252,13 @@
         "/images/projects/noi/noi-cover.avif",
         "/images/projects/noi/noi-masterplan.webp",
         "/images/projects/noi/noi-teaser-cover.webp"
+      ],
+      "videoGallery": [
+        "/videos/projects/noi/noi-1.mp4",
+        "https://www.youtube.com/watch?v=RhhKWI0r6WI",
+        "https://www.youtube.com/watch?v=u0ks205bHBU",
+        "https://www.youtube.com/watch?v=jk7cno_miDQ",
+        "https://www.youtube.com/watch?v=xRbdVBIK9TQ"
       ]
     },
     {
@@ -240,10 +267,13 @@
       "logo": "/images/logos/yellow-lane-logo.webp",
       "tagline": "Lines That Define Your Lifestyle.",
       "shortDesc": "In close proximity to both the old and new Suez Road. This prime location offers easy access to the city's major landmarks and attractions.",
-      "description": "Yellow Lane isn't just a place, it's a canvas where lines come alive, speaking to your soul and defining your lifestyle. Our spaces are meticulously designed to maintain a delicate balance between functionality and aesthetics.",
+      "description": [
+        "Yellow Lane isn't just a place, it's a canvas where lines come alive, speaking to your soul and defining your lifestyle. Our spaces are meticulously designed to maintain a delicate balance between functionality and aesthetics.",
+        "About “life lane “- The Medical Hub stands as a beacon of cutting-edge healthcare. Our meticulously designed facility comprises, standalone clinics buildings, each meticulously finished to embody comfort and clinical excellence.” It features purpose-built clinic buildings, each thoughtfully designed and finished to deliver both comfort and clinical excellence, creating an environment where patients receive care of the highest standard."
+      ],
       "brochure": "https://drive.google.com/file/d/1BiZ6kwlPJUnC-DFgsLWzae1omgVyPQSA/view",
       "status": "completed",
-      "category": "residential",
+      "category": ["Administrative", "Commercial", "Latest Launches"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt"
@@ -284,6 +314,13 @@
         "/images/projects/yellow-lane/yl-gallery-9.webp",
         "/images/projects/yellow-lane/yl-gallery-10.webp",
         "/images/projects/yellow-lane/yl-banner.avif"
+      ],
+      "videoGallery": [
+        "https://www.youtube.com/watch?v=mquIiKjcmug",
+        "https://www.youtube.com/watch?v=A5SY-Yc1oYU&pp=0gcJCYcKAYcqIYzv",
+        "https://www.youtube.com/watch?v=bSJlz9iQpUU",
+        "https://www.youtube.com/watch?v=H62D7baXmCE",
+        "/videos/projects/yellow-lane/yl-get-aligned.mp4"
       ]
     },
     {
@@ -292,10 +329,20 @@
       "logo": "/images/logos/yellow-lane-logo.webp",
       "tagline": "Proudly Partnered With E& As Our Communications Partner.",
       "shortDesc": "An iconic administrative and commercial business tower in the heart of the New Administrative Capital.",
-      "description": "The New Administrative Capital is set to become a new center of excellence for living in Egypt and beyond. It will feature a fully-integrated capital with world-class residential, commercial, medical, financial, and educational institutions. Moreover, an independent international airport, a modern train station that is connected to Egypt’s railway system and it will use the most advanced technology to provide the first central security system. It is expected to attract 40 million people upon completion.",
+      "description": [
+        "The New Administrative Capital is set to become a new center of excellence for living in Egypt and beyond. It will feature a fully-integrated capital with world-class Residential, commercial, medical, financial, and educational institutions. Moreover, an independent international airport, a modern train station that is connected to Egypt’s railway system and it will use the most advanced technology to provide the first central security system. It is expected to attract 40 million people upon completion.",
+        "The peaceful yet iconic experience of Levels Tower is at a distinct level of excellence and aesthetic on its own. A piece of architectural art for a prime stay and visit."
+      ],
       "brochure": "https://drive.google.com/file/d/1cs5X3QNJWgVudChvXUs7-s7VUnrYsaiV/view",
       "status": "completed",
-      "category": "residential",
+      "category": ["Administrative", "Commercial", "Latest Launches"],
+      "overview": {
+        "value": "2,602,282.000 USD",
+        "startdate": "01 AUG 2015",
+        "enddate": "09 AUG 2018",
+        "workingTime": "1104 Days",
+        "buildingArea": "24,000 m2"
+      },
       "location": {
         "city": "The New Administrative Capital",
         "country": "Egypt",
@@ -328,20 +375,32 @@
         "/images/projects/levels-tower/levels-e-and-8.avif",
         "/images/projects/levels-tower/levels-e-and-9.avif",
         "/images/projects/levels-tower/levels-e-and-10.avif"
-      ]
+      ],
+      "videoGallery": [
+        "https://www.youtube.com/watch?v=CKEHOlUUyUQ",
+        "https://www.youtube.com/watch?v=pOAZL1eukbU",
+        "https://www.youtube.com/watch?v=6eSwx-vOhkQ",
+        "https://www.youtube.com/watch?v=niYeuMxvR3U",
+        "https://www.youtube.com/watch?v=O53XoNDqzBM",
+        "https://www.youtube.com/watch?v=4gKDsYBBMek",
+        "/videos/projects/levels-tower/levels-e-and.mp4"
+      ],
+      "constructionGallery": ["https://www.youtube.com/watch?v=kG4714lNars", "https://www.youtube.com/watch?v=rSr-AmOCj58"]
     },
     {
       "id": "yellow-residence",
       "name": "Yellow Residence",
       "logo": "/images/logos/yellow-residence-logo.webp",
       "tagline": "Yellow isn't just a color, it's a vibe; a way of living for the daring & the bold",
-      "description": "Yellow is a residential compound designed to provide residents with a life of bliss and empower them to reach their higher selves. The architecture and interior design of Yellow are carefully crafted to create a sense of calm and tranquility, with a focus on natural materials and open spaces to allow the community to thrive through an unparalleled experience.",
-      "description2": "in close proximity to both the old and new Suez Road. This prime location offers easy access to the city’s major landmarks and attractions.",
-      "aboutCrownResidence": "Crown Residence, situated within the esteemed Yellow Residence compound, offers a luxurious\nserviced apartment experience in collaboration with Crowne Plaza IHG Hotels & Resorts. With\nmeticulously designed apartments, premium amenities, and seamless integration with hotel\nservices, Crown Residence sets a new standard for upscale urban living.\nGuests can expect exceptional facilities, personalized service, and a warm, welcoming\natmosphere, making it the ultimate destination for both leisure and business travelers.",
-      "aboutCrownPlaza": "Crown Plaza isn't just a color, it's a vibe; a way of living for the daring & the bold",
+      "description": [
+        "Yellow is a Residential compound designed to provide residents with a life of bliss and empower them to reach their higher selves. The architecture and interior design of Yellow are carefully crafted to create a sense of calm and tranquility, with a focus on natural materials and open spaces to allow the community to thrive through an unparalleled experience.",
+        "in close proximity to both the old and new Suez Road. This prime location offers easy access to the city’s major landmarks and attractions.",
+        "Crown Residence, situated within the esteemed Yellow Residence compound, offers a luxurious\nserviced apartment experience in collaboration with Crowne Plaza IHG Hotels & Resorts. With\nmeticulously designed apartments, premium amenities, and seamless integration with hotel\nservices, Crown Residence sets a new standard for upscale urban living.\nGuests can expect exceptional facilities, personalized service, and a warm, welcoming\natmosphere, making it the ultimate destination for both leisure and business travelers.",
+        "Crown Plaza isn't just a color, it's a vibe; a way of living for the daring & the bold"
+      ],
       "brochure": "https://drive.google.com/drive/folders/1Pqmlx7ARbTPSQCEpknItlNkgbBPKMq3n",
       "status": "completed",
-      "category": "residential",
+      "category": ["Residential", "Latest Launches"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt"
@@ -459,6 +518,12 @@
         "/images/projects/yellow-residence/yr-hero.avif",
         "/images/projects/yellow-residence/yr-map.avif",
         "/images/projects/yellow-residence/yr-cover.avif"
+      ],
+      "videoGallery": [
+        "https://www.youtube.com/watch?v=UB2HUKCCT8A",
+        "https://www.youtube.com/watch?v=fuTv6j3RFXE",
+        "/videos/projects/yellow-residence/yr-main-2.mp4",
+        "/videos/projects/yellow-residence/yr-sneak-peak.mp4"
       ]
     },
     {
@@ -477,7 +542,7 @@
       ],
       "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2022/08/EastLane-by-urbnlanes.pdf",
       "status": "completed",
-      "category": "residential",
+      "category": ["Administrative", "Commercial", "Latest Launches"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt"
@@ -492,19 +557,71 @@
         "/images/projects/mid-lane/ml-gallery-6.webp",
         "/images/projects/mid-lane/ml-leader.avif",
         "/images/projects/mid-lane/ml-map.webp"
+      ],
+      "videoGallery": [
+        "https://www.youtube.com/watch?v=PW6dG2ulrg4",
+        "https://www.youtube.com/watch?v=S633TS7gQEY",
+        "https://www.youtube.com/watch?v=G_1N5r0S8iQ",
+        "https://www.youtube.com/watch?v=JS2pW8m4k2o",
+        "/videos/projects/mid-lane/ml-final.mp4",
+        "/videos/projects/mid-lane/ml-work.mp4"
+      ],
+      "constructionGallery": [
+        "/videos/projects/mid-lane/ml-construction-upsates-1.mp4",
+        "/videos/projects/mid-lane/ml-construction-upsates-2.mp4",
+        "/videos/projects/mid-lane/ml-construction-upsates-3.mp4",
+        "/videos/projects/mid-lane/ml-construction-upsates-4.mp4"
       ]
     },
+    {
+      "id": "story-branded-residences",
+      "name": "Story Branded Residences",
+      "logo": "/images/logos/Story-logo.png",
+      "tagline": "Refined by time, reserved for you",
+      "description": [
+        "Whispers were never our nature. Once we say it, the world listens.",
+        "The first ecotic community in Egypt.",
+        "not in extravagance, but in the delicate balance of form and functionality.",
+        "NOI is situated in the prime area of Golden Square in Fifth Settlement, New Cairo. This strategic location places it at the heart of New Cairo, surrounded by upscale Residential communities and close to prominent commercial and recreational hubs. With easy access to major roads, NOI connects residents to essential services and destinations, making it an ideal spot in one of Cairo's most sought-after neighborhoods."
+      ],
+      "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
+      "status": "completed",
+      "category": ["Residential", "Latest Launches"],
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": true,
+      "gallery": [
+        "/images/projects/story-branded-residences/sbr-gallery-1.avif",
+        "/images/projects/story-branded-residences/sbr-gallery-2.avif",
+        "/images/projects/story-branded-residences/sbr-gallery-3.webp",
+        "/images/projects/story-branded-residences/sbr-gallery-4.avif",
+        "/images/projects/story-branded-residences/sbr-gallery-5.avif",
+        "/images/projects/story-branded-residences/sbr-gallery-6.avif",
+        "/images/projects/story-branded-residences/sbr-gallery-7.avif",
+        "/images/projects/story-branded-residences/sbr-gallery-8.avif",
+        "/images/projects/story-branded-residences/sbr-main-1.avif",
+        "/images/projects/story-branded-residences/sbr-main-2.avif"
+      ],
+      "videoGallery": [
+        "/videos/projects/story-branded-residences/sbr-main.mp4",
+        "https://www.youtube.com/watch?v=2zwnQh70tcI",
+        "https://www.youtube.com/watch?v=DYDAOqQsjHs"
+      ]
+    },
+
     {
       "id": "east-subah-al-ahmed-city",
       "name": "East Subah Al-Ahmed City",
       "status": "completed",
-      "category": "residential",
-      "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
+      "category": ["city"],
       "overview": {
         "value": "68,473,860 KWD",
         "startdate": "2021",
         "enddate": "2024"
       },
+      "featured": false,
       "gallery": [
         "/images/projects/east-sabah/es-gallery-2.webp",
         "/images/projects/east-sabah/es-gallery-1.webp",
@@ -515,19 +632,21 @@
         "/images/projects/east-sabah/es-gallery-8.avif",
         "/images/projects/east-sabah/es-gallery-9.webp",
         "/images/projects/east-sabah/es-gallery-10.webp"
-      ]
+      ],
+      "videoGallery": ["https://www.youtube.com/watch?v=ffcTNKFd_f0"]
     },
     {
       "id": "mutlaa-city",
       "name": "Mutlaa City",
       "status": "completed",
-      "category": "residential",
-      "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
+      "category": ["city"],
       "overview": {
         "value": "37,960,000 KWD",
         "startdate": "2019",
-        "enddate": "2021"
+        "enddate": "2021",
+        "workingTime": "206 Days"
       },
+      "featured": false,
       "gallery": [
         "/images/projects/mutlaa/mutlaa-gallery-1.webp",
         "/images/projects/mutlaa/mutlaa-gallery-2.webp",
@@ -539,19 +658,20 @@
         "/images/projects/mutlaa/mutlaa-gallery-8.webp",
         "/images/projects/mutlaa/mutlaa-gallery-9.webp",
         "/images/projects/mutlaa/mutlaa-gallery-10.webp"
-      ]
+      ],
+      "videoGallery": ["/videos/projects/mutlaa/mutlaa-main-1.mp4"]
     },
     {
       "id": "west-abdullah-mubarak-city",
       "name": "West Abdullah Mubarak City",
       "status": "completed",
-      "category": "residential",
-      "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
+      "category": ["city"],
       "overview": {
         "value": "37,990,000 KWD",
         "startdate": "2018",
         "enddate": "2021"
       },
+      "featured": false,
       "gallery": [
         "/images/projects/abdullah-mubarak/am-gallery-6.webp",
         "/images/projects/abdullah-mubarak/am-gallery-1.webp",
@@ -559,6 +679,446 @@
         "/images/projects/abdullah-mubarak/am-gallery-3.webp",
         "/images/projects/abdullah-mubarak/am-gallery-4.webp",
         "/images/projects/abdullah-mubarak/am-gallery-5.webp"
+      ],
+      "videoGallery": ["https://www.youtube.com/watch?v=OGaw01tUeCA"]
+    },
+
+    {
+      "id": "enjazat-tower",
+      "name": "Enjazat Tower",
+      "status": "completed",
+      "category": ["Residential", "Administrative"],
+      "overview": {
+        "value": "36,000,000 USD",
+        "startdate": "15 APR 2020",
+        "enddate": "N/A",
+        "workingTime": "625 Days",
+        "buildingArea": "128,000 m2"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": ["/videos/projects/enjazat-tower/enjazat-main-1.mp4"]
+    },
+    {
+      "id": "dalal-complex",
+      "name": "Dalal Complex",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "1,170,000 USD",
+        "startdate": "02 MAR 2017",
+        "enddate": "01 SEP 2019",
+        "workingTime": "913 Days",
+        "buildingArea": "12,000 m2"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/dalal-complex/dalal-complex-galley-2.webp",
+        "/images/projects/dalal-complex/dalal-complex-galley-1.webp"
+      ],
+      "videoGallery": ["/videos/projects/dalal-complex/dalal-complex-main-1.mp4"]
+    },
+    {
+      "id": "hussainiya-maarefy",
+      "name": "Hussainiya Maarefy",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "995,000.000 KWD",
+        "startdate": "11/05/2015",
+        "enddate": "15/07/ 2018"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/hussainiya-maarefy/hussainiya-gallery-1.webp",
+        "/images/projects/hussainiya-maarefy/hussainiya-gallery-2.webp",
+        "/images/projects/hussainiya-maarefy/hussainiya-gallery-3.webp",
+        "/images/projects/hussainiya-maarefy/hussainiya-gallery-4.webp",
+        "/images/projects/hussainiya-maarefy/hussainiya-gallery-5.webp"
+      ]
+    },
+    {
+      "id": "al-awaly-compound-in-fentaa",
+      "name": "Al-Awaly Compound In Fentaa",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "2,250,000.000 KWD",
+        "startdate": "27/08/2013",
+        "enddate": "02/11/ 2015"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/al-awaly/al-awaly-gallery-1.avif",
+        "/images/projects/al-awaly/al-awaly-gallery-2.avif",
+        "/images/projects/al-awaly/al-awaly-gallery-3.webp",
+        "/images/projects/al-awaly/al-awaly-gallery-4.webp"
+      ]
+    },
+    {
+      "id": "el-derly-care-unit",
+      "name": "El-Derly Care Unit",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "1,794,000.000 KWD",
+        "startdate": "10/05/2018",
+        "enddate": "23/09/2020"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/el-derly/el-derly-gallery-1.webp",
+        "/images/projects/el-derly/el-derly-gallery-2.webp",
+        "/images/projects/el-derly/el-derly-gallery-3.avif",
+        "/images/projects/el-derly/el-derly-gallery-4.avif",
+        "/images/projects/el-derly/el-derly-gallery-5.avif",
+        "/images/projects/el-derly/el-derly-gallery-6.avif",
+        "/images/projects/el-derly/el-derly-gallery-7.avif",
+        "/images/projects/el-derly/el-derly-gallery-8.webp"
+      ]
+    },
+    {
+      "id": "cooling-storehouses",
+      "name": "Cooling Storehouses",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "2,766,000.000 KWD",
+        "startdate": "01/12/2018",
+        "enddate": "17/03/2021"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/cooling-storehouses/cooling-storehouses-gallery-1.webp",
+        "/images/projects/cooling-storehouses/cooling-storehouses-gallery-2.webp",
+        "/images/projects/cooling-storehouses/cooling-storehouses-gallery-3.webp"
+      ]
+    },
+    {
+      "id": "al-yousefy-iron-factory",
+      "name": "Al-Yousefy Iron Factory",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "2,962,000.000 KWD",
+        "startdate": "05/03/2015",
+        "enddate": "31/10/ 2015"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/al-yousefy-iron-factory/al-yousefy-gallery-1.webp",
+        "/images/projects/al-yousefy-iron-factory/al-yousefy-gallery-2.webp",
+        "/images/projects/al-yousefy-iron-factory/al-yousefy-gallery-3.webp",
+        "/images/projects/al-yousefy-iron-factory/al-yousefy-gallery-4.webp",
+        "/images/projects/al-yousefy-iron-factory/al-yousefy-gallery-5.webp",
+        "/images/projects/al-yousefy-iron-factory/al-yousefy-gallery-6.webp"
+      ]
+    },
+    {
+      "id": "al-shuayba-concrete-factory",
+      "name": "Al-Shuayba Concrete Factory",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "1,290,000.000 KWD",
+        "startdate": "09/01/2019",
+        "enddate": "15/04/2019"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/al-shuayba-concrete-factory/al-shuayba-gallery-1.webp",
+        "/images/projects/al-shuayba-concrete-factory/al-shuayba-gallery-2.webp",
+        "/images/projects/al-shuayba-concrete-factory/al-shuayba-gallery-3.webp"
+      ]
+    },
+    {
+      "id": "eL-jawhara-complex",
+      "name": "EL Jawhara Complex",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "770,000.000 KWD",
+        "startdate": "01/02/2020",
+        "enddate": "27/07/ 2021"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/eL-jawhara/eL-jawhara-gallery-1.avif",
+        "/images/projects/eL-jawhara/eL-jawhara-gallery-2.avif",
+        "/images/projects/eL-jawhara/eL-jawhara-gallery-3.avif",
+        "/images/projects/eL-jawhara/eL-jawhara-gallery-4.avif",
+        "/images/projects/eL-jawhara/eL-jawhara-gallery-5.webp",
+        "/images/projects/eL-jawhara/eL-jawhara-gallery-6.avif"
+      ]
+    },
+    {
+      "id": "porto-al-salmyia",
+      "name": "Porto Al-Salmyia",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "2,292,000.000 KWD",
+        "startdate": "1/09/2016",
+        "enddate": "1/10/ 2017"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/porto-al-salmyia/al-salmyia-gallery-1.webp",
+        "/images/projects/porto-al-salmyia/al-salmyia-gallery-2.webp",
+        "/images/projects/porto-al-salmyia/al-salmyia-gallery-3.webp",
+        "/images/projects/porto-al-salmyia/al-salmyia-gallery-4.webp",
+        "/images/projects/porto-al-salmyia/al-salmyia-gallery-5.webp",
+        "/images/projects/porto-al-salmyia/al-salmyia-gallery-6.webp",
+        "/images/projects/porto-al-salmyia/al-salmyia-gallery-7.webp",
+        "/images/projects/porto-al-salmyia/al-salmyia-gallery-8.webp",
+        "/images/projects/porto-al-salmyia/al-salmyia-gallery-9.webp"
+      ]
+    },
+    {
+      "id": "al-metlaa",
+      "name": "Al-Metlaa",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "37,960,000.000 KWD",
+        "startdate": "14/10/2019",
+        "enddate": "31/03/ 2022"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/al-metlaa/al-metlaa-gallery-1.webp",
+        "/images/projects/al-metlaa/al-metlaa-gallery-2.webp",
+        "/images/projects/al-metlaa/al-metlaa-gallery-3.webp",
+        "/images/projects/al-metlaa/al-metlaa-gallery-4.webp",
+        "/images/projects/al-metlaa/al-metlaa-gallery-5.webp",
+        "/images/projects/al-metlaa/al-metlaa-gallery-6.webp",
+        "/images/projects/al-metlaa/al-metlaa-gallery-7.webp",
+        "/images/projects/al-metlaa/al-metlaa-gallery-8.webp",
+        "/images/projects/al-metlaa/al-metlaa-gallery-9.webp",
+        "/images/projects/al-metlaa/al-metlaa-gallery-10.webp",
+        "/images/projects/al-metlaa/al-metlaa-gallery-11.webp"
+      ]
+    },
+    {
+      "id": "misk-hotel",
+      "name": "Misk Hotel",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "2,195,000.000 KWD",
+        "startdate": "25/01/2019",
+        "enddate": "27/09/2021"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/misk-hotel/misk-gallery-1.webp",
+        "/images/projects/misk-hotel/misk-gallery-2.webp",
+        "/images/projects/misk-hotel/misk-gallery-3.webp",
+        "/images/projects/misk-hotel/misk-gallery-4.webp",
+        "/images/projects/misk-hotel/misk-gallery-5.webp",
+        "/images/projects/misk-hotel/misk-gallery-6.webp",
+        "/images/projects/misk-hotel/misk-gallery-7.webp",
+        "/images/projects/misk-hotel/misk-gallery-8.webp",
+        "/images/projects/misk-hotel/misk-gallery-9.webp",
+        "/images/projects/misk-hotel/misk-gallery-10.webp",
+        "/images/projects/misk-hotel/misk-gallery-11.webp",
+        "/images/projects/misk-hotel/misk-gallery-12.webp"
+      ]
+    },
+    {
+      "id": "abu-el-banattower",
+      "name": "Abu El-Banat Tower",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "3,197,000.000 KWD",
+        "startdate": "09/01/2018",
+        "enddate": "18/01/2021"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/abu-el-banat-tower/banat-1.webp",
+        "/images/projects/abu-el-banat-tower/banat-2.webp",
+        "/images/projects/abu-el-banat-tower/banat-3.webp",
+        "/images/projects/abu-el-banat-tower/banat-4.webp",
+        "/images/projects/abu-el-banat-tower/banat-5.webp",
+        "/images/projects/abu-el-banat-tower/banat-6.webp",
+        "/images/projects/abu-el-banat-tower/banat-7.webp",
+        "/images/projects/abu-el-banat-tower/banat-8.webp"
+      ]
+    },
+    {
+      "id": "omniyat-gardens",
+      "name": "Omniyat Gardens",
+      "status": "completed",
+      "category": ["Administrative", "Commercial"],
+      "overview": {
+        "value": "4,195,000.000 KWD",
+        "startdate": "14/01/2015",
+        "enddate": "22/05/2018"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/omniyat-gardens/omniyat-gallery-1.webp",
+        "/images/projects/omniyat-gardens/omniyat-gallery-2.webp",
+        "/images/projects/omniyat-gardens/omniyat-gallery-3.webp",
+        "/images/projects/omniyat-gardens/omniyat-gallery-4.webp",
+        "/images/projects/omniyat-gardens/omniyat-gallery-5.webp",
+        "/images/projects/omniyat-gardens/omniyat-gallery-6.webp",
+        "/images/projects/omniyat-gardens/omniyat-gallery-7.webp",
+        "/images/projects/omniyat-gardens/omniyat-gallery-8.webp",
+        "/images/projects/omniyat-gardens/omniyat-gallery-9.webp"
+      ]
+    },
+    {
+      "id": "hessa-towers",
+      "name": "Hessa Towers",
+      "description": "The Architectural Excellence is brought by the eminent Hessa-Towers. Our team's dedication in Kuwait made a masterpiece come to life even before the delivery date with two months. In addition to Hessa-Towers' unparalleled designs and stellar construction delivery ahead of schedule gave us a competitive edge and unblemished reputation.",
+      "status": "completed",
+      "category": ["Residential", "Commercial"],
+      "overview": {
+        "value": "36,000,000 USD",
+        "startdate": "15 APR 2020",
+        "enddate": "N/A",
+        "workingTime": "625 Days",
+        "buildingArea": "128,000 m2"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/hessa-towers/hessa-towers-1.webp",
+        "/images/projects/hessa-towers/hessa-towers-2.webp",
+        "/images/projects/hessa-towers/hessa-towers-3.webp"
+      ]
+    },
+    {
+      "id": "al-rushdan-tower",
+      "name": "al-Rushdan Tower",
+      "description": "Al Rashdan Tower is of top-grade construction materials and global standards with exceptional facade and interiors and smartly designed amenities and features.",
+      "status": "completed",
+      "category": ["Residential", "Commercial"],
+      "overview": {
+        "value": "36,000,000 USD",
+        "startdate": "15 APR 2020",
+        "enddate": "N/A",
+        "workingTime": "625 Days",
+        "buildingArea": "128,000 m2"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/al-rushdan-tower/al-rushdan-tower-1.webp",
+        "/images/projects/al-rushdan-tower/al-rushdan-tower-2.webp",
+        "/images/projects/al-rushdan-tower/al-rushdan-tower-3.webp"
+      ]
+    },
+
+    {
+      "id": "al-shadadiya-university",
+      "name": "Al-Shadadiya University",
+      "description": "The unrivaled standards of Shadadiyah were First Group's top priority. They incorporated functionality and art in one place that was delivered far ahead of schedule.",
+      "status": "completed",
+      "category": ["Educational"],
+      "overview": {
+        "value": "2,590,000 USD",
+        "startdate": "20 APR 2017",
+        "enddate": "12 NOV 2017",
+        "workingTime": "206 Days",
+        "buildingArea": "25,500 m2"
+      },
+      "location": {
+        "city": "New Cairo",
+        "country": "Egypt"
+      },
+      "featured": true,
+      "gallery": [
+        "/images/projects/al-shadadiya-university/al-shadadiya-gallery-1.webp",
+        "/images/projects/al-shadadiya-university/al-shadadiya-gallery-2.webp",
+        "/images/projects/al-shadadiya-university/al-shadadiya-gallery-3.webp"
+      ]
+    },
+    {
+      "id": "aum",
+      "name": "American University of The Middle East (AUM)",
+      "description": "The eminent and significant American University of the Middle East project is a signature of our attentive and devoted team in Kuwait. The project has leading works of construction, completion, and maintenance.",
+      "status": "completed",
+      "category": ["Educational"],
+      "overview": {
+        "value": "2,590,000 USD",
+        "startdate": "20 APR 2017",
+        "enddate": "12 NOV 2017",
+        "workingTime": "206 Days",
+        "buildingArea": "25,500 m2"
+      },
+      "location": {
+        "city": "Kuwait",
+        "country": "Kuwait"
+      },
+      "featured": false,
+      "gallery": [
+        "/images/projects/aum/aum-gallery-1.webp",
+        "/images/projects/aum/aum-gallery-2.webp",
+        "/images/projects/aum/aum-gallery-3.webp"
       ]
     }
   ],
@@ -570,7 +1130,7 @@
         "type": "Blog Post",
         "category": "Autobiographies & News",
         "title": "Eng. Fadi Abdullah… A Young Real Estate Leader Leaving a Strong Mark on the Egyptian Property Market.",
-        "content": "Eng. Fadi Abdullah… A Young Real Estate Leader Leaving a Strong Mark on the Egyptian Property Market Eng. Fadi Abdullah… The Engineer Continuing to Build the Legacy of “Urbnlanes” Eng. Fadi Abdullah… A Young Real Estate Expert Holding the Keys to a Kuwaiti “Property Giant” Eng. Fadi Abdullah… A Model of Entrepreneurship and a Distinguished Real Estate Journey Eng. Fadi Abdullah, CEO of Urbnlanes Kuwait, is considered a prime example of a new generation of real estate developers who have managed to leave a significant mark on the Egyptian property market. Under his leadership, the company launched six projects within just three years, with total investments approaching EGP 46 billion. Although Eng. Fadi Abdullah is only 32 years old, he possesses extensive experience, having entered the workforce early. In addition to his role at Urbnlanes Kuwait, he serves on the boards of Emil Abdullah Investments, a prominent company with a strong project portfolio in Kuwait, First Group for General Trading and Contracting, and chairs First Ads for Advertising and Public Relations. Born in Kuwait City, Eng. Fadi Abdullah earned a Bachelor’s degree in Engineering from the American University in Cairo, specializing in project management. This laid a solid foundation for his professional career. He subsequently joined Emil Abdullah Investments, the distinguished family business comprising six other companies. In 2011, he became CEO of First United Egypt, successfully overseeing diverse projects in Egypt, focusing on developing prime locations such as Maadi, Sheraton, and New Cairo. A Distinguished Track Record in Kuwait Eng. Fadi played a vital role in supervising the company’s extensive operations in Kuwait, leaving a strong mark through his own projects, including American University of the Middle East, West Abdullah Mubarak City, Muttlaa City, and Hessa Mubarak Towers—all reflecting his dedicated and outstanding leadership. Under his leadership, First Group Kuwait successfully delivered over 100 projects, including 20 skyscrapers and three major cities, earning widespread recognition, including three ISO certificates in 2017. Driven by a passion for innovation and a commitment to shaping Egypt’s urban landscape, Fadi Abdullah founded Urbnlanes Real Estate Development with an initial investment of EGP 11 billion. With a vision to redefine the real estate sector and create landmark architectural developments, Urbnlanes Kuwait began a transformative journey with the launch of its inaugural project, Levels Business Tower in the New Administrative Capital. Under Eng. Fadi Abdullah’s leadership, Urbnlanes positioned itself as a leader in luxury real estate development, relying on meticulous planning, consistent quality standards, and fostering exclusive communities and clientele within its projects. The results under his vision speak for themselves. The company’s second project, Eastlane, sold out completely within four hours, demonstrating the market’s confidence in his unique vision. This success was repeated with the first, second, and third phases of NOI Residence, Urbnlanes’ latest residential project in New Cairo, sold within 24 hours, underscoring the company’s commitment to excellence in quality, maintenance, and delivery schedules. Urbnlanes Sales… Huge Figures in Record Time Eng. Fadi Abdullah enhanced the company’s project portfolio through partnerships with leading international engineering firms, including WSA Dubai, Tahseen Consulting, Raef Fahmy Consulting, and Hany Saad Innovation Office, alongside strategic collaborations with industry leaders such as Allianz, Etisalat Misr, Savills, Enova by Veolia, Jadar, and Regus, providing the highest-quality services to clients. According to Eng. Fadi Abdullah, the projects launched in Egypt so far are only the beginning. The company aims to expand to coastal cities, considering investments in the North Coast and other opportunities in Egypt, with a firm commitment to excellence and shaping the urban landscape. The goal is to extend Urbnlanes Kuwait into coastal cities and residential complexes, ushering in a new era of innovation and prosperity. Under the leadership of Emil Abdullah and the collaboration between Eng. Fadi Abdullah, Eng. Shady Abdullah, and Eng. Mina Abdullah, the group achieved unprecedented expansion, with plans extending to Saudi Arabia, where two projects have been successfully delivered. The group also targets further expansion in Dubai, Greece, and other international markets.",
+        "content": "Eng. Fadi Abdullah… A Young Real Estate Leader Leaving a Strong Mark on the Egyptian Property Market Eng. Fadi Abdullah… The Engineer Continuing to Build the Legacy of “Urbnlanes” Eng. Fadi Abdullah… A Young Real Estate Expert Holding the Keys to a Kuwaiti “Property Giant” Eng. Fadi Abdullah… A Model of Entrepreneurship and a Distinguished Real Estate Journey Eng. Fadi Abdullah, CEO of Urbnlanes Kuwait, is considered a prime example of a new generation of real estate developers who have managed to leave a significant mark on the Egyptian property market. Under his leadership, the company launched six projects within just three years, with total investments approaching EGP 46 billion. Although Eng. Fadi Abdullah is only 32 years old, he possesses extensive experience, having entered the workforce early. In addition to his role at Urbnlanes Kuwait, he serves on the boards of Emil Abdullah Investments, a prominent company with a strong project portfolio in Kuwait, First Group for General Trading and Contracting, and chairs First Ads for Advertising and Public Relations. Born in Kuwait City, Eng. Fadi Abdullah earned a Bachelor’s degree in Engineering from the American University in Cairo, specializing in project management. This laid a solid foundation for his professional career. He subsequently joined Emil Abdullah Investments, the distinguished family business comprising six other companies. In 2011, he became CEO of First United Egypt, successfully overseeing diverse projects in Egypt, focusing on developing prime locations such as Maadi, Sheraton, and New Cairo. A Distinguished Track Record in Kuwait Eng. Fadi played a vital role in supervising the company’s extensive operations in Kuwait, leaving a strong mark through his own projects, including American University of the Middle East, West Abdullah Mubarak City, Muttlaa City, and Hessa Mubarak Towers—all reflecting his dedicated and outstanding leadership. Under his leadership, First Group Kuwait successfully delivered over 100 projects, including 20 skyscrapers and three major cities, earning widespread recognition, including three ISO certificates in 2017. Driven by a passion for innovation and a commitment to shaping Egypt’s urban landscape, Fadi Abdullah founded Urbnlanes Real Estate Development with an initial investment of EGP 11 billion. With a vision to redefine the real estate sector and create landmark architectural developments, Urbnlanes Kuwait began a transformative journey with the launch of its inaugural project, Levels Business Tower in the New Administrative Capital. Under Eng. Fadi Abdullah’s leadership, Urbnlanes positioned itself as a leader in luxury real estate development, relying on meticulous planning, consistent quality standards, and fostering exclusive communities and clientele within its projects. The results under his vision speak for themselves. The company’s second project, Eastlane, sold out completely within four hours, demonstrating the market’s confidence in his unique vision. This success was repeated with the first, second, and third phases of NOI Residence, Urbnlanes’ latest Residential project in New Cairo, sold within 24 hours, underscoring the company’s commitment to excellence in quality, maintenance, and delivery schedules. Urbnlanes Sales… Huge Figures in Record Time Eng. Fadi Abdullah enhanced the company’s project portfolio through partnerships with leading international engineering firms, including WSA Dubai, Tahseen Consulting, Raef Fahmy Consulting, and Hany Saad Innovation Office, alongside strategic collaborations with industry leaders such as Allianz, Etisalat Misr, Savills, Enova by Veolia, Jadar, and Regus, providing the highest-quality services to clients. According to Eng. Fadi Abdullah, the projects launched in Egypt so far are only the beginning. The company aims to expand to coastal cities, considering investments in the North Coast and other opportunities in Egypt, with a firm commitment to excellence and shaping the urban landscape. The goal is to extend Urbnlanes Kuwait into coastal cities and Residential complexes, ushering in a new era of innovation and prosperity. Under the leadership of Emil Abdullah and the collaboration between Eng. Fadi Abdullah, Eng. Shady Abdullah, and Eng. Mina Abdullah, the group achieved unprecedented expansion, with plans extending to Saudi Arabia, where two projects have been successfully delivered. The group also targets further expansion in Dubai, Greece, and other international markets.",
         "source": "https://businessmaser.com/18248/",
         "image": "https://businessmaser.com/wp-content/uploads/2025/11/IMG-20251119-WA0020.webp",
         "date": "19/11/2025"
@@ -580,7 +1140,7 @@
         "type": "Blog Post",
         "category": "Autobiographies & News",
         "title": "Eng. Mina Abdullah… A Pioneer of Innovation, Quality, and Sustainability at First Group Kuwait & Saudi Arabia.",
-        "content": "Eng. Mina Emil Abdullah: A Visionary Leader Driving Real Estate Excellence Eng. Mina Emil Abdullah, CEO of First Group Kuwait and Board Member of Urbnlanes Kuwait, believes that true success is built on clear vision, determination, and teamwork—principles that have made the projects he has managed within the Emil Abdullah Group models of quality and innovation across the Arab world. Eng. Mina has demonstrated that success in leadership knows no age limits. He has taken on numerous executive responsibilities that contributed to the expansion of the Group's operations and the establishment of several subsidiaries both in Egypt and abroad. He graduated from the Department of Civil Engineering at the American University in Cairo (AUC) in 2014 and quickly embarked on his professional journey within the Emil Abdullah Investment Group, taking on key leadership roles that supported the Group's growth and the creation of new companies in Egypt and internationally. Currently, Eng. Mina serves as CEO of the following companies: First Group, Urbnlanes Developments, Advertising First, Emil Abdullah Investments, First United Masr, Solo, and White Pearl. He is also a Board Member of Urbnlanes Kuwait, one of the leading real estate development companies in Kuwait and Egypt, recognized for its premium projects that combine contemporary design with high quality, establishing it as a prominent brand in both the Egyptian and Gulf markets. A Successful Career Journey Over 11 years, Eng. Mina has held diverse positions within the Emil Abdullah Group, demonstrating a pragmatic approach to market adaptation, innovation, and anticipating changes in the sectors where the Group operates. He emphasizes that continuous development is the key to sustainable, long-term success. By integrating the latest technologies and adopting new ideas, development becomes a key driver of excellence. This philosophy guides Eng. Mina, who believes that embracing innovation at every stage of real estate development distinguishes successful projects, delivers advanced solutions that meet client expectations, ensures sustainability and efficiency, and secures a prestigious position in highly competitive and ever-changing real estate markets. Advanced Management Throughout his career, Eng. Mina has led major real estate projects and towers, raising the standards of quality and planning in the regional property market. He has also strengthened the position of the companies he manages by implementing advanced management systems and global performance standards, delivering innovative projects that meet the growing needs and aspirations of clients. First Group boasts an extensive portfolio of distinguished projects, including over 100 projects, 4 residential cities, and 20 towers—each representing a unique real estate development experience that positions the Group among landmark developments. These achievements reflect the Group's exceptional operational, technical, and execution capabilities, with Eng. Mina Emil Abdullah at the forefront. Many of the projects managed by Eng. Mina have received ISO certification in recognition of their commitment to quality and integrated management. He has also been awarded three prestigious international real estate and management awards, the latest in Saudi Arabia, honoring his outstanding achievements and contributions to the Gulf real estate sector. Eng. Mina's award in Saudi Arabia was the result of First Group KSA's landmark projects, including Al-Nahda Mosque and municipal headquarters in Sulai and Namar, Riyadh, which he supervised. Through these projects, Eng. Mina transferred decades of the Group's design and execution expertise to Saudi Arabia, contributing to the Kingdom's current urban development.",
+        "content": "Eng. Mina Emil Abdullah: A Visionary Leader Driving Real Estate Excellence Eng. Mina Emil Abdullah, CEO of First Group Kuwait and Board Member of Urbnlanes Kuwait, believes that true success is built on clear vision, determination, and teamwork—principles that have made the projects he has managed within the Emil Abdullah Group models of quality and innovation across the Arab world. Eng. Mina has demonstrated that success in leadership knows no age limits. He has taken on numerous executive responsibilities that contributed to the expansion of the Group's operations and the establishment of several subsidiaries both in Egypt and abroad. He graduated from the Department of Civil Engineering at the American University in Cairo (AUC) in 2014 and quickly embarked on his professional journey within the Emil Abdullah Investment Group, taking on key leadership roles that supported the Group's growth and the creation of new companies in Egypt and internationally. Currently, Eng. Mina serves as CEO of the following companies: First Group, Urbnlanes Developments, Advertising First, Emil Abdullah Investments, First United Masr, Solo, and White Pearl. He is also a Board Member of Urbnlanes Kuwait, one of the leading real estate development companies in Kuwait and Egypt, recognized for its premium projects that combine contemporary design with high quality, establishing it as a prominent brand in both the Egyptian and Gulf markets. A Successful Career Journey Over 11 years, Eng. Mina has held diverse positions within the Emil Abdullah Group, demonstrating a pragmatic approach to market adaptation, innovation, and anticipating changes in the sectors where the Group operates. He emphasizes that continuous development is the key to sustainable, long-term success. By integrating the latest technologies and adopting new ideas, development becomes a key driver of excellence. This philosophy guides Eng. Mina, who believes that embracing innovation at every stage of real estate development distinguishes successful projects, delivers advanced solutions that meet client expectations, ensures sustainability and efficiency, and secures a prestigious position in highly competitive and ever-changing real estate markets. Advanced Management Throughout his career, Eng. Mina has led major real estate projects and towers, raising the standards of quality and planning in the regional property market. He has also strengthened the position of the companies he manages by implementing advanced management systems and global performance standards, delivering innovative projects that meet the growing needs and aspirations of clients. First Group boasts an extensive portfolio of distinguished projects, including over 100 projects, 4 Residential cities, and 20 towers—each representing a unique real estate development experience that positions the Group among landmark developments. These achievements reflect the Group's exceptional operational, technical, and execution capabilities, with Eng. Mina Emil Abdullah at the forefront. Many of the projects managed by Eng. Mina have received ISO certification in recognition of their commitment to quality and integrated management. He has also been awarded three prestigious international real estate and management awards, the latest in Saudi Arabia, honoring his outstanding achievements and contributions to the Gulf real estate sector. Eng. Mina's award in Saudi Arabia was the result of First Group KSA's landmark projects, including Al-Nahda Mosque and municipal headquarters in Sulai and Namar, Riyadh, which he supervised. Through these projects, Eng. Mina transferred decades of the Group's design and execution expertise to Saudi Arabia, contributing to the Kingdom's current urban development.",
         "source": "https://www.dostor.org/5312381",
         "image": "https://www.dostor.org/UploadCache/libfiles/492/3/800x450o/408.jfif",
         "date": "19/11/2025"
@@ -590,7 +1150,7 @@
         "type": "Blog Post",
         "category": "Autobiographies & News",
         "title": "From Kuwait to Egypt | First Group and Urbnlanes… A Unique Development Vision and Modern Communities with a Distinctive Touch.",
-        "content": "First Group has maintained its leading position in the Gulf real estate and construction sector over a journey spanning more than 38 years. Founded in Kuwait in 1987 by entrepreneur Emil Abdullah, the company established a comprehensive development vision to rebuild urban infrastructure in the post-war era, laying a solid foundation of quality, commitment, and excellence in real estate development. Since its inception, First Group has adopted a fully integrated operational model encompassing all stages of real estate development—from design and construction to technical management. This approach has allowed the company to maintain full control over quality standards and delivery schedules, making it one of the most trusted names in Kuwait and the region. Over the years, the company has completed more than 100 major projects, including 20 high-rise towers exceeding 44 floors and four integrated cities. First Group holds a top-tier classification in construction in Kuwait and is among the top three developers specializing in commercial and administrative towers in the Gulf. It has also earned six ISO international certifications in recognition of its adherence to the highest standards of quality, management, and safety. Projects That Build Trust First Group has successfully executed major strategic projects, including: Levels Tower, Hessa Al Mubarak Tower, Panasonic Tower, Anjazat Tower, Melaa City, Sabah Al-Ahmad City, and American University of Kuwait (AUM) – the largest American university in the Middle East. The company's portfolio spans governmental, medical, educational, and commercial projects, earning it a reputation for trust, structural strength, and engineering precision. Urbnlanes Kuwait: The Egyptian Extension of Leading Gulf Expertise Urbnlanes Developments, the real estate arm of Emeel Abdalla Investments in Egypt, represents a Kuwaiti company with a modern Egyptian vision. Since entering the Egyptian market, Urbnlanes has established itself among the top players in one of the region's most competitive markets, thanks to its unique build before sell strategy and full confidence in the quality of its real estate products. Urbnlanes leverages operational expertise from First Group while applying Gulf-standard practices in construction and management. It possesses a fully integrated equipment portfolio and large supply capabilities, ensuring consistent quality and durability across all projects. The company's investments in Egypt exceed EGP 50 billion, with a record of delivering projects ahead of schedule, establishing Urbnlanes as a leading name in both the New Administrative Capital and New Cairo. A Distinctive Presence in New Cairo and the Administrative Capital To date, the company has launched six major projects, marking milestones in the Egyptian real estate market. These projects combine modern design, high-quality execution, and strategic prime locations: NOI Residence – Egypt's First Tropical Community Located in Golden Square, Fifth Settlement, on 46 acres, the project features a nature-inspired design based on the Voronoi philosophy. Ökoplan handled master planning, Hany Saad designed the landscape, and Jadar provided integrated management. Amenities include walking and cycling paths, natural lakes, a luxury clubhouse, tennis and paddle courts, a full wellness center, and a luxury hotel operated by Story Hospitality (Abu Dhabi Capital), aligning with Egypt's plan to double hotel capacity by 2028 and reach 30 million tourists by 2030. Midlane – Modern Business Hub in Fifth Settlement Located at North 90th Street and Mohamed Naguib Axis, covering 15,000 m² with a total built-up area of 85,000 m². It includes commercial, medical, and administrative spaces fully equipped with integrated work-leisure experiences and advanced hotel and office services. Delivered in two phases over 1–4 years. Levels Business Tower – A New Administrative Capital Icon One of the tallest towers in the Downtown area, 41 floors with 15,000 m², overlooking the Green River and North Mohamed bin Zayed Axis. The tower includes commercial, administrative, and hotel areas managed by Crowne Plaza, with a pedestrian bridge connecting the Green River to the business district—a unique feature among tourist towers. Design partners include Ökoplan, Mohamed Hafez Consultancy, Jadar, WSA, and e&. Yellow Residence – Balanced Lifestyle in New Cairo Located on Cairo-Suez Road, 100,800 m², with a 35% construction ratio. It includes residential and hotel apartments (Crown Residence), offices, clinics, a hospital, a hotel, shops, and restaurants. All units sold within 24 hours. Designers include WSA, Hafez Consultants, and Ökoplan. Yellow Lane – Integrated Work and Living Located on Cairo-Suez Road, 24 acres, featuring 16 administrative buildings, 3 clinic buildings, a hospital, hotel, serviced apartments, and commercial rental areas. Façade: 700 m, 15% construction ratio. Design by Tahseen Amin, consulting by Hafez Consultants. Delivered over 3 years. Eastlane Mall – Integrated Retail and Living Experience Located on South 90th Street, Fifth Settlement, combining shopping, dining, and modern lifestyle. All administrative units sold within 4 hours and delivered ahead of schedule. Includes shops, cafés, restaurants, supermarket, and offices, offering a premium development environment blending comfort, functionality, and quality. Leaders of Vision and Innovation The expansion and leadership journey is driven by Emil Abdullah, alongside his sons: Eng. Fadi Abdullah, CEO of Urbnlanes Kuwait, Eng. Shady Abdullah, CEO of Urbnlanes (jointly), and Eng. Mina Abdullah, CEO of First Group and Board Member of Urbnlanes Kuwait. Their combined expertise and oversight of architectural design, planning, aesthetics, and functionality ensure that each Urbnlanes project carries a distinctive architectural identity, reinforcing the group's position among the leading Gulf development companies.",
+        "content": "First Group has maintained its leading position in the Gulf real estate and construction sector over a journey spanning more than 38 years. Founded in Kuwait in 1987 by entrepreneur Emil Abdullah, the company established a comprehensive development vision to rebuild urban infrastructure in the post-war era, laying a solid foundation of quality, commitment, and excellence in real estate development. Since its inception, First Group has adopted a fully integrated operational model encompassing all stages of real estate development—from design and construction to technical management. This approach has allowed the company to maintain full control over quality standards and delivery schedules, making it one of the most trusted names in Kuwait and the region. Over the years, the company has completed more than 100 major projects, including 20 high-rise towers exceeding 44 floors and four integrated cities. First Group holds a top-tier classification in construction in Kuwait and is among the top three developers specializing in commercial and administrative towers in the Gulf. It has also earned six ISO international certifications in recognition of its adherence to the highest standards of quality, management, and safety. Projects That Build Trust First Group has successfully executed major strategic projects, including: Levels Tower, Hessa Al Mubarak Tower, Panasonic Tower, Anjazat Tower, Melaa City, Sabah Al-Ahmad City, and American University of Kuwait (AUM) – the largest American university in the Middle East. The company's portfolio spans governmental, medical, educational, and commercial projects, earning it a reputation for trust, structural strength, and engineering precision. Urbnlanes Kuwait: The Egyptian Extension of Leading Gulf Expertise Urbnlanes Developments, the real estate arm of Emeel Abdalla Investments in Egypt, represents a Kuwaiti company with a modern Egyptian vision. Since entering the Egyptian market, Urbnlanes has established itself among the top players in one of the region's most competitive markets, thanks to its unique build before sell strategy and full confidence in the quality of its real estate products. Urbnlanes leverages operational expertise from First Group while applying Gulf-standard practices in construction and management. It possesses a fully integrated equipment portfolio and large supply capabilities, ensuring consistent quality and durability across all projects. The company's investments in Egypt exceed EGP 50 billion, with a record of delivering projects ahead of schedule, establishing Urbnlanes as a leading name in both the New Administrative Capital and New Cairo. A Distinctive Presence in New Cairo and the Administrative Capital To date, the company has launched six major projects, marking milestones in the Egyptian real estate market. These projects combine modern design, high-quality execution, and strategic prime locations: NOI Residence – Egypt's First Tropical Community Located in Golden Square, Fifth Settlement, on 46 acres, the project features a nature-inspired design based on the Voronoi philosophy. Ökoplan handled master planning, Hany Saad designed the landscape, and Jadar provided integrated management. Amenities include walking and cycling paths, natural lakes, a luxury clubhouse, tennis and paddle courts, a full wellness center, and a luxury hotel operated by Story Hospitality (Abu Dhabi Capital), aligning with Egypt's plan to double hotel capacity by 2028 and reach 30 million tourists by 2030. Midlane – Modern Business Hub in Fifth Settlement Located at North 90th Street and Mohamed Naguib Axis, covering 15,000 m² with a total built-up area of 85,000 m². It includes commercial, medical, and administrative spaces fully equipped with integrated work-leisure experiences and advanced hotel and office services. Delivered in two phases over 1–4 years. Levels Business Tower – A New Administrative Capital Icon One of the tallest towers in the Downtown area, 41 floors with 15,000 m², overlooking the Green River and North Mohamed bin Zayed Axis. The tower includes commercial, administrative, and hotel areas managed by Crowne Plaza, with a pedestrian bridge connecting the Green River to the business district—a unique feature among tourist towers. Design partners include Ökoplan, Mohamed Hafez Consultancy, Jadar, WSA, and e&. Yellow Residence – Balanced Lifestyle in New Cairo Located on Cairo-Suez Road, 100,800 m², with a 35% construction ratio. It includes Residential and hotel apartments (Crown Residence), offices, clinics, a hospital, a hotel, shops, and restaurants. All units sold within 24 hours. Designers include WSA, Hafez Consultants, and Ökoplan. Yellow Lane – Integrated Work and Living Located on Cairo-Suez Road, 24 acres, featuring 16 administrative buildings, 3 clinic buildings, a hospital, hotel, serviced apartments, and commercial rental areas. Façade: 700 m, 15% construction ratio. Design by Tahseen Amin, consulting by Hafez Consultants. Delivered over 3 years. Eastlane Mall – Integrated Retail and Living Experience Located on South 90th Street, Fifth Settlement, combining shopping, dining, and modern lifestyle. All administrative units sold within 4 hours and delivered ahead of schedule. Includes shops, cafés, restaurants, supermarket, and offices, offering a premium development environment blending comfort, functionality, and quality. Leaders of Vision and Innovation The expansion and leadership journey is driven by Emil Abdullah, alongside his sons: Eng. Fadi Abdullah, CEO of Urbnlanes Kuwait, Eng. Shady Abdullah, CEO of Urbnlanes (jointly), and Eng. Mina Abdullah, CEO of First Group and Board Member of Urbnlanes Kuwait. Their combined expertise and oversight of architectural design, planning, aesthetics, and functionality ensure that each Urbnlanes project carries a distinctive architectural identity, reinforcing the group's position among the leading Gulf development companies.",
         "source": "https://www.shorouknews.com/news/view.aspx?cdate=04112025&id=19249d99-a0a2-4695-be57-38ae7688edb5",
         "image": "https://www.shorouknews.com/uploadedimages/Other/original/%D8%AD%D8%AD000000000000000000000000000000000000000000000000000000000000000.jpg",
         "date": "4/11/2025"
@@ -665,7 +1225,7 @@
           "As the sprawling metropolis of Cairo grows ever outwards, so too do opportunities for new expressions of urban life. Imagine luxuriating in a modern apartment – built out of tall panes of glass overlooking verdant gardens, and facades of eco-friendly wood and concrete integrated seamlessly with the trees and natural flora that brings a fresh sense of life to your everyday routine. This is what it’s like to live in Yellow Residence, a grand project by Kuwaiti company @Urbnlanes, which has sold out all of their Phase 1 units for EGP 1.2 billion.",
           "Spread across 100,000 square metres, Yellow Residence boasts a collection of spacious units, meticulously designed to cater to the discerning tastes of its residents. From one, two and three-room apartments, duplexes, and penthouses, each dwelling harmoniously blends nature with cutting-edge technology. 95% of the units offer breathtaking views of sprawling green spaces and meandering water features, providing a serene oasis for relaxation and tranquillity. Connecting directly with nature is made possible as trees weave through the central buildings’ vertical gardens, adding a touch of green to the urban landscape.",
           "Nestled near the old Suez Road, residents enjoy effortless access to the airport, Al Rehab City, The American University in Cairo, Madinaty, and the New Administrative Capital. At the helm of this visionary project is Egyptian entrepreneur Eng. Fadi Abdalla, acting as Urbnlanes’ CEO. Eng. Abdalla’s extensive experience in constructing mixed-use projects in Maadi, Sheraton and New Cairo – along with the expertise of their sister Kuwaiti company, First Group, which has built over 20 high-rise buildings, three cities, and over 100 projects – have paved the way for Yellow Residence’s living experience.",
-          "Yellow Residence stands testament to Urbnlanes’ dedication to creating unparalleled living spaces. But this is just the beginning for Urbnlanes as they continue to invest in the Egyptian market, with more residential mega-projects, commercial developments, and administrative ventures on the horizon."
+          "Yellow Residence stands testament to Urbnlanes’ dedication to creating unparalleled living spaces. But this is just the beginning for Urbnlanes as they continue to invest in the Egyptian market, with more Residential mega-projects, commercial developments, and administrative ventures on the horizon."
         ],
         "image": "/images/blogs/blog-6.webp",
         "date": "23/8/2024"
@@ -715,7 +1275,7 @@
         "type": "Blog Post",
         "category": "Autobiographies & News",
         "title": "scoopempire: UrbnLanes developments has been making quite a buzz in the Egyptian real estate market.⁠",
-        "content": "This innovative residential compound is set to be the first of its kind, adopting the latest international construction methods and architectural trends, as well as utilizing fifth-generation technologies and environmentally friendly green construction.⁠ With a prime location in the heart of the Fifth Settlement, near important services and on the main Suez Road, Yellow Residence is easily accessible to all vital areas such as the airport, Al Rehab City, the American University, Madinaty, and the New Administrative Capital. ⁠ But that’s not all; the prestigious project promises to offer luxury and modernity, and with its strategic location and cutting-edge technology, it is set to be a game-changer in the Egyptian real estate market. ⁠ So what are you waiting for, splash some color into your life with ‘Yellow.’",
+        "content": "This innovative Residential compound is set to be the first of its kind, adopting the latest international construction methods and architectural trends, as well as utilizing fifth-generation technologies and environmentally friendly green construction.⁠ With a prime location in the heart of the Fifth Settlement, near important services and on the main Suez Road, Yellow Residence is easily accessible to all vital areas such as the airport, Al Rehab City, the American University, Madinaty, and the New Administrative Capital. ⁠ But that’s not all; the prestigious project promises to offer luxury and modernity, and with its strategic location and cutting-edge technology, it is set to be a game-changer in the Egyptian real estate market. ⁠ So what are you waiting for, splash some color into your life with ‘Yellow.’",
         "image": "/images/blogs/blog-3.webp",
         "date": "30/8/2023"
       },
@@ -910,7 +1470,7 @@
         "id": "news-017",
         "type": "News",
         "category": "Media Center",
-        "title": "NOI Residence, a premier residential compound in New Cairo’s Golden Square, developed in collaboration with Hany Saad Innovation and Okoplan.",
+        "title": "NOI Residence, a premier Residential compound in New Cairo’s Golden Square, developed in collaboration with Hany Saad Innovation and Okoplan.",
         "content": "https://www.instagram.com/p/DCRflS8tUA2/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==",
         "source": "https://www.instagram.com/p/DCRflS8tUA2/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==",
         "image": "/images/blogs/blog-28.jpg",
@@ -982,7 +1542,7 @@
       "id": "team-002",
       "name": "Mina Abdalla",
       "position": "Board member of Urbnlanes Developments CEO of First Group Kuwait Board member of Emeel Abdalla Investments",
-      "bio": "Eng. Mina Emeel Abdalla, CEO of First Group in Kuwait and Saudi Arabia and Board Member of Urbnlanes, leads with vision, determination, and teamwork, shaping some of the most innovative and high-quality real estate projects in the Middle East. A civil engineering graduate from the American University in Cairo (2014), he quickly pioneered through leadership roles across the Emeel Abdalla Investment Group, managing major developments in Egypt, Kuwait, and Saudi Arabia. Over 11 years, he has overseen over 100 projects including towers, residential cities, and landmark infrastructure implementing advanced management systems, global standards, and sustainable practices. Under his leadership, many projects have earned ISO certifications and international awards.",
+      "bio": "Eng. Mina Emeel Abdalla, CEO of First Group in Kuwait and Saudi Arabia and Board Member of Urbnlanes, leads with vision, determination, and teamwork, shaping some of the most innovative and high-quality real estate projects in the Middle East. A civil engineering graduate from the American University in Cairo (2014), he quickly pioneered through leadership roles across the Emeel Abdalla Investment Group, managing major developments in Egypt, Kuwait, and Saudi Arabia. Over 11 years, he has overseen over 100 projects including towers, Residential cities, and landmark infrastructure implementing advanced management systems, global standards, and sustainable practices. Under his leadership, many projects have earned ISO certifications and international awards.",
       "image": "/images/team/mina.webp",
       "Autobiography": "https://akhbarelyom.com/news/newdetails/4722472/1/"
     },

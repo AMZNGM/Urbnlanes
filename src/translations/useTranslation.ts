@@ -40,7 +40,7 @@ export function useTranslation() {
           }
         }
 
-        // Support for objects/arrays
+        // Support objects and arrays
         if (typeof value !== 'string' && typeof value !== 'object') {
           return key
         }
@@ -49,7 +49,7 @@ export function useTranslation() {
           return value
         }
 
-        // Simple interpolation: replace {{key}} with params[key]
+        // replace {{key}} with params[key]
         return (value as string).replace(/\{\{(\w+)\}\}/g, (match, paramKey) => {
           const paramValue = (params as Record<string, any>)[paramKey]
           return paramValue !== undefined ? String(paramValue) : match

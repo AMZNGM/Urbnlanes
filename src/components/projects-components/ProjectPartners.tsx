@@ -1,7 +1,7 @@
 import { Project, Partner } from '@/types/project'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
-import AnimText from '@/components/ui/text/AnimText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 import { SoftLine } from '@/components/ui/effects/Lines'
 

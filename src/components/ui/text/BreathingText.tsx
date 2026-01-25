@@ -7,13 +7,10 @@ import { useTranslation } from '@/translations/useTranslation'
 export default function BreathingText({
   children,
   as = 'div',
-  fromFontVariationSettings = "'wght' 100, 'slnt' 10",
-  toFontVariationSettings = "'wght' 900, 'slnt' -10",
-  transition = {
-    duration: 1.5,
-    ease: 'easeInOut',
-  },
-  staggerDuration = 0.1,
+  fromFW = "'wght' 100, 'slnt' 10",
+  toFW = "'wght' 900, 'slnt' -10",
+  transition = { duration: 1.5, ease: 'easeInOut' },
+  stagger = 0.1,
   staggerFrom = 'first',
   repeatDelay = 0.1,
   className,
@@ -21,10 +18,10 @@ export default function BreathingText({
 }: {
   children: ReactNode
   as?: ElementType
-  fromFontVariationSettings?: string
-  toFontVariationSettings?: string
+  fromFW?: string
+  toFW?: string
   transition?: Transition
-  staggerDuration?: number
+  stagger?: number
   staggerFrom?: 'first' | 'last' | 'center' | number
   repeatDelay?: number
   className?: string
@@ -49,14 +46,14 @@ export default function BreathingText({
   }
 
   const letterVariants = {
-    initial: { fontVariationSettings: fromFontVariationSettings },
+    initial: { fontVariationSettings: fromFW },
     animate: (i: number) => ({
-      fontVariationSettings: toFontVariationSettings,
+      fontVariationSettings: toFW,
       transition: {
         ...transition,
         repeat: Infinity,
         repeatType: 'mirror' as const,
-        delay: i * staggerDuration,
+        delay: i * stagger,
         repeatDelay: repeatDelay,
       },
     }),

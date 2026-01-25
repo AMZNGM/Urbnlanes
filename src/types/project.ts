@@ -17,12 +17,18 @@ export interface Project {
   logo?: string
   tagline?: string
   shortDesc?: string | string[]
-  description?: string
-  description2?: string
+  description?: string | string[]
   brochure?: string
   status?: string
-  category?: string
+  category: string[]
   completion?: string
+  overview?: {
+    value?: string
+    startdate?: string
+    enddate?: string
+    workingTime?: string
+    buildingArea?: string
+  }
   location?: {
     city: string
     country: string
@@ -31,12 +37,9 @@ export interface Project {
   }
   amenities?: Amenity[]
   partners?: Partner[]
-  gallery?: string[]
   featured?: boolean
-  overview?: {
-    value?: string
-    startdate?: string
-    enddate?: string
-  }
+  gallery?: string[]
+  videoGallery?: string[]
+  constructionGallery?: string[]
   [key: string]: any
 }

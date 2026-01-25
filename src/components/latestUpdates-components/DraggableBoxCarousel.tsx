@@ -124,7 +124,7 @@ export default function DraggableBoxCarousel({ className = '' }) {
               />
               <ArrowBtn onClick={handlePreviousImage} />
               <ArrowBtn onClick={handleNextImage} className="rotate-180 ms-2" />
-              <CloseBtn onClick={handleCloseFullscreen} className="top-0! right-0!" />
+              <CloseBtn onClick={handleCloseFullscreen} />
             </motion.div>
           </motion.div>
         )}

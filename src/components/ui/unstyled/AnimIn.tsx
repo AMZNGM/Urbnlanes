@@ -32,5 +32,3 @@ export default function AnimIn({ children, as = 'div', className = '', delay = 0
     </Tag>
   )
 }
-
-// , type: 'spring', stiffness: 60

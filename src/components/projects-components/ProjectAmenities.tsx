@@ -7,7 +7,7 @@ import { Project } from '@/types/project'
 import { MotionLine } from '@/components/ui/effects/Lines'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
-import AnimText from '@/components/ui/text/AnimText'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import * as Icons from 'lucide-react'
 
 export default function ProjectAmenities({ project }: { project: Project }) {

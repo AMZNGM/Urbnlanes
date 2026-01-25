@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
-import { metadataGenerators } from '@/lib/seo-helpers'
-import { generateProjectSEO } from '@/config/seo.config'
+import { metadataGenerators } from '@/seo/seo-helpers'
+import { generateProjectSEO } from '@/seo/seo.config'
 import { Project } from '@/types/project'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import dynamic from 'next/dynamic'
@@ -11,13 +11,15 @@ const ProjectHero = dynamic(() => import('@/components/projects-components/Proje
 const ProjectBreadcrumb = dynamic(() => import('@/components/projects-components/ProjectBreadcrumb'))
 const ProjectDetails = dynamic(() => import('@/components/projects-components/ProjectDetails'))
 const ProjectGallery = dynamic(() => import('@/components/projects-components/ProjectGallery'))
+const ProjectVideoGallery = dynamic(() => import('@/components/projects-components/ProjectVideoGallery'))
+const ProjectConstructionGallery = dynamic(() => import('@/components/projects-components/ProjectConstructionGallery'))
 const ProjectPartners = dynamic(() => import('@/components/projects-components/ProjectPartners'))
 const ProjectAmenities = dynamic(() => import('@/components/projects-components/ProjectAmenities'))
 const ProjectLocation = dynamic(() => import('@/components/projects-components/ProjectLocation'))
 const ProjectOverview = dynamic(() => import('@/components/projects-components/ProjectOverview'))
 const SimilarProjects = dynamic(() => import('@/components/projects-components/SimilarProjects'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
-const Newsletter = dynamic(() => import('@/components/Newsletter'))
+const Newsletter = dynamic(() => import('@/components/shared/Newsletter'))
 
 interface Props {
   params: Promise<{ id: string }>
@@ -56,15 +58,15 @@ export default async function ProjectPage({ params }: Props) {
       <ProjectBreadcrumb project={project} />
       <ProjectDetails project={project} />
       <ProjectGallery project={project} />
+      <ProjectVideoGallery project={project} />
       <ProjectPartners project={project} />
+      <ProjectConstructionGallery project={project} />
       <ProjectAmenities project={project} />
       <ProjectLocation project={project} />
       {project.overview && <ProjectOverview project={project} />}
       <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} />
-      <div className="space-y-8 bg-text">
-        <LatestNews className="bg-text text-black! px-18 max-md:px-4 py-0!" withHeading={false} />
-        <Newsletter withLine={false} className="bg-text text-black! px-18 max-md:px-4 pt-12 pb-24" />
-      </div>
+      <LatestNews className="bg-text text-black! px-18 max-md:px-4 py-0!" withHeading={false} />
+      <Newsletter dark={false} />
     </Suspense>
   )
 }

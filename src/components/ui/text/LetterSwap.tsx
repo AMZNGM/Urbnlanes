@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useRef, useEffect } from 'react'
+import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { motion, stagger, useAnimate, Transition } from 'motion/react'
 import { useTranslation } from '@/translations/useTranslation'
 import { useIsMobile } from '@/hooks/useIsMobile'
