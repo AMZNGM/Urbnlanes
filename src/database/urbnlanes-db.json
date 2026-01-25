@@ -179,7 +179,7 @@
       ],
       "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2022/08/EastLane-by-urbnlanes.pdf",
       "status": "completed",
-      "category": ["Administrative", "Commercial", "Latest Launches"],
+      "category": ["Administrative", "Commercial", "Latest"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt",
@@ -233,7 +233,7 @@
       "description": "NOI is situated in the prime area of Golden Square in Fifth Settlement, New Cairo. This strategic location places it at the heart of New Cairo, surrounded by upscale Residential communities and close to prominent commercial and recreational hubs. With easy access to major roads, NOI connects residents to essential services and destinations, making it an ideal spot in one of Cairo's most sought-after neighborhoods.",
       "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
       "status": "completed",
-      "category": ["Residential", "Latest Launches"],
+      "category": ["Residential", "Latest"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt"
@@ -293,7 +293,7 @@
       ],
       "brochure": "https://drive.google.com/file/d/1BiZ6kwlPJUnC-DFgsLWzae1omgVyPQSA/view",
       "status": "completed",
-      "category": ["Administrative", "Commercial", "Latest Launches"],
+      "category": ["Administrative", "Commercial", "Latest"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt"
@@ -355,7 +355,7 @@
       ],
       "brochure": "https://drive.google.com/file/d/1cs5X3QNJWgVudChvXUs7-s7VUnrYsaiV/view",
       "status": "completed",
-      "category": ["Administrative", "Commercial", "Latest Launches"],
+      "category": ["Administrative", "Commercial", "Latest"],
       "overview": {
         "value": "2,602,282.000 USD",
         "startdate": "01 AUG 2015",
@@ -420,7 +420,7 @@
       ],
       "brochure": "https://drive.google.com/drive/folders/1Pqmlx7ARbTPSQCEpknItlNkgbBPKMq3n",
       "status": "completed",
-      "category": ["Residential", "Latest Launches"],
+      "category": ["Residential", "Latest"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt"
@@ -562,7 +562,7 @@
       ],
       "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2022/08/EastLane-by-urbnlanes.pdf",
       "status": "completed",
-      "category": ["Administrative", "Commercial", "Latest Launches"],
+      "category": ["Administrative", "Commercial", "Latest"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt"
@@ -606,7 +606,7 @@
       ],
       "brochure": "https://urbnlanes.com/developments/wp-content/uploads/2025/04/Noi-BROCHURE.pdf",
       "status": "completed",
-      "category": ["Residential", "Latest Launches"],
+      "category": ["Residential", "Latest"],
       "location": {
         "city": "New Cairo",
         "country": "Egypt"
@@ -739,10 +739,7 @@
         "country": "Egypt"
       },
       "featured": false,
-      "gallery": [
-        "/images/projects/dalal-complex/dalal-complex-galley-2.webp",
-        "/images/projects/dalal-complex/dalal-complex-galley-1.webp"
-      ],
+      "gallery": ["/images/projects/dalal-complex/dalal-complex-galley-2.webp", "/images/projects/dalal-complex/dalal-complex-galley-1.webp"],
       "videoGallery": ["/videos/projects/dalal-complex/dalal-complex-main-1.mp4"]
     },
     {
@@ -1135,11 +1132,7 @@
         "country": "Kuwait"
       },
       "featured": false,
-      "gallery": [
-        "/images/projects/aum/aum-gallery-1.webp",
-        "/images/projects/aum/aum-gallery-2.webp",
-        "/images/projects/aum/aum-gallery-3.webp"
-      ]
+      "gallery": ["/images/projects/aum/aum-gallery-1.webp", "/images/projects/aum/aum-gallery-2.webp", "/images/projects/aum/aum-gallery-3.webp"]
     }
   ],
   "mediacenter": {
@@ -1196,12 +1189,7 @@
           "Provided by Urbnlanes Set to open in 2028, The upcoming opening of the two new hotels demonstrate a commitment to the highest standards of quality. The Crowne Plaza New Cairo Yellow Residence boasts a prime location near business hubs and Cairo International Airport, offering 180 rooms, a 24/7 restaurant, a Club Lounge, and five meeting rooms along with an events hall and banquet facilities.",
           "Provided by Urbnlanes Similarly, the Crowne Plaza New Administrative Capital, part of the Levels Business Tower project, provides 110 rooms tailored for business travelers, ensuring convenient access to government ministries, administrative institutions, and embassies. The hotel features three upscale restaurants and five meeting rooms equipped to cater to guests’ needs."
         ],
-        "image": [
-          "/images/blogs/blog-29-1.jpg",
-          "/images/blogs/blog-29-2.jpg",
-          "/images/blogs/blog-29-3.jpg",
-          "/images/blogs/blog-29-4.jpg"
-        ],
+        "image": ["/images/blogs/blog-29-1.jpg", "/images/blogs/blog-29-2.jpg", "/images/blogs/blog-29-3.jpg", "/images/blogs/blog-29-4.jpg"],
         "date": "23/8/2024"
       },
       {

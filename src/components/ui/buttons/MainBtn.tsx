@@ -12,7 +12,7 @@ interface MainBtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   to?: string
   href?: string
   onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
-  look?: 'main' | 'outline' | 'ghost' | 'dark'
+  look?: 'main' | 'outline' | 'ghost' | 'dark' | 'glass'
   size?: 'sm' | 'md' | 'lg'
   fullWidth?: boolean
   disabled?: boolean
@@ -31,8 +31,8 @@ export default memo(function MainBtn({
   href,
   onClick,
 
-  look = 'main', // 'main', 'outline', 'ghost'
-  size = 'md', // 'sm', 'md', 'lg'
+  look = 'main',
+  size = 'md',
   fullWidth = false,
   disabled = false,
 
@@ -53,6 +53,7 @@ export default memo(function MainBtn({
     outline: 'bg-transparent text-main border-black! hover:bg-main hover:text-white',
     ghost: 'bg-transparent text-text border-transparent hover:bg-main/10',
     dark: 'bg-black text-text',
+    glass: 'bg-main/50 text-black hover:bg-main/75 backdrop-blur-2xl',
   }
 
   const sizes = {
@@ -103,7 +104,7 @@ export default memo(function MainBtn({
   }
 
   return (
-    <RippleEffect className="relative flex rounded-2xl">
+    <RippleEffect className="relative w-fit flex rounded-2xl">
       <button type="button" onClick={onClick} disabled={disabled} {...commonProps}>
         <InnerContent />
       </button>

@@ -12,7 +12,7 @@ export default function ProjectsShowcase() {
   const markedProjects = db.projects.filter((p) => projectsIds.includes(p.id))
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24 max-md:py-12">
+    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24 max-md:py-4">
       <LineHeading tKey="common.markedProjects" />
 
       <div className="gap-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 mb-12 py-8">

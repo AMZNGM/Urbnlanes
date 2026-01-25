@@ -66,8 +66,8 @@ export default function SectionHero({
       </AnimatePresence>
 
       <div
-        data-scroll
-        data-scroll-speed="0.2"
+        // data-scroll
+        // data-scroll-speed="0.2"
         className="z-10 relative w-full h-full flex flex-col justify-end items-center duration-300 p-4 max-md:py-20"
       >
         <motion.div initial={{ y: '100%' }} animate={{ y: '0%' }} transition={{ duration: 0.9 }}>

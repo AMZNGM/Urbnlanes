@@ -107,7 +107,7 @@ export default function OurProjectsPage() {
       <TextPanel tKey="common.architecturalExcellence" paraTKey="common.architecturalExcellenceDesc" />
       <ProjectsShowcase />
 
-      {/* <ProjectsFilter
+      <ProjectsFilter
         categories={categories}
         statuses={statuses}
         cities={cities}
@@ -117,7 +117,7 @@ export default function OurProjectsPage() {
         onCategoryChange={setSelectedCategory}
         onStatusChange={setSelectedStatus}
         onCityChange={setSelectedCity}
-      /> */}
+      />
 
       {/* <ProjectsStats
         totalProjects={db.projects.length}

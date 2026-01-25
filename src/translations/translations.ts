@@ -16,7 +16,6 @@ export const TRANSLATIONS = {
       constructionUpdates: 'Construction Updates',
       careers: 'Careers',
       ourProjects: 'Our Projects',
-      latestLaunches: 'Latest Launches',
       storyBrandedResidences: 'Story Branded Residences',
       noi: 'NOI',
       midlane: 'Midlane',
@@ -24,6 +23,7 @@ export const TRANSLATIONS = {
       yellowResidence: 'Yellow Residence',
       eastlane: 'Eastlane',
       eastSubahAlAhmedCity: 'East Subah Al-Ahmed City',
+      Latest: 'Latest Launches',
       mutlaaCity: 'Mutlaa City',
       westAbdullahMubarakCity: 'West Abdullah Mubarak City',
       levelsBusinessTower: 'Levels Business Tower',
@@ -67,6 +67,9 @@ export const TRANSLATIONS = {
       underConstruction: 'Under Construction',
       planned: 'Planned',
       residential: 'Residential',
+      administrative: 'Administrative',
+      educational: 'Educational',
+      city: 'City',
       'Autobiographies & News': 'Autobiographies & News',
       latestNews: 'Latest News',
       allNews: 'All News',
@@ -149,6 +152,7 @@ export const TRANSLATIONS = {
       'East Subah Al-Ahmed City': 'East Subah Al-Ahmed City',
       'Mutlaa City': 'Mutlaa City',
       'West Abdullah Mubarak City': 'West Abdullah Mubarak City',
+      Unknown: 'Unknown',
     },
     search: {
       placeholder: 'Search...',
@@ -193,6 +197,26 @@ export const TRANSLATIONS = {
         title: 'Construction Updates',
         update: 'Update',
       },
+    },
+
+    filters: {
+      filterBy: 'Filter Projects by',
+      filterByCategory: 'Filter by Category',
+      filterByStatus: 'Filter by Status',
+      filterByCity: 'Filter by City',
+      allCategories: 'All Categories',
+      allStatuses: 'All Statuses',
+      allCities: 'All Cities',
+      Latest: 'Latest Launches',
+      Administrative: 'Administrative',
+      Educational: 'Educational',
+      city: 'City',
+      Residential: 'Residential',
+      Commercial: 'Commercial',
+      completed: 'Completed',
+      underConstruction: 'Under Construction',
+      planned: 'Planned',
+      resetFilters: 'Reset Filters',
     },
 
     db: {
@@ -252,14 +276,12 @@ export const TRANSLATIONS = {
           {
             title: 'Regional Leadership',
             year: '2015 - 2020',
-            description:
-              "As we've grown to become one of the Middle East's leading real estate forces, we carry the torch of our founding principles.",
+            description: "As we've grown to become one of the Middle East's leading real estate forces, we carry the torch of our founding principles.",
           },
           {
             title: 'Egyptian Journey',
             year: '2020 - Present',
-            description:
-              'We honor the heritage that began in Kuwait and enthusiastically continue that journey of growth and contribution here in Egypt.',
+            description: 'We honor the heritage that began in Kuwait and enthusiastically continue that journey of growth and contribution here in Egypt.',
           },
           {},
         ],
@@ -306,8 +328,7 @@ export const TRANSLATIONS = {
         values: [
           {
             title: 'Exceptional Quality',
-            description:
-              'We believe that our high standards and commitment to quality are what set us apart from other real estate companies.',
+            description: 'We believe that our high standards and commitment to quality are what set us apart from other real estate companies.',
           },
           {
             title: 'Adherence',
@@ -458,8 +479,7 @@ export const TRANSLATIONS = {
           name: 'Hussainiya Maarefy',
           tagline: 'Commercial and Administrative Project',
           shortDesc: 'Integrated commercial and administrative project',
-          description:
-            'Hussainiya Maarefy project is a commercial and administrative project that offers modern commercial and office spaces.',
+          description: 'Hussainiya Maarefy project is a commercial and administrative project that offers modern commercial and office spaces.',
         },
         'al-awaly-compound-in-fentaa': {
           name: 'Al-Awaly Compound In Fentaa',
@@ -534,8 +554,7 @@ export const TRANSLATIONS = {
           name: 'American University of The Middle East (AUM)',
           tagline: 'Distinguished Educational Institution',
           shortDesc: 'Leading American university',
-          description:
-            'The eminent and significant American University of the Middle East project is a signature of our attentive and devoted team in Kuwait.',
+          description: 'The eminent and significant American University of the Middle East project is a signature of our attentive and devoted team in Kuwait.',
         },
         'misk-hotel': {
           name: 'Misk Hotel',
@@ -640,7 +659,6 @@ export const TRANSLATIONS = {
       constructionUpdates: 'تحديثات البناء',
       careers: 'الوظائف',
       ourProjects: 'مشاريعنا',
-      latestLaunches: 'أحدث المشاريع',
       storyBrandedResidences: 'ستوري براندد ريزيدنسز',
       noi: 'نوي',
       midlane: 'ميدلين',
@@ -648,6 +666,7 @@ export const TRANSLATIONS = {
       yellowResidence: 'يلو ريزيدنس',
       eastlane: 'إيست لين',
       levelsBusinessTower: 'ليفلز بيزنس تاور',
+      Latest: 'أحدث المشاريع',
       eastSubahAlAhmedCity: 'مدينة إست صباح الأحمد',
       mutlaaCity: 'مدينة المطلاع',
       westAbdullahMubarakCity: 'مدينة عبد الله المبارك',
@@ -691,6 +710,9 @@ export const TRANSLATIONS = {
       underConstruction: 'تحت الإنشاء',
       planned: 'مخطط له',
       residential: 'سكني',
+      administrative: 'إداري',
+      educational: 'تعليمي',
+      city: 'مدينة',
       'Autobiographies & News': 'السيرة الذاتية والأخبار',
       latestNews: 'احدث الاخبار',
       allNews: 'كل الاخبار',
@@ -716,8 +738,7 @@ export const TRANSLATIONS = {
       allProjects: 'جميع المشاريع',
       partnersTitle: 'مجتمع العملاء المتعاون',
       partnersDesc: 'تنمية النجاح من خلال العمل الاستراتيجي مع الشركاء الخطوطييين والناس الموثوقين.',
-      partnersDesc2:
-        'في ايربن لاينز، نؤمن بقوة التعاون. نحن نبني نجاحنا على قواعد آرائنا قوية مع الشركاء العليا والمتطلبين والموثوقين في تنمية العقارات.',
+      partnersDesc2: 'في ايربن لاينز، نؤمن بقوة التعاون. نحن نبني نجاحنا على قواعد آرائنا قوية مع الشركاء العليا والمتطلبين والموثوقين في تنمية العقارات.',
       allPartners: 'جميع الشركاء',
       projectPartners: 'شركاء المشروع',
       partnersCTA: 'انضم إلى شبكتنا الشريك',
@@ -747,6 +768,7 @@ export const TRANSLATIONS = {
       ourImpact: 'أثرتنا',
       inKuwait: 'في كويت',
     },
+
     amenities: {
       Gym: 'صالة ألعاب رياضية',
       'Bike Lanes': 'مسارات الدراجات',
@@ -772,6 +794,7 @@ export const TRANSLATIONS = {
       'East Subah Al-Ahmed City': 'مدينة شرق صباح الأحمد',
       'Mutlaa City': 'مدينة المطلاع',
       'West Abdullah Mubarak City': 'مدينة غرب عبد الله المبارك',
+      Unknown: 'غير معروف',
     },
     search: {
       placeholder: 'بحث...',
@@ -818,13 +841,32 @@ export const TRANSLATIONS = {
       },
     },
 
+    filters: {
+      filterBy: 'تصفية المشاريع حسب',
+      filterByCategory: 'تصفية حسب الفئة',
+      filterByStatus: 'تصفية حسب الحالة',
+      filterByCity: 'تصفية حسب المدينة',
+      allCategories: 'جميع الفئات',
+      allStatuses: 'جميع الحالات',
+      allCities: 'جميع المدن',
+      Latest: 'أحدث المشاريع',
+      Administrative: 'إداري',
+      Educational: 'تعليمي',
+      city: 'مدينة',
+      Residential: 'سكني',
+      Commercial: 'تجاري',
+      completed: 'مكتمل',
+      underConstruction: 'تحت الإنشاء',
+      planned: 'مخطط له',
+      resetFilters: 'إعادة تعيين الفلاتر',
+    },
+
     db: {
       metadata: {
         company: {
           name: 'اوربن لينز للتطوير العقاري',
           parentCompany: 'إميل عبد الله للاستثمارات',
-          description:
-            'شركة تطوير عقاري ذات مشاريع في جميع أنحاء الشرق الأوسط، مبنية على التنوع وسنوا ت عديدة من الخبرة في مجال التطوير العقاري.',
+          description: 'شركة تطوير عقاري ذات مشاريع في جميع أنحاء الشرق الأوسط، مبنية على التنوع وسنوا ت عديدة من الخبرة في مجال التطوير العقاري.',
           tagline: 'ما وراء الروائع',
           hotline: '15061',
         },
@@ -874,8 +916,7 @@ export const TRANSLATIONS = {
           {
             title: 'قيادة المنطقة',
             year: '2015 - 2020',
-            description:
-              'كما أصبحنا واحدة من أشهر الشركات العقارية الأكثر شعبية في المنطقة، نحافظ على مصلح الأساسيات التي تم تقديمها في وقتنا.',
+            description: 'كما أصبحنا واحدة من أشهر الشركات العقارية الأكثر شعبية في المنطقة، نحافظ على مصلح الأساسيات التي تم تقديمها في وقتنا.',
           },
           {
             title: 'رحلة المصر',
@@ -910,8 +951,7 @@ export const TRANSLATIONS = {
             prefix: '+',
             suffix: '',
             label: 'البرجات على الأرض',
-            description:
-              'أكثر من 20 برجات تنشيطية تستثمر في الإبداع والهندسة المعمارية، وتقدم فرص مليئة للأشخاص لممارسة وتنمية وتوفير في المدن.',
+            description: 'أكثر من 20 برجات تنشيطية تستثمر في الإبداع والهندسة المعمارية، وتقدم فرص مليئة للأشخاص لممارسة وتنمية وتوفير في المدن.',
           },
           {
             number: 38,
@@ -987,16 +1027,14 @@ export const TRANSLATIONS = {
         'yellow-lane': {
           name: 'يلو لين',
           tagline: 'خطوط تحدد نمط حياتك.',
-          shortDesc:
-            'على مقربة من طريق السويس القديم والجديد. يوفر هذا الموقع المتميز سهولة الوصول إلى المعالم السياحية الرئيسية في المدينة.',
+          shortDesc: 'على مقربة من طريق السويس القديم والجديد. يوفر هذا الموقع المتميز سهولة الوصول إلى المعالم السياحية الرئيسية في المدينة.',
           description:
             'يلو لين ليس مجرد مكان، إنه لوحة تنبض فيها الخطوط بالحياة، تخاطب روحك وتحدد نمط حياتك. مساحاتنا مصممة بدقة للحفاظ على توازن دقيق بين الوظيفة والجمال.',
         },
         'yellow-residence': {
           name: 'يلو ريزيدنس',
           tagline: 'الأصفر ليس مجرد لون، إنه شعور؛ أسلوب حياة للأرواح الجريئة.',
-          shortDesc:
-            'على مقربة من طريق السويس القديم والجديد. يوفر هذا الموقع المتميز سهولة الوصول إلى المعالم السياحية الرئيسية في المدينة.',
+          shortDesc: 'على مقربة من طريق السويس القديم والجديد. يوفر هذا الموقع المتميز سهولة الوصول إلى المعالم السياحية الرئيسية في المدينة.',
           description: [
             'يلو هو مجمع سكني مصمم ليوفر للسكان حياة من النعيم ويمكنهم من الوصول إلى أفضل ما لديهم. تم تصميم العمارة والتصميم الداخلي لـ يلو بعناية لخلق شعور بالهدوء والسكينة، مع التركيز على المواد الطبيعية والمساحات المفتوحة للسماح للمجتمع بالازدهار من خلال تجربة لا ميل لها.',
             'على مقربة من طريق السويس القديم والجديد. يوفر هذا الموقع المتميز سهولة الوصول إلى المعالم السياحية الرئيسية في المدينة.',
@@ -1126,15 +1164,13 @@ export const TRANSLATIONS = {
           name: 'برج الرشدان',
           tagline: 'برج سكني وتجاري',
           shortDesc: 'برج حديث',
-          description:
-            'برج الرشدان هو من مواد بناء من الدرجة الأولى ومعايير عالمية مع واجهة استثنائية وديكورات داخلية ومرافق وميزات مصممة بذكاء.',
+          description: 'برج الرشدان هو من مواد بناء من الدرجة الأولى ومعايير عالمية مع واجهة استثنائية وديكورات داخلية ومرافق وميزات مصممة بذكاء.',
         },
         'hessa-towers': {
           name: 'أبراج هسة',
           tagline: 'أبراج سكنية وتجارية',
           shortDesc: 'مجمع أبراج حديث',
-          description:
-            'التميز المعماري يتمثل في أبراج هسة المتميزة. تفانى فريقنا في الكويت في جعل تحفة فنية تتحقق إلى الحياة قبل تاريخ التسليم بشهرين.',
+          description: 'التميز المعماري يتمثل في أبراج هسة المتميزة. تفانى فريقنا في الكويت في جعل تحفة فنية تتحقق إلى الحياة قبل تاريخ التسليم بشهرين.',
         },
         'al-shadadiya-university': {
           name: 'جامعة الشادية',
