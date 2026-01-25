@@ -22,15 +22,15 @@ export default function AboutPage() {
         image="/images/projects/yellow-residence/yr-gallery-11.webp"
         video="/videos/one-year-1.mp4"
       />
-      <TextPanel title="common.aboutUs" para="db.whoweare.description2" />
+      <TextPanel tKey="common.aboutUs" paraTKey="db.whoweare.description2" />
       <OurCoreValues />
       <SisterCompanies />
       <HoldingCompany />
       <OurStory />
       <BehindTheFigures />
       <TextPanel
-        title="db.whoweare.artToArchitecture.title"
-        para="db.whoweare.artToArchitecture.description"
+        tKey="db.whoweare.artToArchitecture.title"
+        paraTKey="db.whoweare.artToArchitecture.description"
         image="/images/projects/yellow-residence/yr-gallery-8.avif"
         className="bg-black! text-text"
         paraClassName="opacity-100 text-xl"

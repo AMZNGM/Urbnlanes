@@ -13,7 +13,7 @@ export default function SimilarProjects({ currentProject, allProjects }: { curre
 
   const similarProjects = allProjects.filter((project) => project.id !== currentProject.id && project.category === currentProject.category)
 
-  if (similarProjects.length === 0) return null
+  // if (similarProjects.length === 0) return null
 
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">

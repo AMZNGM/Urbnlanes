@@ -4,10 +4,9 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Project } from '@/types/project'
-import { MotionLine } from '@/components/ui/effects/Lines'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
-import AnimText from '@/components/ui/unstyled/AnimText'
+import LineHeading from '@/components/shared/LineHeading'
 import * as Icons from 'lucide-react'
 
 export default function ProjectAmenities({ project }: { project: Project }) {
@@ -25,15 +24,7 @@ export default function ProjectAmenities({ project }: { project: Project }) {
 
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
-      <AnimText as={'h2'} delay={0.9} className="font-sec font-medium text-xs tracking-widest">
-        <TText tKey="modal.amenities" />
-      </AnimText>
-
-      <MotionLine delay={0.7} />
-
-      <AnimText as={'p'} delay={0.9} className="font-sec font-light rtl:text-xs">
-        <TText tKey="common.amenitiesDesc" />
-      </AnimText>
+      <LineHeading tKey="modal.amenities" paraTKey="common.amenitiesDesc" />
 
       <div className="gap-4 grid md:grid-cols-2 mt-16 max-md:mt-12">
         <AnimatePresence mode="wait">

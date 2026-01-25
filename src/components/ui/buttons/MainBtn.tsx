@@ -103,7 +103,7 @@ export default memo(function MainBtn({
   }
 
   return (
-    <RippleEffect className="flex rounded-2xl">
+    <RippleEffect className="relative flex rounded-2xl">
       <button type="button" onClick={onClick} disabled={disabled} {...commonProps}>
         <InnerContent />
       </button>

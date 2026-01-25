@@ -20,7 +20,7 @@ export default function PartnersAssociatesPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
       <PartnersHero />
-      <TextPanel title="common.partnersTitle" para="common.partnersDesc2" />
+      <TextPanel tKey="common.partnersTitle" paraTKey="common.partnersDesc2" />
       <PartnersParallaxPanels />
       <PartnershipStats />
       <PartnersCategoryTabs selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />

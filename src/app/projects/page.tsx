@@ -7,6 +7,7 @@ import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 
 const SectionHero = dynamic(() => import('@/components/hero-components/sectionHero'))
+const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
 const ProjectsShowcase = dynamic(() => import('@/components/projects-components/ProjectsShowcase'))
 const ProjectsFilter = dynamic(() => import('@/components/projects-components/ProjectsFilter'))
 const ProjectsGrid = dynamic(() => import('@/components/projects-components/ProjectsGrid'))
@@ -101,10 +102,10 @@ export default function OurProjectsPage() {
         title="nav.ourProjects"
         para="common.projectsDesc"
         image="/images/projects/noi/noi-gallery-13.webp"
-        video="/videos/projects/levels-tower/levels-e-and-1.mp4"
+        video="/videos/projects/mutlaa/mutlaa-main-1.mp4"
       />
-
-      {/* <ProjectsShowcase /> */}
+      <TextPanel tKey="common.architecturalExcellence" paraTKey="common.architecturalExcellenceDesc" />
+      <ProjectsShowcase />
 
       {/* <ProjectsFilter
         categories={categories}

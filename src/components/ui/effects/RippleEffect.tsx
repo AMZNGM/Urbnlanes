@@ -68,7 +68,7 @@ export default memo(function RippleEffect({ children, className = '', as = 'div'
   }, [])
 
   return (
-    <Tag ref={elementRef} className={`flex overflow-hidden ${className}`} {...props}>
+    <Tag ref={elementRef} className={`relative overflow-hidden ${className}`} {...props}>
       {children}
     </Tag>
   )

@@ -2,9 +2,9 @@ import Image from 'next/image'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/unstyled/AnimText'
 
-export default function TextPanel({ className = '', paraClassName = '', imageClassName = '', title = '', para = '', image = '' }) {
+export default function TextPanel({ tKey = '', paraTKey = '', image = '', className = '', paraClassName = '', imageClassName = '' }) {
   return (
-    <section className={`relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24 ${className}`}>
+    <section className={`relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 pt-24 pb-12 ${className}`}>
       {image && (
         <Image
           src={image}
@@ -15,19 +15,19 @@ export default function TextPanel({ className = '', paraClassName = '', imageCla
         />
       )}
 
-      <div className="z-10 relative w-full max-w-5xl h-full flex flex-col justify-center items-center gap-4 text-center mx-auto">
-        {title && (
+      <div className="z-10 relative w-full max-w-4xl h-full flex flex-col justify-center items-center gap-4 text-center mx-auto">
+        {tKey && (
           <div data-scroll data-scroll-speed="0.02">
-            <AnimText as="h2" className="font-sec text-4xl text-center rtl:leading-12 mb-12">
-              <TText tKey={title} />
+            <AnimText as="h2" className="font-sec text-4xl rtl:leading-12 mb-6">
+              <TText tKey={tKey} />
             </AnimText>
           </div>
         )}
 
-        {para && (
-          <div data-scroll data-scroll-speed="0.05" className="max-w-4xl space-y-6 text-center mx-auto">
-            <AnimText as="p" className={`opacity-80 text-lg ${paraClassName}`}>
-              <TText tKey={para} />
+        {paraTKey && (
+          <div data-scroll data-scroll-speed="0.05">
+            <AnimText as="p" className={`max-w-4xl opacity-80 text-lg text-balance leading-relaxed mx-auto ${paraClassName}`}>
+              <TText tKey={paraTKey} />
             </AnimText>
           </div>
         )}

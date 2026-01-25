@@ -122,9 +122,13 @@ export default function DraggableBoxCarousel({ className = '' }) {
                 sizes="(max-width: 768px) 45vw, 35vw"
                 className="object-contain"
               />
-              <ArrowBtn onClick={handlePreviousImage} />
-              <ArrowBtn onClick={handleNextImage} className="rotate-180 ms-2" />
-              <CloseBtn onClick={handleCloseFullscreen} />
+              <div className="flex justify-between items-center gap-2">
+                <CloseBtn onClick={handleCloseFullscreen} />
+                <div className="space-x-2">
+                  <ArrowBtn onClick={handleNextImage} className="rotate-180" />
+                  <ArrowBtn onClick={handlePreviousImage} />
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         )}

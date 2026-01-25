@@ -3,21 +3,14 @@ import { MotionLine } from '@/components/ui/effects/Lines'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
+import LineHeading from '@/components/shared/LineHeading'
 
 export default function ProjectLocation({ project }: { project: Project }) {
   if (!project || !project.location) return null
 
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
-      <AnimText as={'h2'} delay={0.9} className="font-sec font-medium text-xs tracking-widest">
-        <TText tKey="common.location" />
-      </AnimText>
-
-      <MotionLine delay={1} />
-
-      <AnimText as={'p'} delay={0.9} className="font-sec font-light rtl:text-xs">
-        <TText tKey="common.locationDesc" />
-      </AnimText>
+      <LineHeading tKey="common.location" paraTKey="common.locationDesc" />
 
       <AnimIn className="space-y-4 grid grid-cols-2 bg-main/25 rounded-2xl mt-8 p-4">
         <AnimIn delay={0.2} className="bg-main/25 rounded-2xl me-2 p-4">
