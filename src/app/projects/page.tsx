@@ -10,10 +10,10 @@ const SectionHero = dynamic(() => import('@/components/hero-components/sectionHe
 const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
 const ProjectsShowcase = dynamic(() => import('@/components/projects-components/ProjectsShowcase'))
 const ProjectsFilter = dynamic(() => import('@/components/projects-components/ProjectsFilter'))
+const ProjectsStats = dynamic(() => import('@/components/projects-components/ProjectsStats'))
 const ProjectsGrid = dynamic(() => import('@/components/projects-components/ProjectsGrid'))
 const ProjectsList = dynamic(() => import('@/components/projects-components/ProjectsList'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
-const ProjectsStats = dynamic(() => import('@/components/projects-components/ProjectsStats'))
 
 export default function OurProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
@@ -33,9 +33,7 @@ export default function OurProjectsPage() {
         })
       )
     )
-    const statuses = Array.from(
-      new Set(db.projects.map((project) => project.status).filter((status): status is string => status !== undefined))
-    )
+    const statuses = Array.from(new Set(db.projects.map((project) => project.status).filter((status): status is string => status !== undefined)))
     const cities = Array.from(new Set(db.projects.map((project) => project.location?.city || 'Unknown')))
 
     const filteredProjects = db.projects.filter((project) => {
@@ -119,12 +117,7 @@ export default function OurProjectsPage() {
         onCityChange={setSelectedCity}
       />
 
-      {/* <ProjectsStats
-        totalProjects={db.projects.length}
-        filteredProjects={filteredProjects.length}
-        categories={categories.length}
-        cities={cities.length}
-      /> */}
+      <ProjectsStats totalProjects={db.projects.length} filteredProjects={filteredProjects.length} categories={categories.length} cities={cities.length} />
 
       {/* View Toggle Button - Always Visible */}
       {/* <div className="relative w-dvw overflow-hidden px-18 max-md:px-4 py-4">
