@@ -65,11 +65,7 @@ export default function SectionHero({
         </motion.div>
       </AnimatePresence>
 
-      <div
-        // data-scroll
-        // data-scroll-speed="0.2"
-        className="z-10 relative w-full h-full flex flex-col justify-end items-center duration-300 p-4 max-md:py-20"
-      >
+      <div data-scroll data-scroll-speed="0.2" className="z-10 relative w-full h-full flex flex-col justify-end items-center duration-300 p-4 max-md:py-20">
         <motion.div initial={{ y: '100%' }} animate={{ y: '0%' }} transition={{ duration: 0.9 }}>
           <BreathingText as="div" repeatDelay={2} className="w-full text-[10dvw] text-center text-nowrap ltr:leading-none max-md:pb-6">
             {t(`${title}`)}

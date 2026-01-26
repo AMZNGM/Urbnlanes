@@ -1,31 +1,26 @@
-'use client'
-
 import dynamic from 'next/dynamic'
-import { Suspense, useState } from 'react'
+import { Suspense } from 'react'
+import { metadataGenerators } from '@/seo/seo-helpers'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 
-const PartnersHero = dynamic(() => import('@/components/partners-components/PartnersHero'))
+import PartnersHero from '@/components/partners-components/PartnersHero'
 const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
 const PartnersParallaxPanels = dynamic(() => import('@/components/partners-components/PartnersParallaxPanels'))
-const PartnersCategoryTabs = dynamic(() => import('@/components/partners-components/PartnersCategoryTabs'))
-const SisterCompanies = dynamic(() => import('@/components/partners-components/SisterCompanies'))
-const ProjectPartners = dynamic(() => import('@/components/partners-components/ProjectPartners'))
 const PartnershipStats = dynamic(() => import('@/components/partners-components/PartnershipStats'))
+const PartnersFilters = dynamic(() => import('@/components/partners-components/PartnersFilters'))
 const PartnersCTA = dynamic(() => import('@/components/partners-components/PartnersCTA'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
 
-export default function PartnersAssociatesPage() {
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'sister' | 'project'>('all')
+export const generateMetadata = metadataGenerators.partnersAssociates
 
+export default function PartnersAssociatesPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
       <PartnersHero />
       <TextPanel tKey="common.partnersTitle" paraTKey="common.partnersDesc2" />
       <PartnersParallaxPanels />
       <PartnershipStats />
-      <PartnersCategoryTabs selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />
-      {(selectedCategory === 'all' || selectedCategory === 'sister') && <SisterCompanies />}
-      {(selectedCategory === 'all' || selectedCategory === 'project') && <ProjectPartners />}
+      <PartnersFilters />
       <PartnersCTA />
       <LatestNews line={false} />
     </Suspense>

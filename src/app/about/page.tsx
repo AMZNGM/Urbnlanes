@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 import SectionHero from '@/components/hero-components/sectionHero'
 const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
 const OurCoreValues = dynamic(() => import('@/components/about-components/OurCoreValues'))
-const SisterCompanies = dynamic(() => import('@/components/home-components/SisterCompanies'))
+const SisterCompanies = dynamic(() => import('@/components/about-components/SisterCompanies'))
 const HoldingCompany = dynamic(() => import('@/components/about-components/HoldingCompany'))
 const OurStory = dynamic(() => import('@/components/about-components/OurStory'))
 const BehindTheFigures = dynamic(() => import('@/components/about-components/BehindTheFigures'))
@@ -17,11 +17,7 @@ export const generateMetadata = metadataGenerators.about
 export default function AboutPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      <SectionHero
-        title="common.aboutUrbnlanes"
-        image="/images/projects/yellow-residence/yr-gallery-11.webp"
-        video="/videos/one-year-1.mp4"
-      />
+      <SectionHero title="common.aboutUrbnlanes" image="/images/projects/yellow-residence/yr-gallery-11.webp" video="/videos/one-year-1.mp4" />
       <TextPanel tKey="common.aboutUs" paraTKey="db.whoweare.description2" />
       <OurCoreValues />
       <SisterCompanies />

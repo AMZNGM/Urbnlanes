@@ -4,7 +4,7 @@ import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 
-export default function SisterCompanies() {
+export default function SisterPartners() {
   return (
     <section className="relative w-dvw overflow-hidden bg-black text-text px-18 max-md:px-4 py-12">
       <AnimText as="h3" className="font-sec text-3xl mb-12">

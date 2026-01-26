@@ -13,21 +13,21 @@ export default function PartnersCategoryTabs({
         <MainBtn
           size="lg"
           onClick={() => onCategoryChange('all')}
-          className={`${selectedCategory === 'all' ? 'bg-main!' : 'bg-main/25! text-current! hover:bg-main/50'}`}
+          className={`w-full ${selectedCategory === 'all' ? 'bg-main!' : 'bg-main/25! text-current! hover:bg-main/50'}`}
           tKey="common.allPartners"
         />
 
         <MainBtn
           size="lg"
           onClick={() => onCategoryChange('sister')}
-          className={`${selectedCategory === 'sister' ? 'bg-main!' : 'bg-main/25! text-current! hover:bg-main/50'}`}
+          className={`w-full ${selectedCategory === 'sister' ? 'bg-main!' : 'bg-main/25! text-current! hover:bg-main/50'}`}
           tKey="common.sisCompanies"
         ></MainBtn>
 
         <MainBtn
           size="lg"
           onClick={() => onCategoryChange('project')}
-          className={`${selectedCategory === 'project' ? 'bg-main!' : 'bg-main/25! text-current! hover:bg-main/50'}`}
+          className={`w-full ${selectedCategory === 'project' ? 'bg-main!' : 'bg-main/25! text-current! hover:bg-main/50'}`}
           tKey="common.projectPartners"
         />
       </div>

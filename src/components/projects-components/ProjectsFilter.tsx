@@ -86,10 +86,6 @@ export default function ProjectsFilter({
           <TText tKey="filters.filterBy" />
         </AnimText>
 
-        {/* <AnimText as={'h2'} className="font-sec text-3xl text-center mb-12">
-        <TText tKey="common.allProjects" />
-      </AnimText> */}
-
         {/* dropdowns */}
         <div className="gap-4 grid md:grid-cols-3">
           {Dropdowns.map(({ label, value, options, onChange, openDropdown, setOpenDropdown }) => (

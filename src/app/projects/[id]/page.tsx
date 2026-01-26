@@ -7,7 +7,7 @@ import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import dynamic from 'next/dynamic'
 import db from '@/database/urbnlanes-db.json'
 
-const ProjectHero = dynamic(() => import('@/components/projects-components/ProjectHero'))
+import ProjectHero from '@/components/projects-components/ProjectHero'
 const ProjectBreadcrumb = dynamic(() => import('@/components/projects-components/ProjectBreadcrumb'))
 const ProjectDetails = dynamic(() => import('@/components/projects-components/ProjectDetails'))
 const ProjectGallery = dynamic(() => import('@/components/projects-components/ProjectGallery'))

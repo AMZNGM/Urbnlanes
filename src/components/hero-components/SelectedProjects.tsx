@@ -4,8 +4,8 @@ import { useState } from 'react'
 import TText from '@/translations/TText'
 import db from '@/database/urbnlanes-db.json'
 import Heading from '@/components/shared/Heading'
-import MasonryGrid from '@/components/shared/MasonryGrid'
-import Modal from '@/components/shared/Modal'
+import MasonryGrid from '@/components/projects-components/MasonryGrid'
+import Modal from '@/components/projects-components/Modal'
 
 export default function SelectedProjects() {
   const projects = db.projects.slice(0, 9)

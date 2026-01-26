@@ -5,7 +5,7 @@ import { Suspense, useState, useMemo } from 'react'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import db from '@/database/urbnlanes-db.json'
 
-const SectionHero = dynamic(() => import('@/components/hero-components/sectionHero'))
+import SectionHero from '@/components/hero-components/sectionHero'
 const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
 const ProjectsShowcase = dynamic(() => import('@/components/projects-components/ProjectsShowcase'))
 const ProjectsFilter = dynamic(() => import('@/components/projects-components/ProjectsFilter'))
@@ -23,69 +23,29 @@ export default function OurProjectsPage() {
     const categories = Array.from(
       new Set(
         db.projects.flatMap((project) => {
-          // Handle both string and array category formats
-          if (Array.isArray(project.category)) {
-            return project.category
-          }
-          return project.category || []
+          const cats = project.category
+          return Array.isArray(cats) ? cats : cats ? [cats] : []
         })
       )
     )
-    const statuses = Array.from(new Set(db.projects.map((project) => project.status).filter((status): status is string => status !== undefined)))
+    const statuses = Array.from(new Set(db.projects.map((project) => project.status).filter((status): status is string => Boolean(status))))
     const cities = Array.from(new Set(db.projects.map((project) => project.location?.city || 'Unknown')))
 
     const filteredProjects = db.projects.filter((project) => {
-      // Handle custom category filters
       let categoryMatch = selectedCategory === 'all'
       if (!categoryMatch) {
-        switch (selectedCategory) {
-          case 'administrative':
-            // Check if project has administrative category (handle both string and array)
-            if (Array.isArray(project.category)) {
-              categoryMatch = project.category.includes('administrative') || project.category.includes('Administrative')
-            } else {
-              categoryMatch = project.category === 'administrative' || project.category === 'Administrative'
-            }
-            break
-          case 'city':
-            // Check if project has city category (handle both string and array)
-            if (Array.isArray(project.category)) {
-              categoryMatch = project.category.includes('city') || project.category.includes('City')
-            } else {
-              categoryMatch = project.category === 'city' || project.category === 'City'
-            }
-            break
-          case 'educational':
-            // Check if project has educational category (handle both string and array)
-            if (Array.isArray(project.category)) {
-              categoryMatch = project.category.includes('educational') || project.category.includes('Educational')
-            } else {
-              categoryMatch = project.category === 'educational' || project.category === 'Educational'
-            }
-            break
-          case 'latest':
-            categoryMatch = project.featured === true
-            break
-          case 'residential':
-            // Check if project has residential category (handle both string and array)
-            if (Array.isArray(project.category)) {
-              categoryMatch = project.category.includes('residential') || project.category.includes('Residential')
-            } else {
-              categoryMatch = project.category === 'residential' || project.category === 'Residential'
-            }
-            break
-          default:
-            // For any other category, check both string and array formats
-            if (Array.isArray(project.category)) {
-              categoryMatch = project.category.includes(selectedCategory)
-            } else {
-              categoryMatch = project.category === selectedCategory
-            }
+        if (selectedCategory === 'latest') {
+          categoryMatch = project.featured === true
+        } else {
+          const cats = project.category
+          const projectCategories = Array.isArray(cats) ? cats : cats ? [cats] : []
+          categoryMatch = projectCategories.some((cat) => cat.toLowerCase() === selectedCategory.toLowerCase())
         }
       }
 
       const statusMatch = selectedStatus === 'all' || project.status === selectedStatus
       const cityMatch = selectedCity === 'all' || selectedCity === 'Unknown' || project.location?.city === selectedCity
+
       return categoryMatch && statusMatch && cityMatch
     })
 

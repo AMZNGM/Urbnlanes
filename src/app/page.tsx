@@ -1,7 +1,7 @@
+import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import { metadataGenerators } from '@/seo/seo-helpers'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
-import dynamic from 'next/dynamic'
 
 import Preloader from '@/components/loading-components/Preloader'
 import Hero from '@/components/hero-components/Hero'

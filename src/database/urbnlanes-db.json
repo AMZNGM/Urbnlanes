@@ -720,7 +720,12 @@
         "country": "Egypt"
       },
       "featured": false,
-      "gallery": ["/videos/projects/enjazat-tower/enjazat-main-1.mp4"]
+      "gallery": [
+        "/images/projects/enjazat-tower/enjazat-gallery-1.webp",
+        "/images/projects/enjazat-tower/enjazat-gallery-2.avif",
+        "/images/projects/enjazat-tower/enjazat-gallery-3.webp"
+      ],
+      "videoGallery": ["public/videos/projects/enjazat-tower/enjazat-main-1.mp4"]
     },
     {
       "id": "dalal-complex",
