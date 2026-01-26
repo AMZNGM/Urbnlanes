@@ -3,10 +3,13 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { Plus } from 'lucide-react'
+import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import MainBtn from '@/components/ui/buttons/MainBtn'
+import SwitchBtn from '@/components/ui/buttons/SwitchBtn'
+import LineHeading from '@/components/shared/LineHeading'
 
 export default function ProjectsFilter({
   categories,
@@ -15,9 +18,12 @@ export default function ProjectsFilter({
   selectedCategory,
   selectedStatus,
   selectedCity,
+  filteredProjects,
   onCategoryChange,
   onStatusChange,
   onCityChange,
+  onToggleView,
+  viewMode,
 }: {
   categories: string[]
   statuses: string[]
@@ -25,15 +31,19 @@ export default function ProjectsFilter({
   selectedCategory: string
   selectedStatus: string
   selectedCity: string
+  filteredProjects: any[]
   onCategoryChange: (category: string) => void
   onStatusChange: (status: string) => void
   onCityChange: (city: string) => void
+  onToggleView: () => void
+  viewMode: 'grid' | 'list'
+  className?: string
 }) {
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
-  const categoryOptions = [{ key: 'all', label: 'filters.allCategories' }, ...categories.map((category) => ({ key: category, label: `filters.${category}` }))]
-  const statusOptions = [{ key: 'all', label: 'filters.allStatuses' }, ...statuses.map((status) => ({ key: status, label: `filters.${status}` }))]
-  const cityOptions = [{ key: 'all', label: 'filters.allCities' }, ...cities.map((city) => ({ key: city, label: `locations.${city}` }))]
-  const Dropdowns = [
+  let [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  let categoryOptions = [{ key: 'all', label: 'filters.allCategories' }, ...categories.map((category) => ({ key: category, label: `filters.${category}` }))]
+  let statusOptions = [{ key: 'all', label: 'filters.allStatuses' }, ...statuses.map((status) => ({ key: status, label: `filters.${status}` }))]
+  let cityOptions = [{ key: 'all', label: 'filters.allCities' }, ...cities.map((city) => ({ key: city, label: `locations.${city}` }))]
+  let Dropdowns = [
     {
       label: 'filters.filterByCategory',
       value: selectedCategory,
@@ -59,29 +69,93 @@ export default function ProjectsFilter({
       setOpenDropdown: () => setOpenDropdown(openDropdown === 'city' ? null : 'city'),
     },
   ]
+  let stats = [
+    { delay: 0.1, key: 'common.totalProjects', value: db.projects.length },
+    { delay: 0.2, key: 'common.filteredProjects', value: filteredProjects.length },
+    { delay: 0.3, key: 'common.categories', value: categories.length },
+    { delay: 0.4, key: 'common.cities', value: cities.length },
+  ]
 
   return (
     <section className="relative w-dvw bg-text text-black px-18 max-md:px-4 py-4">
       <AnimIn className="space-y-8">
+        <LineHeading tKey="common.allProjects" />
+
+        {/* title */}
         <AnimText as={'h2'} className="font-sec text-3xl text-center">
           <TText tKey="filters.filterBy" />
         </AnimText>
 
+        {/* <AnimText as={'h2'} className="font-sec text-3xl text-center mb-12">
+        <TText tKey="common.allProjects" />
+      </AnimText> */}
+
+        {/* dropdowns */}
         <div className="gap-4 grid md:grid-cols-3">
           {Dropdowns.map(({ label, value, options, onChange, openDropdown, setOpenDropdown }) => (
             <CustomDropdown key={label} label={label} value={value} options={options} onChange={onChange} isOpen={openDropdown} onToggle={setOpenDropdown} />
           ))}
         </div>
 
-        <MainBtn
-          onClick={() => {
-            onCategoryChange('all')
-            onStatusChange('all')
-            onCityChange('all')
-          }}
-          tKey="filters.resetFilters"
-          look="glass"
-        />
+        {/* stats */}
+        <div className="bg-main/25 rounded-2xl p-8 max-md:p-4">
+          <div className="gap-8 max-md:gap-4 grid grid-cols-2 md:grid-cols-4">
+            {stats.map(({ delay, key, value }) => (
+              <AnimIn
+                key={key}
+                delay={delay}
+                className={`rounded-2xl text-center p-4 ${key === 'common.filteredProjects' ? 'bg-main/50 border' : 'bg-main/25'}`}
+              >
+                <AnimText key={`${key}-${value}`} className="opacity-50 font-bold text-4xl mb-2">
+                  {value}
+                </AnimText>
+                <AnimText delay={0.5} as={'p'} className="opacity-75 text-sm">
+                  <TText tKey={key} />
+                </AnimText>
+              </AnimIn>
+            ))}
+          </div>
+        </div>
+
+        <div className="w-full flex justify-between items-center">
+          {/* reser BTN */}
+          <MainBtn
+            onClick={() => {
+              onCategoryChange('all')
+              onStatusChange('all')
+              onCityChange('all')
+            }}
+            tKey="filters.resetFilters"
+            look="glass"
+          />
+
+          {/* toggle BTN */}
+          <div className="flex justify-center items-center gap-2 bg-main/25 hover:bg-main/50 rounded-2xl transition-colors duration-200 px-6 py-3">
+            <span
+              onClick={onToggleView}
+              className={`text-sm transition-colors cursor-pointer select-none ${viewMode === 'list' ? 'text-black' : 'opacity-75'}`}
+            >
+              <TText tKey="common.listView" />
+            </span>
+
+            <SwitchBtn
+              checked={viewMode === 'grid'}
+              onChange={(checked) => {
+                if (checked !== (viewMode === 'grid')) {
+                  onToggleView()
+                }
+              }}
+              aria-label="Toggle view mode"
+            />
+
+            <span
+              onClick={onToggleView}
+              className={`text-sm transition-colors cursor-pointer select-none ${viewMode === 'grid' ? 'text-black' : 'opacity-75'}`}
+            >
+              <TText tKey="common.gridView" />
+            </span>
+          </div>
+        </div>
       </AnimIn>
     </section>
   )

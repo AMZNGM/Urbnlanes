@@ -76,9 +76,7 @@ export default function MasonryGrid({ projects, openModal }: { projects: any[]; 
           <motion.div
             key={colIndex}
             style={isCenter ? {} : { y: yTransform }}
-            className={`flex flex-col gap-4 justify-center w-full ${
-              columnsCount === 5 ? 'md:w-1/5' : columnsCount === 3 ? 'md:w-1/3' : ''
-            }`}
+            className={`flex flex-col gap-4 justify-center w-full ${columnsCount === 5 ? 'md:w-1/5' : columnsCount === 3 ? 'md:w-1/3' : ''}`}
           >
             {col.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} openModal={openModal} />
@@ -117,7 +115,7 @@ function ProjectCard({ project, index, openModal }: { project: any; index: numbe
         hasOverlay
       />
 
-      <motion.div className="right-2 bottom-2 left-2 absolute overflow-hidden bg-black/25 md:opacity-0 group-hover:opacity-100 backdrop-blur-xl rounded-2xl transition-all md:translate-x-8 md:translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 duration-500 p-4">
+      <motion.div className="right-2 bottom-2 left-2 absolute overflow-hidden bg-black/25 md:opacity-0 group-hover:opacity-100 backdrop-blur-xl rounded-2xl text-text transition-all md:translate-x-8 md:translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 duration-500 p-4">
         <h3 className="font-mono">
           <TText tKey={`db.projects.${project.id}.name`} />
         </h3>

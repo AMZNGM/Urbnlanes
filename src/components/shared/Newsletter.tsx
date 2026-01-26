@@ -26,9 +26,7 @@ export default function Newsletter({ className = '', line = true, dark = true }:
   const [state, action, isPending] = useActionState(subscribeToNewsletter, initialState)
 
   return (
-    <section
-      className={`relative w-full overflow-hidden px-18 max-md:px-4 ${className} ${dark ? 'bg-black text-text' : 'bg-text text-black'}`}
-    >
+    <section className={`relative w-full overflow-hidden px-18 max-md:px-4 ${className} ${dark ? 'bg-black text-text' : 'bg-text text-black'}`}>
       {line && <SoftLine className={`my-24 max-md:my-12 ${dark ? '' : 'h-0.5!'}`} />}
 
       <AnimIn className={`items-end gap-12 grid lg:grid-cols-2 ${line ? 'mb-24 max-md:mb-12' : 'my-24 max-md:my-12'}`}>

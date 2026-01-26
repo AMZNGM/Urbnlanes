@@ -23,11 +23,11 @@ export const TRANSLATIONS = {
       yellowResidence: 'Yellow Residence',
       eastlane: 'Eastlane',
       eastSubahAlAhmedCity: 'East Subah Al-Ahmed City',
-      Latest: 'Latest Launches',
       mutlaaCity: 'Mutlaa City',
       westAbdullahMubarakCity: 'West Abdullah Mubarak City',
       levelsBusinessTower: 'Levels Business Tower',
       selectedProjectsTitle: 'Selected projects',
+      latestLaunches: 'Latest Launches',
     },
 
     footer: {
@@ -114,7 +114,7 @@ export const TRANSLATIONS = {
       categories: 'Categories',
       cities: 'Cities',
       noProjectsFoundCriteria: 'No projects found matching your criteria.',
-      featured: 'Featured',
+      marked: 'Marked',
       viewProject: 'View Project',
       listView: 'List View',
       gridView: 'Grid View',
@@ -671,6 +671,7 @@ export const TRANSLATIONS = {
       mutlaaCity: 'مدينة المطلاع',
       westAbdullahMubarakCity: 'مدينة عبد الله المبارك',
       selectedProjectsTitle: 'مشاريع مختارة',
+      latestLaunches: 'أحدث المشاريع',
     },
 
     footer: {
@@ -756,7 +757,7 @@ export const TRANSLATIONS = {
       categories: 'الفئات',
       cities: 'المدن',
       noProjectsFoundCriteria: 'لم يتم العثور على مشاريع تطابق معاييرك.',
-      featured: 'مميز',
+      marked: 'مميز',
       viewProject: 'عرض المشروع',
       listView: 'عرض القائمة',
       gridView: 'عرض الشبكة',

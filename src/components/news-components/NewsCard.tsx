@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { memo } from 'react'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
@@ -28,33 +26,31 @@ export default memo(function NewsCard({ article }: NewsCardProps) {
   return (
     <RippleEffect
       as="article"
-      className="group relative w-full h-full overflow-hidden bg-main/10 hover:bg-main/15 border rounded-2xl transition-colors duration-500"
+      dir="ltr"
+      className="group relative w-full h-full overflow-hidden flex flex-col bg-current/10 hover:bg-current/15 rounded-2xl transition-colors"
     >
-      <Link href={`/media-center-news/${article.id}`} className="min-h-100">
+      <Link href={`/media-center-news/${article.id}`} className="w-full h-full flex flex-col">
         <ImageIn
           src={imageSrc}
           alt={article.title || 'News article'}
-          onError={(e) => {
-            const target = e.target as HTMLImageElement
-            target.src = fallbackImage
-          }}
-          className="group-hover:scale-105 transition-transform duration-500"
-          divClassName="h-[60%]! overflow-hidden"
+          className="group-hover:scale-110 transition-transform duration-700 ease-out"
+          divClassName="h-48! sm:h-56! lg:h-64! overflow-hidden"
           hasIconOverlay
         />
 
-        <div className="relative w-full h-[40%] flex flex-col justify-between space-y-4 p-4">
-          <p title={article.title} className="font-semibold text-lg line-clamp-3">
+        <div className="relative flex flex-col flex-1 justify-between p-6">
+          <h3 title={article.title} className="font-semibold max-md:text-lg text-xl line-clamp-2 leading-snug mb-auto">
             {article.title}
-          </p>
+          </h3>
 
-          <div className="flex justify-between items-center font-medium text-current/60 text-xs">
-            <div className="space-x-2">
-              <span>{article.type}</span>
-              <span>/</span>
-              <span>{article.category}</span>
+          <div className="flex flex-wrap justify-between items-center gap-2 border-t font-medium text-current/60 text-xs sm:text-sm mt-4 pt-2">
+            <div className="flex items-center gap-2">
+              <span className="max-w-[100px] sm:max-w-none truncate">{article.type}</span>
+              <span className="opacity-50">•</span>
+              <span className="max-w-[100px] sm:max-w-none truncate">{article.category}</span>
             </div>
-            <span>{article.date}</span>
+
+            <time className="whitespace-nowrap">{article.date}</time>
           </div>
         </div>
       </Link>

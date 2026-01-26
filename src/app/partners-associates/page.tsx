@@ -27,7 +27,7 @@ export default function PartnersAssociatesPage() {
       {(selectedCategory === 'all' || selectedCategory === 'sister') && <SisterCompanies />}
       {(selectedCategory === 'all' || selectedCategory === 'project') && <ProjectPartners />}
       <PartnersCTA />
-      <LatestNews withHeading={false} />
+      <LatestNews line={false} />
     </Suspense>
   )
 }

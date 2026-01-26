@@ -9,11 +9,9 @@ const SectionHero = dynamic(() => import('@/components/hero-components/sectionHe
 const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
 const ProjectsShowcase = dynamic(() => import('@/components/projects-components/ProjectsShowcase'))
 const ProjectsFilter = dynamic(() => import('@/components/projects-components/ProjectsFilter'))
-const ProjectsStats = dynamic(() => import('@/components/projects-components/ProjectsStats'))
-const ViewToggle = dynamic(() => import('@/components/projects-components/ViewToggle'))
-const ProjectsGrid = dynamic(() => import('@/components/projects-components/ProjectsGrid'))
-const ProjectsList = dynamic(() => import('@/components/projects-components/ProjectsList'))
+const AllProjects = dynamic(() => import('@/components/projects-components/AllProjects'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
+const Newsletter = dynamic(() => import('@/components/shared/Newsletter'))
 
 export default function OurProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
@@ -114,13 +112,13 @@ export default function OurProjectsPage() {
         onCategoryChange={setSelectedCategory}
         onStatusChange={setSelectedStatus}
         onCityChange={setSelectedCity}
+        filteredProjects={filteredProjects}
+        viewMode={viewMode}
+        onToggleView={() => setViewMode((prevViewMode) => (prevViewMode === 'grid' ? 'list' : 'grid'))}
       />
-      <ProjectsStats totalProjects={db.projects.length} filteredProjects={filteredProjects.length} categories={categories.length} cities={cities.length} />
-      <ViewToggle viewMode={viewMode} onToggleView={() => setViewMode((prevViewMode) => (prevViewMode === 'grid' ? 'list' : 'grid'))} />
-
-      {/* {viewMode === 'grid' ? <ProjectsGrid projects={filteredProjects} /> : <ProjectsList projects={filteredProjects} />} */}
-
-      {/* <LatestNews className="bg-text text-black!" withHeading={false} /> */}
+      <AllProjects projects={filteredProjects} viewMode={viewMode} />
+      <LatestNews className="bg-text text-black! px-18 max-md:px-4 py-0!" line={false} />
+      <Newsletter dark={false} />
     </Suspense>
   )
 }

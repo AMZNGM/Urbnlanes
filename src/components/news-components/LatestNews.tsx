@@ -5,15 +5,13 @@ import Heading from '@/components/shared/Heading'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import NewsCard from '@/components/news-components/NewsCard'
 
-export default function LatestNews({ className, withHeading = true }: { className?: string; withHeading?: boolean }) {
-  const latestArticles = [...db.mediacenter.blogs, ...db.mediacenter.news]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 6)
+export default function LatestNews({ className, line = true }: { className?: string; line?: boolean }) {
+  const latestArticles = [...db.mediacenter.blogs, ...db.mediacenter.news].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6)
 
   return (
-    <section className={`relative w-full h-full overflow-hidden bg-black text-text px-4 py-8 ${className}`}>
-      <div className="flex justify-between items-end pb-12">
-        {withHeading ? <Heading className="mb-0!" text={<TText tKey="common.latestNews" />} /> : <div></div>}
+    <section className={`relative w-dvw h-full overflow-hidden bg-black text-tecurrentxt px-18 max-md:px-4 py-12 ${className}`}>
+      <div className="flex justify-between items-end mb-12">
+        {line ? <Heading className="mb-0!" text={<TText tKey="common.latestNews" />} /> : <div></div>}
         <MainBtn to="/media-center-news" tKey="common.allNews" />
       </div>
 

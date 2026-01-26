@@ -65,7 +65,7 @@ export default async function ProjectPage({ params }: Props) {
       <ProjectLocation project={project} />
       {project.overview && <ProjectOverview project={project} />}
       {/* <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} /> */}
-      <LatestNews className="bg-text text-black! px-18 max-md:px-4 py-0!" withHeading={false} />
+      <LatestNews className="bg-text text-black! px-18 max-md:px-4 py-0!" line={false} />
       <Newsletter dark={false} />
     </Suspense>
   )

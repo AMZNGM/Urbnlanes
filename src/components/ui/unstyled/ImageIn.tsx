@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion, HTMLMotionProps } from 'motion/react'
-import { getBlurDataUrl } from '@/utils/imageUtils'
+import { getBlurDataUrl, generateBlurDataURL } from '@/utils/imageUtils'
 import { MousePointerClick } from 'lucide-react'
 
 interface ImageInProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
@@ -31,6 +31,8 @@ export default function ImageIn({
   hasIconOverlay = false,
   ...props
 }: ImageInProps) {
+  const blurDataUrl = src ? getBlurDataUrl(src) : generateBlurDataURL()
+
   return (
     <motion.div
       {...props}
@@ -47,7 +49,7 @@ export default function ImageIn({
         priority={priority}
         sizes={sizes}
         placeholder="blur"
-        blurDataURL={getBlurDataUrl(src)}
+        blurDataURL={blurDataUrl}
         className={`object-center object-cover hover:scale-105 transition-transform duration-700 ${className}`}
       />
       {hasOverlay && <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />}
