@@ -4,13 +4,13 @@ import dynamic from 'next/dynamic'
 import { Suspense, useState, useMemo } from 'react'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import db from '@/database/urbnlanes-db.json'
-import TText from '@/translations/TText'
 
 const SectionHero = dynamic(() => import('@/components/hero-components/sectionHero'))
 const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
 const ProjectsShowcase = dynamic(() => import('@/components/projects-components/ProjectsShowcase'))
 const ProjectsFilter = dynamic(() => import('@/components/projects-components/ProjectsFilter'))
 const ProjectsStats = dynamic(() => import('@/components/projects-components/ProjectsStats'))
+const ViewToggle = dynamic(() => import('@/components/projects-components/ViewToggle'))
 const ProjectsGrid = dynamic(() => import('@/components/projects-components/ProjectsGrid'))
 const ProjectsList = dynamic(() => import('@/components/projects-components/ProjectsList'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
@@ -104,7 +104,6 @@ export default function OurProjectsPage() {
       />
       <TextPanel tKey="common.architecturalExcellence" paraTKey="common.architecturalExcellenceDesc" />
       <ProjectsShowcase />
-
       <ProjectsFilter
         categories={categories}
         statuses={statuses}
@@ -116,53 +115,10 @@ export default function OurProjectsPage() {
         onStatusChange={setSelectedStatus}
         onCityChange={setSelectedCity}
       />
-
       <ProjectsStats totalProjects={db.projects.length} filteredProjects={filteredProjects.length} categories={categories.length} cities={cities.length} />
+      <ViewToggle viewMode={viewMode} onToggleView={() => setViewMode((prevViewMode) => (prevViewMode === 'grid' ? 'list' : 'grid'))} />
 
-      {/* View Toggle Button - Always Visible */}
-      {/* <div className="relative w-dvw overflow-hidden px-18 max-md:px-4 py-4">
-        <div className="max-w-7xl flex justify-end mx-auto">
-          <button
-            onClick={() => setViewMode((prevViewMode) => (prevViewMode === 'grid' ? 'list' : 'grid'))}
-            className="flex items-center gap-2 bg-black hover:bg-gray-800 rounded-lg text-text transition-colors px-4 py-2"
-          >
-            {viewMode === 'grid' ? (
-              <>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                <span className="font-medium text-sm">
-                  <TText tKey="common.listView" />
-                </span>
-              </>
-            ) : (
-              <>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                  />
-                </svg>
-                <span className="font-medium text-sm">
-                  <TText tKey="common.gridView" />
-                </span>
-              </>
-            )}
-          </button>
-        </div>
-      </div> */}
-
-      {/* {viewMode === 'grid' ? (
-        <ProjectsGrid projects={filteredProjects} />
-      ) : (
-        <ProjectsList
-          projects={filteredProjects}
-          onToggleView={() => setViewMode((prevViewMode) => (prevViewMode === 'grid' ? 'list' : 'grid'))}
-          viewMode={viewMode}
-        />
-      )} */}
+      {/* {viewMode === 'grid' ? <ProjectsGrid projects={filteredProjects} /> : <ProjectsList projects={filteredProjects} />} */}
 
       {/* <LatestNews className="bg-text text-black!" withHeading={false} /> */}
     </Suspense>

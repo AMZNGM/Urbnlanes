@@ -7,37 +7,15 @@ import { Grid, List } from 'lucide-react'
 
 interface ProjectsListProps {
   projects: any[]
-  onToggleView: () => void
-  viewMode: 'grid' | 'list'
 }
 
-export default function ProjectsList({ projects, onToggleView, viewMode }: ProjectsListProps) {
+export default function ProjectsList({ projects }: ProjectsListProps) {
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-16">
       <div className="max-w-7xl mx-auto">
-        {/* Header with View Toggle */}
-        <div className="flex justify-between items-center mb-12">
-          <h2 className="font-sec text-3xl">
-            <TText tKey="common.allProjects" />
-          </h2>
-
-          <button
-            onClick={onToggleView}
-            className="flex items-center gap-2 bg-black hover:bg-gray-800 rounded-lg text-text transition-colors px-4 py-2"
-          >
-            {viewMode === 'grid' ? (
-              <>
-                <List className="w-5 h-5" />
-                <TText tKey="common.listView" />
-              </>
-            ) : (
-              <>
-                <Grid className="w-5 h-5" />
-                <TText tKey="common.gridView" />
-              </>
-            )}
-          </button>
-        </div>
+        <h2 className="font-sec text-3xl text-center mb-12">
+          <TText tKey="common.allProjects" />
+        </h2>
 
         {projects.length === 0 ? (
           <div className="text-center py-12">
@@ -103,9 +81,7 @@ export default function ProjectsList({ projects, onToggleView, viewMode }: Proje
                             <h3 className="font-sec font-bold text-2xl">{project.name}</h3>
                           </div>
 
-                          <p className="opacity-75 text-base line-clamp-3 mb-4">
-                            {formatTextContent(project.shortDesc) || project.tagline}
-                          </p>
+                          <p className="opacity-75 text-base line-clamp-3 mb-4">{formatTextContent(project.shortDesc) || project.tagline}</p>
 
                           <div className="flex flex-wrap gap-4 opacity-60 text-sm mb-6">
                             <span>

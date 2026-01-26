@@ -108,7 +108,7 @@ const CustomDropdown = ({
       className="w-full flex justify-between items-center bg-main/50 hover:bg-main/75 backdrop-blur-2xl rounded-2xl focus:outline-none transition-all px-4 py-3 cursor-pointer"
     >
       <span className="font-medium text-sm">
-        <TText tKey={label} />
+        <TText tKey={options.find((opt) => opt.key === value)?.label || label} />
       </span>
       <Plus className={`w-4 h-4 transition-transform duration-500 ${isOpen ? 'rotate-130' : ''}`} />
     </button>
