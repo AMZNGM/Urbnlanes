@@ -10,6 +10,7 @@ const SisterCompanies = dynamic(() => import('@/components/about-components/Sist
 const HoldingCompany = dynamic(() => import('@/components/about-components/HoldingCompany'))
 const OurStory = dynamic(() => import('@/components/about-components/OurStory'))
 const BehindTheFigures = dynamic(() => import('@/components/about-components/BehindTheFigures'))
+import ImageIn from '@/components/ui/unstyled/ImageIn'
 const Newsletter = dynamic(() => import('@/components/shared/Newsletter'))
 
 export const generateMetadata = metadataGenerators.about
@@ -31,7 +32,7 @@ export default function AboutPage() {
         className="bg-black! text-text"
         paraClassName="opacity-100 text-xl"
       />
-      {/* <TextPanel image="/images/map.webp" ima geClassName="opacity-100 object-contain! my-24" /> */}
+      <ImageIn src="/images/map.webp" alt="Map" className="object-contain! scale-100! pt-24 max-md:pt-0" divClassName="h-100! bg-text max-md:-mb-10" />
       <Newsletter dark={false} />
     </Suspense>
   )

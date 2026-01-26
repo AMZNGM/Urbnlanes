@@ -10,15 +10,7 @@ import CloseBtn from '@/components/ui/buttons/CloseBtn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import ArrowIcon from '@/components/ui/icons/ArrowIcon'
 
-export default function Modal({
-  closeModal,
-  selectedProject,
-  dark = true,
-}: {
-  closeModal: () => void
-  selectedProject: any
-  dark?: boolean
-}) {
+export default function Modal({ closeModal, selectedProject, dark = true }: { closeModal: () => void; selectedProject: any; dark?: boolean }) {
   const { t } = useTranslation()
 
   const translationKey = selectedProject ? `db.projects.${selectedProject.id}` : ''
@@ -75,14 +67,14 @@ export default function Modal({
                 <div className="flex items-center gap-4">
                   <CloseBtn
                     onClick={closeModal}
-                    className={`top-0! right-0! relative p-2! ${dark ? 'bg-text! text-bg!' : 'bg-black! text-text!'}`}
+                    className={`top-0! right-0! relative p-2! ${dark ? 'bg-text! text-bg!' : 'bg-main/50 text-black hover:bg-main/75 backdrop-blur-2xl'}`}
                   />
                   <MainBtn
                     href={selectedProject.brochure}
                     size="sm"
                     icon={ArrowIcon}
                     tKey="modal.brochure"
-                    look="dark"
+                    look="glass"
                     className={`${dark ? 'bg-text text-black!' : ''}`}
                   />
                 </div>
@@ -136,9 +128,7 @@ export default function Modal({
                           key={amenity.id}
                           className="group/amenities flex items-center gap-2 bg-current/2 hover:bg-current/4 border-2 border-current/15 hover:border-current/50 rounded-lg transition-all p-2"
                         >
-                          <span className="opacity-75 group-hover/amenities:opacity-100 text-[10px] transition-opacity">
-                            {t(`amenities.${amenity.name}`)}
-                          </span>
+                          <span className="opacity-75 group-hover/amenities:opacity-100 text-[10px] transition-opacity">{t(`amenities.${amenity.name}`)}</span>
                         </div>
                       ))}
                     </div>
@@ -152,9 +142,7 @@ export default function Modal({
                       {Object.entries(selectedProject.overview).map(([key, value]) => (
                         <div key={key} className="group/overview flex justify-between text-xs">
                           <span className="opacity-75 group-hover/overview:opacity-100 capitalize transition-opacity">{key}:</span>
-                          <span className="opacity-75 group-hover/overview:opacity-100 font-mono transition-opacity">
-                            {value as string}
-                          </span>
+                          <span className="opacity-75 group-hover/overview:opacity-100 font-mono transition-opacity">{value as string}</span>
                         </div>
                       ))}
                     </div>
@@ -167,7 +155,7 @@ export default function Modal({
                 size="sm"
                 icon={ArrowIcon}
                 tKey="modal.viewFullProject"
-                look="dark"
+                look="glass"
                 className={`${dark ? 'bg-text text-black!' : ''}`}
               />
             </div>

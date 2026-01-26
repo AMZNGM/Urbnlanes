@@ -5,15 +5,7 @@ import AnimText from '@/components/ui/unstyled/AnimText'
 export default function TextPanel({ tKey = '', paraTKey = '', image = '', className = '', paraClassName = '', imageClassName = '' }) {
   return (
     <section className={`relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 pt-24 pb-12 ${className}`}>
-      {image && (
-        <Image
-          src={image}
-          alt="BackGround Image"
-          fill
-          sizes="20dvw"
-          className={`z-0 absolute inset-0 object-cover opacity-40 ${imageClassName}`}
-        />
-      )}
+      {image && <Image src={image} alt="BackGround Image" fill sizes="20dvw" className={`z-0 absolute inset-0 object-cover opacity-40 ${imageClassName}`} />}
 
       <div className="z-10 relative w-full max-w-4xl h-full flex flex-col justify-center items-center gap-4 text-center mx-auto">
         {tKey && (
