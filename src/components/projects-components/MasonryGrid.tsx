@@ -103,7 +103,7 @@ function ProjectCard({ project, index, openModal }: { project: any; index: numbe
       viewport={{ once: true }}
       transition={{ duration: 0.75, delay: index * 0.05 }}
       style={{ y: 0 }}
-      className="group relative w-full h-full min-h-75 overflow-hidden rounded-xl cursor-pointer"
+      className="group relative w-full h-full min-h-75 overflow-hidden rounded-2xl cursor-pointer"
     >
       <ImageIn
         src={project.gallery?.[0] || ''}

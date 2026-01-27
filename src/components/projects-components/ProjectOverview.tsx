@@ -9,16 +9,16 @@ export default function ProjectOverview({ project }: { project: Project }) {
 
   const overviewItems = [
     {
-      value: project.overview.value,
-      icon: TrendingUp,
-      labelKey: 'projects.overview.investmentValue',
-      className: 'text-3xl',
-    },
-    {
       value: project.overview.startdate,
       icon: Calendar,
       labelKey: 'projects.overview.startDate',
       className: 'text-2xl',
+    },
+    {
+      value: project.overview.value,
+      icon: TrendingUp,
+      labelKey: 'projects.overview.investmentValue',
+      className: 'text-3xl',
     },
     {
       value: project.overview.enddate,
@@ -46,7 +46,7 @@ export default function ProjectOverview({ project }: { project: Project }) {
         <TText tKey="modal.overview" />
       </AnimText>
 
-      <AnimIn className="max-w-6xl gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto">
+      <AnimIn className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {overviewItems.map((item, index) => {
           const Icon = item.icon
           return (

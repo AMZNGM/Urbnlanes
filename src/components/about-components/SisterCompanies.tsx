@@ -23,7 +23,7 @@ export default function SisterCompanies() {
             <div className="w-2/3 max-lg:w-full flex flex-col gap-4 bg-main/25 rounded-2xl p-8 max-md:p-4">
               {db.whoweare.stats.map((stat, index) => (
                 <AnimIn key={index} delay={index * 0.3} className="group">
-                  <div className="flex justify-between items-center bg-black/5 hover:bg-black/10 border rounded-xl hover:scale-97 transition-all duration-300 p-4 max-md:p-2">
+                  <div className="flex justify-between items-center bg-black/5 hover:bg-black/10 border rounded-2xl hover:scale-97 transition-all duration-300 p-4 max-md:p-2">
                     <div className="space-y-2 font-light text-3xl">
                       <TText tKey={stat.value} />
                       <div className="text-sm tracking-wider">
@@ -62,7 +62,7 @@ export default function SisterCompanies() {
           <div className="gap-4 grid grid-cols-3 grid-rows-[masonry] bg-main/25 rounded-2xl p-8 max-md:p-4">
             {db.whoweare.sisterCompanies.map((company, index) => (
               <AnimIn key={company.title} delay={index * 0.3} className="group">
-                <div className="overflow-hidden bg-black/5 hover:bg-black/10 border border-black/10 rounded-xl hover:scale-97 transition-all duration-300 px-1 py-2">
+                <div className="overflow-hidden bg-black/5 hover:bg-black/10 border border-black/10 rounded-2xl hover:scale-97 transition-all duration-300 px-1 py-2">
                   <div className="w-full h-32 flex justify-center items-center mb-4">
                     <Image
                       src={company.logo}

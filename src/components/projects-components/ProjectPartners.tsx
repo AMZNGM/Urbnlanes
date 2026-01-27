@@ -1,9 +1,9 @@
 import { Project, Partner } from '@/types/project'
+import { SoftLine } from '@/components/ui/effects/Lines'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
-import { SoftLine } from '@/components/ui/effects/Lines'
 
 export default function ProjectPartners({ project }: { project: Project }) {
   if (!project || !project.partners?.length) return null
@@ -27,7 +27,7 @@ export default function ProjectPartners({ project }: { project: Project }) {
       >
         {project.partners.map((partner: Partner, index: number) => (
           <AnimIn key={partner.name} delay={0.2 * index} className="flex flex-col items-center gap-2 bg-main/25 rounded-2xl p-8">
-            <ImageIn src={partner.logo} alt={partner.name} className="object-contain!" divClassName="w-24 h-24! invert! mb-6" />
+            <ImageIn src={partner.logo} alt={partner.name} className="object-contain!" divClassName="w-24 h-24! invert! mb-6 rounded-2xl" />
 
             <AnimText as={'h3'} className="font-medium text-xl">
               {partner.name}

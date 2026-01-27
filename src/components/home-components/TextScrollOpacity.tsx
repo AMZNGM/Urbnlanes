@@ -41,20 +41,15 @@ export default function TextScrollOpacity() {
   return (
     <section className="relative w-full h-full bg-black px-18 max-md:px-4 py-12">
       <div className="w-full h-full flex flex-col justify-center items-center gap-12">
-        <motion.p
-          ref={valueRef}
-          className="relative font-sec font-light text-[2.5vw] max-md:text-[4.5vw] text-center text-balance cursor-default"
-        >
+        <motion.p ref={valueRef} className="relative font-sec font-light text-[2.5vw] max-md:text-[4.5vw] text-center text-balance cursor-default">
           {currentLanguage === 'ar'
             ? value
-            : characters.map((char, index) => (
-                <Char key={index} char={char} index={index} total={characters.length} progress={scrollYProgress} />
-              ))}
+            : characters.map((char, index) => <Char key={index} char={char} index={index} total={characters.length} progress={scrollYProgress} />)}
         </motion.p>
 
         <SoftLine />
-        <div className="max-md:hidden z-20 absolute inset-0 border border-main/45! rounded-sm mx-4 pointer-events-none" />
-        <div className="max-md:hidden z-20 absolute inset-3 border rounded-sm mx-4 pointer-events-none" />
+        <div className="max-md:hidden z-20 absolute inset-0 border border-main/45! rounded-2xl mx-4 pointer-events-none" />
+        <div className="max-md:hidden z-20 absolute inset-3 border rounded-2xl mx-4 pointer-events-none" />
       </div>
     </section>
   )

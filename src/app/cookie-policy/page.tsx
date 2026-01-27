@@ -9,9 +9,7 @@ export default function CookiePolicyPage() {
   return (
     <main className="relative w-full min-h-dvh overflow-hidden bg-text text-black px-18 max-md:px-4 pt-40 pb-20">
       <SoftLine className="h-1!" />
-      <h1 className="font-sec text-[5vw] max-md:text-[10vw] max-lg:text-[8vw] text-center ltr:leading-[0.95] rtl:leading-24 tracking-tight">
-        Cookie Policy
-      </h1>
+      <h1 className="font-sec text-[5vw] max-md:text-[10vw] max-lg:text-[8vw] text-center ltr:leading-[0.95] rtl:leading-24 tracking-tight">Cookie Policy</h1>
       <SoftLine className="h-1!" />
 
       <AnimText as="p" delay={0.2} className="font-light text-center italic">
@@ -22,8 +20,8 @@ export default function CookiePolicyPage() {
         <h2 className="font-sec text-3xl">What Are Cookies</h2>
         <div className="space-y-4 font-light text-black/80 text-lg leading-relaxed">
           <p>
-            Cookies are small text files that are placed on your computer or mobile device when you visit a website to remember your actions
-            and preferences (such as login, language, font size, and other display preferences) over a period of time.
+            Cookies are small text files that are placed on your computer or mobile device when you visit a website to remember your actions and preferences
+            (such as login, language, font size, and other display preferences) over a period of time.
           </p>
         </div>
       </AnimIn>
@@ -67,7 +65,7 @@ export default function CookiePolicyPage() {
               { label: 'Social Media', desc: 'Sharing content' },
               { label: 'Advertising', desc: 'Relevant ads' },
             ].map((item, i) => (
-              <li key={i} className="bg-main/25 border rounded-xl p-6">
+              <li key={i} className="bg-main/25 border rounded-2xl p-6">
                 <strong className="block mb-2">{item.label}</strong>
                 <span className="font-light">{item.desc}</span>
               </li>
@@ -78,8 +76,8 @@ export default function CookiePolicyPage() {
         <AnimIn delay={0.6} className="space-y-6">
           <h2 className="font-sec text-3xl">Managing Cookies</h2>
           <p className="font-light text-lg leading-relaxed">
-            You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set
-            most browsers to prevent them from being placed.
+            You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to
+            prevent them from being placed.
           </p>
         </AnimIn>
 

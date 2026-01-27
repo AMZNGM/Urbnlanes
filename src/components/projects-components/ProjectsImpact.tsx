@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
-import AnimText from '@/components/ui/unstyled/AnimText'
+import BreathingText from '@/components/ui/text/BreathingText'
 
 export default function ProjectsImpact() {
   const impacts = [
@@ -16,19 +16,15 @@ export default function ProjectsImpact() {
 
   let container = useRef<HTMLDivElement>(null)
   let { scrollYProgress } = useScroll({ target: container, offset: ['start 80%', 'end start'] })
-  let y = useTransform(scrollYProgress, [0, 1], [0, 480])
+  let y = useTransform(scrollYProgress, [0, 1], [0, 473])
 
   return (
     <section className="relative w-full h-full overflow-hidden bg-text text-black">
       <AnimIn className="h-full gap-4 grid grid-cols-2 bg-main/25 rounded-2xl text-center p-4">
         <div ref={container} className="relative h-full gap-2 grid">
           {impacts.map((impact, index) => (
-            <AnimIn
-              key={index}
-              delay={index * 0.1}
-              className="gap-4 grid bg-main/25 hover:bg-main/50 rounded-2xl transition-colors duration-200 p-8"
-            >
-              <div className="font-bold text-main text-4xl">{impact.value}</div>
+            <AnimIn key={index} delay={index * 0.1} className="group gap-4 grid bg-main/25 hover:bg-main/50 rounded-2xl transition-colors duration-500 p-8">
+              <div className="font-bold text-main group-hover:text-black/75 text-4xl transition-colors duration-500">{impact.value}</div>
 
               <p className="opacity-75 text-sm">
                 <TText tKey={impact.text} />
@@ -38,12 +34,9 @@ export default function ProjectsImpact() {
         </div>
 
         <motion.div style={{ y: y }}>
-          <AnimText
-            as="h3"
-            className="bg-main/25 hover:bg-main/50 rounded-2xl font-sec font-medium text-2xl transition-colors duration-200 py-14"
-          >
+          <BreathingText as="h3" className="bg-main/25 hover:bg-main/50 rounded-2xl group-hover:text-black/75 text-2xl transition-colors duration-500 py-14">
             <TText tKey="common.ourImpact" />
-          </AnimText>
+          </BreathingText>
         </motion.div>
       </AnimIn>
     </section>

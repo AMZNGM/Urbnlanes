@@ -49,7 +49,7 @@ export default memo(function MainBtn({
     'relative inline-flex items-center justify-center text-center gap-2 font-medium uppercase border rounded-2xl transition-colors duration-300 outline-none'
 
   const looks = {
-    main: 'bg-text text-bg border-main hover:bg-main',
+    main: 'bg-text text-bg border-main hover:bg-main/50',
     outline: 'bg-transparent text-main border-black! hover:bg-main hover:text-white',
     ghost: 'bg-transparent text-text border-transparent hover:bg-main/10',
     dark: 'bg-black text-text',

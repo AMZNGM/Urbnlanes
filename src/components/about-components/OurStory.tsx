@@ -66,7 +66,7 @@ export default function OurStory() {
 
           <div className="flex rtl:flex-row-reverse gap-4">
             <ArrowBtn onClick={handlePrev} />
-            <ArrowBtn onClick={handleNext} className="rotate-180" />
+            <ArrowBtn onClick={handleNext} direction="right" />
           </div>
         </div>
 

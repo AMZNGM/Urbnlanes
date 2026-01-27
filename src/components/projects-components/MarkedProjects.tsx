@@ -7,7 +7,7 @@ import MainBtn from '@/components/ui/buttons/MainBtn'
 import LineHeading from '@/components/shared/LineHeading'
 import ProjectsImpact from '@/components/projects-components/ProjectsImpact'
 
-export default function ProjectsShowcase() {
+export default function MarkedProjects() {
   const projectsIds = ['east-lane', 'levels-business-tower', 'noi', 'mid-lane', 'yellow-lane']
   const markedProjects = db.projects.filter((p) => projectsIds.includes(p.id))
 
@@ -47,7 +47,7 @@ export default function ProjectsShowcase() {
         ))}
       </div>
 
-      <LineHeading tKey="common.inKuwait" />
+      <LineHeading tKey="common.ourImpact" />
 
       <div className="h-full gap-4 grid md:grid-cols-2 py-8">
         <div className="h-full gap-4 max-md:order-last grid grid-cols-2">

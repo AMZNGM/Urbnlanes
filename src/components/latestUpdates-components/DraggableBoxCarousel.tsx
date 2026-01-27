@@ -83,15 +83,7 @@ export default function DraggableBoxCarousel({ className = '' }) {
                 style={{ transform: transforms[index] }}
                 className="absolute w-full h-full overflow-hidden shadow-2xl hover:brightness-110 transition-all duration-300 backface-hidden cursor-pointer"
               >
-                <Image
-                  src={item.src}
-                  alt={item.alt || ''}
-                  draggable={false}
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 200px, 150px"
-                  className="object-cover"
-                />
+                <Image src={item.src} alt={item.alt || ''} draggable={false} fill priority sizes="(max-width: 768px) 200px, 150px" className="object-cover" />
               </div>
             )
           })}
@@ -125,7 +117,7 @@ export default function DraggableBoxCarousel({ className = '' }) {
               <div className="flex justify-between items-center gap-2">
                 <CloseBtn onClick={handleCloseFullscreen} />
                 <div className="space-x-2">
-                  <ArrowBtn onClick={handleNextImage} className="rotate-180" />
+                  <ArrowBtn onClick={handleNextImage} direction="right" />
                   <ArrowBtn onClick={handlePreviousImage} />
                 </div>
               </div>

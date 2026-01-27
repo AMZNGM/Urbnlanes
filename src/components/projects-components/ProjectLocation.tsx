@@ -12,38 +12,21 @@ export default function ProjectLocation({ project }: { project: Project }) {
     <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
       <LineHeading tKey="common.location" paraTKey="common.locationDesc" />
 
-      <AnimIn className="space-y-4 grid grid-cols-2 bg-main/25 rounded-2xl mt-8 p-4">
-        <AnimIn delay={0.2} className="bg-main/25 rounded-2xl me-2 p-4">
-          <p className="font-medium text-sm tracking-wider">
-            <TText tKey="details.city" />
-          </p>
-          <p className="font-light text-2xl">
-            <TText tKey={`locations.${project.location.city}`} />
-          </p>
-          <MotionLine className="opacity-50" />
-        </AnimIn>
+      <AnimIn className="gap-4 grid grid-cols-2 bg-main/25 rounded-2xl mt-8 p-4">
+        {Object.entries(project.location)
+          .slice(0, 2)
+          .map(([key, value]) => (
+            <AnimIn key={key} delay={0.2 + Number(key) * 0.1} className="bg-main/25 rounded-2xl p-4">
+              <AnimText as={'p'} className="font-medium text-sm tracking-wider">
+                <TText tKey={`details.${key}`} />
+              </AnimText>
 
-        <AnimIn delay={0.3} className="bg-main/25 rounded-2xl ms-2 p-4">
-          <p className="font-medium text-sm tracking-wider">
-            <TText tKey="details.country" />
-          </p>
-          <p className="font-light text-2xl">
-            <TText tKey={`locations.${project.location.country}`} />
-          </p>
-          <MotionLine delay={0.5} className="opacity-50" />
-        </AnimIn>
-
-        {project.location.neighborhood && (
-          <AnimIn delay={0.4} className="space-y-2 col-span-3 bg-main/25 rounded-2xl p-4">
-            <p className="font-medium text-sm text-center tracking-wider">
-              <TText tKey="details.area" />
-            </p>
-            <p className="max-w-2xl font-light text-center text-balance mx-auto">
-              <TText tKey={`locations.${project.location.neighborhood}`} />
-            </p>
-            <MotionLine delay={0.9} className="opacity-50" />
-          </AnimIn>
-        )}
+              <AnimText as={'p'} className="font-light text-2xl">
+                <TText tKey={`locations.${value}`} />
+              </AnimText>
+              <MotionLine className="opacity-50" />
+            </AnimIn>
+          ))}
       </AnimIn>
     </section>
   )

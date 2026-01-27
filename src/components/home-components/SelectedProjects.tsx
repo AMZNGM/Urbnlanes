@@ -5,7 +5,7 @@ import TText from '@/translations/TText'
 import db from '@/database/urbnlanes-db.json'
 import Heading from '@/components/shared/Heading'
 import MasonryGrid from '@/components/projects-components/MasonryGrid'
-import Modal from '@/components/projects-components/Modal'
+import ProjectModal from '@/components/projects-components/ProjectModal'
 
 export default function SelectedProjects() {
   const projects = db.projects.slice(0, 9)
@@ -15,7 +15,7 @@ export default function SelectedProjects() {
     <section className="relative w-full h-full bg-black text-text px-4 pt-8 pb-24">
       <Heading text={<TText tKey="nav.selectedProjectsTitle" />} />
       <MasonryGrid projects={projects} openModal={setSelectedProject} />
-      <Modal closeModal={() => setSelectedProject(null)} selectedProject={selectedProject} />
+      <ProjectModal closeModal={() => setSelectedProject(null)} selectedProject={selectedProject} />
     </section>
   )
 }

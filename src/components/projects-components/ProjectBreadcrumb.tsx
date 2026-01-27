@@ -25,7 +25,7 @@ export default function ProjectBreadcrumb({ project }: { project: Project }) {
 
         <ChevronRight size={16} className="rtl:rotate-180" />
 
-        <span className="font-medium">
+        <span className="font-medium cursor-default">
           <AnimText delay={0.6}>
             <TText tKey={`db.projects.${project.id}.name`} />
           </AnimText>

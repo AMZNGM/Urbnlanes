@@ -37,7 +37,7 @@ export default function NavDropdown({
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
           >
-            <div className="max-w-7xl space-y-8 mx-auto py-8">
+            <div className="space-y-8 px-18 max-md:px-4 py-8">
               {childrens.map((child, index) => (
                 <div key={index} className="flex justify-between" onMouseEnter={() => setChildOpen(index)}>
                   {child.children ? (
@@ -46,16 +46,11 @@ export default function NavDropdown({
                       whileHover={{ x: 6 }}
                       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     >
-                      <span className="text-text/75 group-hover/name:text-main text-xs transition-colors p-2">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
+                      <span className="text-text/75 group-hover/name:text-main text-xs transition-colors p-2">{String(index + 1).padStart(2, '0')}</span>
 
                       {t(child.name || '')}
 
-                      <ChevronRight
-                        size={20}
-                        className={`rtl:ms-2 ltr:ml-2 duration-300 ease-out ${childOpen === index ? 'rotate-90' : ''}`}
-                      />
+                      <ChevronRight size={20} className={`rtl:ms-2 ltr:ml-2 duration-300 ease-out ${childOpen === index ? 'rotate-90' : ''}`} />
                     </motion.h3>
                   ) : (
                     <Link
@@ -66,14 +61,8 @@ export default function NavDropdown({
                       }}
                     >
                       <RippleEffect className="w-full py-3">
-                        <motion.div
-                          whileHover={{ x: 6 }}
-                          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                          className="flex items-center"
-                        >
-                          <span className="text-text/75 group-hover/name:text-main text-xs transition-colors p-2">
-                            {String(index + 1).padStart(2, '0')}
-                          </span>
+                        <motion.div whileHover={{ x: 6 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }} className="flex items-center">
+                          <span className="text-text/75 group-hover/name:text-main text-xs transition-colors p-2">{String(index + 1).padStart(2, '0')}</span>
                           {t(child.name || '')}
                         </motion.div>
                       </RippleEffect>

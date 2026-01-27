@@ -10,7 +10,7 @@ import CloseBtn from '@/components/ui/buttons/CloseBtn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import ArrowIcon from '@/components/ui/icons/ArrowIcon'
 
-export default function Modal({ closeModal, selectedProject, dark = true }: { closeModal: () => void; selectedProject: any; dark?: boolean }) {
+export default function ProjectModal({ closeModal, selectedProject, dark = true }: { closeModal: () => void; selectedProject: any; dark?: boolean }) {
   const { t } = useTranslation()
 
   const translationKey = selectedProject ? `db.projects.${selectedProject.id}` : ''
@@ -136,7 +136,7 @@ export default function Modal({ closeModal, selectedProject, dark = true }: { cl
                 )}
 
                 {selectedProject.overview && (
-                  <div className="bg-current/2 hover:bg-current/4 border-2 border-current/15 hover:border-current/50 rounded-xl transition-colors mt-6 p-4">
+                  <div className="bg-current/2 hover:bg-current/4 border-2 border-current/15 hover:border-current/50 rounded-2xl transition-colors mt-6 p-4">
                     <h4 className="text-xs uppercase tracking-widest mb-3">{t('modal.overview')}</h4>
                     <div className="flex flex-col gap-2">
                       {Object.entries(selectedProject.overview).map(([key, value]) => (
@@ -160,9 +160,9 @@ export default function Modal({ closeModal, selectedProject, dark = true }: { cl
               />
             </div>
 
-            <div style={{ scrollbarWidth: 'none' }} className="md:h-[94dvh] md:overflow-y-auto flex-1 space-y-4 rounded-xl">
+            <div style={{ scrollbarWidth: 'none' }} className="md:h-[94dvh] md:overflow-y-auto flex-1 space-y-4 rounded-2xl">
               {selectedProject.gallery.map((img: string, idx: number) => (
-                <div key={idx} className="relative w-full h-[60dvh] overflow-hidden rounded-xl">
+                <div key={idx} className="relative w-full h-[60dvh] overflow-hidden rounded-2xl">
                   <ImageIn duration={0.3} delay={0} src={img} alt={`${title} - Image ${idx + 1}`} sizes="(max-width: 768px) 95vw, 60vw" />
                 </div>
               ))}

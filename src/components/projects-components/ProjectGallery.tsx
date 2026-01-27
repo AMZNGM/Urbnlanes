@@ -63,7 +63,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
 
           <div className="flex rtl:flex-row-reverse gap-6">
             <ArrowBtn onClick={prevImage} className="scale-125" />
-            <ArrowBtn onClick={nextImage} className="rotate-180 scale-125" />
+            <ArrowBtn onClick={nextImage} direction="right" className="scale-125" />
           </div>
         </div>
       </AnimIn>
@@ -84,7 +84,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
             alt="thumb"
             key={i}
             onClick={() => setCurrentImageIndex(i)}
-            divClassName={`relative w-66 max-md:w-33 shrink-0 aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
+            divClassName={`relative w-66 max-md:w-33 shrink-0 aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
           />
         ))}
       </AnimIn>
@@ -96,7 +96,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
             alt="thumb"
             key={i}
             onClick={() => setCurrentImageIndex(i)}
-            divClassName={`relative w-full aspect-video rounded-xl overflow-hidden border-2 transition-all duration-300 ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
+            divClassName={`relative w-full aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
           />
         ))}
       </AnimIn>
@@ -123,7 +123,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
               key={i}
               onClick={() => setCurrentImageIndex(i)}
               className="hover:scale-100!"
-              divClassName="relative w-full h-full aspect-video rounded-xl overflow-hidden"
+              divClassName="relative w-full h-full aspect-video rounded-2xl overflow-hidden"
             />
           ))}
         </AnimIn>
@@ -136,13 +136,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
           </AnimText>
           <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
             {mapImages.map((mapImg, i) => (
-              <ImageIn
-                key={i}
-                src={mapImg}
-                alt={`${project.name} map ${i + 1}`}
-                className="overflow-hidden rounded-xl"
-                divClassName="aspect-video"
-              />
+              <ImageIn key={i} src={mapImg} alt={`${project.name} map ${i + 1}`} className="overflow-hidden rounded-2xl" divClassName="aspect-video" />
             ))}
           </div>
         </AnimIn>
@@ -155,13 +149,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
           </AnimText>
           <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
             {masterPlanImages.map((planImg, i) => (
-              <ImageIn
-                key={i}
-                src={planImg}
-                alt={`${project.name} master plan ${i + 1}`}
-                className="overflow-hidden rounded-xl"
-                divClassName="aspect-video"
-              />
+              <ImageIn key={i} src={planImg} alt={`${project.name} master plan ${i + 1}`} className="overflow-hidden rounded-2xl" divClassName="aspect-video" />
             ))}
           </div>
         </AnimIn>

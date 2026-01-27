@@ -5,37 +5,46 @@ import { useState, useEffect } from 'react'
 import { Project } from '@/types/project'
 import { Download } from 'lucide-react'
 import TText from '@/translations/TText'
+import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
-import AnimIn from '@/components/ui/unstyled/AnimIn'
+import BreathingText from '@/components/ui/text/BreathingText'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 
-export default function ProjectDetails({ project }: { project: Project }) {
+export default function ProjectAbout({ project }: { project: Project }) {
   const [activeIndex, setActiveIndex] = useState(0)
   if (!project) return null
 
-  const details = [
-    { labelKey: 'details.status', valueKey: `common.${project.status}` },
-    { labelKey: 'details.city', valueKey: `locations.${project.location?.city}` },
-    { labelKey: 'details.country', valueKey: `locations.${project.location?.country}` },
-    { labelKey: 'details.category', valueKey: `common.${project.category}` },
+  const about = [
+    { labelKey: 'projectAbout.status', valueKey: `common.${project.status}` },
+    { labelKey: 'projectAbout.city', valueKey: `locations.${project.location?.city}` },
+    { labelKey: 'projectAbout.country', valueKey: `locations.${project.location?.country}` },
+    { labelKey: 'projectAbout.category', valueKey: `filters.${project.category?.[0]}` },
   ].filter((d) => d.valueKey)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % details.length)
+      setActiveIndex((prev) => (prev + 1) % about.length)
     }, 3000)
 
     return () => clearInterval(interval)
-  }, [details.length])
+  }, [about.length])
 
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24 max-md:py-12">
-      <div className="gap-12 grid lg:grid-cols-3">
-        <div className="space-y-8 col-span-1 max-lg:col-span-3">
-          <AnimText delay={0.9} className="font-sec text-4xl uppercase rtl:leading-14 tracking-widest">
-            <TText tKey={`modal.overview`} />
-          </AnimText>
+      <div className={`${project.shortDesc || project.description || project.brochure ? 'grid lg:grid-cols-3 gap-12' : 'space-y-12'}`}>
+        <div className={`space-y-8 col-span-1 max-lg:col-span-3 ${project.shortDesc || project.description || project.brochure ? '' : 'hidden'}`}>
+          {(project.shortDesc || project.description || project.brochure) && (
+            <div>
+              <AnimText delay={0.5} className="font-sec text-4xl uppercase rtl:leading-14 tracking-widest">
+                <TText tKey={`nav.about`} />
+              </AnimText>
+
+              <AnimText delay={0.7} className="font-sec text-4xl uppercase rtl:leading-14 tracking-widest">
+                <TText tKey={`db.projects.${project.id}.name`} />
+              </AnimText>
+            </div>
+          )}
 
           <div className="space-y-6 font-light text-bg text-lg normal-case leading-relaxed">
             {project.shortDesc && (
@@ -63,7 +72,7 @@ export default function ProjectDetails({ project }: { project: Project }) {
           {project.gallery && project.gallery[0] && <ImageIn src={project.gallery[project.gallery.length - 1]} alt="image" />}
 
           {project.gallery &&
-            details.map((_, index) => (
+            about.map((_, index) => (
               <motion.div
                 key={index}
                 initial={{ x: '100%' }}
@@ -79,22 +88,26 @@ export default function ProjectDetails({ project }: { project: Project }) {
         </AnimIn>
 
         <AnimIn className="relative grid grid-cols-4 col-span-3 bg-main/25 rounded-2xl text-center">
-          {details.map((detail, index) => (
-            <div key={index} className="relative px-2 py-4">
-              <AnimText delay={0.1 * index} className="font-medium text-xs tracking-wider">
-                <TText tKey={detail.labelKey} />
-              </AnimText>
+          {about.map((detail, index) => (
+            <div key={index} className="relative h-20 flex flex-col justify-center items-center gap-2">
+              <AnimIn delay={0.1 * index} className="font-bold text-xs tracking-wider">
+                <BreathingText fromFW="'wght' 400, 'slnt' 10">
+                  <TText tKey={detail.labelKey} />
+                </BreathingText>
+              </AnimIn>
 
-              <AnimText delay={0.3 * index} className="max-md:text-xs text-sm">
-                <TText tKey={detail.valueKey} />
-              </AnimText>
+              <AnimIn delay={0.3 * index} className="font-bold max-md:text-xs text-sm">
+                <BreathingText fromFW="'wght' 400, 'slnt' 10">
+                  <TText tKey={detail.valueKey} />
+                </BreathingText>
+              </AnimIn>
             </div>
           ))}
 
           <motion.div
             className="absolute inset-0 bg-main/25 rounded-2xl mix-blend-difference"
             initial={{ width: '0%' }}
-            animate={{ width: `${((activeIndex + 1) / details.length) * 100}%` }}
+            animate={{ width: `${((activeIndex + 1) / about.length) * 100}%` }}
             transition={{ duration: 1.6, ease: 'easeInOut' }}
           />
         </AnimIn>

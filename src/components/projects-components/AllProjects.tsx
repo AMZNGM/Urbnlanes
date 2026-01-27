@@ -5,7 +5,7 @@ import TText from '@/translations/TText'
 import ProjectsFilter from '@/components/projects-components/ProjectsFilter'
 import MasonryGrid from '@/components/projects-components/MasonryGrid'
 import ListGrid from '@/components/projects-components/ListGrid'
-import Modal from '@/components/projects-components/Modal'
+import ProjectModal from '@/components/projects-components/ProjectModal'
 import db from '@/database/urbnlanes-db.json'
 
 function AllProjectsComponent() {
@@ -80,7 +80,7 @@ function AllProjectsComponent() {
           </>
         )}
 
-        <Modal selectedProject={selectedProject} closeModal={() => setSelectedProject(null)} dark={false} />
+        <ProjectModal selectedProject={selectedProject} closeModal={() => setSelectedProject(null)} dark={false} />
       </section>
     </>
   )

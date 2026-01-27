@@ -5,7 +5,7 @@ import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 
 import OurProjectsHero from '@/components/projects-components/OurProjectsHero'
 const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
-const ProjectsShowcase = dynamic(() => import('@/components/projects-components/ProjectsShowcase'))
+const MarkedProjects = dynamic(() => import('@/components/projects-components/MarkedProjects'))
 const AllProjects = dynamic(() => import('@/components/projects-components/AllProjects'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
 const Newsletter = dynamic(() => import('@/components/shared/Newsletter'))
@@ -17,7 +17,7 @@ export default function OurProjectsPage() {
     <Suspense fallback={<LoadingLogo />}>
       <OurProjectsHero />
       <TextPanel tKey="common.architecturalExcellence" paraTKey="common.architecturalExcellenceDesc" />
-      <ProjectsShowcase />
+      <MarkedProjects />
       <AllProjects />
       <LatestNews className="bg-text text-black! px-18 max-md:px-4 py-0!" line={false} />
       <Newsletter dark={false} />

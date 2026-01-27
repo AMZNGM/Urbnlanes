@@ -9,7 +9,7 @@ import db from '@/database/urbnlanes-db.json'
 
 import ProjectHero from '@/components/projects-components/ProjectHero'
 const ProjectBreadcrumb = dynamic(() => import('@/components/projects-components/ProjectBreadcrumb'))
-const ProjectDetails = dynamic(() => import('@/components/projects-components/ProjectDetails'))
+const ProjectAbout = dynamic(() => import('@/components/projects-components/ProjectAbout'))
 const ProjectGallery = dynamic(() => import('@/components/projects-components/ProjectGallery'))
 const ProjectVideoGallery = dynamic(() => import('@/components/projects-components/ProjectVideoGallery'))
 const ProjectConstructionGallery = dynamic(() => import('@/components/projects-components/ProjectConstructionGallery'))
@@ -56,15 +56,15 @@ export default async function ProjectPage({ params }: Props) {
     <Suspense fallback={<LoadingLogo />}>
       <ProjectHero project={project} />
       <ProjectBreadcrumb project={project} />
-      <ProjectDetails project={project} />
+      <ProjectAbout project={project} />
       <ProjectGallery project={project} />
       <ProjectVideoGallery project={project} />
-      <ProjectPartners project={project} />
       <ProjectConstructionGallery project={project} />
+      <ProjectPartners project={project} />
       <ProjectAmenities project={project} />
       <ProjectLocation project={project} />
       {project.overview && <ProjectOverview project={project} />}
-      {/* <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} /> */}
+      <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} />
       <LatestNews className="bg-text text-black! px-18 max-md:px-4 py-0!" line={false} />
       <Newsletter dark={false} />
     </Suspense>

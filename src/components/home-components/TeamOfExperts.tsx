@@ -22,7 +22,7 @@ export default function TeamOfExperts() {
           </AnimIn>
 
           <div className="flex flex-col gap-8">
-            <AnimText as="span" className="w-fit border border-main/60! rounded-xl text-xs tracking-wider p-4">
+            <AnimText as="span" className="w-fit border border-main/60! rounded-2xl text-xs tracking-wider p-4">
               <TText tKey="db.whoweare.teamOfExperts.subtitle" />
             </AnimText>
 
@@ -66,14 +66,7 @@ export default function TeamOfExperts() {
             <div className="w-6 h-6 border rotate-45" />
           </div>
 
-          <Image
-            src="/images/logos/urbnlanes-logo.webp"
-            alt="Urbnlanes logo"
-            sizes="15vw"
-            width={100}
-            height={100}
-            className="size-auto object-contain"
-          />
+          <Image src="/images/logos/urbnlanes-logo.webp" alt="Urbnlanes logo" sizes="15vw" width={100} height={100} className="size-auto object-contain" />
         </div>
       </div>
     </section>

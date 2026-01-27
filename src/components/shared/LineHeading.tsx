@@ -23,7 +23,7 @@ export default function LineHeading({ tKey = '', paraTKey = '' }) {
 
           <MotionLine delay={0.7} />
 
-          <AnimText as={'p'} delay={0.9} className="font-sec font-light text-lg">
+          <AnimText as={'p'} delay={0.9} className="font-sec font-light text-lg line-clamp-1">
             <TText tKey={paraTKey} />
           </AnimText>
         </>

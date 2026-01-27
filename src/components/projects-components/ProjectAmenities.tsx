@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Project } from '@/types/project'
 import TText from '@/translations/TText'
@@ -10,17 +10,31 @@ import LineHeading from '@/components/shared/LineHeading'
 import * as Icons from 'lucide-react'
 
 export default function ProjectAmenities({ project }: { project: Project }) {
-  const [hoveredAmenity, setHoveredAmenity] = useState<string | null>(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
+  let [currentIndex, setCurrentIndex] = useState(0)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  if (!project || !project.amenities?.length) return null
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const resetInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+    }
+    intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % (project.amenities?.length || 1))
     }, 4000)
-    return () => clearInterval(interval)
+  }
+
+  useEffect(() => {
+    resetInterval()
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
   }, [project.amenities?.length])
 
-  if (!project || !project.amenities?.length) return null
+  useEffect(() => {
+    resetInterval()
+  }, [currentIndex])
 
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
@@ -28,16 +42,9 @@ export default function ProjectAmenities({ project }: { project: Project }) {
 
       <div className="gap-4 grid md:grid-cols-2 mt-16 max-md:mt-12">
         <AnimatePresence mode="wait">
-          <motion.div
-            key={hoveredAmenity || currentIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-md:hidden relative overflow-hidden bg-bg rounded-2xl"
-          >
+          <motion.div key={currentIndex} className="max-md:hidden relative overflow-hidden bg-bg rounded-2xl">
             <Image
-              src={project.gallery?.[currentIndex % project.gallery.length] || ''}
+              src={project.gallery?.[5] || project.gallery?.[0] || ''}
               alt="Image"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -45,22 +52,28 @@ export default function ProjectAmenities({ project }: { project: Project }) {
             />
 
             {project.amenities.map((amenity, index) => (
-              <div
+              <motion.div
                 key={amenity.id}
-                className={`absolute inset-0 flex items-center justify-center p-4 transition-all duration-500 ${hoveredAmenity === amenity.id || (hoveredAmenity === null && index === currentIndex) ? 'opacity-100' : 'opacity-0! pointer-events-none'}`}
+                initial={{ scale: 1.2, opacity: 0, rotate: -5, x: -100 }}
+                animate={{ scale: 1, opacity: 1, rotate: 0, x: 0 }}
+                exit={{ scale: 0.9, opacity: 0, rotate: 5, x: 200 }}
+                transition={{ type: 'spring', ease: [0.25, 0.46, 0.45, 0.94] }}
+                className={`absolute inset-0 flex justify-center items-center p-4 ${index === currentIndex ? 'opacity-100' : 'opacity-0! pointer-events-none'}`}
               >
-                <p className="bg-main/50 backdrop-blur-3xl rounded-2xl text-text normal-case text-balance leading-relaxed p-4">
+                <p className="bg-main/95 rounded-2xl text-text normal-case text-balance leading-relaxed p-4">
                   <TText tKey={`db.projects.amenities.${amenity.id}.description`} />
                 </p>
-              </div>
+              </motion.div>
             ))}
 
             <div className="right-0 bottom-0 left-0 absolute flex gap-2 bg-bg p-4">
               {project.amenities.map((amenity, index) => (
-                <div key={amenity.id} className="h-1 flex-1 bg-text/25 rounded-full transition-all duration-1000">
-                  <div
-                    className={`h-full bg-main transition-all duration-500 ease-in-out ${hoveredAmenity === amenity.id || (hoveredAmenity === null && index === currentIndex) ? 'w-full' : 'w-0'}`}
-                  />
+                <div
+                  key={amenity.id}
+                  onClick={() => setCurrentIndex(index)}
+                  className="h-1 flex-1 bg-text/25 rounded-full transition-all duration-1000 cursor-pointer"
+                >
+                  <div className={`h-full bg-main transition-all duration-500 ease-in-out ${index === currentIndex ? 'w-full' : 'w-0'}`} />
                 </div>
               ))}
             </div>
@@ -74,12 +87,11 @@ export default function ProjectAmenities({ project }: { project: Project }) {
               <AnimIn
                 key={amenity.id}
                 delay={0.1 * index}
-                onMouseEnter={() => setHoveredAmenity(amenity.id)}
-                onMouseLeave={() => setHoveredAmenity(null)}
-                className="relative overflow-hidden flex flex-col justify-center items-center gap-4 bg-main/25 rounded-2xl text-center p-4 cursor-pointer"
+                onClick={() => setCurrentIndex(index)}
+                className="relative overflow-hidden flex flex-col justify-center items-center gap-4 bg-main/25 hover:bg-main/50 rounded-2xl text-center transition-colors duration-200 p-4 cursor-pointer"
               >
                 <div
-                  className={`absolute inset-0 bg-main/25 mix-blend-difference transition-all duration-700 ease-in-out ${hoveredAmenity === amenity.id || (hoveredAmenity === null && index === currentIndex) ? 'w-full' : 'w-0'}`}
+                  className={`max-md:hidden absolute inset-0 bg-main/25 mix-blend-difference transition-all duration-700 ease-in-out ${index === currentIndex ? 'w-full' : 'w-0'}`}
                 />
 
                 <IconComponent size={32} />

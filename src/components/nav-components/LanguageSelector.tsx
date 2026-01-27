@@ -20,9 +20,7 @@ export default function LanguageSelector({ navbarData, className = '' }: { navba
 
       <div
         className={`absolute top-full left-0 bg-bg/75 border border-text/5 backdrop-blur-xl shadow-2xl rounded-sm duration-300 z-50
-            ${
-              languageSelectorOpen ? 'opacity-100 translate-y-0.5 pointer-events-auto' : 'opacity-0 -translate-y-full pointer-events-none'
-            }`}
+            ${languageSelectorOpen ? 'opacity-100 translate-y-0.5 pointer-events-auto' : 'opacity-0 -translate-y-full pointer-events-none'}`}
       >
         {languages.map((language, index) => (
           <button

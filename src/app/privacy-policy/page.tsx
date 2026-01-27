@@ -22,8 +22,8 @@ export default function PrivacyPolicyPage() {
         <h2 className="font-sec text-3xl">Introduction</h2>
         <div className="space-y-4 font-light text-black/80 text-lg leading-relaxed">
           <p>
-            Urbnlanes is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard
-            your information when you visit our website and use our services.
+            Urbnlanes is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when
+            you visit our website and use our services.
           </p>
         </div>
       </AnimIn>
@@ -35,8 +35,7 @@ export default function PrivacyPolicyPage() {
             <div className="bg-main/25 border rounded-2xl p-8">
               <h3 className="font-medium text-xl mb-4">Personal Information</h3>
               <p className="font-light/70">
-                Name, email address, phone number, and other contact information you provide when you inquire about our properties or
-                services.
+                Name, email address, phone number, and other contact information you provide when you inquire about our properties or services.
               </p>
             </div>
             <div className="bg-main/25 border rounded-2xl p-8">
@@ -47,9 +46,7 @@ export default function PrivacyPolicyPage() {
             </div>
             <div className="bg-main/25 border rounded-2xl p-8">
               <h3 className="font-medium text-xl mb-4">Technical Information</h3>
-              <p className="font-light/70">
-                IP address, browser type, device information, and other technical data collected automatically.
-              </p>
+              <p className="font-light/70">IP address, browser type, device information, and other technical data collected automatically.</p>
             </div>
           </div>
         </AnimIn>
@@ -64,7 +61,7 @@ export default function PrivacyPolicyPage() {
               'To improve our website and user experience',
               'To comply with legal obligations',
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-4 bg-main/25 rounded-xl p-4">
+              <li key={i} className="flex items-center gap-4 bg-main/25 rounded-2xl p-4">
                 <div className="w-1.5 h-1.5 bg-main/25 rounded-full" />
                 <span className="font-light/80">{item}</span>
               </li>
@@ -75,16 +72,15 @@ export default function PrivacyPolicyPage() {
         <AnimIn delay={0.6} className="space-y-6">
           <h2 className="font-sec text-3xl">Information Sharing</h2>
           <p className="font-light/80 text-lg">
-            We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as
-            described in this policy.
+            We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy.
           </p>
         </AnimIn>
 
         <AnimIn delay={0.7} className="space-y-6">
           <h2 className="font-sec text-3xl">Data Security</h2>
           <p className="font-light/80 text-lg">
-            We implement appropriate technical and organizational measures to protect your personal information against unauthorized access,
-            alteration, disclosure, or destruction.
+            We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration,
+            disclosure, or destruction.
           </p>
         </AnimIn>
 

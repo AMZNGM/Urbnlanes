@@ -46,7 +46,7 @@ export default function HoverListGallery() {
               <TText tKey={name} />
               <Dot />
             </div>
-            <span className="bottom-0 ltr:-left-1 rtl:left-2 absolute w-full h-8 bg-text rounded-xl scale-x-0 group-hover:scale-x-100 origin-left group-hover:origin-right transition-transform duration-300 mix-blend-difference" />
+            <span className="bottom-0 ltr:-left-1 rtl:left-2 absolute w-full h-8 bg-text rounded-2xl scale-x-0 group-hover:scale-x-100 origin-left group-hover:origin-right transition-transform duration-300 mix-blend-difference" />
           </AnimIn>
         ))}
       </div>
@@ -65,15 +65,7 @@ export default function HoverListGallery() {
               }}
               className="w-full h-full overflow-hidden"
             >
-              <video
-                src={ProjectsVids[activeIndex]}
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster="/images/poster.png"
-                className="w-full h-full object-cover"
-              />
+              <video src={ProjectsVids[activeIndex]} autoPlay muted loop playsInline poster="/images/poster.png" className="w-full h-full object-cover" />
             </motion.div>
           )}
         </AnimatePresence>

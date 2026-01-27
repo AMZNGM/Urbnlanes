@@ -86,8 +86,9 @@ export const TRANSLATIONS = {
       ourCoreValues: 'Our Core Values',
       collab: "Collaborating with the industry's best to deliver excellence.",
       amenitiesDesc: 'Experience an unparalleled lifestyle with our world-class facilities and services.',
-      location: 'Location',
       masterPlan: 'Master Plan',
+      location: 'Location',
+      locationDesc: 'A strategic location that offers a comfortable living experience.',
       similarProjects: 'Similar Projects',
       similarProjectsDesc: 'Explore more of our architectural masterpieces',
       viewAllProjects: 'View All Projects',
@@ -125,6 +126,7 @@ export const TRANSLATIONS = {
       markedProjects: 'Marked Projects',
       ourImpact: 'Our Impact',
       inKuwait: 'In Kuwait',
+      projectDetails: 'Project Details',
     },
 
     amenities: {
@@ -167,7 +169,7 @@ export const TRANSLATIONS = {
       overview: 'Project Overview',
       status: 'Status',
     },
-    details: {
+    projectAbout: {
       status: 'Status',
       city: 'City',
       country: 'Country',
@@ -768,6 +770,7 @@ export const TRANSLATIONS = {
       markedProjects: 'مشاريع مميزة',
       ourImpact: 'أثرتنا',
       inKuwait: 'في كويت',
+      projectDetails: 'تفاصيل المشروع',
     },
 
     amenities: {
@@ -810,7 +813,7 @@ export const TRANSLATIONS = {
       overview: 'نظرة عامة على المشروع',
       status: 'الحالة',
     },
-    details: {
+    projectAbout: {
       status: 'الحالة',
       city: 'المدينة',
       country: 'الدولة',
