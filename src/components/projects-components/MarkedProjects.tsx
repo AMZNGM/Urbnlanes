@@ -38,7 +38,7 @@ export default function MarkedProjects() {
             />
 
             <div className="flex flex-col space-y-4 p-6">
-              <AnimText as={'h4'} delay={0.5} className="font-sec font-bold text-xl">
+              <AnimText as={'h4'} delay={0.3} className="font-sec font-bold text-xl">
                 <TText tKey={`db.projects.${project.id}.name`} />
               </AnimText>
               <MainBtn href={`/projects/${project.id}`} tKey="common.viewProject" size="sm" />
@@ -52,8 +52,8 @@ export default function MarkedProjects() {
       <div className="h-full gap-4 grid md:grid-cols-2 py-8">
         <div className="h-full gap-4 max-md:order-last grid grid-cols-2">
           {db.whoweare.kuwaitProjects.map((project, index) => (
-            <AnimIn key={index} delay={0.05 * index} className="group bg-black/10 hover:bg-black/20 rounded-lg transition-colors p-4">
-              <AnimText as={'p'} delay={0.5} className="opacity-80 group-hover:opacity-100 text-sm transition-opacity duration-200">
+            <AnimIn key={index} delay={0.03 * index} className="group bg-black/10 hover:bg-black/20 rounded-lg transition-colors p-4">
+              <AnimText as={'p'} delay={0.3} className="opacity-80 group-hover:opacity-100 text-sm transition-opacity duration-200">
                 <TText tKey={`db.whoweare.kuwaitProjects.${index}`} />
               </AnimText>
             </AnimIn>

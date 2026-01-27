@@ -31,15 +31,15 @@ export default function Newsletter({ className = '', line = true, dark = true }:
 
       <AnimIn className={`items-end gap-12 grid lg:grid-cols-2 ${line ? 'mb-24 max-md:mb-12' : 'my-24 max-md:my-12'}`}>
         <div className="max-md:max-w-sm max-md:text-center max-md:mx-auto">
-          <AnimText as="h6" delay={0.7} className="font-sec text-3xl leading-[0.9] rtl:leading-10 tracking-tight mb-4">
+          <AnimText as="h6" delay={0.1} className="font-sec text-3xl leading-[0.9] rtl:leading-10 tracking-tight mb-4">
             <TText tKey="newsletter.title" />
           </AnimText>
-          <AnimText as="p" delay={0.9} className="text-sm">
+          <AnimText as="p" delay={0.3} className="text-sm">
             <TText tKey="newsletter.description" />
           </AnimText>
         </div>
 
-        <AnimIn delay={1} className="relative">
+        <AnimIn delay={0.5} className="relative">
           <div className="relative">
             <form action={action} className="group relative">
               <label htmlFor="newsletter-email" className="sr-only">

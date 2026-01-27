@@ -8,11 +8,11 @@ export default function PartnersCTA() {
     <section className="relative w-dvw overflow-hidden bg-black text-text px-18 max-md:px-4 py-24">
       <AnimIn className="max-w-3xl space-y-8 text-center mx-auto">
         <AnimText as="h2" className="font-sec text-3xl tracking-wider">
-          <TText tKey="common.partnersCTA" />
+          <TText tKey="partners.partnersCTA" />
         </AnimText>
 
         <AnimText as="p" className="opacity-80 leading-relaxed">
-          <TText tKey="common.partnersCTADesc" />
+          <TText tKey="partners.partnersCTADesc" />
         </AnimText>
 
         <MainBtn href="mailto:partnerships@urbnlanes.com" tKey="nav.getInTouch" className="mt-8" />

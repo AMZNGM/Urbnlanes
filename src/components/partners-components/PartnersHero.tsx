@@ -19,12 +19,8 @@ export default function PartnersHero() {
           <TText tKey="nav.partners" />
         </AnimText>
 
-        <AnimText
-          as={'p'}
-          delay={0.4}
-          className="max-w-3xl text-text/90 text-lg normal-case md:text-balance leading-relaxed tracking-wider"
-        >
-          <TText tKey="common.partnersDesc" />
+        <AnimText as={'p'} delay={0.4} className="max-w-3xl text-text/90 text-lg normal-case md:text-balance leading-relaxed tracking-wider">
+          <TText tKey="partners.partnersDesc" />
         </AnimText>
       </div>
     </section>

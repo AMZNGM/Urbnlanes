@@ -189,7 +189,7 @@
         {
           "name": "Raef fahmi architects",
           "logo": "/images/logos/raef-logo.webp",
-          "role": "Architecture & Design"
+          "role": ["Architecture", "Design"]
         }
       ],
       "featured": true,
@@ -302,22 +302,22 @@
         {
           "name": "Delave Studio",
           "logo": "/images/logos/delave-studio-logo.webp",
-          "role": "Architecture & Design"
+          "role": ["Architecture", "Design"]
         },
         {
           "name": "HC Consultants",
           "logo": "/images/logos/hc-Consultants-logo.webp",
-          "role": "Engineering Consultancy"
+          "role": ["Engineering", "Consultancy"]
         },
         {
           "name": "Tahseen",
           "logo": "/images/logos/tahseen-logo.webp",
-          "role": "Construction Management"
+          "role": ["Construction", "Management"]
         },
         {
           "name": "Oko Plan",
           "logo": "/images/logos/oko-plan-logo.webp",
-          "role": "Urban Planning"
+          "role": ["Planning"]
         }
       ],
       "featured": true,
@@ -429,22 +429,22 @@
         {
           "name": "Oko Plan",
           "logo": "/images/logos/oko-plan-logo.webp",
-          "role": "Urban Planning"
+          "role": ["Planning"]
         },
         {
           "name": "HC Consultants",
           "logo": "/images/logos/hC-Consultants-logo.webp",
-          "role": "Engineering Consultancy"
+          "role": ["Engineering", "Consultancy"]
         },
         {
           "name": "Whitespace",
           "logo": "/images/logos/whitespace-logo.webp",
-          "role": "Architecture & Design"
+          "role": ["Architecture", "Design"]
         },
         {
           "name": "Delave Studio",
           "logo": "/images/logos/delave-studio-logo.webp",
-          "role": "Architecture & Design"
+          "role": ["Architecture", "Design"]
         }
       ],
       "amenities": [

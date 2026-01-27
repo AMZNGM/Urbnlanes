@@ -18,7 +18,7 @@ export default function PartnersAssociatesPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
       <PartnersHero />
-      <TextPanel tKey="common.partnersTitle" paraTKey="common.partnersDesc2" />
+      <TextPanel tKey="partners.partnersTitle" paraTKey="partners.partnersDesc2" />
       <PartnersParallaxPanels />
       <PartnershipStats />
       <PartnersFilters />

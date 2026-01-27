@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { motion } from 'motion/react'
 import { Project } from '@/types/project'
 import { Lamp } from 'lucide-react'
 import TText from '@/translations/TText'
@@ -29,11 +30,36 @@ export default function ProjectGallery({ project }: { project: Project }) {
     setCurrentImageIndex((prev) => (prev - 1 + (project.gallery?.length || 1)) % (project.gallery?.length || 1))
   }
 
+  const handleDragEnd = (event: any, info: any) => {
+    const { offset, velocity } = info
+    const swipeThreshold = 50
+
+    if (offset.x > swipeThreshold || velocity.x > 500) {
+      prevImage()
+    } else if (offset.x < -swipeThreshold || velocity.x < -500) {
+      nextImage()
+    }
+  }
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        prevImage()
+      } else if (e.key === 'ArrowRight') {
+        nextImage()
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [project.gallery?.length])
+
   return (
     <section
       className={`relative w-dvw overflow-hidden px-18 max-md:px-4 py-12 space-y-12 transition-colors duration-300 ${!darkMode ? 'bg-black text-text' : 'text-black bg-text'}`}
     >
-      <AnimIn delay={1} className="group flex items-center gap-2">
+      <AnimIn delay={0.5} className="group flex items-center gap-2">
         <MainBtn onClick={() => setDarkMode(darkMode ? null : project.gallery || [])} size="lg" className="z-10 relative">
           <Lamp />
         </MainBtn>
@@ -68,35 +94,42 @@ export default function ProjectGallery({ project }: { project: Project }) {
         </div>
       </AnimIn>
 
-      <ImageIn
-        src={regularGallery[currentImageIndex] || project.gallery[0]}
-        alt={`${project.name} - Image ${currentImageIndex + 1}`}
-        priority
-        sizes="100vw"
-        className="hover:scale-100!"
-        divClassName="aspect-video overflow-hidden rounded-2xl"
-      />
+      <motion.div
+        drag="x"
+        onDragEnd={handleDragEnd}
+        dragConstraints={{ left: 0, right: 0 }}
+        className="w-full h-full cursor-grab active:cursor-grabbing select-none"
+      >
+        <ImageIn
+          src={regularGallery[currentImageIndex] || project.gallery[0]}
+          alt={`${project.name} - Image ${currentImageIndex + 1}`}
+          priority
+          sizes="100vw"
+          className="rounded-2xl hover:scale-100! pointer-events-none"
+          divClassName="aspect-video overflow-hidden rounded-2xl"
+        />
+      </motion.div>
 
-      <AnimIn delay={0.6} style={{ scrollbarWidth: 'none' }} className="overflow-x-auto flex gap-4 p-4">
+      <AnimIn delay={0.3} style={{ scrollbarWidth: 'none' }} className="overflow-x-auto flex gap-4 p-4">
         {regularGallery.map((img, i) => (
           <ImageIn
             src={img}
             alt="thumb"
             key={i}
             onClick={() => setCurrentImageIndex(i)}
-            divClassName={`relative w-66 max-md:w-33 shrink-0 aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
+            divClassName={`relative w-66 max-md:w-33 shrink-0 aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
           />
         ))}
       </AnimIn>
 
-      <AnimIn delay={0.6} style={{ scrollbarWidth: 'none' }} className="gap-4 max-md:gap-2 grid grid-cols-8 max-md:grid-cols-4">
+      <AnimIn delay={0.3} style={{ scrollbarWidth: 'none' }} className="gap-4 max-md:gap-2 grid grid-cols-8 max-md:grid-cols-4">
         {regularGallery.map((img, i) => (
           <ImageIn
             src={img}
             alt="thumb"
             key={i}
             onClick={() => setCurrentImageIndex(i)}
-            divClassName={`relative w-full aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
+            divClassName={`relative w-full aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
           />
         ))}
       </AnimIn>
@@ -130,7 +163,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
       )}
 
       {mapImages.length > 0 && (
-        <AnimIn delay={0.8} className="mt-16">
+        <AnimIn delay={0.4} className="mt-16">
           <AnimText as={'h3'} className="font-sec text-2xl mb-6">
             <TText tKey="common.location" />
           </AnimText>
@@ -143,7 +176,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
       )}
 
       {masterPlanImages.length > 0 && (
-        <AnimIn delay={1} className="mt-16">
+        <AnimIn delay={0.5} className="mt-16">
           <AnimText as={'h3'} className="font-sec text-2xl mb-6">
             <TText tKey="common.masterPlan" />
           </AnimText>
