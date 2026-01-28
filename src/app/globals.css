@@ -19,7 +19,10 @@ html {
   font-family: var(--font-arab), var(--font-main);
 }
 .border,
-.border-l {
+.border-l,
+.border-r,
+.border-t,
+.border-b {
   border-color: #8e8e8e50;
 }
 @keyframes oscillate {

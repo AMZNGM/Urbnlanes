@@ -1,8 +1,10 @@
-import { motion } from 'framer-motion'
-import { NavbarData } from '@/types/nav'
+'use client'
 
-export default function MenuBtn({ navbarData, className = '' }: { navbarData: NavbarData; className?: string }) {
-  const { mobileMenuOpen, setMobileMenuOpen, resetSidebar } = navbarData
+import { motion } from 'framer-motion'
+import { NavbarTypes } from '@/types/nav'
+
+export default function MenuBtn({ navbarData, className = '' }: { navbarData: NavbarTypes; className?: string }) {
+  let { mobileMenuOpen, setMobileMenuOpen, resetSidebar } = navbarData
 
   return (
     <button

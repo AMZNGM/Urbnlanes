@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect, useMemo, useRef } from 'react'
 import { useMotionValue, useTransform, animate, useReducedMotion } from 'motion/react'
 import { useTranslation } from '@/translations/useTranslation'

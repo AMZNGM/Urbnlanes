@@ -21,10 +21,7 @@ export default function OurCoreValues() {
             return (
               <div key={index} className="group relative flex flex-col justify-between pb-2">
                 <div className="z-10 relative">
-                  <AnimIn
-                    delay={index * 0.1 + 0.2}
-                    className="w-16 h-16 flex justify-center items-center bg-main rounded-full text-text mb-6"
-                  >
+                  <AnimIn delay={index * 0.1 + 0.2} className="w-16 h-16 flex justify-center items-center bg-main rounded-full text-text mb-6">
                     <IconComponent size={32} />
                   </AnimIn>
 

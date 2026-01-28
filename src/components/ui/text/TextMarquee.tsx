@@ -10,15 +10,7 @@ function wrap(min: number, max: number, v: number) {
   return mod + min
 }
 
-function ParallaxText({
-  children,
-  baseVelocity = 100,
-  className = '',
-}: {
-  children: ReactNode
-  baseVelocity?: number
-  className?: string
-}) {
+function ParallaxText({ children, baseVelocity = 100, className = '' }: { children: ReactNode; baseVelocity?: number; className?: string }) {
   const baseX = useMotionValue(0)
   const { scrollY } = useScroll()
   const scrollVelocity = useVelocity(scrollY)

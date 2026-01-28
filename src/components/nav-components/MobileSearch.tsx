@@ -1,48 +1,61 @@
-import { SearchIcon } from 'lucide-react'
-import { NavbarData } from '@/types/nav'
-import { useTranslation } from '@/translations/useTranslation'
-import { useState, useEffect } from 'react'
-import MenuBtn from '@/components/nav-components/MenuBtn'
-import ProgressBar from '@/components/nav-components/ProgressBar'
+'use client'
 
-export default function MobileSearch({ navbarData }: { navbarData: NavbarData }) {
-  const { searchQuery, setSearchQuery, handleSubmit, isLoading, isScrolled20vh } = navbarData
-  const { t } = useTranslation()
-  const [isClient, setIsClient] = useState(false)
-  const [placeholder, setPlaceholder] = useState('Search...')
+import { useState, useEffect } from 'react'
+import { useSearch, SearchResult } from '@/hooks/useSearch'
+import { useTranslation } from '@/translations/useTranslation'
+import { NavbarTypes } from '@/types/nav'
+import { SearchIcon } from 'lucide-react'
+import AnimIn from '@/components/ui/unstyled/AnimIn'
+import MenuBtn from '@/components/nav-components/MenuBtn'
+import CloseBtn from '@/components/ui/buttons/CloseBtn'
+import SearchDropdown from '@/components/nav-components/SearchDropdown'
+
+export default function MobileSearch({ navbarData }: { navbarData: NavbarTypes }) {
+  let { searchQuery, setSearchQuery } = navbarData
+  let { t } = useTranslation()
+  let { search } = useSearch()
+  let [results, setResults] = useState<SearchResult[]>([])
+  let [selectedIndex, setSelectedIndex] = useState(-1)
+
+  let handleSelect = (result: SearchResult) => {
+    window.location.href = result.url
+    setSearchQuery('')
+    setResults([])
+  }
 
   useEffect(() => {
-    setIsClient(true)
-    setPlaceholder(isLoading ? t('search.searching') : t('search.placeholder'))
-  }, [isLoading, t])
+    const searchResults = search(searchQuery)
+    setResults(searchResults)
+    setSelectedIndex(-1)
+  }, [searchQuery, search])
 
   return (
-    <>
-      <div
-        className={`relative w-full flex justify-between items-center border-text/15 border-b duration-300
-          ${navbarData.isScrolled20vh ? 'h-24' : 'h-34 max-sm:h-24'}
-          `}
-      >
-        <div className="w-full h-full flex items-center gap-4 hover:bg-text/15 transition-colors ps-6 cursor-pointer">
+    <div className={`relative h-24 bg-bg border-b ${navbarData.isScrolled20vh ? 'h-24' : 'h-34 max-sm:h-24'}`}>
+      <div className="relative w-full h-full flex items-center">
+        <div className="h-full flex items-center gap-4 hover:bg-main/25 transition-colors ps-8 grow">
           <SearchIcon size={20} />
+
           <input
             type="text"
             value={searchQuery}
-            placeholder={isClient ? placeholder : 'Search...'}
             onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                e.preventDefault()
-                handleSubmit()
-              }
-            }}
-            className="w-full outline-none text-xl py-12 placeholder-text/75"
+            placeholder={t('search.placeholder')}
+            className="w-full h-full bg-transparent outline-none text-xl placeholder-main"
           />
         </div>
 
-        <MenuBtn navbarData={navbarData} className="w-[35%] h-full hover:bg-text/15 border-main/15 border-s transition-colors" />
+        {searchQuery && <CloseBtn onClick={() => setSearchQuery('')} className="left-5 bg-main! absolute!" />}
+
+        <MenuBtn navbarData={navbarData} className="hover:bg-main/25 border-main/25 rtl:border-r ltr:border-l transition-colors px-14" />
       </div>
-      <ProgressBar isLoading={isLoading} />
-    </>
+
+      {searchQuery && (
+        <div className="top-full right-0 left-0 absolute w-full px-4 pt-2">
+          <AnimIn spring blur duration={0.2} className="w-full bg-bg shadow-2xl">
+            <SearchDropdown results={results} selectedIndex={selectedIndex} onSelect={handleSelect} onHover={setSelectedIndex} />
+          </AnimIn>
+        </div>
+      )}
+    </div>
   )
 }

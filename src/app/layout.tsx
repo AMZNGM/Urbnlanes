@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang="en" className={`${fontMain.variable} ${cinzel.variable} ${fontArab.variable}`}>
       <body
         suppressHydrationWarning
-        className={`relative w-full h-full bg-black text-text font-main uppercase selection:bg-main/75 selection:text-text scroll-smooth antialiased md:subpixel-antialiased`}
+        className="relative w-full h-full bg-black selection:bg-main/75 font-main text-text selection:text-text antialiased md:subpixel-antialiased uppercase scroll-smooth"
       >
         <AppWrapper>{children}</AppWrapper>
       </body>

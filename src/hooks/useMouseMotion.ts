@@ -1,10 +1,9 @@
+'use client'
+
 import { useEffect } from 'react'
 import { useMotionValue, useSpring } from 'framer-motion'
 
-export function useMouseMotion(
-  ref: React.RefObject<HTMLElement | null>,
-  { springConfig }: { springConfig?: { stiffness: number; damping: number } } = {}
-) {
+export function useMouseMotion(ref: React.RefObject<HTMLElement | null>, { springConfig }: { springConfig?: { stiffness: number; damping: number } } = {}) {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
 

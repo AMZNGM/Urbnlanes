@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/translations/LanguageContext'
 import { TRANSLATIONS } from '@/translations/translations'
 
 const LANGUAGE_MAP = {

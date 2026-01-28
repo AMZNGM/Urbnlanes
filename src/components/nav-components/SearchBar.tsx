@@ -1,69 +1,109 @@
-import { motion, AnimatePresence } from 'motion/react'
-import { forwardRef } from 'react'
-import { SearchIcon, XIcon } from 'lucide-react'
+'use client'
+
+import { useRouter } from 'next/navigation'
+import { useState, useEffect, KeyboardEvent } from 'react'
+import { useSearch, SearchResult } from '@/hooks/useSearch'
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
 import { useTranslation } from '@/translations/useTranslation'
+import { NavbarTypes } from '@/types/nav'
+import { SearchIcon } from 'lucide-react'
+import { SoftLine } from '@/components/ui/effects/Lines'
+import AnimIn from '@/components/ui/unstyled/AnimIn'
+import CloseBtn from '@/components/ui/buttons/CloseBtn'
 import RippleEffect from '@/components/ui/effects/RippleEffect'
-import { NavbarData } from '@/types/nav'
+import SearchDropdown from '@/components/nav-components/SearchDropdown'
 
-interface SearchBarProps {
-  navbarData: NavbarData
-}
+export default function SearchBar({ navbarData }: { navbarData: NavbarTypes }) {
+  let { searchQuery, setSearchQuery, showSearch, setShowSearch, handleSubmit: originalHandleSubmit } = navbarData
+  let { search } = useSearch()
+  let { t } = useTranslation()
+  let router = useRouter()
+  let [results, setResults] = useState<SearchResult[]>([])
+  let [selectedIndex, setSelectedIndex] = useState(-1)
 
-const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(({ navbarData }, ref) => {
-  const { searchQuery, setSearchQuery, showSearch, setShowSearch, handleSubmit, searchContainerRef } = navbarData
-  const { t } = useTranslation()
+  useBodyScrollLock(showSearch)
+
+  useEffect(() => {
+    let searchResults = search(searchQuery)
+    setResults(searchResults)
+    setSelectedIndex(-1)
+  }, [searchQuery, search])
+
+  let handleSelect = (result: SearchResult) => {
+    router.push(result.url)
+    setShowSearch(false)
+    setSearchQuery('')
+  }
+
+  let handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Escape') {
+      setShowSearch(false)
+      return
+    }
+
+    if (!results.length) return
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev))
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setSelectedIndex((prev) => (prev > 0 ? prev - 1 : prev))
+    } else if (e.key === 'Enter') {
+      e.preventDefault()
+      if (selectedIndex >= 0 && results[selectedIndex]) {
+        handleSelect(results[selectedIndex])
+      } else {
+        originalHandleSubmit()
+      }
+    }
+  }
 
   return (
-    <AnimatePresence>
+    <>
       {showSearch && (
-        <motion.div
-          ref={searchContainerRef}
-          initial={{ opacity: 0, y: '-100%' }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: '-100%' }}
-          // transition={{ duration: 0.25 }}
-          className="top-full left-0 z-20 absolute size-full bg-bg shadow-2xl backdrop-blur-xl px-14 max-md:px-4"
+        <div
           onClick={(e) => e.stopPropagation()}
+          onWheel={(e) => e.stopPropagation()}
+          onTouchMove={(e) => e.stopPropagation()}
+          className="z-50 fixed inset-0 flex justify-center items-start px-4 pt-[15vh] pointer-events-none"
         >
-          <div className="relative size-full flex justify-between items-center gap-4 duration-300 px-4">
-            <input
-              ref={ref}
-              type="text"
-              value={searchQuery}
-              placeholder={t('search.placeholder')}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Escape') setShowSearch(false)
-                if (e.key === 'Enter') {
-                  e.preventDefault()
-                  handleSubmit()
-                }
-              }}
-              className="size-full focus:outline-none text-xl"
-            />
-            <div className="relative h-full flex justify-center items-center gap-4">
-              <RippleEffect
-                onClick={handleSubmit}
-                className={`border border-text/50 rounded-full duration-300 p-4 ${
-                  searchQuery.trim() ? 'cursor-pointer hover:bg-text hover:text-bg' : 'cursor-not-allowed opacity-50'
-                }`}
-              >
-                <SearchIcon size={20} />
-              </RippleEffect>
-              <RippleEffect
-                onClick={() => setShowSearch(false)}
-                className="hover:bg-text border border-text/50 rounded-full hover:text-bg duration-300 p-4 cursor-pointer"
-              >
-                <XIcon size={20} />
-              </RippleEffect>
+          <AnimIn duration={0.2} className="relative w-full max-w-4xl flex flex-col gap-2 pointer-events-auto">
+            <div className="flex flex-col bg-bg/80 shadow-2xl backdrop-blur-xl border rounded-2xl p-4">
+              <div className="flex p-4">
+                <input
+                  autoFocus
+                  type="text"
+                  value={searchQuery}
+                  onKeyDown={handleKeyDown}
+                  placeholder={t('search.placeholder')}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full outline-none font-light placeholder:text-text/20 text-2xl"
+                />
+
+                <div className="flex gap-2">
+                  <RippleEffect
+                    onClick={originalHandleSubmit}
+                    className={`border rounded-full duration-300 p-2.5 ${searchQuery.trim() ? 'cursor-pointer hover:bg-text hover:text-bg' : 'cursor-not-allowed opacity-50'}`}
+                  >
+                    <SearchIcon size={20} />
+                  </RippleEffect>
+
+                  <CloseBtn onClick={() => setShowSearch(false)} className="bg-transparent hover:bg-text! rounded-full hover:text-black!" />
+                </div>
+              </div>
+
+              <SoftLine className="mt-2! mb-4" />
+
+              {searchQuery && (
+                <AnimIn className="w-full">
+                  <SearchDropdown results={results} selectedIndex={selectedIndex} onSelect={handleSelect} onHover={setSelectedIndex} />
+                </AnimIn>
+              )}
             </div>
-          </div>
-        </motion.div>
+          </AnimIn>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   )
-})
-
-SearchBar.displayName = 'SearchBar'
-
-export default SearchBar
+}

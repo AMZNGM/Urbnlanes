@@ -1,18 +1,10 @@
-import { NavbarData } from '@/types/nav'
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
+import { NavbarTypes } from '@/types/nav'
 
-export default function NavbarOverlay({ navbarData }: { navbarData: NavbarData }) {
-  const {
-    isMenuOpen,
-    setIsMenuOpen,
-    showSearch,
-    setShowSearch,
-    mobileMenuOpen,
-    setMobileMenuOpen,
-    languageSelectorOpen,
-    setLanguageSelectorOpen,
-  } = navbarData
+export default function NavbarOverlay({ navbarData }: { navbarData: NavbarTypes }) {
+  let { isMenuOpen, setIsMenuOpen, showSearch, setShowSearch, mobileMenuOpen, setMobileMenuOpen, languageSelectorOpen, setLanguageSelectorOpen } = navbarData
 
-  const handleClick = () => {
+  let handleClick = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false)
     }
@@ -27,12 +19,16 @@ export default function NavbarOverlay({ navbarData }: { navbarData: NavbarData }
     }
   }
 
-  const showOverlay = isMenuOpen || mobileMenuOpen || showSearch || languageSelectorOpen
+  let showOverlay = isMenuOpen || mobileMenuOpen || showSearch || languageSelectorOpen
+
+  useBodyScrollLock(showOverlay)
 
   return (
     <div
       onClick={handleClick}
-      className={`fixed inset-0 xl:top-full w-full h-dvh bg-black/75 duration-300 z-10
+      onWheel={(e) => e.stopPropagation()}
+      onTouchMove={(e) => e.stopPropagation()}
+      className={`fixed inset-0 w-dvw h-dvh bg-black/25 backdrop-blur-[1px] duration-300 z-10
         ${showOverlay ? 'opacity-100' : 'opacity-0 pointer-events-none'}
       `}
     />

@@ -3,22 +3,20 @@ import { memo } from 'react'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 import RippleEffect from '@/components/ui/effects/RippleEffect'
 
-interface Article {
-  id: string
-  type: string
-  category: string
-  title: string
-  content?: string | string[]
-  image?: string | string[]
-  source?: string
-  date: string
-}
-
-interface NewsCardProps {
-  article: Article
-}
-
-export default memo(function NewsCard({ article }: NewsCardProps) {
+export default memo(function NewsCard({
+  article,
+}: {
+  article: {
+    id: string
+    type: string
+    category: string
+    title: string
+    content?: string | string[]
+    image?: string | string[]
+    source?: string
+    date: string
+  }
+}) {
   const imageUrl = Array.isArray(article.image) ? article.image[0] : article.image
   const fallbackImage = '/images/blogs/blog-placeholder.webp'
   const imageSrc = imageUrl && imageUrl.trim() !== '' ? imageUrl : fallbackImage

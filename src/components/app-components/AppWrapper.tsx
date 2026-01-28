@@ -1,5 +1,5 @@
 import { CookieProvider } from '@/contexts/CookieContext'
-import { LanguageProvider } from '@/contexts/LanguageContext'
+import { LanguageProvider } from '@/translations/LanguageContext'
 import ErrorBoundary from '@/components/app-components/ErrorBoundary'
 import Banner from '@/components/app-components/banner'
 import LocomotiveScrollSetup from '@/components/app-components/LocomotiveScrollSetup'
