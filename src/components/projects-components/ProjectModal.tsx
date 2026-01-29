@@ -52,7 +52,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="z-50 fixed inset-0 flex justify-center items-center bg-black/30 backdrop-blur-2xl"
+          className="z-50 fixed inset-0 flex justify-center items-center bg-bg/30 backdrop-blur-2xl"
         >
           <motion.div
             onClick={(e) => e.stopPropagation()}
@@ -60,31 +60,21 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
             animate={{ scale: 1, opacity: 1, y: 0, filter: 'blur(0px)' }}
             exit={{ scale: 0.5, opacity: 0, y: 10, filter: 'blur(10px)' }}
             transition={{ duration: 0.3, filter: { duration: 0.3, delay: 0.2 } }}
-            className={`relative w-[95dvw] h-[98dvh] max-md:overflow-y-scroll flex max-md:flex-col gap-8 shadow-2xl border rounded-2xl p-4 ${dark ? 'bg-black text-text shadow-black border-text/20' : 'bg-text text-black shadow-text border-black/20'}`}
+            className={`relative w-[95dvw] h-[98dvh] max-md:overflow-y-scroll flex max-md:flex-col gap-8 shadow-2xl border rounded-2xl p-4 ${dark ? 'bg-bg text-text shadow-bg' : 'bg-text text-bg shadow-text'}`}
           >
             <div style={{ scrollbarWidth: 'none' }} className="md:w-1/3 md:overflow-y-auto flex flex-col justify-between gap-8">
               <div className="flex flex-col gap-8">
                 <div className="flex items-center gap-2">
-                  <CloseBtn
-                    onClick={closeModal}
-                    className={`top-0! right-0! relative p-2! ${dark ? 'bg-text! text-bg!' : 'bg-main/50 text-black hover:bg-main/75 backdrop-blur-2xl'}`}
-                  />
-                  <MainBtn
-                    href={selectedProject.brochure}
-                    size="sm"
-                    icon={ArrowIcon}
-                    tKey="modal.brochure"
-                    look="glass"
-                    className={`${dark ? 'bg-text text-black!' : ''} px-4! py-2.5!`}
-                  />
+                  <CloseBtn onClick={closeModal} />
+                  <MainBtn href={selectedProject.brochure} size="sm" icon={ArrowIcon} tKey="modal.brochure" look="mono" className="px-4! py-2.5!" />
                 </div>
 
                 <div className="flex flex-col">
-                  <AnimText as="h3" delay={0.3} className="font-sec text-[3vw] max-md:text-[8vw] text-center leading-14">
+                  <AnimText as="h3" delay={0.3} className="font-sec text-[3vw] max-md:text-[8vw] text-center leading-14 rtl:leading-18">
                     {title}
                   </AnimText>
 
-                  <SoftLine />
+                  <SoftLine className="m-2!" />
 
                   <span className="opacity-50 text-xs text-center normal-case tracking-wide">
                     {selectedProject.location?.city ? t(`locations.${selectedProject.location.city}`) : t('locations.New Cairo')},{' '}
@@ -101,18 +91,23 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
                 </div>
 
                 {selectedProject.partners && selectedProject.partners.length > 0 && (
-                  <div className="mt-6">
-                    <h4 className="text-xs uppercase tracking-widest mb-3">{t('modal.partners')}</h4>
+                  <div className="mt-2">
+                    <h4 className="text-xs tracking-widest mb-1">{t('modal.partners')}</h4>
                     <div className="flex flex-wrap justify-center md:justify-start gap-4">
                       {selectedProject.partners.map((partner: any, idx: number) => (
-                        <div key={idx} className="group/partner flex flex-col items-center gap-2">
+                        <div key={idx} className="flex flex-col items-center gap-2">
                           {partner.logo && (
-                            <div className="relative w-12 h-12 overflow-hidden bg-black border-2 border-text/15 group-hover/partner:border-text/50 rounded-lg transition-colors p-px">
-                              <ImageIn src={partner.logo} alt={partner.name} className="object-contain!" />
+                            <div className="relative w-12 h-12 overflow-hidden rounded-lg p-px">
+                              <ImageIn
+                                src={partner.logo}
+                                alt={partner.name}
+                                className={`object-contain! ${dark ? '' : 'invert'} p-1`}
+                                divClassName="bg-main/25!"
+                              />
                             </div>
                           )}
 
-                          <span className="text-[10px] text-center">{partner.name}</span>
+                          <span className="text-xs text-center">{partner.name}</span>
                         </div>
                       ))}
                     </div>
@@ -120,15 +115,12 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
                 )}
 
                 {selectedProject.amenities && selectedProject.amenities.length > 0 && (
-                  <div className="mt-6">
-                    <h4 className="text-xs uppercase tracking-widest mb-3">{t('modal.amenities')}</h4>
-                    <div className="gap-3 grid grid-cols-2">
+                  <div className="mt-2">
+                    <h4 className="text-xs tracking-widest mb-1">{t('modal.amenities')}</h4>
+                    <div className="gap-2 grid grid-cols-2">
                       {selectedProject.amenities.map((amenity: any) => (
-                        <div
-                          key={amenity.id}
-                          className="group/amenities flex items-center gap-2 bg-current/2 hover:bg-current/4 border-2 border-current/15 hover:border-current/50 rounded-lg transition-all p-2"
-                        >
-                          <span className="opacity-75 group-hover/amenities:opacity-100 text-[10px] transition-opacity">{t(`amenities.${amenity.name}`)}</span>
+                        <div key={amenity.id} className="flex border border-current/50! rounded-lg p-1.5">
+                          <span className="text-xs normal-case">{t(`amenities.${amenity.name}`)}</span>
                         </div>
                       ))}
                     </div>
@@ -136,13 +128,13 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
                 )}
 
                 {selectedProject.overview && (
-                  <div className="bg-current/2 hover:bg-current/4 border-2 border-current/15 hover:border-current/50 rounded-2xl transition-colors mt-6 p-4">
-                    <h4 className="text-xs uppercase tracking-widest mb-3">{t('modal.overview')}</h4>
-                    <div className="flex flex-col gap-2">
+                  <div className="border border-current/50! rounded-lg p-4">
+                    <h4 className="text-xs tracking-widest mb-1">{t('modal.overview')}</h4>
+                    <div className="flex flex-col">
                       {Object.entries(selectedProject.overview).map(([key, value]) => (
-                        <div key={key} className="group/overview flex justify-between text-xs">
-                          <span className="opacity-75 group-hover/overview:opacity-100 capitalize transition-opacity">{key}:</span>
-                          <span className="opacity-75 group-hover/overview:opacity-100 font-mono transition-opacity">{value as string}</span>
+                        <div key={key} className="flex justify-between text-xs">
+                          <span className="capitalize">{key}:</span>
+                          <span className="font-mono">{value as string}</span>
                         </div>
                       ))}
                     </div>
@@ -150,14 +142,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
                 )}
               </div>
 
-              <MainBtn
-                to={`/projects/${selectedProject.id}`}
-                size="sm"
-                icon={ArrowIcon}
-                tKey="modal.viewFullProject"
-                look="glass"
-                className={`${dark ? 'bg-text text-black!' : ''}`}
-              />
+              <MainBtn to={`/projects/${selectedProject.id}`} size="sm" icon={ArrowIcon} tKey="modal.viewFullProject" look="mono" />
             </div>
 
             <div style={{ scrollbarWidth: 'none' }} className="md:h-[94dvh] md:overflow-y-auto flex-1 space-y-4 rounded-2xl">

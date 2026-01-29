@@ -71,6 +71,7 @@ export default function ListGrid({ projects, openModal }: { projects: any[]; ope
               onClick={() => openModal(project)}
               tKey="common.viewProject"
               className="max-md:w-full max-md:mx-auto ms-auto"
+              look="dark"
             />
           </div>
         </AnimIn>

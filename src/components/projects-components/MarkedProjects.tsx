@@ -6,7 +6,7 @@ import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
-import LineHeading from '@/components/shared/LineHeading'
+import AnimText from '@/components/ui/unstyled/AnimText'
 
 export default function MarkedProjects() {
   let markedProjects = db.projects.filter((p) => ['east-lane', 'levels-business-tower', 'noi', 'mid-lane', 'yellow-lane'].includes(p.id))
@@ -25,9 +25,10 @@ export default function MarkedProjects() {
   }
 
   return (
-    <section className="relative w-dvw overflow-x-hidden bg-text text-black px-18 max-md:px-4 py-12 max-md:py-4">
-      {/* <LineHeading tKey="common.markedProjects" /> */}
-      {/* <h2 data-scroll data-scroll-speed="0.2" className="max-md:hidden top-80 right-0 z-10 absolute font-bold text-[7dvw] text-main rotate-12">{<TText tKey="common.markedProjects" />}</h2> */}
+    <section className="relative w-dvw overflow-x-hidden bg-text text-black px-18 max-md:px-4">
+      <AnimText as={'h2'} delay={0.3} data-scroll data-scroll-speed="0.1" className="font-bold text-[11dvw] text-bg leading-40! rtl:leading-70!">
+        <TText tKey="common.markedProjects" />
+      </AnimText>
 
       <div ref={containerRef} className="relative gap-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 py-8">
         {markedProjects.map((project, index) => {
@@ -41,7 +42,12 @@ export default function MarkedProjects() {
 
           return (
             <motion.div key={project.id} style={{ x, y, scale, rotate }} className={`relative rounded-2xl overflow-hidden cursor-pointer ${position.col}`}>
-              <ImageIn src={project.gallery?.[2] || '/images/poster.png'} alt={project.name} divClassName="h-96!" className="scale-100!" />
+              <ImageIn
+                src={project.gallery?.[2] || '/images/poster.png'}
+                alt={project.name}
+                divClassName="h-96! rounded-2xl! overflow-hidden!"
+                className="scale-100!"
+              />
               <div className="bottom-0 left-0 absolute w-full space-y-4 bg-main/25 backdrop-blur-2xl text-text text-center p-4">
                 <h4 className="font-sec font-bold text-xl">{<TText tKey={`db.projects.${project.id}.name`} />}</h4>
                 <MainBtn href={`/projects/${project.id}`} tKey="common.viewProject" size="sm" className="w-full bg-text!" />

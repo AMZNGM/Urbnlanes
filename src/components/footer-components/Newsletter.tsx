@@ -64,7 +64,7 @@ export default function Newsletter() {
                   className="w-full bg-black/50 border border-main/30 focus:border-main rounded-2xl focus:outline-none focus:ring-2 focus:ring-main/50 text-text transition-colors duration-300 px-4 py-3 placeholder-text/50"
                 />
 
-                <MainBtn type="submit" aria-label="Subscribe to newsletter" disabled={isPending || state.success} look="dark">
+                <MainBtn type="submit" aria-label="Subscribe to newsletter" disabled={isPending || state.success} look="dark" className="w-full">
                   {isPending ? (
                     <Loader2 className="animate-spin" size={20} />
                   ) : state.success ? (

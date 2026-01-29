@@ -1,12 +1,12 @@
 'use client'
 
 import { useState, memo, useMemo } from 'react'
+import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import ProjectsFilter from '@/components/projects-components/ProjectsFilter'
 import MasonryGrid from '@/components/projects-components/MasonryGrid'
 import ListGrid from '@/components/projects-components/ListGrid'
 import ProjectModal from '@/components/projects-components/ProjectModal'
-import db from '@/database/urbnlanes-db.json'
 
 function AllProjectsComponent() {
   const [selectedProject, setSelectedProject] = useState(null)

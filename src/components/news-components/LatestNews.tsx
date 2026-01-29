@@ -1,8 +1,8 @@
+import { ScrollArrows } from '@/components/ui/buttons/ArrowBtn'
 import db from '@/database/urbnlanes-db.json'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import NewsCard from '@/components/news-components/NewsCard'
-import { ScrollArrows } from '@/components/ui/buttons/ArrowBtn'
 
 export default function LatestNews({ className }: { className?: string }) {
   let latestArticles = [...db.mediacenter.blogs, ...db.mediacenter.news].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6)

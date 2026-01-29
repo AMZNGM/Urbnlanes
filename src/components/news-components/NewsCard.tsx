@@ -25,9 +25,9 @@ export default memo(function NewsCard({
   return (
     <RippleEffect as="article" dir="ltr" className="group rounded-2xl">
       <Link href={`/media-center-news/${article.id}`}>
-        <ImageIn src={imageSrc} alt={article.title || 'News article'} divClassName="aspect-video" />
+        <ImageIn src={imageSrc} alt={article.title || 'News article'} className="scale-100!" divClassName="h-100!" />
 
-        <div className="right-0 bottom-0 left-0 absolute flex flex-col justify-between bg-black/50 backdrop-blur-2xl rounded-2xl text-text m-4 p-4">
+        <div className="right-0 bottom-83 group-hover:bottom-0 left-0 absolute flex flex-col justify-between bg-bg/50 backdrop-blur-2xl rounded-2xl text-text scale-80 group-hover:scale-100 transition-all duration-500 m-4 p-4">
           <h3 title={article.title} className="max-md:text-lg text-xl normal-case line-clamp-2 leading-snug mb-auto">
             {article.title}
           </h3>

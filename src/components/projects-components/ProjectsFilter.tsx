@@ -122,7 +122,7 @@ export default function ProjectsFilter({
               onCityChange('all')
             }}
             tKey="filters.resetFilters"
-            look="glass"
+            look="mono"
           />
 
           {/* toggle BTN */}

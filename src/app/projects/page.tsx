@@ -25,7 +25,7 @@ export default function OurProjectsPage() {
       />
       <MarkedProjects />
       <ProjectsImpact />
-      {/* <AllProjects /> */}
+      <AllProjects />
       <LatestNews />
     </Suspense>
   )

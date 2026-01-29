@@ -1,9 +1,9 @@
+import { MotionLine } from '@/components/ui/effects/Lines'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '../ui/unstyled/ImageIn'
 import BreathingText from '@/components/ui/text/BreathingText'
-import { MotionLine } from '@/components/ui/effects/Lines'
 
 export default function SectionHero({ image = '', tKey = '', tKeyPara = '' }: { image: string; tKey: string; tKeyPara?: string }) {
   return (

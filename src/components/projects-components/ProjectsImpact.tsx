@@ -7,7 +7,6 @@ import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import BreathingText from '@/components/ui/text/BreathingText'
-import LineHeading from '@/components/shared/LineHeading'
 
 export default function ProjectsImpact() {
   let impacts = [
@@ -22,17 +21,15 @@ export default function ProjectsImpact() {
   let y = useTransform(scrollYProgress, [0, 1], [0, 473])
 
   return (
-    <section className="relative w-dvw bg-text text-black px-18 max-md:px-4 py-4">
-      {/* <LineHeading tKey="common.ourImpact" /> */}
-
+    <section className="relative w-dvw bg-text text-black px-18 max-md:px-4">
       <div className="h-full gap-4 grid md:grid-cols-2 py-8">
         <div className="h-full gap-4 max-md:order-last grid grid-cols-2 max-md:py-18">
           {db.whoweare.kuwaitProjects.map((project, index) => (
             <AnimIn
-              data-scroll
-              data-scroll-speed="0.2"
+              // data-scroll
+              // data-scroll-speed="0.2"
               key={index}
-              delay={0.03 * index}
+              delay={0.01 * index}
               className={`group bg-main/25 hover:bg-main/35 ${index % 2 === 0 ? 'text-left' : 'text-right'} rounded-lg font-mono tracking-wide transition-colors p-4`}
             >
               <AnimText as={'p'} delay={0.3} className="opacity-80 group-hover:opacity-100 text-sm transition-opacity duration-200">

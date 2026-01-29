@@ -46,13 +46,13 @@ export default memo(function MainBtn({
   const content = tKey ? t(tKey) : children
 
   const baseStyles =
-    'relative w-full inline-flex items-center justify-center text-center gap-2 font-medium uppercase rounded-2xl transition-colors duration-300 outline-none'
+    'relative inline-flex items-center justify-center text-center gap-2 font-medium uppercase rounded-2xl transition-colors duration-300 outline-none'
 
   const looks = {
     main: 'bg-text text-bg border-main hover:bg-main/50',
     outline: 'bg-transparent text-main border border-bg! hover:bg-bg/50 hover:text-text',
     ghost: 'bg-transparent text-text border-transparent hover:bg-main/10',
-    dark: 'bg-black text-text hover:bg-current/20 text-current',
+    dark: 'bg-bg text-text hover:bg-current/20 text-current',
     mono: 'bg-current/10 hover:bg-current/20 text-current',
   }
 
