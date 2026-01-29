@@ -37,7 +37,6 @@ export const TRANSLATIONS = {
       privacyPolicy: 'Privacy Policy',
       termsOfUse: 'Terms of Use',
       cookiePolicy: 'Cookie Policy',
-      recaptcha: 'This site is protected by reCAPTCHA and the Google {{privacy}} and {{terms}} apply.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
     },
@@ -255,6 +254,7 @@ export const TRANSLATIONS = {
     db: {
       metadata: {
         company: {
+          title: 'Urbnlanes',
           name: 'Urbnlanes Developments',
           parentCompany: 'Emeel Abdalla Investments',
           description:
@@ -574,7 +574,7 @@ export const TRANSLATIONS = {
           tagline: 'Residential and Commercial Towers',
           shortDesc: 'Modern tower complex',
           description:
-            "The Architectural Excellence is brought by the eminent Hessa-Towers. Our team's dedication in Kuwait made a masterpiece come to life even before the delivery date with two months.",
+            "The Architectural Excellence is brought by the eminent Hessa-Towers. Our team's dedication in Kuwait Urbnlanese a masterpiece come to life even before the delivery date with two months.",
         },
         'al-shadadiya-university': {
           name: 'Al-Shadadiya University',
@@ -658,7 +658,7 @@ export const TRANSLATIONS = {
 
     newsletter: {
       title: 'Get news & updates from Urbnlanes',
-      description: 'Sign up and be the first to know about the latest developments and exciting news on how we are shaping the future!',
+      description: 'By signing up, you consent to receive marketing emails from Urbnlanes and agree to our Privacy Policy!',
       emailPlaceholder: 'Your email',
       subscribe: 'Subscribe',
       emailLabel: 'Email Address',
@@ -714,7 +714,6 @@ export const TRANSLATIONS = {
       privacyPolicy: 'سياسة الخصوصية',
       termsOfUse: 'شروط الاستخدام',
       cookiePolicy: 'سياسة ملفات الارتباط',
-      recaptcha: 'هذا الموقع محمي بواسطة reCAPTCHA وتطبق سياسة {{privacy}} و{{terms}} الخاصة بجوجل.',
       privacy: 'سياسة الخصوصية',
       terms: 'شروط الخدمة',
     },
@@ -1319,7 +1318,7 @@ export const TRANSLATIONS = {
 
     newsletter: {
       title: 'احصل على آخر الأخبار والتحديثات من اوربن لينز',
-      description: 'سجل لتكون أول من يعلم بأحدث المشاريع والمستجدات التي نرسم بها ملامح المستقبل!',
+      description: 'عن طريق الاشتراك توافق على تلقي بريد التسويق من اوربن لينز واتعهد بالموافقة على سياسة الخصوصية الخاصة بنا!',
       emailPlaceholder: 'بريدك الإلكتروني',
       subscribe: 'اشترك الآن',
       emailLabel: 'البريد الإلكتروني',

@@ -9,7 +9,7 @@ import AnimText from '@/components/ui/unstyled/AnimText'
 import HeroVideoToggle from '@/components/hero-components/HeroVideoToggle'
 import BreathingText from '@/components/ui/text/BreathingText'
 
-export default function SectionHero({
+export default function AboutHero({
   title = '',
   para = '',
   image = '/images/poster.png',

@@ -19,7 +19,7 @@ const ProjectLocation = dynamic(() => import('@/components/projects-components/P
 const ProjectOverview = dynamic(() => import('@/components/projects-components/ProjectOverview'))
 const SimilarProjects = dynamic(() => import('@/components/projects-components/SimilarProjects'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
-const Newsletter = dynamic(() => import('@/components/shared/Newsletter'))
+const Newsletter = dynamic(() => import('@/components/footer-components/Newsletter'))
 
 interface Props {
   params: Promise<{ id: string }>

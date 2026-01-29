@@ -3,7 +3,7 @@ import { metadataGenerators } from '@/seo/seo-helpers'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import dynamic from 'next/dynamic'
 
-import SectionHero from '@/components/hero-components/sectionHero'
+import AboutHero from '@/components/about-components/AboutHero'
 const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
 import LineHeading from '@/components/shared/LineHeading'
 const OurCoreValues = dynamic(() => import('@/components/about-components/OurCoreValues'))
@@ -12,17 +12,20 @@ const HoldingCompany = dynamic(() => import('@/components/about-components/Holdi
 const OurStory = dynamic(() => import('@/components/about-components/OurStory'))
 const BehindTheFigures = dynamic(() => import('@/components/about-components/BehindTheFigures'))
 import ImageIn from '@/components/ui/unstyled/ImageIn'
-const Newsletter = dynamic(() => import('@/components/shared/Newsletter'))
+const Newsletter = dynamic(() => import('@/components/footer-components/Newsletter'))
 
 export const generateMetadata = metadataGenerators.about
 
 export default function AboutPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      <SectionHero title="common.aboutUrbnlanes" image="/images/projects/yellow-residence/yr-gallery-11.webp" video="/videos/one-year-1.mp4" />
-      <div className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
-        <LineHeading tKey="common.aboutUs" sideParaTKey="db.whoweare.description2" />
-      </div>
+      <AboutHero title="common.aboutUrbnlanes" image="/images/projects/yellow-residence/yr-gallery-11.webp" video="/videos/one-year-1.mp4" />
+
+      <LineHeading
+        tKey="common.aboutUs"
+        sideParaTKey="db.whoweare.description2"
+        className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12"
+      />
 
       <OurCoreValues />
       <OurHeritagAndNetwork />

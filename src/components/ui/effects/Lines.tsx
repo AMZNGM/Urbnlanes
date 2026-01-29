@@ -2,13 +2,13 @@
 
 import { motion } from 'motion/react'
 
-export function MotionLine({ className = '', delay = 0.3 }: { className?: string; delay?: number }) {
+export function MotionLine({ className = '', delay = 0.3, once = true }: { className?: string; delay?: number; once?: boolean }) {
   return (
     <motion.div
       initial={{ width: '0%' }}
       whileInView={{ width: '100%' }}
       transition={{ duration: 0.8, delay }}
-      viewport={{ once: true }}
+      viewport={{ once }}
       className={`h-0.5 bg-main my-2 mix-blend-difference ${className}`}
     />
   )

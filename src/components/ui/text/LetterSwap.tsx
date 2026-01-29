@@ -42,6 +42,27 @@ export default function LetterSwap({
 
   const hasIcons = typeof text !== 'string' && typeof text !== 'number'
 
+  const getTextContent = (node: React.ReactNode): string => {
+    if (typeof node === 'string' || typeof node === 'number') {
+      return String(node)
+    }
+
+    if (React.isValidElement(node)) {
+      const element = node as React.ReactElement<any>
+      if (element.props && typeof element.props.tKey === 'string') {
+        return t(element.props.tKey)
+      }
+      if (element.props && element.props.children) {
+        return getTextContent(element.props.children)
+      }
+    }
+
+    return ''
+  }
+
+  const extractedText = getTextContent(text)
+  const shouldUseDirectRender = hasIcons && !extractedText
+
   const useDebounce = (callback: (...args: any[]) => void, delay: number) => {
     const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -90,7 +111,7 @@ export default function LetterSwap({
     )
   }
 
-  if (hasIcons || !text) {
+  if (shouldUseDirectRender || (!text && !extractedText)) {
     const Tag = as || 'span'
     return (
       <Tag className={`flex justify-center items-center gap-1 ${className}`} onClick={onClick} {...props}>
@@ -99,7 +120,7 @@ export default function LetterSwap({
     )
   }
 
-  const stringText = String(text)
+  const stringText = extractedText || String(text)
   const MotionTag = (motion as any)[(as as string) || 'span'] || motion.span
 
   // Arabic Strategy: Don't split by character. Duplicate the whole text line.

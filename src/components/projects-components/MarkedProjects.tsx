@@ -1,66 +1,54 @@
+'use client'
+
+import { useRef } from 'react'
+import { motion, useScroll, useTransform, useSpring } from 'motion/react'
 import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
-import AnimIn from '@/components/ui/unstyled/AnimIn'
-import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import LineHeading from '@/components/shared/LineHeading'
-import ProjectsImpact from '@/components/projects-components/ProjectsImpact'
 
 export default function MarkedProjects() {
-  const projectsIds = ['east-lane', 'levels-business-tower', 'noi', 'mid-lane', 'yellow-lane']
-  const markedProjects = db.projects.filter((p) => projectsIds.includes(p.id))
+  let markedProjects = db.projects.filter((p) => ['east-lane', 'levels-business-tower', 'noi', 'mid-lane', 'yellow-lane'].includes(p.id))
+
+  let containerRef = useRef(null)
+  let { scrollYProgress } = useScroll({ target: containerRef, offset: ['start 0.8', 'end 0.9'] })
+  let getCardPosition = (index: number) => {
+    let positions = [
+      { col: 'lg:col-start-1 lg:col-span-2', row: 0 },
+      { col: 'lg:col-start-2 lg:col-span-4', row: 0 },
+      { col: 'lg:col-start-4 lg:col-span-3', row: 0 },
+      { col: 'lg:col-start-2 lg:col-span-3 md:col-span-2', row: 1 },
+      { col: 'lg:col-start-4 lg:col-span-2', row: 1 },
+    ]
+    return positions[index] || { col: '', row: 0 }
+  }
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24 max-md:py-4">
-      <LineHeading tKey="common.markedProjects" />
+    <section className="relative w-dvw overflow-x-hidden bg-text text-black px-18 max-md:px-4 py-12 max-md:py-4">
+      {/* <LineHeading tKey="common.markedProjects" /> */}
+      {/* <h2 data-scroll data-scroll-speed="0.2" className="max-md:hidden top-80 right-0 z-10 absolute font-bold text-[7dvw] text-main rotate-12">{<TText tKey="common.markedProjects" />}</h2> */}
 
-      <div className="gap-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 mb-12 py-8">
-        {markedProjects.map((project, index) => (
-          <AnimIn
-            key={project.id}
-            delay={0.1 * index}
-            className={`group relative overflow-hidden bg-black rounded-2xl text-text cursor-pointer
-              ${
-                (index === 0 ? 'lg:col-start-1 lg:col-span-2' : '') +
-                (index === 1 ? 'lg:col-start-3 lg:col-span-2' : '') +
-                (index === 2 ? 'lg:col-start-5 lg:col-span-2' : '') +
-                (index === 3 ? 'lg:col-start-2 lg:col-span-2 md:col-span-2' : '') +
-                (index === 4 ? 'lg:col-start-4 lg:col-span-2' : '')
-              }
-            `}
-          >
-            <ImageIn
-              src={project.gallery?.[2] || '/images/poster.png'}
-              alt={project.name}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              divClassName="h-64!"
-            />
+      <div ref={containerRef} className="relative gap-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 py-8">
+        {markedProjects.map((project, index) => {
+          let position = getCardPosition(index)
+          let totalCards = markedProjects.length // Calculate individual card progress based on index
+          let cardProgress = useTransform(scrollYProgress, [index / totalCards, (index + 1) / totalCards], [0, 1]) // Stacked position (center of viewport)
+          let x = useSpring(useTransform(cardProgress, [0, 1], [`${-50 * ((index % 3) - 1)}%`, '0%']), { stiffness: 100, damping: 20 }) // Center horizontally when stacked
+          let y = useSpring(useTransform(cardProgress, [0, 1], [`${-50 * Math.floor(index / 3)}%`, '0%']), { stiffness: 100, damping: 20 }) // Center vertically when stacked
+          let scale = useSpring(useTransform(cardProgress, [0, 0.5, 1], [0.8, 0.95, 1]), { stiffness: 100, damping: 20 }) // Scale from stacked to final position
+          let rotate = useSpring(useTransform(cardProgress, [0, 1], [index * 2 - 4, 0]), { stiffness: 100, damping: 20 })
 
-            <div className="flex flex-col space-y-4 p-6">
-              <AnimText as={'h4'} delay={0.3} className="font-sec font-bold text-xl">
-                <TText tKey={`db.projects.${project.id}.name`} />
-              </AnimText>
-              <MainBtn href={`/projects/${project.id}`} tKey="common.viewProject" size="sm" />
-            </div>
-          </AnimIn>
-        ))}
-      </div>
-
-      <LineHeading tKey="common.ourImpact" />
-
-      <div className="h-full gap-4 grid md:grid-cols-2 py-8">
-        <div className="h-full gap-4 max-md:order-last grid grid-cols-2">
-          {db.whoweare.kuwaitProjects.map((project, index) => (
-            <AnimIn key={index} delay={0.03 * index} className="group bg-black/10 hover:bg-black/20 rounded-lg transition-colors p-4">
-              <AnimText as={'p'} delay={0.3} className="opacity-80 group-hover:opacity-100 text-sm transition-opacity duration-200">
-                <TText tKey={`db.whoweare.kuwaitProjects.${index}`} />
-              </AnimText>
-            </AnimIn>
-          ))}
-        </div>
-
-        <ProjectsImpact />
+          return (
+            <motion.div key={project.id} style={{ x, y, scale, rotate }} className={`relative rounded-2xl overflow-hidden cursor-pointer ${position.col}`}>
+              <ImageIn src={project.gallery?.[2] || '/images/poster.png'} alt={project.name} divClassName="h-96!" className="scale-100!" />
+              <div className="bottom-0 left-0 absolute w-full space-y-4 bg-main/25 backdrop-blur-2xl text-text text-center p-4">
+                <h4 className="font-sec font-bold text-xl">{<TText tKey={`db.projects.${project.id}.name`} />}</h4>
+                <MainBtn href={`/projects/${project.id}`} tKey="common.viewProject" size="sm" className="w-full bg-text!" />
+              </div>
+            </motion.div>
+          )
+        })}
       </div>
     </section>
   )

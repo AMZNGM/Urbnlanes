@@ -13,7 +13,7 @@ const SelectedProjects = dynamic(() => import('@/components/home-components/Sele
 const Updates = dynamic(() => import('@/components/latestUpdates-components/Updates'))
 const OurValues = dynamic(() => import('@/components/home-components/OurValues'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
-const Newsletter = dynamic(() => import('@/components/shared/Newsletter'))
+const Newsletter = dynamic(() => import('@/components/footer-components/Newsletter'))
 
 export const generateMetadata = metadataGenerators.home
 
