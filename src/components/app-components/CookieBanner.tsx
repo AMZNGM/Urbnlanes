@@ -6,25 +6,25 @@ import { CookieContext } from '@/contexts/CookieContext'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 
 export default function CookieBanner() {
-  const context = useContext(CookieContext)
+  let context = useContext(CookieContext)
   if (!context) return null
 
-  const { consent, acceptAll, initialized } = context
-  const [visible, setVisible] = useState(false)
+  let { consent, acceptAll, initialized } = context
+  let [visible, setVisible] = useState(false)
 
   useEffect(() => {
     if (!initialized) return
-    const needsConsent = consent && !consent.consentDate
+    let needsConsent = consent && !consent.consentDate
     setVisible(needsConsent)
   }, [initialized, consent])
 
-  const openCookieSidebar = () => {
-    const event = new CustomEvent('openCookieSidebar')
+  let openCookieSidebar = () => {
+    let event = new CustomEvent('openCookieSidebar')
     window.dispatchEvent(event)
     setVisible(false)
   }
 
-  const handleAcceptAll = () => {
+  let handleAcceptAll = () => {
     acceptAll()
     setVisible(false)
   }
@@ -46,8 +46,8 @@ export default function CookieBanner() {
             <div>
               <strong className="block">We use cookies</strong>
               <p className="mt-1">
-                We use essential cookies to make the site work, and optional cookies to analyze traffic and provide marketing features. You
-                can accept all or customize your preferences.
+                We use essential cookies to make the site work, and optional cookies to analyze traffic and provide marketing features. You can accept all or
+                customize your preferences.
               </p>
             </div>
 

@@ -13,18 +13,10 @@ export default function OurValues() {
       <Heading text={<TText tKey="common.ourValues" />} />
 
       {db.whoweare.values.slice(0, 3).map((value, index) => (
-        <div
-          key={value.title}
-          className={`h-60 max-md:h-120 flex max-md:flex-col justify-between items-center gap-8 ${index === 1 ? 'flex-row-reverse' : ''}`}
-        >
+        <div key={value.title} className={`h-60 max-md:h-120 flex max-md:flex-col justify-between items-center gap-8 ${index === 1 ? 'flex-row-reverse' : ''}`}>
           <div className="z-10 relative w-full h-full overflow-hidden rounded-2xl">
             <AnimIn delay={index * 0.1} className="relative w-full h-full bg-bg rounded-2xl">
-              <ImageIn
-                src={value.image}
-                alt={value.title}
-                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 40vw"
-                className="rounded-2xl"
-              />
+              <ImageIn src={value.image} alt={value.title} sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 40vw" className="rounded-2xl" />
             </AnimIn>
           </div>
 

@@ -1,3 +1,5 @@
+'use client'
+
 import { motion, MotionValue } from 'motion/react'
 import { HeroSlide } from '@/types/hero'
 
@@ -25,9 +27,7 @@ export default function HeroIndicators({
           <div className="relative w-full h-0.5 overflow-hidden bg-text/30">
             <div className="absolute inset-0 bg-text/50 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
 
-            {index === currentIndex && (
-              <motion.div className="absolute inset-0 bg-text ltr:origin-left rtl:origin-right" style={{ scaleX: progressScale }} />
-            )}
+            {index === currentIndex && <motion.div className="absolute inset-0 bg-text ltr:origin-left rtl:origin-right" style={{ scaleX: progressScale }} />}
 
             {index < currentIndex && <div className="absolute inset-0 bg-text" />}
           </div>

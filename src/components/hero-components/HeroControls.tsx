@@ -1,3 +1,5 @@
+'use client'
+
 import { Dispatch, SetStateAction } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { HeroSlide } from '@/types/hero'

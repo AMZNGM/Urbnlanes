@@ -2,9 +2,9 @@
 
 import { useRef } from 'react'
 import { motion } from 'motion/react'
-import { useTranslation } from '@/translations/useTranslation'
 import { Plus } from 'lucide-react'
 import { useClipPath } from '@/hooks/useClipPath'
+import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import Heading from '@/components/shared/Heading'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
@@ -14,10 +14,9 @@ import NumberTicker from '@/components/ui/text/NumberTicker'
 import Shine from '@/components/ui/effects/Shine'
 
 export default function WhoWeAre() {
-  const { t } = useTranslation()
-  const stats = t('db.whoweare.statistics')
-  const imageRef = useRef<HTMLDivElement>(null)
-  const { clipPath } = useClipPath({ imageRef: imageRef as React.RefObject<HTMLElement> })
+  let stats = db.whoweare.statistics
+  let imageRef = useRef<HTMLDivElement>(null)
+  let { clipPath } = useClipPath({ imageRef: imageRef as React.RefObject<HTMLElement> })
 
   return (
     <section className="relative w-full h-full overflow-hidden bg-black text-text px-18 max-md:px-4 py-8">
@@ -36,10 +35,7 @@ export default function WhoWeAre() {
                 priority={true}
               />
 
-              <AnimIn
-                delay="1"
-                className="-right-18 max-md:right-0 -bottom-2 z-30 absolute backdrop-blur-2xl border rounded-sm px-8 py-4 rotate -6"
-              >
+              <AnimIn delay="1" className="-right-18 max-md:right-0 -bottom-2 z-30 absolute backdrop-blur-2xl border rounded-sm px-8 py-4 rotate -6">
                 <p className="text-main text-xs tracking-[0.3vw]">
                   <TText tKey={'db.metadata.company.tagline'} />
                 </p>
@@ -50,10 +46,7 @@ export default function WhoWeAre() {
               <TText tKey={'db.whoweare.description'} />
             </AnimText>
 
-            <a
-              href="tel:+15061"
-              className="flex items-center gap-1 text-main hover:text-text text-xs hover:text-sm italic transition-all duration-700 mt-4"
-            >
+            <a href="tel:+15061" className="flex items-center gap-1 text-main hover:text-text text-xs hover:text-sm italic transition-all duration-700 mt-4">
               <div className="w-8 h-px bg-main" />
               <TText tKey={'common.hotline'} />
               <span className="px-px">:</span>
@@ -76,7 +69,7 @@ export default function WhoWeAre() {
                       delay={index * 0.1 + 1}
                       className="font-extralight max-sm:font-medium text-[1vw] max-md:text-[3vw] max-lg:text-[1.7vw] tracking-wide"
                     >
-                      {stat.title}
+                      <TText tKey={`db.whoweare.statistics[${index}].title`} />
                     </AnimText>
                   </div>
                 ))}
@@ -86,7 +79,7 @@ export default function WhoWeAre() {
               <div className="right-0 bottom-0 absolute w-20 h-20 border-main/35 border-r border-b rounded-br-sm" />
             </div>
 
-            <AnimIn className="relative rounded-2xl p-4">
+            <AnimIn className="relative max-md:border border-main/25 rounded-2xl p-4">
               <div ref={imageRef} className="z-30 relative h-[38vh] overflow-hidden rounded-2xl">
                 <ImageIn src="/images/projects/yellow-residence/yr-gallery-3.webp" alt="EastLane Project" duration={0.5} />
                 <motion.div style={{ clipPath }} className="z-10 absolute inset-0">

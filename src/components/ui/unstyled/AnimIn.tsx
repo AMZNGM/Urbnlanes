@@ -29,7 +29,7 @@ export default function AnimIn({
   blur = false,
   ...props
 }: AnimInProps) {
-  const Tag = motion.create(as as any)
+  let Tag = motion.create(as as any)
 
   return (
     <Tag

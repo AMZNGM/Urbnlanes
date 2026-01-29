@@ -11,17 +11,17 @@ import MainBtn from '@/components/ui/buttons/MainBtn'
 import ArrowIcon from '@/components/ui/icons/ArrowIcon'
 
 export default function ProjectModal({ closeModal, selectedProject, dark = true }: { closeModal: () => void; selectedProject: any; dark?: boolean }) {
-  const { t } = useTranslation()
+  let { t } = useTranslation()
 
-  const translationKey = selectedProject ? `db.projects.${selectedProject.id}` : ''
-  const t_name = selectedProject ? t(`${translationKey}.name`) : ''
-  const title = t_name && t_name !== `${translationKey}.name` ? t_name : selectedProject?.name
+  let translationKey = selectedProject ? `db.projects.${selectedProject.id}` : ''
+  let t_name = selectedProject ? t(`${translationKey}.name`) : ''
+  let title = t_name && t_name !== `${translationKey}.name` ? t_name : selectedProject?.name
 
-  const t_description = selectedProject ? t(`${translationKey}.description`) : ''
-  const t_shortDesc = selectedProject ? t(`${translationKey}.shortDesc`) : ''
+  let t_description = selectedProject ? t(`${translationKey}.description`) : ''
+  let t_shortDesc = selectedProject ? t(`${translationKey}.shortDesc`) : ''
 
-  const rawDescription = selectedProject?.description || selectedProject?.shortDesc
-  const fallbackDescription = Array.isArray(rawDescription) ? rawDescription.join(' ') : rawDescription
+  let rawDescription = selectedProject?.description || selectedProject?.shortDesc
+  let fallbackDescription = Array.isArray(rawDescription) ? rawDescription.join(' ') : rawDescription
 
   let description = fallbackDescription || 'A remarkable project by Urbnlanes Developments.'
 
@@ -31,7 +31,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
   }
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    let handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         closeModal()
       }
@@ -64,7 +64,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
           >
             <div style={{ scrollbarWidth: 'none' }} className="md:w-1/3 md:overflow-y-auto flex flex-col justify-between gap-8">
               <div className="flex flex-col gap-8">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
                   <CloseBtn
                     onClick={closeModal}
                     className={`top-0! right-0! relative p-2! ${dark ? 'bg-text! text-bg!' : 'bg-main/50 text-black hover:bg-main/75 backdrop-blur-2xl'}`}
@@ -75,7 +75,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
                     icon={ArrowIcon}
                     tKey="modal.brochure"
                     look="glass"
-                    className={`${dark ? 'bg-text text-black!' : ''}`}
+                    className={`${dark ? 'bg-text text-black!' : ''} px-4! py-2.5!`}
                   />
                 </div>
 

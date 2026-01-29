@@ -5,8 +5,8 @@ import { ChevronUp } from 'lucide-react'
 import { useScrollPosition } from '@/hooks/useScrollPosition'
 
 export default function ScrollToTopBtn() {
-  const isScrolled100vh = useScrollPosition(0.8)
-  const { scrollYProgress } = useScroll()
+  let isScrolled100vh = useScrollPosition(0.8)
+  let { scrollYProgress } = useScroll()
 
   return (
     <motion.button

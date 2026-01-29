@@ -10,13 +10,13 @@ import AnimText from '@/components/ui/unstyled/AnimText'
 import ArrowBtn from '@/components/ui/buttons/ArrowBtn'
 
 export default function OurStory() {
-  const storySteps = db.whoweare.storySteps
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [activeStep, setActiveStep] = useState(0)
-  const { scrollXProgress } = useScroll({ container: containerRef })
-  const scrollX = useTransform(scrollXProgress, [0, 1], ['0%', '100%'])
+  let storySteps = db.whoweare.storySteps
+  let containerRef = useRef<HTMLDivElement>(null)
+  let [activeStep, setActiveStep] = useState(0)
+  let { scrollXProgress } = useScroll({ container: containerRef })
+  let scrollX = useTransform(scrollXProgress, [0, 1], ['0%', '100%'])
 
-  const handlePrev = () => {
+  let handlePrev = () => {
     if (activeStep > 0) {
       let prevIndex = activeStep - 1
       if (prevIndex >= 0) {
@@ -26,7 +26,7 @@ export default function OurStory() {
     }
   }
 
-  const handleNext = () => {
+  let handleNext = () => {
     if (activeStep < storySteps.length - 1) {
       let nextIndex = activeStep + 1
       if (nextIndex < storySteps.length) {
@@ -36,10 +36,10 @@ export default function OurStory() {
     }
   }
 
-  const scrollToStep = (index: number) => {
-    const container = containerRef.current
+  let scrollToStep = (index: number) => {
+    let container = containerRef.current
     if (container) {
-      const cardWidth = container.scrollWidth / storySteps.length
+      let cardWidth = container.scrollWidth / storySteps.length
       container.scrollTo({
         left: cardWidth * index,
         behavior: 'smooth',
@@ -85,12 +85,11 @@ export default function OurStory() {
             setActiveStep(newActiveStep)
           }}
           style={{ scrollbarWidth: 'none' }}
-          className="overflow-x-scroll flex gap-18 max-md:gap-8"
+          className="overflow-x-scroll overflow-y-hidden flex gap-18 max-md:gap-8"
         >
           {storySteps.map((step, index) => (
-            <AnimIn
+            <div
               key={step.title || `empty-${index}`}
-              delay={index * 0.2}
               onClick={() => {
                 if (step.title) {
                   setActiveStep(index)
@@ -109,11 +108,9 @@ export default function OurStory() {
                     <TText tKey={`db.whoweare.storySteps.${index}.year`} />
                   </div>
 
-                  <motion.div
-                    initial={{ backdropFilter: 'blur(0px)' }}
-                    whileInView={{ backdropFilter: 'blur(40px)' }}
-                    transition={{ backdropFilter: { duration: 1, delay: 0.5 } }}
-                    className={`relative space-y-4 shadow-2xl border rounded-2xl hover:bg-text/8 transition-all duration-300 p-8 ${index === activeStep ? 'bg-text/10 text-text' : 'bg-black/25 text-main'}`}
+                  <AnimIn
+                    delay={index * 0.2}
+                    className={`relative space-y-4 backdrop-blur-2xl shadow-2xl border rounded-2xl hover:bg-text/8 transition-all duration-300 p-8 ${index === activeStep ? 'bg-text/10 text-text' : 'bg-black/25 text-main'}`}
                   >
                     <h3 className="text-2xl">
                       <TText tKey={`db.whoweare.storySteps.${index}.title`} />
@@ -143,10 +140,10 @@ export default function OurStory() {
                         }}
                       />
                     </svg>
-                  </motion.div>
+                  </AnimIn>
                 </>
               ) : null}
-            </AnimIn>
+            </div>
           ))}
         </div>
       </AnimIn>

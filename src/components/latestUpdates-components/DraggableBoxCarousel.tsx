@@ -8,7 +8,7 @@ import db from '@/database/urbnlanes-db.json'
 import CloseBtn from '@/components/ui/buttons/CloseBtn'
 import ArrowBtn from '@/components/ui/buttons/ArrowBtn'
 
-const carouselItems = [
+let carouselItems = [
   {
     src: db.projects.find((project) => project.id === 'yellow-lane')?.gallery[2] ?? '',
     alt: db.projects.find((project) => project.id === 'yellow-lane')?.name ?? '',
@@ -36,8 +36,7 @@ const carouselItems = [
 ]
 
 export default function DraggableBoxCarousel({ className = '' }) {
-  const {
-    isDragging,
+  let {
     selectedFace,
     springRotateY,
     springRotateX,
@@ -67,7 +66,7 @@ export default function DraggableBoxCarousel({ className = '' }) {
           className="relative w-full h-full transform-3d cursor-grab active:cursor-grabbing"
         >
           {carouselItems.map((item, index) => {
-            const transforms = [
+            let transforms = [
               `rotateY(0deg) translateZ(${depth / 2}px)`, // Front
               `rotateY(90deg) translateZ(${depth / 2}px)`, // Right
               `rotateY(180deg) translateZ(${depth / 2}px)`, // Back
@@ -117,8 +116,8 @@ export default function DraggableBoxCarousel({ className = '' }) {
               <div className="flex justify-between items-center gap-2">
                 <CloseBtn onClick={handleCloseFullscreen} />
                 <div className="space-x-2">
-                  <ArrowBtn onClick={handleNextImage} direction="right" />
                   <ArrowBtn onClick={handlePreviousImage} />
+                  <ArrowBtn onClick={handleNextImage} direction="right" />
                 </div>
               </div>
             </motion.div>

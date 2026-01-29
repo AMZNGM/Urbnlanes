@@ -24,11 +24,7 @@ export function LoadingOscillate() {
     <div className="z-20 absolute inset-0 flex flex-col justify-center items-center gap-2 bg-black">
       <div className="relative w-10 h-10 flex justify-start items-center animate-spin" style={{ animationDuration: '2.7s' }}>
         {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="top-0 left-0 absolute w-full h-full flex justify-start items-center"
-            style={{ transform: `rotate(${i * 45}deg)` }}
-          >
+          <div key={i} className="top-0 left-0 absolute w-full h-full flex justify-start items-center" style={{ transform: `rotate(${i * 45}deg)` }}>
             <div
               className="w-2 h-2 bg-main rounded-full"
               style={{

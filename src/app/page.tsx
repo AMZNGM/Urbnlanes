@@ -29,8 +29,8 @@ export default function Home() {
       <SelectedProjects />
       <Updates />
       <OurValues />
-      <LatestNews />
-      <Newsletter />
+      <LatestNews className="px-4!" />
+      <Newsletter className="px-4!" />
     </Suspense>
   )
 }

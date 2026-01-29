@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-const banner = `
+let banner = `
       ▌    ▌
 ▛▛▌▀▌▛▌█▌  ▛▌▌▌
 ▌▌▌█▌▙▌▙▖  ▙▌▙▌

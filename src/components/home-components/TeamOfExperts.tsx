@@ -7,7 +7,7 @@ import Heading from '@/components/shared/Heading'
 
 export default function TeamOfExperts() {
   return (
-    <section className="relative w-full h-full overflow-hidden bg-black text-text px-4 py-8">
+    <section className="relative w-full h-full overflow-hidden bg-black text-text px-18 max-md:px-4 py-8">
       <Heading text={<TText tKey="db.whoweare.teamOfExperts.title" />} />
 
       <div className="w-full flex flex-col justify-center items-center gap-24 mt-18">

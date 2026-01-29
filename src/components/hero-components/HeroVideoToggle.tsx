@@ -2,13 +2,7 @@ import { Dispatch, SetStateAction } from 'react'
 import TText from '@/translations/TText'
 import SwitchBtn from '@/components/ui/buttons/SwitchBtn'
 
-export default function HeroVideoToggle({
-  isVideoMode,
-  setIsVideoMode,
-}: {
-  isVideoMode: boolean
-  setIsVideoMode: Dispatch<SetStateAction<boolean>>
-}) {
+export default function HeroVideoToggle({ isVideoMode, setIsVideoMode }: { isVideoMode: boolean; setIsVideoMode: Dispatch<SetStateAction<boolean>> }) {
   return (
     <div
       dir="ltr"

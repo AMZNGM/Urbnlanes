@@ -1,3 +1,5 @@
+'use client'
+
 import { motion, AnimatePresence } from 'motion/react'
 import { HeroSlide } from '@/types/hero'
 import MainBtn from '@/components/ui/buttons/MainBtn'

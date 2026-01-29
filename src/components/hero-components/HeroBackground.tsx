@@ -1,8 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import { RefObject } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { HeroSlide } from '@/types/hero'
-import { LoadingOscillate } from '@/components/loading-components/LoadingAnimations'
 
 export default function HeroBackground({
   currentSlide,
@@ -12,7 +13,6 @@ export default function HeroBackground({
   prefersReducedMotion,
   videoRef,
   slidesCount,
-  isLoading,
   handleMediaLoad,
   handleAnimationStart,
 }: {
@@ -41,8 +41,6 @@ export default function HeroBackground({
         onAnimationStart={handleAnimationStart}
         className="absolute inset-0"
       >
-        {/* {isLoading && <LoadingOscillate />} */}
-
         {!isMobile && isVideoMode && currentSlide.video ? (
           <div className="relative w-full h-full">
             <video

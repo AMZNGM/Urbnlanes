@@ -19,11 +19,7 @@ const ToggleSwitch = ({
   <label className={`relative inline-flex items-center cursor-pointer select-none ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}>
     <input type="checkbox" className="sr-only peer" checked={checked} onChange={onChange} disabled={disabled} />
     <span className={`w-10 h-6 rounded-full transition-colors duration-200 ${checked ? 'bg-main' : 'bg-text/20'}`} />
-    <span
-      className={`absolute left-1 top-1 w-4 h-4 rounded-full bg-white transition-transform duration-200 ${
-        checked ? 'translate-x-4' : 'translate-x-0'
-      }`}
-    />
+    <span className={`absolute left-1 top-1 w-4 h-4 rounded-full bg-white transition-transform duration-200 ${checked ? 'translate-x-4' : 'translate-x-0'}`} />
   </label>
 )
 
@@ -47,7 +43,7 @@ const CookieCategory = ({
     retention: string
   } | null
 }) => {
-  const [showDetails, setShowDetails] = useState(false)
+  let [showDetails, setShowDetails] = useState(false)
 
   return (
     <li className="hover:bg-text/5 border border-text/10 rounded-lg duration-300 p-4 cursor-pointer">
@@ -105,13 +101,13 @@ const CookieCategory = ({
 }
 
 export default function CookieSidebar() {
-  const buttonRef = useRef<HTMLButtonElement>(null)
-  const [open, setOpen] = useState(false)
-  const context = useContext(CookieContext)
+  let buttonRef = useRef<HTMLButtonElement>(null)
+  let [open, setOpen] = useState(false)
+  let context = useContext(CookieContext)
   if (!context) return null
 
-  const { consent, setCategory, acceptAll } = context
-  const [local, setLocal] = useState({ analytics: false, marketing: false, preferences: false })
+  let { consent, setCategory, acceptAll } = context
+  let [local, setLocal] = useState({ analytics: false, marketing: false, preferences: false })
 
   useEffect(() => {
     if (consent) {
@@ -137,9 +133,9 @@ export default function CookieSidebar() {
     return () => window.removeEventListener('openCookieSidebar', handleOpenSidebar)
   }, [])
 
-  const toggle = () => setOpen((v: boolean) => !v)
+  let toggle = () => setOpen((v: boolean) => !v)
 
-  const handleSave = async () => {
+  let handleSave = async () => {
     try {
       setCategory('analytics', local.analytics)
       setCategory('marketing', local.marketing)
@@ -152,14 +148,14 @@ export default function CookieSidebar() {
     }
   }
 
-  const handleAcceptAll = () => {
+  let handleAcceptAll = () => {
     acceptAll()
     setCategory('consentDate', new Date().toISOString())
     setOpen(false)
     buttonRef.current?.focus()
   }
 
-  const handleRejectAll = () => {
+  let handleRejectAll = () => {
     setCategory('analytics', false)
     setCategory('marketing', false)
     setCategory('preferences', false)
@@ -168,7 +164,7 @@ export default function CookieSidebar() {
     buttonRef.current?.focus()
   }
 
-  const cookieCategories = [
+  let cookieCategories = [
     {
       title: 'Strictly Necessary Cookies',
       description: 'Required for core site features (security, network management, accessibility). These are always on.',
@@ -280,9 +276,9 @@ export default function CookieSidebar() {
             <div className="overflow-y-auto flex-1 space-y-4 px-5 py-4">
               <section className="bg-text/5 opacity-75 rounded-lg text-xs p-4">
                 <p>
-                  When you use the Urbnlanes website, certain information may be stored or retrieved in your browser, mainly through
-                  cookies. This data can relate to your device, settings, or general usage and helps the site work as intended. It usually
-                  doesn't directly identify you, but it enables a more tailored experience.
+                  When you use the Urbnlanes website, certain information may be stored or retrieved in your browser, mainly through cookies. This data can
+                  relate to your device, settings, or general usage and helps the site work as intended. It usually doesn't directly identify you, but it
+                  enables a more tailored experience.
                 </p>
               </section>
 

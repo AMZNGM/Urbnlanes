@@ -6,9 +6,9 @@ export default function CloseBtn({ onClick, className = '' }: { onClick?: () => 
     <RippleEffect
       onClick={onClick}
       aria-label="Close button"
-      className={`group text-current bg-current/10 hover:bg-main/20 border rounded-full transition-colors duration-300 cursor-pointer p-2.5 ${className}`}
+      className={`group relative h-full overflow-hidden justify-center items-center grid bg-current/10 hover:bg-current/20 rounded-2xl text-current transition-colors duration-300 px-4 py-2 cursor-pointer ${className}`}
     >
-      <X size={20} className="group-hover:rotate-90 transition-transform duration-300 ease-out" />
+      <X size={24} className="group-hover:rotate-90 transition-transform duration-300 ease-out" />
     </RippleEffect>
   )
 }

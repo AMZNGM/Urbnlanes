@@ -19,10 +19,10 @@ interface FooterLink {
 }
 
 export default function FooterContent() {
-  const { t } = useTranslation()
-  const { isClient } = useNavbar()
+  let { t } = useTranslation()
+  let { isClient } = useNavbar()
 
-  const links = useMemo(() => {
+  let links = useMemo(() => {
     return navigation
       .flatMap((item) => {
         if (item.slug) {
@@ -39,8 +39,8 @@ export default function FooterContent() {
       .slice(1)
   }, [t, isClient])
 
-  const recaptchaParts = useMemo(() => {
-    const text = t('footer.recaptcha', {
+  let recaptchaParts = useMemo(() => {
+    let text = t('footer.recaptcha', {
       privacy: 'PRIVACY_PLACEHOLDER',
       terms: 'TERMS_PLACEHOLDER',
     })
@@ -48,10 +48,7 @@ export default function FooterContent() {
   }, [t])
 
   return (
-    <div
-      dir="ltr"
-      className="relative w-full h-full overflow-hidden bg-black font-mono text-main max-md:text-text px-18 max-md:px-4 max-md:py-18"
-    >
+    <div dir="ltr" className="relative w-full h-full overflow-hidden bg-black font-mono text-main max-md:text-text px-18 max-md:px-4 max-md:py-18">
       <div className="w-full h-full flex flex-col justify-center items-center">
         <div className="w-full h-full flex max-md:flex-col md:justify-between items-center">
           <ShinyText className="text-[16vw] text-center leading-[13vw]">
@@ -63,21 +60,11 @@ export default function FooterContent() {
             <div className="overflow-hidden">
               <div className="overflow-hidden flex justify-end">
                 <div className="flex flex-col justify-end gap-2 text-xs">
-                  <motion.span
-                    initial={{ x: '-100%' }}
-                    whileInView={{ x: 0 }}
-                    transition={{ duration: 0.75, delay: 0.3 }}
-                    viewport={{ once: true }}
-                  >
+                  <motion.span initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 0.75, delay: 0.3 }} viewport={{ once: true }}>
                     <TText tKey="db.metadata.company.parentCompany" />
                   </motion.span>
 
-                  <motion.span
-                    initial={{ x: '-100%' }}
-                    whileInView={{ x: 0 }}
-                    transition={{ duration: 0.75, delay: 0.4 }}
-                    viewport={{ once: true }}
-                  >
+                  <motion.span initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 0.75, delay: 0.4 }} viewport={{ once: true }}>
                     <TText tKey={`footer.taxreg`} />
                     {db.metadata.company.taxreg}
                   </motion.span>
@@ -130,7 +117,7 @@ export default function FooterContent() {
 
                 <div className="flex justify-center items-center gap-4">
                   {(() => {
-                    const icons: Record<string, React.ElementType> = {
+                    let icons: Record<string, React.ElementType> = {
                       facebook: Facebook,
                       linkedin: Linkedin,
                       youtube: Youtube,
@@ -138,7 +125,7 @@ export default function FooterContent() {
                     }
 
                     return Object.entries(db.contact.socialMedia).map(([platform, url], index) => {
-                      const Icon = icons[platform]
+                      let Icon = icons[platform]
 
                       if (!Icon || typeof url !== 'string') return null
 

@@ -20,7 +20,7 @@ export default function SectionHero({
   image?: string
   video?: string
 }) {
-  const { isVideoMode, setIsVideoMode, handleAnimationStart, isLoading, handleMediaLoad, isMobile, t } = useHero()
+  let { isVideoMode, setIsVideoMode, handleAnimationStart, isLoading, handleMediaLoad, isMobile, t } = useHero()
 
   return (
     <section className="relative w-dvw h-dvh overflow-hidden bg-black text-text">

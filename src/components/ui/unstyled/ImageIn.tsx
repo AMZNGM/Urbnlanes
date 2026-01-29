@@ -31,7 +31,7 @@ export default function ImageIn({
   hasIconOverlay = false,
   ...props
 }: ImageInProps) {
-  const blurDataUrl = src ? getBlurDataUrl(src) : generateBlurDataURL()
+  let blurDataUrl = src ? getBlurDataUrl(src) : generateBlurDataURL()
 
   return (
     <motion.div

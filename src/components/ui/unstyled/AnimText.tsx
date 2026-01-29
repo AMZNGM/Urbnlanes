@@ -1,7 +1,7 @@
 'use client'
 
-import { isValidElement } from 'react'
-import { motion } from 'motion/react'
+import { isValidElement, useMemo } from 'react'
+import { motion, useReducedMotion } from 'motion/react'
 import { useTranslation } from '@/translations/useTranslation'
 
 export default function AnimText({
@@ -19,7 +19,8 @@ export default function AnimText({
   stagger?: number
   [key: string]: any
 }) {
-  const { t } = useTranslation()
+  let prefersReducedMotion = useReducedMotion()
+  let { t } = useTranslation()
   let text = ''
 
   if (isValidElement(children) && 'tKey' in (children.props as object)) {
@@ -32,29 +33,38 @@ export default function AnimText({
     text = text.join(' ')
   }
 
-  const Tag = as
-  const words = text.split(' ')
+  let Tag = as
+  let words = useMemo(() => text.split(/(\s+)/), [text])
 
   return (
-    <Tag className={`relative overflow-hidden ${className}`} {...props}>
+    <Tag className={`relative overflow-hidden leading-[1.05] ${className}`} {...props}>
       <motion.span
         variants={{ visible: { transition: { delayChildren: delay, staggerChildren: stagger } } }}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="relative space-x-1.5 ltr:leading-none"
+        className="inline-block relative whitespace-pre-wrap [direction:inherit]"
       >
-        {words.map((word, i) => (
-          <span key={i} className="inline-block relative overflow-hidden">
-            <motion.span
-              variants={{ hidden: { opacity: 0, y: '100%' }, visible: { opacity: 1, y: '0%' } }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block relative"
-            >
-              {word}
-            </motion.span>
-          </span>
-        ))}
+        {words.map((word, i) => {
+          if (word.trim() === '') {
+            return <span key={i}>{word}</span>
+          }
+
+          return (
+            <span key={i} className="inline-block ltr:overflow-hidden">
+              <motion.span
+                variants={{
+                  hidden: prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: '1em' },
+                  visible: { opacity: 1, y: '0em' },
+                }}
+                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                className="inline-block"
+              >
+                {word}
+              </motion.span>
+            </span>
+          )
+        })}
       </motion.span>
     </Tag>
   )

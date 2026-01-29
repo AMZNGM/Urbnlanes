@@ -6,7 +6,7 @@ import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 
-export default function SisterCompanies() {
+export default function OurHeritagAndNetwork() {
   return (
     <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
       <div className="flex flex-col gap-22">

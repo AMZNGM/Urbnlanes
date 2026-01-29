@@ -41,12 +41,7 @@ export default function Hero() {
   }
 
   return (
-    <section
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="Project showcase"
-      className="relative w-full h-dvh overflow-hidden bg-black text-text"
-    >
+    <section role="region" aria-roledescription="carousel" aria-label="Project showcase" className="relative w-full h-dvh overflow-hidden bg-black text-text">
       <ArrowCursor />
 
       <HeroVideoToggle isVideoMode={isVideoMode} setIsVideoMode={setIsVideoMode} />
