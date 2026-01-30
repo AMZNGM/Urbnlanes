@@ -113,7 +113,7 @@ export default function ProjectsFilter({
           </div>
         </div>
 
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex justify-between items-center gap-4">
           {/* reser BTN */}
           <MainBtn
             onClick={() => {
@@ -123,11 +123,11 @@ export default function ProjectsFilter({
             }}
             tKey="filters.resetFilters"
             look="mono"
-            className="max-md:text-sm"
+            className="max-md:text-xs"
           />
 
           {/* toggle BTN */}
-          <div className="flex justify-center items-center gap-2 bg-main/25 hover:bg-main/50 rounded-2xl max-md:text-sm transition-colors duration-200 px-6 max-md:px-4 py-3 max-md:py-2">
+          <div className="flex justify-center items-center gap-2 bg-main/25 hover:bg-main/50 rounded-2xl font-medium max-md:text-sm text-center transition-colors duration-200 px-6 max-md:px-4 py-3 max-md:py-2">
             <span
               onClick={onToggleView}
               className={`text-sm transition-colors cursor-pointer select-none ${viewMode === 'list' ? 'text-black' : 'opacity-75'}`}

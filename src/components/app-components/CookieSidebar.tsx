@@ -235,10 +235,10 @@ export default function CookieSidebar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: 'spring', duration: 0.2, stiffness: 100 }}
         onClick={toggle}
-        className="group bottom-4 left-4 z-50 fixed w-10 h-10 flex justify-center items-center bg-bg/50 hover:bg-bg/50 shadow-lg backdrop-blur-2xl rounded-full text-text hover:text-bg transition-colors duration-300 cursor-pointer"
+        className="group bottom-0 left-0 z-40 fixed w-10 h-10 flex justify-center items-center bg-bg/50 hover:bg-main/50 backdrop-blur-2xl rounded-2xl text-text transition-colors duration-300 m-4 cursor-pointer"
       >
         <Settings />
-        <span className="bottom-2.5 left-12 absolute bg-main opacity-0 group-hover:opacity-75 rounded-full text-bg text-sm text-nowrap transition-all translate-x-1 group-hover:translate-x-0 duration-300 px-2">
+        <span className="bottom-2.5 left-12 absolute bg-text opacity-0 group-hover:opacity-75 rounded-full text-bg text-sm text-nowrap transition-all translate-x-1 group-hover:translate-x-0 duration-300 px-2">
           Cookies Settings
         </span>
       </motion.button>
