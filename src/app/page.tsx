@@ -13,7 +13,6 @@ const SelectedProjects = dynamic(() => import('@/components/home-components/Sele
 const Updates = dynamic(() => import('@/components/latestUpdates-components/Updates'))
 const OurValues = dynamic(() => import('@/components/home-components/OurValues'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
-const Newsletter = dynamic(() => import('@/components/footer-components/Newsletter'))
 
 export const generateMetadata = metadataGenerators.home
 
@@ -30,7 +29,6 @@ export default function Home() {
       <Updates />
       <OurValues />
       <LatestNews className="px-4!" />
-      <Newsletter className="px-4!" />
     </Suspense>
   )
 }

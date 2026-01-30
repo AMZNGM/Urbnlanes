@@ -10,7 +10,6 @@ const PartnershipStats = dynamic(() => import('@/components/partners-components/
 const PartnersFilters = dynamic(() => import('@/components/partners-components/PartnersFilters'))
 const PartnersCTA = dynamic(() => import('@/components/partners-components/PartnersCTA'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
-const Newsletter = dynamic(() => import('@/components/footer-components/Newsletter'))
 
 export const generateMetadata = metadataGenerators.partnersAssociates
 
@@ -23,8 +22,7 @@ export default function PartnersAssociatesPage() {
       <PartnershipStats />
       <PartnersFilters />
       <PartnersCTA />
-      <LatestNews line={false} />
-      <Newsletter />
+      <LatestNews />
     </Suspense>
   )
 }

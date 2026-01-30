@@ -12,7 +12,6 @@ const HoldingCompany = dynamic(() => import('@/components/about-components/Holdi
 const OurStory = dynamic(() => import('@/components/about-components/OurStory'))
 const BehindTheFigures = dynamic(() => import('@/components/about-components/BehindTheFigures'))
 import ImageIn from '@/components/ui/unstyled/ImageIn'
-const Newsletter = dynamic(() => import('@/components/footer-components/Newsletter'))
 
 export const generateMetadata = metadataGenerators.about
 
@@ -39,7 +38,6 @@ export default function AboutPage() {
         className="bg-black! text-text"
       />
       <ImageIn src="/images/map.webp" alt="Map" className="object-contain! scale-100! pt-24 max-md:pt-0" divClassName="h-100! bg-text max-md:-mb-10" />
-      <Newsletter />
     </Suspense>
   )
 }

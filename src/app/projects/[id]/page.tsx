@@ -19,7 +19,6 @@ const ProjectLocation = dynamic(() => import('@/components/projects-components/P
 const ProjectOverview = dynamic(() => import('@/components/projects-components/ProjectOverview'))
 const SimilarProjects = dynamic(() => import('@/components/projects-components/SimilarProjects'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
-const Newsletter = dynamic(() => import('@/components/footer-components/Newsletter'))
 
 interface Props {
   params: Promise<{ id: string }>
@@ -66,7 +65,6 @@ export default async function ProjectPage({ params }: Props) {
       {project.overview && <ProjectOverview project={project} />}
       <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} />
       <LatestNews className="bg-text text-black! px-18 max-md:px-4 py-0!" />
-      <Newsletter />
     </Suspense>
   )
 }
