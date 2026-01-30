@@ -23,9 +23,9 @@ export default function SideNavnar({ className = '', navbarData }: { className?:
       animate={{ opacity: mobileMenuOpen ? 1 : 0, x: mobileMenuOpen ? 0 : selectedLanguage === 'English' ? '100%' : '-100%' }}
       exit={{ opacity: 0, x: selectedLanguage === 'English' ? '100%' : '-100%' }}
       transition={{ type: 'spring', stiffness: 150, damping: 20, duration: 0.4, ease: 'easeInOut' }}
-      className={`fixed top-0 bottom-0 rtl:left-0 ltr:right-0 w-dvw h-dvh max-w-md overflow-y-auto bg-bg ltr:border-s rtl:border-r border-main/25 shadow-2xl z-50 flex flex-col ${className} `}
+      className={`fixed top-0 bottom-0 rtl:left-0 ltr:right-0 w-dvw h-dvh max-w-md overflow-y-auto overflow-x-hidden bg-bg ltr:border-s rtl:border-r border-main/25 shadow-2xl z-50 flex flex-col ${className} `}
     >
-      <div className="relative overflow-y-auto grow">
+      <div className="relative overflow-x-hidden overflow-y-auto grow">
         <MobileSearch navbarData={navbarData} />
         <MobileMenuLinks navbarData={navbarData} />
         <MobileDropdown key={visibleLabel ?? 'root'} navbarData={navbarData} />

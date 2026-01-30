@@ -85,7 +85,7 @@ export default function MobileDropdown({ navbarData }: { navbarData: NavbarTypes
             <MenuBtn navbarData={navbarData} className="hover:bg-main/25 border-main/25 rtl:border-r ltr:border-l transition-colors px-14" />
           </div>
 
-          <ul className="size-full flex flex-col">
+          <ul className="w-full flex flex-col">
             {subItems.map((item, index) => (
               <li key={index} className="group hover:bg-main/25 border-main/25 border-b">
                 <button
