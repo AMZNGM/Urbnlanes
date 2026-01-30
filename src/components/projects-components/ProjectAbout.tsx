@@ -47,6 +47,12 @@ export default function ProjectAbout({ project }: { project: Project }) {
           )}
 
           <div className="space-y-6 font-light text-bg text-lg normal-case leading-relaxed">
+            {project.tagline && (
+              <AnimText as={'p'} delay={0.3}>
+                <TText tKey={`db.projects.${project.id}.tagline`} />
+              </AnimText>
+            )}
+
             {project.shortDesc && (
               <AnimText as={'p'} delay={0.3}>
                 <TText tKey={`db.projects.${project.id}.shortDesc`} />
