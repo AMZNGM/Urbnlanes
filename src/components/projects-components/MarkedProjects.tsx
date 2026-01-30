@@ -25,7 +25,7 @@ export default function MarkedProjects() {
   }
 
   return (
-    <section className="relative w-dvw overflow-x-hidden bg-text text-black px-18 max-md:px-4">
+    <section className="relative w-dvw overflow-x-hidden bg-text text-bg px-18 max-md:px-4">
       <AnimText
         as={'h2'}
         delay={0.3}

@@ -169,6 +169,8 @@ export const TRANSLATIONS = {
     },
     gallery: {
       title: 'Project Gallery',
+      project: 'Project',
+      gallery: 'Gallery',
       description: 'Visualizing the masterpiece in every detail.',
       fullGallery: 'full gallery',
       lighting: 'Lighting',
@@ -846,6 +848,8 @@ export const TRANSLATIONS = {
     },
     gallery: {
       title: 'معرض المشاريع',
+      project: 'معرض',
+      gallery: 'المشاريع',
       description: 'تصوير التحفة في كل تفاصيلها.',
       fullGallery: 'كل الصور',
       lighting: 'الإضاءة',

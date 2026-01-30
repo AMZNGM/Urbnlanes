@@ -41,25 +41,27 @@ export default function ProjectOverview({ project }: { project: Project }) {
   ].filter((item) => item.value)
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
-      <AnimText as={'h2'} className="font-sec text-4xl text-center rtl:leading-12 mb-8">
-        <TText tKey="modal.overview" />
-      </AnimText>
+    <section className="relative w-dvw overflow-hidden bg-text text-bg px-18 max-md:px-4 py-12">
+      <div className="max-w-4xl mx-auto">
+        <AnimText as={'h2'} className="font-sec font-bold text-main text-4xl text-center rtl:leading-12 tracking-wider mb-4">
+          <TText tKey="modal.overview" />
+        </AnimText>
 
-      <AnimIn className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {overviewItems.map((item, index) => {
-          const Icon = item.icon
-          return (
-            <div key={index} className="bg-main/25 rounded-2xl text-center p-6">
-              <Icon className="w-8 h-8 text-main mx-auto mb-4" />
-              <div className={`font-medium ${item.className}`}>{item.value}</div>
-              <p className="opacity-75 text-sm mt-2">
-                <TText tKey={item.labelKey} />
-              </p>
-            </div>
-          )
-        })}
-      </AnimIn>
+        <AnimIn className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {overviewItems.map((item, index) => {
+            const Icon = item.icon
+            return (
+              <div key={index} className="bg-main/25 rounded-2xl text-center p-6">
+                <Icon className="w-8 h-8 text-main mx-auto mb-4" />
+                <div className={`font-bold text-bg/50 ${item.className}`}>{item.value}</div>
+                <p className="opacity-75 text-sm mt-2">
+                  <TText tKey={item.labelKey} />
+                </p>
+              </div>
+            )
+          })}
+        </AnimIn>
+      </div>
     </section>
   )
 }

@@ -21,7 +21,7 @@ export default function ProjectsImpact() {
   let y = useTransform(scrollYProgress, [0, 1], [0, 473])
 
   return (
-    <section className="relative w-dvw bg-text text-black px-18 max-md:px-4">
+    <section className="relative w-dvw bg-text text-bg px-18 max-md:px-4">
       <div className="h-full gap-4 grid md:grid-cols-2 py-8">
         <div className="h-full gap-4 max-md:order-last grid grid-cols-2 max-md:py-18">
           {db.whoweare.kuwaitProjects.map((project, index) => (
@@ -39,12 +39,12 @@ export default function ProjectsImpact() {
           ))}
         </div>
 
-        <section className="relative w-full h-full overflow-hidden bg-text text-black">
+        <section className="relative w-full h-full overflow-hidden bg-text text-bg">
           <AnimIn className="h-full gap-4 grid grid-cols-2 bg-main/25 rounded-2xl text-center p-4">
             <div ref={container} className="relative h-full gap-2 grid">
               {impacts.map((impact, index) => (
                 <AnimIn key={index} delay={index * 0.1} className="group gap-4 grid bg-main/25 hover:bg-main/50 rounded-2xl transition-colors duration-500 p-8">
-                  <div className="font-bold text-main group-hover:text-black/75 text-4xl transition-colors duration-500">{impact.value}</div>
+                  <div className="font-bold text-main group-hover:text-bg/75 text-4xl transition-colors duration-500">{impact.value}</div>
 
                   <p className="opacity-75 text-sm">
                     <TText tKey={impact.text} />
@@ -56,7 +56,7 @@ export default function ProjectsImpact() {
             <motion.div style={{ y: y }}>
               <BreathingText
                 as="h3"
-                className="bg-main/25 hover:bg-main/50 rounded-2xl group-hover:text-black/75 max-md:text-xl text-2xl text-nowrap transition-colors duration-500 py-14"
+                className="bg-main/25 hover:bg-main/50 rounded-2xl group-hover:text-bg/75 max-md:text-xl text-2xl text-nowrap transition-colors duration-500 py-14"
               >
                 <TText tKey="common.ourImpact" />
               </BreathingText>

@@ -19,14 +19,11 @@ export default function ProjectHero({ project }: { project: Project }) {
         data-scroll-speed="-0.6"
       />
 
-      <div
-        //  data-scroll data-scroll-speed="0.6"
-        className="z-10 absolute inset-0 flex flex-col justify-end duration-300 ease-linear px-18 max-md:px-4 py-4"
-      >
+      <div data-scroll data-scroll-speed="0.6" className="z-10 absolute inset-0 flex flex-col justify-end duration-300 ease-linear px-18 max-md:px-4 py-4">
         <AnimText
           as="h1"
           stagger={0.15}
-          className="max-md:bg-main/25 hover:bg-main/25 max-md:backdrop-blur-xl hover:backdrop-blur-xl rounded-2xl font-bold text-[10vw] max-md:text-[12dvw] text-center text-nowrap ltr:leading-38 rtl:leading-88 max-2xl:ltr:leading-none transition-all duration-200"
+          className="rounded-2xl font-bold text-[10vw] max-md:text-[12dvw] text-center text-nowrap ltr:leading-38 rtl:leading-88 max-2xl:ltr:leading-none transition-all duration-200"
         >
           <TText tKey={`db.projects.${project.id}.name`} />
         </AnimText>

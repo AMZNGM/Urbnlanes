@@ -8,17 +8,16 @@ import dynamic from 'next/dynamic'
 import db from '@/database/urbnlanes-db.json'
 
 import ProjectHero from '@/components/projects-components/ProjectHero'
-const ProjectBreadcrumb = dynamic(() => import('@/components/projects-components/ProjectBreadcrumb'))
+import ProjectBreadcrumb from '@/components/projects-components/ProjectBreadcrumb'
+import ProjectTagline from '@/components/projects-components/ProjectTagline'
 const ProjectAbout = dynamic(() => import('@/components/projects-components/ProjectAbout'))
+import ProjectLocation from '@/components/projects-components/ProjectLocation'
 const ProjectGallery = dynamic(() => import('@/components/projects-components/ProjectGallery'))
-const ProjectVideoGallery = dynamic(() => import('@/components/projects-components/ProjectVideoGallery'))
-const ProjectConstructionGallery = dynamic(() => import('@/components/projects-components/ProjectConstructionGallery'))
-const ProjectPartners = dynamic(() => import('@/components/projects-components/ProjectPartners'))
+import ProjectPartners from '@/components/projects-components/ProjectPartners'
 const ProjectAmenities = dynamic(() => import('@/components/projects-components/ProjectAmenities'))
-const ProjectLocation = dynamic(() => import('@/components/projects-components/ProjectLocation'))
-const ProjectOverview = dynamic(() => import('@/components/projects-components/ProjectOverview'))
+import ProjectOverview from '@/components/projects-components/ProjectOverview'
 const SimilarProjects = dynamic(() => import('@/components/projects-components/SimilarProjects'))
-const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
+import LatestNews from '@/components/news-components/LatestNews'
 
 interface Props {
   params: Promise<{ id: string }>
@@ -55,16 +54,15 @@ export default async function ProjectPage({ params }: Props) {
     <Suspense fallback={<LoadingLogo />}>
       <ProjectHero project={project} />
       <ProjectBreadcrumb project={project} />
+      <ProjectTagline project={project} />
       <ProjectAbout project={project} />
-      <ProjectGallery project={project} />
-      <ProjectVideoGallery project={project} />
-      <ProjectConstructionGallery project={project} />
-      <ProjectPartners project={project} />
-      <ProjectAmenities project={project} />
       <ProjectLocation project={project} />
       {project.overview && <ProjectOverview project={project} />}
+      <ProjectGallery project={project} />
+      <ProjectPartners project={project} />
+      <ProjectAmenities project={project} />
       <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} />
-      <LatestNews className="bg-text text-black! px-18 max-md:px-4 py-0!" />
+      <LatestNews className="-mt-18" />
     </Suspense>
   )
 }

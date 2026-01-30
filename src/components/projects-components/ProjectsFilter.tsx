@@ -77,7 +77,7 @@ export default function ProjectsFilter({
   ]
 
   return (
-    <section className="relative w-dvw bg-text text-black px-18 max-md:px-4 py-4">
+    <section className="relative w-dvw bg-text text-bg px-18 max-md:px-4 py-4">
       <AnimIn className="space-y-8">
         <LineHeading tKey="common.allProjects" />
 
@@ -128,10 +128,7 @@ export default function ProjectsFilter({
 
           {/* toggle BTN */}
           <div className="flex justify-center items-center gap-2 bg-main/25 hover:bg-main/50 rounded-2xl font-medium max-md:text-sm text-center transition-colors duration-200 px-6 max-md:px-4 py-3 max-md:py-2">
-            <span
-              onClick={onToggleView}
-              className={`text-sm transition-colors cursor-pointer select-none ${viewMode === 'list' ? 'text-black' : 'opacity-75'}`}
-            >
+            <span onClick={onToggleView} className={`text-sm transition-colors cursor-pointer select-none ${viewMode === 'list' ? 'text-bg' : 'opacity-75'}`}>
               <TText tKey="common.listView" />
             </span>
 
@@ -145,10 +142,7 @@ export default function ProjectsFilter({
               aria-label="Toggle view mode"
             />
 
-            <span
-              onClick={onToggleView}
-              className={`text-sm transition-colors cursor-pointer select-none ${viewMode === 'grid' ? 'text-black' : 'opacity-75'}`}
-            >
+            <span onClick={onToggleView} className={`text-sm transition-colors cursor-pointer select-none ${viewMode === 'grid' ? 'text-bg' : 'opacity-75'}`}>
               <TText tKey="common.gridView" />
             </span>
           </div>
@@ -205,7 +199,7 @@ const CustomDropdown = ({
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.15, delay: index * 0.05 + 0.3, ease: 'easeOut' }}
               className={`w-full px-4 py-3 text-left text-sm transition-colors border-b border-main/25 last:border-b-0 rounded-2xl cursor-pointer ${
-                value === option.key ? 'bg-main text-black font-medium' : 'hover:bg-main/50'
+                value === option.key ? 'bg-main text-bg font-medium' : 'hover:bg-main/50'
               }`}
             >
               <TText tKey={option.label} />

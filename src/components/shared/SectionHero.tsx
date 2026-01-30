@@ -22,7 +22,7 @@ export default function SectionHero({ image = '', tKey = '', tKeyPara = '' }: { 
         <MotionLine className="max-md:hidden" />
 
         <AnimText
-          as={'p'}
+          as="h1"
           delay={0.9}
           data-scroll
           data-scroll-speed="0.2"

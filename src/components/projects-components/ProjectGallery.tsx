@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
+import { getYouTubeEmbedUrl, isYouTubeUrl, getYouTubeThumbnailUrl } from '@/hooks/useVideoUtils'
 import { Project } from '@/types/project'
-import { Lamp } from 'lucide-react'
+import { Asterisk, LampIcon, Play } from 'lucide-react'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
@@ -11,28 +12,34 @@ import ImageIn from '@/components/ui/unstyled/ImageIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import ArrowBtn from '@/components/ui/buttons/ArrowBtn'
 import SwitchBtn from '@/components/ui/buttons/SwitchBtn'
+import VideoModal from '@/components/shared/VideoModal'
+import LineHeading from '@/components/shared/LineHeading'
 
 export default function ProjectGallery({ project }: { project: Project }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [fullGallery, setFullGallery] = useState(null as string[] | null)
-  const [darkMode, setDarkMode] = useState(null as string[] | null)
-  const mapImages = project.gallery?.filter((img) => img.includes('-map.webp')) || []
-  const masterPlanImages = project.gallery?.filter((img) => img.includes('-masterplan.webp')) || []
-  const regularGallery = project.gallery?.filter((img) => !img.includes('-map.webp') && !img.includes('-masterplan.webp')) || []
+  let { scrollYProgress } = useScroll()
+  let [darkMode, setDarkMode] = useState(true)
+  let [currentImageIndex, setCurrentImageIndex] = useState(0)
+  let [fullGallery, setFullGallery] = useState(null as string[] | null)
+  let [selectedVideo, setSelectedVideo] = useState<string | null>(null)
+  let mapImages = project.gallery?.filter((img) => img.includes('-map.webp')) || []
+  let masterPlanImages = project.gallery?.filter((img) => img.includes('-masterplan.webp')) || []
+  let regularGallery = project.gallery?.filter((img) => !img.includes('-map.webp') && !img.includes('-masterplan.webp')) || []
+
+  let closeModel = () => setSelectedVideo(null)
 
   if (!project || !project.gallery?.length) return null
 
-  const nextImage = () => {
+  let nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % (project.gallery?.length || 1))
   }
 
-  const prevImage = () => {
+  let prevImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + (project.gallery?.length || 1)) % (project.gallery?.length || 1))
   }
 
-  const handleDragEnd = (event: any, info: any) => {
-    const { offset, velocity } = info
-    const swipeThreshold = 50
+  let handleDragEnd = (event: any, info: any) => {
+    let { offset, velocity } = info
+    let swipeThreshold = 50
 
     if (offset.x > swipeThreshold || velocity.x > 500) {
       prevImage()
@@ -42,7 +49,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
   }
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    let handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
         prevImage()
       } else if (e.key === 'ArrowRight') {
@@ -57,40 +64,42 @@ export default function ProjectGallery({ project }: { project: Project }) {
 
   return (
     <section
-      className={`relative w-dvw overflow-hidden px-18 max-md:px-4 py-12 space-y-12 transition-colors duration-300 ${!darkMode ? 'bg-black text-text' : 'text-black bg-text'}`}
+      className={`relative w-dvw overflow-hidden px-18 max-md:px-4 pt-38 pb-22 space-y-12 transition-colors duration-300 ${!darkMode ? 'bg-black text-text' : 'text-bg bg-text'}`}
     >
-      <AnimIn delay={0.5} className="group flex items-center gap-2">
-        <MainBtn onClick={() => setDarkMode(darkMode ? null : project.gallery || [])} size="lg" className="z-10 relative">
-          <Lamp />
-        </MainBtn>
+      <div className="flex justify-center items-center text-center">
+        <AnimText as={'h2'} className="font-sec font-bold text-[6dvw] rtl:leading-40">
+          <TText tKey="gallery.project" />
+        </AnimText>
 
-        <div className="w-fit bg-text opacity-0 group-hover:opacity-100 rounded-2xl text-black text-sm -translate-x-full group-hover:translate-x-0 duration-300 px-4 py-4">
-          <TText tKey="gallery.lighting" />
-        </div>
-      </AnimIn>
+        <motion.div style={{ rotate: useTransform(scrollYProgress, [0, 1], ['180deg', '1800deg']) }}>
+          <Asterisk className="size-[6dvw] mb-2 md:mb-8" />
+        </motion.div>
 
-      <AnimIn className="flex max-md:flex-col justify-between items-end max-md:items-center gap-8 max-md:gap-12">
-        <div className="space-y-2 max-md:text-center">
-          <AnimText as={'h2'} delay={0.9} className="font-sec text-4xl">
-            <TText tKey="gallery.title" />
-          </AnimText>
+        <AnimText as={'h2'} className="font-sec font-bold text-[6dvw] rtl:leading-40">
+          <TText tKey="gallery.gallery" />
+        </AnimText>
+      </div>
 
-          <AnimText as={'p'} delay={1.2} className="opacity-75 font-light">
-            <TText tKey="gallery.description" />
-          </AnimText>
-        </div>
+      <AnimIn className="flex max-md:flex-col justify-end items-end max-md:items-center gap-8 max-md:gap-12">
+        <div className="max-md:w-full flex max-md:justify-between items-center gap-8">
+          <AnimIn delay={0.5} className="group flex items-center gap-2">
+            <MainBtn onClick={() => setDarkMode(!darkMode)} className="z-10 relative text-main">
+              <LampIcon />
+            </MainBtn>
 
-        <div className="max-md:w-full flex max-md:justify-between items-center gap-6">
-          <div className="font-mono text-text/40 text-xl">
+            <div className="w-fit bg-text opacity-0 group-hover:opacity-100 rounded-2xl text-bg text-sm -translate-x-full group-hover:translate-x-0 duration-300 px-2 py-3">
+              <TText tKey="gallery.lighting" />
+            </div>
+          </AnimIn>
+
+          <div className="font-mono text-main/75 text-xl">
             <span className="text-main">{String(currentImageIndex + 1).padStart(2, '0')}</span>
             <span className="mx-2">/</span>
-            <span>{String(project.gallery.length).padStart(2, '0')}</span>
+            <span>{String(project.gallery?.length || 0).padStart(2, '0')}</span>
           </div>
 
-          <div className="flex rtl:flex-row-reverse gap-6">
-            <ArrowBtn onClick={prevImage} className="scale-125" />
-            <ArrowBtn onClick={nextImage} direction="right" className="scale-125" />
-          </div>
+          <ArrowBtn onClick={prevImage} className="scale-125" />
+          <ArrowBtn onClick={nextImage} direction="right" className="scale-125" />
         </div>
       </AnimIn>
 
@@ -110,30 +119,6 @@ export default function ProjectGallery({ project }: { project: Project }) {
         />
       </motion.div>
 
-      <AnimIn delay={0.3} style={{ scrollbarWidth: 'none' }} className="overflow-x-auto flex gap-4 p-4">
-        {regularGallery.map((img, i) => (
-          <ImageIn
-            src={img}
-            alt="thumb"
-            key={i}
-            onClick={() => setCurrentImageIndex(i)}
-            divClassName={`relative w-66 max-md:w-33 shrink-0 aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
-          />
-        ))}
-      </AnimIn>
-
-      <AnimIn delay={0.3} style={{ scrollbarWidth: 'none' }} className="gap-4 max-md:gap-2 grid grid-cols-8 max-md:grid-cols-4">
-        {regularGallery.map((img, i) => (
-          <ImageIn
-            src={img}
-            alt="thumb"
-            key={i}
-            onClick={() => setCurrentImageIndex(i)}
-            divClassName={`relative w-full aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-40 hover:opacity-100'}`}
-          />
-        ))}
-      </AnimIn>
-
       <div className="group w-full flex flex-row-reverse items-center gap-2">
         <SwitchBtn
           checked={!!fullGallery}
@@ -142,32 +127,54 @@ export default function ProjectGallery({ project }: { project: Project }) {
           aria-label="Toggle full gallery view"
         />
 
-        <div className="w-fit bg-text opacity-0 group-hover:opacity-100 rounded-2xl text-black text-sm translate-x-full group-hover:translate-x-0 duration-300 px-4 py-1">
+        <div className="w-fit bg-text opacity-0 group-hover:opacity-100 rounded-2xl text-bg text-sm translate-x-full group-hover:translate-x-0 duration-300 px-4 py-1">
           <TText tKey="gallery.fullGallery" />
         </div>
       </div>
 
-      {fullGallery && (
-        <AnimIn style={{ scrollbarWidth: 'none' }} className="flex flex-col space-y-8 max-md:space-y-4">
-          {regularGallery.map((img, i) => (
-            <ImageIn
-              src={img}
-              alt="thumb"
-              key={i}
-              onClick={() => setCurrentImageIndex(i)}
-              className="hover:scale-100!"
-              divClassName="relative w-full h-full aspect-video rounded-2xl overflow-hidden"
-            />
-          ))}
-        </AnimIn>
-      )}
+      <AnimIn reAnim={!!fullGallery} style={{ scrollbarWidth: 'none' }} className="flex flex-col space-y-8 max-md:space-y-4">
+        {regularGallery.map((img, i) => (
+          <ImageIn
+            src={img}
+            alt="thumb"
+            key={i}
+            onClick={() => setCurrentImageIndex(i)}
+            className="hover:scale-100!"
+            divClassName="relative w-full h-full aspect-video rounded-2xl overflow-hidden"
+          />
+        ))}
+      </AnimIn>
+
+      <AnimIn reAnim={!fullGallery} delay={0.3} style={{ scrollbarWidth: 'none' }} className="overflow-x-auto flex gap-4 p-4">
+        {regularGallery.map((img, i) => (
+          <ImageIn
+            src={img}
+            alt="thumb"
+            key={i}
+            onClick={() => setCurrentImageIndex(i)}
+            divClassName={`relative w-66 max-md:w-33 shrink-0 aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-75 hover:opacity-100'}`}
+          />
+        ))}
+      </AnimIn>
+
+      <AnimIn reAnim={!fullGallery} delay={0.3} style={{ scrollbarWidth: 'none' }} className="gap-4 max-md:gap-2 grid grid-cols-8 max-md:grid-cols-4">
+        {regularGallery.map((img, i) => (
+          <ImageIn
+            src={img}
+            alt="thumb"
+            key={i}
+            onClick={() => setCurrentImageIndex(i)}
+            divClassName={`relative w-full aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-75 hover:opacity-100'}`}
+          />
+        ))}
+      </AnimIn>
 
       {mapImages.length > 0 && (
         <AnimIn delay={0.4} className="mt-16">
           <AnimText as={'h3'} className="font-sec text-2xl mb-6">
             <TText tKey="common.location" />
           </AnimText>
-          <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
+          <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
             {mapImages.map((mapImg, i) => (
               <ImageIn key={i} src={mapImg} alt={`${project.name} map ${i + 1}`} className="overflow-hidden rounded-2xl" divClassName="aspect-video" />
             ))}
@@ -180,13 +187,99 @@ export default function ProjectGallery({ project }: { project: Project }) {
           <AnimText as={'h3'} className="font-sec text-2xl mb-6">
             <TText tKey="common.masterPlan" />
           </AnimText>
-          <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
+          <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
             {masterPlanImages.map((planImg, i) => (
               <ImageIn key={i} src={planImg} alt={`${project.name} master plan ${i + 1}`} className="overflow-hidden rounded-2xl" divClassName="aspect-video" />
             ))}
           </div>
         </AnimIn>
       )}
+
+      {project.videoGallery && project.videoGallery.length > 0 && (
+        <AnimIn delay={0.6} className="bg-main/25 rounded-3xl p-4">
+          <LineHeading tKey="projects.videoGallery.title" className="opacity-75 text-current mb-2" />
+
+          <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {project.videoGallery.map((video, index) => {
+              const isYouTube = isYouTubeUrl(video)
+              const embedUrl = isYouTube ? getYouTubeEmbedUrl(video) : null
+
+              return (
+                <AnimIn
+                  key={index}
+                  delay={0.1 * index}
+                  onClick={() => setSelectedVideo(video)}
+                  className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-2xl transition-all cursor-pointer"
+                >
+                  {isYouTube && embedUrl ? (
+                    <img src={getYouTubeThumbnailUrl(video) || ''} alt={`Video ${index + 1}`} className="w-full h-full object-cover" />
+                  ) : (
+                    <video src={video} muted playsInline className="w-full h-full object-cover" />
+                  )}
+
+                  <div className="absolute inset-0 flex justify-center items-center bg-current/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="w-16 h-16 flex justify-center items-center bg-main rounded-full">
+                      <Play size={26} className="fill-bg text-current" />
+                    </div>
+                  </div>
+
+                  <div className="right-0 bottom-0 left-0 absolute bg-linear-to-t from-bg/80 to-transparent p-4">
+                    <p className="space-x-1 font-medium text-text text-sm">
+                      <span>{<TText tKey={`db.projects.${project.id}.name`} />}</span>
+                      <span>{<TText tKey="projects.videoGallery.video" />}</span>
+                      <span>{index + 1}</span>
+                    </p>
+                  </div>
+                </AnimIn>
+              )
+            })}
+          </div>
+        </AnimIn>
+      )}
+
+      {project.constructionGallery && project.constructionGallery.length > 0 && (
+        <AnimIn delay={0.6} className="bg-main/25 rounded-3xl p-4">
+          <LineHeading tKey="projects.constructionGallery.title" className="opacity-75 text-current mb-2" />
+
+          <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {project.constructionGallery.map((video, index) => {
+              const isYouTube = isYouTubeUrl(video)
+              const embedUrl = isYouTube ? getYouTubeEmbedUrl(video) : null
+
+              return (
+                <AnimIn
+                  key={index}
+                  delay={0.1 * index}
+                  onClick={() => setSelectedVideo(video)}
+                  className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-2xl transition-all cursor-pointer"
+                >
+                  {isYouTube && embedUrl ? (
+                    <img src={getYouTubeThumbnailUrl(video) || ''} alt={`Video ${index + 1}`} className="w-full h-full object-cover" />
+                  ) : (
+                    <video src={video} muted playsInline className="w-full h-full object-cover" />
+                  )}
+
+                  <div className="absolute inset-0 flex justify-center items-center bg-current/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="w-16 h-16 flex justify-center items-center bg-main rounded-full">
+                      <Play size={26} className="fill-bg text-current" />
+                    </div>
+                  </div>
+
+                  <div className="right-0 bottom-0 left-0 absolute bg-linear-to-t from-bg/80 to-transparent p-4">
+                    <p className="space-x-1 font-medium text-text text-sm">
+                      <span>{<TText tKey={`db.projects.${project.id}.name`} />}</span>
+                      <span>{<TText tKey="projects.constructionGallery.update" />}</span>
+                      <span>{index + 1}</span>
+                    </p>
+                  </div>
+                </AnimIn>
+              )
+            })}
+          </div>
+        </AnimIn>
+      )}
+
+      <VideoModal videos={selectedVideo} closeModel={closeModel} />
     </section>
   )
 }

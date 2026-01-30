@@ -8,8 +8,8 @@ import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
-import BreathingText from '@/components/ui/text/BreathingText'
 import MainBtn from '@/components/ui/buttons/MainBtn'
+import BreathingText from '@/components/ui/text/BreathingText'
 
 export default function ProjectAbout({ project }: { project: Project }) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -31,38 +31,36 @@ export default function ProjectAbout({ project }: { project: Project }) {
   }, [about.length])
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-24 max-md:py-12">
-      <div className={`${project.shortDesc || project.description || project.brochure ? 'grid lg:grid-cols-3 gap-12' : 'space-y-12'}`}>
-        <div className={`space-y-8 col-span-1 max-lg:col-span-3 ${project.shortDesc || project.description || project.brochure ? '' : 'hidden'}`}>
+    <section className="relative w-dvw overflow-hidden bg-text text-bg px-18 max-md:px-4 py-24 max-md:py-12">
+      <div className={`max-w-6xl mx-auto ${project.shortDesc || project.description || project.brochure ? 'grid lg:grid-cols-3 gap-12' : 'space-y-12'}`}>
+        <div className={`space-y-8 col-span-1 max-lg:col-span-3 ${project.shortDesc || project.description || project.brochure ? '' : `hidden`}`}>
           {(project.shortDesc || project.description || project.brochure) && (
             <div>
-              <AnimText delay={0.5} className="font-sec text-4xl uppercase rtl:leading-14 tracking-widest">
+              <AnimText delay={0.5} className="font-mono text-4xl rtl:leading-14 tracking-widest">
                 <TText tKey={`nav.about`} />
               </AnimText>
 
-              <AnimText delay={0.7} className="font-sec text-4xl uppercase rtl:leading-14 tracking-widest">
+              <AnimText delay={0.7} className="font-mono text-4xl rtl:leading-14 tracking-widest">
                 <TText tKey={`db.projects.${project.id}.name`} />
               </AnimText>
             </div>
           )}
 
           <div className="space-y-6 font-light text-bg text-lg normal-case leading-relaxed">
-            {project.tagline && (
-              <AnimText as={'p'} delay={0.3}>
-                <TText tKey={`db.projects.${project.id}.tagline`} />
-              </AnimText>
-            )}
-
             {project.shortDesc && (
               <AnimText as={'p'} delay={0.3}>
                 <TText tKey={`db.projects.${project.id}.shortDesc`} />
               </AnimText>
             )}
 
-            {project.description && (
-              <AnimText as={'p'} delay={0.5}>
-                <TText tKey={`db.projects.${project.id}.description`} />
-              </AnimText>
+            {Array.isArray(project.description) && (
+              <div className="space-y-4">
+                {project.description.map((desc: string, index: number) => (
+                  <AnimText key={index} as={'p'} delay={0.5 + index * 0.1}>
+                    <TText tKey={`db.projects.${project.id}.description`} />
+                  </AnimText>
+                ))}
+              </div>
             )}
 
             {project.brochure && (

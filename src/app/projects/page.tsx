@@ -21,7 +21,7 @@ export default function OurProjectsPage() {
       <LineHeading
         tKey="common.architecturalExcellence"
         sideParaTKey="common.architecturalExcellenceDesc"
-        className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12"
+        className="relative w-dvw overflow-hidden bg-text text-bg px-18 max-md:px-4 py-12"
       />
       <MarkedProjects />
       <ProjectsImpact />

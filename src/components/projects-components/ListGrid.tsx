@@ -23,7 +23,7 @@ export default function ListGrid({ projects, openModal }: { projects: any[]; ope
 
           <div
             className={`top-4 rtl:right-4 ltr:left-4 z-10 absolute pointer-events-none px-3 py-1.5 rounded-full text-xs font-semibold
-                          ${project.status === 'completed' ? 'bg-green-500 text-text' : project.status === 'ongoing' ? 'bg-blue-500 text-text' : 'bg-yellow-500 text-black'}`}
+                          ${project.status === 'completed' ? 'bg-green-500 text-text' : project.status === 'ongoing' ? 'bg-blue-500 text-text' : 'bg-yellow-500 text-bg'}`}
           >
             {project.status}
           </div>

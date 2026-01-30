@@ -14,16 +14,16 @@ export default function ArrowBtn({ className, onClick, direction = 'left' }: { c
   )
 }
 
-export function ScrollArrows() {
+export function ScrollArrows({ containerSelector = '[data-scroll-container]' }: { containerSelector?: string }) {
   const scrollLeft = () => {
-    const container = document.querySelector('[data-scroll-container]') as HTMLElement
+    const container = document.querySelector(containerSelector) as HTMLElement
     if (container) {
       container.scrollBy({ left: -1020, behavior: 'smooth' })
     }
   }
 
   const scrollRight = () => {
-    const container = document.querySelector('[data-scroll-container]') as HTMLElement
+    const container = document.querySelector(containerSelector) as HTMLElement
     if (container) {
       container.scrollBy({ left: 1020, behavior: 'smooth' })
     }
@@ -36,3 +36,5 @@ export function ScrollArrows() {
     </>
   )
 }
+
+// <ScrollArrows containerSelector="[data-scroll-container2]" />

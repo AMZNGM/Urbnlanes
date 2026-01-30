@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { Project } from '@/types/project'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
-import LineHeading from '@/components/shared/LineHeading'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import * as Icons from 'lucide-react'
 
 export default function ProjectAmenities({ project }: { project: Project }) {
@@ -37,12 +37,19 @@ export default function ProjectAmenities({ project }: { project: Project }) {
   }, [currentIndex])
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
-      <LineHeading tKey="modal.amenities" paraTKey="common.amenitiesDesc" />
+    <section className="relative w-dvw overflow-hidden bg-text font-mono text-bg px-18 max-md:px-4 py-48">
+      <div className="max-w-md font-black text-center normal-case text-balance mx-auto">
+        <AnimText className="text-6xl">
+          <TText tKey="modal.amenities" />
+        </AnimText>
+        <AnimText className="text-2xl">
+          <TText tKey="common.amenitiesDesc" />
+        </AnimText>
+      </div>
 
-      <div className="gap-4 grid md:grid-cols-2 mt-16 max-md:mt-12">
+      <div className="max-w-5xl gap-4 grid md:grid-cols-2 mx-auto mt-16 max-md:mt-12">
         <AnimatePresence mode="wait">
-          <motion.div key={currentIndex} className="max-md:hidden relative overflow-hidden bg-bg rounded-2xl">
+          <motion.div key={currentIndex} className="max-md:hidden relative h-140 overflow-hidden bg-bg rounded-2xl">
             <Image
               src={project.gallery?.[5] || project.gallery?.[0] || ''}
               alt="Image"

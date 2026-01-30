@@ -7,8 +7,8 @@ import AnimText from '@/components/ui/unstyled/AnimText'
 
 export default function ProjectBreadcrumb({ project }: { project: Project }) {
   return (
-    <nav className="relative w-full bg-text text-black py-6">
-      <div className="flex items-center gap-2 text-sm px-18 max-md:px-4">
+    <nav className="relative w-full bg-text text-bg py-6">
+      <div className="flex items-center gap-2 text-sm px-4">
         <Link href="/" className="hover:text-main transition-colors">
           <AnimText delay={0.2}>
             <TText tKey="nav.home" />

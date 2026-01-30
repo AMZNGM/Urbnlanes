@@ -65,7 +65,7 @@ function AllProjectsComponent() {
         onToggleView={() => setViewMode((prevViewMode) => (prevViewMode === 'grid' ? 'list' : 'grid'))}
       />
 
-      <section className="relative w-dvw min-h-dvh overflow-hidden bg-text text-black px-18 max-md:px-4 py-12">
+      <section className="relative w-dvw min-h-dvh overflow-hidden bg-text text-bg px-18 max-md:px-4 py-12">
         {filteredProjects.length === 0 ? (
           <p className="bg-main/25 rounded-2xl font-bold text-2xl text-center py-12">
             <TText tKey="common.noProjectsFound" />

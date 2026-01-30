@@ -14,6 +14,8 @@ export default function OurProjectsHero() {
         sizes="100vw"
         className="scale-100!"
         divClassName="overflow-hidden rounded-2xl blur-none!"
+        data-scroll
+        data-scroll-speed="-0.6"
       />
 
       <AnimIn
