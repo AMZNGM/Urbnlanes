@@ -72,7 +72,7 @@ export default function MobileDropdown({ navbarData }: { navbarData: NavbarTypes
           className="absolute inset-0 w-full h-full bg-bg"
         >
           <div
-            className={`relative w-full flex justify-between items-center border-main/25 border-b${navbarData.isScrolled20vh ? 'h-24' : 'h-34 max-sm:h-24'}`}
+            className={`relative w-full flex justify-between items-center border-main/25 border-b ${navbarData.isScrolled20vh ? 'h-24' : 'h-34 max-sm:h-24'}`}
           >
             <RippleEffect
               onClick={() => setVisibleLabel(null)}

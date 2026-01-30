@@ -32,7 +32,7 @@ export default function MobileSearch({ navbarData }: { navbarData: NavbarTypes }
   return (
     <div className={`relative h-24 bg-bg border-b ${navbarData.isScrolled20vh ? 'h-24' : 'h-34 max-sm:h-24'}`}>
       <div className="relative w-full h-full flex items-center">
-        <div className="h-full flex items-center gap-4 hover:bg-main/25 transition-colors ps-8 grow">
+        <div className="relative h-full flex items-center gap-4 hover:bg-main/25 transition-colors ps-8 grow">
           <SearchIcon size={20} />
 
           <input
@@ -42,9 +42,8 @@ export default function MobileSearch({ navbarData }: { navbarData: NavbarTypes }
             placeholder={t('search.placeholder')}
             className="w-full h-full bg-transparent outline-none text-xl placeholder-main"
           />
+          {searchQuery && <CloseBtn onClick={() => setSearchQuery('')} className="right-4 absolute!" />}
         </div>
-
-        {searchQuery && <CloseBtn onClick={() => setSearchQuery('')} className="left-5 bg-main! absolute!" />}
 
         <MenuBtn navbarData={navbarData} className="hover:bg-main/25 border-main/25 rtl:border-r ltr:border-l transition-colors px-14" />
       </div>
