@@ -48,8 +48,8 @@ export default function ImageIn({
         fill
         priority={priority}
         sizes={sizes}
-        placeholder="blur"
-        blurDataURL={blurDataUrl}
+        // placeholder="blur"
+        // blurDataURL={blurDataUrl}
         className={`object-center object-cover hover:scale-105 transition-transform duration-700 ${className}`}
       />
       {hasOverlay && <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />}
