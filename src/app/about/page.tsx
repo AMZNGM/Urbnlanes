@@ -39,7 +39,7 @@ export default function AboutPage() {
         className="bg-black! text-text"
       />
       <ImageIn src="/images/map.webp" alt="Map" className="object-contain! scale-100! pt-24 max-md:pt-0" divClassName="h-100! bg-text max-md:-mb-10" />
-      <Newsletter dark={false} />
+      <Newsletter />
     </Suspense>
   )
 }
