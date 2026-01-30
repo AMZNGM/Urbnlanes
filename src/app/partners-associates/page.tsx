@@ -4,12 +4,11 @@ import { metadataGenerators } from '@/seo/seo-helpers'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 
 import PartnersHero from '@/components/partners-components/PartnersHero'
-const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
+const PartnersAbout = dynamic(() => import('@/components/partners-components/PartnersAbout'))
 const PartnersParallaxPanels = dynamic(() => import('@/components/partners-components/PartnersParallaxPanels'))
-const PartnershipStats = dynamic(() => import('@/components/partners-components/PartnershipStats'))
 const PartnersFilters = dynamic(() => import('@/components/partners-components/PartnersFilters'))
-const PartnersCTA = dynamic(() => import('@/components/partners-components/PartnersCTA'))
-const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
+import PartnersCTA from '@/components/partners-components/PartnersCTA'
+import LatestNews from '@/components/news-components/LatestNews'
 
 export const generateMetadata = metadataGenerators.partnersAssociates
 
@@ -17,9 +16,8 @@ export default function PartnersAssociatesPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
       <PartnersHero />
-      <TextPanel tKey="partners.partnersTitle" paraTKey="partners.partnersDesc2" />
+      <PartnersAbout />
       <PartnersParallaxPanels />
-      <PartnershipStats />
       <PartnersFilters />
       <PartnersCTA />
       <LatestNews />

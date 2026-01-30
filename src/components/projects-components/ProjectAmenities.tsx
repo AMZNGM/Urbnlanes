@@ -37,7 +37,7 @@ export default function ProjectAmenities({ project }: { project: Project }) {
   }, [currentIndex])
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text font-mono text-bg px-18 max-md:px-4 py-48">
+    <section className="relative w-dvw overflow-hidden bg-text font-mono text-bg px-18 max-md:px-4 py-32">
       <div className="max-w-md font-black text-center normal-case text-balance mx-auto">
         <AnimText className="text-6xl">
           <TText tKey="modal.amenities" />

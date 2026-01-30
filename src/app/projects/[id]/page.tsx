@@ -10,12 +10,12 @@ import db from '@/database/urbnlanes-db.json'
 import ProjectHero from '@/components/projects-components/ProjectHero'
 import ProjectBreadcrumb from '@/components/projects-components/ProjectBreadcrumb'
 import ProjectTagline from '@/components/projects-components/ProjectTagline'
+const ProjectGallery = dynamic(() => import('@/components/projects-components/ProjectGallery'))
 const ProjectAbout = dynamic(() => import('@/components/projects-components/ProjectAbout'))
 import ProjectLocation from '@/components/projects-components/ProjectLocation'
-const ProjectGallery = dynamic(() => import('@/components/projects-components/ProjectGallery'))
-import ProjectPartners from '@/components/projects-components/ProjectPartners'
-const ProjectAmenities = dynamic(() => import('@/components/projects-components/ProjectAmenities'))
 import ProjectOverview from '@/components/projects-components/ProjectOverview'
+const ProjectAmenities = dynamic(() => import('@/components/projects-components/ProjectAmenities'))
+import ProjectPartners from '@/components/projects-components/ProjectPartners'
 const SimilarProjects = dynamic(() => import('@/components/projects-components/SimilarProjects'))
 import LatestNews from '@/components/news-components/LatestNews'
 
@@ -55,12 +55,12 @@ export default async function ProjectPage({ params }: Props) {
       <ProjectHero project={project} />
       <ProjectBreadcrumb project={project} />
       <ProjectTagline project={project} />
+      <ProjectGallery project={project} />
       <ProjectAbout project={project} />
       <ProjectLocation project={project} />
       {project.overview && <ProjectOverview project={project} />}
-      <ProjectGallery project={project} />
-      <ProjectPartners project={project} />
       <ProjectAmenities project={project} />
+      <ProjectPartners project={project} />
       <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} />
       <LatestNews className="-mt-18" />
     </Suspense>

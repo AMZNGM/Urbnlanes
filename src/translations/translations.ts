@@ -100,6 +100,7 @@ export const TRANSLATIONS = {
       projectCity: 'City',
       resetFilters: 'Reset Filters',
       projectStatistics: 'Project Statistics',
+      statistics: 'Statistics',
       totalProjects: 'Total Projects',
       filteredProjects: 'Filtered Projects',
       categories: 'Categories',
@@ -234,6 +235,7 @@ export const TRANSLATIONS = {
     },
 
     filters: {
+      filter: 'Filter',
       filterBy: 'Filter Projects by',
       filterByCategory: 'Filter by Category',
       filterByStatus: 'Filter by Status',
@@ -779,6 +781,7 @@ export const TRANSLATIONS = {
       projectCity: 'المدينة',
       resetFilters: 'إعادة تعيين الفلاتر',
       projectStatistics: 'إحصائيات المشروع',
+      statistics: 'إحصائيات',
       totalProjects: 'إجمالي المشاريع',
       filteredProjects: 'المشاريع المفلترة',
       categories: 'الفئات',
@@ -911,6 +914,7 @@ export const TRANSLATIONS = {
     },
 
     filters: {
+      filter: 'تصفية',
       filterBy: 'تصفية المشاريع حسب',
       filterByCategory: 'تصفية حسب الفئة',
       filterByStatus: 'تصفية حسب الحالة',

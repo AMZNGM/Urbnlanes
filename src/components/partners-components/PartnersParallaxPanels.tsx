@@ -41,16 +41,18 @@ function ParallaxPanel({ partner, index }: { partner: (typeof partnersData)[0]; 
           <AnimText as="h1" stagger={0.2} className="max-md:text-5xl text-7xl rtl:leading-22">
             <TText tKey={`partners.partnersNames.${partner.name}`} />
           </AnimText>
+
           <AnimText as={'p'} delay={0.3} className="text-lg">
             <TText tKey={`partners.partnersRoles.${partner.role?.[0] ?? 'Partner'}`} />
           </AnimText>
+
           {partner.projects.length > 0 && (
-            <AnimText as={'p'} delay={0.4}>
+            <AnimText as={'p'} delay={0.4} className="rtl:hidden">
               Partner in {partner.projects.length} project{partner.projects.length > 1 ? 's' : ''}
             </AnimText>
           )}
 
-          <MainBtn tKey="common.findOutMore" className="mt-4" />
+          <MainBtn tKey="common.findOutMore" className="bg-text! mt-4" />
         </div>
       </div>
     </section>

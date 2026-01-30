@@ -5,15 +5,26 @@ import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '../ui/unstyled/ImageIn'
 import BreathingText from '@/components/ui/text/BreathingText'
 
-export default function SectionHero({ image = '', tKey = '', tKeyPara = '' }: { image: string; tKey: string; tKeyPara?: string }) {
+export default function SectionHero({
+  image = '',
+  tKey = '',
+  tKeyPara = '',
+  hasOverlay = false,
+}: {
+  image: string
+  tKey: string
+  tKeyPara?: string
+  hasOverlay?: boolean
+}) {
   return (
     <section className="relative w-dvw h-dvh overflow-hidden bg-text text-text p-2">
       <ImageIn src={image} alt="Background Image" priority sizes="100vw" className="scale-100!" divClassName="overflow-hidden rounded-2xl blur-none!" />
+      {hasOverlay && <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/75 rounded-2xl m-2" />}
 
       <AnimIn
         data-scroll
         data-scroll-speed="0.6"
-        className="z-50 absolute inset-0 flex flex-col justify-end items-center duration-300 ease-linear px-18 max-md:px-4 py-8 max-md:py-28"
+        className="z-10 absolute inset-0 flex flex-col justify-end items-center duration-300 ease-linear px-18 max-md:px-4 py-8 max-md:py-28"
       >
         <BreathingText as="div" repeatDelay={2} className="text-[13dvw] max-md:text-[12dvw] text-center text-nowrap ltr:leading-none">
           <TText tKey={tKey} />

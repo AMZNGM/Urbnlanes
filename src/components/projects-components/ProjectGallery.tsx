@@ -206,6 +206,8 @@ export default function ProjectGallery({ project }: { project: Project }) {
 
               return (
                 <AnimIn
+                  blur
+                  center
                   key={index}
                   delay={0.1 * index}
                   onClick={() => setSelectedVideo(video)}
