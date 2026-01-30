@@ -28,9 +28,7 @@ export default function NavbarOverlay({ navbarData }: { navbarData: NavbarTypes 
       onClick={handleClick}
       onWheel={(e) => e.stopPropagation()}
       onTouchMove={(e) => e.stopPropagation()}
-      className={`fixed inset-0 w-dvw h-dvh bg-black/25 duration-300 z-10
-        ${showOverlay ? 'opacity-100' : 'opacity-0 pointer-events-none'}
-      `}
+      className={`fixed inset-0 bg-black/60 duration-300 z-10 ${showOverlay ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
     />
   )
 }
