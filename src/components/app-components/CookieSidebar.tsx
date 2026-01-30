@@ -1,11 +1,13 @@
 'use client'
 
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CookieContext } from '@/contexts/CookieContext'
-import { Settings, ChevronDown, Shield, Activity, Target, User } from 'lucide-react'
+import { Settings, Shield, Activity, Target, User, Info, Lock } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
 import CloseBtn from '@/components/ui/buttons/CloseBtn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
+import { MotionLine } from '@/components/ui/effects/Lines'
+import AnimText from '@/components/ui/unstyled/AnimText'
 
 const ToggleSwitch = ({
   checked,
@@ -18,8 +20,12 @@ const ToggleSwitch = ({
 }) => (
   <label className={`relative inline-flex items-center cursor-pointer select-none ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}>
     <input type="checkbox" className="sr-only peer" checked={checked} onChange={onChange} disabled={disabled} />
-    <span className={`w-10 h-6 rounded-full transition-colors duration-200 ${checked ? 'bg-main' : 'bg-text/20'}`} />
-    <span className={`absolute left-1 top-1 w-4 h-4 rounded-full bg-text transition-transform duration-200 ${checked ? 'translate-x-4' : 'translate-x-0'}`} />
+    <span className={`w-14 h-8 rounded-full transition-all duration-500 ${checked ? 'bg-main shadow-[0_0_20px_rgba(142,142,142,0.5)]' : 'bg-text/5'}`} />
+    <span
+      className={`absolute left-1.5 top-1.5 w-5 h-5 rounded-full bg-text shadow-lg transition-all duration-500 ease-out ${
+        checked ? 'translate-x-6' : 'translate-x-0'
+      }`}
+    />
   </label>
 )
 
@@ -30,7 +36,6 @@ const CookieCategory = ({
   checked,
   onChange,
   disabled = false,
-  details = null,
 }: {
   title: string
   description: string
@@ -38,70 +43,38 @@ const CookieCategory = ({
   checked: boolean
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   disabled?: boolean
-  details?: {
-    cookies: { name: string; purpose: string }[]
-    retention: string
-  } | null
 }) => {
-  let [showDetails, setShowDetails] = useState(false)
-
   return (
-    <li className="hover:bg-text/5 border border-text/10 rounded-lg duration-300 p-4 cursor-pointer">
-      <div className="flex justify-between items-start">
-        <div className="flex-1 mr-4">
-          <div className="flex items-center gap-2">
-            <Icon className="w-4 h-4 text-text" />
-            <p className={`text-sm font-medium ${showDetails ? 'text-text' : ''}`}>{title}</p>
-            {details && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setShowDetails(!showDetails)
-                }}
-                className="text-text/60 hover:text-text transition-colors"
-                aria-label="Show details"
-              >
-                <ChevronDown className={`w-4 h-4 cursor-pointer transition-transform ${showDetails ? 'rotate-180 text-text' : ''}`} />
-              </button>
-            )}
-          </div>
-          <p className="opacity-70 text-xs lowercase mt-1">{description}</p>
-
-          {showDetails && details && (
-            <div className="bg-text/5 text-xs lowercase mt-3 p-3">
-              <p className="font-medium mb-2">Cookies used:</p>
-              <ul className="space-y-1">
-                {details.cookies?.map((cookie, index) => (
-                  <li key={index} className="flex justify-between">
-                    <span className="font-mono">{cookie.name}</span>
-                    <span className="opacity-70">{cookie.purpose}</span>
-                  </li>
-                ))}
-              </ul>
-              {details.retention && (
-                <p className="opacity-70 mt-2">
-                  <strong>Retention:</strong> {details.retention}
-                </p>
-              )}
+    <motion.div
+      whileHover={{ scale: 1.02, y: -5 }}
+      className="group relative flex items-start gap-6 bg-text/5 hover:bg-text/10 backdrop-blur-md border border-text/10 rounded-[2rem] transition-all duration-500 p-8"
+    >
+      <div
+        className={`p-4 rounded-2xl ${
+          checked ? 'bg-main text-bg shadow-[0_0_30px_rgba(142,142,142,0.3)]' : 'bg-text/10 text-text'
+        } transition-all duration-500`}
+      >
+        <Icon size={24} />
+      </div>
+      <div className="flex-1">
+        <div className="flex justify-between items-center mb-2">
+          <h4 className="font-bold text-lg tracking-tight">{title}</h4>
+          {disabled ? (
+            <div className="flex items-center gap-2 font-black text-[10px] text-main/50 uppercase tracking-widest">
+              <Lock size={12} />
+              Required
             </div>
+          ) : (
+            <ToggleSwitch checked={checked} onChange={onChange!} disabled={disabled} />
           )}
         </div>
-
-        {disabled ? (
-          <div className="flex items-center gap-2">
-            <span className="opacity-70 text-xs">Always On</span>
-            <input type="checkbox" checked disabled className="accent-current cursor-not-allowed" />
-          </div>
-        ) : (
-          <ToggleSwitch checked={checked} onChange={onChange!} disabled={disabled} />
-        )}
+        <p className="opacity-50 font-medium text-xs leading-relaxed">{description}</p>
       </div>
-    </li>
+    </motion.div>
   )
 }
 
 export default function CookieSidebar() {
-  let buttonRef = useRef<HTMLButtonElement>(null)
   let [open, setOpen] = useState(false)
   let context = useContext(CookieContext)
   if (!context) return null
@@ -120,196 +93,163 @@ export default function CookieSidebar() {
   }, [consent])
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && open) setOpen(false)
-    }
-    document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
-  }, [open])
-
-  useEffect(() => {
     const handleOpenSidebar = () => setOpen(true)
     window.addEventListener('openCookieSidebar', handleOpenSidebar)
     return () => window.removeEventListener('openCookieSidebar', handleOpenSidebar)
   }, [])
 
-  let toggle = () => setOpen((v: boolean) => !v)
-
-  let handleSave = async () => {
-    try {
-      setCategory('analytics', local.analytics)
-      setCategory('marketing', local.marketing)
-      setCategory('preferences', local.preferences)
-      setCategory('consentDate', new Date().toISOString())
-      setOpen(false)
-      buttonRef.current?.focus()
-    } catch (error) {
-      console.error('Failed to save preferences:', error)
-    }
+  let handleSave = () => {
+    setCategory('analytics', local.analytics)
+    setCategory('marketing', local.marketing)
+    setCategory('preferences', local.preferences)
+    setCategory('consentDate', new Date().toISOString())
+    setOpen(false)
   }
 
   let handleAcceptAll = () => {
     acceptAll()
     setCategory('consentDate', new Date().toISOString())
     setOpen(false)
-    buttonRef.current?.focus()
-  }
-
-  let handleRejectAll = () => {
-    setCategory('analytics', false)
-    setCategory('marketing', false)
-    setCategory('preferences', false)
-    setCategory('consentDate', new Date().toISOString())
-    setOpen(false)
-    buttonRef.current?.focus()
   }
 
   let cookieCategories = [
     {
-      title: 'Strictly Necessary Cookies',
-      description: 'Required for core site features (security, network management, accessibility). These are always on.',
+      title: 'Structural Essential',
+      description: 'Foundational components for site architecture, security protocols, and session integrity.',
       icon: Shield,
       checked: true,
       disabled: true,
-      details: {
-        cookies: [
-          { name: 'site_consent_v1', purpose: 'Consent preferences' },
-          { name: 'session_id', purpose: 'Session management' },
-        ],
-        retention: 'Session / 1 year',
-      },
     },
     {
-      title: 'Analytics Cookies',
-      description: 'Help us understand site usage and improve speed and reliability (e.g., aggregate analytics).',
+      title: 'Behavioral Analytics',
+      description: 'Sophisticated data modeling to understand site flow and optimize structural performance.',
       icon: Activity,
       checked: local.analytics,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => setLocal((s) => ({ ...s, analytics: e.target.checked })),
-      details: {
-        cookies: [
-          { name: '_ga', purpose: 'Google Analytics' },
-          { name: '_gid', purpose: 'Google Analytics' },
-        ],
-        retention: '2 years',
-      },
     },
     {
-      title: 'Marketing Cookies',
-      description: 'Used to deliver content and ads more relevant to you and your interests.',
+      title: 'Targeted Growth',
+      description: 'Strategic marketing integration to deliver relevant updates to your regional interests.',
       icon: Target,
       checked: local.marketing,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => setLocal((s) => ({ ...s, marketing: e.target.checked })),
-      details: {
-        cookies: [
-          { name: '_fbp', purpose: 'Facebook Pixel' },
-          { name: 'ads_preferences', purpose: 'Ad personalization' },
-        ],
-        retention: '3 months',
-      },
     },
     {
-      title: 'Preferences Cookies',
-      description: 'Enable enhanced features and personalization, such as remembering choices and preferences.',
+      title: 'Personalized Flow',
+      description: 'Advanced preference memory for a tailored navigation experience through our masterworks.',
       icon: User,
       checked: local.preferences,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => setLocal((s) => ({ ...s, preferences: e.target.checked })),
-      details: {
-        cookies: [
-          { name: 'user_preferences', purpose: 'User settings' },
-          { name: 'language', purpose: 'Language preference' },
-        ],
-        retention: '1 year',
-      },
     },
   ]
 
   return (
     <AnimatePresence>
       <motion.button
-        key="cookie-settings-button"
-        ref={buttonRef}
-        aria-expanded={open}
-        aria-controls="cookie-sidebar"
-        title="Cookie preferences"
-        initial={{ opacity: 0, y: '100%' }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: 'spring', duration: 0.2, stiffness: 100 }}
-        onClick={toggle}
-        className="group bottom-0 left-0 z-40 fixed w-10 h-10 flex justify-center items-center bg-bg/50 hover:bg-main/50 backdrop-blur-2xl rounded-2xl text-text transition-colors duration-300 m-4 cursor-pointer"
+        key="cookie-orb"
+        layoutId="cookie-ui"
+        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.8, y: 20 }}
+        onClick={() => setOpen(true)}
+        className="group bottom-8 left-8 z-40 fixed w-16 h-16 overflow-hidden flex justify-center items-center bg-bg/40 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] backdrop-blur-[40px] border border-text/20 hover:border-main/50 rounded-full hover:scale-110 transition-all duration-700"
       >
-        <Settings />
-        <span className="bottom-2.5 left-12 absolute bg-text opacity-0 group-hover:opacity-75 rounded-full text-bg text-sm text-nowrap transition-all translate-x-1 group-hover:translate-x-0 duration-300 px-2">
-          Cookies Settings
-        </span>
+        <div className="absolute inset-0 bg-main opacity-0 group-hover:opacity-20 transition-opacity duration-700" />
+        <motion.div
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="z-10 group-hover:text-main transition-colors duration-700"
+        >
+          <Settings size={28} />
+        </motion.div>
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 border-[2px] border-main rounded-full scale-110 group-hover:scale-100 transition-all duration-700" />
       </motion.button>
 
       {open && (
-        <motion.div
-          dir="ltr"
-          key="cookie-sidebar-backdrop"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="z-50 fixed inset-0 bg-black/75 backdrop-blur-sm"
-          onClick={() => setOpen(false)}
-        >
-          <motion.aside
-            key="cookie-sidebar"
-            id="cookie-sidebar"
-            role="dialog"
-            aria-label="Cookie preferences"
-            initial={{ x: '-100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
-            transition={{ type: 'spring', stiffness: 150, damping: 20, duration: 0.4, ease: 'easeInOut' }}
-            onClick={(e) => e.stopPropagation()}
-            className="top-0 left-0 z-50 absolute max-w-md h-full flex flex-col bg-bg shadow-2xl"
+        <div key="modal-overlay" className="z-50 fixed inset-0 flex justify-center items-center bg-black/60 backdrop-blur-[20px] p-4 md:p-8">
+          <motion.div
+            layoutId="cookie-ui"
+            initial={{ opacity: 0, scale: 0.9, y: 100 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 100 }}
+            transition={{ type: 'spring', damping: 30, stiffness: 150 }}
+            className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden flex md:flex-row flex-col bg-bg/80 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] backdrop-blur-[80px] border border-text/10 rounded-[4rem]"
           >
-            <header className="flex justify-between items-center border-text/10 border-b px-5 py-4">
-              <div className="flex items-center gap-2">
-                <Settings size={20} className="text-text" />
-                <h3 className="font-semibold max-md:text-base text-xl">Privacy Preferences Center</h3>
-              </div>
-              <CloseBtn onClick={() => setOpen(false)} className="top-2!" />
-            </header>
-
-            <div className="overflow-y-auto flex-1 space-y-4 px-5 py-4">
-              <section className="bg-text/5 opacity-75 rounded-lg text-xs p-4">
-                <p>
-                  When you use the Urbnlanes website, certain information may be stored or retrieved in your browser, mainly through cookies. This data can
-                  relate to your device, settings, or general usage and helps the site work as intended. It usually doesn't directly identify you, but it
-                  enables a more tailored experience.
+            {/* Left Panel - Branding */}
+            <div className="md:w-1/3 flex flex-col justify-between bg-main/5 border-text/10 border-r p-12">
+              <div>
+                <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="mb-12">
+                  <Shield size={48} className="text-main mb-6" />
+                  <span className="font-black text-[10px] text-main uppercase tracking-[0.4em]">Privacy Protocol</span>
+                </motion.div>
+                <AnimText as="h3" delay={0.4} className="font-bold text-4xl leading-none tracking-tight mb-6">
+                  Structural Consent
+                </AnimText>
+                <MotionLine delay={0.2} className="w-12 h-1 bg-main mb-6" />
+                <p className="opacity-50 font-medium text-sm leading-relaxed">
+                  Architecture is more than just buildings; it is the space between data and human experience. Control your structural footprint below.
                 </p>
-              </section>
+              </div>
 
-              <section>
-                <h3 className="text-base mb-4">Manage Consent Preferences</h3>
-                <ul className="space-y-4">
-                  {cookieCategories.map((category, index) => (
-                    <CookieCategory key={index} {...category} />
-                  ))}
-                </ul>
-              </section>
-            </div>
-
-            <footer className="border-text/10 border-t p-4">
-              <div className="flex justify-between items-center gap-2">
-                <MainBtn onClick={handleSave} size="sm" look="mono">
-                  Save preferences
-                </MainBtn>
-                <div className="flex gap-2">
-                  <MainBtn onClick={handleAcceptAll} size="sm" look="mono">
-                    Accept all
-                  </MainBtn>
-                  <MainBtn onClick={handleRejectAll} size="sm" look="mono">
-                    Reject all
-                  </MainBtn>
+              <div className="mt-12">
+                <div className="flex items-center gap-3 bg-text/5 border border-text/10 rounded-2xl p-4">
+                  <Info size={20} className="text-main shrink-0" />
+                  <p className="opacity-60 font-bold text-[10px] uppercase leading-normal tracking-wider">Secure Transmission Active</p>
                 </div>
               </div>
-            </footer>
-          </motion.aside>
-        </motion.div>
+            </div>
+
+            {/* Right Panel - Controls */}
+            <div className="overflow-y-auto flex-1 p-12 custom-scrollbar">
+              <header className="flex justify-between items-start mb-12">
+                <div>
+                  <h3 className="font-bold text-2xl tracking-tight mb-2">Privacy Setup</h3>
+                  <p className="opacity-50 font-bold text-xs uppercase tracking-widest">Version 2.0.4 | Urbnlanes Internal</p>
+                </div>
+                <CloseBtn onClick={() => setOpen(false)} className="scale-125 static!" />
+              </header>
+
+              <div className="gap-4 grid grid-cols-1 mb-12">
+                {cookieCategories.map((cat, i) => (
+                  <CookieCategory key={i} {...cat} />
+                ))}
+              </div>
+
+              <footer className="flex sm:flex-row flex-col items-center gap-6 border-text/10 border-t pt-12">
+                <MainBtn onClick={handleAcceptAll} fullWidth size="lg" className="h-16 text-lg tracking-widest">
+                  Architecture Approved
+                </MainBtn>
+                <button
+                  onClick={handleSave}
+                  className="w-full sm:w-auto font-black text-text/50 hover:text-main text-sm uppercase tracking-[0.3em] whitespace-nowrap transition-all duration-500 px-12 py-5"
+                >
+                  Save Settings
+                </button>
+              </footer>
+            </div>
+
+            {/* Abstract Background Elements */}
+            <div className="top-[-10%] right-[-10%] -z-10 absolute w-96 h-96 bg-main/10 blur-[150px] rounded-full pointer-events-none" />
+            <div className="bottom-[-10%] left-[20%] -z-10 absolute w-96 h-96 bg-main/5 blur-[120px] rounded-full pointer-events-none" />
+          </motion.div>
+        </div>
       )}
+
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(240, 238, 233, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(142, 142, 142, 0.2);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(142, 142, 142, 0.4);
+        }
+      `}</style>
     </AnimatePresence>
   )
 }
