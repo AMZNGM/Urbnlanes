@@ -26,7 +26,13 @@ export default function MarkedProjects() {
 
   return (
     <section className="relative w-dvw overflow-x-hidden bg-text text-black px-18 max-md:px-4">
-      <AnimText as={'h2'} delay={0.3} data-scroll data-scroll-speed="0.1" className="font-bold text-[11dvw] text-bg leading-40! rtl:leading-70!">
+      <AnimText
+        as={'h2'}
+        delay={0.3}
+        data-scroll
+        data-scroll-speed="0.1"
+        className="font-bold text-[11dvw] text-bg max-md:rtl:leading-18 md:leading-40! md:rtl:leading-70!"
+      >
         <TText tKey="common.markedProjects" />
       </AnimText>
 

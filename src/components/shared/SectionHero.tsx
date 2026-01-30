@@ -13,20 +13,20 @@ export default function SectionHero({ image = '', tKey = '', tKeyPara = '' }: { 
       <AnimIn
         data-scroll
         data-scroll-speed="0.6"
-        className="z-50 absolute inset-0 flex flex-col justify-end items-center duration-300 ease-linear px-18 max-md:px-4 py-8 max-md:py-22"
+        className="z-50 absolute inset-0 flex flex-col justify-end items-center duration-300 ease-linear px-18 max-md:px-4 py-8 max-md:py-28"
       >
-        <BreathingText as="div" repeatDelay={2} className="text-[13dvw] max-md:text-[12dvw] text-center text-nowrap ltr:leading-none max-md:pb-6">
+        <BreathingText as="div" repeatDelay={2} className="text-[13dvw] max-md:text-[12dvw] text-center text-nowrap ltr:leading-none">
           <TText tKey={tKey} />
         </BreathingText>
 
-        <MotionLine />
+        <MotionLine className="max-md:hidden" />
 
         <AnimText
           as={'p'}
           delay={0.9}
           data-scroll
           data-scroll-speed="0.2"
-          className="max-w-5xl text-text/90 max-md:text-xs text-sm text-center normal-case text-balance leading-relaxed tracking-wider ease-linear"
+          className="max-md:hidden max-w-5xl text-text/90 max-md:text-xs text-sm text-center normal-case text-balance leading-relaxed tracking-wider ease-linear"
         >
           <TText tKey={tKeyPara} />
         </AnimText>

@@ -19,7 +19,7 @@ const ToggleSwitch = ({
   <label className={`relative inline-flex items-center cursor-pointer select-none ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}>
     <input type="checkbox" className="sr-only peer" checked={checked} onChange={onChange} disabled={disabled} />
     <span className={`w-10 h-6 rounded-full transition-colors duration-200 ${checked ? 'bg-main' : 'bg-text/20'}`} />
-    <span className={`absolute left-1 top-1 w-4 h-4 rounded-full bg-white transition-transform duration-200 ${checked ? 'translate-x-4' : 'translate-x-0'}`} />
+    <span className={`absolute left-1 top-1 w-4 h-4 rounded-full bg-text transition-transform duration-200 ${checked ? 'translate-x-4' : 'translate-x-0'}`} />
   </label>
 )
 
@@ -50,18 +50,18 @@ const CookieCategory = ({
       <div className="flex justify-between items-start">
         <div className="flex-1 mr-4">
           <div className="flex items-center gap-2">
-            <Icon className="w-4 h-4 text-main" />
-            <p className={`text-sm font-medium ${showDetails ? 'text-main' : ''}`}>{title}</p>
+            <Icon className="w-4 h-4 text-text" />
+            <p className={`text-sm font-medium ${showDetails ? 'text-text' : ''}`}>{title}</p>
             {details && (
               <button
                 onClick={(e) => {
                   e.stopPropagation()
                   setShowDetails(!showDetails)
                 }}
-                className="text-text/60 hover:text-main transition-colors"
+                className="text-text/60 hover:text-text transition-colors"
                 aria-label="Show details"
               >
-                <ChevronDown className={`w-4 h-4 cursor-pointer transition-transform ${showDetails ? 'rotate-180 text-main' : ''}`} />
+                <ChevronDown className={`w-4 h-4 cursor-pointer transition-transform ${showDetails ? 'rotate-180 text-text' : ''}`} />
               </button>
             )}
           </div>
@@ -235,7 +235,7 @@ export default function CookieSidebar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: 'spring', duration: 0.2, stiffness: 100 }}
         onClick={toggle}
-        className="group bottom-4 left-4 z-50 fixed w-10 h-10 flex justify-center items-center bg-bg hover:bg-main shadow-lg rounded-full text-main hover:text-bg transition-colors duration-300 cursor-pointer"
+        className="group bottom-4 left-4 z-50 fixed w-10 h-10 flex justify-center items-center bg-bg/50 hover:bg-bg/50 shadow-lg backdrop-blur-2xl rounded-full text-text hover:text-bg transition-colors duration-300 cursor-pointer"
       >
         <Settings />
         <span className="bottom-2.5 left-12 absolute bg-main opacity-0 group-hover:opacity-75 rounded-full text-bg text-sm text-nowrap transition-all translate-x-1 group-hover:translate-x-0 duration-300 px-2">
@@ -267,7 +267,7 @@ export default function CookieSidebar() {
           >
             <header className="flex justify-between items-center border-text/10 border-b px-5 py-4">
               <div className="flex items-center gap-2">
-                <Settings size={20} className="text-main" />
+                <Settings size={20} className="text-text" />
                 <h3 className="font-semibold max-md:text-base text-xl">Privacy Preferences Center</h3>
               </div>
               <CloseBtn onClick={() => setOpen(false)} className="top-2!" />
@@ -293,15 +293,15 @@ export default function CookieSidebar() {
             </div>
 
             <footer className="border-text/10 border-t p-4">
-              <div className="flex max-md:flex-col justify-center gap-2">
-                <MainBtn onClick={handleSave} size="sm" className="bg-main hover:bg-main/75 text-nowrap">
+              <div className="flex justify-between items-center gap-2">
+                <MainBtn onClick={handleSave} size="sm" look="mono">
                   Save preferences
                 </MainBtn>
                 <div className="flex gap-2">
-                  <MainBtn onClick={handleAcceptAll} size="sm" className="bg-main hover:bg-main/75 text-nowrap">
+                  <MainBtn onClick={handleAcceptAll} size="sm" look="mono">
                     Accept all
                   </MainBtn>
-                  <MainBtn onClick={handleRejectAll} size="sm" className="bg-main hover:bg-main/75 text-nowrap">
+                  <MainBtn onClick={handleRejectAll} size="sm" look="mono">
                     Reject all
                   </MainBtn>
                 </div>

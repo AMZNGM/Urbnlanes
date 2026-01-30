@@ -2,9 +2,9 @@ import Link from 'next/link'
 import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
+import AnimText from '@/components/ui/unstyled/AnimText'
 import LetterSwap from '@/components/ui/text/LetterSwap'
 import Newsletter from '@/components/footer-components/Newsletter'
-import AnimText from '@/components/ui/unstyled/AnimText'
 
 export default function LeftFooter() {
   return (
@@ -38,7 +38,7 @@ export default function LeftFooter() {
         ))}
       </div>
 
-      <div className="max-md:order-3">
+      <div className="max-md:hidden">
         <Newsletter />
       </div>
     </div>

@@ -7,6 +7,7 @@ import { ArrowRight, Check, Loader2, Mail } from 'lucide-react'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 interface FormState {
   success: boolean
@@ -20,7 +21,8 @@ const initialState: FormState = {
 }
 
 export default function Newsletter() {
-  let [isOpen, setIsOpen] = useState(false)
+  let isMobile = useIsMobile()
+  let [isOpen, setIsOpen] = useState(isMobile ? true : false)
   let [showMessage, setShowMessage] = useState(true)
   let [state, action, isPending] = useActionState(subscribeToNewsletter, initialState)
 
@@ -53,7 +55,7 @@ export default function Newsletter() {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div {...animationProps} className="top-full z-50 absolute md:w-1/3 bg-black/50 backdrop-blur-2xl rounded-2xl text-main p-2">
+          <motion.div {...animationProps} className="top-full z-50 md:absolute md:w-1/3 bg-black/50 backdrop-blur-2xl rounded-2xl text-main max-md:mb-4 p-2">
             <form action={action}>
               <div className="flex gap-2">
                 <input

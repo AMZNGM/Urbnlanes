@@ -93,7 +93,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
                 {selectedProject.partners && selectedProject.partners.length > 0 && (
                   <div className="mt-2">
                     <h4 className="text-xs tracking-widest mb-1">{t('modal.partners')}</h4>
-                    <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                    <div className="flex justify-center md:justify-start gap-4">
                       {selectedProject.partners.map((partner: any, idx: number) => (
                         <div key={idx} className="flex flex-col items-center gap-2">
                           {partner.logo && (
