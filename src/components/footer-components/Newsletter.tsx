@@ -4,10 +4,10 @@ import { useActionState, useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { subscribeToNewsletter } from '@/lib/newsletter'
 import { ArrowRight, Check, Loader2, Mail } from 'lucide-react'
+import { useIsMobile } from '@/hooks/useIsMobile'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
-import { useIsMobile } from '@/hooks/useIsMobile'
 
 interface FormState {
   success: boolean
@@ -22,9 +22,13 @@ const initialState: FormState = {
 
 export default function Newsletter() {
   let isMobile = useIsMobile()
-  let [isOpen, setIsOpen] = useState(isMobile ? true : false)
+  let [isOpen, setIsOpen] = useState(isMobile)
   let [showMessage, setShowMessage] = useState(true)
   let [state, action, isPending] = useActionState(subscribeToNewsletter, initialState)
+
+  useEffect(() => {
+    setIsOpen(isMobile)
+  }, [isMobile])
 
   let animationProps = {
     initial: { opacity: 0, y: -20, scale: 0.95, filter: 'blur(10px)' },
