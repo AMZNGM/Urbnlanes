@@ -25,7 +25,14 @@ export default function MobileSearch({ navbarData }: { navbarData: NavbarTypes }
 
   useEffect(() => {
     const searchResults = search(searchQuery)
-    setResults(searchResults)
+    // Sort results by category to match the grouped display order in SearchDropdown
+    const categoryOrder = ['Projects', 'Pages', 'News']
+    const sortedResults = [...searchResults].sort((a, b) => {
+      const aIndex = categoryOrder.indexOf(a.category)
+      const bIndex = categoryOrder.indexOf(b.category)
+      return aIndex - bIndex
+    })
+    setResults(sortedResults)
     setSelectedIndex(-1)
   }, [searchQuery, search])
 

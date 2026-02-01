@@ -42,6 +42,9 @@ export const TRANSLATIONS = {
     },
 
     common: {
+      all: 'All',
+      blogs: 'Blogs',
+      news: 'News',
       search: 'Search',
       close: 'Close',
       cancel: 'Cancel',
@@ -253,6 +256,11 @@ export const TRANSLATIONS = {
       underConstruction: 'Under Construction',
       planned: 'Planned',
       resetFilters: 'Reset Filters',
+    },
+
+    news: {
+      readFullArticle: 'Read Full Article',
+      filteredNews: 'Filtered News',
     },
 
     db: {
@@ -723,6 +731,9 @@ export const TRANSLATIONS = {
     },
 
     common: {
+      all: 'الكل',
+      blogs: 'المدونات',
+      news: 'الأخبار',
       search: 'بحث',
       close: 'إغلاق',
       cancel: 'إلغاء',
@@ -932,6 +943,11 @@ export const TRANSLATIONS = {
       underConstruction: 'تحت الإنشاء',
       planned: 'مخطط له',
       resetFilters: 'إعادة تعيين الفلاتر',
+    },
+
+    news: {
+      readFullArticle: 'قراءة المقال الكامل',
+      filteredNews: 'الأخبار المفلترة',
     },
 
     db: {

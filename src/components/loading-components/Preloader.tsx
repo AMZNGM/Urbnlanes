@@ -22,7 +22,7 @@ export default function Preloader() {
           animate={{ y: 0 }}
           exit={{ y: '-100%' }}
           transition={{ duration: 0.75, ease: 'easeInOut' }}
-          className="z-99999 fixed inset-0 w-dvw h-full min-h-dvh overflow-hidden flex justify-center items-center bg-black pointer-events-none"
+          className="z-99999 fixed inset-0 w-dvw h-full min-h-dvh overflow-hidden flex justify-center items-center bg-black"
         >
           <motion.svg viewBox="0 0 3559 627" className="w-1/3 max-md:w-1/2 h-full fill-none stroke-15 stroke-bg">
             <motion.path

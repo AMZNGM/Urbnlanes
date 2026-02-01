@@ -7,7 +7,7 @@ export default function PartnersHero() {
     <section className="relative w-dvw h-dvh overflow-hidden bg-text text-text p-2">
       <div data-scroll data-scroll-speed="-0.6" className="relative w-full h-full">
         <ImageIn
-          src="/images/projects/noi/noi-gallery-11.webp"
+          src="/images/projects/noi/noi-gallery-23.webp"
           alt="Partners & Associates"
           priority
           sizes="100vw"

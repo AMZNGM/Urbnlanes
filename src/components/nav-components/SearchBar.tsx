@@ -25,7 +25,13 @@ export default function SearchBar({ navbarData }: { navbarData: NavbarTypes }) {
 
   useEffect(() => {
     let searchResults = search(searchQuery)
-    setResults(searchResults)
+    const categoryOrder = ['Projects', 'Pages', 'News']
+    const sortedResults = [...searchResults].sort((a, b) => {
+      const aIndex = categoryOrder.indexOf(a.category)
+      const bIndex = categoryOrder.indexOf(b.category)
+      return aIndex - bIndex
+    })
+    setResults(sortedResults)
     setSelectedIndex(-1)
   }, [searchQuery, search])
 

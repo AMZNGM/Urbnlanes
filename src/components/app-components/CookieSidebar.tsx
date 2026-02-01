@@ -170,11 +170,11 @@ export default function CookieSidebar() {
             </div>
 
             <footer className="w-full flex max-md:flex-col justify-between items-center gap-4">
-              <MainBtn onClick={handleAcceptAll} size="sm" look="mono" className="font-bold! tracking-[0.4em] whitespace-nowrap px-6 py-3">
+              <MainBtn onClick={handleAcceptAll} size="sm" look="wideMono">
                 Architecture Approved
               </MainBtn>
 
-              <MainBtn onClick={handleSave} size="sm" look="dark" className="font-bold! tracking-[0.4em] whitespace-nowrap px-6 py-3">
+              <MainBtn onClick={handleSave} size="sm" look="wideMonoDark">
                 Save Settings
               </MainBtn>
             </footer>

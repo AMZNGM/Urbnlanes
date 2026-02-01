@@ -33,4 +33,8 @@ export const metadataGenerators = {
     keywords: data.keywords,
     alternates: data.alternates,
   }),
+  article: (data: any) => ({
+    title: data?.title || 'Article | Urbnlanes Developments',
+    description: data?.content?.[0] || data?.content || '',
+  }),
 }

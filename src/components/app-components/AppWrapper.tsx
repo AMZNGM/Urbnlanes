@@ -19,7 +19,7 @@ export default function AppWrapper({ children }: { children: React.ReactNode }) 
           <Banner />
           <LocomotiveScrollSetup />
           <ScrollToTop />
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
           <CustomCursor />
           <CookieBanner />

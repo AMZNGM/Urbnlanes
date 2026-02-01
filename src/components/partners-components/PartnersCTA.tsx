@@ -1,8 +1,8 @@
+import { MotionLine } from '@/components/ui/effects/Lines'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
-import { MotionLine } from '@/components/ui/effects/Lines'
 
 export default function PartnersCTA() {
   return (

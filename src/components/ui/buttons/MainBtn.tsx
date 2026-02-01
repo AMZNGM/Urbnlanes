@@ -12,7 +12,7 @@ interface MainBtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   to?: string
   href?: string
   onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
-  look?: 'main' | 'outline' | 'ghost' | 'dark' | 'mono'
+  look?: 'main' | 'outline' | 'ghost' | 'dark' | 'mono' | 'wideMono' | 'wideMonoDark'
   size?: 'sm' | 'md' | 'lg'
   fullWidth?: boolean
   disabled?: boolean
@@ -54,6 +54,8 @@ export default memo(function MainBtn({
     ghost: 'bg-transparent text-text border-transparent hover:bg-main/10',
     dark: 'bg-bg text-text hover:bg-current/20 text-current',
     mono: 'bg-current/10 hover:bg-current/20 text-current',
+    wideMono: 'bg-current/10 hover:bg-current/20 text-current font-bold! tracking-[0.4em] whitespace-nowrap px-6 py-3',
+    wideMonoDark: 'bg-bg text-text hover:bg-current/20 text-current font-bold! tracking-[0.4em] whitespace-nowrap px-6 py-3',
   }
 
   const sizes = {

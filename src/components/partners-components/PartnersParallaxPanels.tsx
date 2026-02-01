@@ -63,10 +63,10 @@ export default function PartnersParallaxPanels() {
   const displayPartners = partnersData.slice(0, 5)
 
   return (
-    <>
+    <section className="overflow-hidden bg-text rounded-2xl mx-2">
       {displayPartners.map((partner, index) => (
         <ParallaxPanel key={partner.name} partner={partner} index={index} />
       ))}
-    </>
+    </section>
   )
 }
