@@ -5,8 +5,8 @@ import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import dynamic from 'next/dynamic'
 import db from '@/database/urbnlanes-db.json'
 
-const ArticleHero = dynamic(() => import('@/components/media-center-components/ArticleHero'))
-import ArticleContent from '@/components/media-center-components/ArticleContent'
+const ArticleHero = dynamic(() => import('@/components/news-components/ArticleHero'))
+import ArticleContent from '@/components/news-components/ArticleContent'
 import LatestNews from '@/components/news-components/LatestNews'
 import ScrollIndicator from '@/components/shared/ScrollIndicator'
 

@@ -9,7 +9,7 @@ interface NewsCardProps {
   article: {
     id: string
     type: string
-    category: string
+    category: string | string[]
     title: string
     content?: string | string[]
     image?: string | string[]

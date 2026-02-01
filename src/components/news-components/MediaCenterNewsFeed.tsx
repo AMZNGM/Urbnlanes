@@ -5,7 +5,7 @@ import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import NewsCard from '@/components/news-components/NewsCard'
-import MediaCenterSearch from '@/components/media-center-components/MediaCenterSearch'
+import MediaCenterSearch from '@/components/news-components/MediaCenterSearch'
 
 export default function MediaCenterNewsFeed() {
   const newsState = useNews()
