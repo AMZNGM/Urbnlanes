@@ -12,7 +12,7 @@ import CloseBtn from '@/components/ui/buttons/CloseBtn'
 interface Article {
   id: string
   type: string
-  category: string
+  category: string | string[]
   title: string
   content?: string | string[]
   image?: string | string[]

@@ -3,7 +3,7 @@
 import { useMemo } from 'react'
 import db from '@/database/urbnlanes-db.json'
 
-export type SearchCategory = 'Projects' | 'News' | 'Pages'
+export type SearchCategory = 'Pages' | 'Projects' | 'News'
 
 export interface SearchResult {
   id: string
@@ -21,7 +21,7 @@ const STATIC_PAGES: { title: string; url: string }[] = [
   { title: 'Contact Us', url: '/get-in-touch' },
   { title: 'Careers', url: '/careers' },
   { title: 'Construction Updates', url: '/construction-updates' },
-  { title: 'Media Center', url: '/media-center-news' },
+  { title: 'News', url: '/media-center-news' },
   { title: 'Our Partners', url: '/partners-associates' },
   { title: 'Privacy Policy', url: '/privacy-policy' },
   { title: 'Terms of Use', url: '/terms-of-use' },
