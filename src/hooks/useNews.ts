@@ -39,7 +39,11 @@ export function useNews() {
     // 2. Search Filter
     if (searchQuery.trim()) {
       let query = searchQuery.toLowerCase()
-      result = result.filter((item) => item.title.toLowerCase().includes(query) || (item.category && item.category.toLowerCase().includes(query)))
+      result = result.filter(
+        (item) =>
+          item.title.toLowerCase().includes(query) ||
+          (item.category && (Array.isArray(item.category) ? item.category.join(' ').toLowerCase() : item.category.toLowerCase()).includes(query))
+      )
     }
 
     // 3. Sort Order
