@@ -74,10 +74,9 @@ export default function ArticleContent({ article }: { article: any }) {
             ))}
           </div>
 
-          {/* Multiple images gallery if exists */}
           {images.length > 1 && (
             <div className="gap-4 md:gap-8 grid grid-cols-2 my-24">
-              {images.slice(1).map((img, i) => (
+              {images.slice(1).map((img: string, i: number) => (
                 <div key={i} className="relative aspect-square overflow-hidden border border-main/10 rounded-3xl">
                   <ImageIn src={img as string} alt={`${article.title} gallery ${i}`} />
                 </div>

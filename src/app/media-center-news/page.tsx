@@ -4,7 +4,7 @@ import { metadataGenerators } from '@/seo/seo-helpers'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 
 const MediaCenter3dHero = dynamic(() => import('@/components/media-center-components/MediaCenter3dHero'))
-import MediaCenterNewsFeed from '@/components/media-center-components/MediaCenterNewsFeed'
+const MediaCenterNewsFeed = dynamic(() => import('@/components/media-center-components/MediaCenterNewsFeed'))
 
 export const generateMetadata = metadataGenerators.mediaCenterNews
 

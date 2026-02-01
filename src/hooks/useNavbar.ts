@@ -7,6 +7,7 @@ import { useScrollPosition } from '@/hooks/useScrollPosition'
 import { useLanguage } from '@/translations/LanguageContext'
 import { navigation } from '@/config/navigation.ui.json'
 import { NavbarTypes, NavigationItem } from '@/types/nav'
+import { useEventListener } from 'usehooks-ts'
 
 export const useNavbar = (): NavbarTypes => {
   const router = useRouter()
@@ -126,16 +127,20 @@ export const useNavbar = (): NavbarTypes => {
   }, [scrollY])
 
   // Keyboard shortcut for search
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault()
-        setShowSearch((prev) => !prev)
-      }
+  useEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'k') {
+      e.preventDefault()
+      setShowSearch((prev) => !prev)
     }
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [])
+  })
+
+  // Keyboard shortcut for lang selector
+  useEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === '/' && handleLanguageChange && selectedLanguage) {
+      e.preventDefault()
+      handleLanguageChange(selectedLanguage === 'English' ? { name: 'العربية' } : { name: 'English' })
+    }
+  })
 
   return {
     // Navigation state

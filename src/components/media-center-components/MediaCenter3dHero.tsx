@@ -180,10 +180,8 @@ const OverlayViewer = memo(
           transform: styleObj.transform,
           transition: styleObj.transition,
         }}
-        className="z-50 absolute flex max-md:flex-col-reverse space-x-2 bg-main/25 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur-3xl rounded-2xl text-text origin-top-left p-3 cursor-auto pointer-events-auto will-change-transform"
+        className="z-50 absolute flex max-md:flex-col-reverse space-x-2 bg-main/25 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur-3xl rounded-2xl text-text origin-top-left p-3 touch-auto cursor-auto pointer-events-auto will-change-transform"
       >
-        <CloseBtn onClick={onClose} className="md:hidden top-4 right-4 z-50 w-fit backdrop-blur-3xl p-4 mix-blend-difference absolute!" />
-
         {showArticleInfo && article && (
           <div className="relative [&::-webkit-scrollbar]:w-2 overflow-y-auto flex flex-col flex-[0_0_30%] max-md:flex-[0_0_65%] justify-between [&::-webkit-scrollbar-thumb:hover]:bg-main/50 [&::-webkit-scrollbar-thumb]:bg-main/30 [&::-webkit-scrollbar-track]:bg-transparent">
             <div className="relative space-y-8">
@@ -191,9 +189,12 @@ const OverlayViewer = memo(
 
               <h2 className="font-medium max-md:text-xl text-2xl line-clamp-3">{article.title}</h2>
 
-              <div className="font-mono text-main text-xs tracking-widest">
-                <p>{article.date}</p>
-                <p>{article.category}</p>
+              <div className="flex justify-between items-center">
+                <div className="font-mono text-main text-xs tracking-widest">
+                  <p>{article.date}</p>
+                  <p>{article.category}</p>
+                </div>
+                <CloseBtn onClick={onClose} className="md:hidden z-50 w-fit backdrop-blur-3xl p-2" />
               </div>
 
               {(article.description || content || '') && !article.source && (
@@ -312,8 +313,8 @@ export default function MediaCenter3dHero({
     transition: '',
   })
 
-  const blogs = (db.mediacenter.blogs || []).map((b) => ({ ...b, type: 'Blog Post' }))
-  const news = (db.mediacenter.news || []).map((n) => ({ ...n, type: 'News' }))
+  const blogs = (db.mediacenter.blogs || []).map((b) => ({ ...b, type: 'blog' }))
+  const news = (db.mediacenter.news || []).map((n) => ({ ...n, type: 'news' }))
   const articlesData = [...blogs, ...news]
 
   const imagesData = useMemo(() => {

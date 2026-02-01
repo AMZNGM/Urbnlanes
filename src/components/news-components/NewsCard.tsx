@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { memo } from 'react'
 import { ArrowRight } from 'lucide-react'
+import TText from '@/translations/TText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 import RippleEffect from '@/components/ui/effects/RippleEffect'
 
@@ -25,12 +26,12 @@ export default memo(function NewsCard({ article, look = 'default' }: NewsCardPro
 
   if (look === 'mono') {
     return (
-      <RippleEffect dir="ltr" as="article" className="group w-full h-full overflow-hidden bg-text rounded-xl text-bg">
+      <RippleEffect as="article" className="group w-full h-full overflow-hidden bg-text rounded-xl text-bg">
         <Link href={`/media-center-news/${article.id}`} className="w-full h-full flex flex-col">
           <ImageIn src={imageSrc} alt={article.title || 'News article'} className="rounded-xl" divClassName="rounded-xl overflow-hidden" />
 
           <div className="top-4 left-4 absolute bg-main/25 backdrop-blur-xl rounded-md font-mono text-[10px] text-text tracking-widest px-3 py-2">
-            {article.type}
+            <TText tKey={`news.${article.type}`} />
           </div>
 
           <div className="flex flex-col gap-2 py-2">
@@ -50,7 +51,7 @@ export default memo(function NewsCard({ article, look = 'default' }: NewsCardPro
 
   if (look === 'monoSm') {
     return (
-      <RippleEffect dir="ltr" as="article" className="group w-full h-full overflow-hidden bg-text rounded-xl text-bg">
+      <RippleEffect as="article" className="group w-full h-full overflow-hidden bg-text rounded-xl text-bg">
         <Link href={`/media-center-news/${article.id}`} className="w-full h-full flex flex-col">
           <ImageIn src={imageSrc} alt={article.title || 'News article'} className="rounded-xl" divClassName="rounded-xl overflow-hidden" />
 
@@ -62,7 +63,9 @@ export default memo(function NewsCard({ article, look = 'default' }: NewsCardPro
               {article.title}
             </h3>
 
-            <div className="w-fit bg-main/50 rounded-md font-mono text-[10px] text-bg tracking-widest px-2 py-1">{article.type}</div>
+            <div className="w-fit bg-main/50 rounded-md font-mono text-[10px] text-bg tracking-widest px-2 py-1">
+              <TText tKey={`news.${article.type}`} />
+            </div>
 
             <time className="font-mono font-bold text-[10px] text-bg/50">{article.date}</time>
           </div>
@@ -73,7 +76,7 @@ export default memo(function NewsCard({ article, look = 'default' }: NewsCardPro
 
   if (look === 'monoSide') {
     return (
-      <RippleEffect dir="ltr" as="article" className="group w-full h-full overflow-hidden bg-text rounded-xl text-bg">
+      <RippleEffect as="article" className="group w-full h-full overflow-hidden bg-text rounded-xl text-bg">
         <Link href={`/media-center-news/${article.id}`} className="w-full h-full gap-2 grid grid-cols-2 max-md:grid-cols-3">
           <ImageIn src={imageSrc} alt={article.title || 'News article'} className="rounded-xl" divClassName="rounded-xl overflow-hidden" />
 
@@ -85,7 +88,9 @@ export default memo(function NewsCard({ article, look = 'default' }: NewsCardPro
               {article.title}
             </h3>
 
-            <div className="w-fit bg-main/50 rounded-md font-mono text-[10px] text-bg tracking-widest px-2 py-1">{article.type}</div>
+            <div className="w-fit bg-main/50 rounded-md font-mono text-[10px] text-bg tracking-widest px-2 py-1">
+              <TText tKey={`news.${article.type}`} />
+            </div>
 
             <time className="font-mono font-bold text-[10px] text-bg/50">{article.date}</time>
           </div>

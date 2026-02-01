@@ -22,8 +22,8 @@ export function useNews() {
   let [isOpen, setIsOpen] = useState(false)
 
   let allItems = useMemo(() => {
-    let blogs = (db.mediacenter.blogs || []).map((item) => ({ ...item, type: 'Blog Post' }))
-    let news = (db.mediacenter.news || []).map((item) => ({ ...item, type: 'News' }))
+    let blogs = (db.mediacenter.blogs || []).map((item) => ({ ...item, type: 'blog' }))
+    let news = (db.mediacenter.news || []).map((item) => ({ ...item, type: 'news' }))
 
     return [...blogs, ...news]
   }, [])
@@ -78,10 +78,10 @@ export function useNews() {
   ]
 
   let sortOrders = [
-    { id: 'newest', label: 'Newest' },
-    { id: 'oldest', label: 'Oldest' },
-    { id: 'az', label: 'A-Z' },
-    { id: 'za', label: 'Z-A' },
+    { id: 'newest', label: 'news.sortOrders.newest' },
+    { id: 'oldest', label: 'news.sortOrders.oldest' },
+    { id: 'az', label: 'news.sortOrders.az' },
+    { id: 'za', label: 'news.sortOrders.za' },
   ]
 
   useEventListener('keydown', (e) => {

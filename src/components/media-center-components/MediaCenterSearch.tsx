@@ -6,7 +6,7 @@ import { Search, X } from 'lucide-react'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/unstyled/AnimText'
 
-export default function MediaCenterFilter({
+export default function MediaCenterSearch({
   searchQuery,
   setSearchQuery,
   selectedFilter,
@@ -38,15 +38,15 @@ export default function MediaCenterFilter({
   let { t } = useTranslation()
 
   return (
-    <section id="news-feed" className="top-8 right-8 z-50 fixed">
+    <section id="news-feed" className="top-8 max-md:top-4 max-md:right-4 md:ltr:right-8 max-md:left-4 md:rtl:left-8 z-50 fixed">
       <motion.div
         layout={filteredItems.length > 0}
         transition={{ type: 'spring', stiffness: 160, damping: 24, mass: 0.6 }}
-        className={`overflow-hidden flex flex-col bg-bg/50 backdrop-blur-2xl rounded-xl text-text pointer-events-auto ${isOpen || filteredItems.length === 0 ? 'w-full p-8' : 'w-fit ms-auto'}`}
+        className={`overflow-hidden flex flex-col bg-bg/50 backdrop-blur-2xl rounded-xl text-text pointer-events-auto ${isOpen || filteredItems.length === 0 ? 'w-full p-8 max-md:p-4' : 'w-fit ms-auto'}`}
       >
-        <div onClick={togglePanel} className="flex items-center gap-2 font-mono text-sm ms-auto p-4 cursor-pointer select-none">
+        <div onClick={togglePanel} className="flex items-center gap-2 font-mono text-sm ms-auto p-4 max-md:p-2 cursor-pointer select-none">
           {isOpen && (
-            <AnimText delay={0.6} key="close" className="pt-1">
+            <AnimText delay={0.6} key="close" className="rtl:leading-5 pt-1">
               <TText tKey="common.close" />
             </AnimText>
           )}
@@ -71,10 +71,10 @@ export default function MediaCenterFilter({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="min-w-md overflow-hidden flex flex-col pb-8"
+              className="min-w-md overflow-hidden flex flex-col pb-8 max-md:pb-4"
             >
               {/* Search bar */}
-              <div className="w-full flex justify-between items-center px-4">
+              <div className="w-full flex justify-between items-center px-4 max-md:px-2">
                 <div className="relative w-full">
                   <input
                     autoFocus
@@ -82,7 +82,7 @@ export default function MediaCenterFilter({
                     placeholder={t('search.placeholder')}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full selection:bg-text/25 border-text/50! border-b focus:outline-none placeholder:text-text/50 text-3xl py-2"
+                    className="w-full selection:bg-text/25 border-text/50! border-b focus:outline-none placeholder:text-text/50 text-3xl py-2 max-md:py-1"
                   />
                   {searchQuery && (
                     <button
@@ -103,7 +103,7 @@ export default function MediaCenterFilter({
                     onClick={() => setSortOrder(order.id as any)}
                     className={`py-2 tracking-wider transition-all cursor-pointer ${sortOrder === order.id ? '' : 'text-text/50 hover:text-text/75'}`}
                   >
-                    {order.label}
+                    <TText tKey={order.label} />
                   </button>
                 ))}
               </div>
@@ -122,12 +122,12 @@ export default function MediaCenterFilter({
               </div>
 
               <button onClick={resetFilters} className="text-text/50 hover:text-text/75 tracking-wider transition-all ms-auto px-4 py-2 cursor-pointer">
-                Reset All
+                <TText tKey="news.resetAll" />
               </button>
 
               {filteredItems.length === 0 && (
-                <AnimText as={'p'} className="font-mono tracking-wider px-4">
-                  0 results
+                <AnimText as={'p'} className="font-mono leading-6! tracking-wider px-4">
+                  <TText tKey="news.results0" />
                 </AnimText>
               )}
             </motion.div>

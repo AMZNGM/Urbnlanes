@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <header className="top-0 z-50 fixed">
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{
           opacity: navbarData.isVisible ? 1 : 0,
@@ -50,7 +50,7 @@ export default function Navbar() {
 
       <div className="-z-10 relative">
         <NavbarOverlay navbarData={navbarData} />
-      </div>
+      </div> */}
 
       <SearchBar navbarData={navbarData} />
     </header>

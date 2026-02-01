@@ -5,7 +5,7 @@ import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import NewsCard from '@/components/news-components/NewsCard'
-import MediaCenterFilter from '@/components/media-center-components/MediaCenterFilter'
+import MediaCenterSearch from '@/components/media-center-components/MediaCenterSearch'
 
 export default function MediaCenterNewsFeed() {
   const newsState = useNews()
@@ -13,21 +13,21 @@ export default function MediaCenterNewsFeed() {
 
   return (
     <section className="relative overflow-hidden space-y-8 bg-text text-bg px-8 max-md:px-2 py-32">
-      <MediaCenterFilter {...newsState} />
+      <MediaCenterSearch {...newsState} />
 
       {filteredItems.length > 0 &&
         (!newsState.searchQuery && newsState.selectedFilter === 'all' ? (
-          <AnimIn reAnim className="flex gap-[2dvw] text-[6dvw] max-md:text-[10dvw] normal-case">
-            <AnimText as={'h2'}>
+          <AnimIn reAnim className="flex rtl:flex-row-reverse rtl:justify-end gap-[2dvw] text-[6dvw] max-md:text-[10dvw] normal-case">
+            <AnimText as={'h2'} className="leading-32!">
               <TText tKey="db.metadata.company.title" />
             </AnimText>
-            <AnimText as={'h2'}>
+            <AnimText as={'h2'} className="leading-32!">
               <TText tKey="nav.news" />
             </AnimText>
           </AnimIn>
         ) : (
           <AnimIn reAnim className="flex gap-[2dvw] text-[6dvw] max-md:text-[10dvw] normal-case">
-            <AnimText as={'h2'}>
+            <AnimText as={'h2'} className="leading-32!">
               <TText tKey="news.filteredNews" />
             </AnimText>
           </AnimIn>
