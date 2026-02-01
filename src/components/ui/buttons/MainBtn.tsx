@@ -83,9 +83,9 @@ export default memo(function MainBtn({
 
   const InnerContent = () => (
     <>
-      {Icon && iconPosition === 'left' && <Icon className={`w-3 fill-bg -rotate-40 ${iconClassName}`} />}
+      {Icon && iconPosition === 'left' && <Icon size={20} className={`fill-current ${iconClassName}`} />}
       <LetterSwap text={content} />
-      {Icon && iconPosition === 'right' && <Icon className={`w-3 fill-bg -rotate-40 ${iconClassName}`} />}
+      {Icon && iconPosition === 'right' && <Icon size={20} className={`fill-current ${iconClassName}`} />}
     </>
   )
 

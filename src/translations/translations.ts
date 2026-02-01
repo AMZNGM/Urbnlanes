@@ -271,6 +271,7 @@ export const TRANSLATIONS = {
         za: 'Z-A',
       },
       results0: '0 Results',
+      autobiographies: 'autobiographies',
     },
 
     db: {
@@ -968,6 +969,7 @@ export const TRANSLATIONS = {
         za: 'ي-ا',
       },
       results0: 'صفر نتاىج',
+      autobiographies: 'الأوبراگي',
     },
 
     db: {

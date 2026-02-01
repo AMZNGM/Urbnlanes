@@ -24,8 +24,8 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const { id } = await params
-  const project = db.projects.find((p) => p.id === id)
+  let { id } = await params
+  let project = db.projects.find((p) => p.id === id)
 
   if (!project) {
     return metadataGenerators.notFound()
@@ -43,8 +43,8 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function ProjectPage({ params }: Props) {
-  const { id } = await params
-  const project = db.projects.find((p) => p.id === id) as Project
+  let { id } = await params
+  let project = db.projects.find((p) => p.id === id) as Project
 
   if (!project) {
     notFound()
