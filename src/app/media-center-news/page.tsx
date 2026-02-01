@@ -11,7 +11,7 @@ export const generateMetadata = metadataGenerators.mediaCenterNews
 export default function MediaCenterNewsPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      <div className="top-0 sticky">
+      <div className="max-md:hidden top-0 sticky">
         <MediaCenter3dHero />
       </div>
 

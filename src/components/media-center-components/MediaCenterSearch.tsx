@@ -71,7 +71,7 @@ export default function MediaCenterSearch({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="min-w-md overflow-hidden flex flex-col pb-8 max-md:pb-4"
+              className="md:min-w-md overflow-hidden flex flex-col pb-8 max-md:pb-4"
             >
               {/* Search bar */}
               <div className="w-full flex justify-between items-center px-4 max-md:px-2">

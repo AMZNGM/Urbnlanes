@@ -12,16 +12,16 @@ export default function MediaCenterNewsFeed() {
   const { filteredItems } = newsState
 
   return (
-    <section className="relative overflow-hidden space-y-8 bg-text text-bg px-8 max-md:px-2 py-32">
+    <section className="relative overflow-hidden space-y-8 bg-text text-bg px-8 max-md:px-2 py-32 max-md:py-24">
       <MediaCenterSearch {...newsState} />
 
       {filteredItems.length > 0 &&
         (!newsState.searchQuery && newsState.selectedFilter === 'all' ? (
           <AnimIn reAnim className="flex rtl:flex-row-reverse rtl:justify-end gap-[2dvw] text-[6dvw] max-md:text-[10dvw] normal-case">
-            <AnimText as={'h2'} className="leading-32!">
+            <AnimText as={'h2'} className="rtl:leading-32!">
               <TText tKey="db.metadata.company.title" />
             </AnimText>
-            <AnimText as={'h2'} className="leading-32!">
+            <AnimText as={'h2'} className="rtl:leading-32!">
               <TText tKey="nav.news" />
             </AnimText>
           </AnimIn>
