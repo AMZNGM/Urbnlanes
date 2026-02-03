@@ -41,7 +41,7 @@ export default function ArticleContent({ article }: { article: any }) {
               width: useTransform(scrollYProgress, [0, 1], ['100%', '35%']),
               color: useTransform(scrollYProgress, [0, 1], ['#000', '#fff']),
             }}
-            className="flex justify-center items-center gap-4 opacity-80 font-mono font-bold text-xs tracking-widest mx-auto mb-1"
+            className="flex justify-center items-center gap-4 opacity-80 font-mono text-[10px] tracking-widest mx-auto mb-1"
           >
             <AnimText delay={0.6} as={'time'} className="pe-12 md:pe-6 lg:pe-5 xl:pe-4">
               {date}
@@ -51,11 +51,11 @@ export default function ArticleContent({ article }: { article: any }) {
 
             <div className="flex gap-2">
               <AnimText delay={0.6} className="rtl:leading-10!">
-                <TText tKey={`news.${Array.isArray(article.category) ? article.category[1] : article.category}`} />
-              </AnimText>
-              <AnimText delay={0.6} className="rtl:leading-10!">
                 <TText tKey={`news.${Array.isArray(article.category) ? article.category[0] : article.category}`} />
               </AnimText>
+              {/* <AnimText delay={0.6} className="rtl:leading-10!">
+                <TText tKey={`news.${Array.isArray(article.category) ? article.category[0] : article.category}`} />
+              </AnimText> */}
             </div>
           </motion.div>
 

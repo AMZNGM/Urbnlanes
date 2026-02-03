@@ -1,58 +1,77 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
-import { motion } from 'motion/react'
-import { useNavbar } from '@/hooks/useNavbar'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import { useIsMobile } from '@/hooks/useIsMobile'
+import { useGlobalSearch } from '@/hooks/useGlobalSearch'
+import { useScrollPosition } from '@/hooks/useScrollPosition'
+import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
+import Dock from '@/components/nav-components/dock-components/Dock'
 import NavLogo from '@/components/nav-components/NavLogo'
-import NavLinks from '@/components/nav-components/NavLinks'
-import SearchTrigger from '@/components/nav-components/SearchTrigger'
-import LanguageSelector from '@/components/nav-components/LanguageSelector'
-import MenuBtn from '@/components/nav-components/MenuBtn'
-import SideNavnar from '@/components/nav-components/SideNavnar'
-import NavbarOverlay from '@/components/nav-components/NavbarOverlay'
-import SearchBar from '@/components/nav-components/SearchBar'
-import MainBtn from '@/components/ui/buttons/MainBtn'
+import NavMenu from '@/components/nav-components/NavMenu'
+import GetInTouchModal from '@/components/nav-components/GetInTouchModal'
 
 export default function Navbar() {
-  let pathname = usePathname()
-  let navbarData = useNavbar()
-  if (pathname === '/not-found') return null
+  let isMobile = useIsMobile()
+  let isScrolled100vh = useScrollPosition(0.1)
+  let globalSearch = useGlobalSearch()
+  let { showSearch } = globalSearch
+  let [showCookies, setShowCookies] = useState(false)
+  let [showDropdown, setShowDropdown] = useState(false)
+  let [showGetInTouch, setShowGetInTouch] = useState(false)
+
+  useKeyboardShortcuts({
+    onEscape: () => {
+      setShowDropdown(false)
+      setShowCookies(false)
+      globalSearch.setShowSearch(false)
+      setShowGetInTouch(false)
+    },
+    onSearchToggle: () => {
+      setShowDropdown(false)
+      setShowCookies(false)
+      setShowGetInTouch(false)
+      globalSearch.setShowSearch(!showSearch)
+    },
+  })
 
   return (
-    <header className="top-0 z-50 fixed">
-      {/* <motion.div
-        initial={{ opacity: 0, y: -100 }}
-        animate={{
-          opacity: navbarData.isVisible ? 1 : 0,
-          y: navbarData.isVisible ? 0 : -100,
-        }}
-        transition={{ duration: 0.5 }}
+    <>
+      <motion.header
+        layout={isMobile ? true : false}
+        dir="ltr"
+        className={`top-0 left-1/2 z-60 fixed -translate-x-1/2 ${isScrolled100vh ? 'max-md:w-auto md:w-dvw' : 'w-dvw'}`}
       >
-        <main
-          className={`relative w-dvw flex justify-between items-center gap-8 hover:bg-bg transition-all duration-300 px-18 max-md:px-4 border-b
-          ${navbarData.isScrolled20vh ? 'bg-black/50 h-24 backdrop-blur-2xl' : 'h-34 max-sm:h-24'}
-        `}
-        >
-          <div className="z-20 relative h-full flex justify-between items-center gap-8">
-            <NavLogo />
-            <NavLinks navbarData={navbarData} className="max-xl:hidden" />
-          </div>
+        <div className="flex justify-between gap-4 max-md:gap-2 rounded-xl p-2 md:px-4 md:py-2">
+          {!showDropdown && (
+            <Dock
+              isScrolled100vh={isScrolled100vh}
+              showSearch={showSearch}
+              showCookies={showCookies}
+              setShowCookies={setShowCookies}
+              globalSearch={globalSearch}
+              isNavOpen={showDropdown}
+              className="md:ms-auto"
+            />
+          )}
 
-          <div className="h-full flex justify-center items-center gap-8">
-            <SearchTrigger navbarData={navbarData} className="max-xl:hidden" />
-            <LanguageSelector navbarData={navbarData} className="max-xl:hidden" />
-            <MainBtn to="/get-in-touch" size="sm" tKey="nav.getInTouch" />
-            <MenuBtn navbarData={navbarData} className="xl:hidden" />
-            <SideNavnar navbarData={navbarData} className="xl:hidden" />
-          </div>
-        </main>
-      </motion.div>
+          {!showSearch && !showCookies && <NavLogo className={`md:order-first ${showDropdown || showSearch ? 'max-2xl:invisible' : ''}`} />}
 
-      <div className="-z-10 relative">
-        <NavbarOverlay navbarData={navbarData} />
-      </div> */}
+          {!showSearch && !showCookies && (
+            <NavMenu
+              isOpen={showDropdown}
+              onClose={() => setShowDropdown(false)}
+              toggleDropdown={() => setShowDropdown((prev) => !prev)}
+              onOpenGetInTouch={() => {
+                setShowDropdown(false)
+                setShowGetInTouch(true)
+              }}
+            />
+          )}
+        </div>
+      </motion.header>
 
-      <SearchBar navbarData={navbarData} />
-    </header>
+      <AnimatePresence>{showGetInTouch && <GetInTouchModal isOpen={showGetInTouch} onClose={() => setShowGetInTouch(false)} />}</AnimatePresence>
+    </>
   )
 }

@@ -2,9 +2,10 @@
 
 import { AnimatePresence, motion } from 'motion/react'
 import { useTranslation } from '@/translations/useTranslation'
-import { Search, X } from 'lucide-react'
+import { ScanSearchIcon, X } from 'lucide-react'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/unstyled/AnimText'
+import LetterSwap from '@/components/ui/text/LetterSwap'
 
 export default function MediaCenterSearch({
   searchQuery,
@@ -38,15 +39,17 @@ export default function MediaCenterSearch({
   let { t } = useTranslation()
 
   return (
-    <section id="news-feed" className="top-8 max-md:top-4 max-md:right-4 md:ltr:right-8 max-md:left-4 md:rtl:left-8 z-50 fixed">
+    <section dir="ltr" id="news-feed" className="top-22 right-8 max-md:right-4 max-md:left-4 z-50 fixed">
       <motion.div
         layout={filteredItems.length > 0}
         transition={{ type: 'spring', stiffness: 160, damping: 24, mass: 0.6 }}
-        className={`overflow-hidden flex flex-col bg-bg/50 backdrop-blur-2xl rounded-xl text-text pointer-events-auto ${isOpen || filteredItems.length === 0 ? 'w-full p-8 max-md:p-4' : 'w-fit ms-auto'}`}
+        className={`overflow-hidden flex flex-col bg-bg/50 backdrop-blur-2xl rounded-xl text-text pointer-events-auto ${
+          isOpen || filteredItems.length === 0 ? 'w-full p-8 max-md:p-4' : 'w-fit ms-auto'
+        }`}
       >
-        <div onClick={togglePanel} className="flex items-center gap-2 font-mono text-sm ms-auto p-4 max-md:p-2 cursor-pointer select-none">
+        <div onClick={togglePanel} className="flex items-center gap-2 font-mono text-sm ms-auto px-2 cursor-pointer select-none">
           {isOpen && (
-            <AnimText delay={0.6} key="close" className="rtl:leading-5 pt-1">
+            <AnimText delay={0.6} key="close" className="rtl:leading-5 tracking-wider pt-1">
               <TText tKey="common.close" />
             </AnimText>
           )}
@@ -57,9 +60,8 @@ export default function MediaCenterSearch({
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ delay: 0.3 }}
-              className="px-2"
             >
-              <Search size={14} />
+              <LetterSwap text={<ScanSearchIcon size={20} className="m-2 max-md:m-2" />} />
             </motion.div>
           )}
         </div>
@@ -80,17 +82,17 @@ export default function MediaCenterSearch({
                   <input
                     autoFocus
                     type="text"
-                    placeholder={t('search.placeholder')}
+                    placeholder={t('news.searchnews')}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full selection:bg-text/25 border-text/50! border-b focus:outline-none placeholder:text-text/50 text-3xl py-2 max-md:py-1"
+                    className="w-full selection:bg-text/25 border-text/50! border-b focus:outline-none placeholder:text-text/50 text-3xl rtl:text-right py-2 max-md:py-1"
                   />
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery('')}
                       className="top-1/2 right-0 absolute text-text/75 hover:scale-110 transition-transform -translate-y-1/2 cursor-pointer"
                     >
-                      <X size={20} />
+                      <LetterSwap text={<X size={20} />} />
                     </button>
                   )}
                 </div>
@@ -98,33 +100,42 @@ export default function MediaCenterSearch({
 
               {/* Sort Orders */}
               <div className="flex flex-wrap justify-end items-center gap-4 p-4 pb-0">
-                {sortOrders.map((order) => (
-                  <button
+                {sortOrders.map((order, index) => (
+                  <AnimText
+                    as={'button'}
+                    delay={0.1 * index + 0.3}
                     key={order.id}
                     onClick={() => setSortOrder(order.id as any)}
-                    className={`py-2 tracking-wider transition-all cursor-pointer ${sortOrder === order.id ? '' : 'text-text/50 hover:text-text/75'}`}
+                    className={`py-2 tracking-wider transition-all cursor-pointer rtl:leading-8 ${sortOrder === order.id ? '' : 'text-text/50 hover:text-text/75'}`}
                   >
                     <TText tKey={order.label} />
-                  </button>
+                  </AnimText>
                 ))}
               </div>
 
               {/* Categories */}
               <div className="flex flex-wrap justify-end items-center gap-4 px-4">
-                {filters.map((filter) => (
-                  <button
+                {filters.map((filter, index) => (
+                  <AnimText
+                    as={'button'}
+                    delay={0.1 * index + 0.3}
                     key={filter.id}
                     onClick={() => setSelectedFilter(filter.id)}
                     className={`py-2 tracking-wider transition-all cursor-pointer ${selectedFilter === filter.id ? '' : 'text-text/50 hover:text-text/75'}`}
                   >
                     <TText tKey={filter.label} />
-                  </button>
+                  </AnimText>
                 ))}
               </div>
 
-              <button onClick={resetFilters} className="text-text/50 hover:text-text/75 tracking-wider transition-all ms-auto px-4 py-2 cursor-pointer">
+              <AnimText
+                as={'button'}
+                delay={0.7}
+                onClick={resetFilters}
+                className="text-text/50 hover:text-text/75 rtl:text-right rtl:leading-8 tracking-wider transition-all ms-auto px-4 py-2 cursor-pointer"
+              >
                 <TText tKey="news.resetAll" />
-              </button>
+              </AnimText>
 
               {filteredItems.length === 0 && (
                 <AnimText as={'p'} className="font-mono leading-6! tracking-wider px-4">

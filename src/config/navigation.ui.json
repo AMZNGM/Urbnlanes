@@ -6,98 +6,27 @@
     },
     {
       "name": "nav.about",
-      "children": [
-        {
-          "name": "nav.about",
-          "slug": "/about"
-        }
-      ]
+      "slug": "/about"
     },
     {
       "name": "nav.projects",
-      "children": [
-        {
-          "name": "nav.ourProjects",
-          "slug": "/projects"
-        },
-        {
-          "name": "nav.latestLaunches",
-          "children": [
-            {
-              "name": "nav.yellowResidence",
-              "slug": "/projects/yellow-residence"
-            },
-            {
-              "name": "nav.eastlane",
-              "slug": "/projects/east-lane"
-            },
-            {
-              "name": "nav.noi",
-              "slug": "/projects/noi"
-            },
-            {
-              "name": "nav.yellowLane",
-              "slug": "/projects/yellow-lane"
-            },
-            {
-              "name": "nav.levelsBusinessTower",
-              "slug": "/projects/levels-business-tower"
-            },
-            {
-              "name": "nav.midlane",
-              "slug": "/projects/mid-lane"
-            },
-            {
-              "name": "nav.eastSubahAlAhmedCity",
-              "slug": "/projects/east-subah-al-ahmed-city"
-            },
-            {
-              "name": "nav.mutlaaCity",
-              "slug": "/projects/mutlaa-city"
-            },
-            {
-              "name": "nav.westAbdullahMubarakCity",
-              "slug": "/projects/west-abdullah-mubarak-city"
-            }
-          ]
-        }
-      ]
+      "slug": "/projects"
     },
     {
       "name": "nav.news",
-      "children": [
-        {
-          "name": "nav.mediaCenterNews",
-          "slug": "/media-center-news"
-        }
-      ]
+      "slug": "/media-center-news"
     },
     {
       "name": "nav.partners",
-      "children": [
-        {
-          "name": "nav.partnersAssociates",
-          "slug": "/partners-associates"
-        }
-      ]
+      "slug": "/partners-associates"
     },
     {
       "name": "nav.updates",
-      "children": [
-        {
-          "name": "nav.constructionUpdates",
-          "slug": "/construction-updates"
-        }
-      ]
+      "slug": "/construction-updates"
     },
     {
       "name": "nav.careers",
-      "children": [
-        {
-          "name": "nav.careers",
-          "slug": "/careers"
-        }
-      ]
+      "slug": "/careers"
     }
   ]
 }

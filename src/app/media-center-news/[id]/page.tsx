@@ -8,7 +8,6 @@ import db from '@/database/urbnlanes-db.json'
 const ArticleHero = dynamic(() => import('@/components/news-components/ArticleHero'))
 import ArticleContent from '@/components/news-components/ArticleContent'
 import LatestNews from '@/components/news-components/LatestNews'
-import ScrollIndicator from '@/components/shared/ScrollIndicator'
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   let { id } = await params
@@ -30,7 +29,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
       <ArticleHero article={article} />
       <ArticleContent article={article} />
       <LatestNews />
-      <ScrollIndicator />
     </Suspense>
   )
 }

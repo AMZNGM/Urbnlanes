@@ -122,6 +122,7 @@ export const TRANSLATIONS = {
       inKuwait: 'In Kuwait',
       projectDetails: 'Project Details',
       featuredProjects: 'Featured Projects',
+      getintouchdesc: 'Have a question or need assistance? Fill out the form below and we will get back to you as soon as possible.',
     },
 
     amenities: {
@@ -153,8 +154,13 @@ export const TRANSLATIONS = {
     },
     search: {
       placeholder: 'Search...',
-      noResults: 'No results found',
+      noResults: 'No results found!',
       searching: 'Searching...',
+      all: 'All',
+      projects: 'Projects',
+      news: 'News',
+      pages: 'Pages',
+      popular: 'Popular',
     },
     modal: {
       brochure: 'brochure',
@@ -259,6 +265,7 @@ export const TRANSLATIONS = {
     },
 
     news: {
+      searchnews: 'Search News...',
       readFullArticle: 'Read Full Article',
       filteredNews: 'Filtered News',
       blog: 'Blog post',
@@ -822,6 +829,7 @@ export const TRANSLATIONS = {
       inKuwait: 'في كويت',
       projectDetails: 'تفاصيل المشروع',
       featuredProjects: 'المشاريع المشتركة',
+      getintouchdesc: 'هل لديك استفسار أو تحتاج إلى مساعدة؟ أملأ النموذج أدناه وسيتم التواصل معك في أقرب وقت ممكن.',
     },
 
     amenities: {
@@ -852,9 +860,14 @@ export const TRANSLATIONS = {
       Unknown: 'غير معروف',
     },
     search: {
-      placeholder: 'بحث...',
-      noResults: 'لا توجد نتائج',
+      placeholder: '...بحث',
+      noResults: 'لا توجد نتائج !',
       searching: 'جاري البحث...',
+      all: 'الكل',
+      projects: 'المشاريع',
+      news: 'الأخبار',
+      pages: 'الصفحات',
+      popular: 'الأكثر بحثاً',
     },
     modal: {
       brochure: 'الكتيب',
@@ -957,11 +970,12 @@ export const TRANSLATIONS = {
     },
 
     news: {
+      searchnews: 'بحث في الأخبار ٫٫٫',
       readFullArticle: 'قراءة المقال الكامل',
       filteredNews: 'الأخبار المفلترة',
       blog: 'مدونة',
       news: 'أخبار',
-      resetAll: 'إعادة تعيين',
+      resetAll: 'تعيين إعادة',
       sortOrders: {
         newest: 'أحدث المشاريع',
         oldest: 'أقدم المشاريع',

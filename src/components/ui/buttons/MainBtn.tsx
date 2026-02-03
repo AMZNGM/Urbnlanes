@@ -46,7 +46,7 @@ export default memo(function MainBtn({
   const content = tKey ? t(tKey) : children
 
   const baseStyles =
-    'relative inline-flex items-center justify-center text-center gap-2 font-medium uppercase rounded-2xl transition-colors duration-300 outline-none'
+    'relative inline-flex items-center justify-center text-center gap-2 font-medium uppercase rounded-lg transition-colors duration-300 outline-none'
 
   const looks = {
     main: 'bg-text text-bg border-main hover:bg-main/50',
@@ -54,8 +54,8 @@ export default memo(function MainBtn({
     ghost: 'bg-transparent text-text border-transparent hover:bg-main/10',
     dark: 'bg-bg text-text hover:bg-current/20 text-current',
     mono: 'bg-current/10 hover:bg-current/20 text-current',
-    wideMono: 'bg-current/10 hover:bg-current/20 text-current font-bold! tracking-[0.4em] whitespace-nowrap px-6 py-3',
-    wideMonoDark: 'bg-bg text-text hover:bg-current/20 text-current font-bold! tracking-[0.4em] whitespace-nowrap px-6 py-3',
+    wideMono: 'bg-current/10 hover:bg-current/20 text-current font-semibold! tracking-[0.4em] whitespace-nowrap px-6 py-3',
+    wideMonoDark: 'bg-bg text-text hover:bg-current/20 text-current font-semibold! tracking-[0.4em] whitespace-nowrap px-6 py-3',
   }
 
   const sizes = {
@@ -106,7 +106,7 @@ export default memo(function MainBtn({
   }
 
   return (
-    <RippleEffect className="relative w-fit flex rounded-2xl">
+    <RippleEffect className="relative w-fit flex rounded-lg">
       <button type="button" onClick={onClick} disabled={disabled} {...commonProps}>
         <InnerContent />
       </button>

@@ -19,16 +19,16 @@ export const generateMetadata = metadataGenerators.home
 export default function Home() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      <Preloader />
+      {/* <Preloader /> */}
       <Hero />
-      <WhoWeAre />
-      <AboutUs />
-      <TeamOfExperts />
-      <VideoSection />
       <SelectedProjects />
-      <Updates />
-      <OurValues />
-      <LatestNews className="px-4!" />
+      <AboutUs />
+      {/* <VideoSection /> */}
+      {/* <Updates /> */}
+      {/* <WhoWeAre /> */}
+      {/* <TeamOfExperts /> */}
+      {/* <OurValues /> */}
+      {/* <LatestNews className="px-4!" /> */}
     </Suspense>
   )
 }

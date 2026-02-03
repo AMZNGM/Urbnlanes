@@ -13,7 +13,7 @@ export default function SelectedProjects() {
 
   return (
     <section className="relative w-full h-full bg-black text-text px-4 pt-8 pb-24">
-      <Heading text={<TText tKey="nav.selectedProjectsTitle" />} className="mb-24" />
+      {/* <Heading text={<TText tKey="nav.selectedProjectsTitle" />} className="mb-24" /> */}
       <MasonryGrid projects={projects} openModal={setSelectedProject} />
       <ProjectModal closeModal={() => setSelectedProject(null)} selectedProject={selectedProject} />
     </section>

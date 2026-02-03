@@ -61,7 +61,7 @@ export default function LetterSwap({
   }
 
   const extractedText = getTextContent(text)
-  const shouldUseDirectRender = hasIcons && !extractedText
+  const shouldUseDirectRender = false
 
   const useDebounce = (callback: (...args: any[]) => void, delay: number) => {
     const timeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -120,7 +120,8 @@ export default function LetterSwap({
     )
   }
 
-  const stringText = extractedText || String(text)
+  // For icons, treat them as a single "character" for animation
+  const displayContent = hasIcons ? text : extractedText || String(text)
   const MotionTag = (motion as any)[(as as string) || 'span'] || motion.span
 
   // Arabic Strategy: Don't split by character. Duplicate the whole text line.
@@ -134,20 +135,22 @@ export default function LetterSwap({
         ref={scope}
         {...props}
       >
-        <span className="sr-only">{stringText}</span>
+        <span className="sr-only">{hasIcons ? 'Search icon' : displayContent}</span>
         <span className="relative flex whitespace-pre" aria-hidden={true}>
           <motion.span className="inline-block relative letter" style={{ top: 0 }}>
-            {stringText}
+            {displayContent}
           </motion.span>
           <motion.span className="inline-block right-0 left-0 absolute letter-secondary" style={{ top: reverse ? '-100%' : '100%' }}>
-            {stringText}
+            {displayContent}
           </motion.span>
         </span>
       </MotionTag>
     )
   }
 
-  // Latin Strategy: Split by character
+  // Latin Strategy: Split by character, but for icons treat as single unit
+  const itemsToRender = hasIcons ? [text] : String(displayContent).split('')
+
   return (
     <MotionTag
       className={`flex justify-center items-center relative overflow-hidden ${className}`}
@@ -157,15 +160,15 @@ export default function LetterSwap({
       ref={scope}
       {...props}
     >
-      <span className="sr-only">{stringText}</span>
+      <span className="sr-only">{hasIcons ? 'Search icon' : displayContent}</span>
 
-      {stringText.split('').map((letter, i) => (
+      {itemsToRender.map((item, i) => (
         <span className="relative flex whitespace-pre" key={i} aria-hidden={true}>
           <motion.span className="relative letter" style={{ top: 0 }}>
-            {letter}
+            {item}
           </motion.span>
           <motion.span className="absolute letter-secondary" style={{ top: reverse ? '-100%' : '100%' }}>
-            {letter}
+            {item}
           </motion.span>
         </span>
       ))}

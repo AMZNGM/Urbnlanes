@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { useScroll, useTransform } from 'motion/react'
-import { getAllPartners } from '@/utils/partnerUtils'
+import { getAllPartners } from '@/utils/getPartners'
 import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/unstyled/AnimText'

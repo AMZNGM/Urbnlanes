@@ -43,7 +43,8 @@ export default function AnimText({
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="inline-block relative whitespace-pre-wrap [direction:inherit]"
+        // whitespace-pre-wrap
+        className="inline-block relative [direction:inherit]"
       >
         {words.map((word, i) => {
           if (word.trim() === '') {
