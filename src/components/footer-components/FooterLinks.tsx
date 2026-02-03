@@ -4,10 +4,16 @@ import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import LetterSwap from '@/components/ui/text/LetterSwap'
 
+interface NavItem {
+  name: string
+  slug?: string
+  children?: NavItem[]
+}
+
 export default function FooterLinks() {
   return (
     <div className="w-full space-y-2">
-      {navigation
+      {(navigation as NavItem[])
         .flatMap((link) => (link.slug ? [link] : link.children || []))
         .filter((link) => link.slug)
         .map((link, index) => (
