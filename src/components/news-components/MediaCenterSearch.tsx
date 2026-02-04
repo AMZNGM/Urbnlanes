@@ -6,6 +6,7 @@ import { ScanSearchIcon, X } from 'lucide-react'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import LetterSwap from '@/components/ui/text/LetterSwap'
+import CloseTextBtn from '@/components/ui/buttons/CloseTextBtn'
 
 export default function MediaCenterSearch({
   searchQuery,
@@ -48,11 +49,8 @@ export default function MediaCenterSearch({
         }`}
       >
         <div onClick={togglePanel} className="flex items-center gap-2 font-mono text-sm ms-auto px-2 cursor-pointer select-none">
-          {isOpen && (
-            <AnimText delay={0.6} key="close" className="rtl:leading-5 tracking-wider pt-1">
-              <TText tKey="common.close" />
-            </AnimText>
-          )}
+          {isOpen && <CloseTextBtn delay={0.6} onClick={togglePanel} className="rtl:leading-5 tracking-wider pt-1" />}
+
           {!isOpen && (
             <motion.div
               key="open"

@@ -56,7 +56,7 @@ export default function GlobalSearchDropdown({
       onClick={(e) => e.stopPropagation()}
       onWheel={(e) => e.stopPropagation()}
       onTouchMove={(e) => e.stopPropagation()}
-      className={`max-h-[80dvh] w-xl overflow-y-auto overflow-x-hidden outline-none border-b mb-2
+      className={`h-full w-xl overflow-y-auto overflow-x-hidden outline-none border-b mb-2
                 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-main/30 [&::-webkit-scrollbar-thumb:hover]:bg-main/50
          ${className}`}
     >
@@ -94,7 +94,7 @@ export default function GlobalSearchDropdown({
 
                   <div className="min-w-0 flex justify-between items-center gap-2 me-4 mb-1 grow">
                     <div className="max-w-[80%] space-y-0.5">
-                      <AnimText as={'h4'} className="font-medium text-sm truncate normal-case line-clamp-1">
+                      <AnimText as={'h4'} className="font-medium text-sm truncate normal-case">
                         {result.title}
                       </AnimText>
                       {/* {result.descri  ption && <p className="text-text/60 text-xs truncate normal-case line-clamp-1">{result.description}</p>} */}

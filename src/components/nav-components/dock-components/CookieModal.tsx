@@ -5,12 +5,12 @@ import { motion } from 'motion/react'
 import { CookieContext } from '@/contexts/CookieContext'
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
 import { Settings, Shield, Activity, Target, User, Lock } from 'lucide-react'
-import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
+import LetterSwap from '@/components/ui/text/LetterSwap'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import SwitchBtn from '@/components/ui/buttons/SwitchBtn'
-import LetterSwap from '@/components/ui/text/LetterSwap'
+import CloseTextBtn from '@/components/ui/buttons/CloseTextBtn'
 
 const CookieCategory = ({
   title,
@@ -164,22 +164,15 @@ export default function CookieModal({
           transition={{ type: 'spring', stiffness: 160, damping: 24, mass: 0.6 }}
           className={`max-w-3xl flex flex-col pointer-events-auto overflow-y-auto max-md:p-4 px-8 py-12 bg-bg/50 ${showCookies ? 'max-md:w-[90dvw]! flex-1' : 'w-fit'}`}
         >
-          <header className="flex justify-between items-center mb-8">
+          <header className="flex justify-between items-center mb-8 max-md:mb-4">
             <AnimText as={'h3'} delay={0.3} className="text-2xl tracking-wide">
               Privacy Setup
             </AnimText>
-            <AnimText
-              delay={0.15}
-              key="close"
-              onClick={() => setShowCookies(false)}
-              className="font-mono text-text text-sm rtl:leading-5 tracking-wider cursor-pointer select-none"
-            >
-              <TText tKey="common.close" />
-            </AnimText>
+            <CloseTextBtn onClick={() => setShowCookies(false)} delay={0.15} />
           </header>
 
-          <div className="space-y-4 mb-4">
-            <p className="opacity-50 rounded-2xl text-[10px] py-2">
+          <div className="space-y-4 max-md:space-y-1 mb-4">
+            <p className="max-md:hidden opacity-50 rounded-2xl text-[10px] py-2">
               When you use the Urbnlanes website, certain information may be stored or retrieved in your browser, mainly through cookies. This data can relate
               to your device, settings, or general usage and helps the site work as intended. It usually doesn't directly identify you, but it enables a more
               tailored experience.

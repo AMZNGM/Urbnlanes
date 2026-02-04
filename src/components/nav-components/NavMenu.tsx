@@ -1,14 +1,72 @@
 'use client'
 
+import Link from 'next/link'
+import { useState, memo } from 'react'
 import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'motion/react'
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
 import { navigation } from '@/config/navigation.ui.json'
-import { Menu } from 'lucide-react'
+import { Logs, X } from 'lucide-react'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/unstyled/AnimText'
-import MainBtn from '@/components/ui/buttons/MainBtn'
 import LetterSwap from '@/components/ui/text/LetterSwap'
+import CloseTextBtn from '@/components/ui/buttons/CloseTextBtn'
+
+const NavItem = memo(
+  ({
+    item,
+    isActive,
+    isHovered,
+    onHover,
+    onClose,
+    pathname,
+  }: {
+    item: any
+    isActive: boolean
+    isHovered: boolean
+    onHover: (index: number) => void
+    onClose: () => void
+    pathname: string
+  }) => {
+    return (
+      <div onClick={onClose} onMouseEnter={() => onHover(item.index)} className="relative flex flex-col">
+        {/* {isHovered && (
+          <motion.div
+            layoutId="nav-indicator"
+            className="top-1/2 -left-4 absolute w-1.5 h-1.5 bg-main rounded-full -translate-y-1/2"
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          />
+        )} */}
+
+        {/* {isHovered && (
+          <motion.div
+            layoutId="nav-indicator2"
+            className="top-1/2 -left-28 absolute w-1/3 h-0.5 -translate-y-1/2"
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          >
+            <div className="w-full h-full bg-main rotate-9" />
+            <div className="w-full h-full bg-main -rotate-9" />
+          </motion.div>
+        )} */}
+
+        {isHovered && (
+          <motion.div layoutId="nav-indicator3" className="absolute inset-0 w-full h-full" transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+            <div className="w-full h-full bg-main/25 blur-xs" />
+          </motion.div>
+        )}
+
+        <Link href={item.slug || '#'} className={`text-xl rtl:text-end ${pathname === item.slug ? '' : 'opacity-50 hover:opacity-100'}`}>
+          <AnimText delay={0.02 * item.index + 0.5}>
+            <LetterSwap staggerDuration={0.05} className="rtl:leading-8">
+              <TText tKey={item.name} />
+            </LetterSwap>
+          </AnimText>
+        </Link>
+      </div>
+    )
+  }
+)
+NavItem.displayName = 'NavItem'
 
 export default function NavMenu({
   className,
@@ -24,6 +82,7 @@ export default function NavMenu({
   onOpenGetInTouch: () => void
 }) {
   let pathname = usePathname()
+  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   useBodyScrollLock(isOpen)
 
@@ -52,7 +111,7 @@ export default function NavMenu({
               transition={{ delay: 0.5 }}
               className="rounded-lg cursor-pointer shrink-0"
             >
-              <LetterSwap text={<Menu size={20} className="z-10 mx-4 my-1" />} />
+              <LetterSwap text={<Logs size={20} className="z-10 mx-4 my-1" />} />
             </motion.div>
           )}
 
@@ -66,37 +125,32 @@ export default function NavMenu({
                 transition={{ duration: 0.25, ease: 'easeOut' }}
                 className="flex flex-col pt-4"
               >
-                <AnimText
-                  key="close"
-                  delay={0.1}
-                  onClick={onClose}
-                  className="font-mono text-sm rtl:leading-5 tracking-wider ms-auto cursor-pointer select-none"
-                >
-                  <TText tKey="common.close" />
-                </AnimText>
+                <CloseTextBtn onClick={onClose} className="ltr:ms-auto rtl:me-auto rtl:mb-8" />
 
-                <div className="flex flex-col mb-8">
-                  {navigation.map((item) => (
-                    <div key={item.name} onClick={onClose} className="flex flex-col">
-                      <MainBtn
-                        to={item.slug || '#'}
-                        size="sm"
-                        look="mono"
-                        className={`bg-transparent! justify-start px-0! ${pathname === item.slug ? 'text-text' : 'text-text/60 hover:text-text'}`}
-                      >
-                        <AnimText delay={0.2}>
-                          <TText tKey={item.name} />
-                        </AnimText>
-                      </MainBtn>
-                    </div>
+                <div onMouseLeave={() => setHoveredIndex(null)} className="flex flex-col">
+                  {navigation.map((item, index) => (
+                    <NavItem
+                      key={item.name}
+                      item={{ ...item, index }}
+                      isActive={pathname === item.slug}
+                      isHovered={hoveredIndex === index}
+                      onHover={setHoveredIndex}
+                      onClose={onClose}
+                      pathname={pathname}
+                    />
                   ))}
                 </div>
 
-                <MainBtn onClick={onOpenGetInTouch} size="sm" look="mono" className="bg-transparent! p-0!">
-                  <AnimText delay={0.3}>
+                <AnimText
+                  as={'button'}
+                  delay={0.7}
+                  onClick={onOpenGetInTouch}
+                  className="text-text/60 hover:text-text text-lg uppercase transition-colors me-auto mt-4 cursor-pointer"
+                >
+                  <LetterSwap staggerDuration={0.05}>
                     <TText tKey="nav.getInTouch" />
-                  </AnimText>
-                </MainBtn>
+                  </LetterSwap>
+                </AnimText>
               </motion.div>
             )}
           </AnimatePresence>

@@ -21,16 +21,45 @@ export default function AnimText({
 }) {
   let prefersReducedMotion = useReducedMotion()
   let { t } = useTranslation()
+  const isStrOrNum = typeof children === 'string' || typeof children === 'number'
+  const isTText = isValidElement(children) && 'tKey' in (children.props as object)
+
+  if (!isStrOrNum && !isTText) {
+    let Tag = as
+    return (
+      <Tag className={`relative overflow-hidden leading-[1.05] ${className}`} {...props}>
+        <motion.span
+          variants={{
+            hidden: prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: '1em' },
+            visible: { opacity: 1, y: '0em' },
+          }}
+          transition={{
+            duration: 0.5,
+            ease: [0.2, 0.65, 0.3, 0.9],
+            delay: Number(delay),
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="inline-block relative [direction:inherit]"
+        >
+          {children}
+        </motion.span>
+      </Tag>
+    )
+  }
+
   let text = ''
 
-  if (isValidElement(children) && 'tKey' in (children.props as object)) {
+  if (isTText) {
     text = t((children.props as { tKey: string }).tKey)
   } else {
     text = String(children)
   }
 
+  // legacy legacy check, theoretically text is always string here
   if (Array.isArray(text)) {
-    text = text.join(' ')
+    text = (text as any[]).join(' ')
   }
 
   let Tag = as
@@ -43,7 +72,6 @@ export default function AnimText({
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        // whitespace-pre-wrap
         className="inline-block relative [direction:inherit]"
       >
         {words.map((word, i) => {

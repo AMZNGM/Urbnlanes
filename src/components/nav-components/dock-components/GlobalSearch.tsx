@@ -3,10 +3,12 @@
 import { AnimatePresence, motion } from 'motion/react'
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
 import { useTranslation } from '@/translations/useTranslation'
+import { useIsMobile } from '@/hooks/useIsMobile'
 import { Search, X } from 'lucide-react'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import LetterSwap from '@/components/ui/text/LetterSwap'
+import CloseTextBtn from '@/components/ui/buttons/CloseTextBtn'
 import GlobalSearchDropdown from '@/components/nav-components/dock-components/GlobalSearchDropdown'
 import type { GlobalSearchState } from '@/hooks/useGlobalSearch'
 
@@ -46,6 +48,7 @@ export default function GlobalSearch({
   className?: string
 }) {
   let { t } = useTranslation()
+  let isMobile = useIsMobile()
 
   useBodyScrollLock(showSearch)
 
@@ -83,7 +86,7 @@ export default function GlobalSearch({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="md:min-w-md overflow-hidden flex flex-col space-y-2 md:px-6 py-8"
+            className="md:min-w-md h-[80dvh] overflow-hidden flex flex-col space-y-2 md:px-6 py-8"
           >
             {/* Top btns */}
             <div className="flex justify-between gap-2">
@@ -92,21 +95,14 @@ export default function GlobalSearch({
                 ⌘ + K
               </AnimText>
               {/* Close btn */}
-              <AnimText
-                delay={0.9}
-                key="close"
-                onClick={handleClose}
-                className="font-mono text-text text-sm rtl:leading-5 tracking-wider cursor-pointer select-none"
-              >
-                <TText tKey="common.close" />
-              </AnimText>
+              <CloseTextBtn onClick={handleClose} delay={0.9} />
             </div>
 
             {/* Search bar */}
             <div className="w-full flex justify-between items-center">
               <div className="relative w-full">
                 <input
-                  autoFocus
+                  autoFocus={isMobile ? false : true}
                   type="text"
                   placeholder={t('search.placeholder')}
                   value={searchQuery}
@@ -152,7 +148,7 @@ export default function GlobalSearch({
             </AnimText>
 
             {/* Dropdown */}
-            <div className="h-[50dvh] overflow-hidden flex flex-col shrink-0">
+            <div className="h-full overflow-hidden flex flex-col">
               {!searchQuery && (
                 <h5 className="border-main/50! border-b font-mono font-medium text-main text-xs tracking-widest mb-1 py-2 shrink-0">
                   <TText tKey="search.popular" />

@@ -7,6 +7,7 @@ import { useIsMobile } from '@/hooks/useIsMobile'
 
 export default function LetterSwap({
   text = '',
+  children,
   reverse = false,
   transition = {
     type: 'spring',
@@ -20,6 +21,7 @@ export default function LetterSwap({
   ...props
 }: {
   text?: string | React.ReactNode
+  children?: React.ReactNode
   reverse?: boolean
   transition?: Transition
   staggerDuration?: number
@@ -40,7 +42,8 @@ export default function LetterSwap({
     setIsClient(true)
   }, [])
 
-  const hasIcons = typeof text !== 'string' && typeof text !== 'number'
+  const content = children || text
+  const hasIcons = typeof content !== 'string' && typeof content !== 'number'
 
   const getTextContent = (node: React.ReactNode): string => {
     if (typeof node === 'string' || typeof node === 'number') {
@@ -60,7 +63,7 @@ export default function LetterSwap({
     return ''
   }
 
-  const extractedText = getTextContent(text)
+  const extractedText = getTextContent(content)
   const shouldUseDirectRender = false
 
   const useDebounce = (callback: (...args: any[]) => void, delay: number) => {
@@ -106,36 +109,37 @@ export default function LetterSwap({
     const Tag = as || 'span'
     return (
       <Tag className={className} onClick={onClick} {...props}>
-        {text}
+        {content}
       </Tag>
     )
   }
 
-  if (shouldUseDirectRender || (!text && !extractedText)) {
+  if (shouldUseDirectRender || (!content && !extractedText)) {
     const Tag = as || 'span'
     return (
-      <Tag className={`flex justify-center items-center gap-1 ${className}`} onClick={onClick} {...props}>
-        {text}
+      <Tag className={`flex justify-start items-center gap-1 ${className}`} onClick={onClick} {...props}>
+        {content}
       </Tag>
     )
   }
 
   // For icons, treat them as a single "character" for animation
-  const displayContent = hasIcons ? text : extractedText || String(text)
+  const displayContent = extractedText || content
+
   const MotionTag = (motion as any)[(as as string) || 'span'] || motion.span
 
   // Arabic Strategy: Don't split by character. Duplicate the whole text line.
   if (isAr) {
     return (
       <MotionTag
-        className={`flex justify-center items-center relative overflow-hidden ${className}`}
+        className={`flex justify-start items-center relative overflow-hidden ${className}`}
         onHoverStart={hoverStart}
         onHoverEnd={hoverEnd}
         onClick={onClick}
         ref={scope}
         {...props}
       >
-        <span className="sr-only">{hasIcons ? 'Search icon' : displayContent}</span>
+        <span className="sr-only">{typeof displayContent === 'string' ? displayContent : 'Content'}</span>
         <span className="relative flex whitespace-pre" aria-hidden={true}>
           <motion.span className="inline-block relative letter" style={{ top: 0 }}>
             {displayContent}
@@ -149,18 +153,18 @@ export default function LetterSwap({
   }
 
   // Latin Strategy: Split by character, but for icons treat as single unit
-  const itemsToRender = hasIcons ? [text] : String(displayContent).split('')
+  const itemsToRender = typeof displayContent === 'string' || typeof displayContent === 'number' ? String(displayContent).split('') : [displayContent]
 
   return (
     <MotionTag
-      className={`flex justify-center items-center relative overflow-hidden ${className}`}
+      className={`flex justify-start items-center relative overflow-hidden ${className}`}
       onHoverStart={hoverStart}
       onHoverEnd={hoverEnd}
       onClick={onClick}
       ref={scope}
       {...props}
     >
-      <span className="sr-only">{hasIcons ? 'Search icon' : displayContent}</span>
+      <span className="sr-only">{typeof displayContent === 'string' ? displayContent : 'Content'}</span>
 
       {itemsToRender.map((item, i) => (
         <span className="relative flex whitespace-pre" key={i} aria-hidden={true}>

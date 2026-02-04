@@ -8,6 +8,7 @@ import { MotionLine } from '@/components/ui/effects/Lines'
 import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import MainBtn from '@/components/ui/buttons/MainBtn'
+import CloseTextBtn from '@/components/ui/buttons/CloseTextBtn'
 
 export default function GetInTouchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   let offices = (db as any).contact?.offices || []
@@ -106,16 +107,16 @@ export default function GetInTouchModal({ isOpen, onClose }: { isOpen: boolean; 
       onClick={onClose}
       onWheel={(e) => e.stopPropagation()}
       onTouchMove={(e) => e.stopPropagation()}
-      className="z-100 fixed inset-0 flex justify-center items-center bg-bg/30 p-4"
+      initial={{ clipPath: 'inset(100% 0 0 0)' }}
+      animate={{ clipPath: 'inset(0 0 0 0)' }}
+      exit={{ clipPath: 'inset(0 0 100%  0)' }}
+      transition={{ duration: 0.5, ease: [0.45, 0, 0.55, 1], delay: 0.15 }}
+      className="z-100 fixed inset-0 flex justify-center items-center bg-bg/30 backdrop-blur-2xl p-4"
     >
       <motion.div
         onClick={(e) => e.stopPropagation()}
         onWheel={(e) => e.stopPropagation()}
         onTouchMove={(e) => e.stopPropagation()}
-        initial={{ clipPath: 'inset(100% 0 0 0)' }}
-        animate={{ clipPath: 'inset(0 0 0 0)' }}
-        exit={{ clipPath: 'inset(0 0 100%  0)' }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
         className="relative w-full [&::-webkit-scrollbar]:w-2 max-w-3xl max-h-[75dvh] overflow-x-hidden overflow-y-auto flex flex-col gap-8 bg-bg/50 [&::-webkit-scrollbar-thumb:hover]:bg-main/50 [&::-webkit-scrollbar-thumb]:bg-main/30 [&::-webkit-scrollbar-track]:bg-transparent backdrop-blur-2xl rounded-xl px-8 max-md:px-4 py-12"
       >
         <div className="flex justify-between items-center">
@@ -135,13 +136,7 @@ export default function GetInTouchModal({ isOpen, onClose }: { isOpen: boolean; 
             </div>
           </div>
 
-          <div
-            key="close"
-            onClick={onClose}
-            className="font-mono hover:text-main text-sm rtl:leading-5 tracking-wider transition-colors cursor-pointer select-none"
-          >
-            <TText tKey="common.close" />
-          </div>
+          <CloseTextBtn onClick={onClose} delay={0.2} />
         </div>
 
         <div className="gap-12 grid md:grid-cols-2 mb-4">

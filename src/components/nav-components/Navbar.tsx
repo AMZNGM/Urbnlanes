@@ -42,7 +42,7 @@ export default function Navbar() {
         dir="ltr"
         className={`top-0 left-1/2 z-60 fixed -translate-x-1/2 ${isScrolled100vh ? 'max-md:w-auto md:w-dvw' : 'w-dvw'}`}
       >
-        <div className="flex justify-between gap-4 max-md:gap-2 rounded-xl p-2 md:px-4 md:py-2">
+        <div className="flex justify-between gap-4 max-md:gap-2 rounded-xl px-2 md:px-4 py-4 md:py-2">
           {!showDropdown && (
             <Dock
               isScrolled100vh={isScrolled100vh}
