@@ -51,7 +51,7 @@ export default function ScrollProgress({ className = '' }: { className?: string 
       onPointerMove={handlePointerMove}
       className={`relative min-w-40 h-1 bg-bg/30 rounded-full cursor-pointer shrink-0 ${className}`}
     >
-      <motion.div style={{ width }} className="h-full bg-bg rounded-full" />
+      <motion.div style={{ width }} className="h-full bg-text rounded-full" />
     </motion.div>
   )
 }

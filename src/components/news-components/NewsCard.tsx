@@ -17,9 +17,10 @@ interface NewsCardProps {
     date: string
   }
   look?: 'default' | 'mono' | 'monoSide' | 'monoSm'
+  priority?: boolean
 }
 
-export default memo(function NewsCard({ article, look = 'default' }: NewsCardProps) {
+export default memo(function NewsCard({ article, look = 'default', priority = false }: NewsCardProps) {
   let imageUrl = Array.isArray(article.image) ? article.image[0] : article.image
   let fallbackImage = '/images/blogs/blog-placeholder.webp'
   let imageSrc = imageUrl && imageUrl.trim() !== '' ? imageUrl : fallbackImage
@@ -28,7 +29,7 @@ export default memo(function NewsCard({ article, look = 'default' }: NewsCardPro
     return (
       <RippleEffect as="article" className="group w-full h-full overflow-hidden bg-text rounded-xl text-bg">
         <Link href={`/media-center-news/${article.id}`} className="w-full h-full flex flex-col">
-          <ImageIn src={imageSrc} alt={article.title || 'News article'} className="rounded-xl" divClassName="rounded-xl overflow-hidden" />
+          <ImageIn src={imageSrc} alt={article.title || 'News article'} priority={priority} className="rounded-xl" divClassName="rounded-xl overflow-hidden" />
 
           <div className="top-4 left-4 absolute bg-main/25 backdrop-blur-xl rounded-md font-mono text-[10px] text-text tracking-widest px-3 py-2">
             <TText tKey={`news.${article.type}`} />
@@ -53,7 +54,7 @@ export default memo(function NewsCard({ article, look = 'default' }: NewsCardPro
     return (
       <RippleEffect as="article" className="group w-full h-full overflow-hidden bg-text rounded-xl text-bg">
         <Link href={`/media-center-news/${article.id}`} className="w-full h-full flex flex-col">
-          <ImageIn src={imageSrc} alt={article.title || 'News article'} className="rounded-xl" divClassName="rounded-xl overflow-hidden" />
+          <ImageIn src={imageSrc} alt={article.title || 'News article'} priority={priority} className="rounded-xl" divClassName="rounded-xl overflow-hidden" />
 
           <div className="flex flex-col gap-2 py-2">
             <h3
@@ -78,7 +79,7 @@ export default memo(function NewsCard({ article, look = 'default' }: NewsCardPro
     return (
       <RippleEffect as="article" className="group w-full h-full overflow-hidden bg-text rounded-xl text-bg">
         <Link href={`/media-center-news/${article.id}`} className="w-full h-full gap-2 grid grid-cols-2 max-md:grid-cols-3">
-          <ImageIn src={imageSrc} alt={article.title || 'News article'} className="rounded-xl" divClassName="rounded-xl overflow-hidden" />
+          <ImageIn src={imageSrc} alt={article.title || 'News article'} priority={priority} className="rounded-xl" divClassName="rounded-xl overflow-hidden" />
 
           <div className="flex flex-col gap-2 max-md:col-span-2 py-2">
             <h3
@@ -102,7 +103,13 @@ export default memo(function NewsCard({ article, look = 'default' }: NewsCardPro
   return (
     <RippleEffect as="article" dir="ltr" className="group rounded-xl max-md:py-2">
       <Link href={`/media-center-news/${article.id}`} className="block relative w-full h-full">
-        <ImageIn src={imageSrc} alt={article.title || 'News article'} className="scale-100!" divClassName="h-100! blur-none! overflow-hidden rounded-xl" />
+        <ImageIn
+          src={imageSrc}
+          alt={article.title || 'News article'}
+          priority={priority}
+          className="scale-100!"
+          divClassName="h-100! blur-none! overflow-hidden rounded-xl"
+        />
 
         <div className="right-0 bottom-0 md:bottom-83 group-hover:bottom-0 left-0 absolute flex flex-col justify-between bg-bg/50 backdrop-blur-xl rounded-xl text-text md:scale-80 group-hover:scale-100 transition-all duration-500 m-4 p-4">
           <h3 title={article.title} className="max-md:text-lg text-xl normal-case line-clamp-2 leading-snug mb-auto">

@@ -19,7 +19,7 @@ export function useBodyScrollLock(isLocked: boolean) {
   }, [isLocked])
 }
 
-// useBodyScrollLock(mobileMenuOpen)
+// useBodyScrollLock(mobileMenuOpen || true)
 
 // onClick={(e) => e.stopPropagation()}
 // onWheel={(e) => e.stopPropagation()}

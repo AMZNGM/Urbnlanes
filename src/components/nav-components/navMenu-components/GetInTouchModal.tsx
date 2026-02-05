@@ -10,7 +10,7 @@ import TText from '@/translations/TText'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import CloseTextBtn from '@/components/ui/buttons/CloseTextBtn'
 
-export default function GetInTouchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+export default function GetInTouchModal({ showGetInTouch, setShowGetInTouch }: { showGetInTouch: boolean; setShowGetInTouch: (value: boolean) => void }) {
   let offices = (db as any).contact?.offices || []
   let socialMedia = (db as any).contact?.socialMedia || {}
   let allCards = [
@@ -23,7 +23,7 @@ export default function GetInTouchModal({ isOpen, onClose }: { isOpen: boolean; 
       ),
       content: (
         <div className="space-y-2 text-sm">
-          <p className="opacity-80">{office.address}</p>
+          <p className="opacity-80 capitalize">{office.address}</p>
           <a href={`tel:${office.phone}`} className="block opacity-60 hover:opacity-100 font-mono text-xs capitalize transition-opacity">
             {office.phone}
           </a>
@@ -42,7 +42,7 @@ export default function GetInTouchModal({ isOpen, onClose }: { isOpen: boolean; 
       ),
       content: (
         <div className="space-y-2 text-sm">
-          <p className="opacity-80 leading-relaxed">{(db as any).contact?.headquarters?.address}</p>
+          <p className="opacity-80 capitalize leading-relaxed">{(db as any).contact?.headquarters?.address}</p>
           <a
             href={`tel:${(db as any).contact?.headquarters?.phone}`}
             className="block opacity-60 hover:opacity-100 font-mono text-xs capitalize transition-opacity"
@@ -100,24 +100,24 @@ export default function GetInTouchModal({ isOpen, onClose }: { isOpen: boolean; 
     }, 1500)
   }
 
-  useBodyScrollLock(isOpen)
+  useBodyScrollLock(showGetInTouch)
 
   return (
     <motion.div
-      onClick={onClose}
+      onClick={() => setShowGetInTouch(false)}
       onWheel={(e) => e.stopPropagation()}
       onTouchMove={(e) => e.stopPropagation()}
       initial={{ clipPath: 'inset(100% 0 0 0)' }}
       animate={{ clipPath: 'inset(0 0 0 0)' }}
       exit={{ clipPath: 'inset(0 0 100%  0)' }}
       transition={{ duration: 0.5, ease: [0.45, 0, 0.55, 1], delay: 0.15 }}
-      className="z-100 fixed inset-0 flex justify-center items-center bg-bg/30 backdrop-blur-2xl p-4"
+      className="z-100 fixed inset-0 w-dvw h-dvh flex justify-center items-center bg-bg backdrop-blur-2xl p-4"
     >
       <motion.div
         onClick={(e) => e.stopPropagation()}
         onWheel={(e) => e.stopPropagation()}
         onTouchMove={(e) => e.stopPropagation()}
-        className="relative w-full [&::-webkit-scrollbar]:w-2 max-w-3xl max-h-[75dvh] overflow-x-hidden overflow-y-auto flex flex-col gap-8 bg-bg/50 [&::-webkit-scrollbar-thumb:hover]:bg-main/50 [&::-webkit-scrollbar-thumb]:bg-main/30 [&::-webkit-scrollbar-track]:bg-transparent backdrop-blur-2xl rounded-xl px-8 max-md:px-4 py-12"
+        className="relative w-full [&::-webkit-scrollbar]:w-2 overflow-x-hidden overflow-y-auto flex flex-col gap-8 bg-bg/50 [&::-webkit-scrollbar-thumb:hover]:bg-main/50 [&::-webkit-scrollbar-thumb]:bg-main/30 [&::-webkit-scrollbar-track]:bg-transparent backdrop-blur-2xl rounded-lg px-8 max-md:px-4 py-12"
       >
         <div className="flex justify-between items-center">
           <div className="flex max-md:flex-col gap-6 max-md:gap-2">
@@ -136,7 +136,7 @@ export default function GetInTouchModal({ isOpen, onClose }: { isOpen: boolean; 
             </div>
           </div>
 
-          <CloseTextBtn onClick={onClose} delay={0.2} />
+          <CloseTextBtn onClick={() => setShowGetInTouch(false)} delay={0.2} />
         </div>
 
         <div className="gap-12 grid md:grid-cols-2 mb-4">
@@ -181,15 +181,27 @@ export default function GetInTouchModal({ isOpen, onClose }: { isOpen: boolean; 
                   <div key={field} className="last:col-span-full">
                     <label className="opacity-60 font-mono text-xs normal-case tracking-wider">{field.charAt(0).toUpperCase() + field.slice(1)}</label>
 
-                    <input
-                      required
-                      name={field}
-                      type={field === 'email' ? 'email' : 'text'}
-                      value={formData[field]}
-                      onChange={handleChange}
-                      className="w-full bg-bg/5 border focus:border-main! rounded-lg outline-none transition-colors mb-2 px-4 py-3 placeholder-main/30"
-                      placeholder={`${field.charAt(0).toUpperCase() + field.slice(1)}`}
-                    />
+                    {field === 'message' ? (
+                      <textarea
+                        required
+                        name={field}
+                        value={formData[field]}
+                        onChange={handleChange}
+                        className="w-full bg-bg/5 border focus:border-main! rounded-lg outline-none transition-colors mb-2 px-4 py-3 resize-none placeholder-main/30"
+                        placeholder={`${field.charAt(0).toUpperCase() + field.slice(1)}`}
+                        rows={6}
+                      />
+                    ) : (
+                      <input
+                        required
+                        name={field}
+                        type={field === 'email' ? 'email' : 'text'}
+                        value={formData[field]}
+                        onChange={handleChange}
+                        className="w-full bg-bg/5 border focus:border-main! rounded-lg outline-none transition-colors mb-2 px-4 py-3 placeholder-main/30"
+                        placeholder={`${field.charAt(0).toUpperCase() + field.slice(1)}`}
+                      />
+                    )}
                   </div>
                 ))}
               </div>

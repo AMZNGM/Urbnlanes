@@ -97,7 +97,7 @@ export default function GlobalSearchDropdown({
                       <AnimText as={'h4'} className="font-medium text-sm truncate normal-case">
                         {result.title}
                       </AnimText>
-                      {/* {result.descri  ption && <p className="text-text/60 text-xs truncate normal-case line-clamp-1">{result.description}</p>} */}
+                      {result.description && <p className="text-text/60 text-xs truncate normal-case line-clamp-1">{result.description}</p>}
 
                       <AnimText as={'span'} delay={0.2} className="font-mono text-[10px] capitalize tracking-wider">
                         {result.category}

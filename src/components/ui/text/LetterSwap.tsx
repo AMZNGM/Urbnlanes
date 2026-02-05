@@ -141,7 +141,7 @@ export default function LetterSwap({
       >
         <span className="sr-only">{typeof displayContent === 'string' ? displayContent : 'Content'}</span>
         <span className="relative flex whitespace-pre" aria-hidden={true}>
-          <motion.span className="inline-block relative letter" style={{ top: 0 }}>
+          <motion.span className="inline-block relative letter" style={{ top: '0%' }}>
             {displayContent}
           </motion.span>
           <motion.span className="inline-block right-0 left-0 absolute letter-secondary" style={{ top: reverse ? '-100%' : '100%' }}>
@@ -168,7 +168,7 @@ export default function LetterSwap({
 
       {itemsToRender.map((item, i) => (
         <span className="relative flex whitespace-pre" key={i} aria-hidden={true}>
-          <motion.span className="relative letter" style={{ top: 0 }}>
+          <motion.span className="relative letter" style={{ top: '0%' }}>
             {item}
           </motion.span>
           <motion.span className="absolute letter-secondary" style={{ top: reverse ? '-100%' : '100%' }}>

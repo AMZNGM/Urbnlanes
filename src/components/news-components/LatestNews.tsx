@@ -18,7 +18,7 @@ export default function LatestNews({ className }: { className?: string }) {
         <div className="w-1/10 max-md:w-8 shrink-0" />
         {latestArticles.map((article, index) => (
           <AnimIn center blur key={article.id} delay={0.1 * index} className="w-160 max-md:w-80 shrink-0">
-            <NewsCard article={article} />
+            <NewsCard article={article} priority={index === 0} />
           </AnimIn>
         ))}
         <div className="w-1/10 shrink-0" />

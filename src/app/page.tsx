@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <Suspense fallback={<LoadingLogo />}>
       {/* <Preloader /> */}
-      <Hero />
+      {/* <Hero /> */}
       <SelectedProjects />
       <AboutUs />
       {/* <VideoSection /> */}

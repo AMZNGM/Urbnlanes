@@ -31,7 +31,7 @@ export default function Dock({
       <motion.div
         layout
         transition={{ type: 'spring', stiffness: 160, damping: 24, mass: 0.6 }}
-        className={`h-full flex justify-between items-center gap-1 backdrop-blur-2xl rounded-xl overflow-hidden pointer-events-auto ${showSearch ? 'bg-bg/50 p-8 max-md:p-4' : 'bg-main/25 ms-auto'}`}
+        className={`h-full flex justify-between items-center gap-1 backdrop-blur-2xl rounded-lg overflow-hidden pointer-events-auto ${showSearch || showCookies ? 'bg-bg/50 p-8 max-md:p-4' : 'bg-main/25 ms-auto'}`}
       >
         {!showSearch && !isNavOpen && <CookieModal showCookies={showCookies} setShowCookies={setShowCookies} isScrolled100vh={isScrolled100vh} />}
         {!showSearch && isScrolled100vh && <LanguageToggle className={`${isCompact ? 'hidden' : ''}`} />}

@@ -31,3 +31,16 @@ export function useKeyboardShortcuts({
     }
   })
 }
+
+// useKeyboardShortcuts({
+//   onEscape: () => {
+//     handleClose()
+//     setShowCookies(false)
+//     globalSearch.setShowSearch(false)
+//   },
+//   onSearchToggle: () => {
+//     handleClose()
+//     setShowCookies(false)
+//     globalSearch.setShowSearch(!showSearch)
+//   },
+// })

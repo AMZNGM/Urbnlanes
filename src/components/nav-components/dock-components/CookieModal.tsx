@@ -162,7 +162,7 @@ export default function CookieModal({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 100 }}
           transition={{ type: 'spring', stiffness: 160, damping: 24, mass: 0.6 }}
-          className={`max-w-3xl flex flex-col pointer-events-auto overflow-y-auto max-md:p-4 px-8 py-12 bg-bg/50 ${showCookies ? 'max-md:w-[90dvw]! flex-1' : 'w-fit'}`}
+          className={`max-w-3xl flex flex-col pointer-events-auto overflow-y-auto ${showCookies ? 'max-md:w-[80dvw]! flex-1' : 'w-fit'}`}
         >
           <header className="flex justify-between items-center mb-8 max-md:mb-4">
             <AnimText as={'h3'} delay={0.3} className="text-2xl tracking-wide">

@@ -72,9 +72,9 @@ export default function GlobalSearch({
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ delay: 0.3 }}
-          className="rounded-lg cursor-pointer shrink-0"
+          className="rounded-lg py-1 cursor-pointer"
         >
-          <LetterSwap text={<Search size={16} className="z-10 mx-4 my-2" />} />
+          <LetterSwap text={<Search size={20} className="mx-4 my-1" />} />
         </motion.div>
       )}
 
@@ -86,7 +86,7 @@ export default function GlobalSearch({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="md:min-w-md h-[80dvh] overflow-hidden flex flex-col space-y-2 md:px-6 py-8"
+            className="md:min-w-md md:max-w-lg h-[80dvh] overflow-hidden flex flex-col space-y-2 md:px-6 py-8"
           >
             {/* Top btns */}
             <div className="flex justify-between gap-2">
@@ -155,12 +155,12 @@ export default function GlobalSearch({
                 </h5>
               )}
               <GlobalSearchDropdown
-                className="h-full min-h-0"
                 results={results}
                 selectedIndex={selectedIndex}
                 onSelect={handleSelect}
                 onHover={setSelectedIndex}
                 showCategoryHeaders={!!searchQuery}
+                className="h-full min-h-0"
               />
             </div>
           </motion.div>

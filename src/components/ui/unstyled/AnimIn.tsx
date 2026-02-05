@@ -84,7 +84,7 @@ export default function AnimIn({
           whileInView="visible"
           exit="exit"
           viewport={{ once }}
-          className={className}
+          className={`relative ${className}`}
         >
           {children}
         </Tag>
