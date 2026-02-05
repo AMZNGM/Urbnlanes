@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 import { metadataGenerators } from '@/seo/seo-helpers'
 import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 
-import SectionHero from '@/components/shared/SectionHero'
+import SectionHero from '@/components/hero-components/SectionHero'
 import LineHeading from '@/components/shared/LineHeading'
 const MarkedProjects = dynamic(() => import('@/components/projects-components/MarkedProjects'))
 const ProjectsImpact = dynamic(() => import('@/components/projects-components/ProjectsImpact'))

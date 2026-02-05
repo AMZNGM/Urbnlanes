@@ -117,7 +117,7 @@ export default function GetInTouchModal({ showGetInTouch, setShowGetInTouch }: {
         onClick={(e) => e.stopPropagation()}
         onWheel={(e) => e.stopPropagation()}
         onTouchMove={(e) => e.stopPropagation()}
-        className="relative w-full [&::-webkit-scrollbar]:w-2 overflow-x-hidden overflow-y-auto flex flex-col gap-8 bg-bg/50 [&::-webkit-scrollbar-thumb:hover]:bg-main/50 [&::-webkit-scrollbar-thumb]:bg-main/30 [&::-webkit-scrollbar-track]:bg-transparent backdrop-blur-2xl rounded-lg px-8 max-md:px-4 py-12"
+        className="relative w-full [&::-webkit-scrollbar]:w-2 h-full overflow-x-hidden overflow-y-auto flex flex-col gap-8 bg-bg/50 [&::-webkit-scrollbar-thumb:hover]:bg-main/50 [&::-webkit-scrollbar-thumb]:bg-main/30 [&::-webkit-scrollbar-track]:bg-transparent backdrop-blur-2xl rounded-lg px-8 max-md:px-4 py-12"
       >
         <div className="flex justify-between items-center">
           <div className="flex max-md:flex-col gap-6 max-md:gap-2">

@@ -10,7 +10,7 @@ const AboutUs = dynamic(() => import('@/components/home-components/AboutUs'))
 const TeamOfExperts = dynamic(() => import('@/components/home-components/TeamOfExperts'))
 const VideoSection = dynamic(() => import('@/components/shared/VideoSection'))
 const SelectedProjects = dynamic(() => import('@/components/home-components/SelectedProjects'))
-const Updates = dynamic(() => import('@/components/latestUpdates-components/Updates'))
+const Updates = dynamic(() => import('@/components/home-components/latestUpdates-components/Updates'))
 const OurValues = dynamic(() => import('@/components/home-components/OurValues'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
 

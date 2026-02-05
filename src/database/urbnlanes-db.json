@@ -306,7 +306,7 @@
         },
         {
           "name": "HC Consultants",
-          "logo": "/images/logos/hc-Consultants-logo.webp",
+          "logo": "/images/logos/hcConsultants-logo.webp",
           "role": ["Engineering", "Consultancy"]
         },
         {
@@ -433,7 +433,7 @@
         },
         {
           "name": "HC Consultants",
-          "logo": "/images/logos/hC-Consultants-logo.webp",
+          "logo": "/images/logos/hCConsultants-logo.webp",
           "role": ["Engineering", "Consultancy"]
         },
         {
@@ -569,12 +569,12 @@
       },
       "featured": false,
       "gallery": [
-        "/images/projects/mid-lane/ml-gallery-1.webp",
-        "/images/projects/mid-lane/ml-gallery-2.webp",
-        "/images/projects/mid-lane/ml-gallery-3.webp",
-        "/images/projects/mid-lane/ml-gallery-4.webp",
-        "/images/projects/mid-lane/ml-gallery-5.webp",
         "/images/projects/mid-lane/ml-gallery-6.webp",
+        "/images/projects/mid-lane/ml-gallery-5.webp",
+        "/images/projects/mid-lane/ml-gallery-4.webp",
+        "/images/projects/mid-lane/ml-gallery-3.webp",
+        "/images/projects/mid-lane/ml-gallery-2.webp",
+        "/images/projects/mid-lane/ml-gallery-1.webp",
         "/images/projects/mid-lane/ml-leader.avif",
         "/images/projects/mid-lane/ml-map.webp"
       ],

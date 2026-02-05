@@ -3,12 +3,11 @@ import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
-import Heading from '@/components/shared/Heading'
 
 export default function TeamOfExperts() {
   return (
     <section className="relative w-full h-full overflow-hidden bg-black text-text px-18 max-md:px-4 py-8">
-      <Heading text={<TText tKey="db.whoweare.teamOfExperts.title" />} />
+      {/* <Heading text={<TText tKey="db.whoweare.teamOfExperts.title" />} /> */}
 
       <div className="w-full flex flex-col justify-center items-center gap-24 mt-18">
         <div className="w-full items-center gap-12 grid md:grid-cols-2">

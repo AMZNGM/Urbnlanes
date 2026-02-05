@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'motion/react'
 import { useRef, useEffect, useMemo, useState } from 'react'
-import { getAllPartners } from '@/utils/getPartners'
+import { getAllPartners } from '@/database/getPartners'
 import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'

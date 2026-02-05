@@ -4,7 +4,6 @@ import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import dynamic from 'next/dynamic'
 
 import AboutHero from '@/components/about-components/AboutHero'
-const TextPanel = dynamic(() => import('@/components/shared/TextPanel'))
 import LineHeading from '@/components/shared/LineHeading'
 const OurCoreValues = dynamic(() => import('@/components/about-components/OurCoreValues'))
 const OurHeritagAndNetwork = dynamic(() => import('@/components/about-components/OurHeritagAndNetwork'))
@@ -31,12 +30,12 @@ export default function AboutPage() {
       <HoldingCompany />
       <OurStory />
       <BehindTheFigures />
-      <TextPanel
+      {/* <TextPanel
         tKey="db.whoweare.artToArchitecture.title"
         paraTKey="db.whoweare.artToArchitecture.description"
         image="/images/projects/yellow-residence/yr-gallery-8.avif"
         className="bg-black! text-text"
-      />
+      /> */}
       <ImageIn src="/images/map.webp" alt="Map" className="object-contain! scale-100! pt-24 max-md:pt-0" divClassName="h-100! bg-text max-md:-mb-10" />
     </Suspense>
   )

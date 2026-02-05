@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { useScroll, useTransform } from 'motion/react'
-import { getAllPartners } from '@/utils/getPartners'
+import { getAllPartners } from '@/database/getPartners'
 import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/unstyled/AnimText'
@@ -38,7 +38,7 @@ function ParallaxPanel({ partner, index }: { partner: (typeof partnersData)[0]; 
 
       <div className="relative w-full h-full flex flex-col justify-center items-start p-18 max-md:px-4">
         <div data-scroll data-scroll-speed="0.2" className="flex flex-col gap-4 rounded-2xl tracking-wider p-4">
-          <AnimText as="h1" stagger={0.2} className="max-md:text-5xl text-7xl rtl:leading-22">
+          <AnimText as="h1" stagger={0.2} className="max-md:text-5xl text-7xl rtl:leading-22 tracking-wide">
             <TText tKey={`partners.partnersNames.${partner.name}`} />
           </AnimText>
 

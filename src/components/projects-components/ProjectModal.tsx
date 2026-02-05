@@ -8,7 +8,6 @@ import ImageIn from '@/components/ui/unstyled/ImageIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import CloseBtn from '@/components/ui/buttons/CloseBtn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
-import ArrowIcon from '@/components/ui/icons/ArrowIcon'
 
 export default function ProjectModal({ closeModal, selectedProject, dark = true }: { closeModal: () => void; selectedProject: any; dark?: boolean }) {
   let { t } = useTranslation()
@@ -66,7 +65,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
               <div className="flex flex-col gap-8">
                 <div className="flex items-center gap-2">
                   <CloseBtn onClick={closeModal} />
-                  <MainBtn href={selectedProject.brochure} size="sm" icon={ArrowIcon} tKey="modal.brochure" look="mono" className="px-4! py-2.5!" />
+                  <MainBtn href={selectedProject.brochure} size="sm" tKey="modal.brochure" look="mono" className="px-4! py-2.5!" />
                 </div>
 
                 <div className="flex flex-col">
@@ -142,7 +141,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
                 )}
               </div>
 
-              <MainBtn to={`/projects/${selectedProject.id}`} size="sm" icon={ArrowIcon} tKey="modal.viewFullProject" look="mono" />
+              <MainBtn to={`/projects/${selectedProject.id}`} size="sm" tKey="modal.viewFullProject" look="mono" />
             </div>
 
             <div style={{ scrollbarWidth: 'none' }} className="md:h-[94dvh] md:overflow-y-auto flex-1 space-y-4 rounded-2xl">

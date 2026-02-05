@@ -37,7 +37,20 @@ export function LoadingOscillate() {
         ))}
       </div>
 
-      {/* <p className="font-sec text-main text-sm uppercase tracking-widest animate-pulse">Loading</p> */}
+      <style>
+        {`
+         @keyframes oscillate {
+            0% {
+              transform: translateX(calc(20px - 4px)) scale(0);
+              opacity: 0.25;
+            }
+            100% {
+              transform: translateX(0) scale(1);
+              opacity: 1;
+            }
+          }
+        `}
+      </style>
     </div>
   )
 }

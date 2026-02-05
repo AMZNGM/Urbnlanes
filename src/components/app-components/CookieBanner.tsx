@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'motion/react'
 import { useContext, useEffect, useState } from 'react'
-import { CookieContext } from '@/contexts/CookieContext'
+import { CookieContext } from '@/lib/CookieContext'
 import { MotionLine } from '@/components/ui/effects/Lines'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 

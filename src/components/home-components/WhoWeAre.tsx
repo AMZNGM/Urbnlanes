@@ -6,7 +6,6 @@ import { Plus } from 'lucide-react'
 import { useClipPath } from '@/hooks/useClipPath'
 import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
-import Heading from '@/components/shared/Heading'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
@@ -21,7 +20,7 @@ export default function WhoWeAre() {
   return (
     <section className="relative w-full h-full overflow-hidden bg-black text-text px-18 max-md:px-4 py-8">
       <AnimIn className="relative space-y-18">
-        <Heading text={<TText tKey={'common.whoWeAre'} />} tagline={<TText tKey={'db.whoweare.tagline'} />} />
+        {/* <Heading text={<TText tKey={'common.whoWeAre'} />} tagline={<TText tKey={'db.whoweare.tagline'} />} /> */}
 
         <div className="gap-12 max-md:gap-16 grid lg:grid-cols-12">
           {/* Left col */}

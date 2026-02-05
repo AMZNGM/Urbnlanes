@@ -59,7 +59,7 @@ export default function Newsletter() {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div {...animationProps} className="top-full z-50 md:absolute md:w-1/3 bg-black/50 backdrop-blur-2xl rounded-2xl text-main max-md:mb-4 p-2">
+          <motion.div {...animationProps} className="top-full z-50 md:absolute md:max-w-sm bg-black/50 backdrop-blur-2xl rounded-lg text-main max-md:mb-4 p-2">
             <form action={action}>
               <div className="flex gap-2">
                 <input
@@ -67,16 +67,16 @@ export default function Newsletter() {
                   name="email"
                   placeholder="Your email"
                   required
-                  className="w-full bg-black/50 border border-main/30 focus:border-main rounded-2xl focus:outline-none focus:ring-2 focus:ring-main/50 text-text transition-colors duration-300 px-4 py-3 placeholder-text/50"
+                  className="bg-black/50 border border-main/30 focus:border-main rounded-lg focus:outline-none focus:ring-2 focus:ring-main/50 text-text transition-colors duration-300 px-4 py-3 grow placeholder-text/50"
                 />
 
-                <MainBtn type="submit" aria-label="Subscribe to newsletter" disabled={isPending || state.success} look="dark" className="w-full">
+                <MainBtn type="submit" aria-label="Subscribe to newsletter" disabled={isPending || state.success} look="dark" size="sm">
                   {isPending ? (
                     <Loader2 className="animate-spin" size={20} />
                   ) : state.success ? (
                     <Check className="text-green-500" size={20} />
                   ) : (
-                    <ArrowRight size={20} />
+                    <ArrowRight size={20} className="text-main" />
                   )}
                 </MainBtn>
               </div>
@@ -89,7 +89,7 @@ export default function Newsletter() {
                 {state.message && showMessage && (
                   <motion.p
                     {...animationProps}
-                    className={`absolute top-full left-0 right-0 mt-2 p-2 rounded-2xl bg-black/75 w-full text-center ${state.success ? 'text-green-500' : 'text-red-500'}`}
+                    className={`absolute top-full left-0 right-0 mt-2 p-2 rounded-lg bg-black/75 w-full text-center ${state.success ? 'text-green-500' : 'text-red-500'}`}
                   >
                     <TText tKey={state.message} />
                   </motion.p>

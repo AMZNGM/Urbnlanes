@@ -17,7 +17,7 @@ import LineHeading from '@/components/shared/LineHeading'
 
 export default function ProjectGallery({ project }: { project: Project }) {
   let { scrollYProgress } = useScroll()
-  let [darkMode, setDarkMode] = useState(true)
+  let [darkMode, setDarkMode] = useState(false)
   let [currentImageIndex, setCurrentImageIndex] = useState(0)
   let [fullGallery, setFullGallery] = useState(null as string[] | null)
   let [selectedVideo, setSelectedVideo] = useState<string | null>(null)
@@ -98,8 +98,10 @@ export default function ProjectGallery({ project }: { project: Project }) {
             <span>{String(project.gallery?.length || 0).padStart(2, '0')}</span>
           </div>
 
-          <ArrowBtn onClick={prevImage} className="scale-125" />
-          <ArrowBtn onClick={nextImage} direction="right" className="scale-125" />
+          <div className="flex gap-2 md:scale-125">
+            <ArrowBtn onClick={prevImage} />
+            <ArrowBtn onClick={nextImage} direction="right" />
+          </div>
         </div>
       </AnimIn>
 
@@ -168,19 +170,6 @@ export default function ProjectGallery({ project }: { project: Project }) {
           />
         ))}
       </AnimIn>
-
-      {mapImages.length > 0 && (
-        <AnimIn delay={0.4} className="mt-16">
-          <AnimText as={'h3'} className="font-sec text-2xl mb-6">
-            <TText tKey="common.location" />
-          </AnimText>
-          <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
-            {mapImages.map((mapImg, i) => (
-              <ImageIn key={i} src={mapImg} alt={`${project.name} map ${i + 1}`} className="overflow-hidden rounded-2xl" divClassName="aspect-video" />
-            ))}
-          </div>
-        </AnimIn>
-      )}
 
       {masterPlanImages.length > 0 && (
         <AnimIn delay={0.5} className="mt-16">
@@ -277,6 +266,32 @@ export default function ProjectGallery({ project }: { project: Project }) {
                 </AnimIn>
               )
             })}
+          </div>
+        </AnimIn>
+      )}
+
+      {mapImages.length > 0 && (
+        <AnimIn delay={0.4} className="bg-main/25 rounded-3xl p-4">
+          <LineHeading tKey="common.location" className="opacity-75 text-current mb-2" />
+
+          <div className="gap-4 grid grid-cols-1 md:grid-cols-2">
+            {mapImages.map((mapImg, i) => (
+              <AnimIn
+                key={i}
+                delay={0.1 * i}
+                className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-2xl transition-all cursor-pointer"
+              >
+                <ImageIn src={mapImg} alt={`${project.name} map ${i + 1}`} className="w-full h-full object-cover" />
+
+                <div className="right-0 bottom-0 left-0 absolute bg-linear-to-t from-bg/80 to-transparent p-4">
+                  <p className="space-x-1 font-medium text-text text-sm">
+                    <span>{<TText tKey={`db.projects.${project.id}.name`} />}</span>
+                    <span>{<TText tKey="common.location" />}</span>
+                    <span>{i + 1}</span>
+                  </p>
+                </div>
+              </AnimIn>
+            ))}
           </div>
         </AnimIn>
       )}

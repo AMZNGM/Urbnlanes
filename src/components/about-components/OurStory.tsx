@@ -58,7 +58,7 @@ export default function OurStory() {
         className="absolute inset-0 object-cover opacity-40"
       />
 
-      <AnimIn className="relative px-18 max-md:px-4">
+      <AnimIn className="relative md:px-18">
         <div className="flex justify-between items-center">
           <AnimText as="h4" delay={0.3} className="text-3xl leading-none tracking-wide">
             <TText tKey="common.ourStory" />

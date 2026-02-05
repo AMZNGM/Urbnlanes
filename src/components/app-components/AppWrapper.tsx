@@ -1,4 +1,4 @@
-import { CookieProvider } from '@/contexts/CookieContext'
+import { CookieProvider } from '@/lib/CookieContext'
 import { LanguageProvider } from '@/translations/LanguageContext'
 import ErrorBoundary from '@/components/app-components/ErrorBoundary'
 import ScrollToTop from '@/components/app-components/ScrollToTop'

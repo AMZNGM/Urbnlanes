@@ -2,7 +2,7 @@
 
 import { useContext, useEffect, useState } from 'react'
 import { motion } from 'motion/react'
-import { CookieContext } from '@/contexts/CookieContext'
+import { CookieContext } from '@/lib/CookieContext'
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
 import { Settings, Shield, Activity, Target, User, Lock } from 'lucide-react'
 import AnimIn from '@/components/ui/unstyled/AnimIn'

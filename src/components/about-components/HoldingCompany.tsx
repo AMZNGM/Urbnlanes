@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
+import ImageIn from '@/components/ui/unstyled/ImageIn'
 import BreathingText from '@/components/ui/text/BreathingText'
 
 export default function HoldingCompany() {
@@ -15,7 +15,13 @@ export default function HoldingCompany() {
           <TText tKey="common.holding" />
         </BreathingText>
 
-        <Image src="/images/logos/eagroup-logo.webp" alt="EA Group Logo" width={400} height={400} sizes="10dvw" className="w-50 h-auto object-contain invert" />
+        <ImageIn
+          src="/images/logos/eagroup-logo.webp"
+          alt="EA Group Logo"
+          sizes="10dvw"
+          className="object-contain! invert"
+          divClassName="w-full h-12! relative"
+        />
 
         <BreathingText staggerFrom="last" className="max-md:hidden text-[8.2dvw] text-center text-nowrap">
           <TText tKey="common.company" />

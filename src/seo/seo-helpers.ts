@@ -25,7 +25,6 @@ export const metadataGenerators = {
   cookiePolicy: createMetadataGenerator('/cookie-policy'),
   privacyPolicy: createMetadataGenerator('/privacy-policy'),
   termsOfUse: createMetadataGenerator('/terms-of-use'),
-  getInTouch: createMetadataGenerator('/get-in-touch'),
   notFound: createMetadataGenerator('/*'),
   project: (data: any) => ({
     title: data.title,

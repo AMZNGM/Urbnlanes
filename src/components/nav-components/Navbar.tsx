@@ -45,12 +45,12 @@ export default function Navbar() {
     <motion.header
       dir="ltr"
       layout={isMobile ? true : false}
-      className={`z-60 fixed top-0 left-1/2 -translate-x-1/2 px-2 md:px-4 py-4 md:py-2 w-dvw ${isScrolled100vh ? 'max-md:w-auto' : ''}`}
+      className={`z-60 fixed top-0 left-1/2 -translate-x-1/2 px-2 sm:px-4 py-4 sm:py-2 w-dvw ${isScrolled100vh ? 'max-sm:w-auto' : ''}`}
     >
       <motion.div
         animate={{ y: isScrolled100vh ? '0%' : '-100%' }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
-        className="max-md:hidden top-0 right-0 left-0 fixed h-15 backdrop-blur-2xl"
+        className="max-sm:hidden top-0 right-0 left-0 fixed h-15 backdrop-blur-2xl"
       />
 
       <div className="flex justify-between items-start gap-2">
@@ -61,10 +61,12 @@ export default function Navbar() {
           setShowCookies={setShowCookies}
           globalSearch={globalSearch}
           isNavOpen={showDropdown}
-          className={`md:ms-auto ${showDropdown ? 'hidden' : ''}`}
+          className={`sm:ms-auto ${showDropdown ? 'hidden' : ''}`}
         />
 
-        <NavLogo className={`z-10 md:order-first ${showDropdown || showSearch || showCookies ? 'max-2xl:invisible' : ''}`} />
+        <NavLogo
+          className={`z-10 sm:order-first ${showDropdown || showSearch || showCookies ? 'max-2xl:invisible' : ''} ${isScrolled100vh ? 'max-sm:hidden' : ''}`}
+        />
 
         <NavMenu
           showDropdown={showDropdown}
@@ -72,7 +74,7 @@ export default function Navbar() {
           handleClose={handleClose}
           toggleDropdown={toggleDropdown}
           isScrolled100vh={isScrolled100vh}
-          className={`${showSearch || showCookies ? 'max-md:hidden' : ''}`}
+          className={`${showSearch || showCookies ? 'max-sm:hidden' : ''}`}
         />
       </div>
     </motion.header>

@@ -40,7 +40,7 @@ let NavItem = memo(
 
         <Link
           href={item.slug || '#'}
-          className={`text-7xl rtl:text-6xl max-md:text-6xl transition-opacity ${pathname === item.slug ? '' : 'opacity-50 hover:opacity-100'}`}
+          className={`text-7xl rtl:text-6xl max-md:text-4xl transition-opacity ${pathname === item.slug ? '' : 'opacity-50 hover:opacity-100'}`}
         >
           <AnimText delay={0.02 * item.index + 0.1}>
             <LetterSwap staggerDuration={0.05} className="rtl:leading-20">
@@ -113,7 +113,10 @@ export default function NavMenuModal({
           <CloseTextBtn onClick={handleClose} />
         </div>
 
-        <div onClick={() => setShowGetInTouch(true)} className="opacity-60 hover:opacity-100 rtl:text-7xl text-8xl transition-opacity cursor-pointer">
+        <div
+          onClick={() => setShowGetInTouch(true)}
+          className="opacity-60 hover:opacity-100 max-md:text-3xl rtl:text-7xl text-8xl transition-opacity cursor-pointer"
+        >
           <AnimText delay={0.5}>
             <LetterSwap staggerDuration={0.05} className="rtl:leading-20">
               <TText tKey="nav.getInTouch" />

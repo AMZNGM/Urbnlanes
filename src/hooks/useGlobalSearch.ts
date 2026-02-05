@@ -39,6 +39,7 @@ export type SearchCategory = 'pages' | 'projects' | 'news'
 const STATIC_PAGES: { title: string; url: string }[] = [
   { title: 'Home', url: '/' },
   { title: 'About Us', url: '/about' },
+  { title: 'Projects', url: '/projects' },
   { title: 'Contact Us', url: '/get-in-touch' },
   { title: 'Careers', url: '/careers' },
   { title: 'Construction Updates', url: '/construction-updates' },
@@ -46,6 +47,7 @@ const STATIC_PAGES: { title: string; url: string }[] = [
   { title: 'Our Partners', url: '/partners-associates' },
   { title: 'Privacy Policy', url: '/privacy-policy' },
   { title: 'Terms of Use', url: '/terms-of-use' },
+  { title: 'Cookie Policy', url: '/cookie-policy' },
 ]
 
 export function useGlobalSearch(): GlobalSearchState {
@@ -153,7 +155,7 @@ export function useGlobalSearch(): GlobalSearchState {
   useEffect(() => {
     if (!searchQuery.trim()) {
       setResults(popularSuggestions)
-      setSelectedIndex(-1)
+      setSelectedIndex(popularSuggestions.length > 0 ? 0 : -1)
       return
     }
     let searchResults = search(searchQuery)
@@ -164,7 +166,7 @@ export function useGlobalSearch(): GlobalSearchState {
       return aIndex - bIndex
     })
     setResults(sortedResults)
-    setSelectedIndex(-1)
+    setSelectedIndex(sortedResults.length > 0 ? 0 : -1)
   }, [searchQuery, selectedFilter, search, popularSuggestions])
 
   let handleSelect = (result: any) => {

@@ -30,8 +30,7 @@ export const SEO = {
 
   '/about': {
     title: 'About Urbnlanes - Your trusted real estate developer',
-    description:
-      'Learn more about Urbnlanes, a diversified real estate development company with numerous years of experience in the Middle East.',
+    description: 'Learn more about Urbnlanes, a diversified real estate development company with numerous years of experience in the Middle East.',
     keywords: ['about', 'company', 'urbnlanes', 'real estate development', 'diversity', 'middle east'],
   },
 
@@ -43,8 +42,7 @@ export const SEO = {
 
   '/media-center-news': {
     title: 'Urbnlanes Media Center & News - Stay updated with our news',
-    description:
-      'Stay updated with our news and latest updates at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
+    description: 'Stay updated with our news and latest updates at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
     keywords: ['urbnlanes', 'media center', 'news', 'real estate', 'urban living', 'middle east', 'real estate development'],
   },
 
@@ -63,8 +61,7 @@ export const SEO = {
 
   '/careers': {
     title: 'Urbnlanes Careers - Join a diverse and experienced team',
-    description:
-      'Join a diverse and experienced team at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
+    description: 'Join a diverse and experienced team at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
     keywords: ['urbnlanes', 'careers', 'real estate', 'urban living', 'middle east', 'real estate development'],
   },
 
@@ -82,26 +79,8 @@ export const SEO = {
 
   '/terms-of-use': {
     title: 'Urbnlanes Terms of Use - Website terms and conditions',
-    description:
-      'The terms and conditions for using the Urbnlanes website, a real estate development company building masterpieces across the Middle East.',
+    description: 'The terms and conditions for using the Urbnlanes website, a real estate development company building masterpieces across the Middle East.',
     keywords: ['terms', 'conditions', 'real estate', 'middle east'],
-  },
-
-  '/get-in-touch': {
-    title: 'Get in Touch with Urbnlanes - Connect with our team',
-    description:
-      'Reach out to Urbnlanes for inquiries, collaborations, or more information about our real estate projects and urban living experiences across the Middle East.',
-    keywords: [
-      'urbnlanes',
-      'get in touch',
-      'contact',
-      'inquiries',
-      'collaborations',
-      'real estate',
-      'urban living',
-      'middle east',
-      'real estate development',
-    ],
   },
 
   '*': {
@@ -128,8 +107,7 @@ export const generateProjectSEO = (project: any) => {
   return {
     title: `${project.name} - ${project.tagline}`,
     description:
-      project.description ||
-      `Experience ${project.name} by Urbnlanes, a real estate development company building masterpieces across the Middle East.`,
+      project.description || `Experience ${project.name} by Urbnlanes, a real estate development company building masterpieces across the Middle East.`,
     keywords: keywords.filter(Boolean).join(', '),
   }
 }

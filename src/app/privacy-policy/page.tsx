@@ -7,7 +7,7 @@ export const generateMetadata = metadataGenerators.privacyPolicy
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="relative w-full min-h-dvh overflow-hidden bg-text text-black px-18 max-md:px-4 pt-40 pb-20">
+    <main className="relative w-full min-h-dvh overflow-hidden bg-text text-black p-12 max-md:px-4">
       <SoftLine className="h-1!" />
       <h1 className="font-sec text-[5vw] max-md:text-[10vw] max-lg:text-[8vw] text-center ltr:leading-[0.95] rtl:leading-24 tracking-tight">
         Website Privacy Notice
@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
 
       <AnimIn delay={0.3} className="space-y-6 text-center mt-12">
         <h2 className="font-sec text-3xl">Introduction</h2>
-        <div className="space-y-4 font-light text-black/80 text-lg leading-relaxed">
+        <div className="space-y-4 font-light text-black/80 text-lg normal-case leading-relaxed">
           <p>
             Urbnlanes is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when
             you visit our website and use our services.
@@ -34,19 +34,19 @@ export default function PrivacyPolicyPage() {
           <div className="gap-8 grid md:grid-cols-3">
             <div className="bg-main/25 border rounded-2xl p-8">
               <h3 className="font-medium text-xl mb-4">Personal Information</h3>
-              <p className="font-light/70">
+              <p className="font-light/70 normal-case">
                 Name, email address, phone number, and other contact information you provide when you inquire about our properties or services.
               </p>
             </div>
             <div className="bg-main/25 border rounded-2xl p-8">
               <h3 className="font-medium text-xl mb-4">Usage Data</h3>
-              <p className="font-light/70">
+              <p className="font-light/70 normal-case">
                 Information about how you interact with our website, including pages visited, time spent, and other analytics data.
               </p>
             </div>
             <div className="bg-main/25 border rounded-2xl p-8">
               <h3 className="font-medium text-xl mb-4">Technical Information</h3>
-              <p className="font-light/70">IP address, browser type, device information, and other technical data collected automatically.</p>
+              <p className="font-light/70 normal-case">IP address, browser type, device information, and other technical data collected automatically.</p>
             </div>
           </div>
         </AnimIn>
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
               'To improve our website and user experience',
               'To comply with legal obligations',
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-4 bg-main/25 rounded-2xl p-4">
+              <li key={i} className="flex items-center gap-4 bg-main/25 rounded-2xl normal-case p-4">
                 <div className="w-1.5 h-1.5 bg-main/25 rounded-full" />
                 <span className="font-light/80">{item}</span>
               </li>
@@ -71,14 +71,14 @@ export default function PrivacyPolicyPage() {
 
         <AnimIn delay={0.6} className="space-y-6">
           <h2 className="font-sec text-3xl">Information Sharing</h2>
-          <p className="font-light/80 text-lg">
+          <p className="font-light/80 text-lg normal-case">
             We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy.
           </p>
         </AnimIn>
 
         <AnimIn delay={0.7} className="space-y-6">
           <h2 className="font-sec text-3xl">Data Security</h2>
-          <p className="font-light/80 text-lg">
+          <p className="font-light/80 text-lg normal-case">
             We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration,
             disclosure, or destruction.
           </p>
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
 
         <AnimIn delay={0.8} className="space-y-6">
           <h2 className="font-sec text-3xl">Contact Us</h2>
-          <div className="inline-block w-full bg-main/25 border rounded-3xl p-10">
+          <div className="inline-block w-full bg-main/25 border rounded-3xl normal-case p-10">
             <p className="mb-6">If you have any questions about this Privacy Policy, please contact us at:</p>
             <div className="space-y-2 text-xl">
               <p>
