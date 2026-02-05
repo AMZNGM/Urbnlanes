@@ -1,9 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import TText from '@/translations/TText'
 import db from '@/database/urbnlanes-db.json'
-import Heading from '@/components/shared/Heading'
 import MasonryGrid from '@/components/projects-components/MasonryGrid'
 import ProjectModal from '@/components/projects-components/ProjectModal'
 
