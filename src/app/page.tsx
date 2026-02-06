@@ -8,9 +8,9 @@ import Hero from '@/components/hero-components/Hero'
 const SelectedProjects = dynamic(() => import('@/components/home-components/SelectedProjects'))
 const WhoWeAre = dynamic(() => import('@/components/home-components/WhoWeAre'))
 const AboutUs = dynamic(() => import('@/components/home-components/AboutUs'))
+const HoverGallery = dynamic(() => import('@/components/home-components/HoverGallery'))
 const TeamOfExperts = dynamic(() => import('@/components/home-components/TeamOfExperts'))
 const VideoSection = dynamic(() => import('@/components/shared/VideoSection'))
-const Updates = dynamic(() => import('@/components/home-components/latestUpdates-components/Updates'))
 const OurValues = dynamic(() => import('@/components/home-components/OurValues'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
 
@@ -24,8 +24,8 @@ export default function Home() {
       <SelectedProjects />
       <WhoWeAre />
       <AboutUs />
+      <HoverGallery />
       {/* <VideoSection /> */}
-      {/* <Updates /> */}
       {/* <TeamOfExperts /> */}
       {/* <OurValues /> */}
       {/* <LatestNews className="px-4!" /> */}

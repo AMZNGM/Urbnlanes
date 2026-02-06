@@ -49,13 +49,13 @@ export default function LineHeading({
 
       {paraTKey && (
         <>
-          <AnimText as={'p'} delay={0.7} className="opacity-65 font-mono text-xs rtl:text-sm text-end line-clamp-1 tracking-widest">
+          <AnimText as={'p'} delay={0.7} className="opacity-65 font-mono text-xs rtl:text-sm text-end tracking-widest">
             <TText tKey={paraTKey} />
           </AnimText>
 
           <MotionLine delay={0.1} from={lineFrom} />
 
-          <AnimText as="h3" delay={0.8} className="opacity-65 font-mono text-xs rtl:text-sm line-clamp-1 tracking-widest">
+          <AnimText as="h3" delay={0.8} className="opacity-65 font-mono text-xs rtl:text-sm tracking-widest">
             <TText tKey={tKey} />
           </AnimText>
         </>

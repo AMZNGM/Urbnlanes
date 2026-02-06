@@ -46,7 +46,7 @@ export default function AboutUs() {
                 <Plus size={20} />
               </div>
 
-              <AnimText as="h3" delay={index * 0.1} className="text-[1vw] max-md:text-[3vw] max-lg:text-[1.7vw] tracking-wide mt-2 light">
+              <AnimText as="h3" delay={index * 0.1} className="text-[1vw] max-md:text-[3vw] max-lg:text-[1.7vw] rtl:leading-7 tracking-wide mt-2 light">
                 <TText tKey={`db.whoweare.statistics[${index}].title`} />
               </AnimText>
             </div>

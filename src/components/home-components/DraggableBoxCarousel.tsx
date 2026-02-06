@@ -97,7 +97,7 @@ export default function DraggableBoxCarousel({ className = '' }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleCloseFullscreen}
-            className="z-50 fixed inset-0 flex justify-center items-center bg-black/75 backdrop-blur-sm"
+            className="fixed inset-0 flex justify-center items-center bg-black/30 backdrop-blur-2xl rounded-2xl md:m-4 md:p-14"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -113,8 +113,10 @@ export default function DraggableBoxCarousel({ className = '' }) {
                 sizes="(max-width: 768px) 45vw, 35vw"
                 className="object-contain"
               />
-              <div className="flex justify-between items-center gap-2">
+
+              <div className="flex justify-between items-center gap-2 mt-8">
                 <CloseBtn onClick={handleCloseFullscreen} />
+
                 <div className="space-x-2">
                   <ArrowBtn onClick={handlePreviousImage} />
                   <ArrowBtn onClick={handleNextImage} direction="right" />
