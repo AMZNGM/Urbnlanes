@@ -23,7 +23,7 @@ export default function Home() {
       <Hero />
       <SelectedProjects />
       <WhoWeAre />
-      {/* <AboutUs /> */}
+      <AboutUs />
       {/* <VideoSection /> */}
       {/* <Updates /> */}
       {/* <TeamOfExperts /> */}

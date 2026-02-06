@@ -57,7 +57,7 @@ export default function MasonryGrid({ projects, openModal }: { projects: any[]; 
   }, [projects, columnsCount])
 
   return (
-    <div ref={containerRef} className="relative w-full flex md:flex-row flex-col gap-4">
+    <div ref={containerRef} className="w-full flex md:flex-row flex-col gap-4">
       {columns.map((col, colIndex) => {
         // Dynamic Parallax Logic
         let yTransform: any = 0

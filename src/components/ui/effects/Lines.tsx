@@ -5,20 +5,22 @@ import { motion } from 'motion/react'
 export function MotionLine({
   className = '',
   delay = 0.3,
+  from = 'right',
   once = true,
   ...props
 }: {
   className?: string
   delay?: number
+  from?: string
   once?: boolean
 } & Omit<React.ComponentProps<typeof motion.div>, 'className' | 'initial' | 'whileInView' | 'transition' | 'viewport'>) {
   return (
     <motion.div
-      initial={{ width: '0%' }}
-      whileInView={{ width: '100%' }}
-      transition={{ duration: 0.8, delay }}
+      initial={{ scaleX: 0 }}
+      whileInView={{ scaleX: 1 }}
+      transition={{ duration: 0.9, delay, ease: [0.36, 0.34, 0.69, 1.01] }}
       viewport={{ once }}
-      className={`relative h-0.5 bg-main my-2 mix-blend-difference ${className}`}
+      className={`relative h-0.5 bg-main my-2 mix-blend-difference origin-${from} ${className}`}
       {...props}
     />
   )

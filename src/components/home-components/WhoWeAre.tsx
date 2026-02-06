@@ -43,20 +43,23 @@ export default function WhoWeAre() {
 
   // image logic
   let imageRef = useRef<HTMLDivElement>(null)
-  let { scrollYProgress: imageScrollProgress } = useScroll({ target: imageRef, offset: ['start 60%', 'end 50%'] })
+  let { scrollYProgress: imageScrollProgress } = useScroll({ target: imageRef, offset: ['start 82%', 'end 50%'] })
   let clipPath = useTransform(imageScrollProgress, [0, 1], ['inset(0% 0 0 0)', 'inset(100% 0 0 0)'])
 
   return (
     <section className="relative w-dvw bg-bg text-text px-4 max-md:px-2 py-12">
-      <LineHeading tKey="common.whoWeAre" className="max-md:mb-12" />
+      <LineHeading tKey="common.whoWeAre" className="max-md:mb-12" lineFrom="right" />
 
-      <motion.p ref={valueRef} className="relative max-w-4xl font-light text-[2.8dvw] max-md:text-3xl max-md:text-center normal-case text-balance ms-auto">
+      <motion.p
+        ref={valueRef}
+        className="relative max-w-4xl font-light text-[2.8dvw] rtl:text-[2dvw] max-md:rtl:text-xl max-md:text-3xl max-md:text-center normal-case text-balance ms-auto"
+      >
         {currentLanguage === 'ar'
           ? value
           : characters.map((char, index) => <Char key={index} char={char} index={index} total={characters.length} progress={scrollYProgress} />)}
       </motion.p>
 
-      <div ref={imageRef} className="relative h-[38dvh] overflow-hidden rounded-lg my-34 max-md:my-22">
+      <div ref={imageRef} className="relative h-[38dvh] overflow-hidden rounded-lg mt-34 max-md:mt-22">
         <ImageIn src="/images/projects/yellow-residence/yr-gallery-3.webp" alt="EastLane Panner 1" className="scale-100!" />
 
         <motion.div style={{ clipPath }} className="z-10 absolute inset-0">
