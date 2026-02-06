@@ -87,7 +87,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
               <LampIcon />
             </MainBtn>
 
-            <div className="w-fit bg-text opacity-0 group-hover:opacity-100 rounded-2xl text-bg text-sm -translate-x-full group-hover:translate-x-0 duration-300 px-2 py-3">
+            <div className="w-fit bg-text opacity-0 group-hover:opacity-100 rounded-lg text-bg text-sm -translate-x-full group-hover:translate-x-0 duration-300 px-2 py-3">
               <TText tKey="gallery.lighting" />
             </div>
           </AnimIn>
@@ -116,8 +116,8 @@ export default function ProjectGallery({ project }: { project: Project }) {
           alt={`${project.name} - Image ${currentImageIndex + 1}`}
           priority
           sizes="100vw"
-          className="rounded-2xl hover:scale-100! pointer-events-none"
-          divClassName="aspect-video overflow-hidden rounded-2xl"
+          className="rounded-lg hover:scale-100! pointer-events-none"
+          divClassName="aspect-video overflow-hidden rounded-lg"
         />
       </motion.div>
 
@@ -129,23 +129,25 @@ export default function ProjectGallery({ project }: { project: Project }) {
           aria-label="Toggle full gallery view"
         />
 
-        <div className="w-fit bg-text opacity-0 group-hover:opacity-100 rounded-2xl text-bg text-sm translate-x-full group-hover:translate-x-0 duration-300 px-4 py-1">
+        <div className="w-fit bg-text opacity-0 group-hover:opacity-100 rounded-lg text-bg text-sm translate-x-full group-hover:translate-x-0 duration-300 px-4 py-1">
           <TText tKey="gallery.fullGallery" />
         </div>
       </div>
 
-      <AnimIn reAnim={!!fullGallery} style={{ scrollbarWidth: 'none' }} className="flex flex-col space-y-8 max-md:space-y-4">
-        {regularGallery.map((img, i) => (
-          <ImageIn
-            src={img}
-            alt="thumb"
-            key={i}
-            onClick={() => setCurrentImageIndex(i)}
-            className="hover:scale-100!"
-            divClassName="relative w-full h-full aspect-video rounded-2xl overflow-hidden"
-          />
-        ))}
-      </AnimIn>
+      {fullGallery && (
+        <AnimIn style={{ scrollbarWidth: 'none' }} className="flex flex-col space-y-8 max-md:space-y-4">
+          {regularGallery.map((img, i) => (
+            <ImageIn
+              src={img}
+              alt="thumb"
+              key={i}
+              onClick={() => setCurrentImageIndex(i)}
+              className="hover:scale-100!"
+              divClassName="relative w-full h-full aspect-video rounded-lg overflow-hidden"
+            />
+          ))}
+        </AnimIn>
+      )}
 
       <AnimIn reAnim={!fullGallery} delay={0.3} style={{ scrollbarWidth: 'none' }} className="overflow-x-auto flex gap-4 p-4">
         {regularGallery.map((img, i) => (
@@ -154,7 +156,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
             alt="thumb"
             key={i}
             onClick={() => setCurrentImageIndex(i)}
-            divClassName={`relative w-66 max-md:w-33 shrink-0 aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-75 hover:opacity-100'}`}
+            divClassName={`relative w-66 max-md:w-33 shrink-0 aspect-video rounded-lg overflow-hidden border-2 transition-all duration-300 cursor-pointer ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-75 hover:opacity-100'}`}
           />
         ))}
       </AnimIn>
@@ -166,7 +168,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
             alt="thumb"
             key={i}
             onClick={() => setCurrentImageIndex(i)}
-            divClassName={`relative w-full aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-75 hover:opacity-100'}`}
+            divClassName={`relative w-full aspect-video rounded-lg overflow-hidden border-2 transition-all duration-300 cursor-pointer ${i === currentImageIndex ? 'border-main scale-105' : 'border-transparent opacity-75 hover:opacity-100'}`}
           />
         ))}
       </AnimIn>
@@ -178,14 +180,14 @@ export default function ProjectGallery({ project }: { project: Project }) {
           </AnimText>
           <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
             {masterPlanImages.map((planImg, i) => (
-              <ImageIn key={i} src={planImg} alt={`${project.name} master plan ${i + 1}`} className="overflow-hidden rounded-2xl" divClassName="aspect-video" />
+              <ImageIn key={i} src={planImg} alt={`${project.name} master plan ${i + 1}`} className="overflow-hidden rounded-lg" divClassName="aspect-video" />
             ))}
           </div>
         </AnimIn>
       )}
 
       {project.videoGallery && project.videoGallery.length > 0 && (
-        <AnimIn delay={0.6} className="bg-main/25 rounded-3xl p-4">
+        <AnimIn delay={0.6} className="bg-main/25 rounded-lg p-4">
           <LineHeading tKey="projects.videoGallery.title" className="opacity-75 text-current mb-2" />
 
           <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -200,7 +202,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
                   key={index}
                   delay={0.1 * index}
                   onClick={() => setSelectedVideo(video)}
-                  className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-2xl transition-all cursor-pointer"
+                  className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-lg transition-all cursor-pointer"
                 >
                   {isYouTube && embedUrl ? (
                     <img src={getYouTubeThumbnailUrl(video) || ''} alt={`Video ${index + 1}`} className="w-full h-full object-cover" />
@@ -229,7 +231,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
       )}
 
       {project.constructionGallery && project.constructionGallery.length > 0 && (
-        <AnimIn delay={0.6} className="bg-main/25 rounded-3xl p-4">
+        <AnimIn delay={0.6} className="bg-main/25 rounded-lg p-4">
           <LineHeading tKey="projects.constructionGallery.title" className="opacity-75 text-current mb-2" />
 
           <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -242,7 +244,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
                   key={index}
                   delay={0.1 * index}
                   onClick={() => setSelectedVideo(video)}
-                  className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-2xl transition-all cursor-pointer"
+                  className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-lg transition-all cursor-pointer"
                 >
                   {isYouTube && embedUrl ? (
                     <img src={getYouTubeThumbnailUrl(video) || ''} alt={`Video ${index + 1}`} className="w-full h-full object-cover" />
@@ -271,7 +273,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
       )}
 
       {mapImages.length > 0 && (
-        <AnimIn delay={0.4} className="bg-main/25 rounded-3xl p-4">
+        <AnimIn delay={0.4} className="bg-main/25 rounded-lg p-4">
           <LineHeading tKey="common.location" className="opacity-75 text-current mb-2" />
 
           <div className="gap-4 grid grid-cols-1 md:grid-cols-2">
@@ -279,7 +281,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
               <AnimIn
                 key={i}
                 delay={0.1 * i}
-                className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-2xl transition-all cursor-pointer"
+                className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-lg transition-all cursor-pointer"
               >
                 <ImageIn src={mapImg} alt={`${project.name} map ${i + 1}`} className="w-full h-full object-cover" />
 

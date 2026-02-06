@@ -9,7 +9,7 @@ export default function ProjectPartners({ project }: { project: Project }) {
   if (!project || !project.partners?.length) return null
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text text-bg px-18 max-md:px-4 pb-8">
+    <section className="relative w-dvw overflow-hidden bg-text text-bg px-4 max-md:px-2 py-12">
       <AnimText as={'h2'} className="font-sec text-4xl text-center rtl:leading-16 tracking-widest">
         <TText tKey="nav.partnersAssociates" />
       </AnimText>
@@ -26,8 +26,8 @@ export default function ProjectPartners({ project }: { project: Project }) {
         }`}
       >
         {project.partners.map((partner: Partner, index: number) => (
-          <AnimIn key={partner.name} delay={0.2 * index} className="flex flex-col items-center gap-2 bg-main/25 rounded-2xl p-8">
-            <ImageIn src={partner.logo} alt={partner.name} className="object-contain! invert p-4!" divClassName="w-38 h-38! mb-6 rounded-2xl" />
+          <AnimIn key={partner.name} delay={0.2 * index} className="flex flex-col items-center gap-2 bg-main/25 rounded-lg p-8">
+            <ImageIn src={partner.logo} alt={partner.name} className="object-contain! invert p-4!" divClassName="w-38 h-38! mb-6 rounded-lg bg-text" />
 
             <AnimText as={'h3'} className="font-medium text-xl">
               {partner.name}

@@ -15,8 +15,9 @@ export const generateMetadata = metadataGenerators.ourProjects
 export default function OurProjectsPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      <div className="top-0 sticky"></div>
-      <SectionHero image="/images/projects/story-branded-residences/sbr-gallery-6.avif" tKey="nav.ourProjects" tKeyPara="common.projectsDesc" />
+      <div className="top-0 sticky">
+        <SectionHero image="/images/projects/story-branded-residences/sbr-gallery-6.avif" tKey="nav.ourProjects" tKeyPara="common.projectsDesc" />
+      </div>
       <LineHeading
         tKey="common.architecturalExcellence"
         sideParaTKey="common.architecturalExcellenceDesc"
@@ -25,7 +26,7 @@ export default function OurProjectsPage() {
       <AllProjects />
       <MarkedProjects />
       <ProjectsImpact />
-      <LatestNews className="pt-0" />
+      <LatestNews className="pt-0 pb-28" />
     </Suspense>
   )
 }

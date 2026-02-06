@@ -37,7 +37,7 @@ export default function ProjectAmenities({ project }: { project: Project }) {
   }, [currentIndex])
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-text font-mono text-bg px-18 max-md:px-4 py-32">
+    <section className="relative w-dvw overflow-hidden bg-text font-mono text-bg px-4 max-md:px-2 py-32">
       <div className="max-w-md font-black text-center normal-case text-balance mx-auto">
         <AnimText className="text-6xl">
           <TText tKey="modal.amenities" />
@@ -49,13 +49,13 @@ export default function ProjectAmenities({ project }: { project: Project }) {
 
       <div className="max-w-5xl gap-4 grid md:grid-cols-2 mx-auto mt-16 max-md:mt-12">
         <AnimatePresence mode="wait">
-          <motion.div key={currentIndex} className="max-md:hidden relative h-140 overflow-hidden bg-bg rounded-2xl">
+          <motion.div key={currentIndex} className="max-md:hidden relative h-140 overflow-hidden bg-bg rounded-lg">
             <Image
               src={project.gallery?.[5] || project.gallery?.[0] || ''}
               alt="Image"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="absolute inset-0 object-cover opacity-75 rounded-2xl"
+              className="absolute inset-0 object-cover opacity-75 rounded-lg"
             />
 
             {project.amenities.map((amenity, index) => (
@@ -67,7 +67,7 @@ export default function ProjectAmenities({ project }: { project: Project }) {
                 transition={{ type: 'spring', ease: [0.25, 0.46, 0.45, 0.94] }}
                 className={`absolute inset-0 flex justify-center items-center p-4 ${index === currentIndex ? 'opacity-100' : 'opacity-0! pointer-events-none'}`}
               >
-                <p className="bg-main/95 rounded-2xl text-text normal-case text-balance leading-relaxed p-4">
+                <p className="bg-main/95 rounded-lg text-text normal-case text-balance leading-relaxed p-4">
                   <TText tKey={`db.projects.amenities.${amenity.id}.description`} />
                 </p>
               </motion.div>
@@ -95,7 +95,7 @@ export default function ProjectAmenities({ project }: { project: Project }) {
                 key={amenity.id}
                 delay={0.1 * index}
                 onClick={() => setCurrentIndex(index)}
-                className="relative overflow-hidden flex flex-col justify-center items-center gap-4 bg-main/25 hover:bg-main/50 rounded-2xl text-center transition-colors duration-200 p-4 cursor-pointer"
+                className="relative overflow-hidden flex flex-col justify-center items-center gap-4 bg-main/25 hover:bg-main/50 rounded-lg text-center transition-colors duration-200 p-4 cursor-pointer"
               >
                 <div
                   className={`max-md:hidden absolute inset-0 bg-main/25 mix-blend-difference transition-all duration-700 ease-in-out ${index === currentIndex ? 'w-full' : 'w-0'}`}
@@ -105,7 +105,7 @@ export default function ProjectAmenities({ project }: { project: Project }) {
                 <h3 className="font-medium text-sm">
                   <TText tKey={`db.projects.amenities.${amenity.id}.name`} />
                 </h3>
-                <p className="md:hidden bg-main/25 opacity-90 rounded-2xl text-sm normal-case text-balance leading-relaxed p-4">
+                <p className="md:hidden bg-main/25 opacity-90 rounded-lg text-sm normal-case text-balance leading-relaxed p-4">
                   <TText tKey={`db.projects.amenities.${amenity.id}.description`} />
                 </p>
               </AnimIn>

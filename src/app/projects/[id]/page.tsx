@@ -52,7 +52,9 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <Suspense fallback={<LoadingLogo />}>
-      <ProjectHero project={project} />
+      <div className="top-0 sticky">
+        <ProjectHero project={project} />
+      </div>
       <ProjectBreadcrumb project={project} />
       <ProjectTagline project={project} />
       <ProjectGallery project={project} />
@@ -62,7 +64,7 @@ export default async function ProjectPage({ params }: Props) {
       <ProjectAmenities project={project} />
       <ProjectPartners project={project} />
       <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} />
-      <LatestNews className="-mt-18" />
+      <LatestNews className="-mt-18 pb-28" />
     </Suspense>
   )
 }

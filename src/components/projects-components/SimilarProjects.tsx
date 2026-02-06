@@ -50,10 +50,10 @@ export default function SimilarProjects({ currentProject, allProjects }: { curre
 
             {similarProjects.slice(0, 8).map((project, index) => (
               <AnimIn key={project.id} center delay={0.1 * index} className="group w-88 h-100 shrink-0">
-                <RippleEffect className="relative w-full h-full overflow-hidden flex flex-col rounded-2xl">
+                <RippleEffect className="relative w-full h-full overflow-hidden flex flex-col rounded-lg">
                   <Link
                     href={`/projects/${project.id}`}
-                    className="h-100 overflow-hidden flex flex-col bg-main/25 hover:bg-main/35 rounded-2xl transition-colors duration-500 ease-out"
+                    className="h-100 overflow-hidden flex flex-col bg-main/25 hover:bg-main/35 rounded-lg transition-colors duration-500 ease-out"
                   >
                     <ImageIn
                       src={project.gallery?.[0] || '/images/placeholder.webp'}
@@ -62,7 +62,7 @@ export default function SimilarProjects({ currentProject, allProjects }: { curre
                       divClassName="absolute inset-0"
                     />
 
-                    <div className="right-0 bottom-0 left-0 z-20 absolute h-1/3 flex flex-col flex-1 bg-main/25 backdrop-blur-2xl rounded-2xl text-text p-4">
+                    <div className="right-0 bottom-0 left-0 z-20 absolute h-1/3 flex flex-col flex-1 bg-main/25 backdrop-blur-2xl rounded-lg text-text p-4">
                       <AnimIn className="flex items-center text-xs">
                         {project.category[0] && <p className="font-mono font-bold tracking-wider">{<TText tKey={`filters.${project.category[0]}`} />}</p>}
                         <Dot className="w-4 h-4 opacity-50" />
