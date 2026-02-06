@@ -12,7 +12,7 @@ export default function AboutUs() {
   let stats = db.whoweare.statistics
 
   return (
-    <section className="relative w-dvw h-dvh overflow-hidden bg-bg text-text px-4 max-md:px-2 py-12">
+    <section className="relative w-dvw overflow-hidden bg-bg text-text px-4 max-md:px-2 py-12">
       <LineHeading tKey="common.aboutUs" paraTKey="db.whoweare.tagline" lineFrom="center" className="mt-14 mb-8" />
 
       {/* tagline */}

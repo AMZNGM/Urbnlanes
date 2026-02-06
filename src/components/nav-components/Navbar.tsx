@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { useIsMobile } from '@/hooks/useIsMobile'
 import { useScrollPosition } from '@/hooks/useScrollPosition'
 import { useGlobalSearch } from '@/hooks/useGlobalSearch'
@@ -9,6 +9,8 @@ import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
 import Dock from '@/components/nav-components/dock-components/Dock'
 import NavLogo from '@/components/nav-components/NavLogo'
 import NavMenu from '@/components/nav-components/navMenu-components/NavMenu'
+import NavMenuModal from '@/components/nav-components/navMenu-components/NavMenuModal'
+import GetInTouchModal from '@/components/nav-components/navMenu-components/GetInTouchModal'
 
 export default function Navbar() {
   let isMobile = useIsMobile()
@@ -17,6 +19,7 @@ export default function Navbar() {
   let { showSearch } = globalSearch
   let [showCookies, setShowCookies] = useState(false)
   let [showDropdown, setShowDropdown] = useState(false)
+  let [showGetInTouch, setShowGetInTouch] = useState(false)
   let [menuType, setMenuType] = useState<'blurred' | 'modal'>('blurred')
 
   let toggleDropdown = () => {
@@ -42,41 +45,50 @@ export default function Navbar() {
   })
 
   return (
-    <motion.header
-      dir="ltr"
-      layout={isMobile ? true : false}
-      className={`fixed top-0 left-1/2 -translate-x-1/2 px-2 sm:px-4 py-4 sm:py-2 w-dvw ${isScrolled100vh ? 'max-sm:w-auto' : ''} ${showSearch || showCookies || showDropdown ? 'z-70' : 'z-60'}`}
-    >
-      <motion.div
-        animate={{ y: isScrolled100vh ? '0%' : '-100%' }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
-        className="max-sm:hidden top-0 right-0 left-0 fixed h-15 backdrop-blur-2xl"
-      />
-
-      <div className="relative flex justify-between items-start gap-2">
-        <Dock
-          isScrolled100vh={isScrolled100vh}
-          showSearch={showSearch}
-          showCookies={showCookies}
-          setShowCookies={setShowCookies}
-          globalSearch={globalSearch}
-          isNavOpen={showDropdown}
-          className={`sm:ms-auto ${showDropdown ? 'hidden' : ''}`}
+    <>
+      <motion.header
+        dir="ltr"
+        layout={isMobile ? true : false}
+        className={`fixed top-0 left-1/2 -translate-x-1/2 px-2 sm:px-4 py-4 sm:py-2 w-dvw ${isScrolled100vh ? 'max-sm:w-auto' : ''} ${showSearch || showCookies || showDropdown ? 'z-70' : 'z-60'}`}
+      >
+        <motion.div
+          animate={{ y: isScrolled100vh ? '0%' : '-100%' }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          className="max-sm:hidden top-0 right-0 left-0 fixed h-15 backdrop-blur-2xl"
         />
 
-        <NavLogo
-          className={`z-10 sm:order-first ${showDropdown || showSearch || showCookies ? 'max-2xl:invisible' : ''} ${isScrolled100vh ? 'max-sm:hidden' : ''}`}
-        />
+        <div className="relative flex justify-between items-start gap-2">
+          <Dock
+            isScrolled100vh={isScrolled100vh}
+            showSearch={showSearch}
+            showCookies={showCookies}
+            setShowCookies={setShowCookies}
+            globalSearch={globalSearch}
+            isNavOpen={showDropdown}
+            className={`sm:ms-auto ${showDropdown ? 'hidden' : ''}`}
+          />
 
-        <NavMenu
-          showDropdown={showDropdown}
-          menuType={menuType}
-          handleClose={handleClose}
-          toggleDropdown={toggleDropdown}
-          isScrolled100vh={isScrolled100vh}
-          className={`${showSearch || showCookies ? 'max-sm:hidden' : ''}`}
-        />
-      </div>
-    </motion.header>
+          <NavLogo
+            className={`z-10 sm:order-first ${showDropdown || showSearch || showCookies ? 'max-2xl:invisible' : ''} ${isScrolled100vh ? 'max-sm:hidden' : ''}`}
+          />
+
+          <NavMenu
+            showDropdown={showDropdown}
+            setShowGetInTouch={setShowGetInTouch}
+            menuType={menuType}
+            handleClose={handleClose}
+            toggleDropdown={toggleDropdown}
+            isScrolled100vh={isScrolled100vh}
+            className={`${showSearch || showCookies ? 'max-sm:hidden' : ''}`}
+          />
+        </div>
+      </motion.header>
+
+      <AnimatePresence>
+        {showDropdown && menuType === 'modal' && <NavMenuModal showDropdown={showDropdown} handleClose={handleClose} setShowGetInTouch={setShowGetInTouch} />}
+      </AnimatePresence>
+
+      <AnimatePresence>{showGetInTouch && <GetInTouchModal showGetInTouch={showGetInTouch} setShowGetInTouch={setShowGetInTouch} />}</AnimatePresence>
+    </>
   )
 }
