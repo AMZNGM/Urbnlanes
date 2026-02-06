@@ -18,7 +18,7 @@ export const generateMetadata = metadataGenerators.home
 export default function Home() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      <Preloader />
+      {/* <Preloader /> */}
       <Hero />
       <SelectedProjects />
       <WhoWeAre />

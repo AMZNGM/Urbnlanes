@@ -7,7 +7,7 @@ export const generateMetadata = metadataGenerators.termsOfUse
 
 export default function TermsOfUsePage() {
   return (
-    <main className="relative w-full min-h-dvh overflow-hidden bg-text text-black p-12 max-md:px-4">
+    <main className="relative w-full min-h-dvh overflow-hidden bg-bg text-text p-12 max-md:px-4">
       <SoftLine className="h-1!" />
       <h1 className="font-sec text-[5vw] max-md:text-[10vw] max-lg:text-[8vw] text-center ltr:leading-[0.95] rtl:leading-24 tracking-tight">Terms Of Use</h1>
       <SoftLine className="h-1!" />

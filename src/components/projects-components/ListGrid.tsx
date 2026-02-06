@@ -10,19 +10,19 @@ export default function ListGrid({ projects, openModal }: { projects: any[]; ope
         <AnimIn
           key={project.id}
           delay={0.1 * index}
-          className="group relative h-full overflow-hidden flex max-md:flex-col bg-main/50 hover:bg-main/75 backdrop-blur-2xl rounded-2xl transition-colors duration-500"
+          className={`group relative h-full overflow-hidden flex max-md:flex-col ${index % 2 ? 'flex-row-reverse' : ''} bg-main/15 hover:bg-main/25 backdrop-blur-2xl rounded-2xl transition-colors duration-500`}
         >
           <ImageIn
             src={project.gallery?.[0] || '/images/placeholder.webp'}
             alt={project.name}
             sizes="(max-width: 768px) 100vw, 40vw"
             className="group-hover:scale-110 transition-transform duration-700 ease-out"
-            divClassName="relative max-md:w-full md:w-2/5 h-48! md:h-full! overflow-hidden"
+            divClassName="relative max-md:w-full md:w-7/10 h-48! md:h-full! overflow-hidden"
             hasOverlay
           />
 
           <div
-            className={`top-4 rtl:right-4 ltr:left-4 z-10 absolute pointer-events-none px-3 py-1.5 rounded-full text-xs font-semibold
+            className={`top-4 z-10 absolute ${index % 2 ? 'rtl:left-4 ltr:right-4' : 'rtl:right-4 ltr:left-4'} pointer-events-none px-3 py-1.5 rounded-full text-xs font-semibold
                           ${project.status === 'completed' ? 'bg-green-500 text-text' : project.status === 'ongoing' ? 'bg-blue-500 text-text' : 'bg-yellow-500 text-bg'}`}
           >
             {project.status}

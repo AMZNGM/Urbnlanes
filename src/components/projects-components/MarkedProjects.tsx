@@ -10,7 +10,6 @@ import AnimText from '@/components/ui/unstyled/AnimText'
 
 export default function MarkedProjects() {
   let markedProjects = db.projects.filter((p) => ['east-lane', 'levels-business-tower', 'noi', 'mid-lane', 'yellow-lane'].includes(p.id))
-
   let containerRef = useRef(null)
   let { scrollYProgress } = useScroll({ target: containerRef, offset: ['start 0.8', 'end 0.9'] })
   let getCardPosition = (index: number) => {
@@ -25,7 +24,7 @@ export default function MarkedProjects() {
   }
 
   return (
-    <section className="relative w-dvw overflow-x-hidden bg-text text-bg px-18 max-md:px-4">
+    <section className="relative w-dvw overflow-x-hidden bg-text text-bg px-18 max-md:px-2 py-32 max-md:pb-0">
       <AnimText
         as={'h2'}
         delay={0.3}

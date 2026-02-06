@@ -9,38 +9,38 @@ import ListGrid from '@/components/projects-components/ListGrid'
 import ProjectModal from '@/components/projects-components/ProjectModal'
 
 function AllProjectsComponent() {
-  const [selectedProject, setSelectedProject] = useState(null)
-  const [selectedCategory, setSelectedCategory] = useState<string>('all')
-  const [selectedStatus, setSelectedStatus] = useState<string>('all')
-  const [selectedCity, setSelectedCity] = useState<string>('all')
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
+  let [selectedProject, setSelectedProject] = useState(null)
+  let [selectedCategory, setSelectedCategory] = useState<string>('all')
+  let [selectedStatus, setSelectedStatus] = useState<string>('all')
+  let [selectedCity, setSelectedCity] = useState<string>('all')
+  let [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
-  const { categories, statuses, cities, filteredProjects } = useMemo(() => {
-    const categories = Array.from(
+  let { categories, statuses, cities, filteredProjects } = useMemo(() => {
+    let categories = Array.from(
       new Set(
         db.projects.flatMap((project) => {
-          const cats = project.category
+          let cats = project.category
           return Array.isArray(cats) ? cats : cats ? [cats] : []
         })
       )
     )
-    const statuses = Array.from(new Set(db.projects.map((project) => project.status).filter((status): status is string => Boolean(status))))
-    const cities = Array.from(new Set(db.projects.map((project) => project.location?.city || 'Unknown')))
+    let statuses = Array.from(new Set(db.projects.map((project) => project.status).filter((status): status is string => Boolean(status))))
+    let cities = Array.from(new Set(db.projects.map((project) => project.location?.city || 'Unknown')))
 
-    const filteredProjects = db.projects.filter((project) => {
+    let filteredProjects = db.projects.filter((project) => {
       let categoryMatch = selectedCategory === 'all'
       if (!categoryMatch) {
         if (selectedCategory === 'latest') {
           categoryMatch = project.featured === true
         } else {
-          const cats = project.category
-          const projectCategories = Array.isArray(cats) ? cats : cats ? [cats] : []
+          let cats = project.category
+          let projectCategories = Array.isArray(cats) ? cats : cats ? [cats] : []
           categoryMatch = projectCategories.some((cat) => cat.toLowerCase() === selectedCategory.toLowerCase())
         }
       }
 
-      const statusMatch = selectedStatus === 'all' || project.status === selectedStatus
-      const cityMatch = selectedCity === 'all' || selectedCity === 'Unknown' || project.location?.city === selectedCity
+      let statusMatch = selectedStatus === 'all' || project.status === selectedStatus
+      let cityMatch = selectedCity === 'all' || selectedCity === 'Unknown' || project.location?.city === selectedCity
 
       return categoryMatch && statusMatch && cityMatch
     })
@@ -65,7 +65,7 @@ function AllProjectsComponent() {
         onToggleView={() => setViewMode((prevViewMode) => (prevViewMode === 'grid' ? 'list' : 'grid'))}
       />
 
-      <section className="relative w-dvw min-h-dvh overflow-hidden bg-text text-bg px-18 max-md:px-4 py-12">
+      <section className="relative w-dvw min-h-dvh overflow-hidden bg-text text-bg px-4 max-md:px-2 py-12">
         {filteredProjects.length === 0 ? (
           <p className="bg-main/25 rounded-2xl font-bold text-2xl text-center py-12">
             <TText tKey="common.noProjectsFound" />
@@ -80,13 +80,13 @@ function AllProjectsComponent() {
           </>
         )}
 
-        <ProjectModal selectedProject={selectedProject} closeModal={() => setSelectedProject(null)} dark={false} />
+        <ProjectModal dark={false} selectedProject={selectedProject} closeModal={() => setSelectedProject(null)} />
       </section>
     </>
   )
 }
 
-const AllProjects = memo(AllProjectsComponent)
+let AllProjects = memo(AllProjectsComponent)
 AllProjects.displayName = 'AllProjects'
 
 export default AllProjects

@@ -7,7 +7,7 @@ export const generateMetadata = metadataGenerators.privacyPolicy
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="relative w-full min-h-dvh overflow-hidden bg-text text-black p-12 max-md:px-4">
+    <main className="relative w-full min-h-dvh overflow-hidden bg-bg text-text p-12 max-md:px-4">
       <SoftLine className="h-1!" />
       <h1 className="font-sec text-[5vw] max-md:text-[10vw] max-lg:text-[8vw] text-center ltr:leading-[0.95] rtl:leading-24 tracking-tight">
         Website Privacy Notice
@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
 
       <AnimIn delay={0.3} className="space-y-6 text-center mt-12">
         <h2 className="font-sec text-3xl">Introduction</h2>
-        <div className="space-y-4 font-light text-black/80 text-lg normal-case leading-relaxed">
+        <div className="space-y-4 font-light text-bg/80 text-lg normal-case leading-relaxed">
           <p>
             Urbnlanes is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when
             you visit our website and use our services.

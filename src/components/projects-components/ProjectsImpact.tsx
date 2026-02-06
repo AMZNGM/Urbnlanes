@@ -15,7 +15,6 @@ export default function ProjectsImpact() {
     { text: 'db.whoweare.behindthefigures[3].label', value: '20+' },
     { text: 'common.inKuwait', value: '18' },
   ]
-
   let container = useRef<HTMLDivElement>(null)
   let { scrollYProgress } = useScroll({ target: container, offset: ['start 80%', 'end start'] })
   let y = useTransform(scrollYProgress, [0, 1], [0, 473])
@@ -26,8 +25,6 @@ export default function ProjectsImpact() {
         <div className="h-full gap-4 max-md:order-last grid grid-cols-2 max-md:py-18">
           {db.whoweare.kuwaitProjects.map((project, index) => (
             <AnimIn
-              // data-scroll
-              // data-scroll-speed="0.2"
               key={index}
               delay={0.01 * index}
               className={`group bg-main/25 hover:bg-main/35 ${index % 2 === 0 ? 'text-left' : 'text-right'} rounded-lg font-mono tracking-wide transition-colors p-4`}

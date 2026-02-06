@@ -77,7 +77,7 @@ export default function ProjectsFilter({
   ]
 
   return (
-    <section className="relative w-dvw bg-text text-bg px-18 max-md:px-4 py-4">
+    <section className="relative w-dvw bg-text text-bg px-4 max-md:px-2 py-12">
       <AnimIn className="space-y-8">
         <LineHeading tKey="common.allProjects" />
 

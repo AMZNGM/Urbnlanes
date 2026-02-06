@@ -19,7 +19,7 @@ export default function FooterLinks() {
         .map((link, index) => (
           <AnimIn blur spring key={index} delay={index * 0.1 + 0.2} className="space-y-2">
             <Link href={link.slug || ''} className="flex justify-end hover:text-text text-sm text-nowrap transition-all duration-300">
-              <LetterSwap text={<TText tKey={link.name} />} />
+              <LetterSwap staggerDuration={0.05} text={<TText tKey={link.name} />} />
             </Link>
           </AnimIn>
         ))}

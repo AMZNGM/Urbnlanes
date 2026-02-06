@@ -7,7 +7,7 @@ export const generateMetadata = metadataGenerators.cookiePolicy
 
 export default function CookiePolicyPage() {
   return (
-    <main className="relative w-full min-h-dvh overflow-hidden bg-text text-black p-12 max-md:px-4">
+    <main className="relative w-full min-h-dvh overflow-hidden bg-bg text-text p-12 max-md:px-4">
       <SoftLine className="h-1!" />
       <h1 className="font-sec text-[5vw] max-md:text-[10vw] max-lg:text-[8vw] text-center ltr:leading-[0.95] rtl:leading-24 tracking-tight">Cookie Policy</h1>
       <SoftLine className="h-1!" />
@@ -18,7 +18,7 @@ export default function CookiePolicyPage() {
 
       <AnimIn delay={0.3} className="space-y-6 text-center mt-12">
         <h2 className="font-sec text-3xl">What Are Cookies</h2>
-        <div className="space-y-4 font-light text-black/80 text-lg normal-case leading-relaxed">
+        <div className="space-y-4 font-light text-bg/80 text-lg normal-case leading-relaxed">
           <p>
             Cookies are small text files that are placed on your computer or mobile device when you visit a website to remember your actions and preferences
             (such as login, language, font size, and other display preferences) over a period of time.
