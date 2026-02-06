@@ -14,9 +14,9 @@ export default function SelectedProjects() {
   let [selectedProject, setSelectedProject] = useState(null)
 
   return (
-    <section className="relative w-full h-full bg-black text-text px-4 pt-8 pb-24">
+    <section className="relative w-full h-full bg-bg text-text px-4 pt-8 pb-44">
       <LineHeading tKey="nav.selectedProjectsTitle" className="mb-24" />
-      <MainBtn to="/projects" tKey="common.allProjects" size="sm" look="mono" className="right-4 bottom-12 absolute!" />
+      <MainBtn to="/projects" tKey="common.allProjects" size="sm" look="mono" className="right-4 bottom-12 max-md:left-4 w-fit mx-auto absolute!" />
       <MasonryGrid projects={projects} openModal={setSelectedProject} />
       <ProjectModal closeModal={() => setSelectedProject(null)} selectedProject={selectedProject} />
     </section>

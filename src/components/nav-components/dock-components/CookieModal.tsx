@@ -133,11 +133,11 @@ export default function CookieModal({
   return (
     <>
       {/* toggle btn */}
-      {!showCookies && (
+      {!showCookies && isScrolled100vh && (
         <AnimIn
           blur
           center
-          reAnim={isScrolled100vh}
+          reAnim={true}
           duration={0.3}
           delay={0.1}
           once={false}
@@ -146,7 +146,7 @@ export default function CookieModal({
           title="Cookies Sidebar"
           aria-label="Cookies Sidebar"
           onClick={() => setShowCookies(true)}
-          className={`rounded-lg cursor-pointer shrink-0 ${isScrolled100vh ? '' : 'hidden'}`}
+          className="rounded-lg cursor-pointer shrink-0"
         >
           <LetterSwap text={<Settings size={20} className="z-10 mx-3 my-2" />} />
         </AnimIn>

@@ -22,13 +22,17 @@ export default function Home() {
       {/* <Preloader /> */}
       <Hero />
       <SelectedProjects />
+      <WhoWeAre />
       {/* <AboutUs /> */}
       {/* <VideoSection /> */}
       {/* <Updates /> */}
-      {/* <WhoWeAre /> */}
       {/* <TeamOfExperts /> */}
       {/* <OurValues /> */}
       {/* <LatestNews className="px-4!" /> */}
     </Suspense>
   )
 }
+
+// <div className="min-w-80 max-h-120 max-md:max-h-100 overflow-hidden rounded-2xl">
+//   <video src="/videos/projects/yellow-residence/yr-sneak-peak.mp4" poster="/images/poster.png" autoPlay loop muted playsInline />
+// </div>

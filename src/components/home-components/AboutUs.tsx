@@ -1,58 +1,79 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useScroll, useTransform, MotionValue } from 'motion/react'
-import { useTranslation } from '@/translations/useTranslation'
-import { useIsMobile } from '@/hooks/useIsMobile'
+import { Plus } from 'lucide-react'
+import db from '@/database/urbnlanes-db.json'
+import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
+import ImageIn from '@/components/ui/unstyled/ImageIn'
+import AnimText from '@/components/ui/unstyled/AnimText'
+import NumberTicker from '@/components/ui/text/NumberTicker'
+import Shine from '@/components/ui/effects/Shine'
 
 export default function AboutUs() {
-  let { t, currentLanguage } = useTranslation()
-  let isMobile = useIsMobile()
-  let valueRef = useRef(null)
-  let value = t('db.whoweare.description2')
-  let words = value.split(' ')
-  let characters: string[] = []
-  let { scrollYProgress } = useScroll({
-    target: valueRef,
-    offset: isMobile ? ['start 0.9', 'start 0.35'] : ['start 0.9', 'start 0.3'],
-  })
-
-  words.forEach((word: string, i: number) => {
-    characters.push(...word.split(''))
-    if (i < words.length - 1) {
-      characters.push(' ')
-    }
-  })
-
-  let Char = ({ char, index, total, progress }: { char: string; index: number; total: number; progress: MotionValue<number> }) => {
-    let start = index / total
-    let end = start + 1 / total
-    let opacity = useTransform(progress, [start, end], [0, 1])
-
-    return (
-      <span className="relative">
-        <motion.span style={{ opacity }}>{char}</motion.span>
-        <span className="absolute inset-0 opacity-15">{char}</span>
-      </span>
-    )
-  }
+  let stats = db.whoweare.statistics
 
   return (
-    <section className="relative bg-black text-text px-18 max-md:px-4">
-      <AnimIn className="flex max-lg:flex-col justify-center items-center gap-12 px-12 max-md:px-8 py-12">
-        <motion.p ref={valueRef} className="relative font-sec max-md:font-medium max-md:text-xl text-3xl max-md:text-center text-balance">
-          {currentLanguage === 'ar'
-            ? value
-            : characters.map((char, index) => <Char key={index} char={char} index={index} total={characters.length} progress={scrollYProgress} />)}
-        </motion.p>
+    <section className="relative w-full h-full overflow-hidden bg-black text-text px-18 max-md:px-4 py-8">
+      <AnimIn className="relative space-y-18">
+        {/* <Heading text={<TText tKey={'common.whoWeAre'} />} tagline={<TText tKey={'db.whoweare.tagline'} />} /> */}
 
-        <div className="min-w-80 max-h-120 max-md:max-h-100 overflow-hidden rounded-2xl">
-          <video src="/videos/projects/yellow-residence/yr-sneak-peak.mp4" poster="/images/poster.png" autoPlay loop muted playsInline />
+        <div className="gap-12 max-md:gap-16 grid lg:grid-cols-12">
+          {/* Left col */}
+          <AnimIn delay="0.6" className="relative lg:col-span-7">
+            <div className="relative mb-12">
+              <ImageIn
+                src="/images/projects/east-lane/el-main-3.avif"
+                alt="EastLane Project"
+                sizes="(max-width: 768px) 60vw, (max-width: 1024px) 70vw, 60vw"
+                divClassName="relative h-[50vh]!"
+                priority={true}
+              />
+
+              <AnimIn delay="1" className="-right-18 max-md:right-0 -bottom-2 z-30 absolute backdrop-blur-2xl border rounded-sm px-8 py-4 rotate -6">
+                <p className="text-main text-xs tracking-[0.3vw]">
+                  <TText tKey={'db.metadata.company.tagline'} />
+                </p>
+              </AnimIn>
+            </div>
+
+            <AnimText as="p" delay={1} stagger={0.008} className="max-md:text-sm normal-case leading-relaxed">
+              <TText tKey={'db.whoweare.description'} />
+            </AnimText>
+
+            <a href="tel:+15061" className="flex items-center gap-1 text-main hover:text-text text-xs hover:text-sm italic transition-all duration-700 mt-4">
+              <div className="w-8 h-px bg-main" />
+              <TText tKey={'common.hotline'} />
+              <span className="px-px">:</span>
+              <TText tKey={'db.metadata.company.hotline'} />
+            </a>
+          </AnimIn>
+
+          {/* Right col */}
+          <AnimIn className="space-y-12 lg:col-span-5">
+            <div className="relative overflow-hidden space-y-8 bg-black border rounded-sm p-8">
+              {Array.isArray(stats) &&
+                stats.map((stat: any, index: number) => (
+                  <div key={index} className="z-10 relative border-l transition-transform hover:translate-x-2.5 duration-300 pl-6">
+                    <div className="flex items-center font-light max-md:font-medium text-[2vw] max-lg:text-[5vw]">
+                      <NumberTicker value={stat.value} />
+                      <Plus size={20} />
+                    </div>
+                    <AnimText
+                      as="h3"
+                      delay={index * 0.1 + 1}
+                      className="font-extralight max-sm:font-medium text-[1vw] max-md:text-[3vw] max-lg:text-[1.7vw] tracking-wide"
+                    >
+                      <TText tKey={`db.whoweare.statistics[${index}].title`} />
+                    </AnimText>
+                  </div>
+                ))}
+
+              <Shine />
+              <div className="top-0 left-0 absolute w-20 h-20 border-main/35 border-t border-l rounded-tl-sm" />
+              <div className="right-0 bottom-0 absolute w-20 h-20 border-main/35 border-r border-b rounded-br-sm" />
+            </div>
+          </AnimIn>
         </div>
-
-        <div className="absolute inset-0 border border-main/45! rounded-2xl mx-18 max-md:mx-4 pointer-events-none" />
-        <div className="absolute inset-3 border rounded-2xl mx-18 max-md:mx-4 pointer-events-none" />
       </AnimIn>
     </section>
   )

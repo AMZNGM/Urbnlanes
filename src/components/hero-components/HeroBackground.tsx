@@ -71,7 +71,7 @@ export default function HeroBackground({
                 sizes="(max-width: 768px) 90vw, (max-width: 1024px) 80vw, 100vw"
                 className="object-cover"
               />
-              <div className="z-10 absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
+              <div className="z-10 absolute inset-0 bg-linear-to-t from-bg via-transparent to-transparent" />
             </div>
           )
         )}

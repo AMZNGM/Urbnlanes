@@ -38,7 +38,7 @@ export default function Hero() {
       role="region"
       aria-roledescription="hero-carousel"
       aria-label="Project showcase"
-      className="relative w-dvw h-dvh overflow-hidden bg-black text-text px-4 max-md:px-2"
+      className="relative w-dvw h-dvh overflow-hidden bg-bg text-text px-4 max-md:px-2"
     >
       <ArrowCursor />
 
