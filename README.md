@@ -14,8 +14,6 @@ Web app for Urbnlanes
 
 Next.js - React - TypeScript - Framer Motion - Tailwind CSS - Locomotive Scroll - Lucide Icons - usehooks-ts - use-gesture
 
-## Getting Started
-
 ```bash
 # Install dependencies
 npm install
@@ -32,4 +30,3 @@ npm run build
 <div align="center">
   <p>Made by <a href="https://github.com/AMZNGM" target="_blank">NGM</a></p>
 </div>
-# Urbnlanes

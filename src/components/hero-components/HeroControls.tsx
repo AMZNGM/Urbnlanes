@@ -94,11 +94,11 @@ export default function HeroControls({
       </button>
 
       {/* center hover area - see current project */}
-      <button
+      {/* <button
         aria-label="See current project"
         onClick={() => (window.location.href = currentSlide.buttonHref)}
         className="z-10 absolute inset-0 w-1/3 mx-auto cursor-pointer"
-      ></button>
+      ></button> */}
     </section>
   )
 }

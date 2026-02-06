@@ -57,7 +57,7 @@ export default function HeroBackground({
               poster={currentSlide.image}
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="z-10 absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
+            {/* <div className="z-10 absolute inset-0 bg-linear-to-t from-black via-black/1 to-transparent opacity-30" /> */}
           </div>
         ) : (
           currentSlide.image && (
@@ -71,7 +71,7 @@ export default function HeroBackground({
                 sizes="(max-width: 768px) 90vw, (max-width: 1024px) 80vw, 100vw"
                 className="object-cover"
               />
-              <div className="z-10 absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
+              <div className="z-10 absolute inset-0 bg-linear-to-t from-black via-black/1 to-transparent" />
             </div>
           )
         )}

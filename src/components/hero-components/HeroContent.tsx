@@ -28,7 +28,7 @@ export default function HeroContent({
         </AnimatePresence>
       </div>
 
-      <div className="-right-70 bottom-1/2 absolute overflow-hidden text-center rotate-270 -translate-y-1/2">
+      <div className="max-md:hidden -right-70 bottom-1/2 absolute overflow-hidden text-center rotate-270 -translate-y-1/2">
         <AnimatePresence mode="wait">
           <motion.div
             key={`content-${currentIndex}`}
