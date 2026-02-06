@@ -33,7 +33,7 @@ export function useNews() {
 
     // 1. Category Filter
     if (selectedFilter !== 'all') {
-      result = result.filter((item) => (selectedFilter === 'blog' && item.type === 'Blog Post') || (selectedFilter === 'news' && item.type === 'News'))
+      result = result.filter((item) => (selectedFilter === 'blog' && item.type === 'blog') || (selectedFilter === 'news' && item.type === 'news'))
     }
 
     // 2. Search Filter
