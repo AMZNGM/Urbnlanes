@@ -5,11 +5,11 @@ import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 
 import Preloader from '@/components/loading-components/Preloader'
 import Hero from '@/components/hero-components/Hero'
+const SelectedProjects = dynamic(() => import('@/components/home-components/SelectedProjects'))
 const WhoWeAre = dynamic(() => import('@/components/home-components/WhoWeAre'))
 const AboutUs = dynamic(() => import('@/components/home-components/AboutUs'))
 const TeamOfExperts = dynamic(() => import('@/components/home-components/TeamOfExperts'))
 const VideoSection = dynamic(() => import('@/components/shared/VideoSection'))
-const SelectedProjects = dynamic(() => import('@/components/home-components/SelectedProjects'))
 const Updates = dynamic(() => import('@/components/home-components/latestUpdates-components/Updates'))
 const OurValues = dynamic(() => import('@/components/home-components/OurValues'))
 const LatestNews = dynamic(() => import('@/components/news-components/LatestNews'))
@@ -21,7 +21,7 @@ export default function Home() {
     <Suspense fallback={<LoadingLogo />}>
       {/* <Preloader /> */}
       <Hero />
-      {/* <SelectedProjects /> */}
+      <SelectedProjects />
       {/* <AboutUs /> */}
       {/* <VideoSection /> */}
       {/* <Updates /> */}

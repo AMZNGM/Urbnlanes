@@ -8,6 +8,7 @@ import ImageIn from '@/components/ui/unstyled/ImageIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import CloseBtn from '@/components/ui/buttons/CloseBtn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
 
 export default function ProjectModal({ closeModal, selectedProject, dark = true }: { closeModal: () => void; selectedProject: any; dark?: boolean }) {
   let { t } = useTranslation()
@@ -41,6 +42,8 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
     }
   }, [closeModal])
 
+  useBodyScrollLock(selectedProject)
+
   return (
     <AnimatePresence>
       {selectedProject && (
@@ -51,7 +54,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="z-50 fixed inset-0 flex justify-center items-center bg-bg/30 backdrop-blur-2xl"
+          className="z-70 fixed inset-0 flex justify-center items-center bg-bg/30 backdrop-blur-2xl"
         >
           <motion.div
             onClick={(e) => e.stopPropagation()}
@@ -59,7 +62,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
             animate={{ scale: 1, opacity: 1, y: 0, filter: 'blur(0px)' }}
             exit={{ scale: 0.5, opacity: 0, y: 10, filter: 'blur(10px)' }}
             transition={{ duration: 0.3, filter: { duration: 0.3, delay: 0.2 } }}
-            className={`relative w-[95dvw] h-[98dvh] max-md:overflow-y-scroll flex max-md:flex-col gap-8 shadow-2xl border rounded-2xl p-4 ${dark ? 'bg-bg text-text shadow-bg' : 'bg-text text-bg shadow-text'}`}
+            className={`relative w-[98dvw] h-[88dvh] max-md:overflow-y-scroll overflow-y-hidden flex max-md:flex-col gap-8 shadow-2xl border rounded-2xl p-4 ${dark ? 'bg-bg text-text shadow-bg' : 'bg-text text-bg shadow-text'}`}
           >
             <div style={{ scrollbarWidth: 'none' }} className="md:w-1/3 md:overflow-y-auto flex flex-col justify-between gap-8">
               <div className="flex flex-col gap-8">
@@ -144,9 +147,9 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
               <MainBtn to={`/projects/${selectedProject.id}`} size="sm" tKey="modal.viewFullProject" look="mono" />
             </div>
 
-            <div style={{ scrollbarWidth: 'none' }} className="md:h-[94dvh] md:overflow-y-auto flex-1 space-y-4 rounded-2xl">
+            <div style={{ scrollbarWidth: 'none' }} className="md:h-[94dvh] md:overflow-y-auto flex-1 space-y-4 rounded-lg">
               {selectedProject.gallery.map((img: string, idx: number) => (
-                <div key={idx} className="relative w-full h-[60dvh] overflow-hidden rounded-2xl">
+                <div key={idx} className="relative w-full h-[60dvh] overflow-hidden rounded-lg">
                   <ImageIn duration={0.3} delay={0} src={img} alt={`${title} - Image ${idx + 1}`} sizes="(max-width: 768px) 95vw, 60vw" />
                 </div>
               ))}

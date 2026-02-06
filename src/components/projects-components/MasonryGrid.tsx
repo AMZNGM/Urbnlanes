@@ -6,10 +6,10 @@ import TText from '@/translations/TText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
 
 function useColumns() {
-  const [columns, setColumns] = useState(1)
+  let [columns, setColumns] = useState(1)
 
   useEffect(() => {
-    const updateColumns = () => {
+    let updateColumns = () => {
       if (window.matchMedia('(min-width: 1280px)').matches) {
         setColumns(5)
       } else if (window.matchMedia('(min-width: 768px)').matches) {
@@ -28,19 +28,19 @@ function useColumns() {
 }
 
 export default function MasonryGrid({ projects, openModal }: { projects: any[]; openModal: (p: any) => void }) {
-  const containerRef = useRef(null)
-  const columnsCount = useColumns()
+  let containerRef = useRef(null)
+  let columnsCount = useColumns()
 
-  const { scrollYProgress } = useScroll({
+  let { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start 80%', 'end start'],
   })
 
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [250, -250])
-  const parallaxSubtle = useTransform(scrollYProgress, [0, 1], [120, -120])
+  let parallaxY = useTransform(scrollYProgress, [0, 1], [250, -250])
+  let parallaxSubtle = useTransform(scrollYProgress, [0, 1], [120, -120])
 
-  const columns = useMemo(() => {
-    const cols: any[][] = Array.from({ length: columnsCount }, () => [])
+  let columns = useMemo(() => {
+    let cols: any[][] = Array.from({ length: columnsCount }, () => [])
 
     let fillOrder: number[] = []
     if (columnsCount === 5)
@@ -50,18 +50,18 @@ export default function MasonryGrid({ projects, openModal }: { projects: any[]; 
     else fillOrder = [0] // Single column
 
     projects.forEach((project, i) => {
-      const colIndex = fillOrder[i % columnsCount]
+      let colIndex = fillOrder[i % columnsCount]
       cols[colIndex].push(project)
     })
     return cols
   }, [projects, columnsCount])
 
   return (
-    <div ref={containerRef} className="w-full flex md:flex-row flex-col gap-4">
+    <div ref={containerRef} className="relative w-full flex md:flex-row flex-col gap-4">
       {columns.map((col, colIndex) => {
         // Dynamic Parallax Logic
         let yTransform: any = 0
-        const isCenter = colIndex === Math.floor(columnsCount / 2)
+        let isCenter = colIndex === Math.floor(columnsCount / 2)
 
         if (columnsCount > 1) {
           if (columnsCount === 5) {
@@ -89,10 +89,10 @@ export default function MasonryGrid({ projects, openModal }: { projects: any[]; 
 }
 
 function ProjectCard({ project, index, openModal }: { project: any; index: number; openModal: (p: any) => void }) {
-  const cardRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: cardRef, offset: ['start end', 'end start'] })
-  const y = useTransform(scrollYProgress, [0, 1], ['-15%', '15%'])
-  const scale = useTransform(scrollYProgress, [0, 1], [1.15, 1.25])
+  let cardRef = useRef(null)
+  let { scrollYProgress } = useScroll({ target: cardRef, offset: ['start end', 'end start'] })
+  let y = useTransform(scrollYProgress, [0, 1], ['-15%', '15%'])
+  let scale = useTransform(scrollYProgress, [0, 1], [1.15, 1.25])
 
   return (
     <motion.div

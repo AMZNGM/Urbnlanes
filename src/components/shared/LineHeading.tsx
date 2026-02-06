@@ -7,7 +7,7 @@ export default function LineHeading({ tKey = '', paraTKey = '', sideParaTKey = '
     <div className={className}>
       {!sideParaTKey && !paraTKey && (
         <>
-          <MotionLine delay={0.3} />
+          <MotionLine delay={0.1} />
 
           <AnimText as="h3" delay={0.5} className="font-mono">
             <TText tKey={tKey} />
@@ -17,7 +17,7 @@ export default function LineHeading({ tKey = '', paraTKey = '', sideParaTKey = '
 
       {sideParaTKey && !paraTKey && (
         <>
-          <MotionLine delay={0.3} />
+          <MotionLine delay={0.1} />
 
           <div className="gap-8 grid md:grid-cols-3 normal-case">
             <div className="col-span-1">
@@ -41,7 +41,7 @@ export default function LineHeading({ tKey = '', paraTKey = '', sideParaTKey = '
             <TText tKey={tKey} />
           </AnimText>
 
-          <MotionLine delay={0.3} />
+          <MotionLine delay={0.1} />
 
           <AnimText as={'p'} delay={0.5} className="opacity-65 font-mono text-sm line-clamp-1">
             <TText tKey={paraTKey} />

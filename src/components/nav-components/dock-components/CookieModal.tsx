@@ -137,6 +137,7 @@ export default function CookieModal({
         <AnimIn
           blur
           center
+          reAnim={isScrolled100vh}
           duration={0.3}
           delay={0.1}
           once={false}

@@ -53,7 +53,7 @@ export default function Navbar() {
         className="max-sm:hidden top-0 right-0 left-0 fixed h-15 backdrop-blur-2xl"
       />
 
-      <div className="flex justify-between items-start gap-2">
+      <div className="relative flex justify-between items-start gap-2">
         <Dock
           isScrolled100vh={isScrolled100vh}
           showSearch={showSearch}

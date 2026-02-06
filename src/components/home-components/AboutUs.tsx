@@ -41,7 +41,7 @@ export default function AboutUs() {
   return (
     <section className="relative bg-black text-text px-18 max-md:px-4">
       <AnimIn className="flex max-lg:flex-col justify-center items-center gap-12 px-12 max-md:px-8 py-12">
-        <motion.p ref={valueRef} className="font-sec max-md:font-medium max-md:text-xl text-3xl max-md:text-center text-balance">
+        <motion.p ref={valueRef} className="relative font-sec max-md:font-medium max-md:text-xl text-3xl max-md:text-center text-balance">
           {currentLanguage === 'ar'
             ? value
             : characters.map((char, index) => <Char key={index} char={char} index={index} total={characters.length} progress={scrollYProgress} />)}

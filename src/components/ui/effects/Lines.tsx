@@ -18,7 +18,7 @@ export function MotionLine({
       whileInView={{ width: '100%' }}
       transition={{ duration: 0.8, delay }}
       viewport={{ once }}
-      className={`h-0.5 bg-main my-2 mix-blend-difference ${className}`}
+      className={`relative h-0.5 bg-main my-2 mix-blend-difference ${className}`}
       {...props}
     />
   )
@@ -31,7 +31,7 @@ export function SoftLine({ className = '', delay = 0.3 }: { className?: string; 
       whileInView={{ scaleX: 1 }}
       transition={{ duration: 1, delay }}
       viewport={{ once: true }}
-      className={`w-full h-px bg-linear-to-r from-transparent via-main to-transparent my-8 ${className}`}
+      className={`relative w-full h-px bg-linear-to-r from-transparent via-main to-transparent my-8 ${className}`}
     />
   )
 }

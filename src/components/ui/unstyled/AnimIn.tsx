@@ -69,7 +69,6 @@ export default function AnimIn({
               },
             },
             exit: {
-              display: 'none',
               opacity: 0,
               y: center ? 0 : toDown ? -40 : 40,
               filter: blur ? 'blur(8px)' : null,
@@ -85,6 +84,7 @@ export default function AnimIn({
           exit="exit"
           viewport={{ once }}
           className={`relative ${className}`}
+          style={{ ...((props as any).style || {}), position: 'relative' }}
         >
           {children}
         </Tag>

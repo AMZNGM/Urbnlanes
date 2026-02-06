@@ -27,7 +27,7 @@ export default function AnimText({
   if (!isStrOrNum && !isTText) {
     let Tag = as
     return (
-      <Tag className={`relative overflow-hidden leading-[1.05] ${className}`} {...props}>
+      <Tag className={`relative overflow-hidden leading-[1.05] ${className}`} {...props} style={{ ...props.style, position: 'relative' }}>
         <motion.span
           variants={{
             hidden: prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: '1em' },
@@ -42,6 +42,7 @@ export default function AnimText({
           whileInView="visible"
           viewport={{ once: true }}
           className="inline-block relative [direction:inherit]"
+          style={{ position: 'relative' }}
         >
           {children}
         </motion.span>
@@ -66,12 +67,13 @@ export default function AnimText({
   let words = useMemo(() => text.split(/(\s+)/), [text])
 
   return (
-    <Tag className={`relative overflow-hidden leading-[1.05] ${className}`} {...props}>
+    <Tag style={{ ...props.style, position: 'relative' }} className={`relative overflow-hidden leading-[1.05] ${className}`} {...props}>
       <motion.span
         variants={{ visible: { transition: { delayChildren: delay, staggerChildren: stagger } } }}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
+        style={{ position: 'relative' }}
         className="inline-block relative [direction:inherit]"
       >
         {words.map((word, i) => {

@@ -5,7 +5,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 
 export default function ScrollProgress({ className = '' }: { className?: string }) {
-  let { scrollYProgress } = useScroll({ offset: ['start start', 'end end'] })
+  let { scrollYProgress } = useScroll()
   let width = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
   let trackRef = useRef<HTMLDivElement | null>(null)
 
