@@ -1,6 +1,5 @@
-'use client'
-
 import { Plus } from 'lucide-react'
+import { MotionLine } from '@/components/ui/effects/Lines'
 import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
@@ -16,7 +15,7 @@ export default function AboutUs() {
       <LineHeading tKey="common.aboutUs" paraTKey="db.whoweare.tagline" lineFrom="center" className="mt-14 mb-8" />
 
       {/* tagline */}
-      <AnimIn blur center delay={0.5} className="ltr:-right-20 max-md:right-0 rtl:-left-20 absolute border rounded-lg mb-8 px-8 py-4">
+      <AnimIn blur center delay={0.5} className="ltr:-right-20 max-md:right-0 rtl:-left-20 absolute border rounded-3xl mb-8 px-8 py-4">
         <AnimText delay={1} className="text-main text-xs rtl:leading-5 tracking-[0.3vw]">
           <TText tKey={'db.metadata.company.tagline'} />
         </AnimText>
@@ -37,7 +36,7 @@ export default function AboutUs() {
       </AnimIn>
 
       {/* stats */}
-      <div className="relative flex max-md:flex-col justify-between gap-8 border rounded-lg p-8">
+      <div className="relative flex max-md:flex-col justify-between gap-8 border rounded-3xl p-8">
         {Array.isArray(stats) &&
           stats.map((stat: any, index: number) => (
             <div key={index} className="border-l font-light pl-6">
@@ -52,9 +51,11 @@ export default function AboutUs() {
             </div>
           ))}
 
-        <div className="top-0 left-0 absolute w-20 h-20 border-main/38! border-t border-l rounded-tl-sm" />
-        <div className="right-0 bottom-0 absolute w-20 h-20 border-main/38! border-r border-b rounded-br-sm" />
+        <div className="top-0 left-0 absolute w-20 h-20 border-main/38! border-t border-l rounded-tl-3xl" />
+        <div className="right-0 bottom-0 absolute w-20 h-20 border-main/38! border-r border-b rounded-br-3xl" />
       </div>
+
+      <MotionLine className="mt-14" from="center" />
     </section>
   )
 }

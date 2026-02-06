@@ -7,20 +7,22 @@ export function MotionLine({
   delay = 0.3,
   from = 'right',
   once = true,
+  useWidth = false,
   ...props
 }: {
   className?: string
   delay?: number
   from?: string
   once?: boolean
+  useWidth?: boolean
 } & Omit<React.ComponentProps<typeof motion.div>, 'className' | 'initial' | 'whileInView' | 'transition' | 'viewport'>) {
   return (
     <motion.div
-      initial={{ scaleX: 0 }}
-      whileInView={{ scaleX: 1 }}
+      initial={useWidth ? { width: '0%' } : { scaleX: 0 }}
+      whileInView={useWidth ? { width: '100%' } : { scaleX: 1 }}
       transition={{ duration: 0.9, delay, ease: [0.36, 0.34, 0.69, 1.01] }}
       viewport={{ once }}
-      className={`relative h-0.5 bg-main my-2 mix-blend-difference origin-${from} ${className}`}
+      className={`relative h-0.5 bg-main my-2 mix-blend-difference ${useWidth ? '' : `origin-${from}`} ${className}`}
       {...props}
     />
   )

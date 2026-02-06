@@ -7,7 +7,7 @@ import AnimText from '@/components/ui/unstyled/AnimText'
 
 export default function OurCoreValues() {
   return (
-    <section className="relative w-dvw bg-text text-black px-18 max-md:px-4 py-12">
+    <section id="our-core-values" className="relative w-dvw bg-text text-black px-18 max-md:px-4 py-12">
       <AnimText as="h2" delay={0.5} className="text-3xl mb-4">
         <TText tKey="common.ourCoreValues" />
       </AnimText>
