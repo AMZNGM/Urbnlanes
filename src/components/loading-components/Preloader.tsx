@@ -31,7 +31,7 @@ export default function Preloader() {
               animate={{ pathLength: 1, fill: '#fff' }}
               transition={{
                 pathLength: { duration: 25, repeat: Infinity, repeatType: 'reverse' },
-                fill: { duration: 0.8, delay: 2 },
+                fill: { duration: 0.8, delay: 2.1 },
               }}
             />
           </motion.svg>

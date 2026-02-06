@@ -8,6 +8,7 @@ import TText from '@/translations/TText'
 export default function HeroControls({
   slides,
   currentIndex,
+  currentSlide,
   goToNext,
   goToPrev,
   showNextSlide,
@@ -18,6 +19,7 @@ export default function HeroControls({
 }: {
   slides: HeroSlide[]
   currentIndex: number
+  currentSlide: HeroSlide
   goToNext: () => void
   goToPrev: () => void
   showNextSlide: boolean
@@ -27,14 +29,14 @@ export default function HeroControls({
   prefersReducedMotion: boolean | null
 }) {
   return (
-    <>
+    <section className="z-20">
       {/* Next slide hover area */}
       <button
+        aria-label="Next project"
         onClick={goToNext}
         onMouseEnter={() => setShowNextSlide(true)}
         onMouseLeave={() => setShowNextSlide(false)}
-        aria-label="Next project"
-        className="rtl:hidden top-0 right-0 bottom-1/2 z-20 absolute w-1/3 flex justify-end items-end focus:outline-none pr-12 cursor-pointer"
+        className="rtl:hidden top-0 right-12 bottom-1/2 z-20 absolute w-1/3 flex justify-end items-end focus:outline-none cursor-pointer"
       >
         <AnimatePresence>
           {showNextSlide && (
@@ -48,12 +50,13 @@ export default function HeroControls({
                 stiffness: 80,
                 ease: 'easeInOut',
               }}
-              className="max-md:hidden max-w-md bg-black/25 opacity-75 rounded-2xl scale-80 p-6 select-none"
+              className="max-md:hidden max-w-md bg-bg/25 backdrop-blur-2xl rounded-2xl uppercase tracking-wider p-4 select-none"
             >
-              <p className="text-text/70 text-sm uppercase tracking-wider mb-2">
+              <p className="font-mono text-text/60 text-xs">
                 <TText tKey="common.nextProject" />
               </p>
-              <h3 className="font-medium text-2xl">{slides[(currentIndex + 1) % slides.length]?.title || ''}</h3>
+
+              <h3>{slides[(currentIndex + 1) % slides.length]?.title || ''}</h3>
             </motion.div>
           )}
         </AnimatePresence>
@@ -61,11 +64,11 @@ export default function HeroControls({
 
       {/* Previous slide hover area */}
       <button
+        aria-label="Previous project"
         onClick={goToPrev}
         onMouseEnter={() => setShowPrevSlide(true)}
         onMouseLeave={() => setShowPrevSlide(false)}
-        aria-label="Previous project"
-        className="rtl:hidden top-0 bottom-1/2 left-0 z-20 absolute w-1/3 flex justify-start items-end focus:outline-none pl-12 cursor-pointer"
+        className="rtl:hidden top-0 bottom-1/2 left-12 z-20 absolute w-1/3 flex justify-start items-end focus:outline-none cursor-pointer"
       >
         <AnimatePresence>
           {showPrevSlide && (
@@ -79,16 +82,23 @@ export default function HeroControls({
                 stiffness: 80,
                 ease: 'easeInOut',
               }}
-              className="max-md:hidden max-w-md bg-black/25 opacity-75 rounded-2xl scale-80 p-6 select-none"
+              className="max-md:hidden max-w-md bg-bg/25 backdrop-blur-2xl rounded-2xl uppercase tracking-wider p-4 select-none"
             >
-              <p className="text-text/70 text-sm uppercase tracking-wider mb-2">
+              <p className="font-mono text-text/60 text-xs">
                 <TText tKey="common.previousProject" />
               </p>
-              <h3 className="font-medium text-2xl">{slides[(currentIndex - 1 + slides.length) % slides.length]?.title || ''}</h3>
+              <h3>{slides[(currentIndex - 1 + slides.length) % slides.length]?.title || ''}</h3>
             </motion.div>
           )}
         </AnimatePresence>
       </button>
-    </>
+
+      {/* center hover area - see current project */}
+      <button
+        aria-label="See current project"
+        onClick={() => (window.location.href = currentSlide.buttonHref)}
+        className="z-10 absolute inset-0 w-1/3 mx-auto cursor-pointer"
+      ></button>
+    </section>
   )
 }

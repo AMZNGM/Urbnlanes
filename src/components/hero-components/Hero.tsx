@@ -2,14 +2,14 @@
 
 import { useHero } from '@/hooks/useHero'
 import ArrowCursor from '@/components/ui/cursors/ArrowCursor'
-import HeroBackground from '@/components/hero-components/HeroBackground'
 import HeroVideoToggle from '@/components/hero-components/HeroVideoToggle'
-import HeroControls from '@/components/hero-components/HeroControls'
-import HeroContent from '@/components/hero-components/HeroContent'
 import HeroIndicators from '@/components/hero-components/HeroIndicators'
+import HeroControls from '@/components/hero-components/HeroControls'
+import HeroBackground from '@/components/hero-components/HeroBackground'
+import HeroContent from '@/components/hero-components/HeroContent'
 
 export default function Hero() {
-  const {
+  let {
     currentIndex,
     showNextSlide,
     setShowNextSlide,
@@ -32,19 +32,32 @@ export default function Hero() {
     t,
   } = useHero()
 
-  if (!slides.length) {
-    return (
-      <div className="relative w-full h-dvh overflow-hidden flex justify-center items-center bg-text text-bg">
-        <h1>{t('noProjectsFound')}</h1>
-      </div>
-    )
-  }
-
   return (
-    <section role="region" aria-roledescription="carousel" aria-label="Project showcase" className="relative w-full h-dvh overflow-hidden bg-black text-text">
+    <section
+      dir="ltr"
+      role="region"
+      aria-roledescription="hero-carousel"
+      aria-label="Project showcase"
+      className="relative w-dvw h-dvh overflow-hidden bg-black text-text px-4 max-md:px-2"
+    >
       <ArrowCursor />
 
       <HeroVideoToggle isVideoMode={isVideoMode} setIsVideoMode={setIsVideoMode} />
+
+      <HeroIndicators slides={slides} currentIndex={currentIndex} goToSlide={goToSlide} progressScale={progressScale} />
+
+      <HeroControls
+        slides={slides}
+        currentIndex={currentIndex}
+        currentSlide={currentSlide}
+        goToNext={goToNext}
+        goToPrev={goToPrev}
+        showNextSlide={showNextSlide}
+        setShowNextSlide={setShowNextSlide}
+        showPrevSlide={showPrevSlide}
+        setShowPrevSlide={setShowPrevSlide}
+        prefersReducedMotion={prefersReducedMotion}
+      />
 
       <HeroBackground
         currentSlide={currentSlide}
@@ -59,23 +72,7 @@ export default function Hero() {
         handleAnimationStart={handleAnimationStart}
       />
 
-      <div className="z-20 relative h-full flex flex-col justify-end gap-12 p-18 max-md:p-4">
-        <HeroControls
-          slides={slides}
-          currentIndex={currentIndex}
-          goToNext={goToNext}
-          goToPrev={goToPrev}
-          showNextSlide={showNextSlide}
-          setShowNextSlide={setShowNextSlide}
-          showPrevSlide={showPrevSlide}
-          setShowPrevSlide={setShowPrevSlide}
-          prefersReducedMotion={prefersReducedMotion}
-        />
-
-        <HeroContent currentSlide={currentSlide} currentIndex={currentIndex} prefersReducedMotion={prefersReducedMotion} />
-
-        <HeroIndicators slides={slides} currentIndex={currentIndex} goToSlide={goToSlide} progressScale={progressScale} />
-      </div>
+      <HeroContent currentSlide={currentSlide} currentIndex={currentIndex} prefersReducedMotion={prefersReducedMotion} />
     </section>
   )
 }

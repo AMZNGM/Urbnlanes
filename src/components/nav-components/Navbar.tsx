@@ -45,7 +45,7 @@ export default function Navbar() {
     <motion.header
       dir="ltr"
       layout={isMobile ? true : false}
-      className={`z-60 fixed top-0 left-1/2 -translate-x-1/2 px-2 sm:px-4 py-4 sm:py-2 w-dvw ${isScrolled100vh ? 'max-sm:w-auto' : ''}`}
+      className={`fixed top-0 left-1/2 -translate-x-1/2 px-2 sm:px-4 py-4 sm:py-2 w-dvw ${isScrolled100vh ? 'max-sm:w-auto' : ''} ${showSearch || showCookies || showDropdown ? 'z-70' : 'z-60'}`}
     >
       <motion.div
         animate={{ y: isScrolled100vh ? '0%' : '-100%' }}

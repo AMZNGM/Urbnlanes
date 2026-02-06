@@ -14,23 +14,23 @@ export function ArrowIcon({ className = '' }) {
 }
 
 export default function ArrowCursor() {
-  const ref = useRef<HTMLDivElement>(null)
-  const { x, y } = useMouseMotion({ current: null })
-  const isMobile = useIsMobile()
+  let ref = useRef<HTMLDivElement>(null)
+  let { x, y } = useMouseMotion({ current: null })
+  let isMobile = useIsMobile()
 
-  const rotate = useTransform([x, y], (latest: number[]) => {
-    const [currentX, currentY] = latest
+  let rotate = useTransform([x, y], (latest: number[]) => {
+    let [currentX, currentY] = latest
     if (!ref.current) return 0
 
-    const rect = ref.current.getBoundingClientRect()
-    const centerX = rect.left + rect.width / 2
-    const centerY = rect.top + rect.height / 2
+    let rect = ref.current.getBoundingClientRect()
+    let centerX = rect.left + rect.width / 2
+    let centerY = rect.top + rect.height / 2
 
-    const angle = Math.atan2(currentY - centerY, currentX - centerX)
+    let angle = Math.atan2(currentY - centerY, currentX - centerX)
     return (angle * 180) / Math.PI
   })
 
-  const smoothRotate = useSpring(rotate, {
+  let smoothRotate = useSpring(rotate, {
     stiffness: 150,
     damping: 20,
     mass: 0.1,
@@ -48,7 +48,7 @@ export default function ArrowCursor() {
         translateX: '-50%',
         translateY: '-50%',
       }}
-      className="z-10000 absolute inset-0 w-12 h-12 flex justify-center items-center bg-main rounded-full pointer-events-none"
+      className="z-50 absolute inset-0 w-12 h-12 flex justify-center items-center bg-main rounded-full pointer-events-none"
     >
       <ArrowIcon className="w-4 fill-text" />
     </motion.div>

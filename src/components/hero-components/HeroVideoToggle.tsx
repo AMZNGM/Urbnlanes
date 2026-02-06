@@ -6,12 +6,12 @@ export default function HeroVideoToggle({ isVideoMode, setIsVideoMode }: { isVid
   return (
     <div
       dir="ltr"
-      className="max-md:hidden top-38 max-md:top-28 right-18 max-md:right-4 z-30 absolute h-10 flex items-center gap-4 bg-black/25 hover:bg-black/50 backdrop-blur-lg border border-text/10 rounded-full transition-colors px-4"
+      className="max-md:hidden top-2 right-36 z-60 absolute overflow-hidden space-x-4 bg-main/25 hover:bg-bg/50 backdrop-blur-2xl rounded-full transition-colors px-4 py-0.5 select-none"
     >
       <button
         onClick={() => setIsVideoMode(false)}
-        className={`text-xs font-medium tracking-wider transition-colors cursor-pointer py-4 focus-visible:outline-2 focus-visible:outline-text focus-visible:outline-offset-4 ${
-          !isVideoMode ? 'text-text' : 'text-main hover:text-text'
+        className={`text-xs font-medium tracking-wider transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-text focus-visible:outline-offset-4 ${
+          !isVideoMode ? 'text-text' : 'text-text/60 hover:text-text'
         }`}
       >
         <TText tKey="common.image" />
@@ -21,8 +21,8 @@ export default function HeroVideoToggle({ isVideoMode, setIsVideoMode }: { isVid
 
       <button
         onClick={() => setIsVideoMode(true)}
-        className={`text-xs font-medium tracking-wider transition-colors cursor-pointer py-4 focus-visible:outline-2 focus-visible:outline-text focus-visible:outline-offset-4 ${
-          isVideoMode ? 'text-text' : 'text-main hover:text-text'
+        className={`text-xs font-medium tracking-wider transition-colors cursor-pointer focus-visible:outline-2 focus-visible:outline-text focus-visible:outline-offset-4 ${
+          isVideoMode ? 'text-text' : 'text-text/60 hover:text-text'
         }`}
       >
         <TText tKey="common.video" />

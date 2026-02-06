@@ -45,7 +45,7 @@ export function useHero(): HeroData {
       const slide: HeroSlide = {
         id: project.id,
         title: t(`db.projects.${project.id}.name`) || 'Project',
-        description: t(`db.projects.${project.id}.shortDesc`) || t(`db.projects.${project.id}.description`) || '',
+        description: t(`db.projects.${project.id}.description`) || t(`db.projects.${project.id}.shortDesc`) || '',
         image: (project.gallery && project.gallery[config.galleryIndex]) || '',
         video: config.video || project.video || null,
         buttonText: t('common.moreAboutProject', {

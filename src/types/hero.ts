@@ -1,5 +1,5 @@
-import { MotionValue } from 'motion/react'
 import { RefObject, Dispatch, SetStateAction } from 'react'
+import { MotionValue } from 'motion/react'
 
 export interface HeroSlide {
   id: string
