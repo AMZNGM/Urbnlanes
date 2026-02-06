@@ -7,9 +7,8 @@ import db from '@/database/urbnlanes-db.json'
 import TText from '@/translations/TText'
 import AnimText from '@/components/ui/unstyled/AnimText'
 import ImageIn from '@/components/ui/unstyled/ImageIn'
-import MainBtn from '@/components/ui/buttons/MainBtn'
 
-const partnersData = [
+let partnersData = [
   ...getAllPartners(),
   ...db.whoweare.sisterCompanies.map((company) => ({
     name: company.title,
@@ -51,8 +50,6 @@ function ParallaxPanel({ partner, index }: { partner: (typeof partnersData)[0]; 
               Partner in {partner.projects.length} project{partner.projects.length > 1 ? 's' : ''}
             </AnimText>
           )}
-
-          <MainBtn tKey="common.findOutMore" className="bg-text! mt-4" />
         </div>
       </div>
     </section>
@@ -63,10 +60,10 @@ export default function PartnersParallaxPanels() {
   const displayPartners = partnersData.slice(0, 5)
 
   return (
-    <section className="overflow-hidden bg-text rounded-2xl mx-2">
+    <>
       {displayPartners.map((partner, index) => (
         <ParallaxPanel key={partner.name} partner={partner} index={index} />
       ))}
-    </section>
+    </>
   )
 }

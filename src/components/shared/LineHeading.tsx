@@ -7,7 +7,7 @@ export default function LineHeading({
   paraTKey = '',
   sideParaTKey = '',
   className = '',
-  lineFrom = 'left',
+  lineFrom = 'right',
 }: {
   tKey?: string
   paraTKey?: string

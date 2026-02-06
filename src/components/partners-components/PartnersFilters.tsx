@@ -21,22 +21,22 @@ let PartnerCard = ({ partner, index, onInView, isActive }: { partner: any; index
   }, [isInView, partner.name, partner.title, onInView])
 
   return (
-    <div ref={ref} id={partner.name || partner.title} className="group relative w-full border-bg/50! border-b py-12 pe-8">
+    <div ref={ref} id={partner.name || partner.title} className="group relative w-full border-bg! border-b py-12">
       <div className={`${isActive ? 'opacity-100 translate-x-4' : 'opacity-10 scale-95'} transition-all duration-700 ease-[0.16,1,0.3,1]`}>
-        <div className="flex max-xl:flex-col flex-1 md:gap-12">
+        <div className="flex max-xl:flex-col flex-1 md:gap-8">
           <ImageIn
             src={partner.logo}
             alt={partner.name || partner.title}
-            className="object-contain! p-4"
-            divClassName="w-48 md:w-64 h-48! md:h-64! overflow-hidden bg-bg! rounded-2xl transition-colors duration-500 shrink-0"
+            className="object-contain! invert"
+            divClassName="w-38 md:w-64 h-38! md:h-64! bg-text!"
           />
 
-          <div className="md:h-64! flex flex-col justify-between gap-2 mt-2">
-            <h3 className="font-bold text-2xl md:text-6xl 2xl:text-8xl leading-[0.8] tracking-tighter">
+          <div className="flex flex-col justify-center gap-2 mt-2">
+            <h3 className="font-light max-md:text-3xl text-7xl leading-[0.8] tracking-tighter">
               <TText tKey={`partners.partnersNames.${partner.name || partner.title}`} />
             </h3>
 
-            <div className="flex flex-wrap gap-4 font-medium max-md:text-sm text-xl tracking-tight">
+            <div className="flex flex-wrap gap-4 font-mono text-sm ms-2">
               {partner.role && (
                 <div className="flex flex-wrap text-main">
                   {Array.isArray(partner.role) ? (
@@ -54,7 +54,7 @@ let PartnerCard = ({ partner, index, onInView, isActive }: { partner: any; index
             </div>
 
             {partner.projects && (
-              <div className="w-fit bg-bg rounded-2xl font-black text-text text-sm tracking-[0.2em] px-5 py-1.5">
+              <div className="font-mono text-sm tracking-[0.2em] ms-4">
                 {partner.projects.length} <TText tKey="nav.projects" />
               </div>
             )}
@@ -96,45 +96,45 @@ export default function PartnersFilters() {
   ]
 
   return (
-    <section className="relative w-dvw min-h-dvh bg-text text-bg px-18 max-md:px-4 py-32">
-      <div className="max-w-7xl gap-4 grid grid-cols-[200px_1fr] xl:grid-cols-[400px_1fr] mx-auto">
-        <aside className="top-32 sticky h-fit">
-          <LineHeading tKey="common.statistics" className="font-black text-xs" />
+    <section className="relative w-dvw min-h-dvh bg-text text-bg px-4 max-md:px-2 pb-12">
+      <div className="max-w-7xl gap-4 grid grid-cols-[120px_1fr] md:grid-cols-[200px_1fr] xl:grid-cols-[400px_1fr] mx-auto">
+        <aside className="top-18 sticky h-fit space-y-4">
+          <LineHeading lineFrom="left" tKey="common.statistics" className="text-xs" />
 
-          <div className="gap-1 grid grid-cols-2 mt-2 mb-4">
+          <div className="gap-1 grid grid-cols-2 mb-14">
             {stats.map((stat, index) => (
-              <div key={index} className="bg-bg rounded-2xl text-text text-center p-1.5">
-                <AnimText className="font-black text-2xl mb-1">{stat.value}</AnimText>
+              <div key={index} className="border rounded-lg font-mono p-1.5">
+                <AnimText className="text-2xl mb-1">{stat.value}</AnimText>
 
-                <AnimText as={'p'} className="font-black text-[10px] tracking-widest">
+                <AnimText as={'p'} className="text-sm normal-case rtl:leading-6">
                   <TText tKey={stat.titleKey} />
                 </AnimText>
               </div>
             ))}
           </div>
 
-          <LineHeading tKey="filters.filter" className="font-black text-xs" />
+          <LineHeading lineFrom="right" tKey="filters.filter" className="text-xs" />
 
-          <div className="flex flex-col gap-2 mt-2">
+          <div className="flex flex-col gap-4 font-mono">
             {categories.map((category) => (
               <button
                 key={category.category}
                 onClick={() => setSelectedCategory(category.category)}
-                className={`group relative w-[96%] ltr:text-left rtl:text-right py-2 px-8 rounded-2xl transition-all duration-300 cursor-pointer ${selectedCategory === category.category ? 'bg-bg text-text ltr:translate-x-4 rtl:-translate-x-4' : 'bg-main/25 text-bg hover:translate-x-2'}`}
+                className={`group relative w-fit ltr:text-left rtl:text-right transition-all duration-300 cursor-pointer ${selectedCategory === category.category ? 'border-b-2 border-bg! ltr:translate-x-4 rtl:-translate-x-4' : 'border-b border-bg/50! text-bg hover:translate-x-2'}`}
               >
                 <span className="font-black text-xs tracking-widest">
                   <TText tKey={category.names} />
                 </span>
 
                 {selectedCategory === category.category && (
-                  <motion.div layoutId="active-cat" className="top-1/2 rtl:-right-4 ltr:-left-4 absolute w-1.5 h-6 bg-bg rounded-2xl -translate-y-1/2" />
+                  <motion.div layoutId="active-cat" className="top-1/2 rtl:-right-4 ltr:-left-4 absolute w-1.5 h-2 bg-bg -translate-y-1/2" />
                 )}
               </button>
             ))}
           </div>
 
-          <AnimIn blur center reAnim key={selectedCategory} className="pt-12">
-            <p className="font-mono text-[10px] text-bg tracking-widest mb-6">
+          <AnimIn blur center reAnim key={selectedCategory} className="w-fit space-y-2 border rounded-lg font-mono text-xs mt-8 p-2">
+            <p className="tracking-widest">
               <TText tKey="partners.allPartners" />
             </p>
 
@@ -148,7 +148,7 @@ export default function PartnersFilters() {
                       element.scrollIntoView({ behavior: 'smooth', block: 'center' })
                     }
                   }}
-                  className={`block text-sm transition-all duration-300 ltr:text-left rtl:text-right w-full cursor-pointer ${
+                  className={`block  transition-all duration-300 ltr:text-left rtl:text-right w-full cursor-pointer ${
                     activePartner === (item.name || item.title) ? 'text-bg/75 font-bold translate-x-2' : 'opacity-40 hover:opacity-100'
                   }`}
                 >
