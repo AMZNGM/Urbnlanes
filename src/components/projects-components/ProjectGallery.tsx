@@ -187,7 +187,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
       )}
 
       {project.videoGallery && project.videoGallery.length > 0 && (
-        <AnimIn delay={0.6} className="bg-main/25 rounded-lg p-4">
+        <AnimIn delay={0.6} className="bg-main/15 rounded-lg p-4">
           <LineHeading tKey="projects.videoGallery.title" className="opacity-75 text-current mb-2" />
 
           <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -202,7 +202,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
                   key={index}
                   delay={0.1 * index}
                   onClick={() => setSelectedVideo(video)}
-                  className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-lg transition-all cursor-pointer"
+                  className="group relative aspect-video overflow-hidden bg-main/15 border-2 border-main/1 hover:border-main/20 rounded-lg transition-all cursor-pointer"
                 >
                   {isYouTube && embedUrl ? (
                     <img src={getYouTubeThumbnailUrl(video) || ''} alt={`Video ${index + 1}`} className="w-full h-full object-cover" />
@@ -231,7 +231,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
       )}
 
       {project.constructionGallery && project.constructionGallery.length > 0 && (
-        <AnimIn delay={0.6} className="bg-main/25 rounded-lg p-4">
+        <AnimIn delay={0.6} className="bg-main/15 rounded-lg p-4">
           <LineHeading tKey="projects.constructionGallery.title" className="opacity-75 text-current mb-2" />
 
           <div className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -244,7 +244,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
                   key={index}
                   delay={0.1 * index}
                   onClick={() => setSelectedVideo(video)}
-                  className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-lg transition-all cursor-pointer"
+                  className="group relative aspect-video overflow-hidden bg-main/15 border-2 border-main/1 hover:border-main/20 rounded-lg transition-all cursor-pointer"
                 >
                   {isYouTube && embedUrl ? (
                     <img src={getYouTubeThumbnailUrl(video) || ''} alt={`Video ${index + 1}`} className="w-full h-full object-cover" />
@@ -273,7 +273,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
       )}
 
       {mapImages.length > 0 && (
-        <AnimIn delay={0.4} className="bg-main/25 rounded-lg p-4">
+        <AnimIn delay={0.4} className="bg-main/15 rounded-lg p-4">
           <LineHeading tKey="common.location" className="opacity-75 text-current mb-2" />
 
           <div className="gap-4 grid grid-cols-1 md:grid-cols-2">
@@ -281,7 +281,7 @@ export default function ProjectGallery({ project }: { project: Project }) {
               <AnimIn
                 key={i}
                 delay={0.1 * i}
-                className="group relative aspect-video overflow-hidden bg-main/25 border-2 border-main/1 hover:border-main/20 rounded-lg transition-all cursor-pointer"
+                className="group relative aspect-video overflow-hidden bg-main/15 border-2 border-main/1 hover:border-main/20 rounded-lg transition-all cursor-pointer"
               >
                 <ImageIn src={mapImg} alt={`${project.name} map ${i + 1}`} className="w-full h-full object-cover" />
 

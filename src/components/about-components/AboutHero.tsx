@@ -40,10 +40,12 @@ export default function AboutHero() {
               className="w-full h-full object-cover"
             />
           ) : (
-            <ImageIn src="/images/projects/yellow-residence/yr-gallery-3.webp" alt="Background image" priority sizes="100vw" className="scale-100!" />
+            <ImageIn src="/images/projects/story-branded-residences/sbr-gallery-5.avif" alt="Background image" priority sizes="100vw" className="scale-100!" />
           )}
         </motion.div>
       </AnimatePresence>
+
+      {/* <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" /> */}
 
       <motion.div
         initial={{ y: '100%' }}

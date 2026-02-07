@@ -4,13 +4,14 @@ import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import dynamic from 'next/dynamic'
 
 import AboutHero from '@/components/about-components/AboutHero'
-import LineHeading from '@/components/shared/LineHeading'
-const OurCoreValues = dynamic(() => import('@/components/about-components/OurCoreValues'))
-const OurHeritagAndNetwork = dynamic(() => import('@/components/about-components/OurHeritagAndNetwork'))
-const HoldingCompany = dynamic(() => import('@/components/about-components/HoldingCompany'))
+const WhoWeAre = dynamic(() => import('@/components/shared/WhoWeAre'))
+import ArtToArchitecture from '@/components/about-components/ArtToArchitecture'
+import TeamOfExperts from '@/components/about-components/TeamOfExperts'
 const OurStory = dynamic(() => import('@/components/about-components/OurStory'))
-const BehindTheFigures = dynamic(() => import('@/components/about-components/BehindTheFigures'))
-import ImageIn from '@/components/ui/unstyled/ImageIn'
+import BehindTheFigures from '@/components/about-components/BehindTheFigures'
+import HoldingCompany from '@/components/about-components/HoldingCompany'
+import OurNetwork from '@/components/about-components/OurNetwork'
+import OurCoreValues from '@/components/about-components/OurCoreValues'
 
 export const generateMetadata = metadataGenerators.about
 
@@ -20,25 +21,14 @@ export default function AboutPage() {
       <div className="top-0 sticky">
         <AboutHero />
       </div>
-
-      <LineHeading
-        tKey="common.aboutUs"
-        sideParaTKey="db.whoweare.description2"
-        className="relative w-dvw overflow-hidden bg-text text-black px-18 max-md:px-4 py-12"
-      />
-
-      <OurCoreValues />
-      <OurHeritagAndNetwork />
-      <HoldingCompany />
+      <WhoWeAre withOutImage />
+      <ArtToArchitecture />
+      <TeamOfExperts />
       <OurStory />
       <BehindTheFigures />
-      {/* <TextPanel
-        tKey="db.whoweare.artToArchitecture.title"
-        paraTKey="db.whoweare.artToArchitecture.description"
-        image="/images/projects/yellow-residence/yr-gallery-8.avif"
-        className="bg-black! text-text"
-      /> */}
-      <ImageIn src="/images/map.webp" alt="Map" className="object-contain! scale-100! pt-24 max-md:pt-0" divClassName="h-100! bg-text max-md:-mb-10" />
+      <HoldingCompany />
+      <OurNetwork />
+      <OurCoreValues />
     </Suspense>
   )
 }

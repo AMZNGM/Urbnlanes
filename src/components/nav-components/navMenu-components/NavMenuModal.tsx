@@ -49,7 +49,7 @@ let NavItem = memo(
           </AnimText>
         </Link>
 
-        {isActive && (
+        {/* {isActive && (
           <div className="top-1/2 right-0 left-0 absolute max-w-xs -translate-y-1/2">
             <motion.svg viewBox="0 0 2934 1100" fill="none" className="z-50 w-full h-full stroke-bg">
               <motion.path
@@ -61,7 +61,7 @@ let NavItem = memo(
               />
             </motion.svg>
           </div>
-        )}
+        )} */}
       </div>
     )
   }
@@ -93,7 +93,7 @@ export default function NavMenuModal({
       animate={{ clipPath: 'inset(0 0 0 0)' }}
       exit={{ clipPath: 'inset(0 0 100%  0)' }}
       transition={{ duration: 0.5, ease: [0.45, 0, 0.55, 1], delay: 0.15 }}
-      className={`z-100 fixed inset-0 w-dvw h-dvh flex max-md:flex-col gap-2 bg-bg /30 backdrop-blur-2xl p-4 ${className}`}
+      className={`z-100 fixed inset-0 w-dvw h-dvh flex flex-row-reverse max-md:flex-col gap-2 bg-bg /30 backdrop-blur-2xl p-4 ${className}`}
     >
       <div className="w-full h-full flex flex-col">
         <div className="relative w-full h-full flex justify-between items-start">
@@ -127,9 +127,10 @@ export default function NavMenuModal({
 
       <div className="w-full h-full gap-4 grid grid-cols-2">
         {db.projects.slice(0, 3).map((project, index) => (
-          <AnimIn key={index} className="relative overflow-hidden first:row-span-2 bg-main rounded-lg">
+          <AnimIn key={index} className="group relative overflow-hidden first:row-span-2 bg-main rounded-lg">
             <Link href={`/projects/${project.id}`} onClick={handleClose}>
-              <ImageIn src={project.gallery[0]} alt={project.name} divClassName="absolute! inset-0" />
+              <ImageIn src={project.gallery[0]} alt={project.name} divClassName="absolute! inset-0 group-hover:scale-110 duration-500" />
+
               <motion.div
                 initial={{ clipPath: 'inset(0 0 0 0)' }}
                 animate={{ clipPath: 'inset(100% 0 0 0)' }}
@@ -138,6 +139,7 @@ export default function NavMenuModal({
               >
                 <ImageIn src={project.gallery[1]} alt={project.name} />
               </motion.div>
+
               <div className="z-10 relative h-full flex flex-col justify-end p-4">
                 <h2>{project.name}</h2>
                 <p className="line-clamp-1">{project.tagline}</p>

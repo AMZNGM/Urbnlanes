@@ -6,7 +6,8 @@ import { LoadingLogo } from '@/components/loading-components/LoadingAnimations'
 import Preloader from '@/components/loading-components/Preloader'
 import Hero from '@/components/hero-components/Hero'
 const SelectedProjects = dynamic(() => import('@/components/home-components/SelectedProjects'))
-const WhoWeAre = dynamic(() => import('@/components/home-components/WhoWeAre'))
+import ArtToArchitecture from '@/components/about-components/ArtToArchitecture'
+const WhoWeAre = dynamic(() => import('@/components/shared/WhoWeAre'))
 import LatestNews from '@/components/news-components/LatestNews'
 import OurValuesAccordion from '@/components/home-components/OurValuesAccordion'
 import AboutUs from '@/components/home-components/AboutUs'
@@ -19,9 +20,12 @@ export default function Home() {
   return (
     <Suspense fallback={<LoadingLogo />}>
       {/* <Preloader /> */}
-      <Hero />
+      <div className="top-0 sticky">
+        <Hero />
+      </div>
       <SelectedProjects />
-      <WhoWeAre />
+      <ArtToArchitecture dark />
+      <WhoWeAre dark />
       <LatestNews className="bg-bg! text-text! py-28!" />
       <OurValuesAccordion />
       <AboutUs />

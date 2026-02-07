@@ -22,7 +22,7 @@ export default function PartnersAssociatesPage() {
       <PartnersFilters />
       <PartnersParallaxPanels />
       <PartnersCTA />
-      <LatestNews />
+      <LatestNews dark className="pb-28" />
     </Suspense>
   )
 }

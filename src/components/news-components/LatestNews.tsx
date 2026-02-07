@@ -4,11 +4,11 @@ import AnimIn from '@/components/ui/unstyled/AnimIn'
 import MainBtn from '@/components/ui/buttons/MainBtn'
 import NewsCard from '@/components/news-components/NewsCard'
 
-export default function LatestNews({ className }: { className?: string }) {
+export default function LatestNews({ className, dark }: { className?: string; dark?: boolean }) {
   let latestArticles = [...db.mediacenter.blogs, ...db.mediacenter.news].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6)
 
   return (
-    <section className={`relative bg-text text-bg py-12 ${className}`}>
+    <section className={`relative py-12 ${dark ? 'bg-bg text-text' : 'bg-text text-bg'} ${className}`}>
       <div className="flex justify-end gap-2 mx-18 max-md:mx-4 mb-8">
         <MainBtn to="/media-center-news" tKey="common.allNews" look="mono" />
         <ScrollArrows />

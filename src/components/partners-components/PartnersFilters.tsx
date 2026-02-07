@@ -23,16 +23,16 @@ let PartnerCard = ({ partner, index, onInView, isActive }: { partner: any; index
   return (
     <div ref={ref} id={partner.name || partner.title} className="group relative w-full border-bg! border-b py-12">
       <div className={`${isActive ? 'opacity-100 translate-x-4' : 'opacity-10 scale-95'} transition-all duration-700 ease-[0.16,1,0.3,1]`}>
-        <div className="flex max-xl:flex-col flex-1 md:gap-8">
+        <div className="flex max-md:flex-col flex-1 md:gap-8">
           <ImageIn
             src={partner.logo}
             alt={partner.name || partner.title}
-            className="object-contain! invert"
-            divClassName="w-38 md:w-64 h-38! md:h-64! bg-text!"
+            className="object-contain! invert p-4"
+            divClassName="aspect-square h-60! max-md:h-22! max-xl:h-44! max-xl:w-fit! bg-text! rounded-lg"
           />
 
           <div className="flex flex-col justify-center gap-2 mt-2">
-            <h3 className="font-light max-md:text-3xl text-7xl leading-[0.8] tracking-tighter">
+            <h3 className="font-light max-md:text-3xl max-xl:text-4xl text-7xl leading-[0.8] tracking-tighter">
               <TText tKey={`partners.partnersNames.${partner.name || partner.title}`} />
             </h3>
 
@@ -96,12 +96,12 @@ export default function PartnersFilters() {
   ]
 
   return (
-    <section className="relative w-dvw min-h-dvh bg-text text-bg px-4 max-md:px-2 pb-12">
-      <div className="max-w-7xl gap-4 grid grid-cols-[120px_1fr] md:grid-cols-[200px_1fr] xl:grid-cols-[400px_1fr] mx-auto">
-        <aside className="top-18 sticky h-fit space-y-4">
-          <LineHeading lineFrom="left" tKey="common.statistics" className="text-xs" />
+    <section className="relative max-w-dvw min-h-dvh bg-bg text-text px-4 max-md:px-2 pb-12">
+      <div className="max-w-7xl md:gap-4 grid grid-cols-3 md:mx-auto">
+        <aside className="top-38 max-md:top-22 sticky h-fit flex flex-col justify-center space-y-4">
+          <LineHeading lineFrom="left" tKey="common.statistics" className="max-md:hidden text-xs" />
 
-          <div className="gap-1 grid grid-cols-2 mb-14">
+          <div className="max-md:hidden gap-1 grid grid-cols-2 mb-14">
             {stats.map((stat, index) => (
               <div key={index} className="border rounded-lg font-mono p-1.5">
                 <AnimText className="text-2xl mb-1">{stat.value}</AnimText>
@@ -120,20 +120,20 @@ export default function PartnersFilters() {
               <button
                 key={category.category}
                 onClick={() => setSelectedCategory(category.category)}
-                className={`group relative w-fit ltr:text-left rtl:text-right transition-all duration-300 cursor-pointer ${selectedCategory === category.category ? 'border-b-2 border-bg! ltr:translate-x-4 rtl:-translate-x-4' : 'border-b border-bg/50! text-bg hover:translate-x-2'}`}
+                className={`group relative w-fit ltr:text-left rtl:text-right transition-all duration-300 cursor-pointer ${selectedCategory === category.category ? 'border-b-2 border-bg! ltr:translate-x-4 rtl:-translate-x-4' : 'border-b border-bg/50! text-text hover:translate-x-2'}`}
               >
                 <span className="font-black text-xs tracking-widest">
                   <TText tKey={category.names} />
                 </span>
 
                 {selectedCategory === category.category && (
-                  <motion.div layoutId="active-cat" className="top-1/2 rtl:-right-4 ltr:-left-4 absolute w-1.5 h-2 bg-bg -translate-y-1/2" />
+                  <motion.div layoutId="active-cat" className="top-1/2 rtl:-right-4 ltr:-left-4 absolute w-1.5 h-2 bg-text -translate-y-1/2" />
                 )}
               </button>
             ))}
           </div>
 
-          <AnimIn blur center reAnim key={selectedCategory} className="w-fit space-y-2 border rounded-lg font-mono text-xs mt-8 p-2">
+          <AnimIn blur center key={selectedCategory} className="w-fit space-y-2 border rounded-lg font-mono text-xs mt-8 p-2">
             <p className="tracking-widest">
               <TText tKey="partners.allPartners" />
             </p>
@@ -149,7 +149,7 @@ export default function PartnersFilters() {
                     }
                   }}
                   className={`block  transition-all duration-300 ltr:text-left rtl:text-right w-full cursor-pointer ${
-                    activePartner === (item.name || item.title) ? 'text-bg/75 font-bold translate-x-2' : 'opacity-40 hover:opacity-100'
+                    activePartner === (item.name || item.title) ? 'text-text/75 font-bold translate-x-2' : 'opacity-40 hover:opacity-100'
                   }`}
                 >
                   <TText tKey={`partners.partnersNames.${item.name || item.title}`} />
@@ -159,7 +159,7 @@ export default function PartnersFilters() {
           </AnimIn>
         </aside>
 
-        <div>
+        <div className="overflow-hidden col-span-2 ms-8">
           {filteredItems.map((item, index) => (
             <PartnerCard
               key={item.name || item.title}

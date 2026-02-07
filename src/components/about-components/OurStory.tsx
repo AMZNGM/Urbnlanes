@@ -1,12 +1,12 @@
 'use client'
 
-import Image from 'next/image'
 import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import TText from '@/translations/TText'
 import db from '@/database/urbnlanes-db.json'
 import AnimIn from '@/components/ui/unstyled/AnimIn'
 import AnimText from '@/components/ui/unstyled/AnimText'
+import ImageIn from '@/components/ui/unstyled/ImageIn'
 import ArrowBtn from '@/components/ui/buttons/ArrowBtn'
 
 export default function OurStory() {
@@ -49,14 +49,8 @@ export default function OurStory() {
   }
 
   return (
-    <section className="relative w-dvw overflow-hidden bg-black text-text p-4 py-12">
-      <Image
-        src="/images/projects/east-sabah/es-gallery-7.avif"
-        alt="Background Image"
-        fill
-        sizes="20dvw"
-        className="absolute inset-0 object-cover opacity-40"
-      />
+    <section className="relative w-dvw h-full overflow-hidden bg-bg text-text px-4 max-md:px-2 py-12">
+      <ImageIn src="/images/projects/story-branded-residences/sbr-main-2.avif" alt="Background Image" divClassName="absolute! inset-0 opacity-40" />
 
       <AnimIn className="relative md:px-18">
         <div className="flex justify-between items-center">
@@ -101,7 +95,7 @@ export default function OurStory() {
               {step.title ? (
                 <>
                   <div
-                    className={`w-6 h-6 rotate-45 ms-2 -translate-y-4 backdrop-blur-2xl border transition-all duration-300 cursor-pointer group-hover:bg-text/20 ${index <= activeStep ? 'bg-text/20' : 'bg-black/25'}`}
+                    className={`w-6 h-6 rotate-45 ms-2 -translate-y-4 backdrop-blur-2xl border transition-all duration-300 cursor-pointer group-hover:bg-text/20 ${index <= activeStep ? 'bg-text/20' : 'bg-bg/25'}`}
                   />
 
                   <div className="font-light text-xl mb-2">
@@ -110,7 +104,7 @@ export default function OurStory() {
 
                   <AnimIn
                     delay={index * 0.2}
-                    className={`relative space-y-4 backdrop-blur-2xl shadow-2xl border rounded-2xl hover:bg-text/8 transition-all duration-300 p-8 ${index === activeStep ? 'bg-text/10 text-text' : 'bg-black/25 text-main'}`}
+                    className={`relative space-y-4 backdrop-blur-2xl shadow-2xl border rounded-2xl hover:bg-text/8 transition-all duration-300 p-8 ${index === activeStep ? 'bg-text/10 text-text' : 'bg-bg/25 text-main'}`}
                   >
                     <h3 className="text-2xl">
                       <TText tKey={`db.whoweare.storySteps.${index}.title`} />
