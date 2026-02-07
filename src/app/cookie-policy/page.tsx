@@ -48,7 +48,7 @@ export default function CookiePolicyPage() {
                 desc: 'May be set through our site by our advertising partners to build a profile of your interests.',
               },
             ].map((cookie, i) => (
-              <div key={i} className="bg-main/25 border rounded-2xl p-8">
+              <div key={i} className="bg-main/25 border rounded-lg p-8">
                 <h3 className="font-medium text-xl mb-4">{cookie.title}</h3>
                 <p className="font-light normal-case">{cookie.desc}</p>
               </div>
@@ -65,7 +65,7 @@ export default function CookiePolicyPage() {
               { label: 'Social Media', desc: 'Sharing content' },
               { label: 'Advertising', desc: 'Relevant ads' },
             ].map((item, i) => (
-              <li key={i} className="bg-main/25 border rounded-2xl p-6">
+              <li key={i} className="bg-main/25 border rounded-lg p-6">
                 <strong className="block mb-2">{item.label}</strong>
                 <span className="font-light normal-case">{item.desc}</span>
               </li>

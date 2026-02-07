@@ -32,19 +32,19 @@ export default function PrivacyPolicyPage() {
         <AnimIn delay={0.4} className="space-y-6">
           <h2 className="font-sec text-3xl">Information We Collect</h2>
           <div className="gap-8 grid md:grid-cols-3">
-            <div className="bg-main/25 border rounded-2xl p-8">
+            <div className="bg-main/25 border rounded-lg p-8">
               <h3 className="font-medium text-xl mb-4">Personal Information</h3>
               <p className="font-light/70 normal-case">
                 Name, email address, phone number, and other contact information you provide when you inquire about our properties or services.
               </p>
             </div>
-            <div className="bg-main/25 border rounded-2xl p-8">
+            <div className="bg-main/25 border rounded-lg p-8">
               <h3 className="font-medium text-xl mb-4">Usage Data</h3>
               <p className="font-light/70 normal-case">
                 Information about how you interact with our website, including pages visited, time spent, and other analytics data.
               </p>
             </div>
-            <div className="bg-main/25 border rounded-2xl p-8">
+            <div className="bg-main/25 border rounded-lg p-8">
               <h3 className="font-medium text-xl mb-4">Technical Information</h3>
               <p className="font-light/70 normal-case">IP address, browser type, device information, and other technical data collected automatically.</p>
             </div>
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
               'To improve our website and user experience',
               'To comply with legal obligations',
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-4 bg-main/25 rounded-2xl normal-case p-4">
+              <li key={i} className="flex items-center gap-4 bg-main/25 rounded-lg normal-case p-4">
                 <div className="w-1.5 h-1.5 bg-main/25 rounded-full" />
                 <span className="font-light/80">{item}</span>
               </li>

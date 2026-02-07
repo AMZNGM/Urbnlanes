@@ -37,10 +37,10 @@ export default function ProjectsImpact() {
         </div>
 
         <section className="relative w-full h-full overflow-hidden bg-text text-bg">
-          <AnimIn className="h-full gap-4 grid grid-cols-2 bg-main/25 rounded-2xl text-center p-4">
+          <AnimIn className="h-full gap-4 grid grid-cols-2 bg-main/25 rounded-lg text-center p-4">
             <div ref={container} className="relative h-full gap-2 grid">
               {impacts.map((impact, index) => (
-                <AnimIn key={index} delay={index * 0.1} className="group gap-4 grid bg-main/25 hover:bg-main/50 rounded-2xl transition-colors duration-500 p-8">
+                <AnimIn key={index} delay={index * 0.1} className="group gap-4 grid bg-main/25 hover:bg-main/50 rounded-lg transition-colors duration-500 p-8">
                   <div className="font-bold text-main group-hover:text-bg/75 text-4xl transition-colors duration-500">{impact.value}</div>
 
                   <p className="opacity-75 text-sm">
@@ -53,7 +53,7 @@ export default function ProjectsImpact() {
             <motion.div style={{ y: y }}>
               <BreathingText
                 as="h3"
-                className="bg-main/25 hover:bg-main/50 rounded-2xl group-hover:text-bg/75 max-md:text-xl text-2xl text-nowrap transition-colors duration-500 py-14"
+                className="bg-main/25 hover:bg-main/50 rounded-lg group-hover:text-bg/75 max-md:text-xl text-2xl text-nowrap transition-colors duration-500 py-14"
               >
                 <TText tKey="common.ourImpact" />
               </BreathingText>

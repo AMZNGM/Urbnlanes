@@ -147,7 +147,7 @@ const OverlayViewer = memo(
             transform: styleObj.transform,
             transition: styleObj.transition,
           }}
-          className="z-50 absolute flex max-md:flex-col bg-main/25 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur-3xl rounded-2xl text-text origin-top-left cursor-auto pointer-events-auto will-change-transform"
+          className="z-50 absolute flex max-md:flex-col bg-main/25 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur-3xl rounded-lg text-text origin-top-left cursor-auto pointer-events-auto will-change-transform"
         >
           <div className="relative w-full h-full flex flex-col justify-center items-center gap-4">
             <CloseBtn onClick={onClose} />
@@ -180,7 +180,7 @@ const OverlayViewer = memo(
           transform: styleObj.transform,
           transition: styleObj.transition,
         }}
-        className="z-50 absolute flex max-md:flex-col-reverse space-x-2 bg-main/25 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur-3xl rounded-2xl text-text origin-top-left p-3 touch-auto cursor-auto pointer-events-auto will-change-transform"
+        className="z-50 absolute flex max-md:flex-col-reverse space-x-2 bg-main/25 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur-3xl rounded-lg text-text origin-top-left p-3 touch-auto cursor-auto pointer-events-auto will-change-transform"
       >
         {showArticleInfo && article && (
           <div className="relative [&::-webkit-scrollbar]:w-2 overflow-y-auto flex flex-col flex-[0_0_30%] max-md:flex-[0_0_65%] justify-between [&::-webkit-scrollbar-thumb:hover]:bg-main/50 [&::-webkit-scrollbar-thumb]:bg-main/30 [&::-webkit-scrollbar-track]:bg-transparent">
@@ -213,7 +213,7 @@ const OverlayViewer = memo(
           alt={article.title}
           sizes="full"
           className="scale-100!"
-          divClassName="relative w-full h-full rounded-2xl overflow-hidden bg-transparent"
+          divClassName="relative w-full h-full rounded-lg overflow-hidden bg-transparent"
         />
       </div>
     )

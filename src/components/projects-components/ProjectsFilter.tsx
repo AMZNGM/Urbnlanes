@@ -94,13 +94,13 @@ export default function ProjectsFilter({
         </div>
 
         {/* stats */}
-        <div className="bg-main/25 rounded-2xl p-8 max-md:p-4">
+        <div className="bg-main/25 rounded-lg p-8 max-md:p-4">
           <div className="gap-8 max-md:gap-4 grid grid-cols-2 md:grid-cols-4">
             {stats.map(({ delay, key, value }) => (
               <AnimIn
                 key={key}
                 delay={delay}
-                className={`rounded-2xl text-center p-4 ${key === 'common.filteredProjects' ? 'bg-main/50 border' : 'bg-main/25'}`}
+                className={`rounded-lg text-center p-4 ${key === 'common.filteredProjects' ? 'bg-main/50 border' : 'bg-main/25'}`}
               >
                 <AnimText key={`${key}-${value}`} className="opacity-50 font-bold text-4xl mb-2">
                   {value}
@@ -127,7 +127,7 @@ export default function ProjectsFilter({
           />
 
           {/* toggle BTN */}
-          <div className="flex justify-center items-center gap-2 bg-main/25 hover:bg-main/50 rounded-2xl font-medium max-md:text-sm text-center transition-colors duration-200 px-6 max-md:px-4 py-3 max-md:py-2">
+          <div className="flex justify-center items-center gap-2 bg-main/25 hover:bg-main/50 rounded-lg font-medium max-md:text-sm text-center transition-colors duration-200 px-6 max-md:px-4 py-3 max-md:py-2">
             <span onClick={onToggleView} className={`text-sm transition-colors cursor-pointer select-none ${viewMode === 'list' ? 'text-bg' : 'opacity-75'}`}>
               <TText tKey="common.listView" />
             </span>
@@ -170,7 +170,7 @@ const CustomDropdown = ({
   <div className="relative">
     <button
       onClick={onToggle}
-      className="w-full flex justify-between items-center bg-main/50 hover:bg-main/75 backdrop-blur-2xl rounded-2xl focus:outline-none transition-all px-4 py-3 cursor-pointer"
+      className="w-full flex justify-between items-center bg-main/50 hover:bg-main/75 backdrop-blur-2xl rounded-lg focus:outline-none transition-all px-4 py-3 cursor-pointer"
     >
       <span className="font-medium text-sm">
         <TText tKey={options.find((opt) => opt.key === value)?.label || label} />
@@ -185,7 +185,7 @@ const CustomDropdown = ({
           animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
           exit={{ opacity: 0, y: -10, scale: 0.5, filter: 'blur(10px)' }}
           transition={{ type: 'spring', stiffness: 110, damping: 15 }}
-          className="top-full right-0 left-0 z-50 absolute overflow-hidden bg-main/50 backdrop-blur-2xl rounded-2xl text-text mt-2 p-2"
+          className="top-full right-0 left-0 z-50 absolute overflow-hidden bg-main/50 backdrop-blur-2xl rounded-lg text-text mt-2 p-2"
         >
           {options.map((option, index) => (
             <motion.button
@@ -198,7 +198,7 @@ const CustomDropdown = ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.15, delay: index * 0.05 + 0.3, ease: 'easeOut' }}
-              className={`w-full px-4 py-3 text-left text-sm transition-colors border-b border-main/25 last:border-b-0 rounded-2xl cursor-pointer ${
+              className={`w-full px-4 py-3 text-left text-sm transition-colors border-b border-main/25 last:border-b-0 rounded-lg cursor-pointer ${
                 value === option.key ? 'bg-main text-bg font-medium' : 'hover:bg-main/50'
               }`}
             >

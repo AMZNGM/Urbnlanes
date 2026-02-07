@@ -66,7 +66,7 @@ export default function OurNetwork() {
                       src={company.logo}
                       alt={company.title}
                       className="object-contain! p-4"
-                      divClassName="w-60 max-w-full h-auto max-h-full rounded-2xl"
+                      divClassName="w-60 max-w-full h-auto max-h-full rounded-lg"
                     />
                   </div>
 

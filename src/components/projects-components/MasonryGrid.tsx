@@ -103,7 +103,7 @@ function ProjectCard({ project, index, openModal }: { project: any; index: numbe
       viewport={{ once: true }}
       transition={{ duration: 0.75, delay: index * 0.05 }}
       style={{ y: 0 }}
-      className="group relative w-full h-full min-h-75 overflow-hidden rounded-2xl cursor-pointer"
+      className="group relative w-full h-full min-h-75 overflow-hidden rounded-lg cursor-pointer"
     >
       <ImageIn
         src={project.gallery?.[0] || ''}
@@ -115,7 +115,7 @@ function ProjectCard({ project, index, openModal }: { project: any; index: numbe
         hasOverlay
       />
 
-      <motion.div className="right-2 bottom-2 left-2 absolute overflow-hidden bg-main/50 md:opacity-0 group-hover:opacity-100 backdrop-blur-3xl rounded-2xl text-text transition-all md:translate-x-8 md:translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 duration-500 p-4">
+      <motion.div className="right-2 bottom-2 left-2 absolute overflow-hidden bg-main/50 md:opacity-0 group-hover:opacity-100 backdrop-blur-3xl rounded-lg text-text transition-all md:translate-x-8 md:translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 duration-500 p-4">
         <h3 className="font-mono">
           <TText tKey={`db.projects.${project.id}.name`} />
         </h3>

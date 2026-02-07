@@ -62,7 +62,7 @@ export default function ProjectModal({ closeModal, selectedProject, dark = true 
             animate={{ scale: 1, opacity: 1, y: 0, filter: 'blur(0px)' }}
             exit={{ scale: 0.5, opacity: 0, y: 10, filter: 'blur(10px)' }}
             transition={{ duration: 0.3, filter: { duration: 0.3, delay: 0.2 } }}
-            className={`relative w-[98dvw] h-[88dvh] max-md:overflow-y-scroll overflow-y-hidden flex max-md:flex-col gap-8 shadow-2xl border rounded-2xl p-4 ${dark ? 'bg-bg text-text shadow-bg' : 'bg-text text-bg shadow-text'}`}
+            className={`relative w-[98dvw] h-[88dvh] max-md:overflow-y-scroll overflow-y-hidden flex max-md:flex-col gap-8 shadow-2xl border rounded-lg p-4 ${dark ? 'bg-bg text-text shadow-bg' : 'bg-text text-bg shadow-text'}`}
           >
             <div style={{ scrollbarWidth: 'none' }} className="md:w-1/3 md:overflow-y-auto flex flex-col justify-between gap-8">
               <div className="flex flex-col gap-8">

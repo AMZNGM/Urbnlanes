@@ -37,7 +37,7 @@ export default function OurValuesAccordion() {
                   src={item.image}
                   alt={item.title}
                   className="scale-100!"
-                  divClassName="w-full max-md:h-[32dvh] md:h-[50dvh] rounded-2xl overflow-hidden"
+                  divClassName="w-full max-md:h-[32dvh] md:h-[50dvh] rounded-lg overflow-hidden"
                 />
               </Link>
             )

@@ -10,7 +10,7 @@ export default function ListGrid({ projects, openModal }: { projects: any[]; ope
         <AnimIn
           key={project.id}
           delay={0.1 * index}
-          className={`group relative h-full overflow-hidden flex max-md:flex-col ${index % 2 ? 'flex-row-reverse' : ''} bg-main/15 hover:bg-main/25 backdrop-blur-2xl rounded-2xl transition-colors duration-500`}
+          className={`group relative h-full overflow-hidden flex max-md:flex-col ${index % 2 ? 'flex-row-reverse' : ''} bg-main/15 hover:bg-main/25 backdrop-blur-2xl rounded-lg transition-colors duration-500`}
         >
           <ImageIn
             src={project.gallery?.[0] || '/images/placeholder.webp'}

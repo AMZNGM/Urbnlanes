@@ -67,7 +67,7 @@ function AllProjectsComponent() {
 
       <section className="relative w-dvw min-h-dvh overflow-hidden bg-text text-bg px-4 max-md:px-2 py-12">
         {filteredProjects.length === 0 ? (
-          <p className="bg-main/25 rounded-2xl font-bold text-2xl text-center py-12">
+          <p className="bg-main/25 rounded-lg font-bold text-2xl text-center py-12">
             <TText tKey="common.noProjectsFound" />
           </p>
         ) : (

@@ -1590,6 +1590,49 @@
       "image": "/images/team/abdalla-el-eissa.webp"
     }
   ],
+  "careers": {
+    "tagline": "Join a Place Where People Grow and Thrive",
+    "description": "Step into an environment built on support, integrity, and opportunity. At Urbnlanes, employees are empowered to grow, innovate, and shape their future within a culture that genuinely values their well-being and professional development.",
+    "departments": [
+      {
+        "id": "business-generation",
+        "name": "Core Business & Revenue Generation",
+        "roles": [
+          { "id": "marketing", "title": "Marketing", "location": "New Cairo, Egypt" },
+          { "id": "sales", "title": "Sales", "location": "New Cairo, Egypt" },
+          { "id": "business-development", "title": "Business Development", "location": "Riyadh, Saudi Arabia" }
+        ]
+      },
+      {
+        "id": "financial-legal",
+        "name": "Financial & Legal Operations",
+        "roles": [
+          { "id": "finance-accounting", "title": "Finance & Accounting", "location": "New Cairo, Egypt" },
+          { "id": "billing", "title": "Billing", "location": "New Cairo, Egypt" },
+          { "id": "legal-contracts", "title": "Legal & Contracts", "location": "New Cairo, Egypt" }
+        ]
+      },
+      {
+        "id": "execution-engineering",
+        "name": "Project Execution & Engineering",
+        "roles": [
+          { "id": "project-management", "title": "Project Management", "location": "Dubai, UAE" },
+          { "id": "civil-execution", "title": "Civil / Execution", "location": "New Cairo, Egypt" },
+          { "id": "design-architecture", "title": "Design & Architecture", "location": "Dubai, UAE" },
+          { "id": "structural-engineering", "title": "Structural Engineering", "location": "New Cairo, Egypt" }
+        ]
+      },
+      {
+        "id": "admin-support",
+        "name": "Administration & Support",
+        "roles": [
+          { "id": "hr-administration", "title": "HR & Administration", "location": "New Cairo, Egypt" },
+          { "id": "information-technology", "title": "Information Technology", "location": "Dubai, UAE" },
+          { "id": "others", "title": "Others", "location": "Middle East" }
+        ]
+      }
+    ]
+  },
   "contact": {
     "headquarters": {
       "address": "Emeel Abdalla Investments Tower, Dubai, UAE",

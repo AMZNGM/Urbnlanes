@@ -13,7 +13,7 @@ export default function OurProjectsHero() {
         priority
         sizes="100vw"
         className="scale-100!"
-        divClassName="overflow-hidden rounded-2xl blur-none!"
+        divClassName="overflow-hidden rounded-lg blur-none!"
         data-scroll
         data-scroll-speed="-0.6"
       />

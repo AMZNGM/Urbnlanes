@@ -28,8 +28,8 @@ const CookieCategory = ({
   disabled?: boolean
 }) => {
   return (
-    <div className="flex gap-2 bg-bg/15 hover:bg-bg/10 rounded-2xl transition-all duration-300 p-2">
-      <div className={`p-4 rounded-2xl transition-all duration-300 ${checked ? 'bg-main/25 text-text ' : 'bg-text/10 text-bg'} `}>
+    <div className="flex gap-2 bg-bg/15 hover:bg-bg/10 rounded-lg transition-all duration-300 p-2">
+      <div className={`p-4 rounded-lg transition-all duration-300 ${checked ? 'bg-main/25 text-text ' : 'bg-text/10 text-bg'} `}>
         <Icon size={24} />
       </div>
 
@@ -173,7 +173,7 @@ export default function CookieModal({
           </header>
 
           <div className="space-y-4 max-md:space-y-1 mb-4">
-            <p className="max-md:hidden opacity-50 rounded-2xl text-[10px] py-2">
+            <p className="max-md:hidden opacity-50 rounded-lg text-[10px] py-2">
               When you use the Urbnlanes website, certain information may be stored or retrieved in your browser, mainly through cookies. This data can relate
               to your device, settings, or general usage and helps the site work as intended. It usually doesn't directly identify you, but it enables a more
               tailored experience.

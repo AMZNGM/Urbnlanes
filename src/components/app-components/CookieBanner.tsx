@@ -42,7 +42,7 @@ export default function CookieBanner() {
           transition={{ type: 'spring', stiffness: 110, damping: 15 }}
           className="right-4 bottom-4 left-4 z-50 fixed max-w-xl"
         >
-          <div className="flex flex-col gap-4 bg-main/25 backdrop-blur-3xl rounded-2xl p-4">
+          <div className="flex flex-col gap-4 bg-main/25 backdrop-blur-3xl rounded-lg p-4">
             <h4 className="font-bold text-text/75 tracking-[0.25em] -mb-2">Privacy Mandate "We use cookies"</h4>
 
             <p className="opacity-50 font-medium text-xs text-balance leading-relaxed">

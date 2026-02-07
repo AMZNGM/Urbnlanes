@@ -104,7 +104,7 @@ export default function OurStory() {
 
                   <AnimIn
                     delay={index * 0.2}
-                    className={`relative space-y-4 backdrop-blur-2xl shadow-2xl border rounded-2xl hover:bg-text/8 transition-all duration-300 p-8 ${index === activeStep ? 'bg-text/10 text-text' : 'bg-bg/25 text-main'}`}
+                    className={`relative space-y-4 backdrop-blur-2xl shadow-2xl border rounded-lg hover:bg-text/8 transition-all duration-300 p-8 ${index === activeStep ? 'bg-text/10 text-text' : 'bg-bg/25 text-main'}`}
                   >
                     <h3 className="text-2xl">
                       <TText tKey={`db.whoweare.storySteps.${index}.title`} />

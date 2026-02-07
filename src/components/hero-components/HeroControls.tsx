@@ -50,7 +50,7 @@ export default function HeroControls({
                 stiffness: 80,
                 ease: 'easeInOut',
               }}
-              className="max-md:hidden max-w-md bg-bg/25 backdrop-blur-2xl rounded-2xl uppercase tracking-wider p-4 select-none"
+              className="max-md:hidden max-w-md bg-bg/25 backdrop-blur-2xl rounded-lg uppercase tracking-wider p-4 select-none"
             >
               <p className="font-mono text-text/60 text-xs">
                 <TText tKey="common.nextProject" />
@@ -82,7 +82,7 @@ export default function HeroControls({
                 stiffness: 80,
                 ease: 'easeInOut',
               }}
-              className="max-md:hidden max-w-md bg-bg/25 backdrop-blur-2xl rounded-2xl uppercase tracking-wider p-4 select-none"
+              className="max-md:hidden max-w-md bg-bg/25 backdrop-blur-2xl rounded-lg uppercase tracking-wider p-4 select-none"
             >
               <p className="font-mono text-text/60 text-xs">
                 <TText tKey="common.previousProject" />

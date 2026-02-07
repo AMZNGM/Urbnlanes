@@ -38,7 +38,7 @@ export default function TermsOfUsePage() {
                 'Attempt to reverse engineer any software',
                 'Remove any copyright or proprietary notations',
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-4 bg-main/25 rounded-2xl normal-case p-4">
+                <li key={i} className="flex items-center gap-4 bg-main/25 rounded-lg normal-case p-4">
                   <div className="w-1.5 h-1.5 bg-main/25 rounded-full" />
                   <span className="font-light">{item}</span>
                 </li>

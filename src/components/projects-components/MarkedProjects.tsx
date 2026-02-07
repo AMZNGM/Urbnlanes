@@ -46,11 +46,11 @@ export default function MarkedProjects() {
           let rotate = useSpring(useTransform(cardProgress, [0, 1], [index * 2 - 4, 0]), { stiffness: 100, damping: 20 })
 
           return (
-            <motion.div key={project.id} style={{ x, y, scale, rotate }} className={`relative rounded-2xl overflow-hidden cursor-pointer ${position.col}`}>
+            <motion.div key={project.id} style={{ x, y, scale, rotate }} className={`relative rounded-lg overflow-hidden cursor-pointer ${position.col}`}>
               <ImageIn
                 src={project.gallery?.[2] || '/images/poster.png'}
                 alt={project.name}
-                divClassName="h-96! rounded-2xl! overflow-hidden!"
+                divClassName="h-96! rounded-lg! overflow-hidden!"
                 className="scale-100!"
               />
               <div className="bottom-0 left-0 absolute w-full space-y-4 bg-main/25 backdrop-blur-2xl text-text text-center p-4">

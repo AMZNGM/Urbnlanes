@@ -36,7 +36,7 @@ function ParallaxPanel({ partner, index }: { partner: (typeof partnersData)[0]; 
       <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative w-full h-full flex flex-col justify-center items-start p-18 max-md:px-4">
-        <div data-scroll data-scroll-speed="0.2" className="flex flex-col gap-4 rounded-2xl tracking-wider p-4">
+        <div data-scroll data-scroll-speed="0.2" className="flex flex-col gap-4 rounded-lg tracking-wider p-4">
           <AnimText as="h1" stagger={0.2} className="max-md:text-5xl text-7xl rtl:leading-22 tracking-wide">
             <TText tKey={`partners.partnersNames.${partner.name}`} />
           </AnimText>

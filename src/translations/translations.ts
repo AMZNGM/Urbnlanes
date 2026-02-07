@@ -704,6 +704,159 @@ export const TRANSLATIONS = {
     videoSection: {
       marquee: 'One year - One vision - Purposeful progress -',
     },
+
+    careers: {
+      tagline: 'Join a Place Where People Grow and Thrive',
+      description:
+        'Step into an environment built on support, integrity, and opportunity. At Urbnlanes, employees are empowered to grow, innovate, and shape their future within a culture that genuinely values their well-being and professional development.',
+      joinUrbnlanes: 'Join Urbnlanes',
+      applyNow: 'Apply Now',
+      aboutRole: 'About the Role',
+      whatWeOffer: 'What We Offer',
+      joinOurTeam: 'Join Our Team',
+      joinDesc: 'Fill in your data to collaborate with us',
+      form: {
+        firstName: 'First Name',
+        lastName: 'Last Name',
+        email: 'Email Address',
+        phone: 'Phone Number',
+        experience: 'Years of Experience',
+        linkedin: 'LinkedIn Profile (Optional)',
+        resume: 'Upload Resume (PDF)',
+        message: 'Message to Hiring Team',
+        submit: 'Submit Application',
+        success: 'Application Received',
+        successDesc: 'Thank you for your interest in joining Urbnlanes. Our HR team will review your application and get back to you soon.',
+        selectExp: 'Select experience',
+        exp02: '0-2 years',
+        exp35: '3-5 years',
+        exp510: '5-10 years',
+        exp10plus: '10+ years',
+        maxSize: 'Max 5MB',
+        chooseFile: 'Choose file...',
+        placeholderFirstName: 'First Name',
+        placeholderLastName: 'Last Name',
+        placeholderEmail: 'mail@example.com',
+        placeholderPhone: '+123 456 7890',
+        placeholderLinkedin: 'https://linkedin.com/in/...',
+        placeholderMessage: "Tell us why you're a great fit...",
+      },
+      departments: {
+        'business-generation': 'Core Business & Revenue Generation',
+        'financial-legal': 'Financial & Legal Operations',
+        'execution-engineering': 'Project Execution & Engineering',
+        'admin-support': 'Administration & Support',
+      },
+      roles: {
+        marketing: {
+          title: 'Marketing',
+          about:
+            'We are seeking a creative and strategic Marketing professional to join our team. You will be responsible for developing and executing marketing campaigns that enhance our brand presence and drive engagement in the real estate market.',
+          benefits: [
+            'Empowering environment to grow and thrive',
+            'Competitive compensation package',
+            'Opportunity to work on iconic Middle East projects',
+            'Culture that values well-being and development',
+          ],
+        },
+        sales: {
+          title: 'Sales',
+          about:
+            'Join our dynamic Sales team to drive revenue growth and build lasting relationships with our clients. You will showcase our premium real estate developments and guide clients through their investment journey.',
+          benefits: ['High commission potential', 'Extensive training and support', 'Premium office environment', 'Recognition and awards for top performers'],
+        },
+        'business-development': {
+          title: 'Business Development',
+          about:
+            'As a Business Development professional, you will identify new market opportunities and forge strategic partnerships. Your role is critical in expanding Urbnlanes presence across the region.',
+          benefits: [
+            'Strategic role with significant impact',
+            'Networking with industry leaders',
+            'Dynamic and fast-paced environment',
+            'Professional development opportunities',
+          ],
+        },
+        'finance-accounting': {
+          title: 'Finance & Accounting',
+          about:
+            'We are looking for detail-oriented Finance and Accounting professionals to manage our financial health. You will handle budgeting, financial reporting, and ensure compliance with regional regulations.',
+          benefits: [
+            'Stable and structured workflow',
+            'Modern financial management tools',
+            'Collaborative finance team',
+            'Opportunities for internal promotion',
+          ],
+        },
+        billing: {
+          title: 'Billing',
+          about:
+            'Our Billing specialists ensure accurate and timely invoicing and payment processing. You will work closely with clients and our sales team to manage financial transactions seamlessly.',
+          benefits: ['Precision-focused environment', 'Health and wellness benefits', 'Supportive administrative team', 'Modern workplace facilities'],
+        },
+        'legal-contracts': {
+          title: 'Legal & Contracts',
+          about:
+            'Join our Legal team to oversee contract negotiations and ensure regulatory compliance. You will provide essential legal guidance for our diverse real estate projects.',
+          benefits: [
+            'Involvement in complex legal matters',
+            'Work with top-tier legal experts',
+            'Comprehensive insurance coverage',
+            'Professional association support',
+          ],
+        },
+        'project-management': {
+          title: 'Project Management',
+          about:
+            'Lead our landmark projects from conception to completion. As a Project Manager, you will coordinate between various stakeholders to ensure delivery on time and within budget.',
+          benefits: ['Lead iconic architectural projects', 'Multi-disciplinary team management', 'High-level project visibility', 'Performance-based bonuses'],
+        },
+        'civil-execution': {
+          title: 'Civil / Execution',
+          about:
+            'Our Civil Execution team is the backbone of our construction sites. You will oversee on-site activities, ensuring structural integrity and adherence to engineering standards.',
+          benefits: ['Hands-on engineering experience', 'Technical skill enhancement', 'Safety-first work culture', 'Involvement in massive scale projects'],
+        },
+        'design-architecture': {
+          title: 'Design & Architecture',
+          about:
+            'Bring our architectural vision to life. You will design innovative and aesthetically pleasing spaces that redefine urban living in the Middle East.',
+          benefits: [
+            'Creative freedom and innovation',
+            'Access to latest design software',
+            'Portfolio-building iconic projects',
+            'International design collaboration',
+          ],
+        },
+        'structural-engineering': {
+          title: 'Structural Engineering',
+          about:
+            'Ensure the safety and durability of our structures. You will perform detailed calculations and analysis for our diverse portfolio of residential and commercial towers.',
+          benefits: [
+            'Challenging technical environment',
+            'Work on high-rise developments',
+            'Rigorous engineering standards',
+            'Professional certification support',
+          ],
+        },
+        'hr-administration': {
+          title: 'HR & Administration',
+          about:
+            'Shape our workforce and company culture. You will manage recruitment, employee relations, and administrative operations to support our growing team.',
+          benefits: ['Influence company culture', 'Comprehensive benefits package', 'Diverse and inclusive workplace', 'People-centric environment'],
+        },
+        'information-technology': {
+          title: 'Information Technology',
+          about:
+            'Drive our digital transformation. You will manage our IT infrastructure, implement security protocols, and support the technological needs of our modern real estate operations.',
+          benefits: ['Work with latest technologies', 'Innovative digital projects', 'Technical autonomy', 'Ongoing tech training'],
+        },
+        others: {
+          title: 'Others',
+          about: "Don't see a role that fits? We are always looking for talented individuals to join our diverse team across various support functions.",
+          benefits: ['Growth within a growing company', 'Diverse team interactions', 'Flexible career paths', 'Standard company benefits'],
+        },
+      },
+    },
   },
 
   ar: {
@@ -1395,6 +1548,123 @@ export const TRANSLATIONS = {
 
     videoSection: {
       marquee: 'عام واحد - رؤية واحدة - تقدم هادف -',
+    },
+
+    careers: {
+      tagline: 'انضم إلى مكان حيث ينمو الناس ويزدهرون',
+      description:
+        'ادخل إلى بيئة قائمة على الدعم والنزاهة والفرص. في أوربن لينز، يتم تمكين الموظفين للنمو والابتكار وتشكيل مستقبلهم ضمن ثقافة تقدر بصدق رفاهيتهم وتطورهم المهني.',
+      joinUrbnlanes: 'انضم إلى أوربن لينز',
+      applyNow: 'قدم الآن',
+      aboutRole: 'عن الوظيفة',
+      whatWeOffer: 'ما نقدمه',
+      joinOurTeam: 'انضم لفريقنا',
+      joinDesc: 'أدخل بياناتك للتعاون معنا',
+      form: {
+        firstName: 'الاسم الأول',
+        lastName: 'الاسم الأخير',
+        email: 'البريد الإلكتروني',
+        phone: 'رقم الهاتف',
+        experience: 'سنوات الخبرة',
+        linkedin: 'ملف لينكد إن (اختياري)',
+        resume: 'تحميل السيرة الذاتية (PDF)',
+        message: 'رسالة إلى فريق التوظيف',
+        submit: 'إرسال الطلب',
+        success: 'تم استلام الطلب',
+        successDesc: 'شكراً لاهتمامك بالانضمام إلى أوربن لينز. سيقوم فريق الموارد البشرية لدينا بمراجعة طلبك والتواصل معك قريباً.',
+        selectExp: 'اختر الخبرة',
+        exp02: '0-2 سنوات',
+        exp35: '3-5 سنوات',
+        exp510: '5-10 سنوات',
+        exp10plus: 'أكثر من 10 سنوات',
+        maxSize: 'الحد الأقصى 5 ميجابايت',
+        chooseFile: 'اختر ملف...',
+        placeholderFirstName: 'أحمد',
+        placeholderLastName: 'محمد',
+        placeholderEmail: 'ahmed@example.com',
+        placeholderPhone: '+20 123 456 7890',
+        placeholderLinkedin: 'https://linkedin.com/in/...',
+        placeholderMessage: 'أخبرنا لماذا أنت مناسب لهذا المنصب...',
+      },
+      departments: {
+        'business-generation': 'الأعمال الأساسية وتوليد الإيرادات',
+        'financial-legal': 'العمليات المالية والقانونية',
+        'execution-engineering': 'تنفيذ المشاريع والهندسة',
+        'admin-support': 'الإدارة والدعم',
+      },
+      roles: {
+        marketing: {
+          title: 'التسويق',
+          about:
+            'نحن نبحث عن محترف تسويق مبدع واستراتيجي للانضمام إلى فريقنا. ستكون مسؤولاً عن تطوير وتنفيذ حملات تسويقية تعزز حضور علامتنا التجارية وتدفع التفاعل في السوق العقاري.',
+          benefits: ['بيئة تمكينية للنمو والازدهار', 'حزمة تعويضات تنافسية', 'فرصة للعمل في مشاريع أيقونية في الشرق الأوسط', 'ثقافة تقدر الرفاهية والتطوير'],
+        },
+        sales: {
+          title: 'المبيعات',
+          about:
+            'انضم إلى فريق المبيعات الديناميكي لدينا لدفع نمو الإيرادات وبناء علاقات دائمة مع عملائنا. ستعرض مشاريعنا العقارية المتميزة وتوجه العملاء خلال رحلتهم الاستثمارية.',
+          benefits: ['إمكانيات عمولة عالية', 'تدريب ودعم مكثف', 'بيئة مكتبية متميزة', 'تقدير وجوائز للمتميزين'],
+        },
+        'business-development': {
+          title: 'تطوير الأعمال',
+          about: 'كمحترف لتطوير الأعمال، ستحدد فرص السوق الجديدة وتبني شراكات استراتيجية. دورك حاسم في توسيع حضور أوربن لينز في جميع أنحاء المنطقة.',
+          benefits: ['دور استراتيجي ذو تأثير كبير', 'التواصل مع قادة الصناعة', 'بيئة ديناميكية وسريعة الوتيرة', 'فرص للتطوير المهني'],
+        },
+        'finance-accounting': {
+          title: 'المالية والمحاسبة',
+          about:
+            'نحن نبحث عن محترفين في المالية والمحاسبة يهتمون بالتفاصيل لإدارة صحتنا المالية. ستتعامل مع الميزانية والتقارير المالية وضمان الامتثال للوائح الإقليمية.',
+          benefits: ['سير عمل مستقر ومنظم', 'أدوات إدارة مالية حديثة', 'فريق مالي تعاوني', 'فرص للترقية الداخلية'],
+        },
+        billing: {
+          title: 'الفواتير',
+          about:
+            'يضمن متخصصو الفواتير لدينا إصدار الفواتير ومعالجة المدفوعات بدقة وفي الوقت المناسب. ستعمل عن كثب مع العملاء وفريق المبيعات لدينا لإدارة المعاملات المالية بسلاسة.',
+          benefits: ['بيئة تركز على الدقة', 'مزايا الصحة والرفاهية', 'فريق إداري داعم', 'مرافق عمل حديثة'],
+        },
+        'legal-contracts': {
+          title: 'القانونية والعقود',
+          about: 'انضم إلى فريقنا القانوني للإشراف على مفاوضات العقود وضمان الامتثال التنظيمي. ستقدم إرشادات قانونية أساسية لمشاريعنا العقارية المتنوعة.',
+          benefits: ['المشاركة في مسائل قانونية معقدة', 'العمل مع خبراء قانونيين من الطراز الأول', 'تغطية تأمينية شاملة', 'دعم الجمعيات المهنية'],
+        },
+        'project-management': {
+          title: 'إدارة المشاريع',
+          about: 'قد مشاريعنا البارزة من المفهوم إلى الاكتمال. كمدير مشروع، ستنسق بين مختلف أصحاب المصلحة لضمان التسليم في الوقت المحدد وضمن الميزانية.',
+          benefits: ['قيادة مشاريع معمارية أيقونية', 'إدارة فرق متعددة التخصصات', 'رؤية عالية المستوى للمشاريع', 'مكافآت قائمة على الأداء'],
+        },
+        'civil-execution': {
+          title: 'مدني / تنفيذ',
+          about:
+            'فريق التنفيذ المدني لدينا هو العمود الفقري لمواقع البناء الخاصة بنا. ستشرف على الأنشطة في الموقع، مما يضمن السلامة الهيكلية والالتزام بالمعايير الهندسية.',
+          benefits: ['خبرة هندسية عملية', 'تعزيز المهارات التقنية', 'ثقافة عمل تضع السلامة أولاً', 'المشاركة في مشاريع ضخمة'],
+        },
+        'design-architecture': {
+          title: 'التصميم والعمارة',
+          about: 'اجعل رؤيتنا المعمارية تنبض بالحياة. ستصمم مساحات مبتكرة وجمالية تعيد تعريف الحياة الحضرية في الشرق الأوسط.',
+          benefits: ['حرية إبداعية وابتكار', 'الوصول إلى أحدث برامج التصميم', 'مشاريع أيقونية لبناء محفظة أعمالك', 'تعاون دولي في التصميم'],
+        },
+        'structural-engineering': {
+          title: 'الهندسة الإنشائية',
+          about: 'ضمان سلامة ومتانة هياكلنا. ستقوم بإجراء حسابات وتحليلات مفصلة لمحفظتنا المتنوعة من الأبراج السكنية والتجارية.',
+          benefits: ['بيئة تقنية مليئة بالتحديات', 'العمل على تطوير ناطحات سحاب', 'معايير هندسية صارمة', 'دعم الشهادات المهنية'],
+        },
+        'hr-administration': {
+          title: 'الموارد البشرية والإدارة',
+          about: 'شكل قوتنا العاملة وثقافة شركتنا. ستدير التوظيف وعلاقات الموظفين والعمليات الإدارية لدعم فريقنا المتنامي.',
+          benefits: ['التأثير على ثقافة الشركة', 'حزمة مزايا شاملة', 'بيئة عمل متنوعة وشاملة', 'بيئة تركز على الناس'],
+        },
+        'information-technology': {
+          title: 'تكنولوجيا المعلومات',
+          about:
+            'قد تحولنا الرقمي. ستدير بنية تكنولوجيا المعلومات التحتية لدينا، وتنفذ بروتوكولات الأمن، وتدعم الاحتياجات التكنولوجية لعملياتنا العقارية الحديثة.',
+          benefits: ['العمل مع أحدث التقنيات', 'مشاريع رقمية مبتكرة', 'استقلالية تقنية', 'تدريب مستمر في التكنولوجيا'],
+        },
+        others: {
+          title: 'وظائف أخرى',
+          about: 'ألا ترى دوراً يناسبك؟ نحن نبحث دائماً عن أفراد موهوبين للانضمام إلى فريقنا المتنوع عبر وظائف الدعم المختلفة.',
+          benefits: ['نمو ضمن شركة متنامية', 'تفاعلات فريق متنوعة', 'مسارات وظيفية مرنة', 'مزايا الشركة القياسية'],
+        },
+      },
     },
   },
 }

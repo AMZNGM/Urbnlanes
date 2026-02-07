@@ -38,12 +38,12 @@ export default function HoverListGallery() {
               <Dot />
             </div>
 
-            <span className="bottom-0 ltr:-left-1 rtl:left-2 absolute w-full h-8 bg-text rounded-2xl scale-x-0 group-hover:scale-x-100 origin-left group-hover:origin-right transition-transform duration-300 delay-200 mix-blend-difference" />
+            <span className="bottom-0 ltr:-left-1 rtl:left-2 absolute w-full h-8 bg-text rounded-lg scale-x-0 group-hover:scale-x-100 origin-left group-hover:origin-right transition-transform duration-300 delay-200 mix-blend-difference" />
           </AnimIn>
         ))}
       </div>
 
-      <div className="z-60 absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
+      <div className="z-60 absolute inset-0 overflow-hidden rounded-lg pointer-events-none">
         <AnimatePresence mode="wait">
           {activeIndex !== null && (
             <motion.div

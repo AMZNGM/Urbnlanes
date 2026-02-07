@@ -8,7 +8,7 @@ const ConstructionUpdatesContent = dynamic(() => import('@/components/constructi
 
 export const generateMetadata = metadataGenerators.constructionUpdates
 
-export default function ConstructionUpdates() {
+export default function ConstructionUpdatesPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
       <div className="top-0 sticky">

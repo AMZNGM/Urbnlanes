@@ -97,7 +97,7 @@ export default function DraggableBoxCarousel({ className = '' }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleCloseFullscreen}
-            className="fixed inset-0 flex justify-center items-center bg-black/30 backdrop-blur-2xl rounded-2xl md:m-4 md:p-14"
+            className="fixed inset-0 flex justify-center items-center bg-black/30 backdrop-blur-2xl rounded-lg md:m-4 md:p-14"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
