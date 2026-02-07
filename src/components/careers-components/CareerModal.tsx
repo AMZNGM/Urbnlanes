@@ -40,7 +40,7 @@ export default function CareerModal({ closeModal, selectedRole, dark = true }: {
             initial={{ scale: 0.5, opacity: 0, y: 10, filter: 'blur(10px)' }}
             animate={{ scale: 1, opacity: 1, y: 0, filter: 'blur(0px)' }}
             exit={{ scale: 0.5, opacity: 0, y: 10, filter: 'blur(10px)' }}
-            transition={{ duration: 0.5, filter: { duration: 0.7, delay: 0.2 } }}
+            transition={{ duration: 0.3, filter: { duration: 0.5, delay: 0.2 } }}
             className={`relative w-full max-w-5xl h-[90dvh] max-md:overflow-y-auto overflow-y-hidden flex max-md:flex-col-reverse gap-4 border rounded-lg max-md:p-4 p-6  ${
               dark ? 'bg-bg text-text shadow-bg' : 'bg-text text-bg shadow-text'
             }`}

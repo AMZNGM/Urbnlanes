@@ -710,6 +710,7 @@ export const TRANSLATIONS = {
       description:
         'Step into an environment built on support, integrity, and opportunity. At Urbnlanes, employees are empowered to grow, innovate, and shape their future within a culture that genuinely values their well-being and professional development.',
       joinUrbnlanes: 'Join Urbnlanes',
+      openRoles: 'Open Roles',
       applyNow: 'Apply Now',
       aboutRole: 'About the Role',
       whatWeOffer: 'What We Offer',
@@ -1555,6 +1556,7 @@ export const TRANSLATIONS = {
       description:
         'ادخل إلى بيئة قائمة على الدعم والنزاهة والفرص. في أوربن لينز، يتم تمكين الموظفين للنمو والابتكار وتشكيل مستقبلهم ضمن ثقافة تقدر بصدق رفاهيتهم وتطورهم المهني.',
       joinUrbnlanes: 'انضم إلى أوربن لينز',
+      openRoles: 'الوظائف المفتوحة',
       applyNow: 'قدم الآن',
       aboutRole: 'عن الوظيفة',
       whatWeOffer: 'ما نقدمه',
