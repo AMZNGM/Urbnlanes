@@ -10,7 +10,7 @@ import BreathingText from '@/components/ui/text/BreathingText'
 
 export default function ProjectsImpact() {
   let impacts = [
-    { text: 'common.ourImpact', value: '36+' },
+    { text: 'db.whoweare.statistics[0].title', value: '36+' },
     { text: 'db.whoweare.statistics[1].title', value: '100+' },
     { text: 'db.whoweare.behindthefigures[3].label', value: '20+' },
     { text: 'common.inKuwait', value: '18' },

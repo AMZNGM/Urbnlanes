@@ -13,7 +13,7 @@ export default function LineHeading({
   paraTKey?: string
   sideParaTKey?: string
   className?: string
-  lineFrom?: string
+  lineFrom?: 'left' | 'right' | 'center'
 }) {
   return (
     <div className={className}>

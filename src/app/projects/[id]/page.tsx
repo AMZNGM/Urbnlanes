@@ -64,7 +64,7 @@ export default async function ProjectPage({ params }: Props) {
       <ProjectAmenities project={project} />
       <ProjectPartners project={project} />
       <SimilarProjects currentProject={project} allProjects={db.projects as Project[]} />
-      <LatestNews className="-mt-18 pb-28" />
+      <LatestNews className="-mt-18" />
     </Suspense>
   )
 }

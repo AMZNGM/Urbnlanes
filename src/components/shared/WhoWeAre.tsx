@@ -14,7 +14,7 @@ export default function WhoWeAre({ className, dark, withOutImage }: { className?
 
   return (
     <section className={`relative w-dvw overflow-hidden px-4 max-md:px-2 py-12 ${dark ? 'bg-bg text-text' : 'bg-text text-bg'} ${className}`}>
-      <LineHeading tKey="common.whoWeAre" className="max-md:mb-12" />
+      <LineHeading tKey="common.whoWeAre" className="max-md:mb-12" lineFrom="right" />
 
       <p className="relative max-w-4xl text-[2.8dvw] rtl:text-[2dvw] max-md:rtl:text-xl max-md:text-3xl max-md:text-center normal-case text-balance ms-auto">
         <ScrollRevealText tKey="db.whoweare.description2" />

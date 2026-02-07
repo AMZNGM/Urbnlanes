@@ -26,7 +26,7 @@ export default function OurProjectsPage() {
       <AllProjects />
       <MarkedProjects />
       <ProjectsImpact />
-      <LatestNews className="pt-0 pb-28" />
+      <LatestNews className="pt-0" />
     </Suspense>
   )
 }

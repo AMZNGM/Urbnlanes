@@ -12,7 +12,7 @@ export default function AboutUs() {
 
   return (
     <section className="relative w-dvw overflow-hidden bg-bg text-text px-4 max-md:px-2 py-12">
-      <LineHeading tKey="common.aboutUs" paraTKey="db.whoweare.tagline" lineFrom="center" className="mt-14 mb-8" />
+      <LineHeading tKey="common.aboutUs" paraTKey="db.whoweare.tagline" lineFrom="left" className="mt-14 mb-8" />
 
       {/* tagline */}
       <AnimIn blur center delay={0.5} className="ltr:-right-20 max-md:right-0 rtl:-left-20 absolute border rounded-3xl mb-8 px-8 py-4">
@@ -55,7 +55,7 @@ export default function AboutUs() {
         <div className="right-0 bottom-0 absolute w-20 h-20 border-main/38! border-r border-b rounded-br-3xl" />
       </div>
 
-      <MotionLine className="mt-14" from="center" />
+      <MotionLine className="mt-14" from="right" />
     </section>
   )
 }

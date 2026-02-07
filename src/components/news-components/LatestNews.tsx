@@ -8,7 +8,7 @@ export default function LatestNews({ className, dark }: { className?: string; da
   let latestArticles = [...db.mediacenter.blogs, ...db.mediacenter.news].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6)
 
   return (
-    <section className={`relative py-12 ${dark ? 'bg-bg text-text' : 'bg-text text-bg'} ${className}`}>
+    <section className={`relative pt-12 pb-28 ${dark ? 'bg-bg text-text' : 'bg-text text-bg'} ${className}`}>
       <div className="flex justify-end gap-2 mx-18 max-md:mx-4 mb-8">
         <MainBtn to="/media-center-news" tKey="common.allNews" look="mono" />
         <ScrollArrows />

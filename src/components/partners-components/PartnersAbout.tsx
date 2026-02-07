@@ -15,7 +15,13 @@ export default function PartnersAbout() {
         </AnimText>
       </div>
 
-      <motion.div style={{ height: useTransform(scrollYProgress, [0, 1], ['0%', '650%']) }} className="absolute inset-0 md:max-w-1/2 bg-bg ms-auto" />
+      <motion.div style={{ height: useTransform(scrollYProgress, [0, 1], ['0%', '650%']) }} className="absolute inset-0 max-w-3xl bg-bg ms-auto" />
+
+      <div className="max-md:hidden z-10 relative md:max-w-1/2 text-end ms-auto py-2 mix-blend-difference">
+        <AnimText as="h2" className="font-medium text-[5dvw] max-md:text-5xl normal-case md:rtl:leading-34!">
+          <TText tKey="partners.partnersTitle" />
+        </AnimText>
+      </div>
     </section>
   )
 }
