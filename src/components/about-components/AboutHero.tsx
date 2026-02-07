@@ -1,32 +1,22 @@
 'use client'
 
-import Image from 'next/image'
 import { motion, AnimatePresence } from 'motion/react'
 import { useHero } from '@/hooks/useHero'
-import { LoadingOscillate } from '@/components/loading-components/LoadingAnimations'
 import TText from '@/translations/TText'
-import AnimText from '@/components/ui/unstyled/AnimText'
 import HeroVideoToggle from '@/components/hero-components/HeroVideoToggle'
 import BreathingText from '@/components/ui/text/BreathingText'
+import ImageIn from '@/components/ui/unstyled/ImageIn'
 
-export default function AboutHero({
-  title = '',
-  para = '',
-  image = '/images/poster.png',
-  video = '/videos/one-year-1.mp4',
-}: {
-  title?: string
-  para?: string
-  image?: string
-  video?: string
-}) {
-  let { isVideoMode, setIsVideoMode, handleAnimationStart, isLoading, handleMediaLoad, isMobile, t } = useHero()
+export default function AboutHero() {
+  let { isVideoMode, setIsVideoMode, handleAnimationStart, isMobile } = useHero()
 
   return (
-    <section className="relative w-dvw h-dvh overflow-hidden bg-black text-text">
-      {isLoading && <LoadingOscillate />}
-
-      {!isMobile && <HeroVideoToggle isVideoMode={isVideoMode} setIsVideoMode={setIsVideoMode} />}
+    <section className="relative w-dvw h-dvh overflow-hidden bg-bg text-text">
+      {!isMobile && (
+        <div className="top-12 -right-32 z-60 absolute w-full">
+          <HeroVideoToggle isVideoMode={isVideoMode} setIsVideoMode={setIsVideoMode} />
+        </div>
+      )}
 
       <AnimatePresence mode="wait">
         <motion.div
@@ -38,48 +28,35 @@ export default function AboutHero({
           onAnimationStart={handleAnimationStart}
           className="absolute inset-0"
         >
-          {!isMobile && isVideoMode && video ? (
+          {!isMobile && isVideoMode ? (
             <video
-              src={video}
-              poster={image}
+              src="/videos/one-year-1.mp4"
+              poster="/images/projects/yellow-residence/yr-gallery-2.webp"
               autoPlay
               muted
               loop
               playsInline
               preload="auto"
               className="w-full h-full object-cover"
-              onLoadedData={handleMediaLoad}
             />
           ) : (
-            <Image
-              src={image}
-              alt={title || 'Background image'}
-              fill
-              priority
-              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 80vw, 100vw"
-              className="object-cover"
-              onLoad={handleMediaLoad}
-            />
+            <ImageIn src="/images/projects/yellow-residence/yr-gallery-3.webp" alt="Background image" priority sizes="100vw" className="scale-100!" />
           )}
-          <div className="z-10 absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
-      <div data-scroll data-scroll-speed="0.2" className="z-10 relative w-full h-full flex flex-col justify-end items-center duration-300 p-4 max-md:py-20">
-        <motion.div initial={{ y: '100%' }} animate={{ y: '0%' }} transition={{ duration: 0.9 }}>
-          <BreathingText as="div" repeatDelay={2} className="w-full text-[10dvw] text-center text-nowrap ltr:leading-none max-md:pb-6">
-            {t(`${title}`)}
-          </BreathingText>
-        </motion.div>
-
-        <AnimText
-          as={'p'}
-          delay={0.9}
-          className="max-w-5xl text-text/90 max-md:text-xs text-sm text-center normal-case text-balance leading-relaxed tracking-wider"
-        >
-          <TText tKey={para} />
-        </AnimText>
-      </div>
+      <motion.div
+        initial={{ y: '100%' }}
+        animate={{ y: '0%' }}
+        transition={{ duration: 0.9, ease: [0.41, 0.28, 0.72, 0.77] }}
+        data-scroll
+        data-scroll-speed="0.2"
+        className="z-10 w-full h-full flex flex-col justify-end items-center"
+      >
+        <BreathingText as="div" repeatDelay={2} className="text-[10dvw] text-center text-nowrap ltr:leading-none max-md:pb-6">
+          <TText tKey="common.aboutUrbnlanes" />
+        </BreathingText>
+      </motion.div>
     </section>
   )
 }

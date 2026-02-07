@@ -17,7 +17,9 @@ export const generateMetadata = metadataGenerators.about
 export default function AboutPage() {
   return (
     <Suspense fallback={<LoadingLogo />}>
-      <AboutHero title="common.aboutUrbnlanes" image="/images/projects/yellow-residence/yr-gallery-11.webp" video="/videos/one-year-1.mp4" />
+      <div className="top-0 sticky">
+        <AboutHero />
+      </div>
 
       <LineHeading
         tKey="common.aboutUs"
