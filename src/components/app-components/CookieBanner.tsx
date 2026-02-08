@@ -19,7 +19,7 @@ export default function CookieBanner() {
   }, [initialized, consent])
 
   let openCookieSidebar = () => {
-    let event = new CustomEvent('openCookieSidebar')
+    let event = new CustomEvent('showCookiesCookieModal')
     window.dispatchEvent(event)
     setVisible(false)
   }
