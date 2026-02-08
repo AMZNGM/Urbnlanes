@@ -1,9 +1,9 @@
 'use client'
 
+import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { useTranslation } from '@/translations/useTranslation'
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock'
-import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
 import { Briefcase, MapPin, Clock, CheckCircle2 } from 'lucide-react'
 import { SoftLine, MotionLine } from '@/components/ui/effects/Lines'
 import TText from '@/translations/TText'
@@ -15,11 +15,17 @@ export default function CareerModal({ closeModal, selectedRole, dark = true }: {
   let { t } = useTranslation()
   let benefits = (t(`careers.roles.${selectedRole?.id}.benefits`, { returnObjects: true }) as string[]) || []
 
-  useKeyboardShortcuts({
-    onEscape: () => {
-      closeModal()
-    },
-  })
+  useEffect(() => {
+    let handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeModal()
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [closeModal])
 
   useBodyScrollLock(selectedRole)
 
