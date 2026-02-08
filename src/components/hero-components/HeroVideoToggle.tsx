@@ -6,7 +6,7 @@ export default function HeroVideoToggle({ isVideoMode, setIsVideoMode }: { isVid
   return (
     <div
       dir="ltr"
-      className="max-md:hidden top-2 right-36 z-60 absolute overflow-hidden space-x-4 bg-main/25 hover:bg-bg/50 backdrop-blur-2xl rounded-full transition-colors px-4 py-0.5 select-none"
+      className="max-md:hidden top-28 right-12 z-60 absolute overflow-hidden space-x-4 bg-main/25 hover:bg-bg/50 backdrop-blur-2xl rounded-full transition-colors px-4 py-0.5 select-none"
     >
       <button
         onClick={() => setIsVideoMode(false)}

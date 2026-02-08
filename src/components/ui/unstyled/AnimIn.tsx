@@ -1,7 +1,7 @@
 'use client'
 
-import { ElementType, ReactNode } from 'react'
-import { motion, HTMLMotionProps, AnimatePresence } from 'motion/react'
+import { ElementType, ReactNode, useMemo } from 'react'
+import { AnimatePresence, motion, HTMLMotionProps, useReducedMotion } from 'motion/react'
 
 interface AnimInProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
   children?: ReactNode
@@ -15,7 +15,7 @@ interface AnimInProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
   toDown?: boolean
   center?: boolean
   blur?: boolean
-  reAnim?: boolean
+  reAnim?: any
 }
 
 export default function AnimIn({
@@ -24,7 +24,7 @@ export default function AnimIn({
   className = '',
   delay = 0.1,
   duration = 0.75,
-  exitDuration = 0.75,
+  exitDuration,
   once = true,
   spring = false,
   toDown = false,
@@ -33,58 +33,52 @@ export default function AnimIn({
   reAnim = true,
   ...props
 }: AnimInProps) {
-  let Tag = motion.create(as as any)
+  const Tag = motion.create(as as any)
+  const shouldReduceMotion = useReducedMotion()
+
+  const animationConfig = useMemo(() => {
+    const isReduced = !!shouldReduceMotion
+
+    const baseTransition = {
+      duration: Number(duration),
+      delay: Number(delay),
+      filter: { type: 'spring', stiffness: 90, damping: 15 },
+      ...(spring ? { type: 'spring', stiffness: 300, damping: 20 } : {}),
+    }
+
+    return {
+      transition: isReduced ? { duration: 0.3, delay: Number(delay) } : baseTransition,
+      variants: {
+        hidden: {
+          opacity: 0,
+          y: isReduced || center ? 0 : toDown ? -40 : 40,
+          filter: !isReduced && blur ? 'blur(8px)' : 'blur(0px)',
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+        },
+      },
+    }
+  }, [duration, delay, spring, center, toDown, blur, shouldReduceMotion])
+
+  const animationKey = typeof reAnim === 'boolean' ? undefined : JSON.stringify(reAnim)
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {reAnim && (
         <Tag
-          {...props}
-          transition={{
-            duration: Number(duration),
-            delay: Number(delay),
-            filter: { type: 'spring', stiffness: 90, damping: 15 },
-            ...(spring ? { type: 'spring', stiffness: 300, damping: 20 } : {}),
-          }}
-          variants={{
-            hidden: {
-              opacity: 0,
-              y: center ? 0 : toDown ? -40 : 40,
-              filter: blur ? 'blur(8px)' : null,
-              transition: {
-                duration: exitDuration !== undefined ? Number(exitDuration) : Number(duration),
-                filter: { type: 'spring', stiffness: 90, damping: 15 },
-                ...(spring ? { type: 'spring', stiffness: 300, damping: 20 } : {}),
-              },
-            },
-            visible: {
-              opacity: 1,
-              y: 0,
-              filter: blur ? 'blur(0px)' : null,
-              transition: {
-                duration: Number(duration),
-                delay: Number(delay),
-                filter: { type: 'spring', stiffness: 90, damping: 15 },
-                ...(spring ? { type: 'spring', stiffness: 300, damping: 20 } : {}),
-              },
-            },
-            exit: {
-              opacity: 0,
-              y: center ? 0 : toDown ? -40 : 40,
-              filter: blur ? 'blur(8px)' : null,
-              transition: {
-                duration: exitDuration !== undefined ? Number(exitDuration) : Number(duration),
-                filter: { type: 'spring', stiffness: 90, damping: 15 },
-                ...(spring ? { type: 'spring', stiffness: 300, damping: 20 } : {}),
-              },
-            },
-          }}
+          key={animationKey}
           initial="hidden"
           whileInView="visible"
-          exit="exit"
+          exit="hidden"
+          variants={animationConfig.variants}
+          transition={animationConfig.transition}
           viewport={{ once }}
           className={`relative ${className}`}
-          style={{ ...((props as any).style || {}), position: 'relative' }}
+          style={{ position: 'relative', ...props.style }}
+          {...props}
         >
           {children}
         </Tag>

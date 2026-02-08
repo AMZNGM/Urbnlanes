@@ -12,11 +12,7 @@ export default function AboutHero() {
 
   return (
     <section className="relative w-dvw h-dvh overflow-hidden bg-bg text-text">
-      {!isMobile && (
-        <div className="top-12 -right-32 z-60 absolute w-full">
-          <HeroVideoToggle isVideoMode={isVideoMode} setIsVideoMode={setIsVideoMode} />
-        </div>
-      )}
+      {!isMobile && <HeroVideoToggle isVideoMode={isVideoMode} setIsVideoMode={setIsVideoMode} />}
 
       <AnimatePresence mode="wait">
         <motion.div
