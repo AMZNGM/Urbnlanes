@@ -41,26 +41,11 @@ export default function CareerModal({ closeModal, selectedRole, dark = true }: {
             animate={{ scale: 1, opacity: 1, y: 0, filter: 'blur(0px)' }}
             exit={{ scale: 0.5, opacity: 0, y: 10, filter: 'blur(10px)' }}
             transition={{ duration: 0.3, filter: { duration: 0.5, delay: 0.2 } }}
-            className={`relative w-full max-w-5xl h-[90dvh] max-md:overflow-y-auto overflow-y-hidden flex max-md:flex-col-reverse gap-4 border rounded-lg max-md:p-4 p-6  ${
+            className={`relative w-full max-w-5xl h-[90dvh] max-md:overflow-y-auto overflow-y-hidden flex md:flex-row-reverse max-md:flex-col gap-4 border rounded-lg max-md:p-4 p-6  ${
               dark ? 'bg-bg text-text shadow-bg' : 'bg-text text-bg shadow-text'
             }`}
           >
             {/* Left Side */}
-            <div style={{ scrollbarWidth: 'none' }} className="md:overflow-y-auto flex-1 border rounded-lg p-4">
-              <div className="mb-8">
-                <h3 className="font-sec text-2xl mb-1">
-                  <TText tKey="careers.applyNow" />
-                </h3>
-
-                <p className="opacity-50 text-xs normal-case tracking-wider">
-                  <TText tKey="careers.joinDesc" />
-                </p>
-              </div>
-
-              <ApplicationForm role={`careers.roles.${selectedRole.id}.title`} />
-            </div>
-
-            {/* Right Side */}
             <div style={{ scrollbarWidth: 'none' }} className="md:w-2/5 md:overflow-y-auto flex flex-col gap-6">
               <div className="space-y-4">
                 <CloseBtn onClick={closeModal} className="w-fit" />
@@ -110,6 +95,21 @@ export default function CareerModal({ closeModal, selectedRole, dark = true }: {
               </div>
 
               <MotionLine delay={0.6} className="opacity-30 mt-auto" />
+            </div>
+
+            {/* Right Side */}
+            <div style={{ scrollbarWidth: 'none' }} className="md:overflow-y-auto flex-1 border rounded-lg p-4">
+              <div className="mb-8">
+                <h3 className="font-sec text-2xl mb-1">
+                  <TText tKey="careers.applyNow" />
+                </h3>
+
+                <p className="opacity-50 text-xs normal-case tracking-wider">
+                  <TText tKey="careers.joinDesc" />
+                </p>
+              </div>
+
+              <ApplicationForm role={`careers.roles.${selectedRole.id}.title`} />
             </div>
           </motion.div>
         </motion.div>

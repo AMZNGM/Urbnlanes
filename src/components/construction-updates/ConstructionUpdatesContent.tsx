@@ -56,7 +56,7 @@ export default function ConstructionUpdatesContent() {
   }
 
   return (
-    <section className="relative w-dvw bg-bg text-text px-4 max-md:px-2 py-24">
+    <section className="relative w-dvw bg-bg text-text px-4 py-24">
       <div className="max-w-6xl space-y-4 mx-auto">
         {updates.map((group, index) => {
           let id = `${group.projectId}-${index}`
@@ -71,7 +71,7 @@ export default function ConstructionUpdatesContent() {
                       <Calendar size={12} /> {group.date}
                     </span>
 
-                    <h3 className="font-sec group-hover:text-main text-3xl md:text-5xl uppercase transition-colors duration-100 mt-1">
+                    <h3 className="font-sec group-hover:text-main text-xl md:text-5xl uppercase transition-colors duration-100 mt-1">
                       <TText tKey={`db.projects.${group.projectId}.name`} />
                     </h3>
                   </div>

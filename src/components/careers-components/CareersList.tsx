@@ -21,7 +21,7 @@ export default function CareersList({ className, dark }: { className?: string; d
   }
 
   return (
-    <section className={`relative w-dvw min-h-[90dvh] overflow-hidden px-4 max-md:px-2 py-24 ${dark ? 'bg-bg text-text' : 'bg-text text-bg'} ${className}`}>
+    <section className={`relative w-dvw min-h-[90dvh] overflow-hidden px-4 py-24 ${dark ? 'bg-bg text-text' : 'bg-text text-bg'} ${className}`}>
       <div className="max-w-7xl mx-auto">
         <AnimText as={'h4'} className="rtl:leading-6!">
           <TText tKey="careers.openRoles" />
@@ -34,7 +34,7 @@ export default function CareersList({ className, dark }: { className?: string; d
               <button onClick={() => toggle(dept.id)} className="group w-full flex justify-between items-start gap-6 py-12 cursor-pointer">
                 <div className="flex justify-between gap-4">
                   <span className="opacity-30 group-hover:opacity-100 font-mono text-[10px] group-hover:text-main transition-colors">0{index + 1}</span>
-                  <h3 className="max-md:text-xl text-4xl">
+                  <h3 className="max-md:text-lg text-4xl">
                     <TText tKey={`careers.departments.${dept.id}`} />
                   </h3>
                 </div>
@@ -61,7 +61,7 @@ export default function CareersList({ className, dark }: { className?: string; d
                             className={`group/role flex justify-between bg-main/2 border border-main/15! hover:border-main/10! hover:rounded-br-[4rem] rounded-lg outline-none transition-all duration-500 p-4 cursor-pointer ${roleIndex % 2 === 1 ? '' : 'last:col-span-full'} `}
                           >
                             <div className="space-y-2 text-start">
-                              <h4 className="group-hover/role:opacity-65 text-xl transition-opacity duration-300">
+                              <h4 className="group-hover/role:opacity-65 max-md:text-base text-xl normal-case transition-opacity duration-300">
                                 <TText tKey={`careers.roles.${role.id}.title`} />
                               </h4>
                               <p className="flex items-center gap-2 opacity-40 font-mono text-[10px] uppercase tracking-widest">{role.location}</p>

@@ -13,7 +13,7 @@ export const TRANSLATIONS = {
       partners: 'Partners',
       updates: 'Updates',
       partnersAssociates: 'Partners & Associates',
-      constructionUpdates: 'Construction Updates',
+      constructionUpdates: 'Construct Updates',
       careers: 'Careers',
       ourProjects: 'Our Projects',
       storyBrandedResidences: 'Story Branded Residences',
