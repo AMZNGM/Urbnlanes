@@ -64,6 +64,7 @@ export default function Hero() {
         currentIndex={currentIndex}
         isVideoMode={isVideoMode}
         isMobile={isMobile}
+        prefersReducedMotion={prefersReducedMotion}
         videoRef={videoRef}
         slidesCount={slides.length}
         isLoading={isLoading}

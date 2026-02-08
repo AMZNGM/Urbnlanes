@@ -65,6 +65,12 @@ export const SEO = {
     keywords: ['urbnlanes', 'careers', 'real estate', 'urban living', 'middle east', 'real estate development'],
   },
 
+  '/team': {
+    title: 'Urbnlanes Team - Know more about our expert team',
+    description: 'Discover our expert team at Urbnlanes, a real estate development company building masterpieces across the Middle East.',
+    keywords: ['urbnlanes', 'team', 'experts', 'real estate', 'urban living', 'middle east', 'real estate development'],
+  },
+
   '/cookie-policy': {
     title: 'Urbnlanes Cookie Policy - Our policy on cookies',
     description: 'Our policy on cookies at Urbnlanes, a real estate development company building masterpieces across the Middle East.',

@@ -42,6 +42,7 @@ const STATIC_PAGES: { title: string; url: string }[] = [
   { title: 'Projects', url: '/projects' },
   { title: 'Contact Us', url: '/get-in-touch' },
   { title: 'Careers', url: '/careers' },
+  { title: 'Team', url: '/team' },
   { title: 'Construction Updates', url: '/construction-updates' },
   { title: 'News', url: '/media-center-news' },
   { title: 'Our Partners', url: '/partners-associates' },

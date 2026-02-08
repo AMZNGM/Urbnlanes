@@ -9,6 +9,7 @@ export const TRANSLATIONS = {
       menu: 'Menu',
       search: 'Search',
       news: 'News',
+      team: 'Our Team',
       mediaCenterNews: 'Media Center & News',
       partners: 'Partners',
       updates: 'Updates',
@@ -170,6 +171,7 @@ export const TRANSLATIONS = {
       amenities: 'Amenities',
       overview: 'Project Overview',
       status: 'Status',
+      autobiography: 'Autobiography',
     },
     projectAbout: {
       status: 'Status',
@@ -858,6 +860,45 @@ export const TRANSLATIONS = {
         },
       },
     },
+
+    team: {
+      header: {
+        title: 'People of Urbnlanes',
+        tagline: 'Meet the Board Members',
+      },
+      members: {
+        'team-001': {
+          name: 'Emeel Abdalla',
+          position: 'Chairman and Founder of Emeel Abdalla',
+          bio: 'Eng. Emeel Abdalla, Chairman of Emeel Abdalla Investments Holding, is a self-made visionary who has spent over three decades shaping real estate and construction across the Middle East. From humble beginnings, he built a regional powerhouse encompassing major subsidiaries, including First Group, a leader in modern engineering and construction in Kuwait, Saudi Arabia, and beyond, delivering over 100 projects, including towers, cities, and integrated housing. Driven by a philosophy that true building combines innovation, sustainability, and quality, he expanded into Egypt with Urbnlanes Developments, creating landmark projects such as NOI, Midlane, Levels Business Tower, Yellow Residence, Yellow Lane, and Eastlane Mall. An early adopter of digital technology and AI in construction, he champions efficiency, eco-friendly practices, and safety while maintaining the highest standards of design and execution. Under his leadership, the group has earned six ISO certifications and multiple regional and international awards, leaving a lasting impact on the urban landscape of the Middle East with the guiding mission: “Building the future… preserving the legacy.”',
+        },
+        'team-002': {
+          name: 'Mina Abdalla',
+          position: 'Board member of Urbnlanes Developments CEO of First Group Kuwait Board member of Emeel Abdalla Investments',
+          bio: 'Eng. Mina Emeel Abdalla, CEO of First Group in Kuwait and Saudi Arabia and Board Member of Urbnlanes, leads with vision, determination, and teamwork, shaping some of the most innovative and high-quality real estate projects in the Middle East. A civil engineering graduate from the American University in Cairo (2014), he quickly pioneered through leadership roles across the Emeel Abdalla Investment Group, managing major developments in Egypt, Kuwait, and Saudi Arabia. Over 11 years, he has overseen over 100 projects including towers, residential cities, and landmark infrastructure implementing advanced management systems, global standards, and sustainable practices. Under his leadership, many projects have earned ISO certifications and international awards.',
+        },
+        'team-003': {
+          name: 'Fadi Abdalla',
+          position: 'Board Member of Emeel Abdalla Investments Board member of Urbnlanes CEO of First Group Kuwait.',
+          bio: 'Represents a new generation of real estate leaders leaving a strong imprint on Egypt’s property market. By leading six major projects in just three years with total investments of around EGP 46 billion, he has demonstrated exceptional vision and execution. A civil engineering graduate from the American University in Cairo, he oversees landmark developments in Kuwait and Egypt including Levels Business Tower, NOI Residence, and Eastlane Mall, setting new benchmarks for excellence, innovation, and sustainability.',
+        },
+        'team-004': {
+          name: 'Shadi Abdalla',
+          position: 'Chief Executive Officer - Urbnlanes Board Member – Emeel Abdalla Investments Board Member - First Group Kuwait',
+          bio: 'The creative force shaping the company’s footprint in Egypt and Kuwait, leading projects from design to delivery with global standards. A graduate of the American University in Cairo’s School of Architecture, Shady ensures every project balances innovation, architectural excellence, and quality while meeting market needs.',
+        },
+        'team-005': {
+          name: 'Nael Yacoub',
+          position: 'Board Member of First Group',
+          bio: 'We adopt a philosophy of continuous growth and remarkable achievements. We build teams that are passionate, empowered and of high-performance, regardless the challenges, we deliver.',
+        },
+        'team-006': {
+          name: 'Abdalla El Eissa',
+          position: 'Board Member of First Group',
+          bio: 'We adopt a philosophy of continuous growth and remarkable achievements. We build teams that are passionate, empowered and of high-performance, regardless the challenges, we deliver.',
+        },
+      },
+    },
   },
 
   ar: {
@@ -870,6 +911,7 @@ export const TRANSLATIONS = {
       menu: 'القائمة',
       search: 'بحث',
       news: 'أخبار',
+      team: 'الفريق',
       mediaCenterNews: 'مركز الإعلام والأخبار',
       partners: 'الشركاء',
       partnersAssociates: 'شركاءنا',
@@ -1665,6 +1707,45 @@ export const TRANSLATIONS = {
           title: 'وظائف أخرى',
           about: 'ألا ترى دوراً يناسبك؟ نحن نبحث دائماً عن أفراد موهوبين للانضمام إلى فريقنا المتنوع عبر وظائف الدعم المختلفة.',
           benefits: ['نمو ضمن شركة متنامية', 'تفاعلات فريق متنوعة', 'مسارات وظيفية مرنة', 'مزايا الشركة القياسية'],
+        },
+      },
+    },
+
+    team: {
+      header: {
+        title: 'أشخاص أوربن لينز',
+        tagline: 'تعرف على أعضاء مجلس الإدارة',
+      },
+      members: {
+        'team-001': {
+          name: 'إميل عبد الله',
+          position: 'رئيس مجلس الإدارة ومؤسس إميل عبد الله',
+          bio: 'المهندس إميل عبد الله، رئيس مجلس إدارة إميل عبد الله للاستثمارات القابضة، هو صاحب رؤية عصامي أمضى أكثر من ثلاثة عقود في تشكيل قطاع العقارات والإنشاءات في جميع أنحاء الشرق الأوسط. من بدايات متواضعة، بنى قوة إقليمية تشمل شركات تابعة كبرى، بما في ذلك فيرست جروب، الرائدة في الهندسة والإنشاءات الحديثة في الكويت والمملكة العربية السعودية وما وراءهما، حيث سلمت أكثر من 100 مشروع، بما في ذلك الأبراج والمدن والإسكان المتكامل. انطلاقاً من فلسفة مفادها أن البناء الحقيقي يجمع بين الابتكار والاستدامة والجودة، توسع في مصر مع أوربن لينز للتطوير العقاري، حيث ابتكر مشاريع بارزة مثل نوي، وميدلين، وليفلز بيزنس تاور، ويلو ريزيدنس، ويلو لين، وإيست لين مول. وبصفته متبنياً مبكراً للتكنولوجيا الرقمية والذكاء الاصطناعي في البناء، فإنه يدعم الكفاءة والممارسات الصديقة للبيئة والسلامة مع الحفاظ على أعلى معايير التصميم والتنفيذ. وتحت قيادته، حصلت المجموعة على ست شهادات آيزو والعديد من الجوائز الإقليمية والدولية، مما ترك أثراً دائماً على المشهد الحضري في الشرق الأوسط مع المهمة التوجيهية: "بناء المستقبل... الحفاظ على الإرث"',
+        },
+        'team-002': {
+          name: 'مينا إميل عبد الله',
+          position: 'عضو مجلس إدارة أوربن لينز للتطوير العقاري والرئيس التنفيذي لفيرست جروب الكويت وعضو مجلس إدارة إميل عبد الله للاستثمارات',
+          bio: 'المهندس مينا إميل عبد الله، الرئيس التنفيذي لفيرست جروب في الكويت والمملكة العربية السعودية وعضو مجلس إدارة أوربن لينز، يقود برؤية وعزم وعمل جماعي، ويشكل بعضاً من أكثر المشاريع العقارية ابتكاراً وجودة في الشرق الأوسط. تخرج في الهندسة المدنية من الجامعة الأمريكية بالقاهرة (2014)، وسرعان ما برز في أدوار قيادية عبر مجموعة إميل عبد الله للاستثمارات، حيث أدار مشاريع كبرى في مصر والكويت والمملكة العربية السعودية. على مدار 11 عاماً، أشرف على أكثر من 100 مشروع بما في ذلك الأبراج والمدن السكنية والبنية التحتية البارزة بتطبيق أنظمة إدارة متقدمة ومعايير عالمية وممارسات مستدامة. وتحت قيادته، حصلت العديد من المشاريع على شهادات آيزو وجوائز دولية.',
+        },
+        'team-003': {
+          name: 'فادي عبد الله',
+          position: 'عضو مجلس إدارة إميل عبد الله للاستثمارات وعضو مجلس إدارة أوربن لينز والرئيس التنفيذي لفيرست جروب الكويت.',
+          bio: 'يمثل جيلاً جديداً من قادة العقارات الذين يتركون بصمة قوية في سوق العقارات في مصر. من خلال قيادة ستة مشاريع كبرى في ثلاث سنوات فقط باستثمارات إجمالية تبلغ حوالي 46 مليار جنيه مصري، أظهر رؤية وتنفيذاً استثنائيين. تخرج في الهندسة المدنية من الجامعة الأمريكية بالقاهرة، ويشرف على مشاريع بارزة في الكويت ومصر بما في ذلك ليفلز بيزنس تاور، ونوي ريزيدنس، وإيست لين مول، واضعاً معايير جديدة للتميز والابتكار والاستدامة.',
+        },
+        'team-004': {
+          name: 'شادي عبد الله',
+          position: 'الرئيس التنفيذي - أوربن لينز وعضو مجلس إدارة إميل عبد الله للاستثمارات وعضو مجلس إدارة فيرست جروب الكويت',
+          bio: 'القوة الإبداعية التي تشكل بصمة الشركة في مصر والكويت، حيث يقود المشاريع من التصميم إلى التسليم بمعايير عالمية. تخرج في كلية العمارة بالجامعة الأمريكية بالقاهرة، ويضمن شادي أن كل مشروع يوازن بين الابتكار والتميز المعماري والجودة مع تلبية احتياجات السوق.',
+        },
+        'team-005': {
+          name: 'نايل يعقوب',
+          position: 'عضو مجلس إدارة فيرست جروب',
+          bio: 'نحن نتبع فلسفة النمو المستمر والإنجازات الملحوظة. نحن نبني فرقاً شغوفة وممكنة وذات أداء عالٍ، وبغض النظر عن التحديات، فإننا ننجز.',
+        },
+        'team-006': {
+          name: 'عبد الله العيسى',
+          position: 'عضو مجلس إدارة فيرست جروب',
+          bio: 'نحن نتبع فلسفة النمو المستمر والإنجازات الملحوظة. نحن نبني فرقاً شغوفة وممكنة وذات أداء عالٍ، وبغض النظر عن التحديات، فإننا ننجز.',
         },
       },
     },

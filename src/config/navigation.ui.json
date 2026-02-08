@@ -13,6 +13,10 @@
       "slug": "/projects"
     },
     {
+      "name": "nav.team",
+      "slug": "/team"
+    },
+    {
       "name": "nav.news",
       "slug": "/media-center-news"
     },

@@ -22,6 +22,7 @@ export const metadataGenerators = {
   partnersAssociates: createMetadataGenerator('/partners-associates'),
   constructionUpdates: createMetadataGenerator('/construction-updates'),
   careers: createMetadataGenerator('/careers'),
+  team: createMetadataGenerator('/team'),
   cookiePolicy: createMetadataGenerator('/cookie-policy'),
   privacyPolicy: createMetadataGenerator('/privacy-policy'),
   termsOfUse: createMetadataGenerator('/terms-of-use'),
