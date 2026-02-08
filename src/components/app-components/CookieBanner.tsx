@@ -36,11 +36,11 @@ export default function CookieBanner() {
           role="dialog"
           aria-live="polite"
           aria-label="Cookie consent banner"
-          initial={{ scale: 0.5, y: '100%' }}
+          initial={{ scale: 0.5, y: '-100%' }}
           animate={{ scale: 1, y: '0%' }}
-          exit={{ scale: 0.5, x: '-120%' }}
+          exit={{ scale: 0.5, x: '120%' }}
           transition={{ type: 'spring', stiffness: 110, damping: 15 }}
-          className="right-4 bottom-4 left-4 z-50 fixed max-w-xl"
+          className="md:top-14 right-4 max-md:bottom-14 max-md:left-4 z-50 fixed max-w-xl"
         >
           <div className="flex flex-col gap-4 bg-main/25 backdrop-blur-3xl rounded-lg p-4">
             <h4 className="font-bold text-text/75 tracking-[0.25em] -mb-2">Privacy Mandate "We use cookies"</h4>
