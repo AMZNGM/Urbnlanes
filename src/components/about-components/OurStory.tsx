@@ -50,7 +50,7 @@ export default function OurStory() {
 
   return (
     <section className="relative w-dvw h-full overflow-hidden bg-bg text-text px-4 max-md:px-2 py-12">
-      <ImageIn src="/images/projects/story-branded-residences/sbr-main-2.avif" alt="Background Image" divClassName="absolute! inset-0 opacity-40" />
+      <ImageIn src="/images/projects/story-branded-residences/sbr-main-2.avif" alt="Background Image" divClassName="absolute! inset-0 opacity-40 blur-xl!" />
 
       <AnimIn className="relative md:px-18">
         <div className="flex justify-between items-center">
