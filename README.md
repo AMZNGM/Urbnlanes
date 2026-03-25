@@ -7,7 +7,8 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38b2ac?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 
 <ctrl94> [!TIP]
-> **Urbnlanes** is a premier real estate development company operating under *Emeel Abdalla Investments*. This application serves as their digital gateway, showcasing masterpieces of architecture and construction across the Middle East.
+
+> **Urbnlanes** is a premier real estate development company operating under _Emeel Abdalla Investments_. This application serves as their digital gateway, showcasing masterpieces of architecture and construction across the Middle East.
 
 [🌎 Live Demo: urbnlanes.vercel.app](https://urbnlanes.vercel.app/)
 
@@ -15,27 +16,29 @@
 
 ## ✨ Key Features
 
--   🌊 **Smooth Interaction**: High-performance scrolling powered by `Locomotive Scroll`.
--   🎭 **Dynamic Animations**: Seamless transitions and micro-interactions using `Motion v12`.
--   📱 **Modern UI/UX**: Fully responsive, dark-mode inspired design with `Tailwind CSS v4`.
--   🏛️ **Project Showcase**: Detailed portfolio of construction updates, selected projects, and team highlights.
--   ⚡ **Optimized Performance**: Server-side rendering (SSR) and dynamic loading for instant interactions.
+- 🌊 **Smooth Interaction**: High-performance scrolling powered by `Locomotive Scroll`.
+- 🎭 **Dynamic Animations**: Seamless transitions and micro-interactions using `Motion v12`.
+- 📱 **Modern UI/UX**: Fully responsive, dark-mode inspired design with `Tailwind CSS v4`.
+- 🏛️ **Project Showcase**: Detailed portfolio of construction updates, selected projects, and team highlights.
+- ⚡ **Optimized Performance**: Server-side rendering (SSR) and dynamic loading for instant interactions.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Framework & Language
--   **Next.js 16** (App Router)
--   **React 19**
--   **TypeScript**
+
+- **Next.js 16** (App Router)
+- **React 19**
+- **TypeScript**
 
 ### Styling & Interaction
--   **Tailwind CSS v4** — Cutting-edge utility-first CSS.
--   **Motion (formerly Framer Motion)** — Fluid web animations.
--   **Locomotive Scroll** — Smooth, momentum-based scrolling.
--   **Lucide React** — Modern, consistent iconography.
--   **React Use Gesture** — Intuitive touch and mouse interactions.
+
+- **Tailwind CSS v4** — Cutting-edge utility-first CSS.
+- **Motion (formerly Framer Motion)** — Fluid web animations.
+- **Locomotive Scroll** — Smooth, momentum-based scrolling.
+- **Lucide React** — Modern, consistent iconography.
+- **React Use Gesture** — Intuitive touch and mouse interactions.
 
 ---
 
@@ -45,8 +48,8 @@ Follow these steps to spin up the project locally.
 
 ### Prerequisites
 
--   **Node.js** (v18.x or higher recommended)
--   **npm** or **yarn**
+- **Node.js** (v18.x or higher recommended)
+- **npm** or **yarn**
 
 ### 1. Clone & Install
 
@@ -98,6 +101,5 @@ src/
 ---
 
 <div align="center">
-  <p>Built with ❤️ by <a href="https://github.com/AMZNGM" target="_blank">AMZNGM</a></p>
+  <p>by <a href="https://github.com/AMZNGM" target="_blank">AMZNGM</a></p>
 </div>
-
